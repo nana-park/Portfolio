@@ -249,6 +249,42 @@
         .tech-tag:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+
+        /* Back to Top Button (Matched to Index.html Popup Toggle) */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            background: #000;
+            border-color: rgba(217, 119, 6, 0.5);
+            /* Amber hover border */
+        }
     </style>
 </head>
 
@@ -383,59 +419,8 @@
                 </div>
             </div>
 
-            <!-- Table of Contents -->
-            <section class="py-24 bg-[#010101] border-y border-white/5 mb-32 relative z-50">
-                <div class="max-w-6xl mx-auto px-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative">
-                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
-                        <div class="flex flex-col gap-8">
-                            <div>
-                                <span
-                                    class="text-zinc-600 font-mono text-[10px] uppercase tracking-[0.4em] mb-3 block">Part
-                                    01</span>
-                                <h3 class="text-3xl font-bold text-white tracking-tight">Product <span
-                                        class="font-serif italic text-zinc-400">Strategy</span></h3>
-                            </div>
-                            <nav class="flex flex-wrap gap-x-8 gap-y-4">
-                                <a href="#painpoints"
-                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> Mission & Painpoint
-                                </a>
-                                <a href="#engine"
-                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> AI Engine Logic
-                                </a>
-                                <a href="#social"
-                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> Success Proof
-                                </a>
-                            </nav>
-                        </div>
-                        <div class="flex flex-col gap-8">
-                            <div>
-                                <span
-                                    class="text-emerald-500/60 font-mono text-[10px] uppercase tracking-[0.4em] mb-3 block font-bold">Part
-                                    02</span>
-                                <h3 class="text-3xl font-bold text-white tracking-tight">Personal <span
-                                        class="font-serif italic text-emerald-500/80">Experience</span></h3>
-                            </div>
-                            <nav class="flex flex-wrap gap-x-8 gap-y-4">
-                                <a href="#challenges"
-                                    class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-900/40"></span> Challenges
-                                </a>
-                                <a href="#retrospective"
-                                    class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-900/40"></span> Retrospective
-                                </a>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <!-- Challenge Header -->
-            <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center" id="painpoints">
+            <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center">
                 <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Product
                     Painpoint</span>
                 <h2
@@ -451,8 +436,7 @@
                     <div
                         class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">I get tired checking comments one by one, so I usually
-                            just
+                        <p class="text-zinc-300 text-sm">I get tired checking comments one by one, so I usually just
                             give
                             up. <span class="text-zinc-500 ml-1">- Viewer B</span></p>
                     </div>
@@ -460,9 +444,8 @@
                     <div
                         class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">Organizing product info takes more time than filming.
-                            <span class="text-zinc-500 ml-1">- Creator A</span>
-                        </p>
+                        <p class="text-zinc-300 text-sm">Organizing product info takes more time than filming. <span
+                                class="text-zinc-500 ml-1">- Creator A</span></p>
                     </div>
                     <!-- Quote 3 -->
                     <div
@@ -476,15 +459,13 @@
                     <div
                         class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">I can't tell products apart. I wish it looked like a
-                            mall.
+                        <p class="text-zinc-300 text-sm">I can't tell products apart. I wish it looked like a mall.
                             <span class="text-zinc-500 ml-1">- Viewer D</span>
                         </p>
                     </div>
                 </div>
                 <div class="text-center mt-6">
-                    <span class="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">User Interview
-                        (July
+                    <span class="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">User Interview (July
                         12, 2023)</span>
                 </div>
             </div>
@@ -549,8 +530,7 @@
 
                                 <!-- Video Info -->
                                 <div class="px-4 py-3 shrink-0">
-                                    <h1 class="text-white text-sm font-bold leading-snug mb-1.5 line-clamp-2">
-                                        Minimalist
+                                    <h1 class="text-white text-sm font-bold leading-snug mb-1.5 line-clamp-2">Minimalist
                                         Desk Setup 2024 | Productivity Tools & Gear</h1>
                                     <div class="text-[11px] text-gray-400 mb-4">125K views • 2 days ago</div>
                                     <div class="flex items-center justify-between mb-4">
@@ -558,11 +538,9 @@
                                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 class="w-9 h-9 rounded-full object-cover">
                                             <div class="flex flex-col justify-center">
-                                                <div class="text-white text-xs font-bold leading-tight">Creator
-                                                    Techie
+                                                <div class="text-white text-xs font-bold leading-tight">Creator Techie
                                                 </div>
-                                                <div class="text-[10px] text-gray-400 leading-tight mt-0.5">
-                                                    48.2K
+                                                <div class="text-[10px] text-gray-400 leading-tight mt-0.5">48.2K
                                                     subscribers</div>
                                             </div>
                                         </div>
@@ -580,8 +558,7 @@
                                     </div>
 
                                     <div class="messy-scroll overflow-y-auto h-full pr-1 space-y-3 relative pb-8">
-                                        <p class="text-gray-300 text-[11px] leading-relaxed">Here are all the
-                                            links to
+                                        <p class="text-gray-300 text-[11px] leading-relaxed">Here are all the links to
                                             the products I mentioned in the video! 👇</p>
 
                                         <!-- Clutter Box with RED Theme (Pain Point Focus) -->
@@ -596,8 +573,7 @@
                                                 <!-- Clicked Item Simulation -->
                                                 <div
                                                     class="relative group p-1.5 -m-1.5 rounded bg-white/5 border border-white/10">
-                                                    <div class="text-[11px] text-white font-bold mb-0.5">1.
-                                                        Mechanical
+                                                    <div class="text-[11px] text-white font-bold mb-0.5">1. Mechanical
                                                         Keyboard (Q1)</div>
                                                     <div class="text-[10px] text-blue-400 font-bold truncate underline">
                                                         https://amazon.com/dp/B0CB2...</div>
@@ -607,22 +583,19 @@
 
                                                 <!-- Other Items -->
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
-                                                        2.
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">2.
                                                         Logitech MX Master 3S Mouse</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://amazon.com/dp/B09HM94VDS/ref=...</div>
                                                 </div>
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
-                                                        3. BenQ
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">3. BenQ
                                                         ScreenBar Halo</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://amazon.com/dp/B08C5HKCQY/...</div>
                                                 </div>
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
-                                                        4.
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">4.
                                                         Grovemade Desk Pad</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://grovemade.com/product/wool-felt...</div>
@@ -704,8 +677,7 @@
                                         <div class="text-[11px] text-[#007185] mb-1 hover:underline cursor-pointer">
                                             Visit the Keychron Store</div>
                                         <h2 class="text-[#0F1111] text-[13px] font-medium leading-snug mb-2">
-                                            Keychron Q1 Pro QMK/VIA Wireless Custom Mechanical Keyboard, 75%
-                                            Layout RGB
+                                            Keychron Q1 Pro QMK/VIA Wireless Custom Mechanical Keyboard, 75% Layout RGB
                                         </h2>
 
                                         <!-- Ratings -->
@@ -771,23 +743,19 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-white">For Consumers</h3>
                             </div>
-                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">
-                                Disconnected
+                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">Disconnected
                                 Journey</h4>
 
                             <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
-                                    <span><strong>The Loop:</strong> Endless switching between YouTube comments
-                                        and
+                                    <span><strong>The Loop:</strong> Endless switching between YouTube comments and
                                         product pages.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
-                                    <span><strong>Blind Clicks:</strong> In our product, prices aren't
-                                        immediately
-                                        visible, but stock status is checkable. However, users can view products
-                                        from
+                                    <span><strong>Blind Clicks:</strong> In our product, prices aren't immediately
+                                        visible, but stock status is checkable. However, users can view products from
                                         other videos by the same creator all at once.</span>
                                 </li>
                             </ul>
@@ -805,15 +773,13 @@
                                 </div>
                                 <h3 class="text-xl font-bold text-white">For Creators</h3>
                             </div>
-                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">
-                                Administrative
+                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">Administrative
                                 Burden</h4>
 
                             <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
-                                    <span><strong>Manual Curation:</strong> Organising purchase links in
-                                        comments is a
+                                    <span><strong>Manual Curation:</strong> Organising purchase links in comments is a
                                         massive time-sink.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
@@ -823,8 +789,7 @@
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
-                                    <span><strong>Fee Chaos:</strong> Hard to compare commission rates across
-                                        different
+                                    <span><strong>Fee Chaos:</strong> Hard to compare commission rates across different
                                         open markets.</span>
                                 </li>
                             </ul>
@@ -1134,14 +1099,13 @@
         </div>
 
         <!-- 3. The Engine (System Architecture) -->
-        <div class="mb-32 max-w-6xl mx-auto px-4" id="engine">
+        <div class="mb-32 max-w-6xl mx-auto px-4">
             <div
                 class="glass-panel pt-16 pb-4 md:pt-24 md:pb-6 rounded-[3rem] relative overflow-hidden bg-gradient-to-b from-white/5 to-black">
                 <div class="relative z-10 max-w-4xl mx-auto text-center">
                     <h2 class="text-3xl font-bold text-white mb-6">The Engine: AI-Driven Logic</h2>
                     <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto mb-16 px-4">
-                        Continuously analyzes commission rates and availability signals to optimize creator
-                        revenue and
+                        Continuously analyzes commission rates and availability signals to optimize creator revenue and
                         user experience.
                     </p>
 
@@ -1159,8 +1123,7 @@
                             </div>
                             <div class="text-left">
                                 <h4 class="font-bold text-white text-base">Revenue Optimization Engine</h4>
-                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Marketplace selection
-                                    based on
+                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Marketplace selection based on
                                     commission and profitability logic</p>
                             </div>
                         </div>
@@ -1177,8 +1140,7 @@
                             </div>
                             <div class="text-left">
                                 <h4 class="font-bold text-white text-base">Link Resilience Automation</h4>
-                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Real-time stock
-                                    detection and
+                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Real-time stock detection and
                                     dynamic rerouting</p>
                             </div>
                         </div>
@@ -1580,8 +1542,7 @@
                 <div class="text-center mb-16">
                     <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Performance
                         Reach</span>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Impact on the Business
-                        &
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Impact on the Business &
                         Products</h2>
                 </div>
 
@@ -1628,8 +1589,7 @@
                                     </a>
                                     <p class="text-zinc-500 text-xs mt-1">Final Selection</p>
                                     <p class="text-zinc-600 text-[10px] leading-relaxed mt-2 italic opacity-80">
-                                        Validated product-market fit and technical scalability within SK's
-                                        strategic AI
+                                        Validated product-market fit and technical scalability within SK's strategic AI
                                         infrastructure.
                                     </p>
                                 </div>
@@ -1649,8 +1609,7 @@
                         </div>
                         <ul class="space-y-6">
                             <li class="flex gap-4">
-                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50">
-                                </div>
+                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
                                     <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
                                         Launched Nov 2023</p>
@@ -1658,11 +1617,9 @@
                                 </div>
                             </li>
                             <li class="flex gap-4">
-                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50">
-                                </div>
+                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
-                                    <p class="text-white font-bold text-lg font-mono tracking-tight">895K
-                                        Combined Reach
+                                    <p class="text-white font-bold text-lg font-mono tracking-tight">895K Combined Reach
                                     </p>
                                     <p class="text-zinc-500 text-xs mt-1">Global Influence Metric</p>
                                 </div>
@@ -1674,23 +1631,19 @@
                                 <div>
                                     <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
                                         Archived Feb 2024</p>
-                                    <p class="text-zinc-500 text-xs leading-relaxed mt-1">Validated market
-                                        demand
+                                    <p class="text-zinc-500 text-xs leading-relaxed mt-1">Validated market demand
                                         through MVP launch and archived after strategic pivot.</p>
 
                                     <!-- Strategic Rationale Block -->
                                     <div class="mt-4 p-3 rounded-lg bg-blue-500/5 border border-blue-500/10">
-                                        <p class="text-zinc-500 text-[9px] uppercase tracking-widest mb-2">
-                                            Strategic
+                                        <p class="text-zinc-500 text-[9px] uppercase tracking-widest mb-2">Strategic
                                             Archive Rationale</p>
                                         <p class="text-zinc-400 text-[10px] leading-relaxed italic">
-                                            Archived following YouTube's accelerated platform-native commerce
-                                            expansion
+                                            Archived following YouTube's accelerated platform-native commerce expansion
                                             (<a href="https://blog.youtube/creator-and-artist-stories/eoy-shopping/"
                                                 target="_blank"
                                                 class="text-blue-500/60 hover:text-blue-500 transition-colors">2024
-                                                Shopping Push</a>), identifying structural limits for
-                                            third-party
+                                                Shopping Push</a>), identifying structural limits for third-party
                                             creator commerce layers.
                                         </p>
                                     </div>
@@ -1713,29 +1666,25 @@
                             <div class="grid grid-cols-1 gap-4">
                                 <div class="bg-white/5 rounded-xl p-4 border border-white/5">
                                     <p class="text-emerald-400 text-2xl font-bold font-mono">30,488</p>
-                                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Page
-                                        Views</p>
+                                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Page Views</p>
                                 </div>
                                 <div class="flex gap-4">
                                     <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
                                         <p class="text-white text-xl font-bold font-mono">7.02%</p>
                                         <p
                                             class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1 leading-tight">
-                                            Conversion Rate<br><span class="opacity-60">(Purchase Rate)</span>
-                                        </p>
+                                            Conversion Rate<br><span class="opacity-60">(Purchase Rate)</span></p>
                                     </div>
                                     <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
                                         <p class="text-white text-xl font-bold font-mono">80.18%</p>
-                                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">
-                                            In-page CTR
+                                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">In-page CTR
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <!-- Date Range Disclaimer -->
                             <div class="flex justify-end pt-2">
-                                <span class="text-zinc-700 text-[9px] font-mono uppercase tracking-wider">Collected:
-                                    Nov
+                                <span class="text-zinc-700 text-[9px] font-mono uppercase tracking-wider">Collected: Nov
                                     2023 - Dec 2023</span>
                             </div>
                         </div>
@@ -1745,8 +1694,7 @@
 
                 <div class="mt-20">
                     <div class="flex items-center gap-4 mb-8">
-                        <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Media Coverage
-                        </h3>
+                        <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Media Coverage</h3>
                         <div class="h-px flex-1 bg-gradient-to-r from-zinc-800 to-transparent"></div>
                     </div>
 
@@ -1831,16 +1779,14 @@
                                 <h4
                                     class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
                                     Company Introduction: Sliver
-                                </h4> <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Nov
-                                    2023</span>
+                                </h4> <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Nov 2023</span>
                             </div>
                         </a>
                     </div>
                     <!-- Dedicated Creator Marquee -->
-                    <div class="mt-32 mb-32" id="social">
+                    <div class="mt-32 mb-32">
                         <div class="flex items-center gap-4 mb-8">
-                            <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Trusted by
-                                Global
+                            <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Trusted by Global
                                 Creators</h3>
                             <div class="h-px flex-1 bg-gradient-to-r from-zinc-700 to-transparent"></div>
                         </div>
@@ -2128,8 +2074,7 @@
                                         class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Solutions</span>
                                 </h2>
                                 <p class="text-zinc-400 text-lg font-light max-w-xl mx-auto text-center">
-                                    Navigating the hurdles of scaling an AI commerce engine while maintaining
-                                    trust.
+                                    Navigating the hurdles of scaling an AI commerce engine while maintaining trust.
                                 </p>
                             </div>
 
@@ -2151,13 +2096,11 @@
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
-                                                Balancing
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Balancing
                                                 Creator Revenue vs. Viewer Friction</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
                                                 High commission rates optimized revenue but led to higher cart
-                                                abandonment. We needed a system that could predict the "sweet
-                                                spot"
+                                                abandonment. We needed a system that could predict the "sweet spot"
                                                 where conversion volume offset per-item margins.
                                             </p>
                                         </div>
@@ -2169,14 +2112,11 @@
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                                                 The Breakthrough
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
-                                                AI-Driven
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">AI-Driven
                                                 Dynamic Commission Adjustments</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
-                                                Implemented a real-time elasticity engine that adjusted
-                                                commissions
-                                                based on category trends and user price sensitivity, resulting
-                                                in a 24%
+                                                Implemented a real-time elasticity engine that adjusted commissions
+                                                based on category trends and user price sensitivity, resulting in a 24%
                                                 increase in net creator payout.
                                             </p>
                                         </div>
@@ -2199,13 +2139,11 @@
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
-                                                Unstructured
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unstructured
                                                 Data From Global Marketplaces</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
                                                 Normalizing product availability and pricing signals across 15+
-                                                disparate global API endpoints was causing latency and
-                                                inconsistent
+                                                disparate global API endpoints was causing latency and inconsistent
                                                 product states.
                                             </p>
                                         </div>
@@ -2216,14 +2154,11 @@
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                                                 The Breakthrough
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unified
-                                                Signal
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unified Signal
                                                 Normalization Layer</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
-                                                Built a serverless abstraction layer that used LLMs to map
-                                                varying
-                                                metadata schemas into a single internal truth, cutting API
-                                                processing
+                                                Built a serverless abstraction layer that used LLMs to map varying
+                                                metadata schemas into a single internal truth, cutting API processing
                                                 time by 40%.
                                             </p>
                                         </div>
@@ -2234,7 +2169,7 @@
                     </section>
 
                     <!-- What I Learned (Strategic Reflection) -->
-                    <div class="mt-48" id="retrospective">
+                    <div class="mt-48">
                         <div class="text-center mb-16">
                             <span
                                 class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Retrospective</span>
@@ -2243,9 +2178,9 @@
                                     class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Learned</span>
                             </h2>
                             <p class="text-zinc-400 text-lg font-light max-w-xl mx-auto text-center">
-                                Learned that building products is not only about launch, but about reading
-                                market
-                                signals and knowing when to stop.
+                                Learned that building products is not only about launch, but about reading market
+                                signals
+                                and knowing when to stop.
                             </p>
                         </div>
                         <div class="flex flex-col gap-6 max-w-6xl mx-auto">
@@ -2254,7 +2189,7 @@
                                 class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
                                 <div class="flex gap-4">
                                     <div
-                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                        class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500/60 flex items-center justify-center shrink-0">
                                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -2267,19 +2202,15 @@
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 01</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Validated user
-                                            intent
-                                            through rapid interviews and MVP launch, minimizing overengineering
-                                            before
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Validated user intent
+                                            through rapid interviews and MVP launch, minimizing overengineering before
                                             structural risk assessment.</p>
                                         <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
                                             <p
-                                                class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
+                                                class="text-[10px] text-amber-500/60 font-mono uppercase tracking-wider mb-2">
                                                 Applied Result</p>
-                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Quick
-                                                interviews across
-                                                layer-1 viewers & creators (Sep 2023) → MVP launch timeline
-                                                focusing on
+                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Quick interviews across
+                                                layer-1 viewers & creators (Sep 2023) → MVP launch timeline focusing on
                                                 core intent (Nov 2023)</p>
                                         </div>
                                     </div>
@@ -2290,7 +2221,7 @@
                                 class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
                                 <div class="flex gap-4">
                                     <div
-                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                        class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400/60 flex items-center justify-center shrink-0">
                                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -2303,17 +2234,14 @@
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 02</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Translated
-                                            platform
-                                            constraints into internal alignment, clarifying where automation
-                                            adds value
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Translated platform
+                                            constraints into internal alignment, clarifying where automation adds value
                                             versus fixed infrastructure.</p>
                                         <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
                                             <p
-                                                class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
+                                                class="text-[10px] text-indigo-400/60 font-mono uppercase tracking-wider mb-2">
                                                 Applied Result</p>
-                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Defined
-                                                standardized
+                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Defined standardized
                                                 commerce UI components to reduce coordination cost; balanced AI
                                                 auto-curation vs regional manual control.</p>
                                         </div>
@@ -2338,8 +2266,7 @@
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 03</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Used external
-                                            platform
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Used external platform
                                             signals to decide when to stop—before sunk-cost drift intensified by
                                             competitive pressure.</p>
                                         <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
@@ -2438,6 +2365,35 @@
     </footer>
 
     <script src="../script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+
 
 </html>
