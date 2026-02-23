@@ -1,0 +1,262 @@
+/* Testimonials Section Styles */
+#testimonials {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
+    background-color: #262626 !important;
+    /* Match body bg */
+    color: white;
+    text-align: center;
+}
+
+.testimonials-header {
+    margin-bottom: 0;
+}
+
+.testimonials-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+}
+
+.testimonials-title span {
+    font-style: normal;
+}
+
+/* Subtitle micro text */
+.testimonials-subtitle {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    /* Gap B = 2.5rem */
+}
+
+
+
+/* Carousel Container */
+.testimonials-container {
+    display: flex;
+    justify-content: flex-start;
+    /* Align left for scroll logic */
+    gap: 1.5rem;
+    /* Removed top padding to ensure subtitle is perfectly centered */
+    padding: 0.5rem var(--spacing-md) 2rem;
+    overflow-x: auto;
+    /* Enable scroll */
+    scroll-behavior: smooth;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonials-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    /* Desktop: 3 cards visible. Calc accounts for gap (1.5rem * 2 gaps / 3 cards) */
+    flex: 0 0 380px;
+    width: 380px;
+    height: 380px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    /* Slight increase for content breathability */
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start;
+    /* Align to left edge */
+    color: white;
+    position: relative;
+
+    /* Full Visibility for all cards */
+    opacity: 0.3;
+    /* Faded by default */
+    transform: scale(0.9);
+    filter: blur(1px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Gradients - Distinct Colors */
+.card-gradient-1 {
+    /* Purple Vibe */
+    background: radial-gradient(80% 80% at 50% 20%, #a855f7 0%, #7c3aed 60%, #4c1d95 100%);
+}
+
+.card-gradient-2 {
+    /* Indigo-Blue Vibe */
+    background: radial-gradient(80% 80% at 50% 20%, #6366f1 0%, #4338ca 60%, #312e81 100%);
+}
+
+.card-gradient-3 {
+    /* Emerald Green Vibe */
+    background: radial-gradient(80% 80% at 50% 20%, #4ade80 0%, #16a34a 60%, #14532d 100%);
+}
+
+
+/* Stars */
+.card-stars {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* Quote Text */
+.card-quote {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: auto;
+    /* Pushes signature down */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Signature */
+.card-signature {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 1.5rem;
+    opacity: 0.9;
+}
+
+.card-author-title {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 500;
+    text-transform: none;
+    /* Keep mixed case for long titles */
+    letter-spacing: 0;
+    margin-top: 0.4rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.card-gradient-4 {
+    /* Gold / Amber Vibe - Matches bread theme */
+    background: radial-gradient(80% 80% at 50% 20%, #f59e0b 0%, #d97706 60%, #92400e 100%);
+}
+
+.card-gradient-5 {
+    /* Rose / Pink Vibe */
+    background: radial-gradient(80% 80% at 50% 20%, #f472b6 0%, #db2777 60%, #9d174d 100%);
+}
+
+.card-gradient-6 {
+    /* Cyan / Teal Vibe */
+    background: radial-gradient(80% 80% at 50% 20%, #22d3ee 0%, #0891b2 60%, #155e75 100%);
+}
+
+/* Navigation Buttons */
+.testimonials-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.nav-btn {
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    padding: 0;
+    opacity: 0.5;
+    /* Default inactive */
+}
+
+.nav-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5px;
+}
+
+/* State where button is active/clickable or current */
+.nav-btn.enabled {
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Match the specific white ring from user's image */
+.nav-btn.active-state {
+    opacity: 1;
+    border: 2px solid #ffffff;
+}
+
+.nav-btn:hover.enabled {
+    background: #333333;
+    transform: scale(1.05);
+}
+
+.nav-btn:active.enabled {
+    transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .testimonial-card {
+        flex: 0 0 45%;
+        /* 2 cards on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-container {
+        padding-left: 1.5rem;
+        /* Add side padding for centering feel */
+        padding-right: 1.5rem;
+    }
+
+    .testimonial-card {
+        flex: 0 0 85%;
+        /* 1 card prominent with peek on mobile */
+        height: 350px;
+        scroll-snap-align: center;
+    }
+
+    .testimonials-title {
+        font-size: 2rem;
+    }
+}

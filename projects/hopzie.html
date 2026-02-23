@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopzie | Nahyun Park</title>
+    <meta name="description" content="Hopzie - AI-Powered Automated Online Store">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer_override.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Scrollbar for the messy description */
+        .messy-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .messy-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .messy-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Pulse Animation for Pain Point */
+        @keyframes subtle-pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .animate-subtle-pulse {
+            animation: subtle-pulse 3s infinite;
+        }
+
+        /* Custom Animations for User Flow */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(217, 119, 6, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(217, 119, 6, 0);
+            }
+        }
+
+        .animate-pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+
+        .glass-btn {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            border-color: rgba(217, 119, 6, 0.5);
+            /* Amber color on hover */
+        }
+
+        /* Floating Arrow Animation */
+        @keyframes float-right {
+
+            0%,
+            100% {
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateX(10px);
+                opacity: 1;
+            }
+        }
+
+        .animate-float-right {
+            animation: float-right 1.5s ease-in-out infinite;
+        }
+
+        /* NEW ANIMATIONS FOR MOCKUP */
+        @keyframes subtle-pulse-red {
+
+            0%,
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            }
+        }
+
+        .animate-subtle-pulse-red {
+            animation: subtle-pulse-red 2s infinite;
+        }
+
+        @keyframes tap-gesture {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.85);
+            }
+        }
+
+        .animate-tap {
+            animation: tap-gesture 1.5s infinite;
+        }
+
+        /* Pointer Click Animation */
+        @keyframes tap-gesture {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.9);
+            }
+        }
+
+        .animate-tap {
+            animation: tap-gesture 1.5s infinite;
+        }
+
+        /* Project Detail Specific Overrides */
+        body {
+            background-color: #050505;
+            /* Deep Black for high contrast */
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .project-detail {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+            font-size: 0.875rem;
+            color: #a1a1aa;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
+            /* Consistent large radius */
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Bento Grid Specifics */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+
+            .row-span-2 {
+                grid-row: span 2 / span 2;
+            }
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #e4e4e7;
+            /* Zinc-200 */
+            padding: 0.375rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s;
+        }
+
+        .tech-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Standardized) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html#home" class="logo"><span style="color: #D97706;">bread</span>me</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">HOME</a>
+                <a href="../index.html#about" class="nav-link">ABOUT</a>
+                <a href="../index.html#projects" class="nav-link">PROJECTS</a>
+                <a href="../index.html#awards" class="nav-link">AWARDS</a>
+                <a href="../index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container max-w-6xl mx-auto px-6">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+            <!-- Hero Section: Refined Aesthetic (Portrait Style) -->
+            <div class="project-header text-center mb-24 pt-16 relative">
+                <!-- Decorative Glow -->
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-blue-500/10 via-transparent to-transparent blur-3xl pointer-events-none -z-10">
+                </div>
+
+                <!-- Brand & Product Identity -->
+                <div class="mb-4">
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <span class="text-[10px] md:text-xs font-bold text-zinc-600 uppercase tracking-[0.3em]">Product
+                            from</span>
+                        <span
+                            class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] md:text-xs font-black text-white uppercase tracking-widest">Sliver</span>
+                    </div>
+                    <h1 class="text-7xl md:text-9xl font-bold text-white mb-10 tracking-tighter">
+                        Hopzie<span class="text-amber-500">.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-300 font-light max-w-3xl mx-auto leading-relaxed">
+                        Transforming <span class="italic font-serif text-amber-200/90">commerce</span> with AI-driven
+                        automation.
+                    </p>
+                </div>
+
+                <!-- Subtitle Description -->
+                <p class="text-lg text-zinc-400 font-light mx-auto mb-10 leading-snug text-center whitespace-nowrap">
+                    Enable automated commission routing and real-time link integrity for creator-driven commerce.
+                </p>
+
+                <!-- Metadata Strip -->
+                <div
+                    class="inline-flex flex-wrap justify-center gap-x-8 gap-y-4 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-xs font-mono uppercase tracking-wider text-zinc-500">
+                    <div class="flex items-center gap-2">
+                        <span class="text-zinc-600 font-bold">Role</span>
+                        <span class="text-zinc-300">AI Product Manager</span>
+                    </div>
+                    <div class="w-px h-3 bg-white/10 hidden sm:block"></div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-zinc-600 font-bold">Focus</span>
+                        <span class="text-zinc-300">AI Automation</span>
+                    </div>
+                    <div class="w-px h-3 bg-white/10 hidden sm:block"></div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-zinc-600 font-bold">Timeline</span>
+                        <span class="text-zinc-300 text-nowrap">Nov 2023 — Feb 2024</span>
+                    </div>
+                </div>
+
+                <!-- Awards / Recognition (Laurel Wreath Style) -->
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 animate-fade-in-up">
+
+                    <!-- Award 1: Google -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-48 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-2 w-full text-center">
+                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Funded
+                                    by</p>
+                                <p
+                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-yellow-500">
+                                    Google for Media Startups</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider (Visual) -->
+                    <div class="w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block">
+                    </div>
+
+                    <!-- Award 2: SK AI -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-blue-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-48 h-12 text-blue-400/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-2 w-full text-center">
+                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Selected
+                                    by</p>
+                                <p
+                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-500">
+                                    SK AI Accelerator</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Table of Contents -->
+            <section class="py-24 bg-[#010101] border-y border-white/5 mb-32 relative z-50">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 relative">
+                        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10"></div>
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <span
+                                    class="text-zinc-600 font-mono text-[10px] uppercase tracking-[0.4em] mb-3 block">Part
+                                    01</span>
+                                <h3 class="text-3xl font-bold text-white tracking-tight">Product <span
+                                        class="font-serif italic text-zinc-400">Strategy</span></h3>
+                            </div>
+                            <nav class="flex flex-wrap gap-x-8 gap-y-4">
+                                <a href="#painpoints"
+                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> Mission & Painpoint
+                                </a>
+                                <a href="#engine"
+                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> AI Engine Logic
+                                </a>
+                                <a href="#social"
+                                    class="text-sm text-zinc-500 hover:text-white transition-colors flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-zinc-800"></span> Success Proof
+                                </a>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-8">
+                            <div>
+                                <span
+                                    class="text-emerald-500/60 font-mono text-[10px] uppercase tracking-[0.4em] mb-3 block font-bold">Part
+                                    02</span>
+                                <h3 class="text-3xl font-bold text-white tracking-tight">Personal <span
+                                        class="font-serif italic text-emerald-500/80">Experience</span></h3>
+                            </div>
+                            <nav class="flex flex-wrap gap-x-8 gap-y-4">
+                                <a href="#challenges"
+                                    class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-900/40"></span> Challenges
+                                </a>
+                                <a href="#retrospective"
+                                    class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-900/40"></span> Retrospective
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenge Header -->
+            <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center" id="painpoints">
+                <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Product
+                    Painpoint</span>
+                <h2
+                    class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 max-w-full mx-auto leading-snug">
+                    Do we really have to check each product link <br /> in the video description one by one?
+                </h2>
+            </div>
+
+            <!-- User Voices List (Static Vertical) -->
+            <div class="mb-16 w-full px-4">
+                <div class="flex flex-col gap-3 max-w-2xl mx-auto">
+                    <!-- Quote 1 -->
+                    <div
+                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
+                        <p class="text-zinc-300 text-sm">I get tired checking comments one by one, so I usually
+                            just
+                            give
+                            up. <span class="text-zinc-500 ml-1">- Viewer B</span></p>
+                    </div>
+                    <!-- Quote 2 -->
+                    <div
+                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
+                        <p class="text-zinc-300 text-sm">Organizing product info takes more time than filming.
+                            <span class="text-zinc-500 ml-1">- Creator A</span>
+                        </p>
+                    </div>
+                    <!-- Quote 3 -->
+                    <div
+                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
+                        <p class="text-zinc-300 text-sm">It's frustrating when I can't explain products clearly.
+                            <span class="text-zinc-500 ml-1">- Creator C</span>
+                        </p>
+                    </div>
+                    <!-- Quote 4 -->
+                    <div
+                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
+                        <p class="text-zinc-300 text-sm">I can't tell products apart. I wish it looked like a
+                            mall.
+                            <span class="text-zinc-500 ml-1">- Viewer D</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <span class="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">User Interview
+                        (July
+                        12, 2023)</span>
+                </div>
+            </div>
+
+            <!-- REARRANGED LAYOUT: Mockup on Top, Cards Below -->
+            <!-- REARRANGED LAYOUT: Mockup on Top, Cards Below -->
+            <div class="flex flex-col gap-0 mt-8 mb-64">
+
+                <!-- 1. MOCKUP SECTION (Full Width, Centered) -->
+                <div class="w-full flex justify-center">
+                    <div
+                        class="flex flex-col md:flex-row items-center md:justify-center gap-8 md:gap-12 max-w-[95vw] lg:max-w-6xl pb-0 overflow-x-auto no-scrollbar px-4">
+
+                        <!-- SCREEN 1: YouTube Pain Point -->
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="text-center mb-2">
+                                <span
+                                    class="text-red-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Pain
+                                    Point 1</span>
+                                <h3 class="text-white text-lg font-bold">Messy Description</h3>
+                            </div>
+
+                            <div
+                                class="relative w-[320px] h-[640px] bg-[#0f0f0f] rounded-[2.5rem] shadow-2xl border-[6px] border-[#2a2a2a] overflow-hidden flex flex-col scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
+                                <!-- YouTube Header -->
+                                <div
+                                    class="flex justify-between items-center px-4 py-3 border-b border-white/5 h-12 shrink-0">
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-7 h-5 flex items-center justify-center">
+                                            <svg viewBox="0 0 68 48" class="w-full h-full text-red-600 fill-current">
+                                                <path
+                                                    d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z">
+                                                </path>
+                                                <path d="M 45,24 27,14 27,34" fill="white"></path>
+                                            </svg>
+                                        </div>
+                                        <span class="text-white font-bold text-sm tracking-tighter leading-none"
+                                            style="font-family: 'Roboto Condensed', sans-serif;">YouTube</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-white">
+                                        <i class="fas fa-search text-xs"></i>
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-purple-600 text-[10px] flex items-center justify-center font-bold">
+                                            M</div>
+                                    </div>
+                                </div>
+
+                                <!-- Video Player -->
+                                <div class="w-full aspect-video bg-[#1a1a1a] relative shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                                        class="w-full h-full object-cover opacity-60">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-play text-white text-3xl opacity-80 drop-shadow-lg"></i>
+                                    </div>
+                                    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+                                        <div class="w-1/3 h-full bg-red-600"></div>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-2 right-2 bg-black/80 px-1.5 py-0.5 rounded text-[10px] text-white font-medium">
+                                        12:45</div>
+                                </div>
+
+                                <!-- Video Info -->
+                                <div class="px-4 py-3 shrink-0">
+                                    <h1 class="text-white text-sm font-bold leading-snug mb-1.5 line-clamp-2">
+                                        Minimalist
+                                        Desk Setup 2024 | Productivity Tools & Gear</h1>
+                                    <div class="text-[11px] text-gray-400 mb-4">125K views • 2 days ago</div>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                class="w-9 h-9 rounded-full object-cover">
+                                            <div class="flex flex-col justify-center">
+                                                <div class="text-white text-xs font-bold leading-tight">Creator
+                                                    Techie
+                                                </div>
+                                                <div class="text-[10px] text-gray-400 leading-tight mt-0.5">
+                                                    48.2K
+                                                    subscribers</div>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="bg-white text-black text-[11px] font-bold px-3.5 py-1.5 rounded-full">Subscribe</button>
+                                    </div>
+                                </div>
+
+                                <!-- Description Box (The Problem) -->
+                                <div
+                                    class="flex-1 bg-[#1a1a1a] mx-4 mb-4 rounded-xl p-3 relative overflow-hidden flex flex-col border border-[#333]">
+                                    <div class="flex justify-between items-center mb-2 shrink-0">
+                                        <div class="text-white text-xs font-bold">Description</div>
+                                        <i class="fas fa-times text-gray-400 text-xs"></i>
+                                    </div>
+
+                                    <div class="messy-scroll overflow-y-auto h-full pr-1 space-y-3 relative pb-8">
+                                        <p class="text-gray-300 text-[11px] leading-relaxed">Here are all the
+                                            links to
+                                            the products I mentioned in the video! 👇</p>
+
+                                        <!-- Clutter Box with RED Theme (Pain Point Focus) -->
+                                        <div class="bg-black/30 rounded-lg p-3 border border-red-500/50 relative">
+                                            <!-- RED Badge -->
+                                            <div
+                                                class="absolute -top-2 -right-2 bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-lg z-10 animate-subtle-pulse-red tracking-wide">
+                                                Manual & Messy
+                                            </div>
+
+                                            <div class="space-y-4">
+                                                <!-- Clicked Item Simulation -->
+                                                <div
+                                                    class="relative group p-1.5 -m-1.5 rounded bg-white/5 border border-white/10">
+                                                    <div class="text-[11px] text-white font-bold mb-0.5">1.
+                                                        Mechanical
+                                                        Keyboard (Q1)</div>
+                                                    <div class="text-[10px] text-blue-400 font-bold truncate underline">
+                                                        https://amazon.com/dp/B0CB2...</div>
+                                                    <i
+                                                        class="fas fa-hand-pointer text-white absolute right-1 top-2 drop-shadow-md animate-tap text-sm -rotate-12"></i>
+                                                </div>
+
+                                                <!-- Other Items -->
+                                                <div>
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
+                                                        2.
+                                                        Logitech MX Master 3S Mouse</div>
+                                                    <div class="text-[10px] text-blue-400 truncate opacity-80">
+                                                        https://amazon.com/dp/B09HM94VDS/ref=...</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
+                                                        3. BenQ
+                                                        ScreenBar Halo</div>
+                                                    <div class="text-[10px] text-blue-400 truncate opacity-80">
+                                                        https://amazon.com/dp/B08C5HKCQY/...</div>
+                                                </div>
+                                                <div>
+                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">
+                                                        4.
+                                                        Grovemade Desk Pad</div>
+                                                    <div class="text-[10px] text-blue-400 truncate opacity-80">
+                                                        https://grovemade.com/product/wool-felt...</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#1a1a1a] to-transparent pointer-events-none">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ARROW CONNECTOR -->
+                        <div
+                            class="hidden md:flex flex-col items-center justify-center gap-2 text-red-500 z-10 h-[640px]">
+                            <div
+                                class="text-[10px] font-mono uppercase tracking-widest bg-black/80 px-2 py-1 rounded border border-red-500/30 shadow-lg text-red-400">
+                                Bad Experience
+                            </div>
+                            <i
+                                class="fas fa-chevron-right text-4xl animate-float-right drop-shadow-[0_0_10px_rgba(239,68,68,0.6)]"></i>
+                        </div>
+                        <!-- Mobile Arrow -->
+                        <div class="flex md:hidden flex-col items-center justify-center gap-2 text-red-500 z-10 py-4">
+                            <i
+                                class="fas fa-chevron-down text-3xl animate-bounce drop-shadow-[0_0_10px_rgba(239,68,68,0.6)]"></i>
+                        </div>
+
+                        <!-- SCREEN 2: Sold Out Pain Point (AMAZON UI) -->
+                        <div class="flex flex-col items-center gap-4">
+                            <div class="text-center mb-2">
+                                <span
+                                    class="text-red-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Pain
+                                    Point 2</span>
+                                <h3 class="text-white text-lg font-bold">Dead / Sold Out Links</h3>
+                            </div>
+
+                            <div
+                                class="relative w-[320px] h-[640px] bg-white rounded-[2.5rem] shadow-2xl border-[6px] border-[#2a2a2a] overflow-hidden flex flex-col text-left scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
+
+                                <!-- OS Browser Header -->
+                                <div
+                                    class="bg-gray-100 px-4 py-2 border-b border-gray-200 flex items-center gap-2 h-11 shrink-0">
+                                    <i class="fas fa-lock text-gray-400 text-[10px]"></i>
+                                    <div
+                                        class="flex-1 bg-white rounded-md h-7 flex items-center px-3 text-[11px] text-gray-500 border border-gray-200 shadow-sm min-w-0">
+                                        <span class="truncate w-full text-center">amazon.com/dp/B0CB2...</span>
+                                    </div>
+                                    <i class="fas fa-redo-alt text-gray-400 text-[10px] ml-1"></i>
+                                </div>
+
+                                <!-- Amazon Header -->
+                                <div class="bg-[#232f3e] px-4 py-3 flex items-center justify-between shrink-0">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-bars text-white text-sm"></i>
+                                        <span
+                                            class="text-white font-bold text-lg italic tracking-tighter leading-none mt-1">amazon</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-white">
+                                        <i class="far fa-user"></i>
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Delivery Location Bar -->
+                                <div
+                                    class="bg-[#37475a] px-4 py-2 flex items-center gap-2 text-white text-[11px] shrink-0">
+                                    <i class="fas fa-map-marker-alt text-gray-300"></i>
+                                    <span class="truncate">Deliver to Republic of Korea</span>
+                                </div>
+
+                                <!-- Webpage Content -->
+                                <div class="flex-1 flex flex-col overflow-y-auto no-scrollbar bg-white">
+
+                                    <!-- Product Area -->
+                                    <div class="p-4">
+                                        <div class="text-[11px] text-[#007185] mb-1 hover:underline cursor-pointer">
+                                            Visit the Keychron Store</div>
+                                        <h2 class="text-[#0F1111] text-[13px] font-medium leading-snug mb-2">
+                                            Keychron Q1 Pro QMK/VIA Wireless Custom Mechanical Keyboard, 75%
+                                            Layout RGB
+                                        </h2>
+
+                                        <!-- Ratings -->
+                                        <div class="flex items-center gap-2 mb-3">
+                                            <div class="flex text-[#FFA41C] text-[10px]">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                                    class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span class="text-[11px] text-[#007185]">1,248 ratings</span>
+                                        </div>
+
+                                        <!-- Product Image (Grayscale applied for Pain Point emphasis) -->
+                                        <div
+                                            class="w-full aspect-square bg-white mb-4 flex items-center justify-center relative overflow-hidden">
+                                            <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600"
+                                                class="w-full h-full object-contain p-4 grayscale opacity-40">
+                                        </div>
+
+                                        <div class="w-full h-px bg-gray-200 mb-4"></div>
+
+                                        <!-- Unavailable Status (THE PAIN POINT) -->
+                                        <div>
+                                            <div class="text-[#B12704] text-[18px] font-medium mb-1">Currently
+                                                unavailable.</div>
+                                            <div class="text-[13px] text-[#0F1111] mb-5 font-medium leading-tight">
+                                                We don't know when or if this item will be back in stock.
+                                            </div>
+                                        </div>
+
+                                        <!-- Empty Action Area -->
+                                        <div class="space-y-3">
+                                            <button
+                                                class="w-full bg-[#e7e9ec] border border-[#adb1b8] text-[#8d9096] font-medium py-2.5 rounded-[8px] text-sm cursor-not-allowed shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
+                                                Add to Cart
+                                            </button>
+                                            <button
+                                                class="w-full bg-[#e7e9ec] border border-[#adb1b8] text-[#8d9096] font-medium py-2.5 rounded-[8px] text-sm cursor-not-allowed shadow-[0_2px_5px_rgba(0,0,0,0.05)]">
+                                                Buy Now
+                                            </button>
+                                            <button
+                                                class="w-full bg-white border border-[#D5D9D9] text-[#0F1111] hover:bg-gray-50 font-medium py-2.5 rounded-[8px] text-sm transition-colors shadow-sm">
+                                                Add to List
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. PAIN POINT CARDS (Side by Side) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto px-4 mt-[-40px]">
+                    <!-- Consumer Card -->
+                    <div
+                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-white/5">
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
+                                    <i class="fas fa-user-tag"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white">For Consumers</h3>
+                            </div>
+                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">
+                                Disconnected
+                                Journey</h4>
+
+                            <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
+                                    <span><strong>The Loop:</strong> Endless switching between YouTube comments
+                                        and
+                                        product pages.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
+                                    <span><strong>Blind Clicks:</strong> In our product, prices aren't
+                                        immediately
+                                        visible, but stock status is checkable. However, users can view products
+                                        from
+                                        other videos by the same creator all at once.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Creator Card -->
+                    <div
+                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-white/5">
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-white">For Creators</h3>
+                            </div>
+                            <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">
+                                Administrative
+                                Burden</h4>
+
+                            <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
+                                    <span><strong>Manual Curation:</strong> Organising purchase links in
+                                        comments is a
+                                        massive time-sink.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
+                                    <span><strong>Dead Ends:</strong> Links break when items sell out, requiring
+                                        constant updates.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
+                                    <span><strong>Fee Chaos:</strong> Hard to compare commission rates across
+                                        different
+                                        open markets.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- 2. The Solution (Feature Showcase) -->
+            <div class="mb-16 mt-64">
+                <div class="text-center mb-16">
+                    <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-2 block">Our
+                        Answer</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Automated Commerce
+                        Engine
+                    </h2>
+                    <p class="text-zinc-400 max-w-2xl mx-auto text-lg font-light">
+                        Developed an end-to-end AI solution that integrates directly with platforms, automating
+                        the
+                        connection between content and sales.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <!-- Flow Card 1: Seamless Setup (Full Width) -->
+                    <div
+                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-white/5">
+                        <div class="flex flex-col md:flex-row">
+                            <!-- Text Content -->
+                            <div class="p-6 md:p-8 md:w-5/12 flex flex-col justify-center relative z-20">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:border-amber-500/50 group-hover:text-amber-500 transition-colors">
+                                        01</div>
+                                    <h3 class="text-2xl font-bold text-white">Seamless Setup</h3>
+                                </div>
+                                <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                                    Zero-friction onboarding for creators. Connect your channel once, and let
+                                    our
+                                    AI handle the rest. Automatic product detection and affiliate link
+                                    generation.
+                                </p>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-4 text-zinc-300">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-sm">One-click integration</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-zinc-300">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                            <i class="fas fa-magic text-xs"></i>
+                                        </div>
+                                        <span class="text-sm">AI product matching</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Content (The Flow) -->
+                            <div
+                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-3 md:p-4 relative overflow-hidden border-l border-white/5">
+
+                                <!-- Flow Container -->
+                                <!-- Flow Container -->
+                                <div
+                                    class="space-y-3 md:space-y-4 relative z-10 w-full max-w-sm scale-[0.75] origin-center">
+                                    <!-- Connecting Guide Line -->
+                                    <div
+                                        class="absolute left-[24px] md:left-[28px] top-8 bottom-8 md:top-9 md:bottom-9 w-px border-l-2 border-dashed border-white/10 z-0">
+                                    </div>
+
+                                    <!-- STEP 1: START -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node -->
+                                        <div
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
+                                            <i class="fas fa-play text-base md:text-lg ml-1"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Start</h3>
+                                            <p class="text-white font-bold text-lg md:text-xl">Create My Hopzie
+                                                URL</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 2: Access -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node -->
+                                        <div
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            <i class="fas fa-globe text-base md:text-lg"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Step 01</h3>
+                                            <p class="text-zinc-200 font-medium text-base md:text-lg">Access
+                                                Homepage</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 3: Form -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node -->
+                                        <div
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            <i class="fas fa-pen-fancy text-base md:text-lg"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Step 02</h3>
+                                            <p class="text-zinc-200 font-medium text-base md:text-lg">Fill
+                                                Application Form</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 4: Input Data -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node -->
+                                        <div
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            <div class="flex flex-col items-center leading-none gap-1">
+                                                <i class="fas fa-link text-xs md:text-sm"></i>
+                                            </div>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Step 03</h3>
+                                            <p class="text-zinc-200 font-medium text-base md:text-lg">Connect
+                                                Content & Products</p>
+                                            <p class="text-zinc-500 text-xs md:text-sm mt-1">Input YouTube &
+                                                Product URLs</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- COMPLETE (GOAL) -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node -->
+                                        <div
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
+                                            <i class="fas fa-check text-lg md:text-xl"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-md">
+                                            <h3
+                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Goal</h3>
+                                            <p class="text-white font-bold text-lg md:text-xl">AI Automation
+                                                Activated</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flow Card 2: Creator Usage Flow (Full Width) -->
+                    <div
+                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-white/5">
+                        <div class="flex flex-col md:flex-row">
+                            <!-- Text Content -->
+                            <div class="p-4 md:p-6 md:w-5/12 flex flex-col justify-center relative z-20">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div
+                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:border-amber-500/50 group-hover:text-amber-500 transition-colors">
+                                        02</div>
+                                    <h3 class="text-2xl font-bold text-white">Creator Usage Flow</h3>
+                                </div>
+                                <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                                    A streamlined experience designed for creators. Just check your email, edit
+                                    the description, and paste one link. We handle the rest.
+                                </p>
+
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-4 text-zinc-300">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                            <i class="fas fa-envelope-open-text text-xs"></i>
+                                        </div>
+                                        <span class="text-sm">Email-based trigger</span>
+                                    </div>
+                                    <div class="flex items-center gap-4 text-zinc-300">
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                            <i class="fas fa-link text-xs"></i>
+                                        </div>
+                                        <span class="text-sm">Single link integration</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Content (The Usage Flow) -->
+                            <div
+                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-4 relative overflow-hidden border-l border-white/5">
+
+                                <!-- Flow Container -->
+                                <div
+                                    class="space-y-3 md:space-y-4 relative z-10 w-full max-w-sm scale-[0.75] origin-center">
+                                    <!-- Connecting Guide Line -->
+                                    <div
+                                        class="absolute left-[28px] top-8 bottom-8 w-px border-l-2 border-dashed border-white/10 z-0">
+                                    </div>
+
+                                    <!-- STEP 1: START (Receive URL) -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node: Round & Amber Border -->
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
+                                            <i class="fas fa-envelope-open-text text-lg"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Start</h3>
+                                            <p class="text-white font-bold text-lg md:text-xl">Receive Hopzie
+                                                URL</p>
+                                            <p class="text-gray-500 text-xs md:text-sm mt-1">Check email inbox
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 2: Edit Content -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node: Round & Gray Border -->
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-white/20 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            <i class="fab fa-youtube text-lg"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            <h3
+                                                class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Step 01</h3>
+                                            <p class="text-zinc-200 font-medium text-base md:text-lg">Edit Video
+                                                Description</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 3: Input URL (Key Action) -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node: Round & Gray Border -->
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-white/20 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            <i class="fas fa-link text-lg"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/5 border border-amber-500/10 backdrop-blur-md hover:bg-amber-500/10 transition-all duration-300">
+                                            <h3
+                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Step 02</h3>
+                                            <p class="text-white font-bold text-lg md:text-xl">Input Hopzie URL
+                                            </p>
+                                            <div class="text-gray-400 text-xs md:text-sm mt-1">Just copy & paste
+                                                <span class="text-amber-500 font-bold">one link!</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- STEP 4: COMPLETE -->
+                                    <div class="flex gap-6 md:gap-8 items-start step-row group">
+                                        <!-- Node: Round & Amber Border -->
+                                        <div
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
+                                            <i class="fas fa-check text-xl"></i>
+                                        </div>
+                                        <!-- Card -->
+                                        <div
+                                            class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-md">
+                                            <h3
+                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                Complete</h3>
+                                            <p class="text-white font-bold text-lg md:text-xl">Integration
+                                                Finished</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. The Engine (System Architecture) -->
+        <div class="mb-32 max-w-6xl mx-auto px-4" id="engine">
+            <div
+                class="glass-panel pt-16 pb-4 md:pt-24 md:pb-6 rounded-[3rem] relative overflow-hidden bg-gradient-to-b from-white/5 to-black">
+                <div class="relative z-10 max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-white mb-6">The Engine: AI-Driven Logic</h2>
+                    <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto mb-16 px-4">
+                        Continuously analyzes commission rates and availability signals to optimize creator
+                        revenue and
+                        user experience.
+                    </p>
+
+                    <!-- Feature Pills -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
+                        <!-- Feature 1: Revenue Optimization -->
+                        <div
+                            class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 backdrop-blur-sm group hover:border-amber-500/30 transition-all duration-300">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white text-base">Revenue Optimization Engine</h4>
+                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Marketplace selection
+                                    based on
+                                    commission and profitability logic</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2: Link Resilience -->
+                        <div
+                            class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 backdrop-blur-sm group hover:border-blue-500/30 transition-all duration-300">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <h4 class="font-bold text-white text-base">Link Resilience Automation</h4>
+                                <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Real-time stock
+                                    detection and
+                                    dynamic rerouting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Engine Flow Visual (Replaced Image) -->
+                    <style>
+                        /* Animation: Flow Pulse (Moving Dashed Line) */
+                        @keyframes dash-move {
+                            to {
+                                stroke-dashoffset: -20;
+                            }
+                        }
+
+                        .path-animated {
+                            stroke-dasharray: 6;
+                            animation: dash-move 1s linear infinite;
+                        }
+
+                        /* Pulse for Active Elements */
+                        @keyframes soft-pulse {
+
+                            0%,
+                            100% {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+
+                            50% {
+                                opacity: 0.8;
+                                transform: scale(0.98);
+                            }
+                        }
+
+                        .animate-soft-pulse {
+                            animation: soft-pulse 2s infinite;
+                        }
+
+                        .no-scrollbar::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        /* Font */
+                        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+                        /* Marquee Animation */
+                        @keyframes marquee {
+                            0% {
+                                transform: translateX(0);
+                            }
+
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        .animate-marquee {
+                            display: flex;
+                            width: max-content;
+                            animation: marquee 30s linear infinite;
+                        }
+
+                        .animate-marquee:hover {
+                            animation-play-state: paused;
+                        }
+                    </style>
+
+                    <div class="w-full flex justify-center py-0 overflow-x-auto no-scrollbar px-4">
+                        <div
+                            class="flex flex-row items-center gap-2 min-w-[1000px] pb-0 scale-[0.45] sm:scale-[0.6] md:scale-[0.7] lg:scale-[0.75] origin-top mx-auto">
+
+                            <!-- STEP 01: YouTube -->
+                            <div class="flex flex-col items-center gap-4 relative z-10 mx-2">
+                                <div class="text-center mb-2">
+                                    <span
+                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
+                                        01</span>
+                                    <h3 class="text-white text-lg font-bold">Viewer Clicks Link</h3>
+                                </div>
+
+                                <div
+                                    class="relative w-[260px] h-[520px] bg-[#0f0f0f] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
+                                    <!-- YouTube Header -->
+                                    <div
+                                        class="px-4 py-3 bg-[#1a1a1a] flex justify-between items-center h-12 shrink-0 border-b border-white/5">
+                                        <div class="flex items-center gap-1">
+                                            <div class="w-6 h-4 flex items-center justify-center">
+                                                <svg viewBox="0 0 24 24" class="w-full h-full">
+                                                    <path fill="#FF0000"
+                                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z" />
+                                                    <path fill="#FFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                                </svg>
+                                            </div>
+                                            <span class="text-white font-bold text-xs tracking-tighter ml-1"
+                                                style="font-family: 'Roboto Condensed', sans-serif;">YouTube</span>
+                                        </div>
+                                        <div class="flex gap-3 text-white">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                            </svg>
+                                            <div
+                                                class="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-[8px] text-white font-bold">
+                                                C</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="p-0">
+                                        <div class="aspect-video bg-[#222] relative">
+                                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                                                class="w-full h-full object-cover opacity-60">
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <svg class="w-10 h-10 text-white opacity-80" fill="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </div>
+                                            <!-- Progress Bar -->
+                                            <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+                                                <div class="w-1/3 h-full bg-red-600"></div>
+                                            </div>
+                                            <div
+                                                class="absolute bottom-2 right-2 bg-black/80 px-1 rounded text-[8px] text-white font-mono">
+                                                10:24</div>
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="text-white text-xs font-bold leading-snug line-clamp-2 mb-1">
+                                                Minimalist Desk Setup 2024 | Productivity Gear Review</h3>
+                                            <div class="text-[9px] text-gray-400 mb-3">125K views • 2 days
+                                                ago</div>
+
+                                            <!-- Profile & Subscribe -->
+                                            <div class="flex items-center justify-between mb-4">
+                                                <div class="flex items-center gap-2">
+                                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                        class="w-8 h-8 rounded-full object-cover border border-white/10">
+                                                    <div class="flex flex-col">
+                                                        <span class="text-white text-[10px] font-bold">Creator
+                                                            Techie</span>
+                                                        <span class="text-gray-500 text-[8px]">48.2K
+                                                            subscribers</span>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    class="bg-white text-black text-[9px] font-bold px-3 py-1.5 rounded-full hover:bg-gray-200 transition-colors">Subscribe</button>
+                                            </div>
+
+                                            <!-- Action Buttons -->
+                                            <div class="flex gap-2 overflow-x-hidden opacity-60 mb-3">
+                                                <div
+                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
+                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5">
+                                                        </path>
+                                                    </svg><span class="text-[8px] text-white">4.5K</span>
+                                                </div>
+                                                <div
+                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
+                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                                                        </path>
+                                                    </svg><span class="text-[8px] text-white">Share</span>
+                                                </div>
+                                                <div
+                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
+                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
+                                                        </path>
+                                                    </svg><span class="text-[8px] text-white">Download</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Link Box -->
+                                            <div class="bg-[#1a1a1a] rounded-xl p-3 border border-white/10 relative">
+                                                <p class="text-[10px] text-gray-400 mb-2">Featured Products:
+                                                </p>
+                                                <div
+                                                    class="flex items-center gap-2 p-2 rounded-lg bg-amber-500/10 border border-amber-500/50 cursor-pointer animate-soft-pulse relative z-10">
+                                                    <svg class="w-3 h-3 text-amber-500" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                                        </path>
+                                                    </svg>
+                                                    <span
+                                                        class="text-amber-500 text-[10px] font-bold">hopzie.co/@techie</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CONNECTOR 1: Simple Arrow -->
+                            <div
+                                class="flex items-center justify-center h-[520px] w-20 pb-12 opacity-50 text-amber-500">
+                                <svg class="w-8 h-8 animate-pulse" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </div>
+
+                            <!-- STEP 02: Hopzie Shop -->
+                            <div class="flex flex-col items-center gap-4 mx-2">
+                                <div class="text-center mb-2">
+                                    <span
+                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
+                                        02</span>
+                                    <h3 class="text-white text-lg font-bold">Creator's Shop Page</h3>
+                                </div>
+
+                                <div
+                                    class="relative w-[260px] h-[520px] bg-[#0f0f0f] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
+                                    <!-- Shop Header -->
+                                    <div
+                                        class="h-32 bg-gradient-to-b from-[#1a1a1a] to-black p-4 flex flex-col items-center justify-center shrink-0 border-b border-white/5 relative">
+                                        <div
+                                            class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-500 to-purple-600 mb-2">
+                                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                class="w-full h-full rounded-full object-cover border-2 border-black">
+                                        </div>
+                                        <span class="text-white text-xs font-bold">@CreatorTechie</span>
+                                    </div>
+
+                                    <!-- List -->
+                                    <div class="p-4 flex-1 space-y-3">
+                                        <!-- Item 1 (Selected -> Amazon) -->
+                                        <div
+                                            class="bg-white/5 rounded-xl p-3 border border-amber-500/50 flex items-center gap-3 relative cursor-pointer hover:bg-white/10 transition-colors group/item">
+                                            <div
+                                                class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shrink-0">
+                                                <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=100&q=80"
+                                                    class="w-full h-full object-cover rounded-lg">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <div class="text-white text-[10px] font-bold truncate">
+                                                    Keychron Q1 Pro</div>
+                                                <div class="flex items-center gap-1 mt-0.5">
+                                                    <span
+                                                        class="text-[8px] bg-[#FF9900] text-black px-1.5 py-0.5 rounded font-bold">Amazon</span>
+                                                </div>
+                                            </div>
+                                            <svg class="w-3 h-3 text-amber-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </div>
+                                        <!-- Other Items (Dimmed) -->
+                                        <div
+                                            class="bg-white/5 rounded-xl p-3 border border-white/5 flex items-center gap-3 opacity-50">
+                                            <div class="w-10 h-10 bg-white rounded-lg overflow-hidden shrink-0">
+                                                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=100&q=80"
+                                                    class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <div class="text-white text-[10px] font-bold truncate">
+                                                    Logitech Mouse</div><span
+                                                    class="text-[8px] bg-[#0046BE] text-white px-1.5 py-0.5 rounded font-bold">Best
+                                                    Buy</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="bg-white/5 rounded-xl p-3 border border-white/5 flex items-center gap-3 opacity-50">
+                                            <div class="w-10 h-10 bg-white rounded-lg overflow-hidden shrink-0">
+                                                <img src="https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?auto=format&fit=crop&w=100&q=80"
+                                                    class="w-full h-full object-cover">
+                                            </div>
+                                            <div class="flex-1 min-w-0">
+                                                <div class="text-white text-[10px] font-bold truncate">Sony
+                                                    Headphones</div><span
+                                                    class="text-[8px] bg-gray-600 text-white px-1.5 py-0.5 rounded font-bold">Brand
+                                                    Store</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CONNECTOR 2: Engine / Direct Access -->
+                            <div class="relative w-48 h-[520px] flex flex-col justify-center gap-2 pb-12">
+                                <!-- Blocked Popup Visual (Faint background) -->
+                                <div
+                                    class="relative z-10 bg-[#0a0a0a] border border-red-500/30 p-2 rounded-lg flex items-center justify-center gap-2 shadow-2xl mb-4 opacity-40 grayscale transition-all">
+                                    <span class="text-[8px] text-red-500 font-bold uppercase">Bypass App
+                                        Install</span>
+                                    <svg class="w-3 h-3 text-red-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </div>
+
+                                <!-- Direct Engine Node -->
+                                <div class="relative z-20 flex flex-col items-center w-full">
+                                    <!-- Line Container: Fixed Top at 24px (Center of Icon) -->
+                                    <div class="absolute top-6 left-0 w-full h-1 -translate-y-1/2 z-0">
+                                        <svg class="w-full h-full overflow-visible">
+                                            <line x1="0" y1="50%" x2="100%" y2="50%" stroke="#f59e0b" stroke-width="2"
+                                                class="path-animated" />
+                                        </svg>
+                                    </div>
+
+                                    <!-- Icon -->
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)] relative z-10">
+                                        <svg class="w-6 h-6 text-amber-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M7 2v11h3v9l7-12h-4l4-8z" />
+                                        </svg>
+                                    </div>
+
+                                    <div class="text-center mt-3 bg-[#0a0a0a] px-2 relative z-10">
+                                        <span
+                                            class="text-amber-500 text-[10px] font-bold uppercase tracking-widest block">Direct
+                                            Web Engine</span>
+                                        <span class="text-gray-500 text-[9px]">No Redirects</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GOAL: Purchase -->
+                            <div class="flex flex-col items-center gap-4 mx-2">
+                                <div class="text-center mb-2">
+                                    <span
+                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Goal</span>
+                                    <h3 class="text-white text-lg font-bold">Seamless Purchase</h3>
+                                </div>
+
+                                <!-- Amazon Mockup with Fixed Header Color -->
+                                <div
+                                    class="relative w-[260px] h-[520px] bg-[#232f3e] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col text-left transition-transform hover:-translate-y-1 duration-300">
+                                    <!-- Header (Amazon) -->
+                                    <div
+                                        class="bg-[#232f3e] px-3 py-2 border-b border-[#232f3e] flex items-center gap-2 h-12 shrink-0">
+                                        <span class="text-white font-bold text-xs italic tracking-tighter">amazon</span>
+                                        <div
+                                            class="flex-1 bg-white rounded h-7 flex items-center px-2 text-[8px] text-gray-600 min-w-0 border-none shadow-inner">
+                                            <svg class="w-2 h-2 text-gray-500 mr-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                                </path>
+                                            </svg>
+                                            <span class="truncate w-full">amazon.com/dp/B0CB2...</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="flex-1 flex flex-col bg-white">
+                                        <div class="w-full h-56 bg-white shrink-0 p-4 flex items-center justify-center">
+                                            <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=600"
+                                                class="max-h-full object-contain">
+                                        </div>
+                                        <div class="p-4 flex-1">
+                                            <div class="text-[9px] text-[#007185] mb-1">Visit the Keychron
+                                                Store</div>
+                                            <h2
+                                                class="text-[#0F1111] text-xs font-normal leading-snug mb-2 line-clamp-3">
+                                                Keychron Q1 Pro QMK/VIA Wireless Custom Mechanical Keyboard
+                                            </h2>
+                                            <div class="text-[#B12704] font-bold text-sm mb-4">$199.00</div>
+                                            <button
+                                                class="w-full bg-[#FFD814] border border-[#FCD200] rounded-full py-1.5 text-[11px] text-[#0F1111] mb-2 shadow-sm font-medium">Add
+                                                to Cart</button>
+                                            <button
+                                                class="w-full bg-[#FFA41C] border border-[#FF8F00] rounded-full py-1.5 text-[11px] text-[#0F1111] shadow-sm font-medium">Buy
+                                                Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <!-- Glow Effect -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Impact (Stats & Partners) -->
+            <div class="mb-24 max-w-6xl mx-auto px-4 mt-64">
+                <div class="text-center mb-16">
+                    <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Performance
+                        Reach</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Impact on the Business
+                        &
+                        Products</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Category 1: Funding & Validation -->
+                    <div
+                        class="glass-card p-8 bg-amber-500/[0.03] border-amber-500/10 group hover:border-amber-500/30 transition-all duration-500">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                <i class="fas fa-hand-holding-usd text-xl"></i>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Funding & Validation</h3>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-px h-auto py-2 bg-gradient-to-b from-amber-500 to-transparent opacity-50 flex-shrink-0">
+                                </div>
+                                <div class="w-full">
+                                    <a href="https://newsinitiative.withgoogle.com/ko-kr/resources/programs/innovation-challenges/selected-projects/?region=asia-pacific"
+                                        target="_blank" class="flex justify-between items-center group/link">
+                                        <p
+                                            class="text-white font-bold text-sm group-hover/link:text-amber-400 transition-colors">
+                                            Google for Media Startups</p>
+                                        <i
+                                            class="fab fa-google text-[10px] text-zinc-700 group-hover/link:text-amber-400/50 transition-colors"></i>
+                                    </a>
+                                    <p class="text-zinc-500 text-xs mt-1">GNI Innovation Fellowship</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-px h-auto py-2 bg-gradient-to-b from-amber-500 to-transparent opacity-50 flex-shrink-0">
+                                </div>
+                                <div class="w-full">
+                                    <a href="https://sktch.sktelecom.com/ko/startups.do" target="_blank"
+                                        class="flex justify-between items-center group/link">
+                                        <p
+                                            class="text-white font-bold text-sm group-hover/link:text-amber-400 transition-colors">
+                                            SK AI Accelerator</p>
+                                        <i
+                                            class="fas fa-bolt text-[10px] text-zinc-700 group-hover/link:text-amber-400/50 transition-colors"></i>
+                                    </a>
+                                    <p class="text-zinc-500 text-xs mt-1">Final Selection</p>
+                                    <p class="text-zinc-600 text-[10px] leading-relaxed mt-2 italic opacity-80">
+                                        Validated product-market fit and technical scalability within SK's
+                                        strategic AI
+                                        infrastructure.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 2: Market Expansion -->
+                    <div
+                        class="glass-card p-8 bg-blue-500/[0.03] border-blue-500/10 group hover:border-blue-500/30 transition-all duration-500">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Market Expansion</h3>
+                        </div>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50">
+                                </div>
+                                <div>
+                                    <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
+                                        Launched Nov 2023</p>
+                                    <p class="text-zinc-500 text-xs mt-1">Market Entry & MVP Validation</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50">
+                                </div>
+                                <div>
+                                    <p class="text-white font-bold text-lg font-mono tracking-tight">895K
+                                        Combined Reach
+                                    </p>
+                                    <p class="text-zinc-500 text-xs mt-1">Global Influence Metric</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="w-px bg-gradient-to-b from-blue-500/80 to-transparent self-stretch flex-shrink-0">
+                                </div>
+                                <div>
+                                    <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
+                                        Archived Feb 2024</p>
+                                    <p class="text-zinc-500 text-xs leading-relaxed mt-1">Validated market
+                                        demand
+                                        through MVP launch and archived after strategic pivot.</p>
+
+                                    <!-- Strategic Rationale Block -->
+                                    <div class="mt-4 p-3 rounded-lg bg-blue-500/5 border border-blue-500/10">
+                                        <p class="text-zinc-500 text-[9px] uppercase tracking-widest mb-2">
+                                            Strategic
+                                            Archive Rationale</p>
+                                        <p class="text-zinc-400 text-[10px] leading-relaxed italic">
+                                            Archived following YouTube's accelerated platform-native commerce
+                                            expansion
+                                            (<a href="https://blog.youtube/creator-and-artist-stories/eoy-shopping/"
+                                                target="_blank"
+                                                class="text-blue-500/60 hover:text-blue-500 transition-colors">2024
+                                                Shopping Push</a>), identifying structural limits for
+                                            third-party
+                                            creator commerce layers.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3: Performance Impact -->
+                    <div
+                        class="glass-card p-8 bg-emerald-500/[0.03] border-emerald-500/10 group hover:border-emerald-500/30 transition-all duration-500">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <h3 class="text-white text-xl font-bold">Performance Impact</h3>
+                        </div>
+                        <div class="space-y-6 relative">
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="bg-white/5 rounded-xl p-4 border border-white/5">
+                                    <p class="text-emerald-400 text-2xl font-bold font-mono">30,488</p>
+                                    <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Page
+                                        Views</p>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
+                                        <p class="text-white text-xl font-bold font-mono">7.02%</p>
+                                        <p
+                                            class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1 leading-tight">
+                                            Conversion Rate<br><span class="opacity-60">(Purchase Rate)</span>
+                                        </p>
+                                    </div>
+                                    <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
+                                        <p class="text-white text-xl font-bold font-mono">80.18%</p>
+                                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">
+                                            In-page CTR
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Date Range Disclaimer -->
+                            <div class="flex justify-end pt-2">
+                                <span class="text-zinc-700 text-[9px] font-mono uppercase tracking-wider">Collected:
+                                    Nov
+                                    2023 - Dec 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="mt-20">
+                    <div class="flex items-center gap-4 mb-8">
+                        <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Media Coverage
+                        </h3>
+                        <div class="h-px flex-1 bg-gradient-to-r from-zinc-800 to-transparent"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Media Card 1: SK AI -->
+                        <a href="https://news.sktelecom.com/201128" target="_blank"
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            <!-- Image Container -->
+                            <div
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent">
+                                </div>
+                                <img src="images/hopzie/NEWS-SK-AI-Accerlator.png"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div
+                                        class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
+                                        SK Newsroom</div>
+                                    <i
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                </div>
+                                <h4
+                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    SKT Selects Promising AI Startups for the 'SK AI Accelerator' Program
+                                </h4>
+                                <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Feb 2024</span>
+                            </div>
+                        </a>
+
+                        <!-- Media Card 2: Google Fellowship -->
+                        <a href="https://v.daum.net/v/6CkkGCOKk5" target="_blank"
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            <!-- Image Container -->
+                            <div
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent">
+                                </div>
+                                <img src="images/hopzie/p29-google funding.png"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div
+                                        class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
+                                        Daum News</div>
+                                    <i
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                </div>
+                                <h4
+                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    Final Selection for Google GNI Innovation Fellowship: Empowering Media Tech
+                                    Ecosystems
+                                </h4>
+                                <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Dec 2023</span>
+                            </div>
+                        </a>
+
+                        <!-- Media Card 3: The VC -->
+                        <a href="https://thevc.kr/sliver?view=chart" target="_blank"
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            <!-- Image Container -->
+                            <div
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent">
+                                </div>
+                                <img src="images/hopzie/Sliver.png"
+                                    class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div
+                                        class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
+                                        Venture Capital</div>
+                                    <i
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                </div>
+                                <h4
+                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    Company Introduction: Sliver
+                                </h4> <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Nov
+                                    2023</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Dedicated Creator Marquee -->
+                    <div class="mt-32 mb-32" id="social">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Trusted by
+                                Global
+                                Creators</h3>
+                            <div class="h-px flex-1 bg-gradient-to-r from-zinc-700 to-transparent"></div>
+                        </div>
+
+                        <div class="relative w-full overflow-hidden py-8">
+                            <!-- Fade Gradient Overlays -->
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none">
+                            </div>
+                            <div
+                                class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none">
+                            </div>
+
+                            <div class="animate-marquee flex gap-12">
+                                <!-- Set 1 -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Haeyong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@haeyongtv/0OyhRg" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@haeyongtv" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="LimBbeum"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@limbbeumlim/0IAKK8" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@limbbeumlim" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="JungWon"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@jung__won.k/0H1vns" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@jung__won.k" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Dashu"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@dashu_official/0KR7Me" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@dashu_official" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Gomikong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@gomikong/0ZCG80" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@gomikong" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Set 2 (Duplicate for Infinite Scroll) -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Haeyong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@haeyongtv/0OyhRg" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@haeyongtv" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="LimBbeum"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@limbbeumlim/0IAKK8" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@limbbeumlim" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="JungWon"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@jung__won.k/0H1vns" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@jung__won.k" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Dashu"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@dashu_official/0KR7Me" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@dashu_official" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Gomikong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@gomikong/0ZCG80" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@gomikong" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .creator-mini-card {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.25rem;
+                            padding: 1.25rem 1.75rem;
+                            border-radius: 1.25rem;
+                            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+                            border: 1px solid rgba(255, 255, 255, 0.12);
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            min-width: 320px;
+                            flex-shrink: 0;
+                            backdrop-filter: blur(8px);
+                        }
+
+                        .creator-mini-card:hover {
+                            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+                            border-color: rgba(251, 191, 36, 0.3);
+                            transform: translateY(-6px) scale(1.02);
+                            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7), 0 0 20px rgba(251, 191, 36, 0.05);
+                        }
+
+                        .creator-avatar {
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 9999px;
+                            border: 2px solid rgba(255, 255, 255, 0.08);
+                            object-fit: cover;
+                            transition: all 0.4s ease;
+                            filter: grayscale(0.2);
+                        }
+
+                        .creator-mini-card:hover .creator-avatar {
+                            filter: grayscale(0);
+                            border-color: rgba(251, 191, 36, 0.4);
+                        }
+
+                        .creator-id {
+                            color: white;
+                            font-weight: 700;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.2rem;
+                            line-height: 1;
+                        }
+
+                        .creator-stats {
+                            color: #71717a;
+                            font-size: 0.65rem;
+                            font-family: 'JetBrains Mono', monospace;
+                            margin-bottom: 1rem;
+                        }
+
+                        .creator-actions {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                        }
+
+                        .creator-actions a {
+                            color: #a1a1aa;
+                            font-size: 0.65rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            letter-spacing: 0.15em;
+                            transition: all 0.2s ease;
+                            text-decoration: none;
+                        }
+
+                        .creator-actions a:hover {
+                            color: #fbbf24;
+                        }
+
+                        .creator-actions .dot {
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 9999px;
+                            background-color: #3f3f46;
+                        }
+                    </style>
+
+                    <!-- Challenges & Solutions -->
+                    <section class="py-32 bg-[#050505] relative overflow-hidden" id="challenges">
+                        <div class="max-w-6xl mx-auto px-4">
+                            <div class="text-center mb-16">
+                                <span
+                                    class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Problem
+                                    Solving</span>
+                                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                                    Challenges & <span
+                                        class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Solutions</span>
+                                </h2>
+                                <p class="text-zinc-400 text-lg font-light max-w-xl mx-auto text-center">
+                                    Navigating the hurdles of scaling an AI commerce engine while maintaining
+                                    trust.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-1 gap-8">
+                                <!-- Challenge 1 -->
+                                <div
+                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative group overflow-hidden">
+                                    <div
+                                        class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                        <span class="text-6xl font-serif italic text-white">01</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                                        <!-- Problem Side -->
+                                        <div>
+                                            <div
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                <span
+                                                    class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                                                The Challenge
+                                            </div>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
+                                                Balancing
+                                                Creator Revenue vs. Viewer Friction</h3>
+                                            <p class="text-zinc-400 leading-relaxed text-sm">
+                                                High commission rates optimized revenue but led to higher cart
+                                                abandonment. We needed a system that could predict the "sweet
+                                                spot"
+                                                where conversion volume offset per-item margins.
+                                            </p>
+                                        </div>
+
+                                        <!-- Solution Side -->
+                                        <div class="lg:border-l lg:border-white/5 lg:pl-12">
+                                            <div
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                The Breakthrough
+                                            </div>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
+                                                AI-Driven
+                                                Dynamic Commission Adjustments</h3>
+                                            <p class="text-zinc-400 leading-relaxed text-sm">
+                                                Implemented a real-time elasticity engine that adjusted
+                                                commissions
+                                                based on category trends and user price sensitivity, resulting
+                                                in a 24%
+                                                increase in net creator payout.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Challenge 2 (Placeholder) -->
+                                <div
+                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative group overflow-hidden">
+                                    <div
+                                        class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                        <span class="text-6xl font-serif italic text-white">02</span>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                                        <div>
+                                            <div
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                <span
+                                                    class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                                                The Challenge
+                                            </div>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">
+                                                Unstructured
+                                                Data From Global Marketplaces</h3>
+                                            <p class="text-zinc-400 leading-relaxed text-sm">
+                                                Normalizing product availability and pricing signals across 15+
+                                                disparate global API endpoints was causing latency and
+                                                inconsistent
+                                                product states.
+                                            </p>
+                                        </div>
+
+                                        <div class="lg:border-l lg:border-white/5 lg:pl-12">
+                                            <div
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                                The Breakthrough
+                                            </div>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unified
+                                                Signal
+                                                Normalization Layer</h3>
+                                            <p class="text-zinc-400 leading-relaxed text-sm">
+                                                Built a serverless abstraction layer that used LLMs to map
+                                                varying
+                                                metadata schemas into a single internal truth, cutting API
+                                                processing
+                                                time by 40%.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- What I Learned (Strategic Reflection) -->
+                    <div class="mt-48" id="retrospective">
+                        <div class="text-center mb-16">
+                            <span
+                                class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Retrospective</span>
+                            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                                What I <span
+                                    class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Learned</span>
+                            </h2>
+                            <p class="text-zinc-400 text-lg font-light max-w-xl mx-auto text-center">
+                                Learned that building products is not only about launch, but about reading
+                                market
+                                signals and knowing when to stop.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-6 max-w-6xl mx-auto">
+                            <!-- Insight A: Efficiency Driven -->
+                            <div
+                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="text-white font-bold">Efficiency Driven</h4>
+                                            <span
+                                                class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
+                                                01</span>
+                                        </div>
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Validated user
+                                            intent
+                                            through rapid interviews and MVP launch, minimizing overengineering
+                                            before
+                                            structural risk assessment.</p>
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                            <p
+                                                class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
+                                                Applied Result</p>
+                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Quick
+                                                interviews across
+                                                layer-1 viewers & creators (Sep 2023) → MVP launch timeline
+                                                focusing on
+                                                core intent (Nov 2023)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Insight B: Communication Architect -->
+                            <div
+                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="text-white font-bold">Communication Architect</h4>
+                                            <span
+                                                class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
+                                                02</span>
+                                        </div>
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Translated
+                                            platform
+                                            constraints into internal alignment, clarifying where automation
+                                            adds value
+                                            versus fixed infrastructure.</p>
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                            <p
+                                                class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
+                                                Applied Result</p>
+                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Defined
+                                                standardized
+                                                commerce UI components to reduce coordination cost; balanced AI
+                                                auto-curation vs regional manual control.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Insight C: Inquiry-Driven Detection -->
+                            <div
+                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="text-white font-bold">Inquiry-Driven Detection</h4>
+                                            <span
+                                                class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
+                                                03</span>
+                                        </div>
+                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Used external
+                                            platform
+                                            signals to decide when to stop—before sunk-cost drift intensified by
+                                            competitive pressure.</p>
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                            <p
+                                                class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
+                                                Applied Result</p>
+                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Detected
+                                                platform-native consolidation signals early; made critical pivot
+                                                decision before competitive decompression.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Tech Stack -->
+                <div class="mt-32 border-t border-white/5 pt-12 flex flex-wrap gap-4 items-center justify-center">
+                    <span class="text-xs text-zinc-600 uppercase tracking-widest mr-4">Technologies</span>
+                    <span class="tech-tag">AI Recommendation</span>
+                    <span class="tech-tag">Cross-platform API</span>
+                    <span class="tech-tag">Automated Curation</span>
+                    <span class="tech-tag">Dynamic Pricing</span>
+                    <span class="tech-tag">Cloud Infrastructure</span>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer (Standardized) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic & Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Interviews</a></li>
+                        <li><a href="#">Seminars</a></li>
+                    </ul>
+                </div>
+                <!-- Explore (with Instagram) -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon">
+                            <!-- Updated Camera Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-instagram">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/park-nahyun-박나현-08314925b" target="_blank"
+                            aria-label="LinkedIn" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang">
+                    <button class="lang-btn active"><span>🌐</span> English</button>
+                    <button class="lang-btn">Korean</button>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

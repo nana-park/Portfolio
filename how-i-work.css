@@ -1,0 +1,214 @@
+/* Horizontal Accordion Styles */
+.how-i-work-section {
+    padding: 10rem 0;
+    /* Increased padding for comfortable spacing */
+    background-color: #1a1a1a;
+    /* Match HOME section background */
+    color: #fff;
+    overflow: hidden;
+}
+
+.how-i-work-section .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+}
+
+.accordion-container {
+    display: flex;
+    flex-direction: row;
+    height: 600px;
+    /* Fixed height for the accordion */
+    width: 100%;
+    margin: 0 auto;
+    gap: 8px;
+    /* Increased gap slightly for full width */
+}
+
+/* Header Spacing Standardization */
+.how-i-work-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-bottom: 2.5rem;
+    /* Gap A = 2.5rem */
+    line-height: 1.2;
+    text-align: center;
+}
+
+.how-i-work-header p {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    /* Gap B = 2.5rem */
+}
+
+.how-i-work-header {
+    margin-bottom: 0;
+}
+
+.accordion-item {
+    flex: 1;
+    /* Default collapsed state */
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark Overlay */
+.accordion-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darker overlay for passive */
+    transition: background 0.6s ease;
+}
+
+.accordion-item.active::before {
+    background: rgba(0, 0, 0, 0.3);
+    /* Lighter overlay for active */
+}
+
+.accordion-item:hover::before {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Expanded State */
+.accordion-item.active {
+    flex: 3.5;
+    /* Expand factor */
+    cursor: default;
+}
+
+/* Content Wrapper */
+.accordion-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+    /* HIDDEN STATE (Collapsing): Fast fade out, NO delay so it disappears before width shrinks */
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    /* Prevent interaction when hidden */
+}
+
+.accordion-item.active .accordion-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    /* VISIBLE STATE (Expanding): Slower fade in, WITH delay to wait for width expansion */
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+
+/* Collapsed Title (Vertical) */
+.collapsed-title {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 0.5rem;
+    /* Ensure padding so text doesn't touch edges */
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.9rem;
+    /* Reduced font size */
+    line-height: 1.3;
+    /* Better line height for multi-line */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 10;
+    pointer-events: none;
+    /* Click through to card */
+}
+
+.accordion-item.active .collapsed-title {
+    opacity: 0;
+    /* Hide collapsed title when active */
+}
+
+/* Content Styling */
+.accordion-content h3 {
+    font-family: var(--font-sans);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: none;
+}
+
+.accordion-content h3 em {
+    font-style: italic;
+    font-family: var(--font-serif);
+}
+
+.accordion-content p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.accordion-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.accordion-tags span {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .accordion-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .accordion-item {
+        height: 100px;
+        /* Collapsed height */
+        flex: none;
+        width: 100%;
+    }
+
+    .accordion-item.active {
+        height: 400px;
+        /* Expanded height */
+        flex: none;
+    }
+
+    .collapsed-title {
+        left: 2rem;
+        transform: none;
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+}

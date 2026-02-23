@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just do it | Nahyun Park</title>
+    <meta name="description" content="Just do it - AI Exercise Management & Fitness Tracking by Nahyun Park">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer_override.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false,
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap');
+
+        .ia-internal-wrapper {
+            font-family: 'Pretendard', sans-serif !important;
+            background-color: #f8fafc;
+            border-radius: 1rem;
+            color: #1e293b;
+            /* Consistent dark text for light bg */
+        }
+
+        .ia-card {
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .ia-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .depth-line {
+            position: relative;
+        }
+
+        .depth-line::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            width: 1px;
+            height: 1rem;
+            background-color: #cbd5e1;
+        }
+
+        /* 이미지의 시그니처 컬러 반영 */
+        .bg-brand-blue {
+            background-color: #002d84 !important;
+        }
+
+        .bg-brand-pink {
+            background-color: #fce7f3 !important;
+        }
+
+        .text-brand-pink {
+            color: #be185d !important;
+        }
+
+        /* Ensure text visibility inside the light IA section */
+        .ia-internal-wrapper h1,
+        .ia-internal-wrapper h2,
+        .ia-internal-wrapper div {
+            color: inherit;
+        }
+    </style>
+    <style>
+        /* Project Detail Specific Overrides */
+        body {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .project-detail {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin-bottom: var(--spacing-md);
+            transition: var(--transition-fast);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .project-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--font-sans);
+        }
+
+        .project-section {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-section:last-child {
+            border-bottom: none;
+        }
+
+        .project-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+        }
+
+        .project-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .project-section li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            font-family: var(--font-sans);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .highlight-box h4 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Standardized) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html#home" class="logo"><span style="color: #D97706;">bread</span>me</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">HOME</a>
+                <a href="../index.html#about" class="nav-link">ABOUT</a>
+                <a href="../index.html#projects" class="nav-link">PROJECTS</a>
+                <a href="../index.html#awards" class="nav-link">AWARDS</a>
+                <a href="../index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <h1 class="project-title">Just do it</h1>
+                <p class="project-subtitle">AI Exercise Management & Fitness Tracking</p>
+                <div class="project-meta">
+                    <span>📅 January 2023 - December 2023</span>
+                    <span>🏢 AI-based App Launch Initiative</span>
+                    <span>🏷️ Health & Fitness AI</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Overview</h2>
+                <p>AI-based exercise management and fitness tracking application featuring smart workout planning,
+                    progress tracking, and personalized fitness recommendations powered by AI.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>Led product development for AI fitness application</li>
+                    <li>Designed personalized workout recommendation engine</li>
+                    <li>Implemented progress tracking and analytics features</li>
+                    <li>Developed AI-powered exercise form guidance</li>
+                    <li>Created motivational engagement systems</li>
+                    <li>Conducted user research and testing</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Impact</h2>
+                <p>Empowered users to achieve fitness goals through personalized AI-driven workout plans and intelligent
+                    progress tracking, making exercise more accessible and effective.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>AI-powered personalized workout plans</li>
+                    <li>Real-time exercise tracking and feedback</li>
+                    <li>Progress analytics and visualization</li>
+                    <li>Adaptive difficulty adjustment</li>
+                    <li>Motivational goal-setting system</li>
+                    <li>Social features for community engagement</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <!-- IA Section Wrapper -->
+                <div class="ia-internal-wrapper p-8 md:p-16">
+                    <div class="max-w-6xl mx-auto text-slate-800">
+                        <!-- Header 섹션 -->
+                        <div class="mb-12 text-center">
+                            <h1 class="text-3xl font-black text-slate-800 mb-2">JUST DO IT</h1>
+                            <p class="text-slate-500 uppercase tracking-widest text-sm font-semibold">Information
+                                Architecture Map</p>
+                        </div>
+
+                        <!-- GNB 섹션 (Top Level) -->
+                        <div class="mb-16">
+                            <div class="flex justify-center items-center gap-4">
+                                <div
+                                    class="w-72 ia-card bg-brand-blue text-white p-4 rounded-xl text-center shadow-lg font-bold">
+                                    저스트두잇 홈
+                                </div>
+                                <div
+                                    class="w-40 ia-card bg-white p-4 rounded-xl text-center shadow-sm text-slate-600 font-semibold">
+                                    알림
+                                </div>
+                                <div
+                                    class="w-40 ia-card bg-white p-4 rounded-xl text-center shadow-sm text-slate-600 font-semibold">
+                                    내 프로필
+                                </div>
+                            </div>
+                            <div class="flex justify-center mt-4">
+                                <div class="h-8 w-px bg-slate-300"></div>
+                            </div>
+                            <div class="w-full h-px bg-slate-300 max-w-4xl mx-auto"></div>
+                        </div>
+
+                        <!-- 1-Depth & 2-Depth 섹션 -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                            <!-- Column 1: 챌린지 피드 -->
+                            <div class="flex flex-col items-center gap-4 depth-line">
+                                <div
+                                    class="w-full ia-card bg-white p-4 rounded-xl text-center shadow-md font-bold text-slate-800 border-t-4 border-slate-300">
+                                    챌린지 피드
+                                </div>
+                                <div class="w-full space-y-3 mt-4">
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">전체
+                                        피드 보기</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">모아보기
+                                    </div>
+                                    <div
+                                        class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center font-medium border-l-4 border-blue-500">
+                                        내 운동 인증하기</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">그룹
+                                        운동 인증하기</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">SNS
+                                        공유하기</div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: 커뮤니티 (Pink Variant) -->
+                            <div class="flex flex-col items-center gap-4 depth-line">
+                                <div
+                                    class="w-full ia-card bg-brand-pink p-4 rounded-xl text-center shadow-md font-bold text-brand-pink border-t-4 border-pink-300">
+                                    커뮤니티
+                                </div>
+                                <div class="w-full space-y-3 mt-4">
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">랭킹
+                                    </div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">게시판
+                                    </div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">단체
+                                        채팅</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">오프라인
+                                        모임</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">공식
+                                        인스타그램</div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: 마이 챌린지 -->
+                            <div class="flex flex-col items-center gap-4 depth-line">
+                                <div
+                                    class="w-full ia-card bg-white p-4 rounded-xl text-center shadow-md font-bold text-slate-800 border-t-4 border-slate-300">
+                                    마이 챌린지
+                                </div>
+                                <div class="w-full space-y-3 mt-4">
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">달성
+                                        현황</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">마이
+                                        캘린더</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">마이
+                                        뱃지</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">내 피드
+                                        보기</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">내가
+                                        저장한 콘텐츠</div>
+                                    <div
+                                        class="ia-card bg-blue-50 p-3 rounded-lg text-sm text-blue-700 text-center font-bold border border-blue-200">
+                                        챌린지 등록</div>
+                                </div>
+                            </div>
+
+                            <!-- Column 4: 설정 -->
+                            <div class="flex flex-col items-center gap-4 depth-line">
+                                <div
+                                    class="w-full ia-card bg-white p-4 rounded-xl text-center shadow-md font-bold text-slate-800 border-t-4 border-slate-300">
+                                    설정
+                                </div>
+                                <div class="w-full space-y-3 mt-4">
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">프로필
+                                        설정</div>
+                                    <div
+                                        class="ia-card bg-pink-50 p-3 rounded-lg text-sm text-pink-600 text-center font-medium border border-pink-100">
+                                        초대하기</div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">FAQ
+                                    </div>
+                                    <div class="ia-card bg-white p-3 rounded-lg text-sm text-slate-600 text-center">1:1
+                                        문의</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Footer Note -->
+                        <div
+                            class="mt-20 border-t border-slate-200 pt-8 flex justify-between items-center text-slate-400 text-xs">
+                            <div>Project: Just Do It Habit App</div>
+                            <div class="flex gap-4">
+                                <span><i class="fas fa-circle text-brand-blue mr-1"></i> Main Path</span>
+                                <span><i class="fas fa-circle text-pink-300 mr-1"></i> Social/Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Technologies & Skills</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Health Tech</span>
+                    <span class="tech-tag">Fitness AI</span>
+                    <span class="tech-tag">Mobile App</span>
+                    <span class="tech-tag">Product Management</span>
+                    <span class="tech-tag">Personalization</span>
+                    <span class="tech-tag">Analytics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standardized) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic & Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Interviews</a></li>
+                        <li><a href="#">Seminars</a></li>
+                    </ul>
+                </div>
+                <!-- Explore (with Instagram) -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon">
+                            <!-- Updated Camera Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-instagram">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/park-nahyun-박나현-08314925b" target="_blank"
+                            aria-label="LinkedIn" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang">
+                    <button class="lang-btn active"><span>🌐</span> English</button>
+                    <button class="lang-btn">Korean</button>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

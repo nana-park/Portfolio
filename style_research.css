@@ -1,0 +1,131 @@
+/* ===========================
+   Research Section Overrides (Clean List View)
+   =========================== */
+
+/* 1. Make Research items span full width of the grid */
+.project-card-link[data-category="research"] {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+/* 2. Redesign Card Layout to Horizontal Row */
+.project-card-link[data-category="research"] .project-card {
+    display: flex;
+    flex-direction: row;
+    /* Force row layout */
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.03);
+    /* Glass base */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 1;
+    /* Reset visibility */
+    transform: none;
+    /* Reset individual card transforms */
+}
+
+/* Left Thumbnail Area */
+.project-card-link[data-category="research"] .project-card::before {
+    content: "";
+    flex: 0 0 240px;
+    /* Fixed thumbnail width */
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.6s ease;
+}
+
+.project-card-link[data-category="research"]:hover .project-card::before {
+    transform: scale(1.05);
+}
+
+/* Right Content Area */
+.project-card-link[data-category="research"] .research-content {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Typography Overrides */
+.project-card-link[data-category="research"] .project-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    text-shadow: none;
+}
+
+.project-card-link[data-category="research"] .project-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin: 0 0 1.5rem 0 !important;
+    text-align: left;
+    display: block;
+}
+
+.project-card-link[data-category="research"] .project-link {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d4a574;
+    /* Gold accent */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.project-card-link[data-category="research"]:hover .project-link {
+    opacity: 1;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+/* Hover State for the whole card */
+.project-card-link[data-category="research"]:hover .project-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(212, 165, 116, 0.3);
+    /* Gold tint border */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .project-card-link[data-category="research"] .project-card {
+        flex-direction: column;
+    }
+
+    .project-card-link[data-category="research"] .project-card::before {
+        flex: 0 0 180px;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .project-card-link[data-category="research"] .research-content {
+        padding: 2rem;
+    }
+
+    .project-card-link[data-category="research"] .project-title {
+        font-size: 1.3rem;
+    }
+}

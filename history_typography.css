@@ -1,0 +1,36 @@
+/* ===========================
+   Refined History Typography (Hero Match)
+   =========================== */
+.history-title {
+    font-family: var(--font-sans) !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+    margin-bottom: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.history-category h3 {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+}
+
+.history-role,
+.history-school {
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: var(--color-text-gray) !important;
+}
+
+.history-date {
+    font-size: 0.85rem !important;
+    color: #888 !important;
+}
+
+.history-location {
+    font-size: 0.8rem !important;
+}
+
+.history-item {
+    margin-bottom: 2rem !important;
+}

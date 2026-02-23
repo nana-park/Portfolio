@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOVA CareCall | Nahyun Park</title>
+    <meta name="description" content="CLOVA CareCall - Senior Care AI Call-bot for Korea & Japan by Nahyun Park">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer_override.css">
+    <style>
+        /* Project Detail Specific Overrides */
+        body {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .project-detail {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin-bottom: var(--spacing-md);
+            transition: var(--transition-fast);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .project-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--font-sans);
+        }
+
+        .project-section {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-section:last-child {
+            border-bottom: none;
+        }
+
+        .project-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+        }
+
+        .project-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .project-section li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            font-family: var(--font-sans);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .highlight-box h4 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Standardized) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html#home" class="logo"><span style="color: #D97706;">bread</span>me</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">HOME</a>
+                <a href="../index.html#about" class="nav-link">ABOUT</a>
+                <a href="../index.html#projects" class="nav-link">PROJECTS</a>
+                <a href="../index.html#awards" class="nav-link">AWARDS</a>
+                <a href="../index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <h1 class="project-title">CLOVA CareCall</h1>
+                <p class="project-subtitle">Senior Care AI Call-bot for Korea & Japan</p>
+                <div class="project-meta">
+                    <span>📅 October 2023 - Present</span>
+                    <span>🏢 NAVER CLOUD</span>
+                    <span>🏷️ Healthcare AI</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Overview</h2>
+                <p>AI-powered call-bot designed specifically for senior care services in Korea and Japan, providing
+                    intelligent call routing, transfer/waiting flows, and optimized user experience for elderly users.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>Enhanced user routing system for efficient call distribution</li>
+                    <li>Designed call transfer and waiting flows for caregiver pickup</li>
+                    <li>Architected lightweight chatbot system optimized for senior users</li>
+                    <li>Eliminated abnormal termination issues through robust error handling</li>
+                    <li>Fine-tuned EPD (End of Phrase Detection) for senior speech patterns</li>
+                    <li>Localized service for both Korean and Japanese markets</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Scenario</h2>
+                <p>Designed comprehensive call scenarios for senior care services including health check-ins,
+                    appointment reminders, medication alerts, and emergency response protocols. Created user-friendly
+                    conversation flows that accommodate varying levels of tech literacy among elderly users.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Console</h2>
+                <p>Developed intuitive admin console for caregivers and service providers to monitor call activities,
+                    manage user profiles, configure call routing rules, and access real-time analytics. Implemented
+                    dashboard with key metrics including call success rates, user engagement, and service quality
+                    indicators.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Chatbot</h2>
+                <p>Built lightweight chatbot architecture optimized for voice interactions with seniors. Features
+                    include natural language understanding tuned for elderly speech patterns, context-aware responses,
+                    graceful error handling, and seamless handoff to human caregivers when needed. Supports both Korean
+                    and Japanese languages with cultural adaptations.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Achievements</h2>
+                <div class="highlight-box">
+                    <h4>OSAKA Expo 2025 Digital Human Showcase</h4>
+                    <p>Leading the cutting-edge digital human video call showcase at OSAKA Expo 2025, featuring WebRTC
+                        barge-in technology that demonstrates the future of AI-human interaction on a global stage.</p>
+                    <p><strong>Period:</strong> 2024 - 2025</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Digital Human</span>
+                        <span class="tech-tag">WebRTC</span>
+                        <span class="tech-tag">Real-time AI</span>
+                        <span class="tech-tag">Barge-in Technology</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Technologies & Skills</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Conversational AI</span>
+                    <span class="tech-tag">Voice UX</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">Healthcare Tech</span>
+                    <span class="tech-tag">EPD Tuning</span>
+                    <span class="tech-tag">Localization (JP/KR)</span>
+                    <span class="tech-tag">Service Architecture</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Impact</h2>
+                <p>Improved senior care accessibility and quality of service through AI-powered communication, serving
+                    thousands of elderly users across Korea and Japan with culturally-adapted conversational
+                    experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standardized) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic & Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Interviews</a></li>
+                        <li><a href="#">Seminars</a></li>
+                    </ul>
+                </div>
+                <!-- Explore (with Instagram) -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon">
+                            <!-- Updated Camera Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-instagram">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/park-nahyun-박나현-08314925b" target="_blank"
+                            aria-label="LinkedIn" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang">
+                    <button class="lang-btn active"><span>🌐</span> English</button>
+                    <button class="lang-btn">Korean</button>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

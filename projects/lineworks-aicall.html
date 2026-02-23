@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE WORKS AiCall | Nahyun Park</title>
+    <meta name="description" content="LINE WORKS AiCall - AI Contact Center for Japan Market by Nahyun Park">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer_override.css">
+    <style>
+        /* Project Detail Specific Overrides */
+        body {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .project-detail {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            margin-bottom: var(--spacing-md);
+            transition: var(--transition-fast);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .project-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--font-sans);
+        }
+
+        .project-section {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-section:last-child {
+            border-bottom: none;
+        }
+
+        .project-section h2 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+        }
+
+        .project-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section ul {
+            list-style: none;
+            padding: 0;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .project-section li {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-family: var(--font-sans);
+            font-weight: 300;
+        }
+
+        .project-section li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: var(--spacing-sm);
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            font-family: var(--font-sans);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+        }
+
+        .highlight-box h4 {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+            color: #ffffff;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation (Standardized) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="../index.html#home" class="logo"><span style="color: #D97706;">bread</span>me</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">HOME</a>
+                <a href="../index.html#about" class="nav-link">ABOUT</a>
+                <a href="../index.html#projects" class="nav-link">PROJECTS</a>
+                <a href="../index.html#awards" class="nav-link">AWARDS</a>
+                <a href="../index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+            <div class="project-header">
+                <h1 class="project-title">LINE WORKS AiCall</h1>
+                <p class="project-subtitle">AI Contact Center for Japan Market</p>
+                <div class="project-meta">
+                    <span>📅 October 2023 - Present</span>
+                    <span>🏢 NAVER CLOUD</span>
+                    <span>🏷️ Enterprise AI</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Overview</h2>
+                <p>Enterprise-grade AI Contact Center solution designed for the Japanese market, enabling businesses to
+                    automate customer support with intelligent call routing, analytics, and seamless integration with
+                    LINE WORKS platform.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>Led service planning and development for B2B voice AI solutions</li>
+                    <li>Expanded AI Contact Center (Voice IVR) services across Japan, US, and Korea</li>
+                    <li>Designed intelligent call routing and distribution systems</li>
+                    <li>Implemented call analytics and reporting features</li>
+                    <li>Collaborated with LINE WORKS team for platform integration</li>
+                    <li>Conducted market research for Japanese enterprise needs</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Impact</h2>
+                <p>Enabled Japanese enterprises to scale customer support operations efficiently, reducing operational
+                    costs while improving customer satisfaction through AI-powered automation.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Intelligent call routing and queue management</li>
+                    <li>Real-time call analytics and insights</li>
+                    <li>Multi-language support (Japanese, English, Korean)</li>
+                    <li>Seamless LINE WORKS integration</li>
+                    <li>Customizable voice AI responses</li>
+                    <li>Enterprise-grade security and compliance</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Technologies & Skills</h2>
+                <div class="tech-tags">
+                    <span class="tech-tag">Contact Center AI</span>
+                    <span class="tech-tag">Voice IVR</span>
+                    <span class="tech-tag">Call Analytics</span>
+                    <span class="tech-tag">Enterprise SaaS</span>
+                    <span class="tech-tag">B2B Solutions</span>
+                    <span class="tech-tag">Japan Market Localization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Standardized) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic & Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Interviews</a></li>
+                        <li><a href="#">Seminars</a></li>
+                    </ul>
+                </div>
+                <!-- Explore (with Instagram) -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon">
+                            <!-- Updated Camera Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-instagram">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/park-nahyun-박나현-08314925b" target="_blank"
+                            aria-label="LinkedIn" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang">
+                    <button class="lang-btn active"><span>🌐</span> English</button>
+                    <button class="lang-btn">Korean</button>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
