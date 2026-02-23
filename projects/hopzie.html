@@ -285,6 +285,120 @@
             border-color: rgba(217, 119, 6, 0.5);
             /* Amber hover border */
         }
+
+        /* Floating TOC Component */
+        .toc-container {
+            position: fixed;
+            bottom: 5.5rem;
+            right: 2rem;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .toc-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .toc-btn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .toc-btn:hover {
+            transform: scale(1.1);
+            background: #000;
+            border-color: rgba(59, 130, 246, 0.5);
+            /* Blue hover border for differentiation */
+        }
+
+        .toc-menu {
+            position: absolute;
+            bottom: 3.5rem;
+            right: 0;
+            width: 200px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem;
+            padding: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.95);
+            transform-origin: bottom right;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .toc-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .toc-link {
+            display: block;
+            padding: 0.625rem 0.875rem;
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 0.813rem;
+            font-weight: 500;
+            border-radius: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .toc-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            padding-left: 1.125rem;
+        }
+
+        .toc-link.active {
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        /* Prevent sections from being cut off when scrolling from TOC */
+        #painpoint,
+        #solution,
+        #architecture,
+        #impact,
+        #retrospective {
+            scroll-margin-top: 100px;
+        }
+
+        #challenges {
+            scroll-margin-top: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
@@ -361,6 +475,28 @@
                     </div>
                 </div>
 
+                <!-- My Role Snapshot -->
+                <div class="mt-12 max-w-3xl mx-auto">
+                    <div
+                        class="glass-panel px-8 py-6 bg-white/[0.02] border-white/5 text-left relative overflow-hidden group hover:border-white/10 transition-all duration-500">
+                        <!-- Decorative tag -->
+                        <div
+                            class="absolute top-0 right-0 px-4 py-1 bg-white/5 text-zinc-500 text-[10px] font-mono uppercase tracking-widest rounded-bl-xl border-l border-b border-white/10">
+                            Role Snapshot
+                        </div>
+
+                        <p class="text-zinc-400 leading-relaxed text-sm md:text-base font-light italic">
+                            "I led the pivot, <span class="text-zinc-200 font-medium not-italic">validated demand</span>
+                            with
+                            interviews,
+                            shipped <span class="text-zinc-200 font-medium not-italic">MVP</span>, then made the
+                            <span class="text-zinc-200 font-medium not-italic">scale/stop call</span> after
+                            platform-roadmap
+                            validation."
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Awards / Recognition (Laurel Wreath Style) -->
                 <div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-12 animate-fade-in-up">
 
@@ -420,7 +556,7 @@
             </div>
 
             <!-- Challenge Header -->
-            <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center">
+            <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center" id="painpoint">
                 <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Product
                     Painpoint</span>
                 <h2
@@ -446,22 +582,6 @@
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
                         <p class="text-zinc-300 text-sm">Organizing product info takes more time than filming. <span
                                 class="text-zinc-500 ml-1">- Creator A</span></p>
-                    </div>
-                    <!-- Quote 3 -->
-                    <div
-                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
-                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">It's frustrating when I can't explain products clearly.
-                            <span class="text-zinc-500 ml-1">- Creator C</span>
-                        </p>
-                    </div>
-                    <!-- Quote 4 -->
-                    <div
-                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
-                        <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">I can't tell products apart. I wish it looked like a mall.
-                            <span class="text-zinc-500 ml-1">- Viewer D</span>
-                        </p>
                     </div>
                 </div>
                 <div class="text-center mt-6">
@@ -802,7 +922,7 @@
 
 
             <!-- 2. The Solution (Feature Showcase) -->
-            <div class="mb-16 mt-64">
+            <div class="mb-16 mt-64" id="solution">
                 <div class="text-center mb-16">
                     <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-2 block">Our
                         Answer</span>
@@ -1099,7 +1219,7 @@
         </div>
 
         <!-- 3. The Engine (System Architecture) -->
-        <div class="mb-32 max-w-6xl mx-auto px-4">
+        <div class="mb-32 max-w-6xl mx-auto px-4" id="architecture">
             <div
                 class="glass-panel pt-16 pb-4 md:pt-24 md:pb-6 rounded-[3rem] relative overflow-hidden bg-gradient-to-b from-white/5 to-black">
                 <div class="relative z-10 max-w-4xl mx-auto text-center">
@@ -1538,7 +1658,7 @@
             </div>
 
             <!-- 4. Impact (Stats & Partners) -->
-            <div class="mb-24 max-w-6xl mx-auto px-4 mt-64">
+            <div class="mb-24 max-w-6xl mx-auto px-4 mt-64" id="impact">
                 <div class="text-center mb-16">
                     <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Performance
                         Reach</span>
@@ -2096,12 +2216,12 @@
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Balancing
-                                                Creator Revenue vs. Viewer Friction</h3>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Pivot Under
+                                                Legal Constraint</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
-                                                High commission rates optimized revenue but led to higher cart
-                                                abandonment. We needed a system that could predict the "sweet spot"
-                                                where conversion volume offset per-item margins.
+                                                Original service direction was halted due to regulatory limitations
+                                                while Google funding was already secured, requiring immediate strategic
+                                                repositioning.
                                             </p>
                                         </div>
 
@@ -2110,20 +2230,29 @@
                                             <div
                                                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                                The Breakthrough
+                                                Action & Outcome
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">AI-Driven
-                                                Dynamic Commission Adjustments</h3>
-                                            <p class="text-zinc-400 leading-relaxed text-sm">
-                                                Implemented a real-time elasticity engine that adjusted commissions
-                                                based on category trends and user price sensitivity, resulting in a 24%
-                                                increase in net creator payout.
-                                            </p>
+                                            <div class="space-y-4">
+                                                <p class="text-zinc-400 leading-relaxed text-sm">
+                                                    <span class="text-emerald-500 font-bold">Action:</span> Identified
+                                                    expansion signals in the YouTube creator economy and hypothesized
+                                                    demand for structured creator-commerce infrastructure.
+                                                </p>
+                                                <p class="text-zinc-400 leading-relaxed text-sm">
+                                                    <span class="text-emerald-500 font-bold">Execution:</span> Conducted
+                                                    rapid interviews (5 creators & viewers) in an emerging market with
+                                                    limited desk research data.
+                                                </p>
+                                                <p class="text-zinc-500 text-xs italic">
+                                                    <span class="text-white not-italic font-bold">Outcome:</span>
+                                                    Designed and launched MVP within constrained runway.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Challenge 2 (Placeholder) -->
+                                <!-- Challenge 2 -->
                                 <div
                                     class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative group overflow-hidden">
                                     <div
@@ -2132,6 +2261,7 @@
                                     </div>
 
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                                        <!-- Problem Side -->
                                         <div>
                                             <div
                                                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-mono uppercase tracking-widest mb-6">
@@ -2139,28 +2269,37 @@
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unstructured
-                                                Data From Global Marketplaces</h3>
+                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Scale
+                                                Commitment Decision</h3>
                                             <p class="text-zinc-400 leading-relaxed text-sm">
-                                                Normalizing product availability and pricing signals across 15+
-                                                disparate global API endpoints was causing latency and inconsistent
-                                                product states.
+                                                After MVP validation, needed to determine whether to scale within a
+                                                rapidly platform-consolidating commerce ecosystem.
                                             </p>
                                         </div>
 
+                                        <!-- Solution Side -->
                                         <div class="lg:border-l lg:border-white/5 lg:pl-12">
                                             <div
                                                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                                The Breakthrough
+                                                Strategic Insight
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Unified Signal
-                                                Normalization Layer</h3>
-                                            <p class="text-zinc-400 leading-relaxed text-sm">
-                                                Built a serverless abstraction layer that used LLMs to map varying
-                                                metadata schemas into a single internal truth, cutting API processing
-                                                time by 40%.
-                                            </p>
+                                            <div class="space-y-4">
+                                                <p class="text-zinc-400 leading-relaxed text-sm">
+                                                    <span class="text-emerald-500 font-bold">Action:</span> Initiated
+                                                    independent discussion with Google platform representative to assess
+                                                    long-term viability amid expanding native shopping infrastructure.
+                                                </p>
+                                                <p class="text-zinc-400 leading-relaxed text-sm">
+                                                    <span class="text-emerald-500 font-bold">Insight:</span> Identified
+                                                    structural limitations for third-party aggregation layers as
+                                                    platform-native storefront modules accelerated.
+                                                </p>
+                                                <p class="text-zinc-500 text-xs italic">
+                                                    <span class="text-white not-italic font-bold">Decision:</span>
+                                                    Strategically archived before committing additional resources.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2169,7 +2308,7 @@
                     </section>
 
                     <!-- What I Learned (Strategic Reflection) -->
-                    <div class="mt-48">
+                    <div class="mt-48" id="retrospective">
                         <div class="text-center mb-16">
                             <span
                                 class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Retrospective</span>
@@ -2364,7 +2503,33 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <!-- Floating TOC and Back to Top -->
+    <div class="toc-container">
+        <!-- TOC Menu -->
+        <div id="tocMenu" class="toc-menu">
+            <ul class="toc-list">
+                <li><a href="#painpoint" class="toc-link">Painpoint</a></li>
+                <li><a href="#solution" class="toc-link">Solution</a></li>
+                <li><a href="#architecture" class="toc-link">AI Architecture</a></li>
+                <li><a href="#impact" class="toc-link">Business Impact</a></li>
+                <li><a href="#challenges" class="toc-link">Challenges & Solutions</a></li>
+                <li><a href="#retrospective" class="toc-link">Retrospective</a></li>
+            </ul>
+        </div>
+        <!-- TOC Button -->
+        <button id="tocBtn" class="toc-btn" aria-label="Table of Contents">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
     <!-- Back to Top Button -->
     <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -2376,15 +2541,69 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const backToTopBtn = document.getElementById('backToTopBtn');
+            const tocBtn = document.getElementById('tocBtn');
+            const tocMenu = document.getElementById('tocMenu');
+            const tocLinks = document.querySelectorAll('.toc-link');
 
+            // Scroll Handling
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
+                const scrollPos = window.pageYOffset;
+
+                // Toggle visibility
+                if (scrollPos > 300) {
                     backToTopBtn.classList.add('show');
+                    tocBtn.classList.add('show');
                 } else {
                     backToTopBtn.classList.remove('show');
+                    tocBtn.classList.remove('show');
+                    tocMenu.classList.remove('active');
+                }
+
+                // Active State for Menu Links
+                let currentSection = "";
+                const sections = ['painpoint', 'solution', 'architecture', 'impact', 'challenges', 'retrospective'];
+
+                sections.forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        const sectionTop = section.offsetTop - 100;
+                        if (scrollPos >= sectionTop) {
+                            currentSection = id;
+                        }
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // TOC Toggle
+            tocBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                tocMenu.classList.toggle('active');
+            });
+
+            // Close TOC on link click
+            tocLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    tocMenu.classList.remove('active');
+                });
+            });
+
+            // Close TOC on clicking outside
+            document.addEventListener('click', (e) => {
+                if (!tocContainer.contains(e.target)) {
+                    tocMenu.classList.remove('active');
                 }
             });
 
+            const tocContainer = document.querySelector('.toc-container');
+
+            // Back to Top functionality
             backToTopBtn.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
