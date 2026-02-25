@@ -9,12 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700;800&display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../footer_override.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -400,7 +411,7 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            padding: 1rem 0.875rem 0.375rem;
+            padding: 0.5rem 0.875rem 0.375rem;
             pointer-events: none;
             white-space: nowrap;
         }
@@ -414,13 +425,13 @@
         }
 
         .toc-header:first-child {
-            padding-top: 0.25rem;
+            padding-top: 0.375rem;
         }
 
         .toc-divider {
             height: 1px;
             background: rgba(255, 255, 255, 0.05);
-            margin: 0.75rem 0.875rem;
+            margin: 0.375rem 0.875rem;
         }
 
         /* Prevent sections from being cut off when scrolling from TOC */
@@ -498,7 +509,7 @@
 
                 <!-- Metadata Strip -->
                 <div
-                    class="inline-flex flex-wrap justify-center gap-x-8 gap-y-4 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-xs font-mono uppercase tracking-wider text-zinc-500">
+                    class="flex w-full max-w-3xl mx-auto justify-center flex-wrap gap-x-8 gap-y-4 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-xs font-mono uppercase tracking-wider text-zinc-500">
                     <div class="flex items-center gap-2">
                         <span class="text-zinc-600 font-bold">Role</span>
                         <span class="text-zinc-300">AI Product Manager</span>
@@ -515,25 +526,28 @@
                     </div>
                 </div>
 
-                <!-- My Role Snapshot -->
-                <div class="mt-12 max-w-3xl mx-auto">
+                <!-- My Role Snapshot (Option 3: Director's Log) -->
+                <div class="mt-8 max-w-3xl mx-auto">
                     <div
-                        class="glass-panel px-8 py-6 bg-white/[0.02] border-white/5 text-left relative overflow-hidden group hover:border-white/10 transition-all duration-500">
-                        <!-- Decorative tag -->
-                        <div
-                            class="absolute top-0 right-0 px-4 py-1 bg-white/5 text-zinc-500 text-[10px] font-mono uppercase tracking-widest rounded-bl-xl border-l border-b border-white/10">
-                            Role Snapshot
+                        class="glass-panel !rounded-2xl bg-white/[0.01] border-white/5 relative overflow-hidden group hover:border-white/10 transition-all duration-500">
+                        <div class="flex flex-col md:flex-row items-stretch">
+                            <!-- Side Accent Label -->
+                            <div
+                                class="md:w-20 bg-white/[0.03] flex flex-row md:flex-col items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-white/5 gap-0.5">
+                                <span
+                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">Role</span>
+                                <span
+                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider text-center leading-none">Snapshot</span>
+                            </div>
+                            <!-- Narrative Content -->
+                            <div class="flex-1 px-8 py-4 md:px-12 md:py-5 text-left relative flex items-center">
+                                <p
+                                    class="text-zinc-300 text-xs font-mono uppercase tracking-wider leading-relaxed relative z-10">
+                                    I led the pivot, validated demand with user interviews, shipped MVP, then made the
+                                    scale/stop call after platform-roadmap validation.
+                                </p>
+                            </div>
                         </div>
-
-                        <p class="text-zinc-400 leading-relaxed text-sm md:text-base font-light italic">
-                            "I led the pivot, <span class="text-zinc-200 font-medium not-italic">validated demand</span>
-                            with
-                            interviews,
-                            shipped <span class="text-zinc-200 font-medium not-italic">MVP</span>, then made the
-                            <span class="text-zinc-200 font-medium not-italic">scale/stop call</span> after
-                            platform-roadmap
-                            validation."
-                        </p>
                     </div>
                 </div>
 
@@ -624,9 +638,9 @@
                                 class="text-zinc-500 ml-1">- Creator A</span></p>
                     </div>
                 </div>
-                <div class="text-center mt-6">
-                    <span class="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">User Interview (July
-                        12, 2023)</span>
+                <div class="text-center mt-3">
+                    <span class="text-[10px] text-zinc-600 uppercase tracking-widest font-mono">User Interview (July 12,
+                        2023)</span>
                 </div>
             </div>
 
@@ -1729,6 +1743,10 @@
                         Reach</span>
                     <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Impact on the Business &
                         Products</h2>
+                    <p class="text-zinc-400 text-sm md:text-base font-light max-w-2xl mx-auto mt-4">
+                        Secured major institutional funding from Google and SK, reaching 895K users within 3 months of
+                        MVP validation.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -1796,7 +1814,7 @@
                             <li class="flex gap-4">
                                 <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
-                                    <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
+                                    <p class="text-white font-bold text-sm transition-colors">
                                         Launched Nov 2023</p>
                                     <p class="text-zinc-500 text-xs mt-1">Market Entry & MVP Validation</p>
                                 </div>
@@ -1804,7 +1822,7 @@
                             <li class="flex gap-4">
                                 <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
-                                    <p class="text-white font-bold text-lg font-mono tracking-tight">895K Combined Reach
+                                    <p class="text-white font-bold text-sm">895K Combined Reach
                                     </p>
                                     <p class="text-zinc-500 text-xs mt-1">Global Influence Metric</p>
                                 </div>
@@ -1814,7 +1832,7 @@
                                     class="w-px bg-gradient-to-b from-blue-500/80 to-transparent self-stretch flex-shrink-0">
                                 </div>
                                 <div>
-                                    <p class="text-blue-400 font-bold text-lg font-mono tracking-tight text-white/90">
+                                    <p class="text-white font-bold text-sm transition-colors">
                                         Archived Feb 2024</p>
                                     <p class="text-zinc-500 text-xs leading-relaxed mt-1">Validated market demand
                                         through MVP launch and archived after strategic pivot.</p>
