@@ -785,11 +785,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const card = cards[index];
 
-            // Align 'center' to put this card in the middle
-            card.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
+            // Manually precisely calculate scroll to center
+            const containerCenter = container.clientWidth / 2;
+            const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+            // Subtract container.offsetLeft just in case it's not positioned relative, but here card.offsetLeft is typically relative to the container if container is position relative/flex.
+            const targetScrollLeft = cardCenter - containerCenter;
+
+            container.scrollTo({
+                left: targetScrollLeft,
+                behavior: 'smooth'
             });
 
             updateActiveState(index);
@@ -805,23 +809,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize: Scroll & Highlight immediately
         setTimeout(() => {
-            const card = cards[currentIndex];
-            // Use scrollLeft calculation to avoid scrolling the main window
-            if (container && card) {
-                const cardRect = card.getBoundingClientRect();
-                const containerRect = container.getBoundingClientRect();
-                const currentRelLeft = cardRect.left - containerRect.left;
-                const targetRelLeft = (container.clientWidth - card.clientWidth) / 2;
-
-                container.scrollLeft = container.scrollLeft + (currentRelLeft - targetRelLeft);
+            if (container && cards[currentIndex]) {
+                const card = cards[currentIndex];
+                const containerCenter = container.clientWidth / 2;
+                const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
+                container.scrollLeft = cardCenter - containerCenter;
             }
             updateActiveState(currentIndex);
         }, 100);
 
-        // Click to focus
+        // Click to focus or next
         cards.forEach((card, index) => {
             card.addEventListener('click', () => {
-                scrollToCard(index);
+                if (currentIndex === index) {
+                    // If clicking the current active card, go to the next one
+                    scrollToCard(index + 1);
+                } else {
+                    // Otherwise, just focus the clicked card
+                    scrollToCard(index);
+                }
             });
         });
 
