@@ -101,6 +101,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Fix scroll position on load if URL has a hash (for back links)
+window.addEventListener('load', () => {
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'auto'
+                });
+            }
+        }, 100);
+    }
+});
+
 // ===========================
 // Scroll Animations
 // ===========================
@@ -573,6 +589,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Initialize project filter grid on load
+    const activeTabBtn = document.querySelector('.tab-btn.active');
+    if (activeTabBtn) {
+        activeTabBtn.click();
+    }
+
     const popup = document.getElementById('email-popup');
     const toggleBtn = document.getElementById('popupToggle');
     const minimizeBtn = document.getElementById('popupMinimize');

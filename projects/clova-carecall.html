@@ -9,15 +9,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700;800&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../footer_override.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Project Detail Specific Overrides */
+        /* Hopzie Derived Styles */
         body {
-            background-color: #111111;
+            background-color: #050505;
             color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-serif {
+            font-family: 'Lora', serif;
         }
 
         .project-detail {
@@ -30,134 +51,86 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
             margin-bottom: var(--spacing-md);
-            transition: var(--transition-fast);
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
+            font-size: 0.875rem;
+            color: #a1a1aa;
+            transition: color 0.2s;
         }
 
         .back-link:hover {
             color: #ffffff;
-            transform: translateX(-5px);
         }
 
-        .project-header {
-            margin-bottom: var(--spacing-lg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: var(--spacing-md);
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 2rem;
         }
 
-        .project-title {
-            font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 0.5rem;
-            color: #ffffff;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
         }
 
-        .project-subtitle {
-            font-family: var(--font-sans);
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: var(--spacing-md);
-            font-weight: 300;
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        .project-meta {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-family: var(--font-sans);
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .project-section {
-            padding: var(--spacing-md) 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
         }
 
-        .project-section:last-child {
-            border-bottom: none;
-        }
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
 
-        .project-section h2 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin-bottom: var(--spacing-sm);
-            color: #ffffff;
-        }
+            .col-span-2 {
+                grid-column: span 2 / span 2;
+            }
 
-        .project-section p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-sm);
-            font-family: var(--font-sans);
-            font-weight: 300;
-        }
-
-        .project-section ul {
-            list-style: none;
-            padding: 0;
-            margin: var(--spacing-sm) 0;
-        }
-
-        .project-section li {
-            color: rgba(255, 255, 255, 0.8);
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            font-family: var(--font-sans);
-            font-weight: 300;
-        }
-
-        .project-section li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--color-accent);
-            font-weight: bold;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: var(--spacing-sm);
+            .row-span-2 {
+                grid-row: span 2 / span 2;
+            }
         }
 
         .tech-tag {
             background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 400;
-            font-family: var(--font-sans);
+            color: #e4e4e7;
+            padding: 0.375rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s;
         }
 
-        .highlight-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: var(--spacing-md);
-            margin: var(--spacing-md) 0;
+        .tech-tag:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .highlight-box h4 {
-            font-family: var(--font-sans);
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-sm);
-            color: #ffffff;
-            font-weight: 600;
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation (Standardized) -->
+    <!-- Standard Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="../index.html#home" class="logo"><span style="color: #D97706;">bread</span>me</a>
@@ -178,95 +151,838 @@
 
     <!-- Project Detail -->
     <section class="project-detail">
-        <div class="container">
+        <div class="container max-w-6xl mx-auto px-6">
             <a href="../index.html#projects" class="back-link">← Back to Projects</a>
 
-            <div class="project-header">
-                <h1 class="project-title">CLOVA CareCall</h1>
-                <p class="project-subtitle">Senior Care AI Call-bot for Korea & Japan</p>
-                <div class="project-meta">
-                    <span>📅 October 2023 - Present</span>
-                    <span>🏢 NAVER CLOUD</span>
-                    <span>🏷️ Healthcare AI</span>
+            <!-- Hero Section: Refined Aesthetic -->
+            <div class="project-header text-center mb-24 pt-16 relative" id="overview">
+                <!-- Decorative Glow -->
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-green-500/5 via-transparent to-transparent blur-3xl pointer-events-none -z-10">
                 </div>
-            </div>
 
-            <div class="project-section">
-                <h2>Overview</h2>
-                <p>AI-powered call-bot designed specifically for senior care services in Korea and Japan, providing
+                <!-- Brand & Product Identity -->
+                <div class="mb-4">
+                    <div class="flex items-center justify-center gap-2 mb-6">
+                        <span
+                            class="text-[10px] md:text-xs font-bold text-zinc-600 uppercase tracking-[0.3em]">Project</span>
+                        <span
+                            class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] md:text-xs font-black text-white uppercase tracking-widest">NAVER
+                            CLOUD</span>
+                    </div>
+                    <h1 class="text-7xl md:text-9xl font-bold text-white mb-10 tracking-tighter">
+                        CareCall<span class="text-green-500">.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-zinc-300 font-light max-w-3xl mx-auto leading-relaxed">
+                        Senior Care <span class="italic font-serif text-green-200/90">AI Call-bot</span> for Korea &
+                        Japan.
+                    </p>
+                </div>
+
+                <!-- Subtitle Description -->
+                <p class="text-lg text-zinc-400 font-light mx-auto mb-10 leading-snug text-center max-w-2xl">
+                    AI-powered call-bot designed specifically for senior care services in Korea and Japan, providing
                     intelligent call routing, transfer/waiting flows, and optimized user experience for elderly users.
                 </p>
-            </div>
 
-            <div class="project-section">
-                <h2>Key Responsibilities</h2>
-                <ul>
-                    <li>Enhanced user routing system for efficient call distribution</li>
-                    <li>Designed call transfer and waiting flows for caregiver pickup</li>
-                    <li>Architected lightweight chatbot system optimized for senior users</li>
-                    <li>Eliminated abnormal termination issues through robust error handling</li>
-                    <li>Fine-tuned EPD (End of Phrase Detection) for senior speech patterns</li>
-                    <li>Localized service for both Korean and Japanese markets</li>
-                </ul>
-            </div>
+                <!-- Metadata Strip -->
+                <div
+                    class="flex w-full max-w-4xl mx-auto justify-start md:justify-center items-center flex-nowrap overflow-x-auto hidden-scrollbar gap-x-4 md:gap-x-8 px-6 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-[10px] sm:text-xs font-mono uppercase tracking-wider text-zinc-500 whitespace-nowrap">
+                    <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
+                        <span class="text-zinc-600 font-bold">Timeline</span>
+                        <span class="text-zinc-300">Oct 2023 — Present</span>
+                    </div>
+                    <div class="w-px h-3 bg-white/10 shrink-0"></div>
+                    <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
+                        <span class="text-zinc-600 font-bold">Focus</span>
+                        <span class="text-zinc-300">Healthcare AI</span>
+                    </div>
+                    <div class="w-px h-3 bg-white/10 shrink-0"></div>
+                    <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
+                        <span class="text-zinc-600 font-bold">Target</span>
+                        <span class="text-zinc-300">Korea & Japan Markets</span>
+                    </div>
+                </div>
 
-            <div class="project-section">
-                <h2>Scenario</h2>
-                <p>Designed comprehensive call scenarios for senior care services including health check-ins,
-                    appointment reminders, medication alerts, and emergency response protocols. Created user-friendly
-                    conversation flows that accommodate varying levels of tech literacy among elderly users.</p>
-            </div>
+                <!-- Role Snapshot (Director's Log Style) -->
+                <div class="mt-8 max-w-3xl mx-auto">
+                    <div
+                        class="glass-panel !rounded-2xl bg-white/[0.01] border-white/5 relative overflow-hidden group hover:border-white/10 transition-all duration-500">
+                        <div class="flex flex-col md:flex-row items-stretch">
+                            <div
+                                class="md:w-20 bg-white/[0.03] flex flex-row md:flex-col items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-white/5 gap-0.5">
+                                <span
+                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">Impact</span>
+                                <span
+                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider text-center leading-none">Snapshot</span>
+                            </div>
+                            <div class="flex-1 px-8 py-4 md:px-12 md:py-5 text-left relative flex items-center">
+                                <p
+                                    class="text-zinc-300 text-xs font-mono uppercase tracking-wider leading-relaxed relative z-10">
+                                    Improved senior care accessibility and quality of service through AI-powered
+                                    communication, serving thousands of elderly users across Korea and Japan with
+                                    culturally-adapted conversational experiences.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="project-section">
-                <h2>Console</h2>
-                <p>Developed intuitive admin console for caregivers and service providers to monitor call activities,
-                    manage user profiles, configure call routing rules, and access real-time analytics. Implemented
-                    dashboard with key metrics including call success rates, user engagement, and service quality
-                    indicators.</p>
-            </div>
+                <!-- Awards / Recognition (Laurel Wreath Style) -->
+                <div class="grid grid-cols-2 gap-6 md:gap-8 justify-items-center max-w-2xl mx-auto mt-12 mb-64 animate-fade-in-up"
+                    id="achievements">
+                    <!-- Item 1: OSAKA -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-48 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-2 w-full text-center px-2 shadow-sm">
+                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Featured
+                                    At</p>
+                                <p
+                                    class="text-xs md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
+                                    OSAKA Expo 2025</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="project-section">
-                <h2>Chatbot</h2>
-                <p>Built lightweight chatbot architecture optimized for voice interactions with seniors. Features
-                    include natural language understanding tuned for elderly speech patterns, context-aware responses,
-                    graceful error handling, and seamless handoff to human caregivers when needed. Supports both Korean
-                    and Japanese languages with cultural adaptations.</p>
-            </div>
+                    <!-- Item 2: APEC -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-48 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-2 w-full text-center px-2">
+                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Featured
+                                    At</p>
+                                <p
+                                    class="text-xs md:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">
+                                    APEC 2025</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="project-section">
-                <h2>Key Achievements</h2>
-                <div class="highlight-box">
-                    <h4>OSAKA Expo 2025 Digital Human Showcase</h4>
-                    <p>Leading the cutting-edge digital human video call showcase at OSAKA Expo 2025, featuring WebRTC
-                        barge-in technology that demonstrates the future of AI-human interaction on a global stage.</p>
-                    <p><strong>Period:</strong> 2024 - 2025</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Digital Human</span>
-                        <span class="tech-tag">WebRTC</span>
-                        <span class="tech-tag">Real-time AI</span>
-                        <span class="tech-tag">Barge-in Technology</span>
+                    <!-- Item 3: Korea -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-56 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-1.5 w-full text-center px-2">
+                                <p class="text-[9px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Award</p>
+                                <p
+                                    class="text-[10px] md:text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 leading-tight">
+                                    Korea local government<br>AI innovation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Japan -->
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="relative flex flex-col items-center">
+                            <svg class="w-56 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                                <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
+                                <path d="M15 25 C 15 55, 85 55, 100 55 C 115 55, 185 55, 185 25" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="100" cy="55" r="2" fill="currentColor" />
+                            </svg>
+                            <div class="absolute top-1.5 w-full text-center px-2">
+                                <p class="text-[9px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Award</p>
+                                <p
+                                    class="text-[10px] md:text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500 leading-tight">
+                                    Japan public digital<br>innovation</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-section">
-                <h2>Technologies & Skills</h2>
-                <div class="tech-tags">
-                    <span class="tech-tag">Conversational AI</span>
-                    <span class="tech-tag">Voice UX</span>
-                    <span class="tech-tag">NLP</span>
-                    <span class="tech-tag">Healthcare Tech</span>
-                    <span class="tech-tag">EPD Tuning</span>
-                    <span class="tech-tag">Localization (JP/KR)</span>
-                    <span class="tech-tag">Service Architecture</span>
+            <!-- Features / Components Section -->
+            <div class="mb-32 max-w-6xl mx-auto px-4 w-full" id="features">
+                <div class="text-center mb-16">
+                    <span class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Core
+                        Components</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                        System Architecture
+                    </h2>
+                </div>
+                <style>
+                    @keyframes flow-bridge-1 {
+                        0% {
+                            transform: translateX(0);
+                            opacity: 0;
+                        }
+
+                        10% {
+                            opacity: 0;
+                        }
+
+                        30% {
+                            opacity: 1;
+                        }
+
+                        70% {
+                            opacity: 1;
+                        }
+
+                        90% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform: translateX(30px);
+                            opacity: 0;
+                        }
+                    }
+
+                    @keyframes flow-bridge-2 {
+                        0% {
+                            transform: translateX(0);
+                            opacity: 0;
+                        }
+
+                        10% {
+                            opacity: 0;
+                        }
+
+                        30% {
+                            opacity: 1;
+                        }
+
+                        70% {
+                            opacity: 1;
+                        }
+
+                        90% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            transform: translateX(30px);
+                            opacity: 0;
+                        }
+                    }
+
+                    .animate-flow-tight-1 {
+                        animation: flow-bridge-1 3s infinite ease-in-out;
+                    }
+
+                    .animate-flow-tight-2 {
+                        animation: flow-bridge-2 3s infinite ease-in-out;
+                        animation-delay: 1.5s;
+                    }
+                </style>
+
+                <div
+                    class="w-full bg-white/[0.01] rounded-[2.5rem] border border-white/5 p-8 md:p-12 relative overflow-hidden shadow-2xl">
+
+                    <!-- Decorative Background Glows -->
+                    <div
+                        class="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/[0.04] blur-[120px] pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/[0.04] blur-[120px] pointer-events-none">
+                    </div>
+
+                    <!-- 01. INTERFACE LAYER -->
+                    <div class="relative z-10 mb-16">
+                        <div class="flex items-center gap-4 mb-8 px-4">
+                            <h2
+                                class="text-[10px] font-mono font-black text-amber-500/50 uppercase tracking-[0.3em] whitespace-nowrap">
+                                01. Interface Layer</h2>
+                            <div class="flex-1 h-px bg-white/5"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                            <!-- ClientCard 1 -->
+                            <div
+                                class="bg-white/[0.01] p-4 rounded-2xl border border-white/5 flex flex-col items-center text-center group hover:bg-white/[0.03] hover:border-white/10 transition-all duration-500">
+                                <div
+                                    class="mb-3 p-3 bg-zinc-900/50 rounded-xl border border-white/5 group-hover:border-amber-500/20 transition-colors shadow-inner text-amber-500 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="text-xs font-black text-zinc-300 mb-0.5">Product Manager</div>
+                                <div class="text-[8px] text-zinc-600 font-bold uppercase tracking-widest">Scenario
+                                    Design & Implementation</div>
+                            </div>
+                            <!-- ClientCard 2 -->
+                            <div
+                                class="bg-white/[0.01] p-4 rounded-2xl border border-white/5 flex flex-col items-center text-center group hover:bg-white/[0.03] hover:border-white/10 transition-all duration-500">
+                                <div
+                                    class="mb-3 p-3 bg-zinc-900/50 rounded-xl border border-white/5 group-hover:border-emerald-500/20 transition-colors shadow-inner text-emerald-500 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="text-xs font-black text-zinc-300 mb-0.5">End User</div>
+                                <div class="text-[8px] text-zinc-600 font-bold uppercase tracking-widest">Daily
+                                    Chit-chat Interaction</div>
+                            </div>
+                            <!-- ClientCard 3 -->
+                            <div
+                                class="bg-white/[0.01] p-4 rounded-2xl border border-white/5 flex flex-col items-center text-center group hover:bg-white/[0.03] hover:border-white/10 transition-all duration-500">
+                                <div
+                                    class="mb-3 p-3 bg-zinc-900/50 rounded-xl border border-white/5 group-hover:border-zinc-500/20 transition-colors shadow-inner text-zinc-400 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path
+                                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="text-xs font-black text-zinc-300 mb-0.5">Operator</div>
+                                <div class="text-[8px] text-zinc-600 font-bold uppercase tracking-widest">Operations &
+                                    Collaboration</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02. CORE PRODUCT ECOSYSTEM -->
+                    <div class="relative z-10 mb-16">
+                        <div class="flex items-center gap-4 mb-10 px-4">
+                            <h2
+                                class="text-[10px] font-mono font-black text-emerald-500/50 uppercase tracking-[0.3em] whitespace-nowrap">
+                                02. Core Product Ecosystem</h2>
+                            <div class="flex-1 h-px bg-white/5"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+                            <!-- Visual Connection Lines: Coordinates adjusted to sit strictly in the gaps -->
+                            <div class="absolute top-1/2 left-0 w-full hidden lg:block -translate-y-1/2 pointer-events-none"
+                                style="z-index: -1;">
+                                <svg width="100%" height="80" viewBox="0 0 1000 80" fill="none">
+                                    <!-- Bridge 1: AI Call (ends ~320) to CareCall (starts ~345) -->
+                                    <path d="M 325 40 L 355 40" stroke="rgba(217, 119, 6, 0.2)" stroke-width="1.5"
+                                        stroke-dasharray="2,2" />
+                                    <g class="animate-flow-tight-1">
+                                        <circle cx="325" cy="40" r="2" fill="#D97706" />
+                                        <circle cx="325" cy="40" r="5" fill="#D97706" class="opacity-20" />
+                                    </g>
+
+                                    <!-- Bridge 2: CareCall (ends ~655) to Console (starts ~680) -->
+                                    <path d="M 645 40 L 675 40" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1.5"
+                                        stroke-dasharray="2,2" />
+                                    <g class="animate-flow-tight-2">
+                                        <circle cx="645" cy="40" r="2" fill="#10B981" />
+                                        <circle cx="645" cy="40" r="5" fill="#10B981" class="opacity-20" />
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <!-- ServiceBox 1 -->
+                            <div
+                                class="relative p-8 rounded-[2rem] border-2 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 group flex flex-col h-full border-amber-500/10 bg-amber-500/[0.02] hover:border-amber-500/30 shadow-amber-900/5">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div
+                                        class="p-3.5 bg-black/40 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500 text-amber-500 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="text-left">
+                                        <h3 class="text-xl font-bold text-white tracking-tight leading-none mb-1.5">AI
+                                            Call</h3>
+                                        <span
+                                            class="text-[9px] font-black uppercase tracking-[0.2em] text-amber-500">Scenario
+                                            Engine</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-3.5 flex-1 text-left">
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-amber-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Hybrid
+                                            Dialogue Structuring</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-amber-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Dynamic
+                                            API Integration</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-amber-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Scenario
+                                            Lifecycle Mgmt</span>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent">
+                                </div>
+                            </div>
+
+                            <!-- ServiceBox 2 -->
+                            <div
+                                class="relative p-8 rounded-[2rem] border-2 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 group flex flex-col h-full border-emerald-500/10 bg-emerald-500/[0.02] hover:border-emerald-500/30 shadow-emerald-900/5">
+                                <div
+                                    class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[8px] font-black px-4 py-1.5 rounded-full flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.3)] animate-pulse whitespace-nowrap">
+                                    LIVE INTERACTION
+                                </div>
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div
+                                        class="p-3.5 bg-black/40 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500 text-emerald-500 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <div class="text-left">
+                                        <h3 class="text-xl font-bold text-white tracking-tight leading-none mb-1.5">
+                                            CareCall</h3>
+                                        <span
+                                            class="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-500">Interaction
+                                            Hub</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-3.5 flex-1 text-left">
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-emerald-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Empathetic
+                                            Care Dialogue</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-emerald-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Personalized
+                                            Memory Recall</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-emerald-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Purpose-driven
+                                            Outreach</span>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent">
+                                </div>
+                            </div>
+
+                            <!-- ServiceBox 3 -->
+                            <div
+                                class="relative p-8 rounded-[2rem] border-2 backdrop-blur-sm transition-all duration-700 hover:-translate-y-2 group flex flex-col h-full border-white/5 bg-white/[0.01] hover:border-white/20">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div
+                                        class="p-3.5 bg-black/40 rounded-2xl border border-white/5 group-hover:scale-110 transition-transform duration-500 text-zinc-400 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                        </svg>
+                                    </div>
+                                    <div class="text-left">
+                                        <h3 class="text-xl font-bold text-white tracking-tight leading-none mb-1.5">
+                                            Console</h3>
+                                        <span
+                                            class="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-500">Control
+                                            Center</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-3.5 flex-1 text-left">
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-zinc-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Multi-Admin
+                                            Collaboration</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-zinc-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Anomaly
+                                            Detection Operations</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <div class="w-1 h-1 rounded-full opacity-30 bg-zinc-500"></div>
+                                        <span
+                                            class="text-[10px] font-bold text-zinc-500 group-hover:text-zinc-300 transition-colors">Operational
+                                            Analytics</span>
+                                    </li>
+                                </ul>
+                                <div
+                                    class="mt-6 h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03. FOUNDATION LAYER -->
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-8 px-4">
+                            <h2
+                                class="text-[10px] font-mono font-black text-zinc-600 uppercase tracking-[0.3em] whitespace-nowrap">
+                                03. Foundation Layer</h2>
+                            <div class="flex-1 h-px bg-white/5"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- LLM Framework -->
+                            <div
+                                class="bg-white/[0.02] rounded-[1.5rem] p-8 border border-white/5 relative group overflow-hidden transition-all hover:border-amber-500/10">
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div
+                                        class="p-2.5 bg-amber-500/10 rounded-xl border border-amber-500/20 text-amber-500 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                            <path d="m9 12 2 2 4-4"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-bold text-sm tracking-widest uppercase text-zinc-200">Large Language
+                                        Models</h4>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 text-left">
+                                    <div class="bg-black/40 p-4 rounded-xl border border-white/5 flex flex-col gap-1">
+                                        <span
+                                            class="text-[9px] text-amber-500 font-bold uppercase tracking-tighter">Intent
+                                            Analysis</span>
+                                        <span class="text-[11px] font-medium text-zinc-400 leading-tight">Contextual
+                                            Intent Recognition</span>
+                                    </div>
+                                    <div class="bg-black/40 p-4 rounded-xl border border-white/5 flex flex-col gap-1">
+                                        <span
+                                            class="text-[9px] text-amber-500 font-bold uppercase tracking-tighter">Generation</span>
+                                        <span class="text-[11px] font-medium text-zinc-400 leading-tight">Empathetic
+                                            Response Logic</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Infrastructure & Data Sync -->
+                            <div
+                                class="bg-white/[0.02] rounded-[1.5rem] p-8 border border-white/5 flex flex-col justify-between transition-all hover:border-emerald-500/10">
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div
+                                        class="p-2.5 bg-zinc-500/10 rounded-xl border border-zinc-500/20 text-zinc-400 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-bold text-sm tracking-widest uppercase text-zinc-400">DataOps
+                                        Infrastructure</h4>
+                                </div>
+
+                                <div class="flex justify-between items-center px-4">
+                                    <!-- InfraIcon 1 -->
+                                    <div class="flex flex-col items-center gap-2 group">
+                                        <div
+                                            class="w-10 h-10 bg-black/40 rounded-xl flex items-center justify-center border border-white/5 text-zinc-700 group-hover:text-zinc-400 group-hover:border-zinc-500/20 transition-all duration-500 shadow-inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z">
+                                                </path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                                <polyline points="10 9 9 9 8 9"></polyline>
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="text-[8px] font-mono text-zinc-700 uppercase tracking-widest text-center whitespace-nowrap">Call
+                                            Logs</span>
+                                    </div>
+                                    <div class="h-px flex-1 bg-zinc-800 mx-4"></div>
+                                    <!-- InfraIcon 2 -->
+                                    <div class="flex flex-col items-center gap-2 group">
+                                        <div
+                                            class="w-10 h-10 bg-black/40 rounded-xl flex items-center justify-center border border-white/5 text-zinc-700 group-hover:text-zinc-400 group-hover:border-zinc-500/20 transition-all duration-500 shadow-inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="text-[8px] font-mono text-zinc-700 uppercase tracking-widest text-center whitespace-nowrap">Memory
+                                            Assets</span>
+                                    </div>
+                                    <div class="h-px flex-1 bg-zinc-800 mx-4"></div>
+                                    <!-- InfraIcon 3 -->
+                                    <div class="flex flex-col items-center gap-2 group">
+                                        <div
+                                            class="w-10 h-10 bg-black/40 rounded-xl flex items-center justify-center border border-white/5 text-zinc-700 group-hover:text-zinc-400 group-hover:border-zinc-500/20 transition-all duration-500 shadow-inner">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="18" cy="5" r="3"></circle>
+                                                <circle cx="6" cy="12" r="3"></circle>
+                                                <circle cx="18" cy="19" r="3"></circle>
+                                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="text-[8px] font-mono text-zinc-700 uppercase tracking-widest text-center whitespace-nowrap">API
+                                            Gateway</span>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="mt-6 p-2.5 rounded-full bg-emerald-500/[0.03] border border-emerald-500/10 flex items-center justify-center gap-3 group/loop hover:bg-emerald-500/[0.05] transition-colors">
+                                    <svg class="w-3.5 h-3.5 text-emerald-500/60 group-hover/loop:rotate-180 transition-transform duration-1000"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polyline points="17 1 21 5 17 9"></polyline>
+                                        <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                                        <polyline points="7 23 3 19 7 15"></polyline>
+                                        <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                                    </svg>
+                                    <span
+                                        class="text-[9px] font-black text-emerald-500/60 tracking-[0.2em] uppercase leading-none whitespace-nowrap">Continuous
+                                        Model-Scenario Tuning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subtle Decorative Wave -->
+                    <div class="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-amber-500/5 rounded-full blur-[100px] opacity-30 pointer-events-none"
+                        style="z-index: 0;"></div>
                 </div>
             </div>
 
-            <div class="project-section">
-                <h2>Impact</h2>
-                <p>Improved senior care accessibility and quality of service through AI-powered communication, serving
-                    thousands of elderly users across Korea and Japan with culturally-adapted conversational
-                    experiences.</p>
+            <!-- Related Sub-Projects -->
+            <div class="mb-32 max-w-6xl mx-auto px-4 w-full">
+                <div class="text-center mb-16">
+                    <span class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4 block">Product
+                        Suite</span>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+                        Explore <span
+                            class="font-serif italic bg-gradient-to-r from-zinc-300 to-zinc-500 bg-clip-text text-transparent pr-1">CareCall
+                            Lines</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- CareCall Core -->
+                    <a href="carecall-core.html"
+                        class="glass-card p-8 flex flex-col justify-between h-64 group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                                CareCall</h3>
+                            <p class="text-xs text-zinc-400 leading-relaxed">The core senior care interaction hub
+                                serving daily empathetic dialogue.</p>
+                        </div>
+                        <div
+                            class="text-[10px] font-bold text-zinc-500 group-hover:text-white transition-colors relative z-10 flex items-center gap-2 mt-4 uppercase tracking-widest">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- CareCall Chatbot (AICall) -->
+                    <a href="carecall-chatbot.html"
+                        class="glass-card p-8 flex flex-col justify-between h-64 group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <div
+                                class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
+                                Chatbot (AICall)</h3>
+                            <p class="text-xs text-zinc-400 leading-relaxed">Dynamic AI conversational engine designed
+                                for natural speech patterns.</p>
+                        </div>
+                        <div
+                            class="text-[10px] font-bold text-zinc-500 group-hover:text-white transition-colors relative z-10 flex items-center gap-2 mt-4 uppercase tracking-widest">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- CareCall Console -->
+                    <a href="carecall-console.html"
+                        class="glass-card p-8 flex flex-col justify-between h-64 group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <div
+                                class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                                Console</h3>
+                            <p class="text-xs text-zinc-400 leading-relaxed">Admin dashboard for operational analytics
+                                and multi-user management.</p>
+                        </div>
+                        <div
+                            class="text-[10px] font-bold text-zinc-500 group-hover:text-white transition-colors relative z-10 flex items-center gap-2 mt-4 uppercase tracking-widest">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Expanded CareCall -->
+                    <a href="carecall-expanded.html"
+                        class="glass-card p-8 flex flex-col justify-between h-64 group relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        </div>
+                        <div class="relative z-10 w-full">
+                            <div
+                                class="w-10 h-10 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                                Expanded</h3>
+                            <p class="text-xs text-zinc-400 leading-relaxed">Future extensions and service scaling
+                                strategies across regions.</p>
+                        </div>
+                        <div
+                            class="text-[10px] font-bold text-zinc-500 group-hover:text-white transition-colors relative z-10 flex items-center gap-2 mt-4 uppercase tracking-widest">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Key Responsibilities (Retrospective Style) -->
+            <div class="mt-48 mb-32" id="responsibilities">
+                <div class="text-center mb-16">
+                    <span
+                        class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Execution</span>
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                        Key <span
+                            class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Responsibilities</span>
+                    </h2>
+                </div>
+                <div class="flex flex-col gap-6 max-w-6xl mx-auto">
+                    <!-- Resp 1 -->
+                    <div
+                        class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500/60 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-white font-bold mb-1">Routing & Call Transfer</h4>
+                                <p class="text-zinc-400 text-sm leading-relaxed">Enhanced user routing system for
+                                    efficient call distribution and designed call transfer/waiting flows for caregiver
+                                    pickup.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resp 2 -->
+                    <div
+                        class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400/60 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-white font-bold mb-1">System Optimization</h4>
+                                <p class="text-zinc-400 text-sm leading-relaxed">Architected lightweight chatbot system
+                                    optimized for senior users and eliminated abnormal termination issues through robust
+                                    error handling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resp 3 -->
+                    <div
+                        class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                        <div class="flex gap-4 items-center">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-white font-bold mb-1">Voice & Localization</h4>
+                                <p class="text-zinc-400 text-sm leading-relaxed">Fine-tuned EPD (End of Phrase
+                                    Detection) for senior speech patterns and localized the service for both Korean and
+                                    Japanese markets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Tech Stack -->
+            <div class="mt-32 border-t border-white/5 pt-12 flex flex-wrap gap-4 items-center justify-center">
+                <span class="text-xs text-zinc-600 uppercase tracking-widest mr-4">Technologies & Skills</span>
+                <span class="tech-tag">Digital Human</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">Real-time AI</span>
+                <span class="tech-tag">Barge-in Technology</span>
+                <span class="tech-tag">Conversational AI</span>
+                <span class="tech-tag">Voice UX</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Healthcare Tech</span>
+                <span class="tech-tag">EPD Tuning</span>
+                <span class="tech-tag">Localization (JP/KR)</span>
             </div>
         </div>
     </section>
