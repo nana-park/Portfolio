@@ -70,10 +70,14 @@
                         class="font-serif italic bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent pr-2">Voice
                         Interaction</span>
                 </h1>
-                <h2 class="text-xl font-sans font-medium text-amber-500/80 mb-8 flex items-center gap-2">
-                    <span id="typedText"></span>
-                    <span class="cursor">|</span>
-                </h2>
+                <div class="role-flipper">
+                    <div class="role-track">
+                        <span class="role-item">AI Chatbot Product Manager</span>
+                        <span class="role-item">Conversational AI Specialist</span>
+                        <span class="role-item">Human-AI Interaction Designer</span>
+                        <span class="role-item">AI Chatbot Product Manager</span><!-- clone for seamless loop -->
+                    </div>
+                </div>
                 <p class="text-lg text-zinc-400 font-light max-w-2xl leading-relaxed mb-10">
                     Designing universal AI experiences<br>
                     through <strong class="text-zinc-100 font-medium">multimodal accessibility</strong> and inclusive
@@ -436,7 +440,9 @@
                                     class="list-disc list-inside text-xs md:text-sm text-slate-500 space-y-1.5 ml-1 mb-3">
                                     <li>Thesis: Improving information delivery UX through digital transformation in
                                         e-commerce</li>
-                                    <li>Published in SSCI journal <em>Information Development</em> (First Author)</li>
+                                    <li>Published in SSCI journal <em>Information Development</em> (2025) &amp;
+                                        <em>Technology in Society</em> (2026)
+                                    </li>
                                 </ul>
 
                                 <!-- Direct Link to Research -->
@@ -535,7 +541,7 @@
 
                 <!-- Hopzie -->
                 <a href="projects/hopzie.html" class="project-card-link" data-category="others">
-                    <div class="project-card" style="--bg-image: url('project_hopzie_lifestyle_1769533623249.png');">
+                    <div class="project-card" style="--bg-image: url('project_hopzie_creator_final.png');">
                         <h3 class="project-title">Hopzie</h3>
                         <span class="project-link">Learn more </span>
                     </div>
@@ -564,66 +570,84 @@
                     </div>
                 </a>
 
+                <!-- [RESEARCH] 0. News Credibility (Combined Journal/Conf) -->
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X26000412?via%3Dihub"
+                    target="_blank" class="project-card-link" data-category="research">
+                    <div class="project-card" style="--bg-image: url('research_news_credibility_journal_2026.png');">
+                        <div class="research-content">
+                            <h3 class="project-title">Monetary value of credibility signals: Exploring user experience
+                                on online news platforms</h3>
+                            <div class="research-meta">
+                                <span class="journal-name">Technology in Society</span>
+                                <span class="pub-detail">SSCI</span>
+                                <span class="meta-break"></span>
+                                <span class="journal-name">International Communication Association</span>
+                                <span class="pub-detail">Conference Proceeding</span>
+                                <span class="pub-date">February 2026</span>
+                            </div>
+                            <span class="project-link">View Publication </span>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- [RESEARCH] 1. E-Commerce DX -->
                 <a href="#" class="project-card-link" data-category="research">
                     <div class="project-card" style="--bg-image: url('research_ecommerce_dx_1769531941708.png');">
                         <div class="research-content">
                             <h3 class="project-title">Information delivery UX improvement with digital transformation in
                                 e-commerce</h3>
-                            <p class="project-subtitle">
-                                [SSCI] Information Development - Dec 1, 2025</p>
+                            <div class="research-meta">
+                                <span class="journal-name">Information Development</span>
+                                <span class="pub-detail">SSCI</span>
+                                <span class="pub-date">December 2025</span>
+                            </div>
                             <span class="project-link">View Publication </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- [RESEARCH] 2. News Credibility -->
-                <a href="#" class="project-card-link" data-category="research">
-                    <div class="project-card" style="--bg-image: url('research_news_credibility_1769531961828.png');">
-                        <div class="research-content">
-                            <h3 class="project-title">Monetary value of credibility signals: Exploring UX on online news
-                                platforms</h3>
-                            <p class="project-subtitle">
-                                [Conf.] International Communication Association - May 12, 2025</p>
-                            <span class="project-link">View Publication </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- [RESEARCH] 3. Ethereum GenAI -->
+                <!-- [RESEARCH] 2. Ethereum GenAI -->
                 <a href="#" class="project-card-link" data-category="research">
                     <div class="project-card" style="--bg-image: url('research_eth_genai_1769531983588.png');">
                         <div class="research-content">
                             <h3 class="project-title">Ethereum GenAI PFP user journey mapping: Based on value-based
-                                decision
-                                theories</h3>
-                            <p class="project-subtitle">
-                                [Conf.] Korea Society of IT Services - Oct 22, 2022</p>
+                                decision theories</h3>
+                            <div class="research-meta">
+                                <span class="journal-name">Korea Society of IT Services</span>
+                                <span class="pub-detail">Conference Proceeding</span>
+                                <span class="pub-date">October 2022</span>
+                            </div>
                             <span class="project-link">View Publication </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- [RESEARCH] 4. Cloud Developers -->
+                <!-- [RESEARCH] 3. Cloud Developers -->
                 <a href="#" class="project-card-link" data-category="research">
                     <div class="project-card" style="--bg-image: url('research_cloud_fintech_1769532008705.png');">
                         <div class="research-content">
                             <h3 class="project-title">Impact of cloud developers' work environment in Fintech</h3>
-                            <p class="project-subtitle">
-                                [KCI] International Telecommunications Policy Review - Oct 1, 2022</p>
+                            <div class="research-meta">
+                                <span class="journal-name">International Telecommunications Policy Review</span>
+                                <span class="pub-detail">KCI</span>
+                                <span class="pub-date">October 2022</span>
+                            </div>
                             <span class="project-link">View Publication </span>
                         </div>
                     </div>
                 </a>
 
-                <!-- [RESEARCH] 5. E-book DX -->
+                <!-- [RESEARCH] 4. E-book DX -->
                 <a href="#" class="project-card-link" data-category="research">
                     <div class="project-card" style="--bg-image: url('research_ebook_dx_1769532031190.png');">
                         <div class="research-content">
                             <h3 class="project-title">E-book preview service improvement based on consumer behaviors
                                 offline: DX</h3>
-                            <p class="project-subtitle">
-                                [Conf.] HCI Korea - Jul 22, 2022</p>
+                            <div class="research-meta">
+                                <span class="journal-name">HCI Korea</span>
+                                <span class="pub-detail">Conference Proceeding</span>
+                                <span class="pub-date">July 2022</span>
+                            </div>
                             <span class="project-link">View Publication </span>
                         </div>
                     </div>
@@ -977,7 +1001,7 @@
 
                     <!-- [SET 1] Original Cards -->
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_trophy_orange_1769270183149.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_trophy_orange_dark_1773211521556.png"
                             alt="Korea Public AI Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Korea Public<br>AI Innovation Awards</h3>
@@ -985,7 +1009,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_innovation_blue_1769270200241.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_innovation_blue_dark_1773211490285.png"
                             alt="Japan Public Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Japan Public<br>Innovation Awards</h3>
@@ -993,7 +1017,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_star_purple_1769270216917.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_star_purple_dark_1773211551685.png"
                             alt="SK Metaverse Hackathon" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2023<br>SK Metaverse<br>Hackarton Awards</h3>
@@ -1002,7 +1026,7 @@
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank"
                         class="award-card is-scholarship">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_ribbon_red_1769270384351.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_ribbon_red_dark_1773211582905.png"
                             alt="Scholarship" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">Master Scholarship</h3>
@@ -1012,7 +1036,7 @@
 
                     <!-- [SET 2] Copy 1 -->
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_trophy_orange_1769270183149.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_trophy_orange_dark_1773211521556.png"
                             alt="Korea Public AI Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Korea Public<br>AI Innovation Awards</h3>
@@ -1020,7 +1044,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_innovation_blue_1769270200241.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_innovation_blue_dark_1773211490285.png"
                             alt="Japan Public Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Japan Public<br>Innovation Awards</h3>
@@ -1028,7 +1052,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_star_purple_1769270216917.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_star_purple_dark_1773211551685.png"
                             alt="SK Metaverse Hackathon" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2023<br>SK Metaverse<br>Hackarton Awards</h3>
@@ -1037,7 +1061,7 @@
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank"
                         class="award-card is-scholarship">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_ribbon_red_1769270384351.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_ribbon_red_dark_1773211582905.png"
                             alt="Scholarship" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">Master Scholarship</h3>
@@ -1047,7 +1071,7 @@
 
                     <!-- [SET 3] Copy 2 -->
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_trophy_orange_1769270183149.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_trophy_orange_dark_1773211521556.png"
                             alt="Korea Public AI Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Korea Public<br>AI Innovation Awards</h3>
@@ -1055,7 +1079,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_innovation_blue_1769270200241.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_innovation_blue_dark_1773211490285.png"
                             alt="Japan Public Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Japan Public<br>Innovation Awards</h3>
@@ -1063,7 +1087,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_star_purple_1769270216917.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_star_purple_dark_1773211551685.png"
                             alt="SK Metaverse Hackathon" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2023<br>SK Metaverse<br>Hackarton Awards</h3>
@@ -1072,7 +1096,7 @@
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank"
                         class="award-card is-scholarship">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_ribbon_red_1769270384351.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_ribbon_red_dark_1773211582905.png"
                             alt="Scholarship" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">Master Scholarship</h3>
@@ -1082,7 +1106,7 @@
 
                     <!-- [SET 4] Copy 3 (Final Buffer for seamless loop) -->
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_trophy_orange_1769270183149.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_trophy_orange_dark_1773211521556.png"
                             alt="Korea Public AI Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Korea Public<br>AI Innovation Awards</h3>
@@ -1090,7 +1114,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_innovation_blue_1769270200241.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_innovation_blue_dark_1773211490285.png"
                             alt="Japan Public Innovation Awards" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2025<br>Japan Public<br>Innovation Awards</h3>
@@ -1098,7 +1122,7 @@
                         </div>
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_star_purple_1769270216917.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_star_purple_dark_1773211551685.png"
                             alt="SK Metaverse Hackathon" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">2023<br>SK Metaverse<br>Hackarton Awards</h3>
@@ -1107,7 +1131,7 @@
                     </a>
                     <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank"
                         class="award-card is-scholarship">
-                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/09cf2548-acae-4e59-8c84-cfbd984ca4e1/award_ribbon_red_1769270384351.png"
+                        <img src="file:///C:/Users/able2/.gemini/antigravity/brain/4394418d-90a0-477c-a43a-ad9616202655/award_ribbon_red_dark_1773211582905.png"
                             alt="Scholarship" class="award-card-bg loaded">
                         <div class="award-content">
                             <h3 class="award-title">Master Scholarship</h3>
@@ -1222,18 +1246,6 @@
                         Blending psychology, field research, and product strategy to build AI people actually use.
                     </p>
 
-                    <!-- Moved Video Player here -->
-                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank" class="video-wrapper">
-                        <img src="work done/NAVER CLOUD/EBS/1 (ENG).png" alt="Presentation Thumbnail"
-                            class="video-thumbnail">
-
-                        <div class="play-btn-overlay">
-                            <svg class="play-icon" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                    </a>
-
                     <div class="media-actions">
                         <a href="#" class="view-more-btn">
                             View more talks
@@ -1245,6 +1257,21 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Right Column: Video -->
+                <div class="media-video-col">
+                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank" class="video-wrapper">
+                        <img src="work done/NAVER CLOUD/EBS/1 (ENG).png" alt="Presentation Thumbnail"
+                            class="video-thumbnail">
+
+                        <div class="play-btn-overlay">
+                            <svg class="play-icon" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>

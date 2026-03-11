@@ -40,9 +40,9 @@ function type() {
     setTimeout(type, delay);
 }
 
-// Start typing animation when page loads
+// Start typing animation when page loads (disabled — replaced by role-flipper)
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(type, 1000);
+    if (typedTextElement) setTimeout(type, 1000);
 });
 
 // ===========================

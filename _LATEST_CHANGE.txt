@@ -1,4 +1,6 @@
-LAYOUT UPDATE COMPLETE:
-- Verified reference image: Mobbin-Legend page.png (confirmed readable).
-- Applied Centered Hero layout and Typography updates to projects/hopzie.html based on the reference.
-- Please review projects/hopzie.html for the new look.
+RESEARCH UPDATE COMPLETE (March 2026):
+- Added new SSCI Journal Publication: "Monetary Value of Credibility Signals" in 'Technology in Society' (Feb 2026).
+- Included a direct link to the ScienceDirect article.
+- Integrated the new research card with a 3D-style visual asset.
+- Updated Education section with both SSCI journal publications.
+- Refined conference titles to prevent confusion.

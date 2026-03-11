@@ -16,7 +16,8 @@
     flex-direction: row;
     /* Force row layout */
     width: 100%;
-    min-height: 200px;
+    min-height: 150px;
+    /* Reduced from 200px (3/4) */
     height: auto;
     background: rgba(255, 255, 255, 0.03);
     /* Glass base */
@@ -36,7 +37,8 @@
 /* Left Thumbnail Area */
 .project-card-link[data-category="research"] .project-card::before {
     content: "";
-    flex: 0 0 240px;
+    flex: 0 0 180px;
+    /* Reduced from 240px (3/4) */
     /* Fixed thumbnail width */
     background-image: var(--bg-image);
     background-size: cover;
@@ -52,7 +54,8 @@
 /* Right Content Area */
 .project-card-link[data-category="research"] .research-content {
     flex: 1;
-    padding: 2.5rem 3rem;
+    padding: 1.5rem 2.5rem;
+    /* Reduced padding for compact look */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -62,23 +65,64 @@
 
 /* Typography Overrides */
 .project-card-link[data-category="research"] .project-title {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.3;
+    font-family: var(--font-sans) !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
     color: #ffffff;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     text-shadow: none;
+    letter-spacing: -0.01em;
 }
 
-.project-card-link[data-category="research"] .project-subtitle {
+.project-card-link[data-category="research"] .research-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.75rem;
+    row-gap: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-card-link[data-category="research"] .journal-name {
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    /* Unified grey color */
+    letter-spacing: -0.01em;
+}
+
+.project-card-link[data-category="research"] .pub-detail {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.02em;
+}
+
+/* Forces a line break between rows of metadata */
+.project-card-link[data-category="research"] .research-meta .meta-break {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
+.project-card-link[data-category="research"] .pub-detail::before {
+    content: "|";
+    margin-right: 0.75rem;
+    color: rgba(255, 255, 255, 0.15);
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.5) !important;
-    margin: 0 0 1.5rem 0 !important;
-    text-align: left;
-    display: block;
+}
+
+.project-card-link[data-category="research"] .pub-date {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    /* Force date to next line if needed, or keep unified */
+    margin-top: 0.1rem;
 }
 
 .project-card-link[data-category="research"] .project-link {
@@ -126,6 +170,7 @@
     }
 
     .project-card-link[data-category="research"] .project-title {
+        font-family: var(--font-sans) !important;
         font-size: 1.3rem;
     }
 }

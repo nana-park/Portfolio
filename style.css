@@ -202,13 +202,11 @@ body {
 
 .hero-content {
     display: flex;
-    justify-content: center;
-    /* Back to center for cohesion */
+    justify-content: space-between;
+    /* Align perfectly with navbar logo (left) and container edge (right) */
     align-items: center;
-    width: 100%;
     margin: 0 auto;
-    gap: 8rem;
-    /* Final 'moderate' gap that won't feel crowded or scattered */
+    /* width: 100% removed so it respects .container 1200px */
 }
 
 .hero-text {
@@ -242,23 +240,56 @@ body {
     font-weight: 500;
 }
 
-.cursor {
-    display: inline;
-    animation: blink 1s step-end infinite;
+/* === Role Flipper (Slot Machine Animation) === */
+.role-flipper {
+    overflow: hidden;
+    font-size: 1.15rem;
+    /* anchor: all em values go off this */
+    height: 1.8em;
+    /* slightly generous to avoid clipping */
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
 }
 
-@keyframes blink {
+.role-track {
+    display: flex;
+    flex-direction: column;
+    animation: roleFlip 6s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+}
+
+.role-item {
+    height: 1.8em;
+    line-height: 1.8em;
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: #D97706;
+    letter-spacing: -0.01em;
+}
+
+@keyframes roleFlip {
 
     0%,
-    50% {
-        opacity: 1;
+    20% {
+        transform: translateY(0);
     }
 
-    51%,
+    33%,
+    53% {
+        transform: translateY(-1.8em);
+    }
+
+    66%,
+    86% {
+        transform: translateY(-3.6em);
+    }
+
     100% {
-        opacity: 0;
+        transform: translateY(-5.4em);
     }
 }
+
 
 .hero-description {
     font-family: var(--font-sans);

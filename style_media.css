@@ -18,11 +18,16 @@
     padding: 0 var(--spacing-sm);
 }
 
-/* New Grid Layout Structure */
+/* New Grid Layout Structure -> 2-Column Desktop */
 .media-layout-grid {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    /* Wide gap prevents text overlapping video */
+    align-items: center;
+    /* Vertically center content */
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
 }
 
 /* Left Column Styling */
@@ -31,21 +36,24 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Align contents to left */
     justify-content: center;
+    min-width: 0;
+    /* Prevents text overflow */
 }
 
 /* Updated Typography to match .projects-title */
 .media-title {
     font-family: var(--font-sans) !important;
     font-size: 3.5rem !important;
+    /* STRICTLY 3.5rem to match other sections */
     font-weight: 600 !important;
     line-height: 1.15 !important;
     color: #ffffff !important;
     letter-spacing: -0.01em !important;
     text-align: left !important;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
     display: block !important;
+    /* white-space: nowrap removed to prevent clipping in 2-col */
 }
 
 .media-title span {
@@ -54,50 +62,61 @@
     font-weight: 600 !important;
 }
 
-/* Subtitle Styling (New) */
+/* Subtitle Styling */
 .media-subtitle {
     display: block !important;
     font-family: var(--font-sans) !important;
-    font-size: 0.9375rem !important;
+    font-size: 1.05rem !important;
     font-weight: 300 !important;
     color: rgba(255, 255, 255, 0.6) !important;
     line-height: 1.6 !important;
     margin-top: 0 !important;
     text-align: left !important;
     margin-bottom: 2.5rem !important;
+    max-width: 90%;
+    /* Slight padding before gap */
 }
 
-
-/* View More - Adjusted for left column */
+/* View More */
 .media-actions {
     display: flex;
     justify-content: flex-start;
-    /* Align left */
     gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-/* Video Wrapper - Right Column */
+/* Right Column */
+.media-video-col {
+    min-width: 0;
+    /* Prevents flex/grid blowouts */
+}
+
+/* Video Wrapper */
 .video-wrapper {
     position: relative;
-    border-radius: 24px;
+    border-radius: 32px;
     overflow: hidden;
     width: 100% !important;
-    max-width: none !important;
+    margin: 0;
+
     aspect-ratio: 16 / 9;
     background: #111;
     cursor: pointer;
-    margin: 2.5rem 0;
-    box-shadow: 0 20px 80px rgba(255, 255, 255, 0.05),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    /* Dark mode premium shadow */
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        box-shadow 0.4s ease;
     display: block;
     text-decoration: none;
 }
 
 .video-wrapper:hover {
-    transform: scale(1.02);
-    box-shadow: 0 30px 100px rgba(255, 255, 255, 0.08),
-        0 0 0 1px rgba(255, 255, 255, 0.15);
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        0 0 40px rgba(217, 119, 6, 0.1);
+    /* Subtle amber glow on hover */
 }
 
 /* Existing Button/Video styles preserved */
@@ -181,28 +200,38 @@
 
 /* Mobile Responsive */
 @media (max-width: 968px) {
+    .media-section {
+        padding: 6rem 0;
+    }
+
     .media-layout-grid {
         grid-template-columns: 1fr;
-        /* Stack vertically */
         gap: 3rem;
     }
 
     .media-text-col {
         align-items: center;
-        /* Center text on mobile */
         text-align: center;
+        max-width: 100%;
     }
 
     .media-title {
-        text-align: center;
-        margin-bottom: 1rem;
+        font-size: 2.5rem !important;
+        /* Scales down exactly like .projects-title */
+        text-align: center !important;
+        margin-bottom: 1.25rem !important;
     }
 
     .media-subtitle {
-        text-align: center;
+        text-align: center !important;
+        max-width: 100%;
     }
 
     .media-actions {
         justify-content: center;
+    }
+
+    .video-wrapper {
+        border-radius: 20px;
     }
 }

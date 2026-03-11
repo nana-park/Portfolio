@@ -112,12 +112,16 @@
 
 /* Ensure Text is on top */
 .project-card .project-title,
-.project-card .project-link,
-.project-card .launching-badge {
+.project-card .project-link {
     position: relative;
     z-index: 2;
     margin-bottom: 0.5rem !important;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+}
+
+.project-card .launching-badge {
+    position: absolute;
+    z-index: 10;
 }
 
 /* Research specific tweaks */
