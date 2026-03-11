@@ -115,7 +115,7 @@
 }
 
 .award-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     /* [수정] 폰트 크기 축소 (0.8x of 1.65rem = 1.32rem) */
     font-size: 1.32rem;
     font-weight: 600;

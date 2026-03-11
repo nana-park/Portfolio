@@ -1038,7 +1038,7 @@ section {
 .project-title {
     position: relative;
     z-index: 2;
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.75rem;
     font-weight: 500;
     color: #ffffff;

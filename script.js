@@ -785,15 +785,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const card = cards[index];
 
-            // Manually precisely calculate scroll to center
-            const containerCenter = container.clientWidth / 2;
-            const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
-            // Subtract container.offsetLeft just in case it's not positioned relative, but here card.offsetLeft is typically relative to the container if container is position relative/flex.
-            const targetScrollLeft = cardCenter - containerCenter;
-
-            container.scrollTo({
-                left: targetScrollLeft,
-                behavior: 'smooth'
+            card.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
             });
 
             updateActiveState(index);
@@ -811,9 +806,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             if (container && cards[currentIndex]) {
                 const card = cards[currentIndex];
-                const containerCenter = container.clientWidth / 2;
-                const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
-                container.scrollLeft = cardCenter - containerCenter;
+                card.scrollIntoView({
+                    block: 'nearest',
+                    inline: 'center'
+                });
             }
             updateActiveState(currentIndex);
         }, 100);

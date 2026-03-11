@@ -187,7 +187,7 @@
 
 /* Typography */
 .card-title {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
