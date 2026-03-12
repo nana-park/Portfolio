@@ -1,319 +1,8 @@
 /* ===========================
-   Refined History Styling (Vertical Timeline - Light Mode)
+   Timeline Visibility & Custom Interactions (RunwayML Style)
    =========================== */
 
-/* Section Title & Subtitle Override */
-.history-section {
-    background-color: #F5F5F7;
-    /* Light Grey for Contrast */
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-}
-
-.section-title {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    word-spacing: -0.05em;
-    margin-bottom: 2.5rem;
-    color: #1a1a1a;
-    line-height: 1.1;
-    text-align: center;
-    width: 100%;
-    text-transform: none;
-}
-
-.section-title em {
-    font-style: italic;
-}
-
-.section-subtitle {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    color: rgba(26, 26, 26, 0.7);
-    margin-bottom: 3rem;
-    font-weight: 300;
-    line-height: 1.4;
-    letter-spacing: normal;
-    text-align: center;
-    display: block;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Grid Layout Swap: Text Left, Image Right */
-.history-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-@media (max-width: 968px) {
-    .history-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .history-image-col {
-        order: -1;
-    }
-}
-
-/* Right Column: Pillar Timeline (Graph Replacement) */
-.history-pillar-col {
-    padding-left: 2rem;
-}
-
-.pillar-timeline {
-    position: relative;
-    border-left: none;
-    padding-left: 0;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-}
-
-/* Timeline Container */
-.history-content-col {
-    position: relative;
-    padding-left: 1rem;
-}
-
-/* The Vertical Line (REMOVED) */
-.history-timeline-container {
-    position: relative;
-    border-left: none;
-    padding-left: 0;
-    margin-left: 0;
-}
-
-/* Timeline Item */
-.history-item {
-    position: relative;
-    margin-bottom: 3rem;
-    list-style: none;
-}
-
-.history-item:last-child {
-    margin-bottom: 0;
-}
-
-/* The Square Marker (REMOVED) */
-.history-item::before {
-    display: none;
-}
-
-/* Active/Highlight Marker Style */
-.history-item:hover::before {
-    background-color: #3b82f6;
-    transform: scale(1.2);
-}
-
-/* Content Styling */
-.history-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
-    flex-wrap: wrap;
-}
-
-.history-title {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #111;
-    margin: 0;
-}
-
-/* Location/Extra Info */
-.history-location {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 400;
-}
-
-/* Description / Role */
-.history-description-block {
-    margin-top: 0.5rem;
-}
-
-.history-role {
-    font-size: 1rem;
-    color: #333;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-    display: block;
-}
-
-.history-description {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-.pillar-item {
-    position: relative;
-    margin-bottom: 3.5rem;
-    transition: all 0.3s ease;
-}
-
-.pillar-item:last-child {
-    margin-bottom: 0;
-}
-
-.pillar-item::before {
-    display: none;
-}
-
-.pillar-item.active::before {
-    background-color: #111;
-    width: 12px;
-    height: 12px;
-    left: calc(-2rem - 6px);
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px #888;
-}
-
-.pillar-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #9ca3af;
-    margin: 0;
-    line-height: 1.2;
-    transition: color 0.3s ease;
-}
-
-.active .pillar-title {
-    color: #111;
-}
-
-.pillar-desc {
-    font-size: 0.95rem;
-    color: #6b7280;
-    margin-top: 0.75rem;
-    line-height: 1.6;
-    max-width: 450px;
-    font-weight: 300;
-    display: block;
-}
-
-/* ===========================
-   Refined Timeline UI (Bright Mode Integrated)
-   =========================== */
-.glass-panel {
-    background: #ffffff;
-    border: none;
-    /* Remove Border */
-    border-radius: 24px !important;
-    /* Match Expertise Card Radius */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    /* Soft Shadow */
-    padding: 2.5rem !important;
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    /* Smooth Lift */
-    width: 100% !important;
-}
-
-.glass-panel:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    /* Deeper Shadow on Hover */
-    transform: translateY(-8px);
-    /* Lift Effect */
-}
-
-.glass-panel h3 {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.01em;
-}
-
-.glass-panel .rounded-full {
-    border-radius: 9999px;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-}
-
-/* Refined Button Style (Card Style) - Minimalist */
-/* Refined Button Style (Card Style) - Pills */
-.filter-btn {
-    transition: all 0.3s ease;
-    border-radius: 50px !important;
-    /* Pill Shape */
-    border: 1px solid #e0e0e0;
-    /* Outline for Inactive */
-    background-color: transparent;
-    margin-bottom: 0.5rem;
-    width: 100%;
-
-    /* Layout */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /* Typography */
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    /* More padding for pill */
-    text-align: left;
-    color: #64748b;
-}
-
-.filter-btn:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #1e293b;
-}
-
-.filter-btn.active {
-    background-color: #1a1a1a;
-    /* Solid Black */
-    color: #ffffff;
-    /* White Text */
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-color: #1a1a1a;
-}
-
-/* Status Pill Styling */
-.status-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0.5rem 1rem;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 50px !important;
-    /* Pill Shape */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.875rem;
-    color: #475569;
-}
-
-.filter-btn span.rounded-full {
-    margin-right: 0.75rem;
-}
-
-.filter-arrow {
-    width: 16px;
-    height: 16px;
-    color: #94a3b8;
-    transition: all 0.2s ease;
-}
-
-.filter-btn:hover .filter-arrow {
-    color: #64748b;
-    transform: translateX(2px);
-}
-
-.filter-btn.active .filter-arrow {
-    color: #0f172a;
-}
-
-/* Visibility Animation Classes */
+/* Tailwind Visibility Classes logic (Required for JS filter function) */
 .item-hidden {
     display: none !important;
     opacity: 0;
@@ -337,30 +26,63 @@
     }
 }
 
-.history-layout-grid {
-    padding: 0;
-    max-width: 1100px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+/* Sidebar Nav Buttons Styling */
+.filter-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #a1a1aa;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-@media (max-width: 768px) {
-    .history-layout-grid {
-        padding: 0;
-    }
+.filter-btn:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
 }
 
-/* IMPORTANT: Hide Tailwind-style timeline elements (dots/lines) to match clean design */
-.timeline-item .flex-none {
-    display: none !important;
+/* Active State for the clicked pill */
+.filter-btn.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
-.timeline-item {
-    gap: 0 !important;
-    width: 100% !important;
-    margin-bottom: 3rem;
+/* Arrow SVG Animation */
+.filter-btn svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.3s ease;
 }
 
-.timeline-line {
-    display: none !important;
+.filter-btn:hover svg {
+    opacity: 0.5;
+    transform: translateX(0);
+}
+
+.filter-btn.active svg {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Card Subtle Hover Effect */
+.history-card {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.history-card:hover {
+    background-color: #151515;
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
 }

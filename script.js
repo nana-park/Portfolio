@@ -590,10 +590,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize project filter grid on load
+    // Initialize project filter grid on load without triggering scroll/focus
     const activeTabBtn = document.querySelector('.tab-btn.active');
     if (activeTabBtn) {
-        activeTabBtn.click();
+        // Use dispatchEvent instead of .click() to prevent edge case where browser 
+        // forces scroll down to bring the newly focused button into view.
+        activeTabBtn.dispatchEvent(new Event('click'));
     }
 
     const popup = document.getElementById('email-popup');
@@ -759,7 +761,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Project Tabs
     const activeTab = document.querySelector('.tab-btn.active');
     if (activeTab) {
-        setTimeout(() => activeTab.click(), 100);
+        setTimeout(() => activeTab.dispatchEvent(new Event('click')), 100);
     }
 
     // Timeline Filters
@@ -808,10 +810,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const card = cards[index];
 
-            card.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest',
-                inline: 'center'
+            const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
+            container.scrollTo({
+                left: scrollPos,
+                behavior: 'smooth'
             });
 
             updateActiveState(index);
@@ -829,9 +831,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             if (container && cards[currentIndex]) {
                 const card = cards[currentIndex];
-                card.scrollIntoView({
-                    block: 'nearest',
-                    inline: 'center'
+                const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
+                container.scrollTo({
+                    left: scrollPos,
+                    behavior: 'auto'
                 });
             }
             updateActiveState(currentIndex);

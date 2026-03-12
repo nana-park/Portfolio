@@ -73,9 +73,17 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(26, 26, 26, 0.98);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition-normal);
+    background: #ffffff;
+    height: 70px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbar .container {
@@ -90,37 +98,32 @@ body {
 
 .logo {
     font-family: var(--font-sans);
-    /* Sank-serif to match Nav */
-    font-size: 0.75rem;
-    /* Match Nav size */
-    font-weight: 500;
-    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000000;
     text-decoration: none;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
 .nav-menu {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: 2rem;
 }
 
 .nav-link {
-    color: #ffffff;
-    /* Pure white */
+    color: #666666;
     text-decoration: none;
     font-family: var(--font-sans);
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    transition: var(--transition-fast);
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    opacity: 1;
-    color: #ffffff;
+    color: #000000;
 }
 
 .mobile-toggle {
@@ -2444,37 +2447,38 @@ section {
 }
 
 .id-root-name {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 2.5rem;
-    /* ~text-4xl/5xl */
-    font-weight: 700;
+    font-weight: 500;
+    /* Runway Clean */
     color: #ffffff;
-    letter-spacing: 0.025em;
+    letter-spacing: -0.02em;
+    /* Tighter letter spacing */
 }
 
 .id-vertical-line {
     width: 1px;
-    height: 2.5rem;
-    /* h-10 */
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Lighter for dark bg */
+    height: 3rem;
+    /* slightly taller */
+    background-color: #333333;
+    /* Darker line */
     margin: 0.5rem auto;
 }
 
 .id-pronunciation-label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
-    color: #6B7280;
+    color: #555555;
     margin-bottom: 0.5rem;
 }
 
 .id-derivation-row {
     display: flex;
     align-items: flex-start;
-    gap: 3rem;
-    /* gap-12 */
+    gap: 4rem;
+    /* More spacing */
     position: relative;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .id-decorator-slash {
@@ -2482,31 +2486,28 @@ section {
     top: 0.25rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.875rem;
-    /* text-3xl */
-    color: #9CA3AF;
-    /* Gray 400 */
+    color: #444444;
 }
 
 .id-slash-left {
-    left: -1.5rem;
+    left: -2rem;
 }
 
 .id-slash-right {
-    right: -1.5rem;
+    right: -2rem;
 }
 
 .id-translation-group {
     position: relative;
     display: flex;
-    gap: 3rem;
-    /* gap-12 */
+    gap: 4rem;
+    /* wider */
 }
 
 /* Floating Label "Translated Korean into English" */
 .id-floating-label {
     position: absolute;
     top: 88px;
-    /* Aligned with connector midpoint */
     left: 0;
     right: 0;
     display: flex;
@@ -2519,19 +2520,18 @@ section {
 }
 
 .id-floating-badge {
-    background: rgba(255, 255, 255, 0.1) !important;
-    backdrop-filter: blur(4px);
+    background: #000 !important;
     padding: 0.35rem 0.75rem;
     border-radius: 4px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #333333;
 }
 
 .id-floating-text {
     display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
-    color: rgba(255, 255, 255, 0.6);
+    color: #888888;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     line-height: 1.2;
@@ -2543,8 +2543,7 @@ section {
     left: 40px;
     right: 40px;
     height: 1px;
-    border-top: 1px dashed rgba(255, 255, 255, 0.2);
-    /* Lighter for dark bg */
+    border-top: 1px dashed #333333;
     z-index: 0;
     transform: translateY(-50%);
 }
@@ -2558,19 +2557,19 @@ section {
 }
 
 .id-phonetic-symbol {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
+    /* Match Runway */
     font-size: 1.875rem;
-    /* text-3xl */
-    color: #D97706;
-    /* Accent Orange */
-    font-weight: 500;
+    color: #ffffff;
+    /* pure white */
+    font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
 .id-connector {
     width: 1px;
     height: 80px;
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Lighter for dark bg */
+    background-color: #333333;
     margin: 8px 0;
     position: relative;
 }
@@ -2583,7 +2582,7 @@ section {
     transform: translateX(-50%);
     width: 20px;
     height: 1px;
-    background-color: #374151;
+    background-color: #333333;
 }
 
 .id-meaning {
@@ -2593,22 +2592,25 @@ section {
 }
 
 .id-meaning-text {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 2.25rem;
-    /* text-4xl */
-    font-weight: 700;
-    color: #D97706;
-    /* Accent Orange */
+    font-weight: 500;
+    color: #ffffff;
+    /* Runways monochrome */
+    letter-spacing: -0.02em;
 }
 
 .id-faded-part {
-    opacity: 0.3;
+    opacity: 0.5;
+    /* brighter than 0.3 to be visible as stark gray */
 }
 
 .id-faded-symbol {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-sans);
     font-size: 1.875rem;
-    color: #9CA3AF;
+    color: #555555;
+    font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
 @keyframes simpleFadeIn {
@@ -2627,8 +2629,8 @@ section {
    About Me Section Refinements (Dark Mode Redesign)
    =========================== */
 .about {
-    background-color: #050505 !important;
-    /* Deep Black */
+    background-color: #ffffff !important;
+    /* Pure White */
     padding-top: 6rem;
     padding-bottom: 6rem;
 }
@@ -2670,23 +2672,23 @@ section {
 }
 
 /* ===========================
-   Identity Diagram (Dark Mode Adaptation)
+   Identity Diagram (Light Mode Adaptation)
    =========================== */
 .id-root-name {
-    color: #ffffff !important;
-    /* White Name */
+    color: #111111 !important;
+    /* Almost Black Name */
 }
 
 .id-vertical-line,
 .id-connector,
 .id-dashed-line {
-    background-color: #444444 !important;
-    /* Dark Gray Lines */
-    border-color: #444444 !important;
+    background-color: #e5e5e5 !important;
+    /* Light Gray Lines */
+    border-color: #e5e5e5 !important;
 }
 
 .id-connector::before {
-    background-color: #444444 !important;
+    background-color: #e5e5e5 !important;
 }
 
 .id-root-label,
@@ -2694,25 +2696,23 @@ section {
 .id-decorator-slash,
 .id-floating-text,
 .id-faded-symbol {
-    color: #666666 !important;
+    color: #888888 !important;
     /* Muted Gray Text */
 }
 
 .id-phonetic-symbol {
-    color: #F59E0B !important;
-    /* Bright Orange for Pop */
+    color: #111111 !important;
+    /* Runway clean dark */
 }
 
 .id-meaning-text {
-    color: #F59E0B !important;
-    /* Bright Orange */
+    color: #111111 !important;
+    /* Runway clean dark */
 }
 
 .id-floating-badge {
-    background: rgba(30, 30, 30, 0.8) !important;
-    /* Dark Glass */
-    backdrop-filter: blur(4px);
-    border: 1px solid #333;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
 }
 
 /* Highlights Cards - Dark Mode */
