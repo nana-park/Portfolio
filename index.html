@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -56,31 +56,52 @@
     <section class="relative w-full h-[100vh] bg-white pt-[70px] pb-4 px-4 md:px-8 lg:px-12 flex flex-col" id="home">
         <div class="relative w-full flex-grow rounded-[20px] overflow-hidden bg-black flex items-end pb-12 md:pb-24 pt-20">
             <div class="absolute inset-0 w-full h-full opacity-80 pointer-events-none mix-blend-screen overflow-hidden">
-                <video id="hero-video-1" src="rabbit_boat_1.mp4" autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover scale-110 opacity-0 z-0"></video>
-                <video id="hero-video-2" src="rabbit_boat_2.mp4" muted playsinline class="absolute inset-0 w-full h-full object-cover scale-110 opacity-100 z-10"></video>
+                <video id="hero-video-1" src="rabbit_boat_1.mp4" autoplay muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:1;z-index:10;"></video>
+                <video id="hero-video-2" src="rabbit_boat_2.mp4" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:0;z-index:0;"></video>
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    const video1 = document.getElementById('hero-video-1');
-                    const video2 = document.getElementById('hero-video-2');
-                    if (video1 && video2) {
-                        video1.addEventListener('ended', () => {
-                            video2.play();
-                            video1.classList.replace('opacity-100', 'opacity-0');
-                            video1.classList.replace('z-10', 'z-0');
-                            video2.classList.replace('opacity-0', 'opacity-100');
-                            video2.classList.replace('z-0', 'z-10');
-                            video1.currentTime = 0;
-                        });
-                        video2.addEventListener('ended', () => {
-                            video1.play();
-                            video2.classList.replace('opacity-100', 'opacity-0');
-                            video2.classList.replace('z-10', 'z-0');
-                            video1.classList.replace('opacity-0', 'opacity-100');
-                            video1.classList.replace('z-0', 'z-10');
-                            video2.currentTime = 0;
-                        });
+                    const v1 = document.getElementById('hero-video-1');
+                    const v2 = document.getElementById('hero-video-2');
+                    if (!v1 || !v2) return;
+
+                    // Preload both videos
+                    v1.load(); v2.load();
+
+                    let switching = false;
+
+                    function show(a, b) {
+                        a.style.opacity = '1'; a.style.zIndex = '10';
+                        b.style.opacity = '0'; b.style.zIndex = '0';
                     }
+
+                    // Pre-start v2 before v1 ends to avoid blackout
+                    v1.addEventListener('timeupdate', () => {
+                        if (!switching && v1.duration && v1.currentTime >= v1.duration - 0.3) {
+                            switching = true;
+                            v2.currentTime = 0;
+                            v2.play().catch(() => {});
+                        }
+                    });
+                    v1.addEventListener('ended', () => {
+                        show(v2, v1);
+                        v1.currentTime = 0;
+                        switching = false;
+                    });
+
+                    // Pre-start v1 before v2 ends
+                    v2.addEventListener('timeupdate', () => {
+                        if (!switching && v2.duration && v2.currentTime >= v2.duration - 0.3) {
+                            switching = true;
+                            v1.currentTime = 0;
+                            v1.play().catch(() => {});
+                        }
+                    });
+                    v2.addEventListener('ended', () => {
+                        show(v1, v2);
+                        v2.currentTime = 0;
+                        switching = false;
+                    });
                 });
             </script>
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
@@ -117,23 +138,26 @@
             <p class="font-sans text-[#a1a1aa] text-[13px] md:text-[14px] leading-relaxed max-w-[400px] mx-auto mb-10 tracking-wide">
                 Experience &amp; collaboration with<br class="hidden sm:block">industry leading organizations:
             </p>
-            <div class="relative w-full overflow-hidden flex items-center h-[60px] max-w-[1200px] mx-auto" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-                <div class="logo-track flex gap-12 sm:gap-20 md:gap-32 items-center whitespace-nowrap min-w-max">
-                    <span class="font-sans font-bold text-xl tracking-tighter text-gray-400">NAVER</span>
-                    <span class="font-sans font-medium text-lg tracking-tight text-gray-400">NAVER CLOUD</span>
-                    <span class="font-sans font-bold text-xl tracking-tight text-gray-400">SK<span class="font-light">telecom</span></span>
-                    <span class="font-sans font-medium text-xl tracking-tight text-gray-400">Google</span>
-                    <span class="font-sans font-bold text-2xl tracking-tighter text-gray-400">H&amp;M</span>
-                    <span class="font-sans font-bold text-xl tracking-tighter text-gray-400">NAVER</span>
-                    <span class="font-sans font-medium text-lg tracking-tight text-gray-400">NAVER CLOUD</span>
-                    <span class="font-sans font-bold text-xl tracking-tight text-gray-400">SK<span class="font-light">telecom</span></span>
-                    <span class="font-sans font-medium text-xl tracking-tight text-gray-400">Google</span>
-                    <span class="font-sans font-bold text-2xl tracking-tighter text-gray-400">H&amp;M</span>
-                    <span class="font-sans font-bold text-xl tracking-tighter text-gray-400">NAVER</span>
-                    <span class="font-sans font-medium text-lg tracking-tight text-gray-400">NAVER CLOUD</span>
-                    <span class="font-sans font-bold text-xl tracking-tight text-gray-400">SK<span class="font-light">telecom</span></span>
-                    <span class="font-sans font-medium text-xl tracking-tight text-gray-400">Google</span>
-                    <span class="font-sans font-bold text-2xl tracking-tighter text-gray-400">H&amp;M</span>
+            <div class="relative w-full overflow-hidden flex items-center h-[70px] max-w-[1200px] mx-auto" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+                <div class="logo-track flex gap-16 sm:gap-24 md:gap-36 items-end whitespace-nowrap min-w-max">
+                    <!-- Set 1 -->
+                    <img src="Files/Logo/Naver-logo.svg" alt="NAVER" style="height:22px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/Naver%20Cloud-logo.svg" alt="NAVER CLOUD" style="height:24px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/SK%20Telecom-logo.svg" alt="SK Telecom" style="height:44px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:flex-end;">
+                    <img src="Files/Logo/Google-logo.svg" alt="Google" style="height:26px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
+                    <img src="Files/Logo/H&amp;M-logo.svg" alt="H&amp;M" style="height:29px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
+                    <!-- Set 2 -->
+                    <img src="Files/Logo/Naver-logo.svg" alt="NAVER" style="height:22px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/Naver%20Cloud-logo.svg" alt="NAVER CLOUD" style="height:24px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/SK%20Telecom-logo.svg" alt="SK Telecom" style="height:44px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:flex-end;">
+                    <img src="Files/Logo/Google-logo.svg" alt="Google" style="height:26px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
+                    <img src="Files/Logo/H&amp;M-logo.svg" alt="H&amp;M" style="height:29px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
+                    <!-- Set 3 -->
+                    <img src="Files/Logo/Naver-logo.svg" alt="NAVER" style="height:22px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/Naver%20Cloud-logo.svg" alt="NAVER CLOUD" style="height:24px;width:auto;filter:grayscale(100%) opacity(0.45);">
+                    <img src="Files/Logo/SK%20Telecom-logo.svg" alt="SK Telecom" style="height:44px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:flex-end;">
+                    <img src="Files/Logo/Google-logo.svg" alt="Google" style="height:26px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
+                    <img src="Files/Logo/H&amp;M-logo.svg" alt="H&amp;M" style="height:29px;width:auto;filter:grayscale(100%) opacity(0.45);align-self:center;">
                 </div>
             </div>
         </div>
@@ -226,7 +250,7 @@
                 <div class="lg:col-span-5">
                     <h2 class="font-sans text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] leading-[1.1] tracking-tight font-medium mb-4 sm:mb-6">As an AI Product Manager,</h2>
                     <p class="font-sans text-[#a1a1aa] text-[15px] md:text-[16px] leading-[1.6] max-w-[85%] font-light mb-8">Bridging the gap between human psychology and engineering to design optimal AI experiences. The next frontier of user experience will come from integrating deep human intent.</p>
-                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-sans text-[13px] font-medium rounded-lg transition-colors hover:bg-black">View projects &nbsp; ??/a>
+                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-sans text-[13px] font-medium rounded-lg transition-colors hover:bg-black">View projects &nbsp; ↗</a>
                 </div>
                 <div class="lg:col-span-6 lg:col-start-7 flex flex-col pt-8 lg:pt-0">
                     <div class="text-[11px] text-white/40 uppercase tracking-[0.2em] mb-4 font-medium pl-1 font-sans">Careers</div>
@@ -235,29 +259,29 @@
                             <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">NAVER CLOUD</h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Directed UX strategy for CareCall and AiCall. Formulated quantitative evaluation frameworks to assess LLM outputs against human intent, significantly enhancing chatbot service quality and stability.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 block font-sans font-medium">2024.07 ??2026.01</span>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-1 block font-sans font-medium">2023.07 ??2024.01</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 block font-sans font-medium">2024.07 — 2026.01</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-1 block font-sans font-medium">2023.07 — 2024.01</span>
                             </p>
                         </div>
                         <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
                             <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">SK Telecom</h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Orchestrated functional scenarios and policies for the A. (Adot) AI agent. Conducted extensive utterance data analysis to refine persona interactions and elevate Voice UI capabilities.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2024.04 ??2024.07</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2024.04 — 2024.07</span>
                             </p>
                         </div>
                         <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
                             <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">Sliver <span class="text-white/40 font-normal">(w/ Google, SK Telecom)</span></h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Directed the end-to-end product lifecycle for Hopzie, an AI-powered automated online store builder. Defined core functionalities and successfully accelerated go-to-market strategies.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2023.07 ??2024.01</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2023.07 — 2024.01</span>
                             </p>
                         </div>
                         <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
-                            <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">H&amp;M <span class="text-white/40 font-normal">??HR IT Assistant</span></h3>
+                            <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">H&amp;M <span class="text-white/40 font-normal">— HR IT Assistant</span></h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Managed online training platform and designed training programs.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2018.04 ??2019.04</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2018.04 — 2019.04</span>
                             </p>
                         </div>
                     </div>
@@ -289,7 +313,7 @@
                 <div class="lg:col-span-5">
                     <h2 class="font-sans text-white text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] leading-[1.1] tracking-tight font-medium mb-4 sm:mb-6">Academic Standing</h2>
                     <p class="font-sans text-[#a1a1aa] text-[15px] md:text-[16px] leading-[1.6] max-w-[85%] font-light mb-8">Rooted in academic rigor. Exploring the nuances of human behavior, psychology, and cognitive science to establish theoretical foundations for cutting-edge AI interactions.</p>
-                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-sans text-[13px] font-medium rounded-lg transition-colors hover:bg-black">View publications &nbsp; ??/a>
+                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white font-sans text-[13px] font-medium rounded-lg transition-colors hover:bg-black">View publications &nbsp; ↗</a>
                 </div>
                 <div class="lg:col-span-6 lg:col-start-7 flex flex-col pt-8 lg:pt-0">
                     <div class="text-[11px] text-white/40 uppercase tracking-[0.2em] mb-4 font-medium pl-1 font-sans">Education</div>
@@ -298,14 +322,14 @@
                             <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">M.S. in Human-AI Interaction <span class="text-white/40 font-normal">@ Sungkyunkwan University</span></h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Focused on human cognition, statistical modeling, and AI technical literacy. Research translated into prominent SSCI journal publications.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2021 ??2023</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2021 — 2023</span>
                             </p>
                         </div>
                         <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
                             <h3 class="font-sans text-white text-[18px] md:text-[20px] font-medium tracking-tight mb-2 transition-colors">B.A. in Psychology <span class="text-white/40 font-normal">@ Sookmyung Women's Univ</span></h3>
                             <p class="font-sans text-[#a1a1aa] text-[14px] md:text-[15px] leading-[1.6] max-w-[90%] font-light">
                                 Built core expertise in behavioral research, experimental design, and quantitative analytics, grounding future UX practices. Minor in ESG Management.<br>
-                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2015 ??2021</span>
+                                <span class="text-white/40 text-[12px] md:text-[13px] mt-2.5 inline-block font-sans font-medium">2015 — 2021</span>
                             </p>
                         </div>
                     </div>
@@ -713,12 +737,12 @@
                 <p class="testimonials-subtitle text-center mx-auto">Voices from the team members<br>who had worked with BREADME</p>
             </div>
             <div class="testimonials-container" id="testimonialsContainer">
-                <div class="testimonial-card card-gradient-1"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"Nahyun-san finally made the Korea-Japan collaboration happen. Her drive and quality shocked us - and yes, all of us Japanese teammates think we should learn from her."</p><div class="card-signature">J<span class="card-author-title">Product Lead<br>LINE WORKS Japan</span></div></div>
-                <div class="testimonial-card card-gradient-2 active"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"Things were stuck between engineering and planning, but her positive energy and communication helped reset the relationship and move the work forward.</p><div class="card-signature">P<span class="card-author-title">Lead Product Manager<br>Naver Cloud</span></div></div>
-                <div class="testimonial-card card-gradient-3"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"Working with her reduces alignment cost. Decisions happen faster because everyone understands the 'why.'</p><div class="card-signature">O<span class="card-author-title">AI Development<br>Naver Cloud</span></div></div>
-                <div class="testimonial-card card-gradient-5"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"From kickoff to delivery, her thoughtful comments helped organize what was needed and turn it into real outcomes."</p><div class="card-signature">H<span class="card-author-title">Researcher<br>External Partner</span></div></div>
-                <div class="testimonial-card card-gradient-6"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"She doesn't wait for work. She finds it - and makes sure everyone knows."</p><div class="card-signature">L<span class="card-author-title">Senior Product Manager<br>SK Telecom</span></div></div>
-                <div class="testimonial-card card-gradient-4"><div class="card-stars">?끸쁾?끸쁾??/div><p class="card-quote">"Her only weaknesses? She doesn't drink, doesn't like coffee, and doesn't smoke."</p><div class="card-signature">K<span class="card-author-title">Director of AI Solution Planning<br>Naver Cloud</span></div></div>
+                <div class="testimonial-card card-gradient-1"><div class="card-stars">★★★★★</div><p class="card-quote">"Nahyun-san finally made the Korea-Japan collaboration happen. Her drive and quality shocked us - and yes, all of us Japanese teammates think we should learn from her."</p><div class="card-signature">J<span class="card-author-title">Product Lead<br>LINE WORKS Japan</span></div></div>
+                <div class="testimonial-card card-gradient-2 active"><div class="card-stars">★★★★★</div><p class="card-quote">"Things were stuck between engineering and planning, but her positive energy and communication helped reset the relationship and move the work forward.</p><div class="card-signature">P<span class="card-author-title">Lead Product Manager<br>Naver Cloud</span></div></div>
+                <div class="testimonial-card card-gradient-3"><div class="card-stars">★★★★★</div><p class="card-quote">"Working with her reduces alignment cost. Decisions happen faster because everyone understands the 'why.'</p><div class="card-signature">O<span class="card-author-title">AI Development<br>Naver Cloud</span></div></div>
+                <div class="testimonial-card card-gradient-5"><div class="card-stars">★★★★★</div><p class="card-quote">"From kickoff to delivery, her thoughtful comments helped organize what was needed and turn it into real outcomes."</p><div class="card-signature">H<span class="card-author-title">Researcher<br>External Partner</span></div></div>
+                <div class="testimonial-card card-gradient-6"><div class="card-stars">★★★★★</div><p class="card-quote">"She doesn't wait for work. She finds it - and makes sure everyone knows."</p><div class="card-signature">L<span class="card-author-title">Senior Product Manager<br>SK Telecom</span></div></div>
+                <div class="testimonial-card card-gradient-4"><div class="card-stars">★★★★★</div><p class="card-quote">"Her only weaknesses? She doesn't drink, doesn't like coffee, and doesn't smoke."</p><div class="card-signature">K<span class="card-author-title">Director of AI Solution Planning<br>Naver Cloud</span></div></div>
             </div>
             <div class="testimonials-nav">
                 <button class="nav-btn" id="prevTestimonial" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
@@ -747,7 +771,7 @@
     <div class="modal" id="projectModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">횞</button>
+            <button class="modal-close" id="modalClose">×</button>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
@@ -772,7 +796,7 @@
             </div>
             <div class="footer-bottom-bar">
                 <div class="footer-lang"><button class="lang-btn active"><span class="lang-dot"></span> English</button><button class="lang-btn">Korean</button></div>
-                <div class="footer-copyright"><p>짤 2025 Nahyun Park</p></div>
+                <div class="footer-copyright"><p>© 2025 Nahyun Park</p></div>
             </div>
         </div>
     </footer>
