@@ -48,18 +48,16 @@ body {
     /* Match Hero background */
     color: var(--color-text-dark);
     line-height: 1.8;
-    overflow-x: auto;
-    /* Allow scroll if window < 1100px */
+    overflow-x: hidden;
     position: relative;
-    min-width: 1200px;
-    /* Increased to allow professional gaps without wrapping */
+    min-width: 320px;
 }
 
 .container {
-    width: 1200px;
-    /* Rigid 1200px layout */
-    margin: 0 auto;
-    padding: 0 4rem;
+    max-width: 1440px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 5vw !important;
     position: relative;
     z-index: 10;
 }
@@ -107,16 +105,16 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .nav-link {
     color: #666666;
     text-decoration: none;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     transition: color 0.2s ease;
 }
@@ -221,11 +219,11 @@ body {
 
 .hero-title {
     font-family: var(--font-sans) !important;
-    font-size: 3.5rem !important;
-    font-weight: 600 !important;
+    font-size: 5rem !important;
+    font-weight: 500 !important;
     margin-bottom: 2rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     color: #ffffff;
 }
 
@@ -320,37 +318,36 @@ body {
 
 .btn {
     font-family: var(--font-sans);
-    font-weight: 500;
-    font-size: 0.8rem;
-    /* Smaller button text */
+    font-weight: 600;
+    font-size: 0.75rem;
     text-decoration: none;
     transition: var(--transition-normal);
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
 }
 
 .btn-primary {
     background: #ffffff;
     color: #000000;
     border: none;
-    /* No border for primary */
-    padding: 0.6rem 1.75rem;
-    /* Smaller padding */
-    border-radius: 50px;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
 }
 
 .btn-primary:hover {
     background: #f0f0f0;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
     background: transparent;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 0.6rem 1.75rem;
-    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
 }
 
 .btn-secondary:hover {
@@ -452,13 +449,14 @@ section {
 }
 
 .section-title {
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
+    font-family: var(--font-sans);
+    font-size: 3.8rem;
     font-weight: 400;
+    letter-spacing: -0.03em;
     text-align: center;
     margin-bottom: 1.5rem;
     /* Gap A = 1.5rem */
-    line-height: 1.2;
+    line-height: 1.1;
     color: inherit;
     /* Allow section-specific overrides */
 }
@@ -2957,8 +2955,8 @@ section {
     /* 카드 사이 간격 */
     width: max-content;
 
-    /* 카드를 4세트(총 16장)로 늘렸으므로, 속도를 50초로 설정 */
-    animation: scroll-left 50s linear infinite;
+    /* 카드를 4세트(총 20장)로 늘렸으므로, 속도를 25초로 설정 (1세트 사이클 기준) */
+    animation: scroll-left 25s linear infinite;
     padding-left: 24px;
 
     will-change: transform;
@@ -2975,7 +2973,7 @@ section {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-25%);
     }
 }
 

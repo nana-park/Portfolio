@@ -84,37 +84,107 @@ navLinks.forEach(link => {
 });
 
 // ===========================
-// Smooth Scroll
+// Single Page Application (SPA) Router
 // ===========================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+const routerConfig = {
+    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta'],
+    'about': ['about', 'skills', 'how-work', 'media', 'testimonials'],
+    'projects': ['projects', 'research'],
+    'awards': ['awards'],
+    'contact': ['contact']
+};
 
-        if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+function handleRoute() {
+    let rawHash = window.location.hash.replace('#', '') || 'home';
+    let activeTab = null;
+    let targetSection = rawHash;
+
+    // Determine which tab the hash belongs to
+    if (routerConfig[rawHash]) {
+        activeTab = rawHash;
+    } else {
+        for (const [tab, sections] of Object.entries(routerConfig)) {
+            if (sections.includes(rawHash)) {
+                activeTab = tab;
+                break;
+            }
+        }
+    }
+
+    // Default to home if no matching tab is found
+    if (!activeTab) {
+        activeTab = 'home';
+        targetSection = 'home';
+    }
+    
+    // Hide all logical sections
+    const allSections = document.querySelectorAll('section[id]');
+    allSections.forEach(sec => {
+        sec.style.display = 'none';
+        sec.style.opacity = '0';
+    });
+    
+    // Toggle the free-trial banner if it exists
+    const banner = document.querySelector('.free-trial-banner');
+    if (banner) banner.style.display = 'none';
+
+    // Show sections for the active route
+    routerConfig[activeTab].forEach((id, index) => {
+        const sec = document.getElementById(id);
+        if (sec) {
+            sec.style.display = ''; 
+            setTimeout(() => {
+                sec.style.transition = 'opacity 0.4s ease';
+                sec.style.opacity = '1';
+            }, index * 50);
         }
     });
-});
 
-// Fix scroll position on load if URL has a hash (for back links)
-window.addEventListener('load', () => {
-    if (window.location.hash) {
+    if (banner && ['home', 'about', 'projects'].includes(activeTab)) {
+        banner.style.display = 'flex';
+    }
+
+    // Update Nav LNB Active States
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === '#' + activeTab) {
+            link.classList.add('active');
+            link.style.color = '#D97706'; // highlight color
+        } else {
+            link.classList.remove('active');
+            link.style.color = '';
+        }
+    });
+
+    // Handle scroll position (Top for main tabs, smooth scroll for sub-sections)
+    if (activeTab === targetSection) {
+        window.scrollTo(0, 0);
+    } else {
         setTimeout(() => {
-            const target = document.querySelector(window.location.hash);
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
+            const targetEl = document.getElementById(targetSection);
+            if (targetEl) {
+                const headerOffset = 80;
+                const elementPosition = targetEl.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'auto'
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
-        }, 100);
+        }, 150);
     }
+    setTimeout(() => window.dispatchEvent(new Event('scroll')), 200);
+}
+
+window.addEventListener('hashchange', handleRoute);
+window.addEventListener('DOMContentLoaded', handleRoute);
+// Also intercept clicks to '#' links to just update the hash and prevent any default scroll jumping
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').length > 1) {
+            // Let the browser naturally change the hash, or we do it
+            // we will let browser do it, just don't preventDefault if it's a real route
+        }
+    });
 });
 
 // ===========================
@@ -193,30 +263,8 @@ animateGradient();
 
 
 // ===========================
-// Add Active State to Nav Links
+// Overridden Active State to Nav Links (SPA managed)
 // ===========================
-const sections = document.querySelectorAll('section[id]');
-
-function highlightNavLink() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-        if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLink.classList.add('active');
-            } else {
-                navLink.classList.remove('active');
-            }
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavLink);
 
 // ===========================
 // Performance Optimization

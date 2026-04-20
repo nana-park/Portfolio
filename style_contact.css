@@ -1,31 +1,13 @@
-/* Contact Section Styles */
+/* Contact Section Styles - Legacy Overrides Removed */
 #contact {
-    padding-top: calc(var(--spacing-xl) * 2);
-    padding-bottom: var(--spacing-xl);
-    text-align: center;
     position: relative;
-    background-image: url('contact-bg-bakery.jpg');
+    z-index: 10;
+    background: linear-gradient(rgba(10, 10, 9, 0.65), rgba(10, 10, 9, 0.85)), url('contact-bg-bakery.jpg');
     background-size: cover;
-    background-position: center 58%;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-
-/* Gradient overlay - dimming + bottom gradient matching footer color */
-#contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.6) 40%,
-            rgba(17, 17, 17, 0.9) 80%,
-            rgb(17, 17, 17) 100%);
-    pointer-events: none;
-    z-index: 1;
+    padding-top: 12rem;
+    padding-bottom: 5rem;
 }
 
 /* Ensure content is above the overlay */
