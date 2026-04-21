@@ -488,12 +488,48 @@
         <div class="container mx-auto px-4 md:px-6 flex flex-col items-center">
             <!-- Media Container (16:9) -->
             <div class="relative w-full max-w-[1000px] aspect-[16/9] bg-[#111111] rounded-[8px] overflow-hidden mb-10 lg:mb-14 shadow-2xl border border-white/5">
-                <iframe class="absolute inset-0 w-full h-full pointer-events-none" 
-                        src="https://www.youtube.com/embed/BQGPG91YsLo?si=-nVK2s98ogb84Slq&autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=BQGPG91YsLo&start=2230&playsinline=1" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+                <!-- YouTube API Managed Player for Seamless Video Splicing -->
+                <div id="ebs-yt-player" class="absolute inset-0 w-full h-full"></div>
+                <script>
+                    if (!window.YT) {
+                        var tag = document.createElement('script');
+                        tag.src = "https://www.youtube.com/iframe_api";
+                        var firstScriptTag = document.getElementsByTagName('script')[0];
+                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                    }
+                    
+                    var ebsPlayer;
+                    var ytClipIndex = 0;
+                    var ytClips = [
+                        { start: 2230, end: 2257 }, // 37:10 ~ 37:37
+                        { start: 2295, end: 2310 }  // 38:15 ~ 38:30
+                    ];
+
+                    function onYouTubeIframeAPIReady() {
+                        ebsPlayer = new YT.Player('ebs-yt-player', {
+                            videoId: 'BQGPG91YsLo',
+                            playerVars: { 'autoplay': 1, 'mute': 1, 'controls': 1, 'rel': 0, 'playsinline': 1 },
+                            events: {
+                                'onReady': function(e) {
+                                    e.target.seekTo(ytClips[0].start);
+                                    e.target.playVideo();
+                                    
+                                    // Custom polling loop to jump seamlessly at specific end markers
+                                    setInterval(function() {
+                                        if (ebsPlayer && ebsPlayer.getCurrentTime) {
+                                            var t = ebsPlayer.getCurrentTime();
+                                            if (t >= ytClips[ytClipIndex].end) {
+                                                ytClipIndex++;
+                                                if (ytClipIndex >= ytClips.length) ytClipIndex = 0; // Infinite loop
+                                                ebsPlayer.seekTo(ytClips[ytClipIndex].start);
+                                            }
+                                        }
+                                    }, 250);
+                                }
+                            }
+                        });
+                    }
+                </script>
             </div>
             
             <!-- Text Content -->
@@ -1336,7 +1372,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
     <script src="how-i-work.js"></script>
 
 </body>

@@ -136,7 +136,8 @@ function handleRoute() {
     routerConfig[activeTab].forEach((id, index) => {
         const sec = document.getElementById(id);
         if (sec) {
-            sec.style.display = ''; 
+            // Force explicit truthy display values for cross-browser reliability over '' (empty string reset)
+            sec.style.display = sec.className.includes('flex') ? 'flex' : 'block'; 
             setTimeout(() => {
                 sec.style.transition = 'opacity 0.4s ease';
                 sec.style.opacity = '1';
