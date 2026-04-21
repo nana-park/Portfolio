@@ -132,6 +132,16 @@ function handleRoute() {
     const banner = document.querySelector('.free-trial-banner');
     if (banner) banner.style.display = 'none';
 
+    // Intelligently pause/resume the YouTube API background video based on the active tab bounds
+    if (typeof window.ebsPlayer !== 'undefined' && window.ebsPlayer && window.ebsPlayer.pauseVideo) {
+        if (activeTab !== 'about') {
+            window.ebsPlayer.pauseVideo();
+        } else {
+            // Because it continues muted by default unless the user explicitly unmutes it
+            window.ebsPlayer.playVideo();
+        }
+    }
+
     // Show sections for the active route
     routerConfig[activeTab].forEach((id, index) => {
         const sec = document.getElementById(id);
