@@ -117,6 +117,10 @@ function handleRoute() {
         targetSection = 'home';
     }
     
+    // Destroy the FOUC preventer style block once the JS router takes over
+    const foucPreventer = document.getElementById('spa-fouc-preventer');
+    if (foucPreventer) foucPreventer.remove();
+
     // Hide all logical sections
     const allSections = document.querySelectorAll('section[id]');
     allSections.forEach(sec => {
