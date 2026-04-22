@@ -1,10 +1,5 @@
-/* Expertise Section Background */
 #skills {
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('expertise-v1.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
     min-height: 400px;
 }
 

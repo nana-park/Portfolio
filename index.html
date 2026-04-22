@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style_testimonials.css?v=2">
+    <link rel="stylesheet" href="style_testimonials.css?v=3">
     <link rel="stylesheet" href="style_contact.css">
     <link rel="stylesheet" href="footer_override.css">
     <link rel="stylesheet" href="style_research.css">
@@ -40,7 +40,7 @@
             
             var routes = {
                 'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta'],
-                'about': ['about', 'skills', 'how-work', 'media', 'testimonials'],
+                'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
                 'projects': ['projects', 'research'],
                 'awards': ['awards'],
                 'contact': ['contact']
@@ -70,31 +70,69 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container mx-auto flex justify-between items-center h-full">
-            <a href="#home" class="logo text-lg font-bold text-black"><span style="color: #D97706;">bread</span>me</a>
-            <div class="nav-menu hidden lg:flex justify-center gap-6" id="navMenu">
-                <a href="#home" class="nav-link active">HOME</a>
-                <a href="#about" class="nav-link">ABOUT</a>
-                <a href="#projects" class="nav-link">PROJECTS</a>
-                <a href="#awards" class="nav-link">AWARDS</a>
-                <a href="#contact" class="nav-link">CONTACT</a>
+        
+        <!-- Full-Width Mega Menu Backdrop (Controlled by JS) -->
+        <div class="fixed top-[70px] left-0 w-full bg-[#111111] border-t border-[#333] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] z-[-1] mega-backdrop"></div>
+
+        <div class="container mx-auto flex justify-between items-center h-full relative">
+            <div class="flex-1 flex justify-start items-center">
+                <a href="#home" class="logo text-lg font-bold text-black"><span style="color: #D97706;">bread</span>me</a>
             </div>
-            <div class="hidden lg:flex justify-end gap-3 flex-shrink-0">
-                <a href="#contact" class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded-md transition-colors uppercase tracking-wider">Resume</a>
-                <a href="#" class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded-md transition-colors uppercase tracking-wider">Portfolio PDF</a>
+            <div class="nav-menu hidden lg:flex justify-center gap-12 flex-shrink-0 shrink-0 h-full" id="navMenu">
+                <div class="flex items-center h-full"><a href="#home" class="nav-link active">HOME</a></div>
+                
+                <!-- ABOUT Dropdown -->
+                <div class="group has-dropdown h-full flex items-center relative">
+                    <a href="javascript:void(0);" class="nav-link flex items-center h-full">ABOUT</a>
+                    
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[80px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="#about" class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Work
+                        </a>
+                        <a href="#life" class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Life
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECTS Dropdown -->
+                <div class="group has-dropdown h-full flex items-center relative">
+                    <a href="javascript:void(0);" class="nav-link flex items-center h-full">PROJECTS</a>
+                    
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[80px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="#projects" class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Products
+                        </a>
+                        <a href="#research" class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Research
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center h-full"><a href="#awards" class="nav-link">AWARDS</a></div>
+                <div class="flex items-center h-full"><a href="#contact" class="nav-link">CONTACT</a></div>
             </div>
-            <button class="mobile-toggle" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="flex-1 flex justify-end items-center gap-3">
+                <div class="hidden lg:flex gap-3">
+                    <a href="#contact" class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded transition-colors uppercase tracking-wider">Resume</a>
+                    <a href="#" class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio PDF</a>
+                </div>
+                <!-- 햄버거 메뉴는 우측 끝에 고정되므로 flex-1 justify-end 내부에 배치 -->
+                <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section (Runway Style) -->
-    <section class="relative w-full h-[100vh] bg-white pt-[90px] pb-6 flex flex-col items-center" id="home">
+    <section class="relative w-full h-[100vh] bg-white pt-[70px] pb-6 flex flex-col items-center" id="home">
         <div class="container mx-auto w-full h-full relative">
-            <div class="relative w-full h-full rounded-[10px] overflow-hidden bg-black flex items-end pb-12 md:pb-24 pt-20 mx-auto">
+            <div class="relative w-full h-full rounded-[10px] overflow-hidden bg-black flex items-end pb-12 md:pb-24 mx-auto">
                 <div class="absolute inset-0 w-full h-full opacity-80 pointer-events-none mix-blend-screen overflow-hidden rounded-[10px]">
                     <video id="hero-video-1" src="rabbit_boat_1.mp4" autoplay muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:1;z-index:10;border-radius:10px;"></video>
                     <video id="hero-video-2" src="rabbit_boat_2.mp4" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:0;z-index:0;border-radius:10px;"></video>
@@ -417,10 +455,10 @@
     </style>
 
     <!-- About Section -->
-    <section class="about" id="about" style="display: none; background: #ffffff; text-align: center; overflow: hidden; padding-bottom: 2rem;">
+    <section class="about pt-[70px]" id="about" style="display: none; background: #ffffff; text-align: center; overflow: hidden; padding-bottom: 2rem;">
         
         <!-- Video Hero Block (Runway Reference) -->
-        <div class="relative w-full h-[75vh] min-h-[600px] max-h-[900px] flex flex-col items-center justify-center pt-20 mb-16 overflow-hidden">
+        <div class="relative w-full h-[75vh] min-h-[600px] max-h-[900px] flex flex-col items-center justify-center mb-16 overflow-hidden">
             <!-- Video Background -->
             <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
                 <source src="nahyun_imported/video_source/ABOUT_Background.mp4" type="video/mp4">
@@ -434,13 +472,25 @@
                 <h2 class="font-sans text-white text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-6 drop-shadow-lg" style="word-break: keep-all;">
                     Designing AI as a daily staple.
                 </h2>
-                <p class="font-sans text-white/90 text-[16px] md:text-[18px] leading-[1.6] max-w-[800px] mx-auto font-light mb-10 drop-shadow-md">
-                    My professional handle, 'BREADME,' is derived from my childhood nickname. <br class="hidden sm:block"> Just as bread is a fundamental source of sustenance, my mission is to make AI services accessible and essential for everyone.
+                <p class="font-sans text-white/90 text-[16px] md:text-[18px] leading-[1.7] max-w-[800px] mx-auto font-light mb-16 drop-shadow-md">
+                    My professional handle, 'BREADME,' is derived from my childhood nickname.<br class="hidden md:block">
+                    Just as bread is a fundamental source of sustenance,<br class="hidden md:block">
+                    my mission is to make AI services accessible and essential for everyone.
                 </p>
+                
+                <!-- Page Contents Index (Runway Style) -->
+                <div class="flex items-center justify-center flex-wrap gap-3 md:gap-4 text-white/70 font-sans text-[11px] md:text-[12.5px] font-semibold uppercase tracking-[0.1em] mb-16 drop-shadow">
+                    <span>Core Competencies</span>
+                    <span class="text-white/30 font-light font-sans">|</span>
+                    <span>Product Principles</span>
+                    <span class="text-white/30 font-light font-sans">|</span>
+                    <span>Colleague Testimonials</span>
+                </div>
+                
                 <div class="flex justify-center">
-                    <a href="#projects" class="inline-flex items-center justify-center px-6 py-3 bg-white text-black font-sans font-bold text-[14px] rounded-full hover:bg-gray-200 transition-colors shadow-lg group">
+                    <a href="#projects" class="inline-flex items-center justify-center px-4 py-2 bg-white text-black font-semibold text-sm rounded hover:bg-zinc-200 transition-all duration-300 group">
                         View my projects
-                        <svg class="ml-1.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </a>
                 </div>
             </div>
@@ -544,9 +594,9 @@
                     Across ages, cultures, and real-life contexts.<br>Blending psychology, field research, and product strategy to build AI people actually use.
                 </p>
                 <div class="flex justify-center">
-                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 border border-white/20 text-white font-sans font-medium text-[13px] rounded-full hover:bg-white/10 transition-colors group">
-                        View more talks
-                        <svg class="ml-1.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank" class="inline-flex items-center justify-center px-6 py-2.5 bg-white text-[#1a1a1a] font-sans text-[13px] font-semibold rounded hover:bg-zinc-200 transition-colors group">
+                        Watch full interview
+                        <span class="ml-1.5 translate-y-[1px] group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-300">↗</span>
                     </a>
                 </div>
             </div>
@@ -1049,97 +1099,301 @@
         </div>
     </section>
 
-
-    <!-- Expertise Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title font-sans font-semibold text-white"><span class="font-serif italic bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent pr-1">Expertise</span></h2>
-            <p class="section-subtitle">Here are my skills and certifications.<br>Discover the capabilities your team needs.</p>
-            <div class="expertise-nav">
-                <button class="expertise-nav-btn" id="prevExpertise" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                <span class="expertise-nav-label" id="expertiseLabel">CORE COMPETENCIES</span>
-                <button class="expertise-nav-btn" id="nextExpertise" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+    <!-- Toolkit Grid (Runway Style) -->
+    <section class="bg-white py-24 md:py-32" id="toolkit-grid">
+        <div class="container mx-auto px-6 max-w-[1200px]">
+            
+            <!-- Header -->
+            <div class="text-center mb-16 md:mb-24 max-w-[800px] mx-auto flex flex-col items-center">
+                <h2 class="font-sans text-zinc-900 text-[32px] md:text-[40px] tracking-tight font-medium mb-5 leading-[1.15]">
+                    Every core competency you need<br>to make anything you want.
+                </h2>
+                <p class="font-sans text-zinc-600 text-[15px] md:text-[18px] font-light leading-relaxed max-w-[650px]">
+                    Bring your entire product workflow together with access<br class="hidden md:block">to advanced conversational AI design, robust strategy, and data-driven insights.
+                </p>
             </div>
-            <div class="expertise-container">
-                <!-- Core Competencies Panel -->
-                <div class="expertise-panel active" id="coreCompetenciesPanel">
-                    <div class="expertise-card-grid">
-                        <div class="expertise-card reveal">
-                            <div class="card-icon-wrapper icon-pm"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
-                            <h3 class="card-title">Product Management</h3>
-                            <p class="card-description">AI Product Strategy, Roadmap Planning, Stakeholder Management, Agile/Scrum, Global Expansion</p>
-                            <span class="card-action">Learn more <span class="arrow"></span></span>
-                        </div>
-                        <div class="expertise-card reveal">
-                            <div class="card-icon-wrapper icon-design"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
-                            <h3 class="card-title">Research &amp; Design</h3>
-                            <p class="card-description">Human-AI Interaction, Cognitive Psychology, UX Research, Statistical Analysis, User Testing</p>
-                            <span class="card-action">Explore methods <span class="arrow"></span></span>
-                        </div>
-                        <div class="expertise-card reveal">
-                            <div class="card-icon-wrapper icon-tech"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg></div>
-                            <h3 class="card-title">AI &amp; Technology</h3>
-                            <p class="card-description">Conversational AI, NLP/NLU, Voice UX Design, WebRTC, AI Prompt Engineering</p>
-                            <span class="card-action">View tech stack <span class="arrow"></span></span>
-                        </div>
-                        <div class="expertise-card reveal">
-                            <div class="card-icon-wrapper icon-global"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-                            <h3 class="card-title">Languages &amp; Markets</h3>
-                            <p class="card-description">Korean (Native), English (Fluent), Japanese Market Strategy, Localization, Cross-cultural Design</p>
-                            <span class="card-action">See global reach <span class="arrow"></span></span>
-                        </div>
+
+            <!-- The Tool Grid -->
+            <!-- 3 Columns for larger screens, 2 for tablets, 1 for mobile -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-[1000px] mx-auto">
+                <!-- Item 1: Domains -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Domains</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">Conversational AI Design<br>Voice UX<br>AI Contact Center<br>Chatbot</h3>
                     </div>
                 </div>
-                <!-- Skills Panel -->
-                <div class="expertise-panel" id="skillsPanel">
-                    <div class="expertise-card-grid">
-                        <div class="expertise-card"><div class="card-icon-wrapper icon-pm"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div><h3 class="card-title">Product Management</h3><p class="card-description">AI Product Strategy, Roadmap Planning, Stakeholder Management, Agile/Scrum, Global Expansion</p><span class="card-action">Learn more <span class="arrow"></span></span></div>
-                        <div class="expertise-card"><div class="card-icon-wrapper icon-design"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div><h3 class="card-title">Research &amp; Design</h3><p class="card-description">Human-AI Interaction, Cognitive Psychology, UX Research, Statistical Analysis, User Testing</p><span class="card-action">Explore methods <span class="arrow"></span></span></div>
-                        <div class="expertise-card"><div class="card-icon-wrapper icon-tech"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg></div><h3 class="card-title">AI &amp; Technology</h3><p class="card-description">Conversational AI, NLP/NLU, Voice UX Design, WebRTC, AI Prompt Engineering</p><span class="card-action">View tech stack <span class="arrow"></span></span></div>
-                        <div class="expertise-card"><div class="card-icon-wrapper icon-global"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div><h3 class="card-title">Languages &amp; Markets</h3><p class="card-description">Korean (Native), English (Fluent), Japanese Market Strategy, Localization, Cross-cultural Design</p><span class="card-action">See global reach <span class="arrow"></span></span></div>
+                
+                <!-- Item 2: Product Strategy -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Product Strategy</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">AI Product Roadmap<br>PRD & Service Architecture<br>Agile / Scrum / WBS<br>Stakeholder Management</h3>
                     </div>
                 </div>
-                <!-- Certifications Panel -->
-                <div class="expertise-panel" id="certificationsPanel">
-                    <div class="expertise-card-grid">
-                        <div class="expertise-card">
-                            <div class="card-icon-wrapper icon-design"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-                            <h3 class="card-title">Psychology</h3>
-                            <ul class="card-description-list" style="list-style:none;padding:0;margin-top:1rem;color:#8892b0;font-size:0.93rem;line-height:1.25;">
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">General Psychologist</strong><span style="font-size:0.85rem;color:#64748b;">Korean Psychology Association, Feb 2023</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;white-space:nowrap;">Industrial &amp; Organization Psychologist</strong><span style="font-size:0.85rem;color:#64748b;">Korean Psychology Association, Dec 2021</span></li>
-                            </ul>
-                        </div>
-                        <div class="expertise-card">
-                            <div class="card-icon-wrapper icon-tech"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg></div>
-                            <h3 class="card-title">Data &amp; Statistics</h3>
-                            <ul class="card-description-list" style="list-style:none;padding:0;margin-top:1rem;color:#8892b0;font-size:0.93rem;line-height:1.25;">
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Advanced Data Analytics (ADsP)</strong><span style="font-size:0.85rem;color:#64748b;">Korea Data Agency, Mar 2024</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Google Analytics Certification</strong><span style="font-size:0.85rem;color:#64748b;">Google, Jan 2024</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Computer Specialist (Database)</strong><span style="font-size:0.85rem;color:#64748b;">KCCI, Dec 2020</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Survey Analyst Junior (SPSS)</strong><span style="font-size:0.85rem;color:#64748b;">HRD Korea, Jun 2020</span></li>
-                            </ul>
-                        </div>
-                        <div class="expertise-card">
-                            <div class="card-icon-wrapper icon-pm"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-                            <h3 class="card-title">AI &amp; Tools</h3>
-                            <ul class="card-description-list" style="list-style:none;padding:0;margin-top:1rem;color:#8892b0;font-size:0.93rem;line-height:1.25;">
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Google Generative AI Leader</strong><span style="font-size:0.85rem;color:#64748b;">Google, Feb 2026</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">AI-POT (AI Prompt)</strong><span style="font-size:0.85rem;color:#64748b;">KPC, Feb 2025</span></li>
-                            </ul>
-                        </div>
-                        <div class="expertise-card">
-                            <div class="card-icon-wrapper icon-global"><svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><circle cx="12" cy="12" r="10"></circle></svg></div>
-                            <h3 class="card-title">Languages</h3>
-                            <ul class="card-description-list" style="list-style:none;padding:0;margin-top:1rem;color:#8892b0;font-size:0.93rem;line-height:1.25;">
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">OPI (English)</strong><span style="font-size:0.85rem;color:#64748b;">Level: Advanced Mid (AM)<br>ACTFL, Sep 2025</span></li>
-                                <li style="margin-bottom:0.8rem;"><strong style="display:block;margin-bottom:1px;">Philippines Studies (English)</strong><span style="font-size:0.85rem;color:#64748b;">Baguio, 2007</span></li>
-                            </ul>
-                        </div>
+
+                <!-- Item 3: Business & Markets -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Business & Markets</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">B2B / B2G2C Models<br>Cross-border Expansion<br>Market Localization</h3>
                     </div>
                 </div>
+
+                <!-- Item 4: Leadership -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Leadership</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">Story-telling<br>Cross-functional Collaboration<br>Cross-border Collaboration<br>Enterprise Client Communication</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5: Research & Analytics -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Research & Analytics</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">Data-Driven UX<br>Quantitative Analysis (SPSS, R, SQL)<br>Survey & Interviews</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6: Tools -->
+                <div class="flex items-start gap-4 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <div>
+                        <span class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Tools</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">LLMs (ChatGPT, Claude)<br>Figma<br>Python<br>JavaScript</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
+
+    <!-- Old Expertise Section End (Superseded by Toolkit Grid) -->
+
+    <!-- Certifications Section (Runway Style) -->
+    <section class="certifications-runway bg-[#fafafa] py-24 md:py-32 border-t border-zinc-100" id="certifications-runway">
+        <div class="container mx-auto px-6 max-w-[1400px]">
+            <!-- Header & Tabs -->
+            <div class="text-center mb-16 lg:mb-24 flex flex-col items-center">
+                <h2 class="font-sans text-zinc-900 text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-10">
+                    Industry-vetted standards.<br>Certified ways to create.
+                </h2>
+                
+                <!-- Horizontal Tabs (Imitating Runway) -->
+                <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3 text-sm font-sans font-semibold" id="cert-tabs">
+                    <button class="cert-tab-btn active bg-zinc-900 text-white px-4 py-2 rounded transition-colors whitespace-nowrap shadow-md" data-target="cert-ai">AI & Tools</button>
+                    <button class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap" data-target="cert-data">Data & Statistics</button>
+                    <button class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap" data-target="cert-psycho">Psychology</button>
+                    <button class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap" data-target="cert-lang">Languages</button>
+                </div>
+            </div>
+
+            <!-- Content Area Base -->
+            <div class="relative w-full max-w-[1100px] mx-auto min-h-[400px]" id="cert-panels-wrap">
+                
+                <!-- PANEL 1: AI & Tools -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-100" id="cert-ai">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            AI & Tools
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            With solid foundations in prompt engineering and generative models, you can restyle technical products with endless possibilities. No additional onboarding or fundamental training required.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Google Generative AI Leader</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Google</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2026</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">AI-POT (AI Prompt)</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Korea Productivity Center (KPC)</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2025</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: Data & Statistics -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0" id="cert-data" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Data & Statistics
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Analyzing patterns and deriving actionable insights using rigorous statistical methods, database management, and advanced analytics frameworks.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Advanced Data Analytics (ADsP)</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Korea Data Agency</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Mar 2024</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Google Analytics Certification</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Google</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Jan 2024</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Computer Specialist (Database)</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Korea Chamber of Commerce and Industry (KCCI)</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Dec 2020</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Survey Analyst Junior (SPSS)</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Ministry of Data and Statistics</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Jun 2020</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 3: Psychology -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0" id="cert-psycho" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Psychology
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Grounding user experience and product strategy in deep cognitive and behavioral psychology principles verified by national standards.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">General Psychologist</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Korean Psychology Association</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2023</span></div>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div><h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px] leading-tight">Industrial & Organization Psychologist</h4><p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5 mt-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Korean Psychology Association</p></div>
+                                <div class="sm:text-right shrink-0"><span class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Dec 2021</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 4: Languages -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0" id="cert-lang" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Languages
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Navigating cross-cultural environments and driving global product expansion with advanced linguistic capabilities and cultural insights.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        
+                        <!-- English Block -->
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <!-- Header: Language Name & Level -->
+                            <div class="flex items-center gap-3 mb-5 pb-4 border-b border-zinc-100">
+                                <h4 class="font-sans text-zinc-900 font-semibold text-[18px]">English</h4>
+                                <div class="ml-auto flex items-center">
+                                    <span class="inline-block px-3 py-1 bg-zinc-800 text-white rounded font-sans text-[11px] font-bold tracking-widest uppercase shadow-sm">Fluent</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Sub-items List -->
+                            <div class="flex flex-col gap-5">
+                                <!-- Item 1 -->
+                                <div class="flex flex-col">
+                                    <h5 class="font-sans text-zinc-900 font-medium text-[15px] mb-2 cursor-default">OPIc (AM)</h5>
+                                    <div class="flex items-center justify-between">
+                                        <p class="font-sans text-zinc-500 text-[13px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ACTFL</p>
+                                        <span class="text-zinc-600 font-sans text-[11px] font-bold tracking-widest uppercase">Sep 2025</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Item 2 -->
+                                <div class="flex flex-col pt-5 border-t border-zinc-100/80 border-dashed">
+                                    <h5 class="font-sans text-zinc-900 font-medium text-[15px] mb-2 cursor-default">Overseas Language Immersion</h5>
+                                    <div class="flex items-center justify-between">
+                                        <p class="font-sans text-zinc-500 text-[13px] flex items-center gap-1.5"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="stroke-current stroke-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Philippines</p>
+                                        <span class="text-zinc-600 font-sans text-[11px] font-bold tracking-widest uppercase">2007</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Korean Block -->
+                        <div class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 mt-1">
+                            <!-- Header: Language Name & Level -->
+                            <div class="flex items-center gap-3">
+                                <h4 class="font-sans text-zinc-900 font-semibold text-[18px]">Korean</h4>
+                                <div class="ml-auto flex items-center">
+                                    <span class="inline-block px-3 py-1 bg-zinc-800 text-white rounded font-sans text-[11px] font-bold tracking-widest uppercase shadow-sm">Native</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Inline Tab Switching Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const tabBtns = document.querySelectorAll('.cert-tab-btn');
+                const panels = document.querySelectorAll('.cert-panel');
+
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const targetId = btn.getAttribute('data-target');
+                        
+                        // Reset all buttons
+                        tabBtns.forEach(b => {
+                            b.className = "cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap";
+                        });
+                        // Highlight active button
+                        btn.className = "cert-tab-btn active bg-zinc-900 text-white px-4 py-2 rounded transition-colors whitespace-nowrap shadow-md";
+                        
+                        // Hide all panels
+                        panels.forEach(p => {
+                            p.style.display = 'none';
+                            p.style.opacity = '0';
+                        });
+                        
+                        // Show target panel with reflow to trigger opacity transition
+                        const targetPanel = document.getElementById(targetId);
+                        if(targetPanel) {
+                            targetPanel.style.display = 'grid'; // Maintain grid layout
+                            void targetPanel.offsetWidth; // Force Reflow
+                            targetPanel.style.opacity = '1';
+                        }
+                    });
+                });
+            });
+        </script>
     </section>
 
     <!-- Awards Section -->
@@ -1181,11 +1435,18 @@
     </section>
 
     <!-- How I Work Section -->
-    <section class="how-i-work-section" id="how-work">
+    <section class="how-i-work-section bg-white py-16 md:py-24" id="how-work">
         <div class="container">
-            <div class="text-center mb-16 lg:mb-24 pt-16 md:pt-24">
-                <h2 class="font-sans text-zinc-900 text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-6">How I work</h2>
-                <p class="font-sans text-zinc-600 text-[16px] md:text-[18px] leading-[1.6] max-w-[800px] mx-auto font-normal mb-8">The principles behind my decisions<br>in building AI products for diverse users</p>
+            <div class="flex flex-col items-center text-center mb-12 lg:mb-16">
+                <div class="inline-block px-3 py-1 mb-5 md:mb-6 text-[9px] md:text-[10px] font-bold text-zinc-900 uppercase tracking-[0.2em] border border-zinc-200 rounded">
+                    Product Principles
+                </div>
+                <h2 class="font-sans text-zinc-900 text-[32px] md:text-[40px] lg:text-[48px] font-medium tracking-tight leading-[1.1] mb-5">
+                    How I work
+                </h2>
+                <p class="font-sans text-zinc-500 text-[14px] md:text-[15px] leading-[1.6] max-w-[600px] font-light mx-auto">
+                    The principles behind my decisions<br>in building AI products for diverse users.
+                </p>
             </div>
             <div class="accordion-container">
                 <div class="accordion-item active" style="background-image: url('how-work-story.png');">
@@ -1227,11 +1488,18 @@
     <!-- Old Media Section Removed -->
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials bg-[#1a1a1a] py-16 md:py-24" id="testimonials">
         <div class="container">
-            <div class="testimonials-header text-center w-full flex flex-col items-center">
-                <h2 class="testimonials-title font-sans font-semibold text-white text-center mx-auto">What <span class="font-serif italic bg-gradient-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">colleagues say</span></h2>
-                <p class="testimonials-subtitle text-center mx-auto">Voices from the team members<br>who had worked with BREADME</p>
+            <div class="flex flex-col items-center text-center w-full mb-12 lg:mb-16">
+                <div class="inline-block px-3 py-1 mb-5 md:mb-6 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.2em] border border-white/20 rounded">
+                    Colleague Testimonials
+                </div>
+                <h2 class="font-sans text-white text-[32px] md:text-[40px] lg:text-[48px] font-medium tracking-tight leading-[1.1] mb-5">
+                    What colleagues say
+                </h2>
+                <p class="font-sans text-zinc-400 text-[14px] md:text-[15px] leading-[1.6] max-w-[600px] font-light mx-auto">
+                    Voices from the team members<br>who had worked with BREADME.
+                </p>
             </div>
             <div class="testimonials-container" id="testimonialsContainer">
                 <div class="testimonial-card card-gradient-1"><div class="card-stars">★★★★★</div><p class="card-quote">"Nahyun-san finally made the Korea-Japan collaboration happen. Her drive and quality shocked us - and yes, all of us Japanese teammates think we should learn from her."</p><div class="card-signature">J<span class="card-author-title">Product Lead<br>LINE WORKS Japan</span></div></div>
@@ -1247,6 +1515,247 @@
             </div>
         </div>
     </section>
+
+    <!-- Life Section (New Page - Runway Benchmark) -->
+    <section class="relative w-full min-h-[100vh] bg-white pt-[70px] pb-6 flex flex-col items-center" id="life" style="display: none;">
+        <div class="container mx-auto w-full flex-grow relative pb-16 md:pb-24">
+            
+            <!-- Cinematic Image Wrapper (Runway Benchmark Style) -->
+            <div class="relative w-full h-[70vh] min-h-[500px] max-h-[800px] rounded-[10px] overflow-hidden bg-black mt-6 mb-8 mx-auto">
+                <div class="absolute inset-0 w-full h-full opacity-80 mix-blend-screen overflow-hidden">
+                    <img src="nahyun_imported/images/gallery/p-2.jpeg" class="absolute inset-0 w-full h-full object-cover transform scale-[1.03] transition-transform duration-[20s] hover:scale-[1.05]" style="object-position: center 30%;" alt="Life Snapshot" onerror="this.src='projects/images/footprint-1.jpg'">
+                </div>
+                <!-- Gradient Overlay spanning the full bottom area to ensure contrast -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-[5] pointer-events-none"></div>
+
+                <!-- Text overlay anchored to bottom left -->
+                <div class="absolute z-20 bottom-0 left-0 w-full flex flex-col justify-end items-start px-8 md:px-12 pb-12">
+                    <h2 class="font-sans text-[36px] lg:text-[48px] tracking-tight font-medium text-white mb-3 drop-shadow-md">
+                        Life & Hobbies
+                    </h2>
+                    <p class="font-sans text-[#dddddd] text-[15px] md:text-[16px] leading-[1.6] max-w-[700px] font-light shadow-black drop-shadow-lg mb-6">
+                        From complex culinary experiments to capturing hyper-realistic moments through my camera, my hobbies allow me to generate fresh energy with speed, control, and joy.
+                    </p>
+                    <button class="px-5 py-2.5 border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-[6px] text-white text-[13px] font-medium flex items-center gap-2 transition-all cursor-pointer">
+                        View Gallery
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Wrapper to prevent extreme wide-screen stretching -->
+            <div class="w-full max-w-[1100px] mx-auto">
+                <!-- Tags / Filter Pills Nav (Stretching full 1100px width) -->
+                <div class="w-full flex gap-3 md:gap-4 mb-8" id="life-tabs">
+                    <button data-target="col-culinary" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-slate-100 border-slate-100">Culinary</button>
+                    <button data-target="col-sports" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Sports</button>
+                    <button data-target="col-travel" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Travel</button>
+                    <button data-target="col-literature" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Literature</button>
+                    <button data-target="col-arts" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Arts</button>
+                    <button data-target="col-volunteering" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Volunteering</button>
+                    <button data-target="col-communities" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Communities</button>
+                </div>
+
+                <!-- Gallery Grid Area (Runway Benchmark) -->
+                <div class="flex flex-col md:flex-row gap-8 lg:gap-10 mt-4 w-full pb-32">
+                    
+                    <!-- Left Columns (Dynamic) -->
+                    <div id="col-culinary" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Culinary</h3>
+                    </div>
+
+                    <div id="col-sports" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Sports</h3>
+                    </div>
+
+                    <!-- Left Continent Navigation Column (Travel) -->
+                    <div id="col-travel" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <div class="sticky top-[100px] flex flex-col">
+                            <h3 class="font-sans text-[22px] font-normal text-black mb-5">Travel</h3>
+                            
+                            <!-- Sub-categories -->
+                            <nav class="flex flex-col gap-3">
+                                <a href="#" class="text-[13.5px] font-medium text-black hover:text-[#d97706] transition-colors flex items-center">
+                                    <span class="w-[5px] h-[5px] rounded-full bg-black mr-2"></span> All Destinations
+                                </a>
+                                <div class="flex flex-col gap-2.5 pl-3 mt-1 relative before:content-[''] before:absolute before:left-[-1px] before:top-2 before:bottom-2 before:w-[1px] before:bg-zinc-200">
+                                    <a href="#" class="text-[13px] font-medium text-black hover:text-[#d97706] transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-zinc-200 border-b border-transparent">
+                                        Korea
+                                    </a>
+                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Asia</a>
+                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">North America</a>
+                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Europe</a>
+                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Oceania</a>
+                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Africa</a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div id="col-literature" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Literature</h3>
+                    </div>
+
+                    <div id="col-arts" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Arts</h3>
+                    </div>
+                    
+                    <div id="col-volunteering" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Volunteering</h3>
+                    </div>
+
+                    <div id="col-communities" class="left-col w-full md:w-[200px] flex-shrink-0 pt-1" style="display:none;">
+                        <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Communities</h3>
+                    </div>
+                    
+                    <!-- Right Masonry Gallery Array (Dynamic Culinary Showcase) -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 w-full flex-grow" id="life-gallery">
+                        <div class="flex flex-col gap-3">
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_06.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_004121914.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_22.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_05.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_01.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_24.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_04.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_12.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_18.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_03.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_06.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_26.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_07.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_08.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_25.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_11.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_21.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_05.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_14.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_02.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_27.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_08.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_09.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_19.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_20.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_23.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_29.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_04.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_03.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_02.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                            <div class="w-full relative group">
+                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_13.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Tabs Logic for Life Section -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const leftCols = document.querySelectorAll('.left-col');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update button styling states (Screenshot matching without hover bugs)
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-slate-100', 'border-slate-100');
+                        b.classList.add('bg-white', 'border-gray-200');
+                    });
+                    btn.classList.add('bg-slate-100', 'border-slate-100');
+                    btn.classList.remove('bg-white', 'border-gray-200');
+                    
+                    // Route to specific left column
+                    const targetId = btn.getAttribute('data-target');
+                    leftCols.forEach(col => {
+                        if (col.id === targetId) {
+                            col.style.display = 'block';
+                        } else {
+                            col.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
     <!-- Contact / CTA Section (Runway Style) -->
     <section class="relative w-full bg-white pb-24 pt-12 flex flex-col items-center" id="runway-cta">

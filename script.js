@@ -64,6 +64,22 @@ window.addEventListener('scroll', () => {
 });
 
 // ===========================
+// Mega Menu Expansion Logic
+// ===========================
+const dropGroups = document.querySelectorAll('.has-dropdown');
+
+dropGroups.forEach(group => {
+    group.addEventListener('mouseenter', () => {
+        navbar.classList.add('gnb-expanded');
+        navbar.classList.remove('nav-force-close');
+    });
+    
+    group.addEventListener('mouseleave', () => {
+        navbar.classList.remove('gnb-expanded');
+    });
+});
+
+// ===========================
 // Mobile Menu Toggle
 // ===========================
 const mobileToggle = document.getElementById('mobileToggle');
@@ -74,12 +90,18 @@ mobileToggle.addEventListener('click', () => {
     mobileToggle.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+// Close mobile menu or reset GNB spread state when clicking on a link
+const navLinksAll = document.querySelectorAll('.nav-link, .lnb-link');
+navLinksAll.forEach(link => {
     link.addEventListener('click', () => {
+        // Retract Mobile menu
         navMenu.classList.remove('active');
-        mobileToggle.classList.remove('active');
+        if (mobileToggle) mobileToggle.classList.remove('active');
+        // Force retract Desktop Mega Menu (Exclude parent trigger links so they stay visually expanded)
+        if (!link.parentElement.classList.contains('has-dropdown')) {
+            navbar.classList.remove('gnb-expanded');
+            navbar.classList.add('nav-force-close');
+        }
     });
 });
 
@@ -88,8 +110,10 @@ navLinks.forEach(link => {
 // ===========================
 const routerConfig = {
     'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta'],
-    'about': ['about', 'skills', 'how-work', 'media', 'testimonials'],
-    'projects': ['projects', 'research'],
+    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
+    'life': ['life'],
+    'projects': ['projects'],
+    'research': ['research'],
     'awards': ['awards'],
     'contact': ['contact']
 };
@@ -160,8 +184,14 @@ function handleRoute() {
     }
 
     // Update Nav LNB Active States
+    const parentMap = {
+        'life': 'about',
+        'research': 'projects'
+    };
+    const highlightTab = parentMap[activeTab] || activeTab;
+
     document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === '#' + activeTab) {
+        if (link.getAttribute('href') === '#' + highlightTab) {
             link.classList.add('active');
             link.style.color = '#D97706'; // highlight color
         } else {
@@ -957,7 +987,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn && nextBtn && panels.length > 0) {
         let currentIndex = 0;
         const navLabel = document.getElementById('expertiseLabel');
-        const labels = ['CORE COMPETENCIES', 'SKILLS', 'CERTIFICATIONS'];
+        const labels = ['CORE COMPETENCIES', 'SKILLS'];
 
         const updatePanels = () => {
             panels.forEach((panel, index) => {

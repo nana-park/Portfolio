@@ -1,10 +1,7 @@
 /* Horizontal Accordion Styles */
 .how-i-work-section {
     padding: 10rem 0;
-    /* Increased padding for comfortable spacing */
-    background-color: #1a1a1a;
-    /* Match HOME section background */
-    color: #fff;
+    /* Removed background/color to let Tailwind bg-white take over */
     overflow: hidden;
 }
 
@@ -18,12 +15,10 @@
 .accordion-container {
     display: flex;
     flex-direction: row;
-    height: 600px;
-    /* Fixed height for the accordion */
+    height: 550px; /* Slightly reduced height for minimal style */
     width: 100%;
     margin: 0 auto;
-    gap: 8px;
-    /* Increased gap slightly for full width */
+    gap: 16px; /* Increased gap for cleaner separation */
 }
 
 /* Header Spacing Standardization */
@@ -57,15 +52,15 @@
 
 .accordion-item {
     flex: 1;
-    /* Default collapsed state */
     position: relative;
     overflow: hidden;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 24px;
+    /* Removed solid bg, ready for background-image */
+    background-color: #1a1a1a;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
 /* Dark Overlay */
@@ -73,25 +68,22 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    /* Darker overlay for passive */
+    background: rgba(0, 0, 0, 0.65);
     transition: background 0.6s ease;
 }
 
 .accordion-item.active::before {
-    background: rgba(0, 0, 0, 0.3);
-    /* Lighter overlay for active */
+    background: rgba(0, 0, 0, 0.35); /* Brightens when expanded */
 }
 
 .accordion-item:hover::before {
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* Expanded State */
 .accordion-item.active {
     flex: 3.5;
-    /* Expand factor */
     cursor: default;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* Soft shadow */
 }
 
 /* Content Wrapper */
@@ -125,35 +117,36 @@
     width: 100%;
     text-align: center;
     padding: 0 0.5rem;
-    /* Ensure padding so text doesn't touch edges */
     opacity: 1;
     transition: opacity 0.3s ease;
     font-family: var(--font-sans);
-    font-weight: 700;
+    font-weight: 500; /* Made slightly lighter */
     font-size: 0.9rem;
-    /* Reduced font size */
     line-height: 1.3;
-    /* Better line height for multi-line */
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em; /* Increased tracking */
     text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
     z-index: 10;
     pointer-events: none;
-    /* Click through to card */
+}
+
+.accordion-item:hover .collapsed-title {
+    color: #ffffff;
 }
 
 .accordion-item.active .collapsed-title {
     opacity: 0;
-    /* Hide collapsed title when active */
 }
 
 /* Content Styling */
 .accordion-content h3 {
     font-family: var(--font-sans);
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Match 40px */
     margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1.1;
-    text-transform: none;
+    font-weight: 500; /* Match font-medium */
+    letter-spacing: -0.02em; /* Match tracking-tight */
+    line-height: 1.1; /* Match leading-[1.1] */
+    color: #ffffff;
 }
 
 .accordion-content h3 em {
@@ -163,11 +156,12 @@
 
 .accordion-content p {
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 0.95rem; /* Match text-[15px] */
     line-height: 1.6;
     max-width: 600px;
-    margin-bottom: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7); /* Match text-zinc-400 */
+    font-weight: 300; /* Match font-light */
 }
 
 .accordion-tags {
@@ -177,12 +171,15 @@
 }
 
 .accordion-tags span {
+    font-family: var(--font-sans);
     font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    padding: 0.3rem 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15); /* Sleek glass tag */
+    padding: 0.35rem 1rem;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Mobile Responsive */

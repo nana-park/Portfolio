@@ -1,0 +1,113 @@
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3 w-full flex-grow" id="life-gallery">
+    <div class="flex flex-col gap-3">
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_06.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_004121914.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_22.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_05.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_01.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_24.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_04.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_12.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_18.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_03.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_06.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_26.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+    </div>
+    <div class="flex flex-col gap-3">
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_07.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_08.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_25.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_11.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_21.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_05.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_14.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_02.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_27.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+    </div>
+    <div class="flex flex-col gap-3">
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_08.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_09.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_19.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_20.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_23.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_29.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_04.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_03.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_02.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+        <div class="w-full relative group">
+            <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_13.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
+        </div>
+    </div>
+</div>

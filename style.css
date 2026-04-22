@@ -124,6 +124,52 @@ body {
     color: #000000;
 }
 
+/* Mega Menu Expanded State (Dark Mode) - Triggered by JS */
+.navbar.gnb-expanded {
+    background: #111111 !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+.navbar.gnb-expanded .logo {
+    color: #ffffff !important;
+}
+
+.navbar.gnb-expanded .nav-link {
+    color: #888888 !important;
+}
+
+.navbar.gnb-expanded .nav-link:hover,
+.navbar.gnb-expanded .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Base properties for the backdrop */
+.mega-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar:has(.has-dropdown:hover) .mega-backdrop {
+    opacity: 1;
+    visibility: visible;
+    height: 80px;
+}
+
+/* Force retraction override when an LNB is clicked */
+.navbar.nav-force-close .mega-backdrop {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    height: 0 !important;
+}
+
+.navbar.nav-force-close .has-dropdown .absolute {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 .mobile-toggle {
     display: none;
 }

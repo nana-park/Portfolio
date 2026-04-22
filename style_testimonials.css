@@ -3,9 +3,6 @@
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
-    background-color: #262626 !important;
-    /* Match body bg */
-    color: white;
     text-align: center;
 }
 
@@ -72,12 +69,11 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     /* Slight increase for content breathability */
-    border-radius: 20px;
+    border-radius: 24px; /* Unify curve to 24px */
     padding: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Removed scroll-snap to prevent JS conflict */
     scroll-snap-align: center;
     color: white;
     position: relative;
@@ -191,17 +187,17 @@
 .testimonials-nav {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 2.5rem;
 }
 
 .nav-btn {
-    background: #1a1a1a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 48px;
-    height: 48px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -214,26 +210,20 @@
 }
 
 .nav-btn svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2.5px;
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
 }
 
 /* State where button is active/clickable or current */
 .nav-btn.enabled {
     opacity: 1;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Match the specific white ring from user's image */
-.nav-btn.active-state {
-    opacity: 1;
-    border: 2px solid #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-btn:hover.enabled {
-    background: #333333;
-    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
 }
 
 .nav-btn:active.enabled {
