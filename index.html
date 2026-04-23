@@ -82,17 +82,42 @@
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 3rem;
-                gap: 2rem;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+            .nav-menu.active > div {
+                height: auto !important; /* Override desktop h-full */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-menu.active .nav-link {
+                height: auto !important; 
+                padding: 10px 0;
+                font-size: 20px;
             }
             .nav-menu.active .has-dropdown .invisible {
-                /* For mobile, just show submenus naturally below */
+                /* Expose submenus clearly on mobile */
                 position: relative !important;
+                display: flex !important;
+                flex-direction: column;
                 top: 0 !important;
                 opacity: 1 !important;
                 visibility: visible !important;
                 height: auto !important;
                 transform: none !important;
-                margin-top: 1rem;
+                margin-top: 0.5rem;
+                gap: 0.5rem;
+                background: #f7f5ed;
+                width: 100%;
+                padding: 1rem 0;
+            }
+            .nav-menu.active .has-dropdown .lnb-link {
+                color: #222222 !important; /* Override desktop text-white */
+                font-size: 16px;
+                padding: 8px 0;
+                font-weight: 600;
             }
         }
     </style>
@@ -1552,10 +1577,10 @@
     <!-- Awards Section -->
     <section class="awards !bg-[#f3f1eb]" id="awards" style="background-color: #f3f1eb !important;">
         <div class="w-full relative -mt-16 lg:-mt-32 mb-16 lg:mb-20 overflow-hidden">
-            <div class="w-full h-[500px] md:h-[650px]">
+            <div class="w-full h-[650px]">
                 <img src="nahyun_imported/image_source/Awards/bg.png" alt="Awards Hero Artwork" class="w-full h-full object-cover object-top">
             </div>
-            <div class="absolute inset-x-0 bottom-[3.5rem] md:bottom-[7.5rem] flex flex-col items-center text-center px-4">
+            <div class="absolute inset-x-0 bottom-8 md:bottom-16 flex flex-col items-center text-center px-4">
                 <h2 class="font-sans text-[#1a1a1a] text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-normal drop-shadow-sm">Awards within AI</h2>
             </div>
         </div>
@@ -1688,7 +1713,7 @@
         <div class="container mx-auto w-full flex-grow relative pb-16 md:pb-24">
             
             <!-- Cinematic Image Wrapper (Runway Benchmark Style) -->
-            <div class="relative w-full h-[70vh] min-h-[500px] max-h-[800px] rounded-[10px] overflow-hidden bg-black mt-6 mb-8 mx-auto">
+            <div class="relative w-full h-[500px] md:h-[650px] rounded-[10px] overflow-hidden bg-black mt-6 mb-8 mx-auto">
                 <div class="absolute inset-0 w-full h-full opacity-80 mix-blend-screen overflow-hidden">
                     <img src="nahyun_imported/image_source/About_Life/BG.jpg" style="object-position: center calc(100% - 15px);" class="absolute inset-0 w-full h-full object-cover transform scale-[1.03] transition-transform duration-[20s] hover:scale-[1.05]" alt="Life Snapshot">
                 </div>
