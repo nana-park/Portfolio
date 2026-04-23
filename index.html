@@ -39,7 +39,7 @@
             if (valid.indexOf(hash) === -1) hash = 'home';
             
             var routes = {
-                'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta', 'contact'],
+                'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision', 'contact'],
                 'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
                 'life': ['life', 'contact'],
                 'projects': ['projects', 'contact'],
@@ -150,6 +150,35 @@
         .navbar.force-scrolled .nav-link {
             color: #111111 !important;
         }
+        /* [Critical Fix] Mobile Menu should always be perfectly dark and not inherit desktop orange active states */
+        .nav-menu.active .nav-link,
+        .nav-menu.active .nav-link.active,
+        .nav-menu.active .nav-link:hover,
+        .nav-menu.active .has-dropdown:hover > .nav-link,
+        .navbar.force-scrolled .nav-menu.active .nav-link {
+            color: #ffffff !important;
+        }
+        
+        /* Force Navbar strictly dark if the mobile menu is active */
+        .navbar:has(.nav-menu.active) {
+            background: #111111 !important;
+            border-bottom: 1px solid #333333 !important;
+        }
+        .navbar:has(.nav-menu.active) .logo {
+            color: #ffffff !important;
+        }
+        .navbar:has(.nav-menu.active) .mobile-toggle span {
+            background: #ffffff !important;
+        }
+
+        /* [Critical Fix] Ensure active/hover links stay orange when scrolled (Desktop Only) */
+        @media (min-width: 1025px) {
+            .navbar.force-scrolled .nav-link:hover,
+            .navbar.force-scrolled .nav-link.active,
+            .navbar.force-scrolled .has-dropdown:hover > .nav-link {
+                color: #d97706 !important;
+            }
+        }
     </style>
 </head>
 
@@ -199,7 +228,7 @@
                 </div>
 
                 <div class="flex items-center h-full"><a href="#awards" class="nav-link">AWARDS</a></div>
-                <div class="flex items-center h-full"><a href="#contact" class="nav-link">CONTACT</a></div>
+                <div class="flex items-center h-full"><a href="#contact" class="nav-link">Vision</a></div>
             </div>
             <div class="flex-1 flex justify-end items-center gap-3">
                 <div class="hidden lg:flex gap-3">
@@ -2271,7 +2300,7 @@
     </script>
 
     <!-- Contact / CTA Section (Runway Style, bottom of HOME) -->
-    <section class="relative w-full bg-white pb-24 pt-12 flex flex-col items-center" id="runway-cta">
+    <section class="relative w-full bg-white pb-24 pt-12 flex flex-col items-center" id="vision">
         <div class="container mx-auto w-full relative">
             <div id="cta-dark-container" class="relative w-full rounded-[10px] overflow-hidden bg-[#150d0a] border border-white/5 border-t-white/10 py-24 lg:py-32 flex flex-col items-center justify-center group mx-auto px-6 text-center">
                 <!-- Layer 1: Enhanced Mesh Blobs (Toned Down Amber/Whiskey) -->
@@ -2376,7 +2405,7 @@
                 
                 <!-- Card 3 -->
                 <div class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
-                    <div class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">Contact</div>
+                    <div class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">Vision</div>
                     <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Interested in collaboration?</h4>
                     <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Let's build something together.</p>
                     
@@ -2399,11 +2428,11 @@
                         Leave your email below to instantly receive a complete package containing my updated resume, detailed PDF portfolio, and direct links to this website and contacts so you can review them all at once.
                     </p>
                     <div class="flex flex-wrap gap-6 items-center mt-auto pb-4">
-                        <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center">
-                            LinkedIn <span class="ml-1 text-[10px]">▶</span>
+                        <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center group/btn">
+                            LinkedIn <svg class="ml-0.5 w-[14px] h-[14px] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
                         </a>
-                        <a href="mailto:breadme00@gmail.com" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center">
-                            Contact directly <span class="ml-1 text-[10px]">▶</span>
+                        <a href="mailto:breadme00@gmail.com" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center group/btn">
+                            Contact directly <svg class="ml-0.5 w-[14px] h-[14px] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -2464,7 +2493,7 @@
                         <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                     </div>
                 </div>
-                <div class="footer-col"><h4>Contact</h4>
+                <div class="footer-col"><h4>Vision</h4>
                     <div class="footer-socials-col">
                         <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
                         <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></a>
@@ -2473,7 +2502,7 @@
             </div>
             <div class="footer-bottom-bar">
                 <div class="footer-lang"><button class="lang-btn active"><span class="lang-dot"></span> English</button><button class="lang-btn">Korean</button></div>
-                <div class="footer-copyright"><p>© 2025 Nahyun Park</p></div>
+                <div class="footer-copyright"><p>&copy; 2025 Nahyun Park</p></div>
             </div>
         </div>
     </footer>
@@ -2500,6 +2529,12 @@
 
 </body>
 </html>
+
+
+
+
+
+
 
 
 

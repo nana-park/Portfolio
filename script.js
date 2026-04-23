@@ -99,6 +99,12 @@ mobileToggle.addEventListener('click', () => {
 const navLinksAll = document.querySelectorAll('.nav-link, .lnb-link');
 navLinksAll.forEach(link => {
     link.addEventListener('click', (e) => {
+        // Prevent click routing on all devices for Dropdown parent nodes (e.g. ABOUT, PROJECTS)
+        if (link.parentElement && link.parentElement.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
+            e.preventDefault();
+            return;
+        }
+
         // Retract Mobile menu
         navMenu.classList.remove('active');
         if (mobileToggle) mobileToggle.classList.remove('active');
@@ -116,12 +122,12 @@ navLinksAll.forEach(link => {
 // Single Page Application (SPA) Router
 // ===========================
 const routerConfig = {
-    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta', 'contact'],
-    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
-    'life': ['life', 'contact'],
-    'projects': ['projects', 'contact'],
-    'research': ['research', 'contact'],
-    'awards': ['awards', 'contact'],
+    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision'],
+    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
+    'life': ['life'],
+    'projects': ['projects'],
+    'research': ['research'],
+    'awards': ['awards'],
     'contact': ['contact']
 };
 
@@ -1089,3 +1095,4 @@ function filterTimeline(category) {
         }
     });
 }
+

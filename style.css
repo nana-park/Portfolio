@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    CSS Custom Properties
    =========================== */
 :root {
@@ -132,8 +132,9 @@ body {
 }
 
 .nav-link:hover,
-.nav-link.active {
-    color: #000000;
+.nav-link.active,
+.has-dropdown:hover > .nav-link {
+    color: #d97706 !important;
 }
 
 /* Mega Menu Expanded State (Dark Mode) - Triggered by JS */
@@ -151,8 +152,9 @@ body {
 }
 
 .navbar.gnb-expanded .nav-link:hover,
-.navbar.gnb-expanded .nav-link.active {
-    color: #ffffff !important;
+.navbar.gnb-expanded .nav-link.active,
+.navbar.gnb-expanded .has-dropdown:hover > .nav-link {
+    color: #d97706 !important;
 }
 
 /* Base properties for the backdrop */
@@ -2995,7 +2997,7 @@ section {
     flex-shrink: 0;
     padding: 20px 0;
 
-    /* 마스크 설정 */
+    /* 마스???�정 */
     mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
     mask-size: 100% 100%;
@@ -3006,21 +3008,21 @@ section {
     -webkit-mask-position: center;
 }
 
-/* 실제로 움직이는 긴 트랙 */
+/* ?�제�??�직이??�??�랙 */
 .carousel-track {
     display: flex;
     gap: 24px;
-    /* 카드 사이 간격 */
+    /* 카드 ?�이 간격 */
     width: max-content;
 
-    /* 카드를 4세트(총 20장)로 늘렸으므로, 속도를 25초로 설정 (1세트 사이클 기준) */
+    /* 카드�?4?�트(�?20??�??�렸?��?�? ?�도�?25초로 ?�정 (1?�트 ?�이??기�?) */
     animation: scroll-left 25s linear infinite;
     padding-left: 24px;
 
     will-change: transform;
 }
 
-/* 마우스 올리면 일시정지 */
+/* 마우???�리�??�시?��? */
 .carousel-track:hover {
     animation-play-state: paused;
 }
@@ -3063,7 +3065,7 @@ section {
     z-index: 10;
 }
 
-/* 배경 이미지 스타일 */
+/* 배경 ?��?지 ?��???*/
 .award-card-bg {
     width: 100%;
     height: 100%;
@@ -3079,18 +3081,18 @@ section {
     opacity: 1;
 }
 
-/* 텍스트 컨텐츠 영역 */
+/* ?�스??컨텐�??�역 */
 .award-content {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
 
-    /* 그라데이션 영역 */
+    /* 그라?�이???�역 */
     padding: 100px 20px 24px;
-    /* 좌우 패딩 확보 */
+    /* 좌우 ?�딩 ?�보 */
 
-    /* 부드러운 그라데이션 */
+    /* 부?�러??그라?�이??*/
     background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
 
     display: flex;
@@ -3100,34 +3102,34 @@ section {
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 
-    /* 왼쪽 정렬 */
+    /* ?�쪽 ?�렬 */
     align-items: flex-start;
     text-align: left;
 }
 
 .award-title {
     color: #fff;
-    /* [수정] 폰트 크기 대폭 축소 (1/2 수준) */
+    /* [?�정] ?�트 ?�기 ?�??축소 (1/2 ?��?) */
     font-size: 0.8rem;
     font-weight: 700;
     margin: 0;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.4;
 
-    /* [수정] 무조건 1줄로 출력 (넘치면 ... 처리), 단 <br>은 동작하도록 처리 */
+    /* [?�정] 무조�?1줄로 출력 (?�치�?... 처리), ??<br>?� ?�작?�도�?처리 */
     width: 100%;
 }
 
 .award-subtitle {
     color: #ddd;
-    /* [수정] 폰트 크기 축소 */
+    /* [?�정] ?�트 ?�기 축소 */
     font-size: 0.7rem;
     font-weight: 400;
     opacity: 0.9;
     line-height: 1.2;
     margin-top: 2px;
 
-    /* [수정] 부제는 말줄임표 없이 전체 한 줄로 표시 */
+    /* [?�정] 부?�는 말줄?�표 ?�이 ?�체 ??줄로 ?�시 */
     width: 100%;
     white-space: nowrap;
     overflow: visible;
@@ -3208,3 +3210,19 @@ section {
 #skills .section-subtitle {
     color: rgba(0, 0, 0, 0.6) !important;
 }
+@media (max-width: 768px) {
+    .footer-columns { display: grid !important; grid-template-columns: 1.6fr 1.4fr 1.2fr 1.8fr !important; gap: 0.25rem !important; width: 100% !important; }
+    .footer-col { min-width: 0; }
+    .footer-col h4 { font-size: 11px !important; margin-bottom: 8px !important; white-space: nowrap; }
+    .footer-links a { font-size: 10px !important; white-space: normal; line-height: 1.4; word-break: keep-all; }
+    .footer-socials-col { display: flex; gap: 6px; flex-wrap: wrap; }
+    .social-icon { padding: 0 !important; }
+    .social-icon svg { width: 18px !important; height: 18px !important; padding: 2px !important; }
+    .lang-btn { font-size: 11px !important; padding: 0.25rem 0.6rem !important; gap: 0.3rem !important; }
+    .lang-dot { width: 6px !important; height: 6px !important; }
+}
+
+
+
+
+
