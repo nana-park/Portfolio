@@ -1,0 +1,120 @@
+diff a/index.html b/index.html	(rejected hunks)
+@@ -674,48 +676,78 @@
+                 </div>
+                 <div class="lg:col-span-6 lg:col-start-7 flex flex-col pt-8 lg:pt-0">
+                     <div class="text-[11px] text-white/40 uppercase tracking-[0.2em] mb-4 font-medium pl-1 font-sans">Careers</div>
+-                    <div class="relative w-full" id="career-container">
+-                        <!-- Page 1: AI Roles -->
+-                        <div class="flex flex-col w-full transition-all duration-500 ease-out" id="career-page-1" style="opacity: 1; pointer-events: auto; transform: translateY(0);">
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">NAVER CLOUD</h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Spearheaded UX strategies for <span class="text-zinc-200 font-medium">B2B/B2G AI voice agents (CLOVA CareCall, LINE WORKS AiCall)</span>. Formulated <span class="text-zinc-200 font-medium">quantitative evaluation frameworks of LLM outputs</span> against human intent, driving global expansion and <span class="text-zinc-200 font-medium">exceeding B2B revenue targets by 117%</span>.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 block font-sans font-medium">2024.07 ??2026.01 <span class="font-normal opacity-70">&middot; 1 yr 7 mos</span></span>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-1 block font-sans font-medium">2023.07 ??2024.01 <span class="font-normal opacity-70">&middot; 7 mos</span></span>
+-                                </p>
+-                            </div>
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">SK Telecom</h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Achieved a <span class="text-zinc-200 font-medium">5M subscriber milestone (56% increase)</span> <span class="text-zinc-200 font-medium">for the AI chatbot "A. (Adot)"</span> by implementing data-informed UX strategies and managing rigorous QA for a major product overhaul.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2024.04 ??2024.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
+-                                </p>
+-                            </div>
+-                            <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">Sliver <span class="text-white/40 font-normal">(w/ Google, SK Telecom)</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Led the end-to-end product planning for <span class="text-zinc-200 font-medium">"Hopzie", a B2B creator commerce AI engine</span>, from its MVP launch to a strategic archiving decision informed by usage data analysis. Designed core AI logic for optimization, securing major institutional funding?봆oogle and SK Telecom with an <span class="text-zinc-200 font-medium">895K total reach</span>.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2023.04 ??2023.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
+-                                </p>
++                    <div class="relative w-full flex flex-col" id="career-container">
++                        <style>
++                            #career-container .career-col-1 { opacity: 1; pointer-events: auto; transform: translateY(0); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
++                            #career-container .career-col-2 { opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
++                            #career-container.view-two .career-col-1 { opacity: 0; pointer-events: none; transform: translateY(-10px); }
++                            #career-container.view-two .career-col-2 { opacity: 1; pointer-events: auto; transform: translateY(0); }
++                        </style>
++
++                        <!-- Consistent Company List -->
++                        <div class="flex flex-col w-full">
++                            <!-- NAVER CLOUD -->
++                            <div class="border-t border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">NAVER CLOUD</h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            CLOVA CareCall, LINE WORKS AiCall
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Spearheaded UX strategies for <span class="text-zinc-200 font-medium">B2B/B2G AI voice agents (CLOVA CareCall, LINE WORKS AiCall)</span>. Formulated <span class="text-zinc-200 font-medium">quantitative evaluation frameworks of LLM outputs</span> against human intent, driving global expansion and <span class="text-zinc-200 font-medium">exceeding B2B revenue targets by 117%</span>.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2024.07 &mdash; 2026.01 <span class="font-normal opacity-70">&middot; 1 yr 7 mos</span></span>
++                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-0.5 block font-sans font-medium">2023.07 &mdash; 2024.01 <span class="font-normal opacity-70">&middot; 7 mos</span></span>
++                                </div>
+                             </div>
+-                        </div>
+-                        
+-                        <!-- Page 2: Other Roles -->
+-                        <div class="flex flex-col absolute top-0 left-0 w-full transition-all duration-500 ease-out" id="career-page-2" style="opacity: 0; pointer-events: none; transform: translateY(10px);">
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">SMU Startup Incubation Center <span class="text-white/40 font-normal">??Growth Manager Assistant</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Spearheaded growth support for resident startups, achieving a <span class="text-zinc-200 font-medium">112% increase</span> in social media engagement. Facilitated global scale-ups and funding, leading <span class="text-zinc-200 font-medium">CES 2020</span> participation and securing a <span class="text-zinc-200 font-medium">$387K budget</span> for a national drone commercialization project.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2019.10 ??2021.02 <span class="font-normal opacity-70">&middot; 1 yr 5 mos</span></span>
+-                                </p>
++
++                            <!-- SK Telecom -->
++                            <div class="border-t border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">SK Telecom</h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            A. (Adot)
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Achieved a <span class="text-zinc-200 font-medium">5M subscriber milestone (56% increase)</span> <span class="text-zinc-200 font-medium">for the AI chatbot "A. (Adot)"</span> by implementing data-informed UX strategies and managing rigorous QA for a major product overhaul.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2024.04 &mdash; 2024.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
++                                </div>
+                             </div>
+-                            <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">H&amp;M <span class="text-white/40 font-normal">??HR IT Assistant</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Managed the <span class="text-zinc-200 font-medium">"GROW" online learning platform for all H&M Korea employees (700+)</span>, driving engagement through data analysis. Designed localized training programs while maintaining core global compliance standards.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2018.05 ??2019.04 <span class="font-normal opacity-70">&middot; 1 yr</span></span>
+-                                </p>
++
++                            <!-- Sliver -->
++                            <div class="border-t border-b border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">Sliver <span class="text-white/40 font-normal text-[14px]">(w/ Google, SK Telecom)</span></h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            Hopzie
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Led the end-to-end product planning for <span class="text-zinc-200 font-medium">"Hopzie", a B2B creator commerce AI engine</span>, from its MVP launch to a strategic archiving decision informed by usage data analysis. Designed core AI logic for optimization, securing major institutional funding&mdash;Google and SK Telecom with an <span class="text-zinc-200 font-medium">895K total reach</span>.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2023.04 &mdash; 2023.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
++                                </div>
+                             </div>
+                         </div>
+ 

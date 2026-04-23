@@ -118,6 +118,8 @@ const routerConfig = {
     'contact': ['contact']
 };
 
+let isFirstLoad = true;
+
 function handleRoute() {
     let rawHash = window.location.hash.replace('#', '') || 'home';
     let activeTab = null;
@@ -145,11 +147,20 @@ function handleRoute() {
     const foucPreventer = document.getElementById('spa-fouc-preventer');
     if (foucPreventer) foucPreventer.remove();
 
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
     // Hide all logical sections
     const allSections = document.querySelectorAll('section[id]');
     allSections.forEach(sec => {
-        sec.style.display = 'none';
-        sec.style.opacity = '0';
+        if (!isFirstLoad) {
+            sec.style.display = 'none';
+            sec.style.opacity = '0';
+        } else if (activeTab && routerConfig[activeTab] && !routerConfig[activeTab].includes(sec.id)) {
+            sec.style.display = 'none';
+            sec.style.opacity = '0';
+        }
     });
     
     // Toggle the free-trial banner if it exists
@@ -172,15 +183,28 @@ function handleRoute() {
         if (sec) {
             // Force explicit truthy display values for cross-browser reliability over '' (empty string reset)
             sec.style.display = sec.className.includes('flex') ? 'flex' : 'block'; 
-            setTimeout(() => {
-                sec.style.transition = 'opacity 0.4s ease';
+            if (isFirstLoad) {
+                sec.style.transition = 'none';
                 sec.style.opacity = '1';
-            }, index * 50);
+            } else {
+                setTimeout(() => {
+                    sec.style.transition = 'opacity 0.4s ease';
+                    sec.style.opacity = '1';
+                }, index * 50);
+            }
         }
     });
 
     if (banner && ['home', 'about', 'projects'].includes(activeTab)) {
         banner.style.display = 'flex';
+    }
+
+    // Reset Life gallery filter to Culinary when navigating to Life
+    if (activeTab === 'life') {
+        const culinaryBtn = document.querySelector('.life-filter-btn[data-target="col-culinary"]');
+        if (culinaryBtn && !culinaryBtn.classList.contains('bg-slate-100')) {
+            culinaryBtn.click();
+        }
     }
 
     // Update Nav LNB Active States
@@ -191,7 +215,7 @@ function handleRoute() {
     const highlightTab = parentMap[activeTab] || activeTab;
 
     document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href') === '#' + highlightTab) {
+        if (link.getAttribute('href') === '#' + highlightTab || link.textContent.trim().toLowerCase() === highlightTab) {
             link.classList.add('active');
             link.style.color = '#D97706'; // highlight color
         } else {
@@ -217,6 +241,7 @@ function handleRoute() {
             }
         }, 150);
     }
+    isFirstLoad = false;
     setTimeout(() => window.dispatchEvent(new Event('scroll')), 200);
 }
 

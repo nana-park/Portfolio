@@ -1,0 +1,908 @@
+﻿diff --git a/index.html b/index.html
+index 20a5540..edf4209 100644
+--- a/index.html
++++ b/index.html
+@@ -30,9 +30,9 @@
+         (function() {
+             var hash = window.location.hash.replace('#', '') || 'home';
+             // Valid parent tabs
+-            var valid = ['home', 'about', 'projects', 'awards', 'contact'];
++            var valid = ['home', 'about', 'life', 'projects', 'research', 'awards', 'contact'];
+             if (valid.indexOf(hash) === -1) {
+-                for (var key in {home:1, about:1, projects:1, awards:1, contact:1}) {
++                for (var key in {home:1, about:1, life:1, projects:1, research:1, awards:1, contact:1}) {
+                     if (window.location.hash.indexOf(key) !== -1) hash = key;
+                 }
+             }
+@@ -41,7 +41,9 @@
+             var routes = {
+                 'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta'],
+                 'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
+-                'projects': ['projects', 'research'],
++                'life': ['life'],
++                'projects': ['projects'],
++                'research': ['research'],
+                 'awards': ['awards'],
+                 'contact': ['contact']
+             };
+@@ -51,7 +53,7 @@
+             
+             // Build CSS to initially hide everything NOT in the active route array
+             var css = '';
+-            var allSections = [].concat(routes['home'], routes['about'], routes['projects'], routes['awards'], routes['contact']);
++            var allSections = [].concat(routes['home'], routes['about'], routes['life'], routes['projects'], routes['research'], routes['awards'], routes['contact']);
+             var activeIds = routes[hash];
+             
+             for (var i = 0; i < allSections.length; i++) {
+@@ -211,7 +213,7 @@
+     </section>
+ 
+     <!-- Partners / Logos Section -->
+-    <section id="partners" style="background: #ffffff; padding: 10rem 0 5rem 0; overflow: hidden;">
++    <section id="partners" style="background: #ffffff; padding: 5rem 0 5rem 0; overflow: hidden;">
+         <div class="container mx-auto px-4 text-center">
+             <p class="font-sans text-[#a1a1aa] text-[13px] md:text-[14px] leading-relaxed max-w-[400px] mx-auto mb-10 tracking-wide">
+                 Experience &amp; collaboration with<br class="hidden sm:block">industry leading organizations:
+@@ -674,48 +676,78 @@
+                 </div>
+                 <div class="lg:col-span-6 lg:col-start-7 flex flex-col pt-8 lg:pt-0">
+                     <div class="text-[11px] text-white/40 uppercase tracking-[0.2em] mb-4 font-medium pl-1 font-sans">Careers</div>
+-                    <div class="relative w-full" id="career-container">
+-                        <!-- Page 1: AI Roles -->
+-                        <div class="flex flex-col w-full transition-all duration-500 ease-out" id="career-page-1" style="opacity: 1; pointer-events: auto; transform: translateY(0);">
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">NAVER CLOUD</h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Spearheaded UX strategies for <span class="text-zinc-200 font-medium">B2B/B2G AI voice agents (CLOVA CareCall, LINE WORKS AiCall)</span>. Formulated <span class="text-zinc-200 font-medium">quantitative evaluation frameworks of LLM outputs</span> against human intent, driving global expansion and <span class="text-zinc-200 font-medium">exceeding B2B revenue targets by 117%</span>.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 block font-sans font-medium">2024.07 ??2026.01 <span class="font-normal opacity-70">&middot; 1 yr 7 mos</span></span>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-1 block font-sans font-medium">2023.07 ??2024.01 <span class="font-normal opacity-70">&middot; 7 mos</span></span>
+-                                </p>
+-                            </div>
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">SK Telecom</h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Achieved a <span class="text-zinc-200 font-medium">5M subscriber milestone (56% increase)</span> <span class="text-zinc-200 font-medium">for the AI chatbot "A. (Adot)"</span> by implementing data-informed UX strategies and managing rigorous QA for a major product overhaul.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2024.04 ??2024.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
+-                                </p>
+-                            </div>
+-                            <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">Sliver <span class="text-white/40 font-normal">(w/ Google, SK Telecom)</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Led the end-to-end product planning for <span class="text-zinc-200 font-medium">"Hopzie", a B2B creator commerce AI engine</span>, from its MVP launch to a strategic archiving decision informed by usage data analysis. Designed core AI logic for optimization, securing major institutional funding?봆oogle and SK Telecom with an <span class="text-zinc-200 font-medium">895K total reach</span>.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2023.04 ??2023.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
+-                                </p>
++                    <div class="relative w-full flex flex-col" id="career-container">
++                        <style>
++                            #career-container .career-col-1 { opacity: 1; pointer-events: auto; transform: translateY(0); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
++                            #career-container .career-col-2 { opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
++                            #career-container.view-two .career-col-1 { opacity: 0; pointer-events: none; transform: translateY(-10px); }
++                            #career-container.view-two .career-col-2 { opacity: 1; pointer-events: auto; transform: translateY(0); }
++                        </style>
++
++                        <!-- Consistent Company List -->
++                        <div class="flex flex-col w-full">
++                            <!-- NAVER CLOUD -->
++                            <div class="border-t border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">NAVER CLOUD</h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            CLOVA CareCall, LINE WORKS AiCall
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Spearheaded UX strategies for <span class="text-zinc-200 font-medium">B2B/B2G AI voice agents (CLOVA CareCall, LINE WORKS AiCall)</span>. Formulated <span class="text-zinc-200 font-medium">quantitative evaluation frameworks of LLM outputs</span> against human intent, driving global expansion and <span class="text-zinc-200 font-medium">exceeding B2B revenue targets by 117%</span>.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2024.07 &mdash; 2026.01 <span class="font-normal opacity-70">&middot; 1 yr 7 mos</span></span>
++                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-0.5 block font-sans font-medium">2023.07 &mdash; 2024.01 <span class="font-normal opacity-70">&middot; 7 mos</span></span>
++                                </div>
+                             </div>
+-                        </div>
+-                        
+-                        <!-- Page 2: Other Roles -->
+-                        <div class="flex flex-col absolute top-0 left-0 w-full transition-all duration-500 ease-out" id="career-page-2" style="opacity: 0; pointer-events: none; transform: translateY(10px);">
+-                            <div class="border-t border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">SMU Startup Incubation Center <span class="text-white/40 font-normal">??Growth Manager Assistant</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Spearheaded growth support for resident startups, achieving a <span class="text-zinc-200 font-medium">112% increase</span> in social media engagement. Facilitated global scale-ups and funding, leading <span class="text-zinc-200 font-medium">CES 2020</span> participation and securing a <span class="text-zinc-200 font-medium">$387K budget</span> for a national drone commercialization project.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2019.10 ??2021.02 <span class="font-normal opacity-70">&middot; 1 yr 5 mos</span></span>
+-                                </p>
++
++                            <!-- SK Telecom -->
++                            <div class="border-t border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">SK Telecom</h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            A. (Adot)
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Achieved a <span class="text-zinc-200 font-medium">5M subscriber milestone (56% increase)</span> <span class="text-zinc-200 font-medium">for the AI chatbot "A. (Adot)"</span> by implementing data-informed UX strategies and managing rigorous QA for a major product overhaul.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2024.04 &mdash; 2024.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
++                                </div>
+                             </div>
+-                            <div class="border-t border-b border-white/20 pt-6 pb-8 group cursor-default">
+-                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-2 transition-colors">H&amp;M <span class="text-white/40 font-normal">??HR IT Assistant</span></h3>
+-                                <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
+-                                    Managed the <span class="text-zinc-200 font-medium">"GROW" online learning platform for all H&M Korea employees (700+)</span>, driving engagement through data analysis. Designed localized training programs while maintaining core global compliance standards.<br>
+-                                    <span class="text-white/40 text-[11px] md:text-[12px] mt-2.5 inline-block font-sans font-medium">2018.05 ??2019.04 <span class="font-normal opacity-70">&middot; 1 yr</span></span>
+-                                </p>
++
++                            <!-- Sliver -->
++                            <div class="border-t border-b border-white/20 pt-5 pb-6 group cursor-default flex flex-col">
++                                <h3 class="font-sans text-white text-[16px] md:text-[18px] font-medium tracking-tight mb-3 transition-colors">Sliver <span class="text-white/40 font-normal text-[14px]">(w/ Google, SK Telecom)</span></h3>
++                                
++                                <div class="relative grid grid-cols-1 grid-rows-1 mb-2 items-start">
++                                    <div class="row-start-1 col-start-1 career-col-1">
++                                        <p class="font-sans text-zinc-100 text-[13px] md:text-[14px] font-medium tracking-wide">
++                                            Hopzie
++                                        </p>
++                                    </div>
++                                    <div class="row-start-1 col-start-1 career-col-2">
++                                        <p class="font-sans text-[#a1a1aa] text-[12px] md:text-[13px] leading-[1.6] max-w-[95%] font-light">
++                                            Led the end-to-end product planning for <span class="text-zinc-200 font-medium">"Hopzie", a B2B creator commerce AI engine</span>, from its MVP launch to a strategic archiving decision informed by usage data analysis. Designed core AI logic for optimization, securing major institutional funding&mdash;Google and SK Telecom with an <span class="text-zinc-200 font-medium">895K total reach</span>.
++                                        </p>
++                                    </div>
++                                </div>
++                                <div class="mt-auto pt-2">
++                                    <span class="text-white/40 text-[11px] md:text-[12px] block font-sans font-medium">2023.04 &mdash; 2023.07 <span class="font-normal opacity-70">&middot; 4 mos</span></span>
++                                </div>
+                             </div>
+                         </div>
+ 
+@@ -723,19 +755,22 @@
+                         <div class="flex justify-between items-center mt-2 pt-2">
+                             <span class="text-[11px] text-white/40 font-mono tracking-widest pl-1" id="career-page-indicator">01 / 02</span>
+                             <div class="flex gap-3">
+-                                <button onclick="switchCareerPage(1)" class="w-8 h-8 rounded-full flex items-center justify-center border border-white/20 text-white/40 hover:text-white hover:border-white/60 transition-all cursor-not-allowed opacity-50" id="btn-career-prev" disabled>
++                                <button onclick="switchCareerPage(1, true)" class="w-8 h-8 rounded-full flex items-center justify-center border border-white/20 text-white/40 hover:text-white hover:border-white/60 transition-all cursor-not-allowed opacity-50" id="btn-career-prev" disabled>
+                                     <svg class="w-4 h-4 ml-[-1px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+                                 </button>
+-                                <button onclick="switchCareerPage(2)" class="w-8 h-8 rounded-full flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-all cursor-pointer" id="btn-career-next">
++                                <button onclick="switchCareerPage(2, true)" class="w-8 h-8 rounded-full flex items-center justify-center border border-white/20 text-white hover:border-white/60 transition-all cursor-default" id="btn-career-next">
+                                     <svg class="w-4 h-4 ml-[1px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+                                 </button>
+                             </div>
+                         </div>
+ 
+                         <script>
+-                            function switchCareerPage(page) {
+-                                const p1 = document.getElementById('career-page-1');
+-                                const p2 = document.getElementById('career-page-2');
++                            let currentCareerPage = 1;
++                            let careerAutoInterval;
++
++                            function switchCareerPage(page, manualClick = false) {
++                                currentCareerPage = page;
++                                const container = document.getElementById('career-container');
+                                 const ind = document.getElementById('career-page-indicator');
+                                 const btnPrev = document.getElementById('btn-career-prev');
+                                 const btnNext = document.getElementById('btn-career-next');
+@@ -746,49 +781,51 @@
+                                     setTimeout(() => {
+                                         el.textContent = newText;
+                                         el.style.opacity = '1';
+-                                    }, 200);
++                                    }, 300);
+                                 };
+ 
+                                 if(page === 1) {
+-                                    p2.style.opacity = '0';
+-                                    p2.style.transform = 'translateY(10px)';
+-                                    p2.style.pointerEvents = 'none';
+-                                    
+-                                    p1.style.opacity = '1';
+-                                    p1.style.transform = 'translateY(0)';
+-                                    p1.style.pointerEvents = 'auto';
+-                                    
++                                    container.classList.remove('view-two');
+                                     ind.textContent = '01 / 02';
+                                     animateTextChange(roleTitle, 'As an AI Product Manager,');
+                                     
+                                     btnPrev.disabled = true;
+                                     btnPrev.classList.add('opacity-50', 'cursor-not-allowed', 'text-white/40');
+-                                    btnPrev.classList.remove('text-white', 'cursor-pointer');
++                                    btnPrev.classList.remove('text-white', 'cursor-default');
+                                     
+                                     btnNext.disabled = false;
+                                     btnNext.classList.remove('opacity-50', 'cursor-not-allowed', 'text-white/40');
+-                                    btnNext.classList.add('text-white', 'cursor-pointer');
++                                    btnNext.classList.add('text-white', 'cursor-default');
+                                 } else {
+-                                    p1.style.opacity = '0';
+-                                    p1.style.transform = 'translateY(-10px)';
+-                                    p1.style.pointerEvents = 'none';
+-                                    
+-                                    p2.style.opacity = '1';
+-                                    p2.style.transform = 'translateY(0)';
+-                                    p2.style.pointerEvents = 'auto';
+-                                    
++                                    container.classList.add('view-two');
+                                     ind.textContent = '02 / 02';
+                                     animateTextChange(roleTitle, 'As an IT Innovator,');
+                                     
+                                     btnNext.disabled = true;
+                                     btnNext.classList.add('opacity-50', 'cursor-not-allowed', 'text-white/40');
+-                                    btnNext.classList.remove('text-white', 'cursor-pointer');
++                                    btnNext.classList.remove('text-white', 'cursor-default');
+                                     
+                                     btnPrev.disabled = false;
+                                     btnPrev.classList.remove('opacity-50', 'cursor-not-allowed', 'text-white/40');
+-                                    btnPrev.classList.add('text-white', 'cursor-pointer');
++                                    btnPrev.classList.add('text-white', 'cursor-default');
+                                 }
++
++                                if (manualClick) {
++                                    startCareerAutoCycle();
++                                }
++                            }
++
++                            function startCareerAutoCycle() {
++                                clearInterval(careerAutoInterval);
++                                careerAutoInterval = setInterval(() => {
++                                    const next = currentCareerPage === 1 ? 2 : 1;
++                                    switchCareerPage(next, false);
++                                }, 5000); 
+                             }
++
++                            document.addEventListener('DOMContentLoaded', () => {
++                                startCareerAutoCycle();
++                            });
+                         </script>
+                     </div>
+                 </div>
+@@ -953,7 +990,7 @@
+             <div class="flex flex-col gap-12 lg:gap-24 projects-list" id="projectsGrid">
+                 <!-- CLOVA CareCall -->
+                 <a href="projects/clova-carecall.html" class="project-card-link block focus:outline-none group" data-category="ai-chat" style="display: block;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-amber-600 border border-amber-100/50 text-[10px] font-bold px-2.5 py-1 rounded-sm flex items-center gap-1.5 z-10 font-sans tracking-wide shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> LAUNCHING</div>
+                             <img src="project_carecall_ai_1769533567621.png" alt="CLOVA CareCall" class="w-full h-full object-cover">
+@@ -967,7 +1004,7 @@
+                 </a>
+                 <!-- LINE WORKS AiCall -->
+                 <a href="projects/lineworks-aicall.html" class="project-card-link block focus:outline-none group" data-category="ai-chat" style="display: block;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <img src="project_aicall_business_1769533583985.png" alt="LINE WORKS AiCall" class="w-full h-full object-cover">
+                         </div>
+@@ -980,7 +1017,7 @@
+                 </a>
+                 <!-- SKT A.dot -->
+                 <a href="projects/skt-adot.html" class="project-card-link block focus:outline-none group" data-category="ai-chat" style="display: block;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <img src="project_adot_personal_1769533603151.png" alt="A. (Adot)" class="w-full h-full object-cover">
+                         </div>
+@@ -993,7 +1030,7 @@
+                 </a>
+                 <!-- Hopzie -->
+                 <a href="projects/hopzie.html" class="project-card-link block focus:outline-none group" data-category="others" style="display: none;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <img src="project_hopzie_creator_final.png" alt="Hopzie" class="w-full h-full object-cover">
+                         </div>
+@@ -1006,7 +1043,7 @@
+                 </a>
+                 <!-- Just do it -->
+                 <a href="projects/just-do-it.html" class="project-card-link block focus:outline-none group" data-category="others" style="display: none;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-sm text-amber-600 border border-amber-100/50 text-[10px] font-bold px-2.5 py-1 rounded-sm flex items-center gap-1.5 z-10 font-sans tracking-wide shadow-sm"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span> LAUNCHING</div>
+                             <img src="project_justdoit_focus_1769533640391.png" alt="Just do it" class="w-full h-full object-cover">
+@@ -1020,7 +1057,7 @@
+                 </a>
+                 <!-- Metaverse Bookclub -->
+                 <a href="projects/metaverse-bookclub.html" class="project-card-link block focus:outline-none group" data-category="others" style="display: none;">
+-                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-pointer">
++                    <div class="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-16 cursor-default">
+                         <div class="w-full lg:w-1/2 relative aspect-[16/9] rounded-[10px] overflow-hidden bg-gray-50 border border-black/5 transform transition-transform duration-500 group-hover:scale-[1.02]">
+                             <img src="project_metaverse_book_1769533657696.png" alt="Metaverse Bookclub" class="w-full h-full object-cover">
+                         </div>
+@@ -1523,7 +1560,7 @@
+             <!-- Cinematic Image Wrapper (Runway Benchmark Style) -->
+             <div class="relative w-full h-[70vh] min-h-[500px] max-h-[800px] rounded-[10px] overflow-hidden bg-black mt-6 mb-8 mx-auto">
+                 <div class="absolute inset-0 w-full h-full opacity-80 mix-blend-screen overflow-hidden">
+-                    <img src="nahyun_imported/images/gallery/p-2.jpeg" class="absolute inset-0 w-full h-full object-cover transform scale-[1.03] transition-transform duration-[20s] hover:scale-[1.05]" style="object-position: center 30%;" alt="Life Snapshot" onerror="this.src='projects/images/footprint-1.jpg'">
++                    <img src="nahyun_imported/image_source/About_Life/BG.jpg" style="object-position: center calc(100% - 15px);" class="absolute inset-0 w-full h-full object-cover transform scale-[1.03] transition-transform duration-[20s] hover:scale-[1.05]" alt="Life Snapshot">
+                 </div>
+                 <!-- Gradient Overlay spanning the full bottom area to ensure contrast -->
+                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-[5] pointer-events-none"></div>
+@@ -1531,15 +1568,21 @@
+                 <!-- Text overlay anchored to bottom left -->
+                 <div class="absolute z-20 bottom-0 left-0 w-full flex flex-col justify-end items-start px-8 md:px-12 pb-12">
+                     <h2 class="font-sans text-[36px] lg:text-[48px] tracking-tight font-medium text-white mb-3 drop-shadow-md">
+-                        Life & Hobbies
++                        Life
+                     </h2>
+                     <p class="font-sans text-[#dddddd] text-[15px] md:text-[16px] leading-[1.6] max-w-[700px] font-light shadow-black drop-shadow-lg mb-6">
+-                        From complex culinary experiments to capturing hyper-realistic moments through my camera, my hobbies allow me to generate fresh energy with speed, control, and joy.
++                        From exploring diverse creative arts to engaging in dynamic physical pursuits and travel,<br>                        my varied passions cultivate a broader perspective and enrich my understanding of the world.
+                     </p>
+-                    <button class="px-5 py-2.5 border border-white/30 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-[6px] text-white text-[13px] font-medium flex items-center gap-2 transition-all cursor-pointer">
+-                        View Gallery
+-                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+-                    </button>
++
++
++
++
++                </div>
++                
++                <!-- Photography Credit Watermark anchored to bottom right -->
++                <div class="absolute z-20 bottom-0 right-0 pr-3 md:pr-5 pb-4 opacity-40 flex items-center gap-1.5 pointer-events-none select-none">
++                    <svg class="w-[12px] h-[12px] text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
++                    <span class="text-white font-sans text-[9px] md:text-[10px] tracking-[0.1em] uppercase font-light">Sighnaghi, Georgia 쨌 2025 쨌 Captured by Nahyun</span>
+                 </div>
+             </div>
+ 
+@@ -1547,13 +1590,13 @@
+             <div class="w-full max-w-[1100px] mx-auto">
+                 <!-- Tags / Filter Pills Nav (Stretching full 1100px width) -->
+                 <div class="w-full flex gap-3 md:gap-4 mb-8" id="life-tabs">
+-                    <button data-target="col-culinary" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-slate-100 border-slate-100">Culinary</button>
+-                    <button data-target="col-sports" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Sports</button>
+-                    <button data-target="col-travel" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Travel</button>
+-                    <button data-target="col-literature" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Literature</button>
+-                    <button data-target="col-arts" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Arts</button>
+-                    <button data-target="col-volunteering" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Volunteering</button>
+-                    <button data-target="col-communities" class="filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Communities</button>
++                    <button data-target="col-culinary" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-slate-100 border-slate-100">Culinary</button>
++                    <button data-target="col-sports" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Sports</button>
++                    <button data-target="col-travel" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Travel</button>
++                    <button data-target="col-literature" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Literature</button>
++                    <button data-target="col-arts" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Arts</button>
++                    <button data-target="col-volunteering" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Volunteering</button>
++                    <button data-target="col-communities" class="life-filter-btn flex-1 flex items-center justify-center py-1.5 text-[11px] font-bold text-center leading-tight rounded-[8px] border text-slate-900 bg-white border-gray-200">Communities</button>
+                 </div>
+ 
+                 <!-- Gallery Grid Area (Runway Benchmark) -->
+@@ -1575,18 +1618,17 @@
+                             
+                             <!-- Sub-categories -->
+                             <nav class="flex flex-col gap-3">
+-                                <a href="#" class="text-[13.5px] font-medium text-black hover:text-[#d97706] transition-colors flex items-center">
+-                                    <span class="w-[5px] h-[5px] rounded-full bg-black mr-2"></span> All Destinations
++                                <a href="javascript:void(0)" class="travel-dest-btn text-[13.5px] font-medium text-black hover:text-[#d97706] transition-colors flex items-center" data-filter="All Destinations">
++                                    <span class="w-[5px] h-[5px] rounded-full bg-black mr-2 indicator-dot"></span> All Destinations
+                                 </a>
+                                 <div class="flex flex-col gap-2.5 pl-3 mt-1 relative before:content-[''] before:absolute before:left-[-1px] before:top-2 before:bottom-2 before:w-[1px] before:bg-zinc-200">
+-                                    <a href="#" class="text-[13px] font-medium text-black hover:text-[#d97706] transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-zinc-200 border-b border-transparent">
++                                    <a href="javascript:void(0)" class="travel-dest-btn text-[13px] font-medium text-zinc-400 hover:text-black transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-transparent" data-filter="Korea">
+                                         Korea
+                                     </a>
+-                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Asia</a>
+-                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">North America</a>
+-                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Europe</a>
+-                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Oceania</a>
+-                                    <a href="#" class="text-[13px] font-medium text-zinc-400 hover:text-black transition-colors">Africa</a>
++                                    <a href="javascript:void(0)" class="travel-dest-btn text-[13px] font-medium text-zinc-400 hover:text-black transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-transparent" data-filter="Asia">Asia</a>
++                                    <a href="javascript:void(0)" class="travel-dest-btn text-[13px] font-medium text-zinc-400 hover:text-black transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-transparent" data-filter="North America">North America</a>
++                                    <a href="javascript:void(0)" class="travel-dest-btn text-[13px] font-medium text-zinc-400 hover:text-black transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-transparent" data-filter="South America">South America</a>
++                                    <a href="javascript:void(0)" class="travel-dest-btn text-[13px] font-medium text-zinc-400 hover:text-black transition-colors relative before:content-[''] before:absolute before:-left-[13px] before:top-1/2 before:w-2 before:h-[1px] before:bg-transparent" data-filter="Europe">Europe</a>
+                                 </div>
+                             </nav>
+                         </div>
+@@ -1608,117 +1650,267 @@
+                         <h3 class="font-sans text-[22px] font-normal text-black sticky top-[100px]">Communities</h3>
+                     </div>
+                     
+-                    <!-- Right Masonry Gallery Array (Dynamic Culinary Showcase) -->
+-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 w-full flex-grow" id="life-gallery">
++                    <!-- Right Masonry Gallery Array (Dynamic Showcase) -->
++                    <div class="w-full flex-grow" id="life-gallery">
++                        <div id="gallery-col-culinary" class="right-gallery grid grid-cols-2 md:grid-cols-3 gap-3 w-full">
+                         <div class="flex flex-col gap-3">
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_06.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_06.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_004121914.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/4.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_22.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_22.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_05.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_05.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_01.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_01.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_24.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_24.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_04.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_04.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_12.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_12.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_18.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_18.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_03.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_03.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-top rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_06.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_06.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_26.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_26.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-[center_75%] rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                         </div>
+                         <div class="flex flex-col gap-3">
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_07.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_07.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_08.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_08.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_25.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/3.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+-                            <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_11.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                            <div class="w-full relative group overflow-hidden rounded-[3px]">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_11.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center scale-110 transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_21.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_21.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_05.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_05.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_14.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_14.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_02.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_02.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_10.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_27.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/2.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-[center_75%] rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
++
+                         </div>
+                         <div class="flex flex-col gap-3">
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_08.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_08.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+-                            <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_09.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                            <div class="w-full relative group overflow-hidden rounded-[3px]">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_09.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-[center_10%] scale-110 transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_19.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_19.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_20.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_20.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_23.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_23.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_29.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_29.jpg" alt="Culinary Gallery" class="w-full aspect-[3/4] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_04.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_04.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-top rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_03.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_03.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-[center_60%] rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                            </div>
++                                                        <div class="w-full relative group">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_02.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260423_000013760_02.jpg" alt="Culinary Gallery" class="w-full aspect-[4/3] object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_13.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
+                             </div>
+                             <div class="w-full relative group">
+-                                <img src="nahyun_imported/image_source/About_Life/Culinary/KakaoTalk_20260422_235853863_13.jpg" alt="Culinary Gallery" class="w-full aspect-square object-cover object-center rounded-[3px] hover:opacity-90 cursor-pointer transition-opacity">
++                                <img src="nahyun_imported/image_source/About_Life/Culinary/1.jpg" alt="Culinary Gallery" class="w-full aspect-[4/5] object-cover object-[center_25%] rounded-[3px] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                            </div>
++                        </div>
++                    </div>
++                        
++                        <!-- Sports Gallery -->
++                        <div id="gallery-col-sports" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default">
++                                    <img src="nahyun_imported/image_source/About_Life/Sports/KakaoTalk_20260423_011157587_01.jpg" alt="Climbing" class="w-full aspect-square object-cover object-[center_60%] transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Climbing</h4>
++                                    </div>
++                                </div>
++                            </div>
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default">
++                                    <img src="nahyun_imported/image_source/About_Life/Sports/KakaoTalk_20260423_011157587.jpg" alt="Jiu-jitsu" class="w-full aspect-[4/3] object-cover object-top transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Jiu-jitsu</h4>
++                                    </div>
++                                </div>
++                            </div>
++                            <div class="flex flex-col gap-3"></div>
++                        </div>
++
++                        <!-- Arts Gallery -->
++                        <div id="gallery-col-arts" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default">
++                                    <img src="nahyun_imported/image_source/About_Life/Arts/KakaoTalk_20260423_010048901_01.jpg" alt="Michel Henry" class="w-full aspect-[3/4] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Michel Henry</h4>
++                                    </div>
++                                </div>
++                            </div>
++                            <div class="flex flex-col gap-3"></div>
++                            <div class="flex flex-col gap-3"></div>
++                        </div>
++                        
++                        <!-- Travel Gallery -->
++                        <div id="gallery-col-travel" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Korea">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Korea/Jeju-1.jpg" alt="Travel Jeju" class="w-full aspect-square object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Jeju, Korea</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Asia">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Asia/Hongkong-1.jpg" alt="Travel Hongkong" class="w-full aspect-[4/5] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Hong Kong</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Europe">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Europe/Georgia-1.jpg" alt="Travel Georgia" class="w-full aspect-square object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Georgia</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Asia">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Asia/Thai-1.jpg" alt="Travel Thai" class="w-full aspect-[4/5] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Thailand</h4>
++                                    </div>
++                                </div>
++                            </div>
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Korea">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Korea/?몃쫱??jpg" alt="Travel Ulleungdo" class="w-full aspect-[4/5] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Ulleungdo, Korea</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Asia">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Asia/Indonesia-1.jpg" alt="Travel Indonesia" class="w-full aspect-[3/4] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Indonesia</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Europe">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Europe/Georgia-2.jpg" alt="Travel Georgia" class="w-full aspect-square object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Georgia</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="South America">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/South America/Peru-1.jpg" alt="Travel Peru" class="w-full aspect-[4/5] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Peru</h4>
++                                    </div>
++                                </div>
++                            </div>
++                            <div class="flex flex-col gap-3">
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Korea">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Korea/?꾨씪??怨좎꽦-1.jpg" alt="Travel Goseong" class="w-full aspect-[3/4] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Goseong, Korea</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="Asia">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/Asia/Maleisia-1.jpg" alt="Travel Malaysia" class="w-full aspect-square object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Malaysia</h4>
++                                    </div>
++                                </div>
++                                <div class="w-full relative group overflow-hidden rounded-[3px] cursor-default" data-dest="South America">
++                                    <img src="nahyun_imported/image_source/About_Life/Travel/South America/Chile-1.jpg" alt="Travel Chile" class="w-full aspect-[4/3] object-cover object-center transform group-hover:scale-[1.03] transition-transform duration-500 ease-out">
++                                    <div class="absolute inset-0 bg-gradient-to-t from-[#150d0a]/80 via-[#150d0a]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
++                                    <div class="absolute bottom-0 left-0 w-full px-4 pb-3 flex flex-col justify-end translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
++                                        <h4 class="text-white font-sans text-[11px] font-medium tracking-wider">Chile</h4>
++                                    </div>
++                                </div>
++                            </div>
++                        </div><!-- Volunteering Gallery -->
++                        <div id="gallery-col-volunteering" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="col-span-3 flex items-center justify-start h-[33px] mt-[7px]">
++                                <p class="text-zinc-400 font-sans text-[11px] tracking-widest uppercase">More photos coming soon...</p>
++                            </div>
++                        </div>
++
++                        <!-- Communities Gallery -->
++                        <div id="gallery-col-communities" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="col-span-3 flex items-center justify-start h-[33px] mt-[7px]">
++                                <p class="text-zinc-400 font-sans text-[11px] tracking-widest uppercase">More photos coming soon...</p>
++                            </div>
++                        </div>
++
++                        <!-- Literature Gallery -->
++                        <div id="gallery-col-literature" class="right-gallery grid-cols-2 md:grid-cols-3 gap-3 w-full hidden">
++                            <div class="col-span-3 flex items-center justify-start h-[33px] mt-[7px]">
++                                <p class="text-zinc-400 font-sans text-[11px] tracking-widest uppercase">More photos coming soon...</p>
+                             </div>
+                         </div>
+                     </div>
+@@ -1729,31 +1921,167 @@
+ 
+     <!-- Interactive Tabs Logic for Life Section -->
+     <script>
++        // Restore tab selection across reloads
+         document.addEventListener('DOMContentLoaded', () => {
+-            const filterBtns = document.querySelectorAll('.filter-btn');
+-            const leftCols = document.querySelectorAll('.left-col');
+-            
+-            filterBtns.forEach(btn => {
+-                btn.addEventListener('click', () => {
+-                    // Update button styling states (Screenshot matching without hover bugs)
+-                    filterBtns.forEach(b => {
+-                        b.classList.remove('bg-slate-100', 'border-slate-100');
+-                        b.classList.add('bg-white', 'border-gray-200');
+-                    });
+-                    btn.classList.add('bg-slate-100', 'border-slate-100');
+-                    btn.classList.remove('bg-white', 'border-gray-200');
++            const activeLifeTab = sessionStorage.getItem('activeLifeTab');
++            if (activeLifeTab) {
++                // If there's a stored tab, click it to restore state
++                const btn = document.querySelector(`.life-filter-btn[data-target="${activeLifeTab}"]`);
++                if (btn) setTimeout(() => btn.click(), 50); // Small delay to ensure SPA fully mounted
++            }
++        });
++
++        // Use event delegation to handle clicks even if elements are swapped by the SPA router.
++        document.body.addEventListener('click', (e) => {
++            const btn = e.target.closest('.life-filter-btn');
++            if (btn) {
++                // Update button styling states
++                document.querySelectorAll('.life-filter-btn').forEach(b => {
++                    b.classList.remove('bg-slate-100', 'border-slate-100');
++                    b.classList.add('bg-white', 'border-gray-200');
++                });
++                btn.classList.add('bg-slate-100', 'border-slate-100');
++                btn.classList.remove('bg-white', 'border-gray-200');
++                
++                const targetId = btn.getAttribute('data-target');
++                sessionStorage.setItem('activeLifeTab', targetId);
++                
++                // Route to specific left column
++                document.querySelectorAll('.left-col').forEach(col => {
++                    col.style.display = (col.id === targetId) ? 'block' : 'none';
++                });
++                
++                // Route to specific right gallery with smooth slide-up fade-in
++                document.querySelectorAll('.right-gallery').forEach(gal => {
++                    if (gal.id === 'gallery-' + targetId) {
++                        gal.classList.remove('hidden');
++                        gal.classList.add('grid');
++                        
++                        // Prepare animation state
++                        gal.classList.remove('opacity-100', 'translate-y-0', 'transition-all', 'duration-500', 'ease-out');
++                        gal.classList.add('opacity-0', 'translate-y-4');
++                        
++                        // Execute animation
++                        requestAnimationFrame(() => {
++                            requestAnimationFrame(() => {
++                                gal.classList.add('transition-all', 'duration-500', 'ease-out');
++                                gal.classList.remove('opacity-0', 'translate-y-4');
++                                gal.classList.add('opacity-100', 'translate-y-0');
++                            });
++                        });
++                    } else {
++                        gal.classList.add('hidden');
++                        gal.classList.remove('grid', 'transition-all', 'duration-500', 'ease-out', 'opacity-100', 'translate-y-0', 'opacity-0', 'translate-y-4');
++                    }
++                });
++                return;
++            }
++
++            const destBtn = e.target.closest('.travel-dest-btn');
++            if (destBtn) {
++                e.preventDefault();
++                const filter = destBtn.getAttribute('data-filter');
++                
++                // Styling active tab
++                document.querySelectorAll('.travel-dest-btn').forEach(btn => {
++                    btn.classList.remove('text-black');
++                    btn.classList.add('text-zinc-400');
+                     
+-                    // Route to specific left column
+-                    const targetId = btn.getAttribute('data-target');
+-                    leftCols.forEach(col => {
+-                        if (col.id === targetId) {
+-                            col.style.display = 'block';
+-                        } else {
+-                            col.style.display = 'none';
+-                        }
+-                    });
++                    // Reset indicator bar/dot 
++                    const dot = btn.querySelector('.indicator-dot');
++                    if (dot) dot.style.display = 'none';
++                    if (btn.classList.contains('before:bg-zinc-200')) {
++                        btn.classList.remove('before:bg-zinc-200');
++                        btn.classList.add('before:bg-transparent');
++                    }
+                 });
+-            });
++                
++                destBtn.classList.remove('text-zinc-400');
++                destBtn.classList.add('text-black');
++                
++                if (filter === 'All Destinations') {
++                    const dot = destBtn.querySelector('.indicator-dot');
++                    if (dot) dot.style.display = 'inline-block';
++                } else {
++                    destBtn.classList.remove('before:bg-transparent');
++                    destBtn.classList.add('before:bg-zinc-200');
++                }
++
++                // Advanced Filter: Redistribute when filtered, Restore exactly when 'All'
++                const travelGallery = document.getElementById('gallery-col-travel');
++                if (travelGallery) {
++                    // Fix: Use immediate children to get exactly the 3 column wrappers, avoiding nested .flex elements!
++                    const columns = Array.from(travelGallery.children);
++                    
++                    // Step 1: Save exact original position blueprint on first run
++                    if (!travelGallery.hasSavedOrder) {
++                        travelGallery.originalBlueprint = [];
++                        columns.forEach(col => {
++                            Array.from(col.children).forEach(item => {
++                                travelGallery.originalBlueprint.push({ element: item, parent: col });
++                            });
++                        });
++                        travelGallery.hasSavedOrder = true;
++                    }
++
++                    if (filter === 'All Destinations') {
++                        // Make a copy of blueprint and shuffle it securely
++                        const shuffled = [...travelGallery.originalBlueprint];
++                        for (let i = shuffled.length - 1; i > 0; i--) {
++                            const j = Math.floor(Math.random() * (i + 1));
++                            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
++                        }
++                        
++                        // Dispense randomized items back into the masonry columns cleanly
++                        shuffled.forEach((bp, visibleIndex) => {
++                            bp.element.classList.remove('hidden');
++                            
++                            // Trigger tab-identical slide-up animation
++                            bp.element.classList.remove('opacity-100', 'translate-y-0', 'transition-all', 'duration-500', 'ease-out', 'animate-slide-up');
++                            bp.element.style.animationDelay = '';
++                            bp.element.classList.add('opacity-0', 'translate-y-4');
++                            
++                            requestAnimationFrame(() => {
++                                requestAnimationFrame(() => {
++                                    bp.element.classList.add('transition-all', 'duration-500', 'ease-out');
++                                    bp.element.classList.remove('opacity-0', 'translate-y-4');
++                                    bp.element.classList.add('opacity-100', 'translate-y-0');
++                                });
++                            });
++                            
++                            // Distribute sequentially among columns to maintain balanced height!
++                            columns[visibleIndex % columns.length].appendChild(bp.element); 
++                        });
++                    } else {
++                        // Step 3: Filter & dynamically redistribute to eliminate empty columns
++                        let visibleIndex = 0;
++                        travelGallery.originalBlueprint.forEach(bp => {
++                            if (bp.element.getAttribute('data-dest') === filter) {
++                                bp.element.classList.remove('hidden');
++                                
++                                // Trigger tab-identical slide-up animation
++                                bp.element.classList.remove('opacity-100', 'translate-y-0', 'transition-all', 'duration-500', 'ease-out', 'animate-slide-up');
++                                bp.element.style.animationDelay = '';
++                                bp.element.classList.add('opacity-0', 'translate-y-4');
++                                
++                                requestAnimationFrame(() => {
++                                    requestAnimationFrame(() => {
++                                        bp.element.classList.add('transition-all', 'duration-500', 'ease-out');
++                                        bp.element.classList.remove('opacity-0', 'translate-y-4');
++                                        bp.element.classList.add('opacity-100', 'translate-y-0');
++                                    });
++                                });
++                                
++                                // Redistribute sequentially: Col 1 -> Col 2 -> Col 3
++                                columns[visibleIndex % columns.length].appendChild(bp.element);
++                                visibleIndex++;
++                            } else {
++                                bp.element.classList.add('hidden');
++                            }
++                        });
++                    }
++                }
++            }
+         });
+     </script>
+ 
+@@ -1886,3 +2214,7 @@
+ 
+ </body>
+ </html>
++
++
++
++
