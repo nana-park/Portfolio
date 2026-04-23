@@ -88,15 +88,28 @@ const navMenu = document.getElementById('navMenu');
 mobileToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
     mobileToggle.classList.toggle('active');
+    if (navMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 });
 
 // Close mobile menu or reset GNB spread state when clicking on a link
 const navLinksAll = document.querySelectorAll('.nav-link, .lnb-link');
 navLinksAll.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        // Prevent closing the menu if it's a top-level dropdown label on mobile
+        if (window.innerWidth <= 1024 && link.parentElement.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
+            e.preventDefault();
+            return;
+        }
+
         // Retract Mobile menu
         navMenu.classList.remove('active');
         if (mobileToggle) mobileToggle.classList.remove('active');
+        document.body.style.overflow = '';
+        
         // Force retract Desktop Mega Menu (Exclude parent trigger links so they stay visually expanded)
         if (!link.parentElement.classList.contains('has-dropdown')) {
             navbar.classList.remove('gnb-expanded');
@@ -241,6 +254,15 @@ function handleRoute() {
             }
         }, 150);
     }
+    
+    // Light pages force the scrolled UI to make header visible
+    const lightPages = ['life', 'projects', 'research', 'awards', 'contact'];
+    if (lightPages.includes(activeTab)) {
+        navbar.classList.add('force-scrolled');
+    } else {
+        navbar.classList.remove('force-scrolled');
+    }
+
     isFirstLoad = false;
     setTimeout(() => window.dispatchEvent(new Event('scroll')), 200);
 }

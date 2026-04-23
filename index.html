@@ -76,8 +76,8 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                height: calc(100vh - 70px);
-                background: #ffffff;
+                height: 100dvh;
+                background: #111111;
                 z-index: 9999;
                 align-items: center;
                 justify-content: flex-start;
@@ -101,6 +101,7 @@
                 font-weight: 500;
                 text-align: center;
                 justify-content: center;
+                color: #ffffff !important;
             }
             .nav-menu.active .has-dropdown .invisible {
                 /* Expose submenus clearly on mobile */
@@ -116,13 +117,13 @@
                 width: 100% !important; /* Kill desktop w-[200px] */
                 margin-top: 0;
                 gap: 0;
-                background: #fdfbf7;
+                background: #1a1a1a !important;
                 padding: 5px 0;
-                border-top: 1px solid #f0f0f0;
-                border-bottom: 1px solid #f0f0f0;
+                border-top: 1px solid #333333;
+                border-bottom: 1px solid #333333;
             }
             .nav-menu.active .has-dropdown .lnb-link {
-                color: #555555 !important; /* Override desktop text-white */
+                color: #aaaaaa !important; /* Override desktop text-white */
                 font-size: 14px;
                 padding: 10px 0;
                 font-weight: 400;
@@ -130,6 +131,20 @@
                 text-align: center;
                 justify-content: center;
             }
+        }
+        /* Navbar Scrolled explicitly dark texts on Light Pages */
+        .navbar.force-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .navbar.force-scrolled .mobile-toggle span {
+            background: #111111 !important;
+        }
+        .navbar.force-scrolled .logo,
+        .navbar.force-scrolled .nav-link {
+            color: #111111 !important;
         }
     </style>
 </head>
