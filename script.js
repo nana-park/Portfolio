@@ -99,12 +99,6 @@ mobileToggle.addEventListener('click', () => {
 const navLinksAll = document.querySelectorAll('.nav-link, .lnb-link');
 navLinksAll.forEach(link => {
     link.addEventListener('click', (e) => {
-        // Prevent closing the menu if it's a top-level dropdown label on mobile
-        if (window.innerWidth <= 1024 && link.parentElement.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
-            e.preventDefault();
-            return;
-        }
-
         // Retract Mobile menu
         navMenu.classList.remove('active');
         if (mobileToggle) mobileToggle.classList.remove('active');

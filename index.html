@@ -93,14 +93,16 @@
                 align-items: center;
             }
             .nav-menu.active .nav-link {
+                display: flex !important;
                 height: auto !important; 
                 width: 100% !important;
-                padding: 10px 0;
+                padding: 15px 0;
                 font-size: 16px;
                 font-family: 'Inter', sans-serif;
                 font-weight: 500;
                 text-align: center;
                 justify-content: center;
+                align-items: center;
                 color: #ffffff !important;
             }
             .nav-menu.active .has-dropdown .invisible {
@@ -123,13 +125,15 @@
                 border-bottom: 1px solid #333333;
             }
             .nav-menu.active .has-dropdown .lnb-link {
+                display: flex !important;
                 color: #aaaaaa !important; /* Override desktop text-white */
                 font-size: 14px;
-                padding: 10px 0;
+                padding: 12px 0;
                 font-weight: 400;
                 width: 100% !important;
                 text-align: center;
                 justify-content: center;
+                align-items: center;
             }
         }
         /* Navbar Scrolled explicitly dark texts on Light Pages */
@@ -166,7 +170,7 @@
                 
                 <!-- ABOUT Dropdown -->
                 <div class="group has-dropdown h-full flex items-center relative">
-                    <a href="javascript:void(0);" class="nav-link flex items-center h-full">ABOUT</a>
+                    <a href="#about" class="nav-link flex items-center h-full">ABOUT</a>
                     
                     <!-- Seamless Submenu Aligned to Parent -->
                     <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[80px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
@@ -181,7 +185,7 @@
 
                 <!-- PROJECTS Dropdown -->
                 <div class="group has-dropdown h-full flex items-center relative">
-                    <a href="javascript:void(0);" class="nav-link flex items-center h-full">PROJECTS</a>
+                    <a href="#projects" class="nav-link flex items-center h-full">PROJECTS</a>
                     
                     <!-- Seamless Submenu Aligned to Parent -->
                     <div class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[80px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
