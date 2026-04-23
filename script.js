@@ -109,12 +109,12 @@ navLinksAll.forEach(link => {
 // Single Page Application (SPA) Router
 // ===========================
 const routerConfig = {
-    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta'],
-    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
-    'life': ['life'],
-    'projects': ['projects'],
-    'research': ['research'],
-    'awards': ['awards'],
+    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'runway-cta', 'contact'],
+    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
+    'life': ['life', 'contact'],
+    'projects': ['projects', 'contact'],
+    'research': ['research', 'contact'],
+    'awards': ['awards', 'contact'],
     'contact': ['contact']
 };
 
