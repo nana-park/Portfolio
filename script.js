@@ -1,4 +1,4 @@
-// ===========================
+﻿// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -123,7 +123,7 @@ navLinksAll.forEach(link => {
 // ===========================
 const routerConfig = {
     'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision'],
-    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials'],
+    'about': ['about', 'toolkit-grid', 'certifications-runway', 'ongoing-banner', 'how-work', 'media', 'testimonials'],
     'life': ['life'],
     'projects': ['projects'],
     'research': ['research'],
@@ -1095,4 +1095,5 @@ function filterTimeline(category) {
         }
     });
 }
+
 

@@ -1,4 +1,4 @@
-/* Testimonials Section Styles */
+﻿/* Testimonials Section Styles */
 #testimonials {
     padding: var(--spacing-xl) 0;
     position: relative;
@@ -45,7 +45,7 @@
     justify-content: flex-start;
     gap: 1.5rem;
     /* Extra generous padding on left and right allows the very first and very last card to be perfectly centered */
-    padding: 0.5rem calc(50% - 190px) 2rem;
+    padding: 3rem calc(50% - 190px) 3rem;
     overflow-x: auto;
     /* Allow JS to smoothly scroll this */
     scroll-behavior: auto;
@@ -91,30 +91,30 @@
     opacity: 1;
     transform: scale(1);
     filter: blur(0);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Gradients - Distinct Colors */
 .card-gradient-1 {
     /* Purple Vibe */
-    background: radial-gradient(80% 80% at 50% 20%, #a855f7 0%, #7c3aed 60%, #4c1d95 100%);
+    background: linear-gradient(135deg, #786b87 0%, #5d536b 60%, #453c52 100%);
     border: none;
 }
 
 .card-gradient-2 {
     /* Indigo-Blue Vibe */
-    background: radial-gradient(80% 80% at 50% 20%, #6366f1 0%, #4338ca 60%, #312e81 100%);
+    background: linear-gradient(135deg, #6b7a8a 0%, #4e5f6e 60%, #384754 100%);
     border: none;
 }
 
 .card-gradient-3 {
     /* Emerald Green Vibe */
-    background: radial-gradient(80% 80% at 50% 20%, #4ade80 0%, #16a34a 60%, #14532d 100%);
+    background: linear-gradient(135deg, #538580 0%, #3a635f 60%, #264542 100%);
     border: none;
 }
 
@@ -167,19 +167,19 @@
 
 .card-gradient-4 {
     /* Gold / Amber Vibe - Matches bread theme */
-    background: radial-gradient(80% 80% at 50% 20%, #f59e0b 0%, #d97706 60%, #92400e 100%);
+    background: linear-gradient(135deg, #87825b 0%, #635f3d 60%, #47442a 100%);
     border: none;
 }
 
 .card-gradient-5 {
     /* Rose / Pink Vibe */
-    background: radial-gradient(80% 80% at 50% 20%, #f472b6 0%, #db2777 60%, #9d174d 100%);
+    background: linear-gradient(135deg, #ad6e6a 0%, #854f4b 60%, #5e3532 100%);
     border: none;
 }
 
 .card-gradient-6 {
     /* Cyan / Teal Vibe */
-    background: radial-gradient(80% 80% at 50% 20%, #22d3ee 0%, #0891b2 60%, #155e75 100%);
+    background: linear-gradient(135deg, #517a8c 0%, #37596b 60%, #25404f 100%);
     border: none;
 }
 
@@ -241,7 +241,7 @@
 @media (max-width: 768px) {
     .testimonials-container {
         /* Mobile padding for center alignment of cards */
-        padding: 0.5rem calc(50vw - 42.5%) 2rem;
+        padding: 3rem calc(50vw - 42.5%) 3rem;
     }
 
     .testimonial-card {
@@ -256,3 +256,43 @@
         font-size: 2rem;
     }
 }
+/* Global Grain/Noise Overlay for Cards */
+.testimonial-card {
+    position: relative;
+    overflow: hidden;
+}
+.testimonial-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.testimonial-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Global Grain/Noise Overlay for Cards */
+.testimonial-card {
+    position: relative;
+    overflow: hidden;
+}
+.testimonial-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.testimonial-card > * {
+    position: relative;
+    z-index: 2;
+}
+
