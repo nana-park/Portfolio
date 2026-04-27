@@ -238,22 +238,37 @@
 
         /* Blockquotes */
         #article-detail-content blockquote {
-            background: rgba(217, 119, 6, 0.05) !important;
+            background: transparent !important;
             border: none !important;
-            border-left: 4px solid #d97706 !important;
-            padding: 1.25rem 1.5rem !important;
-            margin: 2rem 0 !important;
+            padding: 1.5rem 2.5rem !important;
+            margin: 2rem auto !important;
+            max-width: 90% !important;
             color: #52525b !important;
             font-style: italic !important;
-            border-radius: 0 8px 8px 0 !important;
+            font-size: 1.05rem !important;
+            line-height: 1.75 !important;
+            text-align: center !important;
+            border-radius: 0 !important;
+        }
+        #article-detail-content blockquote p {
+            margin: 0 !important;
+            text-align: center !important;
+        }
+        #article-detail-content blockquote p[style*="text-align: right"],
+        #article-detail-content blockquote p[style*="text-align:right"] {
+            text-align: right !important;
+            font-size: 0.85rem !important;
+            color: #888888 !important;
+            margin-top: 0.75rem !important;
+            font-style: normal !important;
         }
 
         /* Subheadings */
         #article-detail-content .article-subheading {
-            margin-top: 3rem !important; /* Approximately 2 lines of spacing */
-            margin-bottom: 1.5rem !important;
+            margin-top: 5rem !important; /* ~4 lines of spacing above */
+            margin-bottom: 0.25rem !important; /* minimal below */
             padding-bottom: 0.5rem !important;
-            border-bottom: 1px solid #e5e7eb !important; /* Clean, subtle border instead of tacky hr */
+            border-bottom: 1px solid #e5e7eb !important;
         }
         #article-detail-content .article-subheading span,
         #article-detail-content .article-subheading b,
