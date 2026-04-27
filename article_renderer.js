@@ -47,13 +47,7 @@ function renderArticleDetail(id) {
     document.getElementById('article-detail-title').textContent = article.title_en;
     document.getElementById('article-detail-meta').textContent = 'Published on ' + article.date;
     
-    // Convert body newlines to paragraphs
-    const paragraphs = article.body_en.split('\n\n').filter(p => p.trim() !== '');
-    let bodyHtml = '';
-    paragraphs.forEach(p => {
-        bodyHtml += `<p>${p}</p>`;
-    });
-    document.getElementById('article-detail-content').innerHTML = bodyHtml;
+    document.getElementById('article-detail-content').innerHTML = article.body_en;
     
     document.getElementById('article-original-link').href = article.url;
 }
