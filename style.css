@@ -3316,13 +3316,17 @@ section {
 /* Override existing award-content to be just the footer */
 .award-content {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 100%) !important;
-    padding: 100px 24px 19px !important;
-    justify-content: flex-end; 
+    padding: 100px 24px 20px !important;
+    justify-content: flex-end;
+    border-radius: 0 0 16px 16px !important;
+    margin: -1px;
 }
 .award-title-footer {
     font-size: 13px !important; font-family: var(--font-sans); color: rgba(255,255,255,0.7) !important; line-height: 1.4 !important; text-align: left; font-weight: normal !important;
 }
 .award-title-footer strong { color: white; font-weight: 600; }
+
+
 
 
 
