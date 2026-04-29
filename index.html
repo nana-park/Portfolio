@@ -151,6 +151,22 @@
         .navbar.force-scrolled .nav-link {
             color: #111111 !important;
         }
+
+        /* [Critical Fix] Mega Menu (.gnb-expanded) must strictly override scrolled black texts */
+        .navbar.gnb-expanded .logo {
+            color: #ffffff !important;
+        }
+        .navbar.gnb-expanded .nav-link {
+            color: #888888 !important;
+        }
+        .navbar.gnb-expanded .nav-link:hover,
+        .navbar.gnb-expanded .nav-link.active,
+        .navbar.gnb-expanded .has-dropdown:hover > .nav-link {
+            color: #d97706 !important;
+        }
+        .navbar.gnb-expanded .mobile-toggle span {
+            background: #ffffff !important;
+        }
         /* [Critical Fix] Mobile Menu should always be perfectly dark and not inherit desktop orange active states */
         .nav-menu.active .nav-link,
         .nav-menu.active .nav-link.active,
@@ -296,7 +312,7 @@
                 <div class="flex items-center h-full"><a href="#home" class="nav-link active">HOME</a></div>
                 
                 <!-- ABOUT Dropdown -->
-                <div class="group has-dropdown h-full flex items-center relative">
+                <div class="group has-dropdown about-dropdown h-full flex items-center relative">
                     <a href="#about" class="nav-link flex items-center h-full">ABOUT</a>
                     
                     <!-- Seamless Submenu Aligned to Parent -->
@@ -346,41 +362,38 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Spline 3D) -->
-    <section class="relative w-full h-[100vh] bg-white overflow-hidden" id="home">
+    <!-- Hero Section -->
+    <section class="relative w-full h-[100vh] bg-white overflow-hidden" id="home" style="padding-top:70px;">
 
-        <!-- Spline 3D Background -->
+        <!-- Spline 3D — centered, 80% size. Always renders on top (canvas behavior),
+             so "to Everyone" text below is naturally covered slightly at the overlap point -->
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
         <spline-viewer
-            url="https://prod.spline.design/bGcmn2lbN506XgQM/scene.splinecode"
-            style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"
+            url="https://prod.spline.design/wLEe3qQhZTm7cvPS/scene.splinecode"
+            style="position:absolute; left:50%; top:57%; transform:translate(-50%, -50%); width:80vw; height:80vh; z-index:0; pointer-events:auto;"
         ></spline-viewer>
 
-        <!-- Cover Spline watermark (bottom-right) -->
-        <div style="position:absolute;bottom:0;right:0;width:140px;height:52px;z-index:3;background:linear-gradient(to top left, rgba(255,255,255,1) 45%, transparent 100%);pointer-events:none;"></div>
 
-        <!-- Centered Text Overlay -->
-        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none" style="z-index:2; padding-top:70px;">
-            <p class="font-sans uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-6" style="color: #a1a1aa;">
+
+        <!-- Text block: anchored at top — "to Everyone" sits right where Spline top edge begins -->
+        <div class="absolute left-0 right-0 flex flex-col items-center" style="top: 14vh; pointer-events:none;">
+            <p class="font-sans uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-5" style="color: #a1a1aa;">
                 AI Product Manager · Conversational AI · UX Research
             </p>
-            <h1 class="font-sans text-center font-semibold" style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 1.05; letter-spacing: -0.02em; color: #111111;">
-                AI Voice<br>to Everyone
+            <h1 class="font-sans font-semibold text-center" style="font-size: clamp(1.56rem, 3.6vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; color: #111111;">
+                AI Conversation to Everyone<br>with Voice Interaction
             </h1>
-            <p class="font-sans text-center font-light mt-6" style="font-size: clamp(0.95rem, 1.8vw, 1.3rem); letter-spacing: 0.01em; color: #71717a;">
-                Designing the way humans talk to machines
-            </p>
         </div>
 
-        <!-- Bottom buttons -->
-        <div class="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none" style="z-index:2;">
+        <!-- Buttons at bottom -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center" style="z-index:5; pointer-events:auto;">
             <div class="flex items-center gap-4">
-                <a href="#projects" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:#111111; color:#ffffff; border:1px solid #111111;">
+                <a href="#projects" class="group inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:#111111; color:#ffffff; border:1px solid #111111;">
                     View My Work
-                    <svg class="ml-1.5 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <svg class="ml-1.5 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </a>
-                <a href="#contact" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:transparent; color:#52525b; border:1px solid #d4d4d8;">
-                    Get in Touch
+                <a href="#contact" class="inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:transparent; color:#52525b; border:1px solid #d4d4d8;">
+                    Get in Touch with <span style="color:#D97706; font-weight:700;" class="ml-1">bread</span><span style="color:#111111; font-weight:700;">me</span>
                 </a>
             </div>
         </div>
@@ -1343,9 +1356,9 @@
                                 <span class="px-2 py-1 rounded-[4px] bg-white border border-gray-200 text-zinc-500 font-sans text-[10px] uppercase tracking-wider leading-none">User Credibility</span>
                             </div>
                         </div>
-                        <div class="lg:w-3/6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div class="lg:w-3/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <p class="font-sans text-zinc-600 text-[13px] leading-relaxed pr-0 md:pr-12">A comprehensive study exploring how credibility signals on digital news platforms translate into tangible monetary value and impact overarching user experiences.</p>
-                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X26000412?via%3Dihub" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-medium text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap md:self-center">Read Paper</a>
+                            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X26000412?via%3Dihub" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read Paper</a>
                         </div>
                     </div>
                     <div class="py-8 px-4 lg:px-8 border-b border-gray-200 flex flex-col lg:flex-row gap-4 lg:gap-8 hover:bg-gray-50 transition-colors">
@@ -1358,9 +1371,9 @@
                                 <span class="px-2 py-1 rounded-[4px] bg-white border border-gray-200 text-zinc-500 font-sans text-[10px] uppercase tracking-wider leading-none">Digital Transformation</span>
                             </div>
                         </div>
-                        <div class="lg:w-3/6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div class="lg:w-3/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <p class="font-sans text-zinc-600 text-[13px] leading-relaxed pr-0 md:pr-12">Investigates UX methodologies to optimize information delivery paradigms during digital transformation processes within the e-commerce sector.</p>
-                            <a href="https://doi.org/10.1177/02666669251399814" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-medium text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap md:self-center">Read Paper</a>
+                            <a href="https://doi.org/10.1177/02666669251399814" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read Paper</a>
                         </div>
                     </div>
                     <div class="py-8 px-4 lg:px-8 border-b border-gray-200 flex flex-col lg:flex-row gap-4 lg:gap-8 hover:bg-gray-50 transition-colors">
@@ -1373,9 +1386,9 @@
                                 <span class="px-2 py-1 rounded-[4px] bg-white border border-gray-200 text-zinc-500 font-sans text-[10px] uppercase tracking-wider leading-none">Developer UX</span>
                             </div>
                         </div>
-                        <div class="lg:w-3/6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div class="lg:w-3/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <p class="font-sans text-zinc-600 text-[13px] leading-relaxed pr-0 md:pr-12">Evaluates the systemic impact of work environments on the productivity and code quality of cloud infrastructure developers specializing in financial technology.</p>
-                            <a href="https://doi.org/10.37793/ITPR.29.3.2" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-medium text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap md:self-center">Read Paper</a>
+                            <a href="https://doi.org/10.37793/ITPR.29.3.2" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read Paper</a>
                         </div>
                     </div>
                     <div class="py-8 px-4 lg:px-8 border-b border-gray-200 flex flex-col lg:flex-row gap-4 lg:gap-8 hover:bg-gray-50 transition-colors">
@@ -1388,9 +1401,9 @@
                                 <span class="px-2 py-1 rounded-[4px] bg-white border border-gray-200 text-zinc-500 font-sans text-[10px] uppercase tracking-wider leading-none">Cryptocurrency</span>
                             </div>
                         </div>
-                        <div class="lg:w-3/6 flex flex-col md:flex-row items-start justify-between gap-4">
+                        <div class="lg:w-3/6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                             <p class="font-sans text-zinc-600 text-[13px] leading-relaxed pr-0 md:pr-12">Maps the psychological and functional journey of users interacting with Ethereum-based Generative AI Profile Picture (PFP) networks.</p>
-                            <a href="https://share.google/diY1WuICUFJxf7NNe" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-medium text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap md:self-center">Read Paper</a>
+                            <a href="https://share.google/diY1WuICUFJxf7NNe" target="_blank" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read Paper</a>
                         </div>
                     </div>
 
@@ -1414,7 +1427,7 @@
                 </p>
                 
                 <div class="w-full aspect-[16/7] bg-zinc-100 rounded-none md:rounded-[8px] overflow-hidden mb-16 relative shadow-sm">
-                    <img src="nahyun_imported/image_source/Projects_Research/bg.png" alt="Research Environment" class="w-full h-full object-cover">
+                    <img src="nahyun_imported/image_source/Projects_Articles/bg.png" alt="Articles Environment" class="w-full h-full object-cover">
                 </div>
                 
                 <h3 class="font-sans tracking-tight text-zinc-900 text-[18px] md:text-[22px] font-normal mb-1.5">
@@ -1440,7 +1453,10 @@
     <!-- Article Detail Section -->
     <section class="pb-24 bg-white" id="article-detail" style="display: none; padding-top: 12rem;">
         <div class="container mx-auto px-4 lg:px-12 max-w-[800px]">
-            <button onclick="backToArticles()" class="mb-8 px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-[13px] font-sans font-medium transition-colors">&larr; Back to List</button>
+            <button onclick="backToArticles()" class="mb-8 px-5 py-2 border border-gray-300 rounded-full hover:bg-zinc-100 text-[13px] text-zinc-600 hover:text-zinc-900 font-sans font-semibold transition-colors inline-flex items-center gap-2 group">
+                <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                Back to List
+            </button>
             
             <h2 id="article-detail-title" class="font-sans text-zinc-900 text-[28px] md:text-[36px] font-medium tracking-tight mb-4 leading-tight"></h2>
             <div id="article-detail-meta" class="font-sans text-zinc-500 text-[14px] mb-12 pb-6 border-b border-gray-200"></div>
@@ -1449,9 +1465,15 @@
                 <!-- Content injected via JS -->
             </div>
             
-            <div class="mt-16 pt-8 border-t border-gray-200 flex justify-between items-center font-sans">
-                <button onclick="backToArticles()" class="px-5 py-2.5 bg-gray-100 rounded hover:bg-gray-200 text-[13px] font-medium transition-colors">&larr; Back to List</button>
-                <a id="article-original-link" href="#" target="_blank" class="px-5 py-2.5 bg-[#d97706] text-white rounded hover:bg-[#b46305] text-[13px] font-medium transition-colors">View Original (KR)</a>
+            <div class="mt-16 pt-8 border-t border-gray-200 flex justify-center gap-4 items-center font-sans">
+                <button onclick="backToArticles()" class="px-5 py-2.5 bg-zinc-100 rounded-full hover:bg-zinc-200 text-[13px] text-zinc-700 font-semibold transition-colors inline-flex items-center gap-2 group">
+                    <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    Back to List
+                </button>
+                <a id="article-original-link" href="#" target="_blank" class="px-5 py-2.5 bg-[#d97706] text-white rounded-full hover:bg-[#b46305] text-[13px] font-semibold transition-colors inline-flex items-center gap-2 group">
+                    View Original (KR)
+                    <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-y-[1px] group-hover:translate-x-[1px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1783,29 +1805,29 @@
             <div class="carousel-viewport">
                 <div class="carousel-track" id="track">
                     <!-- Set 1 -->
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
                     <!-- Set 2 -->
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
                     <!-- Set 3 -->
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_sk_curve_glossy.png" alt="SK Telecom AI Startup Sponsorship" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
                     <!-- Set 4 -->
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
-                    <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="AI Startup Accelerator" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2024</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_korea_zoomed.png" alt="Korea Public AI Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><div style="display:flex; align-items:center; transform: translateY(-3px) scale(0.8); transform-origin: left center; margin-left:-2px;"><img src="kr_science_logo.svg" style="height:22px; filter: brightness(0) invert(1);" alt="Ministry of Science and ICT graphic"><div style="display:flex; flex-direction:column; line-height:1.1; margin-left:8px; transform: translateY(1px);"><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Ministry of</div><div style="font-family: var(--font-sans); font-size:8.5px; font-weight:700; letter-spacing:-0.01em; color:white; text-transform:none; white-space:nowrap;">Science and ICT</div></div></div></div><div class="award-content-top"><h3 class="award-title-huge">1st</h3><span class="award-subtitle-new">Korea Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_japan_zoomed.png" alt="Japan Public Innovation Awards" class="award-card-bg loaded" style="transform: none;"><div class="award-logo"><img src="japan_gov_logo.svg" style="height:20px; filter: brightness(0) invert(1); transform: translateY(-3px);" alt="Japan Gov"></div><div class="award-content-top"><h3 class="award-title-huge">Top 5</h3><span class="award-subtitle-new">Japan Public<br>AI Innovation Awards</span></div><div class="award-content"><h3 class="award-title-footer">2025</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="SK Metaverse Hackathon" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge" style="font-size: 22px;">Excellence Prize</h3><span class="award-subtitle-new">AI·Metaverse Hackathon Awards</span></div><div class="award-content"><h3 class="award-title-footer">2023</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card is-scholarship"><img src="award_ribbon_red_dark.png" alt="Scholarship" class="award-card-bg loaded"><div class="award-logo"><img src="skku_logo.svg" style="height:31px; width:auto; filter: brightness(0) invert(1); transform: translate(-10px, -8px);" alt="Sungkyunkwan University"></div><div class="award-content-top"><h3 class="award-title-huge">All-term</h3><span class="award-subtitle-new">Continuous Master Scholarship</span></div><div class="award-content"><h3 class="award-title-footer">2021 - 2022</h3></div></a>
+                    <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="award-card"><img src="award_star_purple_dark.png" alt="AI Startup Accelerator" class="award-card-bg loaded"><div class="award-logo"><img src="sk_telecom_logo_processed2.png" style="height:22px; width:auto; transform: translate(-2px, -5px);" alt="SK Telecom"></div><div class="award-content-top"><h3 class="award-title-huge">Sponsorship</h3><span class="award-subtitle-new">AI Startup Partners</span></div><div class="award-content"><h3 class="award-title-footer">2024</h3></div></a>
                 </div>
             </div>
         </div>
@@ -1911,10 +1933,7 @@
                 <div class="testimonial-card card-gradient-6"><div class="card-stars">★★★★★</div><p class="card-quote">"She doesn't wait for work. She finds it - and makes sure everyone knows."</p><div class="card-signature">L<span class="card-author-title">Senior Product Manager<br>SK Telecom</span></div></div>
                 <div class="testimonial-card card-gradient-4"><div class="card-stars">★★★★★</div><p class="card-quote">"Her only weaknesses? She doesn't drink, doesn't like coffee, and doesn't smoke."</p><div class="card-signature">K<span class="card-author-title">Director of AI Solution Planning<br>Naver Cloud</span></div></div>
             </div>
-            <div class="testimonials-nav">
-                <button class="nav-btn" id="prevTestimonial" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
-                <button class="nav-btn" id="nextTestimonial" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
-            </div>
+
         </div>
     </section>
 
@@ -2542,27 +2561,46 @@
                     <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">AI Product Management</h4>
                     <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Conversational AI Design<br>Global AI Expansion</p>
                     
-                    <a href="#projects" class="w-full bg-[#222] hover:bg-black text-white text-center font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-[4px] transition-colors mt-auto">View Work</a>
+                    <a href="#projects" class="w-full bg-[#222] hover:bg-black text-white text-center font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-[4px] transition-colors mt-auto">Review Projects</a>
                 </div>
                 
                 <!-- Card 2 -->
+                <div class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
+                    <div class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">Connect</div>
+                    <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Let's build something together.</h4>
+                    <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Feel free to reach out.</p>
+                    
+                    <div class="mt-auto w-full pt-4 border-t border-gray-100 flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" class="font-sans text-[12px] text-gray-500 hover:text-black transition-colors flex items-center gap-1 group/link">
+                                View Profile <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">Email</span>
+                            <button onclick="navigator.clipboard.writeText('breadme00@gmail.com'); alert('Email address copied!');" class="font-sans text-[12px] text-gray-500 hover:text-black transition-colors flex items-center gap-1 group/btn tracking-wide">
+                                breadme00@gmail.com <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
                 <div class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
                     <div class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">Location</div>
                     <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Seoul, Korea</h4>
                     <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Open to work everywhere,<br>including remote</p>
                     
-                    <span class="w-full flex justify-center items-center bg-[#f4f4f5] border border-gray-200 text-gray-500 font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-[4px] cursor-default mt-auto">Available</span>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
-                    <div class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">Vision</div>
-                    <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Interested in collaboration?</h4>
-                    <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Let's build something together.</p>
-                    
-                    <div class="flex gap-2 mt-auto w-full">
-                        <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="flex-1 bg-[#222] hover:bg-black text-white text-center font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-[4px] transition-colors flex items-center justify-center">LinkedIn</a>
-                        <a href="mailto:breadme00@gmail.com" class="flex-1 bg-[#222] hover:bg-black text-white text-center font-bold text-[11px] uppercase tracking-wider py-3.5 rounded-[4px] transition-colors flex items-center justify-center">Email</a>
+                    <div class="mt-auto w-full pt-4 border-t border-gray-100 flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">Korean</span>
+                            <span class="font-sans text-[12px] text-gray-500">Native</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">English</span>
+                            <span class="font-sans text-[12px] text-gray-500">Fluent</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2575,16 +2613,25 @@
                     <h3 class="font-sans text-[22px] md:text-[32px] leading-[1.15] tracking-tight font-medium text-[#111111] mb-6 pe-2">
                         Get my full resume package<br>sent straight to your inbox.
                     </h3>
-                    <p class="font-sans text-[15px] font-light text-[#555] leading-[1.6] mb-12 pe-4">
+                    <p class="font-sans text-[15px] font-light text-[#555] leading-[1.6] mb-8 pe-4">
                         Leave your email below to instantly receive a complete package containing my updated resume, detailed PDF portfolio, and direct links to this website and contacts so you can review them all at once.
                     </p>
-                    <div class="flex flex-wrap gap-6 items-center mt-auto pb-4">
-                        <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center group/btn">
-                            LinkedIn <svg class="ml-0.5 w-[14px] h-[14px] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                        <a href="mailto:breadme00@gmail.com" class="font-sans text-[13px] font-bold text-[#111] hover:text-amber-600 transition-colors flex items-center group/btn">
-                            Contact directly <svg class="ml-0.5 w-[14px] h-[14px] transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
+                    <div class="font-sans mt-auto">
+                        <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-3">Or Direct Action</span>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                Resume
+                            </a>
+                            <a href="#" class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                Portfolio PDF
+                            </a>
+                            <button onclick="navigator.clipboard.writeText(window.location.href); alert('Website URL copied to clipboard!');" class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                Copy URL
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -2614,7 +2661,9 @@
 
 
                         <div class="mt-4">
-                            <button type="submit" class="bg-[#1a1a1a] hover:bg-black text-white font-bold text-[12px] px-8 py-3 rounded-[4px] transition-colors">Submit</button>
+                            <button type="submit" class="bg-white hover:bg-gray-50 border border-gray-300 text-gray-600 text-[13.5px] px-8 py-2.5 rounded-full transition-all inline-block text-center shadow-sm">
+                                Receive <span style="color: #D97706;" class="font-bold">bread</span><span class="text-black font-bold">me</span> package
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -2646,7 +2695,7 @@
                 </div>
                 <div class="footer-col"><h4>Vision</h4>
                     <div class="footer-socials-col">
-                        <a href="https://www.linkedin.com/in/park-nahyun-08314925b" target="_blank" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                        <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank" aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
                         <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"></path></svg></a>
                     </div>
                 </div>

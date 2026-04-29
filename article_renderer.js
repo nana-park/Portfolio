@@ -29,8 +29,8 @@ function renderArticlesList() {
                 <h3 class="font-sans text-[16px] md:text-[18px] font-medium text-zinc-900 tracking-tight mb-2 leading-snug">${article.title_en}</h3>
                 <p class="font-sans text-zinc-600 text-[13px] leading-relaxed mb-4">${article.excerpt}</p>
             </div>
-            <div class="lg:w-2/6 flex flex-col md:flex-row items-end justify-end gap-4 mt-auto">
-                <a href="#article-detail?id=${article.id}" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-medium text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap lg:self-end">Read Article</a>
+            <div class="lg:w-2/6 flex flex-col md:flex-row md:items-center justify-end gap-4">
+                <a href="#article-detail?id=${article.id}" onclick="sessionStorage.setItem('articlesScrollY', window.scrollY)" class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read Article</a>
             </div>
         </div>
         `;
@@ -62,6 +62,25 @@ window.addEventListener('hashchange', () => {
     if (fullHash.startsWith('article-detail?id=')) {
         let id = fullHash.split('id=')[1];
         renderArticleDetail(id);
+    } else if (fullHash === 'articles' && sessionStorage.getItem('articlesScrollY')) {
+        const scrollPos = parseInt(sessionStorage.getItem('articlesScrollY'));
+        const originalScrollTo = window.scrollTo;
+        window.scrollTo = function(x, y) {
+            // Check if it's the exact call from script.js resetting scroll
+            if (x === 0 && y === 0) {
+                originalScrollTo(0, scrollPos);
+                window.scrollTo = originalScrollTo; // Restore immediately
+                sessionStorage.removeItem('articlesScrollY');
+            } else {
+                originalScrollTo(x, y);
+            }
+        };
+        // Failsafe restore after 100ms
+        setTimeout(() => {
+            if (window.scrollTo !== originalScrollTo) {
+                window.scrollTo = originalScrollTo;
+            }
+        }, 100);
     }
 });
 

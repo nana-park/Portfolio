@@ -134,6 +134,7 @@ const routerConfig = {
 };
 
 let isFirstLoad = true;
+let previousTab = null;
 
 function handleRoute() {
     let fullHash = window.location.hash.replace('#', '') || 'home';

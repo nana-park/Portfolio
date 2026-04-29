@@ -1,0 +1,2384 @@
+<!DOCTYPE HTML>
+<html lang="ko" itemscope itemtype="https://schema.org/Organization">
+<head>
+  <meta charset="utf-8" />
+<style>
+@font-face {
+  font-family: 'axicon';
+  src: url('https://www.artinsight.co.kr/css/axicon/fonts/axicon.woff') format('woff');
+  font-display: swap;
+}
+
+.headline { position: relative; }
+.headline::before {
+  content: "\e900";           /* axicon glyph */
+  font-family: 'axicon';        /* 아이콘 폰트 */
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+  /* ===== Critical CSS 시작 ===== */
+  html, body { margin: 0; padding: 0; }
+  body { font-family: sans-serif; }
+
+  .main_top {
+    display: block;
+    position: relative;
+    width: 100%;
+    background: #000;
+    box-sizing: border-box;
+    height: 400px;            /* 초기에는 400px 높이로 가볍게 보이기 */
+    overflow: hidden;
+  }
+  .main_top_txt {
+    position: relative;
+    padding-top: 100px;       /* 히어로 텍스트가 위로 살짝 올라가도록 */
+  }
+  .main_top_txt h2 {
+    margin: 0;
+    font-size: 64px;          /* 초기 폰트 크기 */
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  /* ── load 후, .on 클래스 붙이면 최종 디자인으로 확장 ── */
+  .main_top.on {
+    height: 750px;            /* 확장된 최종 높이 */
+    padding-top: 110px;       /* 필요하다면 padding-top 재조정 */
+  }
+  .main_top.on .main_top_txt h2 {
+    font-size: 160px;         /* 확장된 최종 폰트 크기 */
+  }
+  /* ===== Critical CSS 끝 ===== */
+</style>
+  <link rel="preload" as="style"
+        href="https://www.artinsight.co.kr/css/axicon/axicon.css?t=2026042802"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://www.artinsight.co.kr/css/axicon/axicon.css?t=2026042802">
+  </noscript>
+  <link rel="preload"
+        href="https://www.artinsight.co.kr/css/axicon/fonts/axicon.woff?t=2026042802"
+        as="font" type="font/woff" crossorigin>
+  <link rel="preload" as="style"
+        href="https://www.artinsight.co.kr/_helpers/_css/themes/redmond/jquery-ui.css?t=2026042802"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://www.artinsight.co.kr/_helpers/_css/themes/redmond/jquery-ui.css?t=2026042802">
+  </noscript>
+  <link rel="preload" as="style"
+        href="https://www.artinsight.co.kr/css/default.css?t=2026042802"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://www.artinsight.co.kr/css/default.css?t=2026042802">
+  </noscript>
+  <link rel="preload" as="style"
+        href="https://www.artinsight.co.kr/css/default_2412.css?t=2026042802"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://www.artinsight.co.kr/css/default_2412.css?t=2026042802">
+  </noscript>
+  <link rel="preload" as="style"
+        href="https://www.artinsight.co.kr/css/color_blue02.css?t=2026042802"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://www.artinsight.co.kr/css/color_blue02.css?t=2026042802">
+  </noscript>
+  <link rel="preload" as="style"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css">
+  </noscript>
+<style>
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-display: swap !important;
+}
+</style>
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+        onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap">
+  </noscript>
+  <script defer src="https://www.artinsight.co.kr/_helpers/_js/jquery.min.js?t=2026042802"></script>
+  <script defer src="https://www.artinsight.co.kr/_helpers/_js/ui/jquery-ui.min.js?t=2026042802"></script>
+  <script defer src="https://www.artinsight.co.kr/_helpers/_js/plugins.js?t=2026042802"></script>
+  <script defer src="https://www.artinsight.co.kr/_helpers/_js/common.js?t=2026042802"></script>
+  <script defer src="https://www.artinsight.co.kr/_helpers/_js/i18n/jquery.ui.datepicker-ko.js?t=2026042802"></script>
+  <title>[칼럼] 사람이 있어야 비로소 완성되는 초거대AI</title>
+  <meta name="Author" content="아트인사이트" />
+  <meta name="Reply-to" content="artinsight@artinsight.co.kr" />
+  <meta name="Description" content="60년을 살아도, 80년을 살아도, “저렇게 이상한 사람은 내 인생에 처음이야“는 말을 내뱉는 어른들을 보자. 내가 아무리 오래 산다 한들, 완벽한 세상은 오지 않는다." />
+  <meta name="Copyright" content="https://www.artinsight.co.kr/" />
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 슬라이더 엘리먼트가 있는 페이지에서만 로드
+  if (!document.querySelector('.gallery-main-swiper') && !document.querySelector('.main_latest')) return;
+
+  // 1) CSS: preload → onload로 stylesheet 전환
+  var link = document.createElement('link');
+  link.rel    = 'preload';
+  link.as     = 'style';
+  link.href   = 'https://www.artinsight.co.kr/_helpers/_css/plugins/swiper-bundle.min.css?t=2026042802';
+  link.onload = function() { this.rel = 'stylesheet'; };
+  document.head.appendChild(link);
+
+  // 2) JS: defer 스크립트 동적 삽입
+  var script = document.createElement('script');
+  script.src   = 'https://www.artinsight.co.kr/_helpers/_js/plugins/swiper-bundle.min.js?t=2026042802';
+  script.defer = true;
+  script.onload = function() {
+    // Swiper 로드 완료 후 jQuery 초기화
+    $(document).ready(function() {
+      // 메인상단 보이도록
+      $('.main_top').addClass('on');
+
+      // 메인 슬라이드
+      var mainSwiper = new Swiper('.gallery-main-swiper', {
+        effect: 'fade',
+        spaceBetween: 0,
+        allowTouchMove: false,
+        loop: true,
+        pagination: { el: '.headline_pager', clickable: true },
+        navigation: { nextEl: '.headline_next', prevEl: '.headline_prev' },
+        on: {
+          slideChange: function() {
+            var currentIndex = this.realIndex;
+            $('.headline_thumb li').removeClass('on');
+            $('.headline_thumb li').eq(currentIndex).addClass('on');
+          }
+        }
+      });
+
+      // 썸네일 호버 시 해당 슬라이드로 이동
+      $('.headline_thumb li').on('mouseenter', function() {
+        var index = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on');
+        mainSwiper.slideToLoop(index);
+      });
+
+      // 최신글 슬라이드
+      var latestSwiper = new Swiper('.main_latest', {
+        spaceBetween: 2,
+        allowTouchMove: false,
+        loop: true,
+        pagination: { el: '.latest_pager', clickable: true },
+        navigation: { nextEl: '.latest_next', prevEl: '.latest_prev' }
+      });
+
+      // 스크롤 시 indicator 토글
+      $(window).on('scroll', function() {
+        var scrollPos = $(window).scrollTop() + 240;
+        $('.indicator a').each(function() {
+          var target = $($(this).attr('href'));
+          if (!target.length) return;
+          var top = target.offset().top, bottom = top + target.outerHeight();
+          if (scrollPos >= top && scrollPos < bottom) {
+            $('.indicator a').removeClass('active');
+            $(this).addClass('active');
+          }
+        });
+        var ind = $('.indicator'), headOff = $('#headline').offset().top;
+        ind.toggleClass('fixed', $(window).scrollTop() >= headOff - 120);
+        var botOff = $('.main_bottom').offset().top;
+        ind.toggleClass('hidden', $(window).scrollTop() >= botOff - 240);
+      });
+    });
+  };
+  document.body.appendChild(script);
+});
+</script>
+  <meta name="Keywords" content="사람이, 우리는, 사람들이, 완벽한, 사람의, 실수를, 것을, 도움이, 사람들의, 많은, 아트인사이트, ART insight, 문화, 예술, 사람, 소통, 글, 그림, 글쓰기" />
+  <meta name="Classification" content="News" />
+  <meta name="Location" content="https://www.artinsight.co.kr" />
+  <meta name="Publisher" content="아트인사이트 - ART insight" />
+  <meta name="image" content="https://www.artinsight.co.kr/data/news/2309/3556039991_ExWjyopl_20230901000639_dtwtozvz.jpg" />
+  <meta name="twitter:image" content="https://www.artinsight.co.kr/data/news/2309/3556039991_ExWjyopl_20230901000639_dtwtozvz.jpg" />
+  <meta property="og:url" content="https://www.artinsight.co.kr/news/view.php?no=66504" />
+  <meta property="og:image" content="https://www.artinsight.co.kr/data/news/2309/3556039991_ExWjyopl_20230901000639_dtwtozvz.jpg" />
+  <meta property="og:title" content="[칼럼] 사람이 있어야 비로소 완성되는 초거대AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="아트인사이트" />
+  <meta property="og:description" content="60년을 살아도, 80년을 살아도, “저렇게 이상한 사람은 내 인생에 처음이야“는 말을 내뱉는 어른들을 보자. 내가 아무리 오래 산다 한들, 완벽한 세상은 오지 않는다." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="[칼럼] 사람이 있어야 비로소 완성되는 초거대AI" />
+  <meta name="twitter:site" content="아트인사이트" />
+  <meta name="twitter:description" content="60년을 살아도, 80년을 살아도, “저렇게 이상한 사람은 내 인생에 처음이야“는 말을 내뱉는 어른들을 보자. 내가 아무리 오래 산다 한들, 완벽한 세상은 오지 않는다." />
+  <link rel="canonical" href="https://www.artinsight.co.kr/news/view.php?no=66504" />
+  <link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.artinsight.co.kr/m/page/view.php?no=66504" />
+  <link rel="icon" type="image/x-icon" href="https://www.artinsight.co.kr/data/admin/2009/3551744270_ITndJYxg_EC9584ED8AB8EC9DB8EC82ACEC9DB4ED8AB8.ico" />
+  <link itemprop="url" href="https://www.artinsight.co.kr/" />
+  <link itemprop="sameAs" href="https://www.instagram.com/art_insight_/" />
+  <link itemprop="sameAs" href="https://www.facebook.com/artinsight13" />
+  <link itemprop="sameAs" href="https://blog.naver.com/dowidowi" />
+  <link itemprop="sameAs" href="https://brunch.co.kr/@artinsight" />
+  <link itemprop="sameAs" href="https://in.naver.com/artinsight" />
+  <link name="image_src" href="https://www.artinsight.co.kr/data/news/2309/3556039991_ExWjyopl_20230901000639_dtwtozvz.jpg" />
+  <script>
+    var url = "https://www.artinsight.co.kr";
+    var is_member = "";
+    var is_https = true;
+    var https_url = "";
+    var cookie_domain = "";
+  </script>
+  <script type='text/javascript' src='https://www.artinsight.co.kr/_helpers/_js/jquery.min.js?t=2026042802'></script>
+  <script>function killErrors() { return true; } window.onerror = killErrors;</script>
+<script defer src="/_helpers/_js/plugins/jquery.rolling.js?t=2026042802"></script>
+  <script>function banner_org_pop(img_val) { window.open('/news/view_image.php?src='+img_val,'','width=1680, height=1050,toolbar=no,status=no,scrollbars=yes');} </script>
+</head>
+
+<body id="body">
+
+
+
+
+
+<script>
+	
+
+
+function setViewport() {
+	let screenWidth = window.innerWidth;
+	if (screenWidth <= 1400) {
+		let scale = screenWidth / 1400;
+		// body에 이미 scale이 적용되어 있다면 중복 적용 방지
+		if (document.body.style.transform !== "scale(" + scale + ")") {
+			document.body.style.transform = "scale(" + scale + ")";
+			document.body.style.transformOrigin = "top left";
+			document.body.style.width = "1400px";
+			let newHeight = document.documentElement.clientHeight / scale;
+			document.body.style.height = newHeight + "px";
+			document.documentElement.style.height = newHeight + "px";
+		}
+	} else {
+		document.body.style.transform = "none";
+		document.body.style.width = "auto";
+		document.body.style.height = "auto";
+		document.documentElement.style.height = "auto";
+	}
+}
+// 디바운스 적용 (리사이즈 이벤트)
+window.addEventListener('resize', debounce(setViewport, 100));
+window.addEventListener('DOMContentLoaded', setViewport);
+// 디바운스 함수 추가
+function debounce(func, wait) {
+	let timeout;
+	return function () {
+		clearTimeout(timeout);
+		timeout = setTimeout(func, wait);
+	};
+}
+
+
+
+
+var main_search = function(){
+    var searchKeyword = $("#searchFrm input[name='q']").val().trim(); // 검색어 값 가져오기
+    
+    if (searchKeyword.length < 1) { // 입력값이 없거나 공백일 경우
+        alert('검색어를 한 글자 이상 입력해주세요.');
+        $("#searchFrm input[name='q']").focus(); // 입력창에 포커스 맞추기
+        return false; // 폼 전송 중지
+    }
+
+	$('#searchFrm').off('submit').submit();
+}
+var main_search2 = function(){
+    var searchKeyword = $("#searchFrm2 input[name='q']").val().trim();
+
+    if (searchKeyword.length < 1) {
+        alert('검색어를 한 글자 이상 입력해주세요.');
+        $("#searchFrm2 input[name='q']").focus(); // 입력창에 포커스 맞추기
+        return false;
+    }
+
+    $('#searchFrm2').off('submit').submit();
+}
+
+</script>
+<script>
+$(document).ready(function() {
+	//상단 스크롤 반응
+	let lastScrollY = $(window).scrollTop();
+	let activeAnimation = null; // 현재 실행 중인 애니메이션 상태를 추적
+	const isSpecificPage = $('#container').hasClass('scroll-hidden'); // 특정 페이지인지 확인
+
+	// 스크롤 이벤트
+	$(window).on('scroll', function () {
+		if ($('#body').hasClass('open')) {
+			return; // #body에 .open 클래스가 있으면 작동하지 않음
+		}
+		
+		const currentScrollY = $(window).scrollTop();
+
+		if (!activeAnimation) {
+			if (currentScrollY === 0) {
+				// 스크롤이 맨 위일 때 hidden 클래스를 제거
+				$('.header_renew').removeClass('hidden');
+
+			} else if (currentScrollY > lastScrollY) {
+				// Scrolling down
+				$('.header_renew').addClass('hidden');
+				
+			} else {
+				// Scrolling up
+				if (!isSpecificPage) {
+					// 특정 페이지가 아닌 경우 hidden 클래스 제거
+					$('.header_renew').removeClass('hidden');
+				} else {
+					// 특정 페이지에서는 hidden 클래스 유지
+					$('.header_renew').addClass('hidden');
+				}
+			}
+		}
+
+		lastScrollY = currentScrollY;
+	});
+	
+	// indicator 클릭 이벤트
+	$('.indicator a').on('click', function (e) {
+		e.preventDefault();
+
+		// 현재 실행 중인 애니메이션 취소
+		if (activeAnimation) {
+			activeAnimation.stop(true); // 현재 애니메이션 강제 중단
+			activeAnimation = null;
+		}
+
+		const targetId = $(this).attr('href'); // 클릭한 a 태그의 href 값 가져오기
+		const target = $(targetId); // 해당 영역 선택
+		if (target.length) {
+			const offset = target.offset().top - 70; // 70px 위로 이동
+
+			$('.header_renew').addClass('hidden'); // indicator 클릭 시 무조건 hidden 적용
+
+			// 애니메이션 실행 및 상태 저장
+			activeAnimation = $('html, body').animate(
+				{ scrollTop: offset },
+				500,
+				function () {
+					// 애니메이션 완료 후 상태 초기화
+					activeAnimation = null;
+				}
+			);
+		}
+	});
+
+	//상단 메뉴버튼
+    $('.header_renew #menu').on('click', function() {
+        if ($(this).hasClass('open')) {
+            // open 클래스가 있을 때 제거
+            $(this).removeClass('open');
+            $('.header_renew').removeClass('open');
+            $('#body').removeClass('open');
+        } else {
+            // open 클래스가 없을 때 추가
+            $(this).addClass('open');
+            $('.header_renew').addClass('open');
+            $('#body').addClass('open');
+            $('.header_renew #find').removeClass('open');
+            $('.header_find').removeClass('open');
+            $('.header_find_bg').removeClass('open');
+        }
+    });
+	//상단 검색버튼
+    $('.header_renew #find').on('click', function() {
+        if ($(this).hasClass('open')) {
+            // open 클래스가 있을 때 제거
+            $(this).removeClass('open');
+            $('.header_find').removeClass('open');
+            $('.header_find_bg').removeClass('open');
+            $('#body').removeClass('open');
+        } else {
+            // open 클래스가 없을 때 추가
+            $(this).addClass('open');
+            $('.header_find').addClass('open');
+            $('.header_find_bg').addClass('open');
+            $('#body').addClass('open');
+        }
+    });
+    //상단 검색배경 클릭
+    $('.header_find_bg').on('click', function () {
+        $('.header_renew #find').removeClass('open');
+        $('.header_find').removeClass('open');
+        $('.header_find_bg').removeClass('open');
+        $('#body').removeClass('open');
+    });
+
+	let savedHeight = 0; // 저장된 높이
+
+	$(".header_renew .gnb").hover(
+		function () {
+			$(this).addClass("on");
+			$(".header_menu").addClass("on");
+
+			// .gnb_sub_text의 높이 계산 및 저장
+			let $subText = $(this).find(".gnb_sub_text");
+			savedHeight = $subText.outerHeight(); // 높이 저장
+
+			$(".header_menu.on .menu_bg").css("height", savedHeight + "px");
+		},
+		function () {
+			$(this).removeClass("on");
+			$(".header_menu").removeClass("on");
+			$(".header_menu .menu_bg").css("height", 0);
+		}
+	);
+});
+</script>
+<div class="header_renew cboth">
+	<div class="header_01 cboth">
+		<ul class="inner1320">
+						<li><a href="https://www.artinsight.co.kr/member/login.php?url=%2Fnews%2Fview.php%3Fno%3D66504">로그인</a></li>
+			<li><a href="https://www.artinsight.co.kr/member/register.php">회원가입</a></li>
+						<li><a href="https://www.artinsight.co.kr/service/company.php">회사소개</a></li>
+			<li><a href="https://www.artinsight.co.kr/news/all.php">전체글보기</a></li>
+		</ul>
+	</div>
+	<div class="header_02 cboth">
+		<div class="header_logo"><h1><a href="https://www.artinsight.co.kr" id="logo">아트인사이트</a></h1></div>
+
+		<div class="header_menu">
+			<div class="menu_bg"></div>
+			<ul>
+								<li class="gnb" no="0" id="main_menu_0">
+						<ul>
+							<li class="gnb_text" no="0">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449">칼럼/에세이</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_0">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449&d_code=20160901175312_4685" >칼럼</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449&d_code=20160901175318_4589" >에세이</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="1" id="main_menu_1">
+						<ul>
+							<li class="gnb_text" no="1">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360">오피니언</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_1">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218144147_2490" >문화 전반</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143929_1659" >사람</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143826_3028" >영화</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143830_4279" >음악</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143847_4521" >공연</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143853_1504" >미술/전시</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143836_1938" >도서/문학</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143915_9745" >드라마/예능</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143843_3424" >여행</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143919_0076" >게임</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143922_5011" >동물</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143926_0324" >패션</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143931_6819" >운동/건강</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20201218143934_2998" >공간</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20210210184910_7558" >만화</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_64709_77360&d_code=20210914182955_6060" >음식</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="2" id="main_menu_2">
+						<ul>
+							<li class="gnb_text" no="2">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=netfu_89053_16079">문화소식</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_2">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_89053_16079&d_code=20111102095702_6544" >공연</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_89053_16079&d_code=netfu_62695_33423" >전시</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_89053_16079&d_code=20131112201758_2068" >도서</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=netfu_89053_16079&d_code=20190105001451_2414" >영화</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="3" id="main_menu_3">
+						<ul>
+							<li class="gnb_text" no="3">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20140822004535_4171">작품기고</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_3">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=20140822004535_4171&d_code=20170723190814_3569" >The Artist</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20140822004535_4171&d_code=20210227105847_1326" >The Writer</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="4" id="main_menu_4">
+						<ul>
+							<li class="gnb_text" no="4">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759">리뷰</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_4">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20210629151517_3808" >공연</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20210629151520_6438" >전시</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20160413124700_2095" >도서</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20210629151526_1998" >영화</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20230114010137_6103" >모임</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20210907221627_2261" >패션</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20230304223511_4768" >음반</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20160413124404_9759&d_code=20170906115433_4050" >PRESS</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="5" id="main_menu_5">
+						<ul>
+							<li class="gnb_text" no="5">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20131111144605_7021">사람</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_5">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=20131111144605_7021&d_code=20150731222101_0818" >ART in Story</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20131111144605_7021&d_code=20180511005008_2827" >Project 당신</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="6" id="main_menu_6">
+						<ul>
+							<li class="gnb_text" no="6">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20160919193230_5623">문화초대</a>
+							</li>
+													</ul>
+					</li>
+								<li class="gnb" no="7" id="main_menu_7">
+						<ul>
+							<li class="gnb_text" no="7">
+								<a href="https://www.artinsight.co.kr/news/index.php?code=20210721214134_5309">문화는 소통이다</a>
+							</li>
+														<li class="gnb_sub" id="menu_sub_7">
+								<ul class="gnb_sub_text">
+									<li><a href="https://www.artinsight.co.kr/news/index.php?code=20210721214134_5309&d_code=20210721214222_9105" >ART insight</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20210721214134_5309&d_code=20210721214229_4468" >아트인사이트</a></li>
+<li><a href="https://www.artinsight.co.kr/news/index.php?code=20210721214134_5309&d_code=20260302132838_6590" >정정, 반론보도</a></li>								</ul>
+							</li>
+													</ul>
+					</li>
+						</ul>
+			
+			<ul class="menu_right_sns">
+				<li><a href="https://www.facebook.com/artinsight13" target="_blank" id="facebook">페이스북</a></li>
+				<li><a href="https://blog.naver.com/dowidowi" target="_blank" id="blog">네이버블로그</a></li>
+				<li><a href="https://www.instagram.com/art_insight_/" target="_blank" id="insta">인스타그램</a></li>
+				<li><a href="https://brunch.co.kr/@artinsight" target="_blank" id="brunch">브런치</a></li>
+			</ul>
+		</div>
+
+		<div class="header_icon">
+			<button id="find">find</button>
+			<button id="mypage">mypage
+				<ul id="mypage_inner">
+											<li><a href="https://www.artinsight.co.kr/member/login.php?url=%2Fnews%2Fview.php%3Fno%3D66504">로그인</a></li>
+						<li><a href="https://www.artinsight.co.kr/member/register.php">회원가입</a></li>
+									</ul>
+			</button>
+			<button id="menu">menu</button>
+		</div>
+		
+		<div class="menu_inner_right">
+			<div class="menu_right_find">
+				<form method="get" name="searchFrm" id="searchFrm" action="https://www.artinsight.co.kr/news/search.php">
+					<input type="text" name="q" hname="검색어" value="" style="ime-mode:active;">
+					<button onclick="main_search();" id="find_btn">검색</button>
+				</form>
+			</div>
+			<ul class="menu_right_link">
+				<li><a href="https://www.artinsight.co.kr/service/company.php">아트인사이트 소개</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/concert.php">제휴·광고문의</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/report.php">기사제보</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/cs_center.php">고객센터</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=site_agreement">회원약관</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="header_find">
+	<div class="header_find_inner">
+		<form method="get" name="searchFrm2" id="searchFrm2" action="https://www.artinsight.co.kr/news/search.php">
+			<input type="text" name="q" hname="검색어" value="" placeholder="검색어를 입력하세요" style="ime-mode:active;">
+			<button onclick="main_search2();" id="find_btn">검색</button>
+		</form>
+	</div>
+</div>
+<div class="header_find_bg"></div>
+
+<div class="main_top">
+	<div class="inner1320">
+		<div class="main_top_txt">
+			<h2>ART insight</h2>
+			<p>아트인사이트에게<br/>문화예술은 '소통'입니다.</p>
+		</div>
+	</div>
+</div>
+<div class="sub_top">
+	<div class="inner1320">
+		<div class="sub_top_txt"><h2>칼럼·에세이</h2></div>
+	</div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if(location.pathname === '/index.php' || location.pathname === '/') {
+    document.querySelector('.main_top').classList.add('on');
+  }
+});
+
+
+</script>
+
+
+
+
+<style>
+	/* 공통 및 헤더 */
+	.cboth { position:relative; }
+	.cboth::after { content:''; display:block; clear:both; }
+	.inner1320 { position:relative; margin:0 auto; width:1320px; }
+	
+	.header_renew { position:fixed; z-index:9; height:110px; box-sizing:border-box; top:0; left:0; width:100%; transform:translateY(0px);
+		transition:all .6s ease; -webkit-transition:all .6s ease; -moz--transition:all .6s ease; -ms-transition:all .6s ease; -o-transition:all .6s ease; }
+	.header_renew.hidden { transform:translateY(-110px);
+		transition:all .6s ease; -webkit-transition:all .6s ease; -moz--transition:all .6s ease; -ms-transition:all .6s ease; -o-transition:all .6s ease; }
+	.header_01 { width:100%; background:#fff; }
+	.header_01 ul { text-align:right; font-size:0; padding:8px 0 6px; }
+	.header_01 ul li { display:inline-block; margin-right:40px; }
+	.header_01 ul li:last-child { margin-right:0; }
+	.header_01 ul li a { display:block; line-height:16px; font-size:13px; font-weight:400; color:#191919; }
+	.header_02 { width:100%; background:#000; border-bottom:1px solid #404040; }
+	.header_02::before { content:''; z-index:5; position:fixed; top:30px; left:0; width:100%; height:0; background:#000; overflow:hidden;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	/* 메뉴 로고 */
+	.header_02 .header_logo { position:absolute; z-index:9; top:16px; left:40px; text-align:left; }
+	.header_02 .header_logo #logo { display:block; font-size:0; width:42px; height:48px; background:url('https://www.artinsight.co.kr/images/renewal/logo.svg') no-repeat;
+		background-size:100% auto; }
+
+	/* 메뉴 오픈 전 */
+	.header_02 .header_menu { position:relative; z-index:1; width:1320px; margin:0 auto; text-align:center; }
+	.header_02 .header_menu .menu_bg { position:absolute; z-index:1; top:80px; box-sizing:border-box; left:calc(50% - 50vw); width:100vw; height:0; background:#000; border-top:0; }
+	@media (max-width:1400px) {
+		.header_02 .header_menu .menu_bg { left:-40px; width:calc(100% + 80px); }
+	}
+	.header_02 .header_menu.on .menu_bg { border-top:1px solid #404040; border-bottom:1px solid #404040; }
+	.header_02 .header_menu > ul { width:100%; height:auto; font-size:0; }
+	.header_02 .header_menu > ul.menu_right_sns { display:none; }
+	.header_02 .header_menu .gnb { position:relative; display:inline-block; margin:0 30px; }
+	.header_02 .header_menu .gnb.gnb_nav_on { background:none; }
+	.header_02 .header_menu .gnb .gnb_text { margin:0; }
+	.header_02 .header_menu .gnb .gnb_text a { position:relative; display:block; padding:0; line-height:80px; font-weight:700; font-size:20px; color:#fff; }
+	.header_02 .header_menu .gnb .gnb_text a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:3px; background:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu .gnb:hover .gnb_text a::after { width:100%;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu .gnb.gnb_nav_on .gnb_text a::after { width:100%; }
+	
+	.header_02 .header_menu .gnb .gnb_sub { position:absolute; z-index:2; top:80px; left:0; height:0; overflow:hidden;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu .gnb:hover .gnb_sub { height:auto;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu .gnb .gnb_sub .gnb_sub_text { display:grid; grid-template-columns:repeat(4, 1fr); gap:24px 40px; padding:31px 0 30px; }
+	.header_02 .header_menu .gnb .gnb_sub .gnb_sub_text li { text-align:left; }
+	.header_02 .header_menu .gnb .gnb_sub .gnb_sub_text li a { display:block; white-space:nowrap; font-size:16px; font-weight:300; color:#fff; }
+
+	/* 메뉴 오픈 후 */
+	#body.open { overflow-y:scroll; }
+	.header_renew.open .header_01 { background:#000;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_renew.open .header_01 ul li a { color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.header_renew.open .header_02::before { height:calc(100vh - 30px); border-top:1px solid #404040;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	@media (max-width:1400px) {
+		.header_renew.open .header_02::before { height:200vh; }
+	}
+	.header_renew.open .header_02::after { content:'ART INSIGHT'; position:fixed; z-index:5; top:calc(100vh - 172px); right:0; color:rgba(255, 255, 255, 0.08); font-size:240px; line-height:172px; font-weight:700; }
+	.header_renew.open .header_02 .header_menu { position:fixed; z-index:6; padding:110px 0 0; top:0px; left:calc(50% - 660px); margin:0; text-align:left; }
+	.header_renew.open .header_02 .header_menu .menu_bg { border:0; }
+	.header_renew.open .header_02 .header_menu::before { content:''; position:absolute; z-index:9; top:150px; left:0; display:inline-block; width:83px; height:6px;
+		background:linear-gradient(90deg, #FF6799 0%, #AEEFA4 50%, #76D5E8 100%); }
+	.header_renew.open .header_02 .header_menu > ul { display:inline-block; margin:76px 0 0; width:auto; height:auto; font-size:0; }
+	.header_renew.open .header_02 .header_menu .gnb { position:relative; z-index:6; display:block; margin:0 0 28px; }
+	.header_renew.open .header_02 .header_menu .gnb:last-child { margin-bottom:0; }
+	.header_renew.open .header_02 .header_menu .gnb.gnb_nav_on { background:none; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_text { margin:0; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_text a { position:relative; display:block; padding:0; line-height:57px; font-weight:700; font-size:48px; color:#888; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_text a::after { display:none; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_text a:hover { color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.header_renew.open .header_02 .header_menu .gnb .gnb_sub { position:absolute; z-index:2; opacity:0; top:-31px; left:100%; padding:0 30px; height:0; overflow:hidden; background:none; border-top:0;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_renew.open .header_02 .header_menu .gnb:hover .gnb_sub { height:auto; opacity:1;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_sub .gnb_sub_text { position:relative; z-index:8; display:grid; grid-template-columns:repeat(2, 1fr); gap:28px 60px; padding:31px 0; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_sub .gnb_sub_text li { text-align:left; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_sub .gnb_sub_text li a { display:block; white-space:nowrap; line-height:26px; font-size:22px; font-weight:600; color:#707070; }
+	.header_renew.open .header_02 .header_menu .gnb .gnb_sub .gnb_sub_text li a:hover { color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	/* 메뉴 아이콘 */
+	.header_02 .header_icon { position:absolute; z-index:9; display:flex; top:0; right:40px; text-align:right; }
+	.header_02 .header_icon button { cursor:pointer; background-color:transparent; border:0; }
+	.header_02 .header_icon #find { display:block; position:relative; font-size:0; margin-right:30px; width:30px; height:80px; box-sizing:border-box;
+		background:url('https://www.artinsight.co.kr/images/renewal/find.svg') no-repeat; background-size:100% auto; background-position:center center; }
+	.header_renew.open .header_02 .header_icon #find { display:none; }
+	.header_02 .header_icon #find::before { opacity:0; content:''; position:absolute; top:calc(50% + 1.5px); left:calc(50% - 15px); width:100%; height:3px; background:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_icon #find::after { opacity:0; content:''; position:absolute; top:calc(50% + 1.5px); left:calc(50% - 15px); width:100%; height:3px; background:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_icon #mypage { position:relative; display:block; font-size:0; margin-right:30px; width:30px; height:80px; box-sizing:border-box;
+		background:url('https://www.artinsight.co.kr/images/renewal/mypage.svg') no-repeat; background-size:100% auto; background-position:center center; }
+	.header_renew.open .header_02 .header_icon #mypage { display:none; }
+	.header_02 .header_icon #menu { display:block; position:relative; z-index:9; font-size:0; width:30px; height:80px; box-sizing:border-box; }
+	.header_02 .header_icon #menu::before { content:''; position:absolute; top:calc(50% + 4.5px); left:calc(50% - 15px); width:100%; height:3px; background:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_icon #menu::after { content:''; position:absolute; top:calc(50% - 6.5px); left:calc(50% - 15px); width:100%; height:3px; background:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_renew.open .header_02 .header_icon #menu::before { top:calc(50% - 1.5px); left:calc(50% - 15px); transform:rotate(-45deg); 
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_renew.open .header_02 .header_icon #menu::after { top:calc(50% - 1.5px); left:calc(50% - 15px); transform:rotate(45deg); 
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.header_02 .header_icon #mypage_inner { display:none; position:absolute; z-index:1; top:80px; left:calc(50% - 75px); padding-top:20px; }
+	.header_02 .header_icon #mypage_inner li:nth-child(1) { padding:4px; border-radius:10px 10px 0 0; box-sizing:border-box; border:1px solid #404040; background:#191919; border-bottom:0; }
+	.header_02 .header_icon #mypage_inner li:nth-child(2) { padding:4px; border-radius:0 0 10px 10px; box-sizing:border-box; border:1px solid #404040; background:#191919; border-top:0; }
+	.header_02 .header_icon #mypage_inner li a { display:block; width:142px; text-align:center; padding:17px 0 18px; line-height:19px; font-size:16px; font-weight:400; color:#fff; border-radius:7px; }
+	.header_02 .header_icon #mypage_inner li a:hover { background:#000; 
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_icon #mypage:hover #mypage_inner { display:block; }
+
+		
+	/* 기본 검색창 */
+	.header_find { position:fixed; top:110px; left:0; width:100%; z-index:9; background:#fff; height:0; overflow:hidden;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_find.open { height:220px; box-sizing:border-box;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_find_inner { position:relative; width:870px; margin:0 auto; padding:80px 0; }
+	.header_find_inner input { display:block; width:100%; padding:0 90px 0 30px; height:60px; border:0; background:#f3f3f3; border-radius:100px; color:#000; font-size:16px; font-weight:400;
+		box-shadow: 0 0 0px 1000px #f3f3f3 inset !important; /* 배경색 */ -webkit-text-fill-color: #000 !important; /* 텍스트 색상 */ }
+	.header_find_inner input::placeholder { color:rgba(25, 25, 25, 0.2) !important; -webkit-text-fill-color:rgba(25, 25, 25, 0.2) !important; }
+	.header_find_inner input:focus { border:0; outline:0; background:#f3f3f3; }
+	.header_find_inner input:-webkit-autofill { box-shadow: 0 0 0px 1000px #f3f3f3 inset !important; -webkit-text-fill-color: #000 !important; font-size:16px; font-weight:400; }
+	.header_find_inner input:-webkit-autofill:hover,
+	.header_find_inner input:-webkit-autofill:focus { box-shadow: 0 0 0px 1000px #f3f3f3 inset !important; font-size:16px; font-weight:400; }
+	.header_find_inner button { cursor:pointer; position:absolute; top:calc(50% - 15px); right:30px; width:30px; height:30px; border:0; font-size:0;
+		background:url('https://www.artinsight.co.kr/images/renewal/find_black.svg') no-repeat; background-size:100% auto; }
+	.header_02 .header_icon #find.open { background:none; border-bottom:3px solid #fff; margin-bottom:1px; height:79px; }
+	.header_02 .header_icon #find.open::before { opacity:1; transform:rotate(-45deg); 
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_icon #find.open::after { opacity:1; transform:rotate(45deg); 
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_find_bg { display:none; position:fixed; top:110px; left:0; width:100%; z-index:8; background:rgba(0, 0, 0, 0.5); backdrop-filter:blur(7.5px); height:100%; cursor:pointer; }
+	.header_find_bg.open { display:block; }
+
+	/* 메뉴 오픈 우측 검색 및 링크 */
+	.menu_inner_right { display:none; position:fixed; opacity:0; z-index:9; top:217px; right:calc(50% - 660px); width:306px; }
+	.header_renew.open .menu_inner_right { display:block; opacity:1;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.menu_inner_right .menu_right_find { position:relative; width:100%; margin:0 0 60px; }
+	.menu_inner_right .menu_right_find input { display:block; width:100%; padding:0 30px 14px 0; height:46px; border:0; border-bottom:2px solid #fff;
+		background:#000; color:#fff; font-size:16px; font-weight:400; box-shadow: 0 0 0px 1000px #000 inset !important; /* 배경색 */ -webkit-text-fill-color:#fff !important; /* 텍스트 색상 */ }
+	.menu_inner_right .menu_right_find input::placeholder { color:rgba(25, 25, 25, 0.2) !important; -webkit-text-fill-color:rgba(25, 25, 25, 0.2) !important; }
+	.menu_inner_right .menu_right_find input:focus { border:0; outline:0; background:#000; }
+	.menu_inner_right .menu_right_find input:-webkit-autofill { box-shadow:0 0 0px 1000px #000 inset !important; -webkit-text-fill-color:#fff !important; font-size:16px; font-weight:400; }
+	.menu_inner_right .menu_right_find input:-webkit-autofill:hover,
+	.menu_inner_right .menu_right_find input:-webkit-autofill:focus { box-shadow:0 0 0px 1000px #000 inset !important; font-size:16px; font-weight:400; }
+	.menu_inner_right .menu_right_find input:focus { border:0; border-bottom:2px solid #fff; outline:0; }
+	.menu_inner_right .menu_right_find button { cursor:pointer; position:absolute; top:0; right:0; width:30px; height:30px; border:0; font-size:0;
+		background:url('https://www.artinsight.co.kr/images/renewal/find.svg') no-repeat; background-size:100% auto; }
+
+	.menu_inner_right .menu_right_link { position:relative; width:100%; }
+	.menu_inner_right .menu_right_link li { display:block; margin-bottom:20px; }
+	.menu_inner_right .menu_right_link li:last-child { margin-bottom:0; }
+	.menu_inner_right .menu_right_link a { display:inline-block; line-height:24px; font-size:20px; font-weight:400; color:#fff; }
+	.header_renew.open .header_02 .header_menu > ul.menu_right_sns { position:absolute; bottom:0; right:0; z-index:9; display:block; margin:0; }
+	.header_02 .header_menu > ul.menu_right_sns li { display:inline-block; margin-right:10.5px; }
+	.header_02 .header_menu > ul.menu_right_sns li:last-child { margin-right:0; }
+	.header_02 .header_menu > ul.menu_right_sns a { display:block; width:53px; height:53px; border:1px solid #fff; border-radius:50%; font-size:0; }
+	.header_02 .header_menu > ul.menu_right_sns #facebook { background:url('https://www.artinsight.co.kr/images/renewal/facebook_w.svg') no-repeat #000; background-size:9px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #facebook:hover { background:url('https://www.artinsight.co.kr/images/renewal/facebook_b.svg') no-repeat #fff; background-size:9px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #blog { background:url('https://www.artinsight.co.kr/images/renewal/blog_w.svg') no-repeat #000; background-size:20px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #blog:hover { background:url('https://www.artinsight.co.kr/images/renewal/blog_b.svg') no-repeat #fff; background-size:20px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #insta { background:url('https://www.artinsight.co.kr/images/renewal/insta_w.svg') no-repeat #000; background-size:17px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #insta:hover { background:url('https://www.artinsight.co.kr/images/renewal/insta_b.svg') no-repeat #fff; background-size:17px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #post { background:url('https://www.artinsight.co.kr/images/renewal/post_w.svg') no-repeat #000; background-size:auto 18px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #post:hover { background:url('https://www.artinsight.co.kr/images/renewal/post_b.svg') no-repeat #fff; background-size:auto 18px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #brunch { background:url('https://www.artinsight.co.kr/images/renewal/brunch_w.svg') no-repeat #000; background-size:auto 18px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.header_02 .header_menu > ul.menu_right_sns #brunch:hover { background:url('https://www.artinsight.co.kr/images/renewal/brunch_b.svg') no-repeat #fff; background-size:auto 18px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+
+/* 메인 상단 타이틀 */
+.main_top {
+  display: none;
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  background: #000;
+  box-sizing: border-box;
+  height: 750px;
+  padding-top: 110px;
+  transition: opacity 0.5s ease;
+}
+
+.main_top.on {
+  display: block;
+  opacity: 1;
+}
+
+
+.main_top_txt {
+  position: relative;
+  padding-top: 279px;
+}
+
+.main_top_txt::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #FF6799 0%, #AEEFA4 50%, #76D5E8 100%);
+}
+
+.main_top_txt h2 {
+  display: block;
+  padding: 80px 0;
+  line-height: 191px;
+  font-size: 160px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.main_top_txt p {
+  position: absolute;
+  margin: 0;
+  bottom: 119px;
+  right: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #fff;
+}
+
+
+/* 서브 상단 타이틀 */
+.sub_top {
+  display: none;
+  position: relative;
+  width: 100%;
+  background: #000;
+  padding-top: 110px;
+}
+
+.sub_top.on {
+  display: block;
+}
+
+.sub_top_txt {
+  position: relative;
+  padding: 120px 0 140px;
+}
+
+.sub_top_txt h2 {
+  position: relative;
+  display: block;
+  line-height: 76px;
+  padding-top: 30px;
+  font-size: 64px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sub_top_txt h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 83px;
+  height: 6px;
+  background: linear-gradient(90deg, #FF6799 0%, #AEEFA4 50%, #76D5E8 100%);
+}
+
+/* 서브 서브(하위 서브) 스타일 */
+.sub_top.sub_sub {
+  background: #FFF9F1;
+}
+
+.sub_top.sub_sub .sub_top_txt {
+  position: relative;
+  padding: 120px 0 118px;
+}
+
+.sub_top.sub_sub .sub_top_txt h2 {
+  padding-top: 0;
+  color: #191919;
+}
+
+.sub_top.sub_sub .sub_top_txt h2::before {
+  display: none;
+}
+
+
+</style><div id="wrapper" class="cboth">
+
+<script type='text/javascript' src='https://www.artinsight.co.kr/_helpers/_js/form.js'></script>
+<script>
+$(document).ready(function() {
+    // 상단 보이도록
+    $('.sub_top').addClass('on');
+    $('.sub_top').addClass('sub_sub');
+
+    var categoryLinks = '<a href=\"https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449\">칼럼/에세이</a><a href=\"https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449&d_code=20160901175312_4685\">칼럼</a>';
+    $('.sub_top_txt').prepend('<div class="view_cate">' + categoryLinks + '</div>');
+
+    $('.sub_top_txt h2').text('[칼럼] 사람이 있어야 비로소 완성되는 초거대AI');
+    $('.sub_top_txt').append('<h3></h3>');
+    $('.sub_top_txt').append('<a href="javascript:void(0);" class="top_name" onclick="form.submit()">by <span>박나현 에디터</span></a>');
+    $('.sub_top_txt').append('<div class="top_date"><span>2023.09.01 14:03</span><div class="top_etc"></div></div>');
+    $('.sub_top_txt .top_etc').html(function() {
+        var scrapButtonHTML = '';
+        var commentCount = 0;
+
+        // 미리보기 아닐 때만 스크랩 버튼을 추가
+                    scrapButtonHTML = '<a href="javascript:news_scrap(\'66504\', \'able2100\');" class="scrap-btn" data-no="66504" data-wr_id="able2100">스크랩</a>';
+        
+        var shareHTML = '<span class="top_share"></span>';
+        var commentCountHTML = '<span class="top_cnt">' + commentCount.toLocaleString() + '</span>';
+        return scrapButtonHTML + shareHTML + commentCountHTML;
+    });
+
+    // 현재 주소를 #copy_url span에 삽입
+    $('#copy_url span').text(window.location.href);
+
+    // #copy_url 클릭 시 주소 복사 및 알림
+    $('#copy_url').on('click', function () {
+        var tempInput = $('<input>'); // 임시 input 요소 생성
+        $('body').append(tempInput);
+        tempInput.val(window.location.href).select(); // 현재 주소 복사
+        document.execCommand('copy'); // 클립보드에 복사
+        tempInput.remove(); // 임시 input 제거
+
+        alert('주소가 복사되었습니다.');
+    });
+
+    // .top_share 클릭 시 .sns_wrap 토글
+    $('.top_share').on('click', function () {
+        $('.sns_wrap').toggleClass('active');
+    });
+
+    $(document).on('click', function (event) {
+        if (!$(event.target).closest('.sns_wrap, .top_share').length) {
+            // 클릭한 대상이 .sns_wrap 또는 .top_share 내부가 아니라면
+            $('.sns_wrap').removeClass('active');
+        }
+    });
+
+    // 컨텐츠 앞부분 공백제거
+    $('.view_content').each(function() {
+        const $paragraphs = $(this).children('p'); // children()으로 p 태그만 선택
+        let removeEmpty = true;
+
+        const paragraphsToRemove = []; // 제거할 p 태그를 저장할 배열
+
+        $paragraphs.each(function() {
+            const $currentP = $(this);
+            const content = $currentP.html().trim();
+
+            if ((content === '&nbsp;' || content === '' || content === '<br>' || content === '<br/>' || content === '<br />') && removeEmpty) {
+                paragraphsToRemove.push($currentP); // 삭제할 태그를 배열에 저장
+            } else {
+                removeEmpty = false; // 첫 텍스트나 이미지가 나오면 더 이상 삭제하지 않음
+            }
+        });
+
+        // 배열에 저장된 모든 <p>&nbsp;</p> 삭제
+        $(paragraphsToRemove).each(function() {
+            $(this).remove();
+        });
+
+	    // aside 높이만큼 min-height 설정
+	    const $thisContent = $(this); // 현재 view_content div
+		const asideHeight = $('aside').outerHeight(); // padding 포함한 높이
+		$thisContent.css('min-height', (asideHeight - 200) + 'px');
+    });
+
+    // PHP에서 좋아요 상태 전달
+    var isScraped = false;
+    if (isScraped) {
+        $('.scrap-btn').addClass('active');
+    }
+
+    // PHP에서 좋아요 상태 전달
+    var isLiked = false;
+    if (isLiked) {
+        $('#editor_like').addClass('active');
+    }
+});
+
+// 스크랩 함수
+var news_scrap = function(no, wr_id) {
+    if (is_member) {
+        $.post('./process/regist.php', { mode: 'news_scrap', ajax: 1, no: no, wr_id: wr_id }, function(result) {
+            if (result == '0013') {
+                alert("기사 스크랩중 오류가 발생했습니다.");
+            } else if (result == '0014') {
+                alert("이미 스크랩한 기사 입니다.");
+            } else if (result == '0003') {
+                alert("뉴스 기사를 스크랩 하였습니다.");
+                $('.scrap-btn').addClass('active');
+            }
+        });
+    } else {
+        alert("회원만 스크랩 가능합니다.\n\n회원이시라면 로그인해 주세요.");
+        location.href = "https://www.artinsight.co.kr/member/login.php?url=%2Fnews%2Fview.php%3Fno%3D66504";
+    }
+};
+
+// 에디터 좋아요 함수
+var like_editor = function(wr_id, mb_id) {
+    if (is_member) {
+        // liked_editors 개수 확인
+        var liked_editors_cnt = 0;
+
+        if (liked_editors_cnt >= 50) {
+            alert("최대 50명의 에디터만 저장할 수 있습니다.");
+            return;
+        }
+
+		$.post('./process/like_editor.php', { mode: 'like_editor', ajax: 1, wr_id: wr_id, mb_id: mb_id }, function(result) {
+			console.log('Server Response:', result); // Log response
+			if (result == '0013') {
+				alert("에디터를 저장하는데 오류가 발생했습니다.");
+			} else if (result == '0099') {
+				console.log('저장할 id가 없음');
+			} else if (result == '0098') {
+				console.log('로그인된 id가 없음');
+			} else if (result == '0097') {
+				alert("좋아요를 취소했습니다.");
+				$('#editor_like').removeClass('active');
+			} else if (result == '0002') {
+				alert("에디터를 저장했습니다.");
+				$('#editor_like').addClass('active');
+			}
+		});
+    } else {
+        alert("회원만 스크랩 가능합니다.\n\n회원이시라면 로그인해 주세요.");
+        location.href = "https://www.artinsight.co.kr/member/login.php?url=%2Fnews%2Fview.php%3Fno%3D66504";
+    }
+};
+
+var mail_send = function(){
+	var send_mail = $('#send_mail').val();
+	if( !send_mail || send_mail == '' ){
+		alert("보내는분 이메일 주소를 입력해 주세요.");
+		$('#send_mail').focus();
+		return;
+	}
+	var receive_mail = $('#receive_mail').val();
+	if( !receive_mail || receive_mail == '' ){
+		alert("받는분 이메일 주소를 입력해 주세요.");
+		$('#receive_mail').focus();
+		return;
+	}
+	var mail_options = { beforeSubmit: mailRequest, success : mailResponse };
+	$('#mailLayerFrm').ajaxSubmit(mail_options);
+	//$('#mailLayerFrm').submit();
+}
+var mail_layer_open = function(){
+	$('#mail_send_layer').show();
+	$('html, body').animate({scrollTop:100}, 800); // 페이지 상단으로 이동
+	$('#mail_send_layer').draggable({ handle: ".member_info11" });
+}
+var mail_layer_close = function(){
+	$('#mailLayerFrm').resetForm();
+	$('#mail_send_layer').hide();
+}
+</script>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script><script>
+Kakao.init("44f4d8ae017e1523b8c2072f920720e9");
+function shareKakaoTalk() {
+	Kakao.Share.sendDefault({
+		objectType: 'feed',
+		content: {
+			title: "[칼럼] 사람이 있어야 비로소 완성되는 초거대AI",
+			description: "60년을 살아도, 80년을 살아도, “저렇게 이상한 사람은 내 인생에 처음이야“는 말을 내뱉는 어른들을 보자. 내가 아무리 오래 산다 한들, 완벽한 세상은 오지 않는다.",
+			imageUrl: "https://www.artinsight.co.kr/data/news/2309/3556039991_ExWjyopl_20230901000639_dtwtozvz.jpg", // 썸네일 이미지 URL
+			link: {
+				mobileWebUrl: "https://www.artinsight.co.kr/news/view.php?no=66504",
+				webUrl: "https://www.artinsight.co.kr/news/view.php?no=66504"
+			}
+		}
+	});
+}
+var share_facebook = function(){
+	u = location.href;
+	window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u),'sharer','toolbar=0,status=0,width=626,height=436');
+}
+var share_twitter = function(){
+	var url   = "http://x.com/share?text="+encodeURIComponent("[칼럼] 사람이 있어야 비로소 완성되는 초거대AI")+"&url="+escape("https://www.artinsight.co.kr/news/view.php?no=66504");
+	window.open(url);
+}
+var share_google = function(){
+	var url = "https://www.google.co.kr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=&url=https://plus.google.com/share?url=https://www.artinsight.co.kr/news/view.php?no=66504";
+	window.open(url);
+}
+</script>
+
+<style>
+	acronym{*float:left; *text-align:left}
+
+	.sub_top .inner1320 { width:1095px !important; }
+
+	.sub_top.sub_sub .sub_top_txt { padding:70px 0; }
+	.sub_top_txt .view_cate { display:block; font-size:0; margin-bottom:20px; }
+	.sub_top_txt .view_cate a { display:inline-block; border:1px solid #191919; padding:7px 17px; border-radius:50px; color:#191919; font-size:12px; font-weight:700; line-height:14px; }
+	.sub_top_txt .view_cate a + a { margin-left:10px; }
+	.sub_top_txt .view_cate a:hover { background:#191919; color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.sub_top.sub_sub .sub_top_txt h2 { font-size:45px; line-height:60px; }
+	.sub_top.sub_sub .sub_top_txt h3 { display:block; margin-top:20px; font-size:16px; font-weight:400; line-height:24px; color:#191919; }
+	.sub_top.sub_sub .top_name { display:inline-block; margin-top:110px; line-height:24px; font-size:12px; font-weight:400; color:#191919; }
+	.sub_top.sub_sub .top_name span { display:inline-block; }
+	.sub_top.sub_sub .top_name span:hover { text-decoration:underline; }
+	.sub_top.sub_sub .top_date { position:relative; margin-top:10px; display:block; font-size:12px; font-weight:400; line-height:14px; color:#191919; }
+	.sub_top.sub_sub .top_date > span { position:relative; display:inline-block; vertical-align:top; font-size:12px; font-weight:400; line-height:14px; color:#191919; margin-right:10px; padding-right:11px; }
+	.sub_top.sub_sub .top_date > span::after { content:''; position:absolute; top:0px; right:0; width:1px; height:14px; background:#404040; }
+	.sub_top.sub_sub .top_date .top_etc { position:relative; display:inline-block; vertical-align:top; font-size:0; }
+	.sub_top.sub_sub .top_date .scrap-btn { display:inline-block; vertical-align:top; margin-right:10px; width:14px; height:14px; cursor:pointer;
+		background:url('../images/renewal/bookmark_off.svg') no-repeat; background-size:14px auto; background-position:center; }
+	.sub_top.sub_sub .top_date .scrap-btn.active { background:url('../images/renewal/bookmark_on.svg') no-repeat; background-size:14px auto; background-position:center; }
+	.sub_top.sub_sub .top_date .top_share { display:inline-block; vertical-align:top; margin-right:10px; width:14px; height:14px; cursor:pointer;
+	background:url('../images/renewal/share.svg') no-repeat; background-size:14px auto; background-position:left center; }
+	.sub_top.sub_sub .top_date .top_cnt { display:inline-block; vertical-align:top; width:14px; height:14px; padding-left:20px; font-size:12px; font-weight:400; color:#191919;
+	background:url('../images/renewal/reply.svg') no-repeat; background-size:14px auto; background-position:left center; }
+
+	.sns_wrap { display:none; position:absolute; z-index:2; top:-50px; left:-7px; box-sizing:border-box; padding:25px 30px; background:#fff; border-radius:20px; box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.10); font-size:0; }
+	.sns_wrap.active { display:block; }
+	.sns_wrap ul { width:240px; }
+	.sns_wrap li { display:inline-block; margin-right:28px; margin-bottom:20px; width:39px; height:39px; background:#191919; border-radius:50%; font-size:0; }
+	.sns_wrap li a { display:block; width:100%; height:100%; text-align:center; cursor:pointer; }
+	.sns_wrap li a svg { height:39px; }
+	.sns_wrap li:nth-child(4n) { margin-right:0; }
+	.sns_wrap li:last-child { margin-right:0; margin-bottom:0; display:block; width:100%; height:40px; background:none; border-radius:0; }
+	.sns_wrap li:last-child button { display:block; width:100%; background:none; border:0; padding:0; cursor:pointer; background:#eee; }
+	.sns_wrap li:last-child span { display:inline-block; width:calc(100% - 94px); height:40px; line-height:40px; box-sizing:border-box; margin:0 12px; font-size:13px; font-weight:400; color:#000;
+		vertical-align:top; overflow:hidden; }
+	.sns_wrap li:last-child b { display:inline-block; vertical-align:top; width:70px; line-height:40px; text-align:center; background:#191919; color:#fff; font-size:13px; font-weight:700; }
+
+	#wrapper { width:1095px !important; }
+	#contents { width:700px !important; margin-right:88px !important; }
+	aside { padding-top:100px; }
+
+	.view_content { display:block; font-size:16px; font-weight:400; line-height:26px; color:#191919; padding:100px 0; }
+	/** .view_content blockquote { margin-bottom:calc(1em + 26px); } **/
+	.view_content p { margin:0; }
+	.view_content p img { max-width:100%; height:auto; vertical-align:top; }
+	.view_content span { display:inline; }
+	.bottom_scrap { margin-top:120px; text-align:center; }
+	.bottom_scrap a { display:inline-block; border:1px solid #d9d9d9; padding:7px 31px 7px 10px; font-size:13px; font-weight:700; line-height:16px; color:#191919;
+		background:url('../images/renewal/bookmark_off.svg') no-repeat; background-size:14px auto; background-position:calc(100% - 11px) center; }
+	.bottom_scrap a.on { background:url('../images/renewal/bookmark_on.svg') no-repeat; background-size:14px auto; background-position:calc(100% - 11px) center; }
+
+	.view_bottom { padding-bottom:120px; }
+	.view_bottom::before { content:''; position:absolute; z-index:0; top:0; left:calc(547.5px - 50vw); height:100%; width:100vw; background:#fafafa; }
+	@media (max-width:1400px) {
+		.view_bottom::before { left:-50vw; width:1000vw; }
+	}
+	.view_name { position:relative; padding:40px 0 40px 102px; border-bottom:3px solid #191919; min-height:82px; }
+	.view_name .writer_color { position:absolute; top:40px; left:0; width:82px; height:82px; }
+	.view_name .writer_color #color { display:inline-block; box-sizing:border-box; width:82px; height:82px; box-sizing:border-box; border:2px solid #fff; border-radius:50%; font-size:0;
+		filter:drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.10));
+		background:linear-gradient(180deg, #bbb 0%,
+		#fafafa 100%); }
+	.view_name .writer_name { width:100%; height:82px; }
+	.view_name .writer_name tr td { width:100%; height:82px; vertical-align:middle; }
+	.view_name .writer_name b { display:inline-block; vertical-align:top; line-height:34px; font-size:28px; font-weight:300; color:#191919; }
+	.view_name .writer_name a { position:relative; display:inline-block; vertical-align:top; line-height:34px; padding-left:21px; margin-left:20px; font-size:14px; font-weight:700; color:#191919; }
+	.view_name .writer_name a:hover { text-decoration:underline; text-underline-position:from-font; }
+	.view_name .writer_name a::after { content:''; background:#404040; position:absolute; top:9px; left:0; width:1px; height:16px; }
+	.view_name .writer_name #editor_like { float:right; width:20px; height:20px; border:0; margin:7px 0 0; padding:0; font-size:0; cursor:pointer;
+		background:url('../images/renewal/my_like.svg') no-repeat; background-size:cover; background-position:center; }
+	.view_name .writer_name #editor_like.active { background:url('../images/renewal/my_like_h.svg') no-repeat; background-size:cover; background-position:center; }
+	.view_name .writer_name #editor_like::after { display:none; }
+	.view_name .writer_name .writer_memo { display:block; margin-top:12px; line-height:16px; font-size:13px; font-weight:300; color:#707070; }
+	.view_keyword { margin:40px 0 50px; font-size:0; }
+	.view_keyword a { display:inline-block; margin-bottom:10px; margin-right:10px; padding:7px 17px; font-size:12px; font-weight:700; color:#191919; line-height:14px;
+		border-radius:50px; border:1px solid #191919; }
+	.view_keyword a:last-child { margin-right:0px; }
+	.view_keyword a:hover { background:#191919; color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.view_copy { margin:40px 0 20px; font-size:13px; font-weight:300; color:#707070; line-height:16px; }
+</style>
+
+<div id="mail_send_layer" class="layerBox" style="left:30%;margin:0;z-index:99999;"></div>
+
+<!-- sns 공유 -->
+<div class="sns_wrap">
+	<ul>
+		<!-- 카카오톡 -->
+		<li><a href="javascript:shareKakaoTalk();">
+			<svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+				<g clip-path="url(#clip0_762_21537)">
+					<path d="M9.19224 7.72266L8.42188 9.92204H9.98742L9.21706 7.72514C9.20879 7.72514 9.20051 7.72266 9.19224 7.72266Z" fill="white"/>
+					<path d="M11.5 0C5.14844 0 0 4.07026 0 9.09127C0 12.3597 2.18118 15.2244 5.45543 16.8263C5.21464 17.7241 4.58494 20.0791 4.45834 20.583C4.30278 21.2086 4.68755 21.2003 4.93992 21.0315C5.13768 20.8999 8.09088 18.8917 9.36599 18.0253C10.0569 18.1279 10.771 18.1825 11.5 18.1825C17.8516 18.1825 23 14.1123 23 9.09127C23 4.07026 17.8516 0 11.5 0ZM5.83937 11.5869C5.83937 11.7342 5.77896 11.8773 5.6747 11.9816C5.5721 12.0858 5.42895 12.1446 5.28249 12.1446H5.16002C5.01274 12.1446 4.86959 12.0858 4.76698 11.9816C4.66189 11.8773 4.60232 11.7333 4.60232 11.5869V7.55799H3.50925C3.19316 7.55799 2.93665 7.30148 2.93665 6.98539C2.93665 6.6693 3.19233 6.41362 3.50925 6.41362H6.87203C7.18812 6.41362 7.44463 6.6693 7.44463 6.98539C7.44463 7.30148 7.18895 7.55799 6.87203 7.55799H5.83937V11.5869ZM11.3453 12.1148C11.0557 12.2166 10.7379 12.0643 10.6361 11.7747L10.3515 10.9605H8.05778L7.77231 11.7747C7.67053 12.0643 7.35279 12.2166 7.06318 12.1148C6.77356 12.013 6.62131 11.6961 6.72309 11.4065L8.37138 6.98622C8.38049 6.95974 8.39207 6.93492 8.40366 6.91092C8.47068 6.58408 8.80911 6.33418 9.2187 6.33418C9.58775 6.33418 9.89639 6.53774 10.004 6.81659C10.0056 6.81825 10.0098 6.82156 10.0098 6.82156L11.6862 11.4065C11.788 11.6961 11.6357 12.0139 11.3461 12.1148H11.3453ZM14.9538 12.1074H12.6684C12.3812 12.1074 12.1487 11.8748 12.1487 11.5877C12.1487 11.5538 12.152 11.5207 12.1587 11.4884C12.1537 11.4553 12.1487 11.423 12.1487 11.3891V6.95395C12.1487 6.61056 12.4268 6.33336 12.7693 6.33336C13.1119 6.33336 13.3899 6.61138 13.3899 6.95395V11.0689H14.953C15.2401 11.0689 15.4726 11.3014 15.4726 11.5877C15.4726 11.874 15.2401 12.1074 14.953 12.1074H14.9538ZM19.8408 12.0345C19.5958 12.2191 19.2475 12.1694 19.0638 11.9245L17.4155 9.76151L17.0613 10.1157V11.5257C17.0613 11.869 16.7833 12.1462 16.4407 12.1462C16.0982 12.1462 15.8193 11.869 15.8193 11.5257V6.95478C15.8193 6.61138 16.0974 6.33418 16.4407 6.33418C16.7841 6.33418 17.0613 6.61221 17.0613 6.95478V8.5708L19.0108 6.62131C19.2243 6.40783 19.5702 6.40783 19.7837 6.62131C19.9972 6.83397 19.9972 7.18067 19.7837 7.39333L18.209 8.96881L19.9516 11.2576C20.1362 11.5033 20.0865 11.8508 19.8416 12.0354L19.8408 12.0345Z" fill="white"/>
+				</g>
+				<defs>
+					<clipPath id="clip0_762_21537">
+					<rect width="23" height="21.1299" fill="white"/>
+					</clipPath>
+				</defs>
+			</svg>
+		</a></li>
+						<li><a href="javascript:void(0);" onclick="share_facebook();"><!-- 페이스북 -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="11" height="21" viewBox="0 0 11 21" fill="none">
+				<g clip-path="url(#clip0_762_21541)">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M2.33625 11.55V21H6.74625V11.6812H9.72563L10.5 7.74375H6.74625V4.85625C6.74625 4.4625 6.8775 3.9375 7.52063 3.9375H9.59437V0H5.57812C4.27875 0 2.33625 1.70625 2.33625 3.675V7.74375H0V11.6812L2.33625 11.55Z" fill="white"/>
+				</g>
+				<defs>
+					<clipPath id="clip0_762_21541">
+					<rect width="10.5" height="21" fill="white"/>
+					</clipPath>
+				</defs>
+			</svg>
+		</a></li>
+						<li><a href="javascript:void(0);" onclick="share_twitter();"><!-- 트위터 -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+				<path d="M18.2338 18.0617L12.0124 9.02342L18.909 1H17.3313L15.9807 2.56364L11.3089 8.00121L6.85865 1.5358L6.48993 1H1.02141L2.35513 2.93814L8.27239 11.5357L1 19.9998H2.57771L8.97559 12.5568L13.73 19.4647L14.0988 20H19.5674L18.2336 18.0619L18.2338 18.0617ZM14.7489 18.7629L9.80946 11.5863L9.1061 10.5647L3.37437 2.23697H5.83987L10.4751 8.97168L11.1785 9.99327L17.2144 18.7627H14.7489V18.7629Z" fill="white"/>
+			</svg>
+		</a></li>
+				<!-- 네이버밴드 -->
+		<li><a href="javascript:void(0);" onclick="window.open('http://band.us/plugin/share?body=[칼럼] 사람이 있어야 비로소 완성되는 초거대AI&nbsp;&mdash;&nbsp;https://www.artinsight.co.kr/news/view.php?no=66504&route=https://www.artinsight.co.kr', 'share_band', 'width=410, height=540, resizable=no');" class="cursor">
+			<svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21" fill="none">
+				<g clip-path="url(#clip0_762_21548)">
+					<path d="M8.07621 4.81659C7.28461 4.81659 6.51057 4.92968 5.76288 5.15256V2.87327C5.76288 1.28896 4.47172 0 2.88413 0C1.29653 0 0.00536763 1.28896 0.00536763 2.87327C0.00536763 2.87327 -0.00670954 13.2805 0.00536763 13.4649V13.6955H0.0229344C0.420383 17.7897 3.87994 21 8.07621 21C12.5382 21 16.1679 17.3703 16.1679 12.9083C16.1679 8.44633 12.5382 4.81659 8.07621 4.81659ZM8.07621 10.5741C9.36298 10.5741 10.4104 11.6215 10.4104 12.9083C10.4104 14.1951 9.36298 15.2425 8.07621 15.2425C6.78944 15.2425 5.74202 14.1951 5.74202 12.9083C5.74202 11.6215 6.78944 10.5741 8.07621 10.5741ZM8.07621 19.9109C4.38938 19.9109 1.3613 17.0464 1.09451 13.4276V2.87327C1.09451 1.88953 1.89709 1.09024 2.88413 1.09024C3.87116 1.09024 4.67374 1.89063 4.67374 2.87327V12.5317C4.66057 12.6558 4.65288 12.7809 4.65288 12.9094C4.65288 14.7967 6.18888 16.3327 8.07621 16.3327C9.96354 16.3327 11.4995 14.7967 11.4995 12.9094C11.4995 11.0221 9.96354 9.48607 8.07621 9.48607C7.18469 9.48607 6.37333 9.82862 5.76288 10.3886V8.89209C6.46446 8.48696 7.25826 8.27286 8.07621 8.27286C10.6333 8.27286 12.7138 10.3534 12.7138 12.9105C12.7138 15.4676 10.6333 17.5481 8.07621 17.5481C5.51914 17.5481 3.43858 15.4676 3.43858 12.9105H3.4287V2.90511C3.4287 2.60428 3.18496 2.36054 2.88413 2.36054C2.58329 2.36054 2.33955 2.60428 2.33955 2.90511V13.2629C2.33955 13.331 2.32418 13.432 2.34614 13.4924C2.62282 16.3942 5.10303 18.634 8.07511 18.634C11.2327 18.634 13.8019 16.0648 13.8019 12.9072C13.8019 9.74957 11.2327 7.18043 8.07511 7.18043C7.27143 7.18043 6.48642 7.34731 5.76179 7.6679V6.2955C6.50288 6.03639 7.27912 5.90464 8.07511 5.90464C11.9365 5.90464 15.0777 9.0458 15.0777 12.9072C15.0777 16.7686 11.9365 19.9098 8.07511 19.9098L8.07621 19.9109Z" fill="white"/>
+				</g>
+				<defs>
+					<clipPath id="clip0_762_21548">
+					<rect width="16.168" height="21" fill="white"/>
+					</clipPath>
+				</defs>
+			</svg>
+		</a></li>
+				<li><button id="copy_url"><span></span><b>복사</b></button></li>
+	</ul>
+</div>
+<div id="container">
+	<div id="contents">
+		<article class="view_wrap cboth">
+			<div class="view_content cboth">
+				<!-- view_content -->
+				<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: justify; ">실수를 허용하지 않는 세상이 왔다. 취업을 위해서는 인생에 빈 틈이 없어야 하고, 빈 틈이 있다면 완벽하게 설명가능해야 한다.</p>
+<p style="text-align: justify; ">&nbsp;</p>
+<p style="text-align: justify; ">한 가지 목표만을 향해서 달려온 사람을 추켜세우면서 먼 길을 돌아온 사람은 칭찬받아 마땅하나, 내달려온 사람만 못하다. 어쩌다 이런 세상이 되었는가 하면, 단언컨대 완벽을 향해 나아가고 있는 세상의 기술들 때문일 것이다.</p>
+<p>&nbsp;</p>
+<p>알 필요가 없을 법한 0.001초의 간격, 집에서 회사를 갈 수 있는 19가지의 경로. 나에게 필요한 최적의 효율을 위해서 우리는 갖은 기술을 동원한다. 지하철 옆옆칸에 곧 좌석이 빈다는 팝업알림, 나와 비슷한 취향을 가진 사람들은 불만족했다는 아직 방문하지 않은 여행지까지 우리는 오차를 허용하지 않는 세상에 살고 있다.</p>
+<p>&nbsp;</p>
+<p>이토록 완벽한 세상에, 충분히 완벽한 AI는 유례없이 빠른 속도로 세상을 학습하고 성정하고 있다. 이제 완벽하지 않은 것을 나 뿐일지도.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="https://www.artinsight.co.kr/data/tmp/2309/20230901192926_nhmznrlk.jpg" alt="20230901000639_dtwtozvz.jpg" style="width: 660px; height: 557px;" /></p>
+<p style="text-align: center;"><br /></p>
+<p>&nbsp;</p>
+<p>“완벽하다“, 이렇게도 만족감과 불쾌감을 동시에 가진 단어가 있을까? ‘완벽주의자‘는 그의 행동을 고칠 필요가 있고, ‘완벽한 사람’은 인간미를 갖출 필요가 있다. 성횡하는 연애프로그램에서도 처음부터 완벽하게 잘 맞는 한 쌍은 인기가 없다. </p>
+<p>&nbsp;</p>
+<p>한 때, 각 제조사 별 스마트스피커끼리 비교하는 영상이 알고리즘을 타고 부상한 적이 있었다. 그 때, 사람들의 이목을 끌었던 건, 가장 실수를 많이 한 K사였다. 명령의 성공률은 낮지만, 너무 웃겨서 사고 싶다는 댓글에 약 1,000명의 사람들이 좋아요를 눌렀다.</p>
+<p>&nbsp;</p>
+<p>그래서 문득 이런 생각이 들었다. AI를 만드는 데에 인력이 필수불가결한 요소라는 것을 알리게 된다면, 사람들의 두려움이 적어질까? 혹은 AI를 잘 이용하다가도 불안감이 생길까?</p>
+<p>&nbsp;</p>
+<p>우선, 사람들이 발품팔아 지은 데이터센터가 없으면 우리에겐 알고리즘도 없다. GPT의 제작사인 Open AI가 MS와 손 잡은 데에는 다 그만한 이유가 있다. 운영 비용을 감당할 수 없어서, GPT는 계속해서 유료버전을 내놓고 있고, MS는 버티컬 비즈니스를 외연적으로 확장하고 있다. 그 유지비용이 하루에 약 9억 2500만원에 달한다. 오죽하면 MS가 핵융합 기업과 계약을 했을까? 임대료가 연체되는 순간부터 GPT는 전원을 켤 수 조차 없다.</p>
+<p>&nbsp;</p>
+<p>다음으로, Human In The Loop(HITL), 자동화된 시스템, 예를 들면 딥러닝과 같은 작업에서 사람이 개입해서 수정, 보완하는 작업을 말한다. 수많은 연구에서 AI가 학습할 데이터를 사람이 수작업을 해주는 것이 더 좋은 성능을 갖추는 데 도움이 된다고 입을 모아 말하고 있다. 여전히 많은 회사들이 AI를 만들어야 하는 개발자를 필요로 하고, 없어질거라던 빅데이터학과들이 아직까지도 신입생이 차고 넘친다.</p>
+<p>&nbsp;</p>
+<p>게다가 1990년대에 체스 세계 챔피언 가리 카스파로프(Gary Kasparov)는 ‘딥블루‘라는 AI에게 챔피언 자리를 내주다가, 스스로 AI와 연합팀을 꾸려 AI를 결국 이겼다는 사실은 너무나도 유명하다. (상대편 AI는 스스로 체스 말을 옮길 수 없으니, 사람의 도움을 받았다!) 이후 바둑, 퀴즈, 포커 등의 종목에서 AI는 내리 연합팀에 패배했다.</p>
+<p>&nbsp;</p>
+<p>사람조차도 사람의 도움이 필요하다. 하물며 사람이 만들어낸 기계에게는 아주 당연한 일이다. 사람의 도움이 필요하다. 하지만 짚고 넘어가야 할 점은, AI가 우리 발 밑에 있다고 안심하라고 말하는 것이 아니다. 최근 생성형 AI는 사람이 입력한 최초의 검색어에 대한 의도를 파악하고, 다음 검색어를 예상하는 것을 넘어서, 왜 이 검색어가 필요했는지 추론하기까지 한다. </p>
+<p>&nbsp;</p>
+<p>하지만 이조차도 그 홀로, 완벽할 수 없다는 것을 외치고 싶다. 최근 국내 최초로 초거대 생성형AI를 발표한 네이버의 HyperCLOVA X부터, 문서 정리앱인 Notion AI 등 AI기업들은 모두 데모버전을 먼저 출시하고 있다. 휴리스틱 없이 정보를 흡수해버리는 AI가 제어가 어려울 뿐만 아니라, 사람의 피드백이 필요하고 계속해서 (사람들이 붙어서) 개선해야 하는 작업을 해야 하기 때문이다. </p>
+<p>&nbsp;</p>
+<p>우리는 배의 타륜을 잡은 항해사와 같다. 아니면 강아지를 산책시키는 것과 같을 수도 있다. 정해진 산책로에서 벗어나 풀숲으로 들어가려는 사랑이의 목줄을 손끝으로 살짝 잡아당겨 다시 안전한 길로 돌아오도록 이끈다. 아이에게 달려드려는 사랑이의 목줄을 짧게 잡아쥐고 아이로부터 떨어져 걷는다.</p>
+<p>&nbsp;</p>
+<p>세상은 멀리서 봤을 때 완벽해보이지만, 자세히 들여다보면 다 이리저리 엉켜있다. 국경선이 직선인 수많은 아프리카 대륙의 국가들, 직선 도로가 도시를 가로지르는 맨해튼에 사람들이 엉겨붙어 삶아가는 것과 마찬가지로 우리가 접속하는 챗GPT, 바드, 등의 채팅 페이지는 아주 깔끔하고, 모던해서 현대의 산물 그 자체로 보이지만, 이것이 셀 수 없이 많은 사람들의 야근으로 이루어진 산물이다. </p>
+<p>&nbsp;</p>
+<p>내가 실수투성이의 삶을 살았더라도, 좋아하는 사람이 나의 행동들 사이에서 어여쁜 모습만 봤으면 싶은 것처럼, IT노동자들도 내 손을 팔아 만든 AI가 완벽해 보이길 바랄 뿐이다. 우리는 실수를 허용하지 않는 세상이 아니라, 실수를 잘 감추는 방법을 익힌 자들이 많은 세상에 살고 있다.</p>
+<p>&nbsp;</p>
+<p>60년을 살아도, 80년을 살아도, “저렇게 이상한 사람은 내 인생에 처음이야“는 말을 내뱉는 어른들을 보자. 내가 아무리 오래 산다 한들, 완벽한 세상은 오지 않는다.</p>
+<br />
+<p>&nbsp;</p>
+<p style="text-align: center;"><img src="https://www.artinsight.co.kr/data/tmp/2309/20230901002724_mboaxkqu.jpg" alt="_80efcede-1c03-42b2-97ec-20916e8b6cca.jpg" style="width: 660px; height: 660px;" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+							</div>
+
+			
+			
+			<div class="view_bottom cboth">
+				<form name="form" action="https://www.artinsight.co.kr/news/search.php" method="post">
+				<input type="hidden" name="search_type" value="name">
+				<input type="hidden" name="q" value="%EB%B0%95%EB%82%98%ED%98%84">
+				<input type="hidden" name="wr_id" value="able2100">
+								<div class="view_name cboth">
+					<div class="writer_color">
+						<span id="color" style="background:linear-gradient(180deg, #bbbbbb 0%, #fafafa 100%);"></span>
+					</div>
+					<table class="writer_name" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td><b>박나현</b><a href="javascript:void(0);" onclick="form.submit()">이 에디터의 다른 글 보기</a><a href="javascript:like_editor('able2100','');" id="editor_like"></a>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+								</form>
+
+								<div class="view_keyword cboth">
+										<a href="https://www.artinsight.co.kr/news/search.php?q=AI" alt="#AI" title="#AI">#AI</a>
+										<a href="https://www.artinsight.co.kr/news/search.php?q=%EC%B4%88%EA%B1%B0%EB%8C%80AI" alt="#초거대AI" title="#초거대AI">#초거대AI</a>
+										<a href="https://www.artinsight.co.kr/news/search.php?q=GenAI" alt="#GenAI" title="#GenAI">#GenAI</a>
+									</div>
+				
+				
+
+
+				<div class="view_copy cboth">&lt;저작권자 ⓒ아트인사이트 &amp; www.artinsight.co.kr 무단전재-재배포금지.&gt; </div>
+
+				
+				<script>
+var is_goods = function( wr_id, is_good ){
+	$.post('./process/regist.php', { mode:'comment_is_goods', ajax:1, no:'66504', wr_id:wr_id, is_good:is_good }, function(result){
+		switch(result){
+			case '0013':
+				alert("추천/비추천은 회원만 가능합니다.");
+			break;
+			case '0061':
+				alert("값이 제대로 넘어오지 않았습니다.");
+			break;
+			case '0011':
+				alert("등록된 코멘트가 없거나 코멘트 글이 아닙니다.");
+			break;
+			case '0015':
+				alert("자신의 글에는 추천 또는 비추천 하실 수 없습니다.");
+			break;
+			case '0016': //이미추천
+				alert("이미 추천 하신 글 입니다.");
+			break;
+			case '0017':
+				alert("이미 비추천 하신 글 입니다.");
+			break;
+			default:
+				if( is_good == 'good' ){
+					$('#good_' + wr_id).html(result);
+                    $('#good_' + wr_id).toggleClass('active'); // 클래스 토글
+				} else {
+					$('#nogood_'+wr_id).html(result);
+				}
+				// 페이지 새로고침
+				//window.location.reload();
+			break;
+		}
+	});
+}
+var comment_drops = function( wr_comment ){
+	$('.comment_'+wr_comment).toggle();
+	var drop_flag = $('#icon_drops_'+wr_comment).attr('flag');
+	if( drop_flag == 'on' ){
+		$('#icon_drops_'+wr_comment).attr('flag','off');
+		$('#icon_drops_'+wr_comment).attr('src','/images/view/drop_icon02.png');
+	} else {
+		$('#icon_drops_'+wr_comment).attr('flag','on');
+		$('#icon_drops_'+wr_comment).attr('src','/images/view/drop_icon01.png');
+	}
+}
+
+$(document).ready(function() {
+    $('.reply_btn_open').on('click', function() {
+        $(this).next('.reply_btn').toggleClass('on');
+    });
+    $('.reply_btn_close span').on('click', function() {
+        $(this).closest('.reply_btn').removeClass('on');
+    });
+});
+</script>
+<script type='text/javascript' src='https://www.artinsight.co.kr/_helpers/_js/form.js'></script>
+
+<style>
+	.view_comment { width:100%; }
+	.reply_area { width:100%; border-radius:20px; padding:20px; background:#E9F2EF; box-sizing:border-box; }
+	.reply_area_info { position:relative; width:100%; border-radius:15px 15px 0 0; padding:20px 20px 0; border:1px solid #ededed; border-bottom:0;
+		background:#fff; box-sizing:border-box; }
+	.reply_writer_color { position:absolute; top:20px; left:20px; width:30px; height:30px; }
+	.reply_writer_color #color { display:inline-block; box-sizing:border-box; width:30px; height:30px; box-sizing:border-box; border:1px solid #fff; border-radius:50%; font-size:0;
+		filter:drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.10)); background:linear-gradient(180deg, #BBB 0%, #FAFAFA 100%); }
+	.reply_writer_name { display:inline-block; padding-left:42px; line-height:30px; font-size:14px; font-weight:700; color:#191919; }
+	.reply_area_text { width:100%; border-radius:15px; padding:20px; border:1px solid #ededed; background:#fff; box-sizing:border-box; height:106px; line-height:22px;
+		font-size:14px; font-weight:400; color:#191919; font-family:"Pretendard Variable",'Malgun Gothic','AppleGothic', '돋움','dotum','sans-serif' !important; }
+	.reply_area_text.guest { color:#ccc; }
+	.reply_area_text:focus { border:1px solid #ededed; outline:0; }
+	.reply_area_info + .reply_area_text { border-radius:0 0 15px 15px; border-top:0; }
+	.reply_area_info + .reply_area_text:focus { border-top:0; }
+	.reply_area_btn { margin-top:20px; text-align:right; }
+	.reply_area_btn a { display:inline-block; vertical-align:top; line-height:30px; width:60px; text-align:center; background:#191919; color:#fff; border-radius:5px; font-size:13px; font-weight:700; }
+
+	.reply_cnt { width:100%; margin:40px 0 10px; line-height:26px; font-size:13px; font-weight:400; color:#191919; }
+	.reply_cnt b { font-weight:700; }
+
+	.reply_list { width:100%; box-sizing:border-box; padding:40px; border-radius:20px; background:#e9f2ef; }
+	.reply { width:100%; box-sizing:border-box; }
+	.reply + .reply { margin-top:20px; border-top:1px solid #dbdbdb; padding-top:20px; }
+	.reply_reply + .reply { margin-top:20px; border-top:1px solid #dbdbdb; padding-top:20px; }
+	.reply_reply { margin-top:20px; border-top:0px solid #dbdbdb; padding-top:20px; padding-left:40px; }
+
+	.reply_top { position:relative; width:100%; }
+	.reply_name { display:inline-block; vertical-align:top; line-height:30px; padding-left:42px; font-size:14px; font-weight:700; color:#191919; }
+	.reply_name #color { position:absolute; top:0; left:0; display:inline-block; box-sizing:border-box; width:30px; height:30px; box-sizing:border-box; border:1px solid #fff; border-radius:50%; font-size:0;
+		filter:drop-shadow(0px 0px 12px rgba(0, 0, 0, 0.10)); background:linear-gradient(180deg, #BBB 0%, #FAFAFA 100%); }
+	.reply_btn_open { position:absolute; top:0; right:0; box-sizing:border-box; width:10px; height:30px; padding-left:7px; }
+	.reply_btn_open span { display:inline-block; width:3px; height:3px; border-radius:50%; background:#191919; }
+	.reply_btn_open span:nth-child(1) { position:absolute; top:8px; right:0; }
+	.reply_btn_open span:nth-child(2) { position:absolute; top:14px; right:0; }
+	.reply_btn_open span:nth-child(3) { position:absolute; top:20px; right:0; }
+	.reply_btn { display:none; position:absolute; z-index:1; top:0; right:0; width:108px; border-radius:10px; background:#fff; padding:4px; box-shadow:0px 6px 15px 0px rgba(0, 0, 0, 0.10); }
+	.reply_btn.on { display:block; }
+	.reply_btn li { line-height:30px; width:100%; box-sizing:border-box; text-align:center; border-radius:7px; background:#fff; }
+	.reply_btn li:hover { background:#ededed; transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.reply_btn li a { display:block; line-height:30px; font-size:14px; font-weight:400; color:#191919; }
+	.reply_btn li + li { margin-top:4px; }
+	.reply_btn li.reply_btn_close { margin-bottom:-4px; line-height:20px; border-radius:0; text-align:right; }
+	.reply_btn li.reply_btn_close:hover { background:#fff; }
+	.reply_btn li.reply_btn_close span { display:inline-block; width:20px; height:20px; cursor:pointer;
+		background:url('../images/renewal/close_icon.svg') no-repeat; background-size:cover; background-position:center; }
+	.reply_txt { display:block; position:relative; width:100%; font-size:14px; font-weight:400; line-height:22px; color:#191919; margin:20px 0; }
+	.reply_txt a { color:#191919; }
+	.reply_bottom { display:block; position:relative; width:100%; text-align:left; font-size:0; }
+	.reply_bottom a { display:inline-block; font-size:12px; font-weight:400; color:#707070; line-height:14px; }
+	.reply_bottom .reply_bottom_right { float:right; }
+	.reply_bottom .reply_bottom_right span { position:relative; display:inline-block; line-height:14px; padding-right:10px; margin-right:10px; border-right:1px solid #d9d9d9;
+		font-size:12px; font-weight:400; color:#707070; }
+	.reply_bottom .reply_bottom_right .reply_like { display:inline-block; padding-left:20px; line-height:14px; font-size:12px; font-weight:400; color:#191919;
+		background:url('../images/renewal/my_like.svg') no-repeat; background-size:auto 14px; background-position:left center; }
+	.reply_bottom .reply_bottom_right .reply_like.active { background:url('../images/renewal/my_like_h.svg') no-repeat; background-size:auto 14px; background-position:left center; }
+
+	.view_list { margin-top:90px; text-align:center; }
+	.view_list a { display:inline-block; vertical-align:top; border:1px solid #191919; background:#fafafa; color:#191919; border-radius:10px; padding:16px 42px; line-height:18px; font-size:15px; font-weight:700; }
+	.view_list a:hover { background:#191919; color:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+</style>
+
+<!-- comment start. -->
+<div class="view_comment cboth" id="bo_vc_w">
+	<!-- comment Form -->
+	<form name="commentFrm" action="./process/regist.php" method="post" autocomplete="off" id="commentFrm" onsubmit="return validate(this);">
+	<input type="hidden" name="mode" value="comment_insert" id="comment_mode">
+	<input type="hidden" name="news" value="66504">
+	<input type="hidden" name="comment_id" value="" id="comment_id">
+	<input type="hidden" name="is_good" value="">
+	<input type="hidden" name="code" value="photo">
+	<input type="hidden" name="d_code" value="">
+	<input type="hidden" name="ds_code" value="">
+	<input type="hidden" name="filter" value="rehab,substance,abuse,sss,Drug,Alcohol,pokerinside,Near,지랄,지롤,지럴,ㅅㅂ,시바,시발,새끼,남혐,여험,혐오,QkShNEKr,ubaTaeCJ,sadsadsa,sdsasad,fgfrggr,장애인,dbsdnjstjq,Pornstar" id="comment_mode">
+
+	<div class="reply_area cboth">
+						<textarea name="wr_content" rows="3" readonly id="wr_content" class="reply_area_text guest">댓글 작성을 위해 로그인 해주세요.</textarea>
+		<div class="reply_area_btn"><a href="javascript:void(0);" onclick="comment_submit();" id="btn_submit">등록</a></div>
+	</div>
+
+	</form>
+	<!-- // comment Form -->
+</div>
+
+
+<div class="view_list cboth">
+	<a href="https://www.artinsight.co.kr/news/index.php?code=20131124012526_2449">목록으로</a>
+</div>
+<!-- comment end -->
+
+<script>
+$(document).ready(function () {
+
+    // 댓글 좋아요 1이상
+    $(".reply_like").each(function () {
+        var count = parseInt($(this).text().trim(), 10);
+
+        // 숫자가 1 이상이면 active 클래스 추가
+        //if (count >= 1) {
+        //    $(this).addClass("active");
+        //}
+    });
+});
+
+var save_before = '';
+var save_html = document.getElementById('bo_vc_w').innerHTML;
+
+var comment_submit = function(){
+	var f = document.commentFrm;
+    var pattern = /(^\s*)|(\s*$)/g; // \s 공백 문자
+
+    var content = "";
+    $.ajax({
+        url: "/news/ajax.filter.php",
+        type: "POST",
+        data: {
+            "content": f.wr_content.value,
+			"filter": f.filter.value
+        },
+        dataType: "json",
+        async: false,
+        cache: false,
+        success: function(data, textStatus) {
+            content = data.content;
+        }
+    });
+
+    if (content) {
+        alert("내용에 금지단어('"+content+"')가 포함되어있습니다");
+        f.wr_content.focus();
+        return false;
+    }
+
+
+    // 양쪽 공백 없애기
+    var pattern = /(^\s*)|(\s*$)/g; // \s 공백 문자
+    document.getElementById('wr_content').value = document.getElementById('wr_content').value.replace(pattern, "");
+
+	if (!document.getElementById('wr_content').value){
+        alert("댓글을 입력하여 주십시오.");
+        return false;
+    }
+
+	document.getElementById("btn_submit").disabled = "disabled";
+
+	f.submit();
+}
+function comment_box(comment_id, work){
+    var el_id;
+    // 댓글 아이디가 넘어오면 답변, 수정
+    if (comment_id){
+        if (work == 'comment_insert')
+            el_id = 'reply_' + comment_id;
+        else
+            el_id = 'edit_' + comment_id;
+    } else
+        el_id = 'bo_vc_w';
+
+    if (save_before != el_id) {
+        if (save_before){
+            document.getElementById(save_before).style.display = 'none';
+            document.getElementById(save_before).innerHTML = '';
+        }
+
+        document.getElementById(el_id).style.display = '';
+        document.getElementById(el_id).innerHTML = save_html;
+        // 댓글 수정
+        if (work == 'comment_update'){
+            //document.getElementById('wr_content').value = document.getElementById('save_comment_' + comment_id).value;
+			$('#'+el_id+' textarea').val(document.getElementById('save_comment_' + comment_id).value);
+			/*
+            if (document.getElementById('secret_comment_'+comment_id).value)
+                document.getElementById('wr_secret').checked = true;
+            else
+                document.getElementById('wr_secret').checked = false;
+			*/
+        }
+
+		$('#'+el_id+' textarea').focus();
+		$('#bo_vc_w').html('');
+		//$('#comment_txtarea').hide();
+
+        document.getElementById('comment_id').value = comment_id;
+        document.getElementById('comment_mode').value = work;
+
+        save_before = el_id;
+    }
+}
+var comment_delete = function( comment_id ){
+	if( is_member ){
+		if( confirm("댓글을 삭제하시겠습니까?")){
+			$.post('./process/regist.php',{ mode:'comment_delete', ajax:1, no:'66504', comment_id:comment_id }, function(result){
+				location.reload();
+			});
+		}
+	} else {
+		$('#del_reply_div_'+comment_id).show();
+		$('#del_comment_'+comment_id).focus();
+	}
+}
+var comment_report = function( comment_id ){
+	if( confirm("기사의 해당 댓글을 신고하시겠습니까?")){
+		$.post('./process/regist.php',{ mode:'comment_report', ajax:1, no:'66504', comment_id:comment_id }, function(result){
+			switch(result){
+				case '0011':
+					alert("등록된 코멘트가 없거나 코멘트 글이 아닙니다.");
+				break;
+				case '0020':
+					alert("이미 신고하신 글 입니다.");
+				break;
+				default:
+					alert("해당 댓글을 신고 하였습니다.");
+				break;
+			}
+		});
+	}
+}
+var del_passwd_reply = function( comment_id ){
+
+	var del_comment = $('#del_comment_'+comment_id).val();
+
+	if( confirm("댓글을 삭제하시겠습니까?")){
+		$.post('./process/regist.php',{ mode:'comment_delete', ajax:1, no:'66504', comment_id:comment_id, wr_password:del_comment }, function(result){
+			switch(result){
+				case '0011':
+					alert("등록된 코멘트가 없거나 코멘트 글이 아닙니다.");
+				break;
+				case '0012':
+					alert("자신의 글이 아니므로 삭제할 수 없습니다.");
+				break;
+				case '0019':
+					alert("비밀번호가 정확하지 않습니다.");
+				break;
+				default:
+					location.reload();
+				break;
+			}
+		});
+	}
+}
+var cancel_passwd_reply = function( comment_id ){
+	$('#del_reply_div_'+comment_id).hide();
+	$('#del_comment_'+comment_id).val('');
+}
+//comment_box('', 'c'); // 댓글 입력폼이 보이도록 처리하기위해서 추가
+
+</script>			</div>
+
+		</article>
+    </div>
+	<!-- //article -->
+
+	<aside>
+										<div class="side_banner cboth"><div style="text-align:center;">
+<p>
+		<a href="https://page.stibee.com/subscriptions/265900" target="_blank"><img src="https://www.artinsight.co.kr/data/tmp/2506/20250620215356_dyfampey.jpg" alt="웹진 (2025.02.01).jpg" style="width: 307px; height: 102px" /></a>
+</p>
+</div><div style="text-align:center;">
+<p>
+	<a href="https://www.artinsight.co.kr/news/view.php?no=79045" target="_blank"><img src="https://www.artinsight.co.kr/data/tmp/2512/20251229204504_bhxqbwqg.jpg" alt="타이핑 (2025.12.24).jpg" style="width: 307px; height: 102px" /></a>
+</p>
+</div><div style="text-align:center;">
+<p>
+	<a href="https://www.artinsight.co.kr/news/view.php?no=80615" target="_blank"><img src="https://www.artinsight.co.kr/data/tmp/2604/20260422203520_gdyicbko.jpg" alt="구름 그림자 (2026.04.22) 2.jpg" style="width: 307px; height: 102px" /></a>
+</p>
+</div></div><!-- section E banner -->												
+		<style>
+    .news_now { position:relative; width:100%; margin:40px 0; overflow:hidden; border-radius:20px; background:#F1F6F4; }
+    .news_now h2 { position:relative; width:100%; font-size:24px; font-weight:700; line-height:29px; color:#191919; box-sizing:border-box; padding:30px; }
+    .now_slide_wrap { position:relative; width:474px; margin-left:30px; overflow:visible; }
+    .news_now ul { font-size:0; box-sizing:border-box; padding-bottom:68px; }
+    .news_now li { position:relative; display:inline-block; width:150px; vertical-align:top; box-sizing:border-box; }
+    .news_now li .news_now_img { position:relative; width:100%; height:150px; }
+    .news_now li .news_now_img a { position:relative; display:block; width:100%; height:100%; overflow:hidden; border-radius:15px; }
+    .news_now li .news_now_subj { display:block; width:100%; height:17px; margin-top:20px; font-size:14px; font-weight:700; line-height:17px; color:#191919;
+        overflow:hidden; white-space:normal; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; }
+    .news_now li .news_now_subj:hover { text-decoration:underline; }
+    .news_now li .news_now_name { display:block; margin-top:11px; }
+    .news_now li .news_now_name a { display:inline-block; font-size:11px; font-weight:400; line-height:13px; color:#707070; }
+    .news_now li .news_now_name a > span { display:inline-block; }
+    .news_now li .news_now_name a > span:hover { text-decoration:underline; }
+    .news_now_control { position:absolute; z-index:1; width:100%; height:10px; text-align:center; left:0; bottom:30px; }
+    .news_now .news_now_pager { vertical-align:top; width:auto !important; height:8px; display:inline-block; margin:1px 6px 0; }
+    .news_now_pager .swiper-pagination-bullet { vertical-align:top; width:8px; height:8px; margin:0 6px; border-radius:4px; background:#b0b0b0; opacity:1; }
+    .news_now_pager .swiper-pagination-bullet.swiper-pagination-bullet-active { width:20px; background:#191919; }
+    .news_now_prev, .news_now_next { display:inline-block; vertical-align:top; position:relative; z-index:3; width:8px; height:10px; border:0; margin:0; padding:0; background:none; cursor:pointer; }
+    .news_now_control svg { vertical-align:top; }
+</style>
+
+<form id="editorForm3" method="post" action="https://www.artinsight.co.kr/news/search.php" style="display:none;">
+    <input type="hidden" name="search_type" value="name">
+    <input type="hidden" name="q" value="">
+    <input type="hidden" name="wr_id" value="">
+</form>
+
+<article class="news_now cboth">
+    <h2 class="cboth">NOW</h2>
+    <div class="now_slide_wrap">
+        <ul class="swiper-wrapper cboth">
+                        <li class="swiper-slide">
+                <div class="news_now_img">
+                    <a href="https://www.artinsight.co.kr/news/view.php?no=79213">
+                        <img
+                            src="https://www.artinsight.co.kr/data/news/2601/237507444_liUYLDph_5BED81ACEAB8B0EBB380ED99985DKakaoTalk_20260110_192324307.jpg"
+                            alt="[Review] 호모 이야기쿠스들의 이야기 한 판 - 뮤지컬 판 [공연]"
+                            title="[Review] 호모 이야기쿠스들의 이야기 한 판 - 뮤지컬 판 [공연]"
+                            loading="lazy"
+                            width="150" height="150"
+                            decoding="async"
+                            style="width:100%;height:100%;object-fit:cover;border-radius:15px;"
+                        />
+                    </a>
+                </div>
+                <a href="https://www.artinsight.co.kr/news/view.php?no=79213" class="news_now_subj">
+                    [Review] 호모 이야기쿠스들의 이야기 한 판 - 뮤지컬 판 [공연]                </a>
+                                <div class="news_now_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm3('%EC%9D%B4%EC%9C%A0%EB%B9%88', 'olivia7')">
+                        by <span>이유빈 에디터</span>
+                    </a>
+                </div>
+            </li>
+                        <li class="swiper-slide">
+                <div class="news_now_img">
+                    <a href="https://www.artinsight.co.kr/news/view.php?no=79001">
+                        <img
+                            src="https://www.artinsight.co.kr/data/news/2512/990478096_l75O3Ci8_5BED81ACEAB8B0EBB380ED99985Dstefany-andrade-GbSCAAsU2Fo-unsplash.jpg"
+                            alt="[Project 당신] 작별하지 않는 마음으로 [서간문]"
+                            title="[Project 당신] 작별하지 않는 마음으로 [서간문]"
+                            loading="lazy"
+                            width="150" height="150"
+                            decoding="async"
+                            style="width:100%;height:100%;object-fit:cover;border-radius:15px;"
+                        />
+                    </a>
+                </div>
+                <a href="https://www.artinsight.co.kr/news/view.php?no=79001" class="news_now_subj">
+                    [Project 당신] 작별하지 않는 마음으로 [서간문]                </a>
+                                <div class="news_now_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm3('%EC%9D%B4%EB%8B%A4%ED%98%9C', 'atempo214')">
+                        by <span>이다혜 에디터</span>
+                    </a>
+                </div>
+            </li>
+                        <li class="swiper-slide">
+                <div class="news_now_img">
+                    <a href="https://www.artinsight.co.kr/news/view.php?no=80509">
+                        <img
+                            src="https://www.artinsight.co.kr/data/news/2604/20260412231941_70cd319ece97.jpg"
+                            alt="[Opinion] 개그를 통해 우리를 비추는 이수지 [문화 전반]"
+                            title="[Opinion] 개그를 통해 우리를 비추는 이수지 [문화 전반]"
+                            loading="lazy"
+                            width="150" height="150"
+                            decoding="async"
+                            style="width:100%;height:100%;object-fit:cover;border-radius:15px;"
+                        />
+                    </a>
+                </div>
+                <a href="https://www.artinsight.co.kr/news/view.php?no=80509" class="news_now_subj">
+                    [Opinion] 개그를 통해 우리를 비추는 이수지 [문화 전반]                </a>
+                                <div class="news_now_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm3('%EA%B9%80%EC%A0%95%ED%98%84', 'rmwigss')">
+                        by <span>김정현 에디터</span>
+                    </a>
+                </div>
+            </li>
+                        <li class="swiper-slide">
+                <div class="news_now_img">
+                    <a href="https://www.artinsight.co.kr/news/view.php?no=78359">
+                        <img
+                            src="https://www.artinsight.co.kr/data/news/2511/3660670059_aFnBM2or_131.jpg"
+                            alt="[Review] 고통은 어떻게 이야기되고, 어떻게 읽어져야 하는가 - 도서 \'의미들\'"
+                            title="[Review] 고통은 어떻게 이야기되고, 어떻게 읽어져야 하는가 - 도서 \'의미들\'"
+                            loading="lazy"
+                            width="150" height="150"
+                            decoding="async"
+                            style="width:100%;height:100%;object-fit:cover;border-radius:15px;"
+                        />
+                    </a>
+                </div>
+                <a href="https://www.artinsight.co.kr/news/view.php?no=78359" class="news_now_subj">
+                    [Review] 고통은 어떻게 이야기되고, 어떻게 읽어져야 하는가 - 도서 &#039;의미들&#039;                </a>
+                                <div class="news_now_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm3('%EC%9C%A0%EC%A7%80%ED%98%84', 'ehchbb09')">
+                        by <span>유지현 에디터</span>
+                    </a>
+                </div>
+            </li>
+                        <li class="swiper-slide">
+                <div class="news_now_img">
+                    <a href="https://www.artinsight.co.kr/news/view.php?no=79576">
+                        <img
+                            src="https://www.artinsight.co.kr/data/news/2602/235365079_ry7Z6fvb_EC8AB9EBACB4_EAB3B5EC97B0_700px.jpg"
+                            alt="[Project 당신] 전통은 어떻게 선택되는가 (2) [인터뷰]"
+                            title="[Project 당신] 전통은 어떻게 선택되는가 (2) [인터뷰]"
+                            loading="lazy"
+                            width="150" height="150"
+                            decoding="async"
+                            style="width:100%;height:100%;object-fit:cover;border-radius:15px;"
+                        />
+                    </a>
+                </div>
+                <a href="https://www.artinsight.co.kr/news/view.php?no=79576" class="news_now_subj">
+                    [Project 당신] 전통은 어떻게 선택되는가 (2) [인터뷰]                </a>
+                                <div class="news_now_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm3('%EC%98%A4%EC%88%98%EB%AF%BC', 'smuin87')">
+                        by <span>오수민 에디터</span>
+                    </a>
+                </div>
+            </li>
+                    </ul>
+    </div>
+    <div class="news_now_control">
+        <button class="news_now_prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10" fill="none">
+                <path d="M6 9L2 5L6 1" stroke="#191919" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </button>
+        <div class="news_now_pager"></div>
+        <button class="news_now_next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="7" height="10" viewBox="0 0 7 10" fill="none">
+                <path d="M1 9L5 5L1 1" stroke="#191919" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </button>
+    </div>
+</article>
+
+<link rel="stylesheet" href="../_helpers/_css/plugins/swiper-bundle.min.css" />
+<script src="../_helpers/_js/plugins/swiper-bundle.min.js"></script>
+<script>
+$(document).ready(function() {
+    // NOW 슬라이드
+    var nowSwiper = new Swiper('.now_slide_wrap', {
+        slidesPerView: 'auto',
+        spaceBetween: 12,
+        allowTouchMove: true,
+        loop: true,
+        centeredSlides: true,
+        pagination: {
+            el: '.news_now_pager',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.news_now_next',
+            prevEl: '.news_now_prev'
+        }
+    });
+});
+function submitEditorForm3(name, wr_id) {
+    document.getElementById('editorForm3').q.value = name;
+    document.getElementById('editorForm3').wr_id.value = wr_id;
+    document.getElementById('editorForm3').submit();
+}
+
+</script>
+		
+<!-- TOP 10 -->
+
+<style>
+	.news_top10 { position:relative; width:100%; margin:0 0 120px; overflow:hidden; border-top:5px solid #191919; border-left:1px solid #d9d9d9; border-right:1px solid #d9d9d9; background:#fff; }
+	.news_top10 h2 { position:relative; width:100%; font-size:24px; font-weight:700; line-height:29px; color:#191919; box-sizing:border-box; padding:25px 30px 0; }
+
+	.news_top10 ul {  }
+	.news_top10 li { position:relative; display:block; width:100%; border-bottom:1px solid #d9d9d9; padding:30px; vertical-align:top; box-sizing:border-box; }
+	.news_top10 li .news_top10_subj { display:block; width:100%; height:56px; font-size:16px; font-weight:700; line-height:28px; color:#191919;
+		overflow:hidden; white-space:normal; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+	.news_top10 li .news_top10_subj:hover { text-decoration:underline; }
+	.news_top10 li .news_top10_name { display:block; margin-top:14px; }
+	.news_top10 li .news_top10_name a { display:inline-block; font-size:12px; font-weight:400; line-height:14px; color:#707070; }
+	.news_top10 li .news_top10_name a > span { display:inline-block; }
+	.news_top10 li .news_top10_name a > span:hover { text-decoration:underline; }
+</style>
+
+<form id="editorForm4" method="post" action="https://www.artinsight.co.kr/news/search.php" style="display:none;">
+    <input type="hidden" name="search_type" value="name">
+    <input type="hidden" name="q" value="">
+    <input type="hidden" name="wr_id" value="">
+</form>
+
+<article class="news_top10 cboth">
+
+    <h2 class="cboth">TOP 10</h2>
+
+    <ul class="cboth">
+                <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80631" class="news_top10_subj">
+                [PRESS] 흩어진 외침들, 우리의 봄이 되어 - 뮤지컬 ‘헤이그’ [공연]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%9D%B4%EC%A7%84', 'abcdefg1')">
+                by <span>이진 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80672" class="news_top10_subj">
+                [Opinion] 우리가 셋로그를 하는 이유 [문화 전반]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%A1%B0%EC%9D%80%EC%A0%95', 'jovely')">
+                by <span>조은정 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80675" class="news_top10_subj">
+                [공연] 로테/운수            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EB%B0%95%ED%98%95%EC%A3%BC', 'wwwhi')">
+                by <span>박형주 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80646" class="news_top10_subj">
+                [Opinion] 프로젝트 헤일메리: 멀리서 날아온 공을 기꺼이 받아준다면 [영화]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%A0%84%EC%A3%BC%ED%98%84', 'juju')">
+                by <span>전주현 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80633" class="news_top10_subj">
+                [Opinion] 로고가 먼저 말하는 팀 [문화 전반]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EA%B9%80%EC%88%98%EB%AF%BC', 'kkssoo09')">
+                by <span>김수민 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80634" class="news_top10_subj">
+                [Interview] 숨죽은 도시 속 안개 낀 본능의 공명, 비제로(BASEMENTZEROFLOOR)            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%9E%84%EC%A7%80%EC%9A%B0', 'aggplant1125')">
+                by <span>임지우 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80624" class="news_top10_subj">
+                [Opinion] NCT WISH: 모서리 가득한 세상에 다정함의 화살을 쏘아 올리다 [음악]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%A0%95%ED%9D%AC%EC%A0%95', 'jay2912')">
+                by <span>정희정 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80640" class="news_top10_subj">
+                [Opinion] DEAD XND [음악]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%86%90%ED%98%84%EC%A7%84', 'read33')">
+                by <span>손현진 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80623" class="news_top10_subj">
+                [오피니언] 취향, 버티는 마음이 기다리는 마음이 되기까지 [사람]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%98%A4%EC%9D%80%EC%A7%80', 'favor2002')">
+                by <span>오은지 에디터</span></a>
+            </div>
+        </li>
+		        <li>
+            <a href="https://www.artinsight.co.kr/news/view.php?no=80647" class="news_top10_subj">
+                [Opinion] &#039;여성’이라는 기표의 정치성을 풍부하게 만드는 이 달의 공연 1 [공연]            </a>
+            <div class="news_top10_name">
+                <a href="javascript:void(0);" onclick="submitEditorForm4('%EC%9D%B4%EB%8B%A4%EC%97%B0', 'twilly')">
+                by <span>이다연 에디터</span></a>
+            </div>
+        </li>
+		    </ul>
+	
+</article>
+<script>
+    function submitEditorForm4(name, wr_id) {
+    document.getElementById('editorForm4').q.value = name;
+    document.getElementById('editorForm4').wr_id.value = wr_id;
+    document.getElementById('editorForm4').submit();
+}
+
+</script>
+
+	</aside>
+
+ </div>
+ <!-- //contents -->
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8&appId=1174910415878102";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+	var mailRequest = function(formData, jqForm, form_options){
+		var queryString = $.param(formData);
+		return true;
+	}
+	var mailResponse = function(responseText, statusText, xhr, $form){
+		alert("기사 내용이 메일로 발송 되었습니다.");
+		mail_layer_close();
+	}
+</script>
+
+
+</div><!-- // wrapper 닫기 -->
+
+<!-- 하단 시작 -->
+ <script>
+$(document).ready(function() {
+	//업스크롤 버튼
+	$("#upscroll_btn").click(function(event){ 
+		event.preventDefault();
+		$('html,body').animate({scrollTop:$('#body').offset().top}, 600);
+	});
+	
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 0){
+			$('#upscroll_btn').addClass('on');
+		}else{
+			$('#upscroll_btn').removeClass('on');
+		}
+	});
+
+	// 개인정보 수집 및 이용 팝업 열기
+		$('#stb_form_modal_open').on('click', function() {
+        var modalId = $(this).data('modal');
+        $('#' + modalId).removeClass('blind'); // 팝업 보이기
+    });
+
+    // 개인정보 수집 및 이용 팝업 닫기
+    $('.stb_form_modal_close_btn, .stb_form_modal_bg').on('click', function() {
+        var modalId = $(this).data('modal');
+        $('#' + modalId).addClass('blind'); // 팝업 숨기기
+    });
+});
+</script>
+<footer class="cboth">
+	<button id="upscroll_btn">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" viewBox="0 0 24 27" fill="none">
+		<g clip-path="url(#clip0_762_16682)">
+			<path d="M12 27L12 3" stroke="#191919" stroke-width="3" stroke-miterlimit="10"/>
+			<path d="M22 13L12 3L2 13" stroke="#191919" stroke-width="3" stroke-miterlimit="10"/>
+		</g>
+		<defs>
+			<clipPath id="clip0_762_16682">
+			<rect width="27" height="24" fill="white" transform="translate(0 27) rotate(-90)"/>
+			</clipPath>
+		</defs>
+		</svg>
+	</button>
+	<div id="main_footer">ART INSIGHT</div>
+	<div class="inner1320">
+		<section class="f_1 cboth">
+			<div class="footer_logo"><a href="https://www.artinsight.co.kr">ART INSIGHT</a></div>
+			<ul class="footer_link" id="f_link1">
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=site_privacy">개인정보취급방침</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=board_criterion">기사배열방침</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=site_agreement">회원약관</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=email_denied">인터넷신문윤리강령</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=copyright_info">저작권정책</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/agreement.php?type=young_info">청소년보호정책</a></li>
+				<li><a href="https://www.artinsight.co.kr/rss/"><i class="axi axi-rss-square" style="position:relative;top:1px;margin-right:2px;color:#ff9900;"></i>RSS</a></li>
+			</ul>
+			<ul class="footer_link" id="f_link2">
+				<li><a href="https://www.artinsight.co.kr/service/company.php">회사소개</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/cs_center.php">고객센터</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/concert.php">제휴·광고문의</a></li>
+				<li><a href="https://www.artinsight.co.kr/service/report.php">기사제보</a></li>
+			</ul>
+			
+<!-- 웹진(스티비) 코드 시작 -->
+<!-- 페이지 로드 후에만 Stibee 스크립트를 비동기 로드 -->
+<script>
+window.addEventListener('load', function() {
+  var s = document.createElement('script');
+  s.src   = 'https://resource.stibee.com/subscribe/stb_subscribe_form.js';
+  s.async = true;
+  document.body.appendChild(s);
+});
+</script>
+
+<div class="footer_webzine" id="stb_subscribe">
+  <div class="stb_form_title">Webzine</div>
+  <form
+    action="https://stibee.com/api/v1.0/lists/iHrd7BSH5MCjHIxHuqtZKDkZQ9WYAA==/public/subscribers"
+    method="POST"
+    target="_blank"
+    accept-charset="utf-8"
+    class="stb_form"
+    name="stb_subscribe_form"
+    id="stb_subscribe_form"
+    data-lang=""
+    novalidate
+  >
+    <fieldset class="stb_form_set">
+      <input
+        type="text"
+        class="stb_form_set_input"
+        id="stb_email"
+        name="email"
+        placeholder="이메일을 입력해주세요."
+        required="required"
+      >
+      <div class="stb_form_msg_error" id="stb_email_error"></div>
+    </fieldset>
+
+    <fieldset class="stb_form_set">
+      <input
+        type="text"
+        class="stb_form_set_input"
+        id="stb_name"
+        name="name"
+        placeholder="이름을 입력해주세요."
+        required="required"
+      >
+      <div class="stb_form_msg_error" id="stb_name_error"></div>
+    </fieldset>
+
+    <div class="stb_form_policy">
+      <label>
+        <input type="checkbox" id="stb_policy" value="stb_policy_true">
+        <b id="check_circle"></b>
+        <span>(필수)</span>
+        <button
+          id="stb_form_modal_open"
+          data-modal="stb_form_policy_modal"
+          class="stb_form_modal_open_btn"
+          type="button"
+        >
+          개인정보 수집 및 이용
+        </button>
+        <span>에 동의합니다.</span>
+      </label>
+      <div class="stb_form_msg_error" id="stb_policy_error"></div>
+
+      <div
+        class="stb_form_modal stb_form_policy_text blind"
+        id="stb_form_policy_modal"
+      >
+        <div class="stb_form_modal_body">
+          <h3 class="stb_form_modal_title">개인정보 수집 및 이용</h3>
+          <div class="stb_form_modal_text">
+            뉴스레터 발송을 위한 최소한의 개인정보를 수집하고 이용합니다.<br>
+            수집된 정보는 발송 외 다른 목적으로 이용되지 않으며, 서비스가<br>
+            종료되거나 구독을 해지할 경우 즉시 파기됩니다.
+          </div>
+          <div class="stb_form_modal_btn">
+            <button
+              id="stb_form_modal_close"
+              class="stb_form_modal_close_btn"
+              data-modal="stb_form_policy_modal"
+              type="button"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+        <div
+          class="stb_form_modal_bg"
+          id="stb_form_modal_bg"
+          data-modal="stb_form_policy_modal"
+        ></div>
+      </div>
+    </div>
+
+    <div class="stb_form_result" id="stb_form_result"></div>
+
+    <fieldset class="stb_form_set_submit">
+      <button
+        type="submit"
+        class="stb_form_submit_button"
+        id="stb_form_submit_button"
+      >
+        구독하기
+      </button>
+    </fieldset>
+  </form>
+</div>
+<!-- 웹진(스티비) 코드 종료 -->
+
+
+		</section>
+		<section class="f_2 cboth">
+			<ul class="footer_sns">
+				<li><a href="https://www.facebook.com/artinsight13" target="_blank" id="facebook">페이스북</a></li>
+				<li><a href="https://blog.naver.com/dowidowi" target="_blank" id="blog">네이버블로그</a></li>
+				<li><a href="https://www.instagram.com/art_insight_/" target="_blank" id="insta">인스타그램</a></li>
+				<li><a href="https://brunch.co.kr/@artinsight" target="_blank" id="brunch">브런치</a></li>
+			</ul>
+			<div class="footer_info"><div>등록번호/등록일: 경기, 아52475 / 2020.02.10&nbsp; &nbsp;|&nbsp; &nbsp;창간일: 2013.11.20&nbsp; &nbsp;|&nbsp; &nbsp;E-Mail: artinsight@naver.com</div>
+<div>발행인/편집인/청소년보호책임자: 박형주&nbsp; &nbsp;|&nbsp; &nbsp;최종편집: 2026.04.27</div>
+<div>발행소 정보: 경기도 부천시 중동로 327 238동 701호 / Tel: 0507-1304-8223</div>
+<div>Copyright ⓒ 2013-2026 artinsight.co.kr All Rights Reserved</div></div>
+			<div class="footer_copy">아트인사이트의 모든 콘텐츠(기사)는 저작권법의 보호를 받습니다. 무단 전제·복사·배포 등을 금합니다.</div>
+		</section>
+	</div>
+</footer>
+<div style="clear:both"></div>
+<!-- 하단 종료 -->
+
+<style>
+	#upscroll_btn { position:fixed; cursor:pointer; bottom:40px; right:40px; z-index:8; width:60px; height:60px; text-align:center; border:2px solid #000; border-radius:50%; opacity:0;
+		background:#fff; box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.15);
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	#upscroll_btn:hover { background:#000;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	#upscroll_btn:hover path { stroke:#fff;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	#upscroll_btn.on { opacity:1; transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.open #upscroll_btn.on { opacity:0; }
+	@media screen and (max-width:1400px) {
+		#upscroll_btn { position:absolute; top:-82px; right:24px; }
+	}
+
+	footer { background:#000; }
+	footer::before { content:''; display:block; position:relative; width:100%; height:10px; background:linear-gradient(90deg, #FF6799 0%, #AEEFA4 50%, #76D5E8 100%); }
+
+	#main_footer { display:none; cursor:default; overflow:hidden; white-space:nowrap; line-height:1.2; font-size:16.1vw; font-weight:700; color:rgba(255, 255, 255, 0.08); }
+
+	.f_1 { display:block; width:100%; font-size:0; margin-top:80px; }
+
+	.footer_logo { display:inline-block; vertical-align:top; margin-right:146px; }
+	.footer_logo a { display:block; font-size:0; width:80px; height:90px; background:url('https://www.artinsight.co.kr/images/renewal/logo.svg') no-repeat;
+			background-size:auto 100%; background-position:0 0; }
+			
+	.footer_link { display:inline-block; vertical-align:top; width:195px; text-align:left; }
+	.footer_link li { display:block; margin-bottom:14px; }
+	.footer_link li:last-child { margin-bottom:0; }
+	.footer_link li a { display:inline-block; font-size:14px; font-weight:400; color:#fff; }
+	#f_link1 { margin-right:30px; }
+	#f_link2 { margin-right:142px; }
+	
+	.footer_webzine { display:inline-block; font-size:0; vertical-align:top; width:calc(100% - 788px); }
+	.footer_webzine .stb_form_title { display:inline-block; vertical-align:top; width:calc(100% - 308px); text-align:left; font-size:36px; font-weight:700; color:#fff; }
+	.footer_webzine .stb_form { display:inline-block; vertical-align:top; width:308px; color:#fff; }
+	.footer_webzine .stb_form_set { position:relative; border:0; margin:0; }
+	.footer_webzine .stb_form_set input { display:block; box-sizing:border-box; width:100%; height:38px; background:#000; border:0; border-bottom:1px solid #fff; width:100%; text-align:left; padding:0;
+		font-size:14px; font-weight:400; color:#fff; box-shadow: 0 0 0px 1000px #000 inset !important; /* 배경색 */ -webkit-text-fill-color:#fff !important; /* 텍스트 색상 */ }
+	.footer_webzine .stb_form_set input:focus { border:0; border-bottom:1px solid #fff; outline:0; background:#000; }
+	.footer_webzine .stb_form_set input::placeholder { color:rgba(255, 255, 255, 0.3) !important; -webkit-text-fill-color:rgba(255, 255, 255, 0.3) !important; }
+	.footer_webzine .stb_form_set input:-webkit-autofill { box-shadow:0 0 0px 1000px #000 inset !important; -webkit-text-fill-color:#fff !important; font-size:14px; font-weight:400; }
+	.footer_webzine .stb_form_set input:-webkit-autofill:hover,
+	.footer_webzine .stb_form_set input:-webkit-autofill:focus { box-shadow:0 0 0px 1000px #000 inset !important; font-size:16px; font-weight:400; }
+	.footer_webzine .stb_form_set #stb_email { margin-bottom:28px; }
+	.footer_webzine .stb_form_set #stb_name { margin-bottom:18px; }
+	.footer_webzine .stb_form_set .stb_form_msg_error { position:absolute; top:40px; left:0; line-height:18px; font-size:12px; font-weight:400; color:#ff0000; }
+	.footer_webzine .stb_form_policy label { display:block; vertical-align:top; line-height:20px; font-size:0; }
+	.footer_webzine .stb_form_policy label #stb_policy { display:none; }
+	.footer_webzine .stb_form_policy label #check_circle { display:inline-block; vertical-align:top; margin:0 10px 0 0; padding:0; width:20px; height:20px; box-sizing:border-box; border-radius:50%;
+		background:#000; border:1px solid #fff; cursor:pointer; }
+	.footer_webzine .stb_form_policy label #stb_policy:checked + #check_circle { background:url('https://www.artinsight.co.kr/images/renewal/check.svg') no-repeat #fff;
+		background-size:9px auto; background-position:center center; }
+	.footer_webzine .stb_form_policy label span { display:inline-block; vertical-align:top; font-size:14px; font-weight:400; color:#fff; }
+	.footer_webzine .stb_form_policy label #stb_form_modal_open { display:inline-block; vertical-align:top; cursor:pointer; color:#fff; font-weight:300; background:#000; border:0; padding:0; margin:0 0 0 4px; }
+	.footer_webzine .stb_form_set_submit { position:relative; border:0; margin:0; text-align:left; }
+	.footer_webzine .stb_form_set_submit #stb_form_submit_button { display:inline-block; cursor:pointer; box-sizing:border-box; width:120px; height:40px; border:1px solid #fff; background:#000; border-radius:70px;
+		font-size:18px; font-weight:400; text-align:center; color:#fff; margin-left:-4px; margin-top:38px;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_webzine .stb_form_set_submit #stb_form_submit_button:hover { background:#fff; color:#000;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.f_2 { display:block; width:100%; margin-top:60px; padding:80px 0; border-top:1px solid #fff; text-align:center; }
+	.footer_sns { display:block; font-size:0; }
+	.footer_sns li { display:inline-block; margin-right:14px; vertical-align:top; }
+	.footer_sns li:last-child { margin-right:0; }
+	.footer_sns li a { display:block; width:70px; height:70px; border:1px solid #fff; border-radius:50%; font-size:0; }
+	.footer_sns li #facebook { background:url('https://www.artinsight.co.kr/images/renewal/facebook_w.svg') no-repeat #000; background-size:12px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #facebook:hover { background:url('https://www.artinsight.co.kr/images/renewal/facebook_b.svg') no-repeat #fff; background-size:12px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #blog { background:url('https://www.artinsight.co.kr/images/renewal/blog_w.svg') no-repeat #000; background-size:26px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #blog:hover { background:url('https://www.artinsight.co.kr/images/renewal/blog_b.svg') no-repeat #fff; background-size:26px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #insta { background:url('https://www.artinsight.co.kr/images/renewal/insta_w.svg') no-repeat #000; background-size:22px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #insta:hover { background:url('https://www.artinsight.co.kr/images/renewal/insta_b.svg') no-repeat #fff; background-size:22px auto; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #post { background:url('https://www.artinsight.co.kr/images/renewal/post_w.svg') no-repeat #000; background-size:auto 24px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #post:hover { background:url('https://www.artinsight.co.kr/images/renewal/post_b.svg') no-repeat #fff; background-size:auto 24px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #brunch { background:url('https://www.artinsight.co.kr/images/renewal/brunch_w.svg') no-repeat #000; background-size:auto 24px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+	.footer_sns li #brunch:hover { background:url('https://www.artinsight.co.kr/images/renewal/brunch_b.svg') no-repeat #fff; background-size:auto 24px; background-position:center center;
+		transition:all .3s ease; -webkit-transition:all .3s ease; -moz--transition:all .3s ease; -ms-transition:all .3s ease; -o-transition:all .3s ease; }
+
+	.footer_info { display:block; margin-top:80px; font-size:12px; font-weight:100; line-height:20px; color:#fff; }
+	.footer_copy { display:block; font-size:12px; font-weight:100; line-height:20px; color:#fff; }
+
+	/* 웹진 모달 팝업 */
+	#stb_subscribe .stb_form_modal {
+	position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 100000; }
+
+	#stb_subscribe .stb_form_modal.blind {
+	display: none !important; }
+
+	#stb_subscribe .stb_form_modal_bg {
+	position: absolute;	width: 100%; height: 100%; background: #000; opacity: .5; z-index: 1; cursor:pointer; }
+
+	#stb_subscribe .stb_form_ad_modal_bg {
+	position: absolute;	width: 100%; height: 100%; background: #000; opacity: .5; z-index: 1; cursor:pointer; }
+
+	#stb_subscribe .stb_form_modal_body {
+	background: #fff; width: 94%; max-width: 470px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; }
+
+	#stb_subscribe .stb_form_modal_body p {
+	margin-block-start: 0em; margin-block-end: 0em;	}
+
+	#stb_subscribe .stb_form_modal_title {
+	font-size: 18px; padding: 30px; color: #333; }
+
+	#stb_subscribe .stb_form_modal_text {
+	font-size: 16px; line-height: 1.71; color: #333; margin: 0 30px; max-height: 200px;	overflow-y: auto; white-space: initial !important; }
+
+	#stb_subscribe .stb_form_modal_btn {
+	padding: 30px; text-align: center; }
+
+	#stb_subscribe .stb_form_modal_btn button {
+	width: 100px; height: 40px;	line-height: 40px; font-size: 14px;	background: #191919; color: #fff; border:0; cursor: pointer;	}
+	/* 웹진 모달 팝업 */
+</style>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88039317-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-88039317-1');
+</script>
+
+
+<script async src="//wcs.naver.net/wcslog.js"></script>
+<script>
+  (function(){
+    // 초기 설정
+    if (!window.wcs_add) window.wcs_add = {};
+    window.wcs_add['wa'] = 'f5a29deba0a77c';
+
+    // 스크립트가 로드된 후 wcs_do() 호출
+    function runWcs() {
+      if (window.wcs) {
+        wcs_do();
+      }
+    }
+
+    // 페이지 로드 완료 시 실행
+    if (window.addEventListener) {
+      window.addEventListener('load', runWcs, false);
+    } else {
+      window.attachEvent('onload', runWcs);
+    }
+  })();
+</script>
+</body>
+</html>

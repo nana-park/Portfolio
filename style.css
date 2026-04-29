@@ -51,7 +51,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
 }
 
 body {
@@ -169,6 +169,10 @@ body {
     opacity: 1;
     visibility: visible;
     height: 120px;
+}
+
+.navbar:has(.about-dropdown:hover) .mega-backdrop {
+    height: 80px;
 }
 
 /* Force retraction override when an LNB is clicked */
@@ -3008,7 +3012,7 @@ section {
     -webkit-mask-position: center;
 }
 
-/* ?�제�??�직이??�??�랙 */
+/* ?�제�??�직???�??�랙 */
 .carousel-track {
     display: flex;
     gap: 24px;
@@ -3115,7 +3119,7 @@ section {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     line-height: 1.4;
 
-    /* [?�정] 무조�?1줄로 출력 (?�치�?... 처리), ??<br>?� ?�작?�도�?처리 */
+    /* [?�정] 무조�?1줄로 출력 (?�치�?... 처리), ??<br>?�??�작?�도�?처리 */
     width: 100%;
 }
 
