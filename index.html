@@ -346,86 +346,49 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Runway Style) -->
-    <section class="relative w-full h-[100vh] bg-white pt-[70px] pb-6 flex flex-col items-center" id="home">
-        <div class="container mx-auto w-full h-full relative">
-            <div class="relative w-full h-full rounded-[10px] overflow-hidden bg-black flex items-end pb-12 md:pb-24 mx-auto">
-                <div class="absolute inset-0 w-full h-full opacity-80 pointer-events-none mix-blend-screen overflow-hidden rounded-[10px]">
-                    <video id="hero-video-1" src="rabbit_boat_1.mp4" autoplay muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:1;z-index:10;border-radius:10px;"></video>
-                    <video id="hero-video-2" src="rabbit_boat_2.mp4" muted playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:0;z-index:0;border-radius:10px;"></video>
-                </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const v1 = document.getElementById('hero-video-1');
-                    const v2 = document.getElementById('hero-video-2');
-                    if (!v1 || !v2) return;
+    <!-- Hero Section (Spline 3D) -->
+    <section class="relative w-full h-[100vh] bg-black overflow-hidden" id="home">
 
-                    // Preload both videos
-                    v1.load(); v2.load();
+        <!-- Spline 3D Background — full bleed, pointer-events allowed so it's interactive -->
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+        <spline-viewer
+            url="https://prod.spline.design/bGcmn2lbN506XgQM/scene.splinecode"
+            style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"
+        ></spline-viewer>
 
-                    let switching = false;
+        <!-- Subtle dark gradient so text stays legible without blocking the 3D scene -->
+        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.42) 100%); z-index:1;"></div>
 
-                    function show(a, b) {
-                        a.style.opacity = '1'; a.style.zIndex = '10';
-                        b.style.opacity = '0'; b.style.zIndex = '0';
-                    }
+        <!-- Centered Text Overlay -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none" style="z-index:2; padding-top:70px;">
+            <p class="font-sans text-white/60 uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-6 drop-shadow-md">
+                AI Product Manager · Conversational AI · UX Research
+            </p>
+            <h1 class="font-sans text-white text-center font-semibold drop-shadow-2xl"
+                style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 1.05; letter-spacing: -0.02em;">
+                AI Voice<br>to Everyone
+            </h1>
+            <p class="font-sans text-white/55 text-center font-light mt-6 drop-shadow-md"
+               style="font-size: clamp(0.95rem, 1.8vw, 1.3rem); letter-spacing: 0.01em;">
+                Designing the way humans talk to machines
+            </p>
+        </div>
 
-                    // Pre-start v2 before v1 ends to avoid blackout
-                    v1.addEventListener('timeupdate', () => {
-                        if (!switching && v1.duration && v1.currentTime >= v1.duration - 0.3) {
-                            switching = true;
-                            v2.currentTime = 0;
-                            v2.play().catch(() => {});
-                        }
-                    });
-                    v1.addEventListener('ended', () => {
-                        show(v2, v1);
-                        v1.currentTime = 0;
-                        switching = false;
-                    });
-
-                    // Pre-start v1 before v2 ends
-                    v2.addEventListener('timeupdate', () => {
-                        if (!switching && v2.duration && v2.currentTime >= v2.duration - 0.3) {
-                            switching = true;
-                            v1.currentTime = 0;
-                            v1.play().catch(() => {});
-                        }
-                    });
-                    v2.addEventListener('ended', () => {
-                        show(v1, v2);
-                        v2.currentTime = 0;
-                        switching = false;
-                    });
-                });
-            </script>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none"></div>
-            <div class="container relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-end justify-start gap-12 lg:gap-32">
-                <div class="flex flex-col gap-6 w-full md:w-auto">
-                    <h1 class="font-sans text-white text-[32px] sm:text-[40px] md:text-[48px] leading-[1.15] tracking-tight font-medium drop-shadow-lg">
-                        AI Conversation to Everyone<br>
-                        with Voice Interaction
-                    </h1>
-                    <div class="flex flex-wrap items-center gap-3">
-                        <a href="#projects" class="inline-flex items-center justify-center px-4 py-2 bg-white text-black font-semibold text-sm rounded hover:bg-zinc-200 transition-all duration-300 group">
-                            View My Work
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                        <a href="#contact" class="inline-flex items-center justify-center px-4 py-2 bg-transparent text-white font-medium text-sm border border-white/40 rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm group">
-                            Get in Touch
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-3 pb-[28px] md:pb-[36px]">
-                    <span style="font-family: 'Inter', sans-serif;" class="text-[10px] md:text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-[0.12em] transition-colors cursor-default">AI Product Manager</span>
-                    <span style="font-family: 'Inter', sans-serif;" class="text-[10px] md:text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-[0.12em] transition-colors cursor-default">Conversational AI</span>
-                    <span style="font-family: 'Inter', sans-serif;" class="text-[10px] md:text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-[0.12em] transition-colors cursor-default">Human-AI Interaction</span>
-                    <span style="font-family: 'Inter', sans-serif;" class="text-[10px] md:text-[11px] font-medium text-white/70 hover:text-white uppercase tracking-[0.12em] transition-colors cursor-default">UX Research</span>
-                </div>
+        <!-- Bottom nav hint -->
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none" style="z-index:2;">
+            <div class="flex items-center gap-6">
+                <a href="#projects" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white font-medium text-sm rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+                    View My Work
+                    <svg class="ml-1.5 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+                <a href="#contact" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 bg-transparent text-white/70 font-medium text-sm rounded-full border border-white/15 hover:bg-white/10 hover:text-white transition-all duration-300">
+                    Get in Touch
+                </a>
             </div>
         </div>
+
     </section>
+
 
     <!-- Partners / Logos Section -->
     <section id="partners" style="background: #ffffff; padding: 5rem 0 5rem 0; overflow: hidden;">
