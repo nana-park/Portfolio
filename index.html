@@ -347,50 +347,46 @@
     </nav>
 
     <!-- Hero Section (Spline 3D) -->
-    <section class="relative w-full h-[100vh] bg-black overflow-hidden" id="home">
+    <section class="relative w-full h-[100vh] bg-white overflow-hidden" id="home">
 
-        <!-- Spline 3D Background — full bleed, pointer-events allowed so it's interactive -->
+        <!-- Spline 3D Background -->
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
         <spline-viewer
             url="https://prod.spline.design/bGcmn2lbN506XgQM/scene.splinecode"
             style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"
         ></spline-viewer>
 
-        <!-- Cover Spline watermark logo (bottom-right) -->
-        <div style="position:absolute;bottom:0;right:0;width:120px;height:48px;z-index:3;background:linear-gradient(to top left, rgba(0,0,0,0.85) 40%, transparent 100%);pointer-events:none;"></div>
-
-        <!-- Subtle dark gradient so text stays legible without blocking the 3D scene -->
-        <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.42) 100%); z-index:1;"></div>
+        <!-- Cover Spline watermark (bottom-right) with white gradient -->
+        <div style="position:absolute;bottom:0;right:0;width:140px;height:52px;z-index:3;background:linear-gradient(to top left, rgba(255,255,255,1) 45%, transparent 100%);pointer-events:none;"></div>
 
         <!-- Centered Text Overlay -->
         <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none" style="z-index:2; padding-top:70px;">
-            <p class="font-sans text-white/60 uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-6 drop-shadow-md">
+            <p class="font-sans uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-6" style="color: #a1a1aa;">
                 AI Product Manager · Conversational AI · UX Research
             </p>
-            <h1 class="font-sans text-white text-center font-semibold drop-shadow-2xl"
-                style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 1.05; letter-spacing: -0.02em;">
+            <h1 class="font-sans text-center font-semibold" style="font-size: clamp(2.8rem, 7vw, 6.5rem); line-height: 1.05; letter-spacing: -0.02em; color: #111111;">
                 AI Voice<br>to Everyone
             </h1>
-            <p class="font-sans text-white/55 text-center font-light mt-6 drop-shadow-md"
-               style="font-size: clamp(0.95rem, 1.8vw, 1.3rem); letter-spacing: 0.01em;">
+            <p class="font-sans text-center font-light mt-6" style="font-size: clamp(0.95rem, 1.8vw, 1.3rem); letter-spacing: 0.01em; color: #71717a;">
                 Designing the way humans talk to machines
             </p>
         </div>
 
-        <!-- Bottom nav hint -->
+        <!-- Bottom buttons -->
         <div class="absolute bottom-8 left-0 right-0 flex justify-center pointer-events-none" style="z-index:2;">
-            <div class="flex items-center gap-6">
-                <a href="#projects" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white font-medium text-sm rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
+            <div class="flex items-center gap-4">
+                <a href="#projects" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:#111111; color:#ffffff; border:1px solid #111111;">
                     View My Work
                     <svg class="ml-1.5 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </a>
-                <a href="#contact" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 bg-transparent text-white/70 font-medium text-sm rounded-full border border-white/15 hover:bg-white/10 hover:text-white transition-all duration-300">
+                <a href="#contact" class="pointer-events-auto inline-flex items-center justify-center px-5 py-2.5 font-medium text-sm rounded-full transition-all duration-300" style="background:transparent; color:#52525b; border:1px solid #d4d4d8;">
                     Get in Touch
                 </a>
             </div>
         </div>
 
     </section>
+
 
 
     <!-- Partners / Logos Section -->
