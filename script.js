@@ -1,4 +1,4 @@
-﻿// ===========================
+// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -127,6 +127,8 @@ const routerConfig = {
     'life': ['life'],
     'projects': ['projects'],
     'research': ['research'],
+    'articles': ['articles'],
+    'article-detail': ['article-detail'],
     'awards': ['awards'],
     'contact': ['contact']
 };
@@ -134,7 +136,8 @@ const routerConfig = {
 let isFirstLoad = true;
 
 function handleRoute() {
-    let rawHash = window.location.hash.replace('#', '') || 'home';
+    let fullHash = window.location.hash.replace('#', '') || 'home';
+    let rawHash = fullHash.split('?')[0];
     let activeTab = null;
     let targetSection = rawHash;
 
@@ -223,7 +226,9 @@ function handleRoute() {
     // Update Nav LNB Active States
     const parentMap = {
         'life': 'about',
-        'research': 'projects'
+        'research': 'projects',
+        'articles': 'projects',
+        'article-detail': 'projects'
     };
     const highlightTab = parentMap[activeTab] || activeTab;
 
@@ -256,7 +261,7 @@ function handleRoute() {
     }
     
     // Light pages force the scrolled UI to make header visible
-    const lightPages = ['life', 'projects', 'research', 'awards', 'contact'];
+    const lightPages = ['life', 'projects', 'research', 'articles', 'article-detail', 'awards', 'contact'];
     if (lightPages.includes(activeTab)) {
         navbar.classList.add('force-scrolled');
     } else {

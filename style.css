@@ -168,7 +168,7 @@ body {
 .navbar:has(.has-dropdown:hover) .mega-backdrop {
     opacity: 1;
     visibility: visible;
-    height: 80px;
+    height: 120px;
 }
 
 /* Force retraction override when an LNB is clicked */
