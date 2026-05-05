@@ -932,7 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextTestimonial');
     const cards = container ? container.querySelectorAll('.testimonial-card') : [];
 
-    if (container && prevBtn && nextBtn && cards.length > 0) {
+    if (container && cards.length > 0) {
 
         // Center-Focus Logic: Open to the "Blue" card (Index 1) as requested
         // [0: Purple, 1: Blue, 2: Green ...]
@@ -965,13 +965,17 @@ document.addEventListener('DOMContentLoaded', () => {
             updateActiveState(index);
         };
 
-        prevBtn.addEventListener('click', () => {
-            scrollToCard(currentIndex - 1);
-        });
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                scrollToCard(currentIndex - 1);
+            });
+        }
 
-        nextBtn.addEventListener('click', () => {
-            scrollToCard(currentIndex + 1);
-        });
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                scrollToCard(currentIndex + 1);
+            });
+        }
 
         // Initialize: Scroll & Highlight immediately
         setTimeout(() => {
