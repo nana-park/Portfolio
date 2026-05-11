@@ -921,90 +921,6 @@
                                             NAVER CareCall Console
                                         </div>
                                     </div>
-
-                                    <!-- Expandable Case Studies -->
-                                    <button class="mt-4 text-[10px] text-[#d97706] hover:text-[#f59e0b] w-fit font-medium transition-colors flex items-center gap-1.5 uppercase tracking-widest cursor-pointer group/btn" onclick="const el = document.getElementById('naver-cloud-cases'); el.style.display = el.style.display === 'flex' ? 'none' : 'flex'; const icon = this.querySelector('.chevron'); icon.style.transform = el.style.display === 'flex' ? 'rotate(180deg)' : 'rotate(0deg)';">
-                                        Read Case Studies
-                                        <svg class="chevron w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                    </button>
-
-                                    <div id="naver-cloud-cases" class="mt-5 pt-5 border-t border-white/10 flex-col gap-6 w-full" style="display: none;">
-                                        
-                                        <!-- LINE WORKS AiCall -->
-                                        <div class="flex flex-col gap-3">
-                                            <h4 class="text-white text-[11px] font-medium tracking-widest uppercase">LINE WORKS AiCall</h4>
-                                            
-                                            <div class="flex flex-col gap-1.5">
-                                                <span class="text-white/70 text-[10px] font-medium block">AI Product Expansion <span class="font-light text-white/40 ml-1">JP, US, KR</span></span>
-                                                <ul class="text-white/50 text-[10px] font-light list-disc pl-3.5 space-y-1">
-                                                    <li>Showcase: APEC, Osaka Expo</li>
-                                                    <li>Digital human video call</li>
-                                                    <li>Web RTC barge-in call</li>
-                                                    <li>Global localization</li>
-                                                    <li>Inbound call PoC</li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="flex flex-col gap-1.5 mt-1">
-                                                <span class="text-white/70 text-[10px] font-medium block">Builder Improvement <span class="font-light text-white/40 ml-1">JP</span></span>
-                                                <ul class="text-white/50 text-[10px] font-light list-disc pl-3.5 space-y-1">
-                                                    <li>Voice AI IVR</li>
-                                                    <li>Automate business call recordings</li>
-                                                    <li>Modular chatbot across scenarios</li>
-                                                    <li>Dev component optimization</li>
-                                                    <li>Preprocessing editor of uv values</li>
-                                                    <li>Chatbot flow visualization</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- NAVER CareCall -->
-                                        <div class="flex flex-col gap-3">
-                                            <h4 class="text-white text-[11px] font-medium tracking-widest uppercase">NAVER CareCall</h4>
-                                            
-                                            <div class="flex flex-col gap-1.5">
-                                                <span class="text-white/70 text-[10px] font-medium block">AI Chatbot Dev <span class="font-light text-white/40 ml-1">KR, JP</span></span>
-                                                <ul class="text-white/50 text-[10px] font-light list-disc pl-3.5 space-y-1">
-                                                    <li>User routing enhancement</li>
-                                                    <li>Call transfer for caregiver pickup</li>
-                                                    <li>Lightweight chatbot architecture</li>
-                                                    <li>Eliminating abnormal termination</li>
-                                                    <li>EPD tuning for senior speech</li>
-                                                    <li>Conversion dev in Japanese</li>
-                                                    <li>Chatbot tone &amp; manner update</li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="flex flex-col gap-1.5 mt-1">
-                                                <span class="text-white/70 text-[10px] font-medium block">AI Scenario Creation <span class="font-light text-white/40 ml-1">JP, US, KR</span></span>
-                                                <ul class="text-white/50 text-[10px] font-light list-disc pl-3.5 space-y-1">
-                                                    <li>Realtime weather conversation</li>
-                                                    <li>Undercover-conversation custom</li>
-                                                    <li>Confirmation of medication PoC</li>
-                                                    <li>Standardized character guidelines</li>
-                                                    <li>Safe return home call scenario PoC</li>
-                                                    <li>Diversify greetings for holiday</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                        <!-- NAVER CareCall Console -->
-                                        <div class="flex flex-col gap-3">
-                                            <h4 class="text-white text-[11px] font-medium tracking-widest uppercase">NAVER CareCall Console</h4>
-                                            
-                                            <div class="flex flex-col gap-1.5">
-                                                <span class="text-white/70 text-[10px] font-medium block">AI Console Improve <span class="font-light text-white/40 ml-1">KR, JP</span></span>
-                                                <ul class="text-white/50 text-[10px] font-light list-disc pl-3.5 space-y-1">
-                                                    <li>Collaborative notes across admins</li>
-                                                    <li>LLM long-term memory editor</li>
-                                                    <li>Built a reusable UXR protocol</li>
-                                                    <li>Launching paid service</li>
-                                                    <li>Digitizing service application</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                 </div>
                             </div>
                             <div class="border-t border-white/20 py-4 group cursor-default flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-6">
@@ -1263,33 +1179,105 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1200px] mx-auto w-full px-4 lg:px-0">
                         <!-- LINE WORKS AiCall -->
-                        <a href="projects/lineworks-aicall.html" class="flex flex-col h-full group focus:outline-none w-full">
-                            <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
-                                <img src="new_thumb_aicall_agent.png" alt="LINE WORKS AiCall" class="w-full h-full object-cover">
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <a href="projects/lineworks-aicall.html" class="block cursor-pointer">
+                                <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                    <img src="new_thumb_aicall_agent.png" alt="LINE WORKS AiCall" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">LINE WORKS AiCall</p>
+                                <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">Enterprise AI Contact Center</h3>
+                            </a>
+                            <button onclick="const el = this.nextElementSibling; el.style.display = el.style.display === 'flex' ? 'none' : 'flex';" class="inline-block text-left font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 hover:decoration-zinc-800 transition-colors cursor-pointer w-fit mt-1">Read More</button>
+                            
+                            <!-- Hidden Case Studies List -->
+                            <div class="hidden flex-col gap-4 mt-6 pt-5 border-t border-gray-200" style="display: none;">
+                                <div class="flex flex-col gap-1.5">
+                                    <span class="text-zinc-800 text-[12px] font-medium block">AI Product Expansion <span class="font-light text-zinc-400 ml-1">JP, US, KR</span></span>
+                                    <ul class="text-zinc-500 text-[12px] font-light list-disc pl-4 space-y-1">
+                                        <li>Showcase: APEC, Osaka Expo</li>
+                                        <li>Digital human video call</li>
+                                        <li>Web RTC barge-in call</li>
+                                        <li>Global localization</li>
+                                        <li>Inbound call PoC</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col gap-1.5">
+                                    <span class="text-zinc-800 text-[12px] font-medium block">Builder Improvement <span class="font-light text-zinc-400 ml-1">JP</span></span>
+                                    <ul class="text-zinc-500 text-[12px] font-light list-disc pl-4 space-y-1">
+                                        <li>Voice AI IVR</li>
+                                        <li>Automate business call recordings</li>
+                                        <li>Modular chatbot across scenarios</li>
+                                        <li>Dev component optimization</li>
+                                        <li>Preprocessing editor of uv values</li>
+                                        <li>Chatbot flow visualization</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">LINE WORKS AiCall</p>
-                            <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">Enterprise AI Contact Center</h3>
-                            <span class="inline-block font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 group-hover:decoration-zinc-800 transition-colors">Read More</span>
-                        </a>
+                        </div>
                         <!-- CLOVA CareCall -->
-                        <a href="projects/clova-carecall.html" class="flex flex-col h-full group focus:outline-none w-full">
-                            <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
-                                <div class="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-md text-white/90 border border-white/20 text-[9px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1.5 z-10 font-sans tracking-[0.1em] uppercase shadow-lg"><span class="w-1.5 h-1.5 rounded-full bg-[#d97706] shadow-[0_0_5px_rgba(217,119,6,0.8)] animate-pulse"></span> LAUNCHED</div>
-                                <img src="new_thumb_carecall_wide_1776892348731.png" alt="NAVER CareCall" class="w-full h-full object-cover">
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <a href="projects/clova-carecall.html" class="block cursor-pointer">
+                                <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                    <div class="absolute top-4 right-4 bg-zinc-900/80 backdrop-blur-md text-white/90 border border-white/20 text-[9px] font-medium px-2.5 py-1 rounded-full flex items-center gap-1.5 z-10 font-sans tracking-[0.1em] uppercase shadow-lg"><span class="w-1.5 h-1.5 rounded-full bg-[#d97706] shadow-[0_0_5px_rgba(217,119,6,0.8)] animate-pulse"></span> LAUNCHED</div>
+                                    <img src="new_thumb_carecall_wide_1776892348731.png" alt="NAVER CareCall" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">NAVER CareCall</p>
+                                <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">Senior Care AI Call-bot</h3>
+                            </a>
+                            <button onclick="const el = this.nextElementSibling; el.style.display = el.style.display === 'flex' ? 'none' : 'flex';" class="inline-block text-left font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 hover:decoration-zinc-800 transition-colors cursor-pointer w-fit mt-1">Read More</button>
+                            
+                            <!-- Hidden Case Studies List -->
+                            <div class="hidden flex-col gap-4 mt-6 pt-5 border-t border-gray-200" style="display: none;">
+                                <div class="flex flex-col gap-1.5">
+                                    <span class="text-zinc-800 text-[12px] font-medium block">AI Chatbot Dev <span class="font-light text-zinc-400 ml-1">KR, JP</span></span>
+                                    <ul class="text-zinc-500 text-[12px] font-light list-disc pl-4 space-y-1">
+                                        <li>User routing enhancement</li>
+                                        <li>Call transfer for caregiver pickup</li>
+                                        <li>Lightweight chatbot architecture</li>
+                                        <li>Eliminating abnormal termination</li>
+                                        <li>EPD tuning for senior speech</li>
+                                        <li>Conversion dev in Japanese</li>
+                                        <li>Chatbot tone &amp; manner update</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col gap-1.5 mt-1">
+                                    <span class="text-zinc-800 text-[12px] font-medium block">AI Scenario Creation <span class="font-light text-zinc-400 ml-1">JP, US, KR</span></span>
+                                    <ul class="text-zinc-500 text-[12px] font-light list-disc pl-4 space-y-1">
+                                        <li>Realtime weather conversation</li>
+                                        <li>Undercover-conversation custom</li>
+                                        <li>Confirmation of medication PoC</li>
+                                        <li>Standardized character guidelines</li>
+                                        <li>Safe return home call scenario PoC</li>
+                                        <li>Diversify greetings for holiday</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">NAVER CareCall</p>
-                            <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">Senior Care AI Call-bot</h3>
-                            <span class="inline-block font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 group-hover:decoration-zinc-800 transition-colors">Read More</span>
-                        </a>
+                        </div>
                         <!-- NAVER CareCall Console -->
-                        <a href="#" class="flex flex-col h-full group focus:outline-none w-full">
-                            <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
-                                <img src="new_thumb_console_gov.png" alt="NAVER CareCall Console" class="w-full h-full object-cover">
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <a href="#" class="block cursor-pointer">
+                                <div class="relative w-full aspect-[16/9] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                    <img src="new_thumb_console_gov.png" alt="NAVER CareCall Console" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">NAVER CareCall Console</p>
+                                <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">AI Call Operation System</h3>
+                            </a>
+                            <button onclick="const el = this.nextElementSibling; el.style.display = el.style.display === 'flex' ? 'none' : 'flex';" class="inline-block text-left font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 hover:decoration-zinc-800 transition-colors cursor-pointer w-fit mt-1">Read More</button>
+                            
+                            <!-- Hidden Case Studies List -->
+                            <div class="hidden flex-col gap-4 mt-6 pt-5 border-t border-gray-200" style="display: none;">
+                                <div class="flex flex-col gap-1.5">
+                                    <span class="text-zinc-800 text-[12px] font-medium block">AI Console Improve <span class="font-light text-zinc-400 ml-1">KR, JP</span></span>
+                                    <ul class="text-zinc-500 text-[12px] font-light list-disc pl-4 space-y-1">
+                                        <li>Collaborative notes across admins</li>
+                                        <li>LLM long-term memory editor</li>
+                                        <li>Built a reusable UXR protocol</li>
+                                        <li>Launching paid service</li>
+                                        <li>Digitizing service application</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <p class="font-sans text-[13px] md:text-[14px] text-zinc-500 mb-1.5">NAVER CareCall Console</p>
-                            <h3 style="font-family: 'Inter', sans-serif;" class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-1.5 group-hover:text-amber-600 transition-colors">AI Call Operation System</h3>
-                            <span class="inline-block font-sans text-[13px] font-medium text-zinc-800 underline underline-offset-[5px] decoration-1 decoration-zinc-300 group-hover:decoration-zinc-800 transition-colors">Read More</span>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
