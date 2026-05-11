@@ -168,7 +168,7 @@ body {
 .navbar:has(.has-dropdown:hover) .mega-backdrop {
     opacity: 1;
     visibility: visible;
-    height: 120px;
+    height: 160px;
 }
 
 .navbar:has(.about-dropdown:hover) .mega-backdrop {
