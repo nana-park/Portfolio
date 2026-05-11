@@ -977,18 +977,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Initialize: Scroll & Highlight immediately
-        setTimeout(() => {
-            if (container && cards[currentIndex]) {
+        // Initialize: Scroll & Highlight when visible
+        let initializedScroll = false;
+        
+        const initScroll = () => {
+            if (!initializedScroll && container && cards[currentIndex] && container.offsetWidth > 0) {
+                initializedScroll = true;
                 const card = cards[currentIndex];
                 const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
-                container.scrollTo({
-                    left: scrollPos,
-                    behavior: 'auto'
-                });
+                container.scrollTo({ left: scrollPos, behavior: 'auto' });
+                updateActiveState(currentIndex);
             }
-            updateActiveState(currentIndex);
-        }, 100);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                initScroll();
+            }
+        }, { threshold: 0.1 });
+        observer.observe(container);
+        
+        setTimeout(initScroll, 100);
+        setTimeout(initScroll, 500);
 
         // Click to focus or next
         cards.forEach((card, index) => {
