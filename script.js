@@ -129,6 +129,7 @@ const routerConfig = {
     'research': ['research'],
     'articles': ['articles'],
     'article-detail': ['article-detail'],
+    'lectures': ['lectures'],
     'awards': ['awards'],
     'contact': ['contact']
 };
@@ -1116,4 +1117,78 @@ function filterTimeline(category) {
     });
 }
 
+// ===========================
+// Lecture Carousel Logic
+// ===========================
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('[data-lecture-carousel]');
+    
+    carousels.forEach(carousel => {
+        const slidesContainer = carousel.querySelector('.lecture-slides');
+        if (!slidesContainer) return;
+        
+        const slides = Array.from(slidesContainer.querySelectorAll('img'));
+        const prevBtn = carousel.querySelector('[data-prev-btn]');
+        const nextBtn = carousel.querySelector('[data-next-btn]');
+        const indicatorsContainer = carousel.querySelector('.lecture-indicators');
+        
+        const totalSlides = slides.length;
+        if (totalSlides <= 1) return;
 
+        // Make arrows visible and indicators visible
+        if(prevBtn) prevBtn.classList.remove('hidden');
+        if(nextBtn) nextBtn.classList.remove('hidden');
+        if(indicatorsContainer) indicatorsContainer.classList.remove('hidden');
+
+        // Initialize indicators
+        slides.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = `w-1.5 h-1.5 rounded-full bg-white/40 transition-all hover:bg-white/70 focus:outline-none ${idx === 0 ? '!bg-white !w-3' : ''}`;
+            dot.onclick = (e) => {
+                e.stopPropagation();
+                slidesContainer.setAttribute('data-current-index', idx);
+                window.updateLectureCarousel(carousel);
+            };
+            if(indicatorsContainer) indicatorsContainer.appendChild(dot);
+        });
+
+        window.updateLectureCarousel(carousel);
+    });
+});
+
+window.moveLectureSlide = function(btn, direction) {
+    // Stop propagation so it doesn't trigger anything else if nested
+    if (event) event.stopPropagation();
+    
+    const carousel = btn.closest('[data-lecture-carousel]');
+    const slidesContainer = carousel.querySelector('.lecture-slides');
+    const totalSlides = slidesContainer.querySelectorAll('img').length;
+    let currentIndex = parseInt(slidesContainer.getAttribute('data-current-index') || '0', 10);
+    
+    currentIndex += direction;
+    
+    // Loop
+    if (currentIndex < 0) currentIndex = totalSlides - 1;
+    if (currentIndex >= totalSlides) currentIndex = 0;
+    
+    slidesContainer.setAttribute('data-current-index', currentIndex);
+    window.updateLectureCarousel(carousel);
+};
+
+window.updateLectureCarousel = function(carousel) {
+    const slidesContainer = carousel.querySelector('.lecture-slides');
+    const currentIndex = parseInt(slidesContainer.getAttribute('data-current-index') || '0', 10);
+    const indicators = carousel.querySelectorAll('.lecture-indicators button');
+    
+    // Move slides
+    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    // Update dots
+    indicators.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+            dot.className = 'w-3 h-1.5 rounded-full bg-white transition-all focus:outline-none';
+        } else {
+            dot.className = 'w-1.5 h-1.5 rounded-full bg-white/40 transition-all hover:bg-white/70 focus:outline-none';
+        }
+    });
+};
