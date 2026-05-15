@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -170,9 +170,8 @@
 
         /* Project Detail Specific Overrides */
         body {
-            background-color: #050505;
-            /* Deep Black for high contrast */
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #18181b;
             font-family: 'Inter', sans-serif;
         }
 
@@ -192,32 +191,32 @@
             gap: 0.5rem;
             margin-bottom: var(--spacing-md);
             font-size: 0.875rem;
-            color: #a1a1aa;
+            color: #71717a;
             transition: color 0.2s;
         }
 
         .back-link:hover {
-            color: #ffffff;
+            color: #18181b;
         }
 
         .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #ffffff;
+            border: 1px solid #e4e4e7;
             border-radius: 2rem;
-            /* Consistent large radius */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #fafafa;
+            border: 1px solid #e4e4e7;
             border-radius: 1.5rem;
             transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.15);
+            background: #ffffff;
+            border-color: #d4d4d8;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transform: translateY(-2px);
         }
 
@@ -273,14 +272,14 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: #1a1a1a;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            color: #18181b;
+            border: 1px solid #e4e4e7;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
@@ -296,7 +295,7 @@
 
         .back-to-top:hover {
             transform: scale(1.1);
-            background: #000;
+            background: #fafafa;
             border-color: rgba(217, 119, 6, 0.5);
             /* Amber hover border */
         }
@@ -316,14 +315,14 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: #1a1a1a;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            color: #18181b;
+            border: 1px solid #e4e4e7;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px);
@@ -349,12 +348,12 @@
             right: 0;
             width: auto;
             min-width: 200px;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #e4e4e7;
             border-radius: 1.25rem;
             padding: 0.75rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             opacity: 0;
             visibility: hidden;
             transform: translateY(10px) scale(0.95);
@@ -482,67 +481,67 @@
             <div class="project-header text-center mb-24 pt-16 relative">
                 <!-- Decorative Glow -->
                 <div
-                    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-amber-500/5 via-transparent to-transparent blur-3xl pointer-events-none -z-10">
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-amber-500/10 via-transparent to-transparent blur-3xl pointer-events-none -z-10">
                 </div>
 
                 <!-- Brand & Product Identity -->
                 <div class="mb-4">
                     <div class="flex items-center justify-center gap-2 mb-6">
-                        <span class="text-[10px] md:text-xs font-bold text-zinc-600 uppercase tracking-[0.3em]">Product
+                        <span class="text-[10px] md:text-xs font-bold text-zinc-500 uppercase tracking-[0.3em]">Product
                             from</span>
                         <span
-                            class="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] md:text-xs font-black text-white uppercase tracking-widest">Sliver</span>
+                            class="px-2 py-0.5 rounded bg-zinc-100 border border-zinc-200 text-[10px] md:text-xs font-black text-zinc-900 uppercase tracking-widest">Sliver</span>
                     </div>
-                    <h1 class="text-7xl md:text-9xl font-bold text-white mb-10 tracking-tighter">
-                        Hopzie<span class="text-amber-500">.</span>
+                    <h1 class="text-7xl md:text-9xl font-bold text-zinc-900 mb-10 tracking-tighter">
+                        Hopzie<span class="text-[#d97706]">.</span>
                     </h1>
-                    <p class="text-xl md:text-2xl text-zinc-300 font-light max-w-3xl mx-auto leading-relaxed">
-                        Transforming <span class="italic font-serif text-amber-200/90">commerce</span> with AI-driven
+                    <p class="text-xl md:text-2xl text-zinc-600 font-light max-w-3xl mx-auto leading-relaxed">
+                        Transforming <span class="italic font-serif text-amber-600">commerce</span> with AI-driven
                         automation.
                     </p>
                 </div>
 
                 <!-- Subtitle Description -->
-                <p class="text-lg text-zinc-400 font-light mx-auto mb-10 leading-snug text-center whitespace-nowrap">
+                <p class="text-lg text-zinc-500 font-light mx-auto mb-10 leading-snug text-center whitespace-nowrap">
                     Enable automated commission routing and real-time link integrity for creator-driven commerce.
                 </p>
 
                 <!-- Metadata Strip -->
                 <div
-                    class="flex w-full max-w-3xl mx-auto justify-center flex-wrap gap-x-8 gap-y-4 px-8 py-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm text-xs font-mono uppercase tracking-wider text-zinc-500">
+                    class="flex w-full max-w-3xl mx-auto justify-center flex-wrap gap-x-8 gap-y-4 px-8 py-4 rounded-2xl bg-zinc-50 border border-zinc-200 backdrop-blur-sm text-xs font-mono uppercase tracking-wider text-zinc-500">
                     <div class="flex items-center gap-2">
-                        <span class="text-zinc-600 font-bold">Role</span>
-                        <span class="text-zinc-300">AI Product Manager</span>
+                        <span class="text-zinc-900 font-bold">Role</span>
+                        <span class="text-zinc-600">AI Product Manager</span>
                     </div>
-                    <div class="w-px h-3 bg-white/10 hidden sm:block"></div>
+                    <div class="w-px h-3 bg-zinc-200 hidden sm:block"></div>
                     <div class="flex items-center gap-2">
-                        <span class="text-zinc-600 font-bold">Focus</span>
-                        <span class="text-zinc-300">AI Automation</span>
+                        <span class="text-zinc-900 font-bold">Focus</span>
+                        <span class="text-zinc-600">AI Automation</span>
                     </div>
-                    <div class="w-px h-3 bg-white/10 hidden sm:block"></div>
+                    <div class="w-px h-3 bg-zinc-200 hidden sm:block"></div>
                     <div class="flex items-center gap-2">
-                        <span class="text-zinc-600 font-bold">Timeline</span>
-                        <span class="text-zinc-300 text-nowrap">Nov 2023 — Feb 2024</span>
+                        <span class="text-zinc-900 font-bold">Timeline</span>
+                        <span class="text-zinc-600 text-nowrap">Nov 2023 — Feb 2024</span>
                     </div>
                 </div>
 
                 <!-- My Role Snapshot (Option 3: Director's Log) -->
                 <div class="mt-8 max-w-3xl mx-auto">
                     <div
-                        class="glass-panel !rounded-2xl bg-white/[0.01] border-white/5 relative overflow-hidden group hover:border-white/10 transition-all duration-500">
+                        class="glass-panel !rounded-2xl bg-white border-zinc-200 relative overflow-hidden group hover:border-zinc-300 transition-all duration-500">
                         <div class="flex flex-col md:flex-row items-stretch">
                             <!-- Side Accent Label -->
                             <div
-                                class="md:w-20 bg-white/[0.03] flex flex-row md:flex-col items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-white/5 gap-0.5">
+                                class="md:w-20 bg-zinc-50 flex flex-row md:flex-col items-center justify-center py-2 md:py-0 border-b md:border-b-0 md:border-r border-zinc-200 gap-0.5">
                                 <span
-                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider">Role</span>
+                                    class="text-xs font-mono text-zinc-500 font-bold uppercase tracking-wider">Role</span>
                                 <span
-                                    class="text-xs font-mono text-zinc-600 font-bold uppercase tracking-wider text-center leading-none">Snapshot</span>
+                                    class="text-xs font-mono text-zinc-500 font-bold uppercase tracking-wider text-center leading-none">Snapshot</span>
                             </div>
                             <!-- Narrative Content -->
                             <div class="flex-1 px-8 py-4 md:px-12 md:py-5 text-left relative flex items-center">
                                 <p
-                                    class="text-zinc-300 text-xs font-mono uppercase tracking-wider leading-relaxed relative z-10">
+                                    class="text-zinc-600 text-xs font-mono uppercase tracking-wider leading-relaxed relative z-10">
                                     I led the pivot, validated demand with user interviews, shipped MVP, then made the
                                     scale/stop call after platform-roadmap validation.
                                 </p>
@@ -557,10 +556,10 @@
                     <!-- Award 1: Google -->
                     <div class="relative group">
                         <div
-                            class="absolute inset-0 bg-amber-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                            class="absolute inset-0 bg-amber-500/10 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                         </div>
                         <div class="relative flex flex-col items-center">
-                            <svg class="w-48 h-12 text-amber-500/80 mb-2" viewBox="0 0 200 60" fill="none"
+                            <svg class="w-48 h-12 text-amber-600/80 mb-2" viewBox="0 0 200 60" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
                                     stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
@@ -569,26 +568,26 @@
                                 <circle cx="100" cy="55" r="2" fill="currentColor" />
                             </svg>
                             <div class="absolute top-2 w-full text-center">
-                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Funded
+                                <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-mono mb-0.5">Funded
                                     by</p>
                                 <p
-                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-yellow-500">
+                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">
                                     Google for Media Startups</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Divider (Visual) -->
-                    <div class="w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block">
+                    <div class="w-px h-8 bg-gradient-to-b from-transparent via-zinc-300 to-transparent hidden md:block">
                     </div>
 
                     <!-- Award 2: SK AI -->
                     <div class="relative group">
                         <div
-                            class="absolute inset-0 bg-blue-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                            class="absolute inset-0 bg-blue-500/10 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                         </div>
                         <div class="relative flex flex-col items-center">
-                            <svg class="w-48 h-12 text-blue-400/80 mb-2" viewBox="0 0 200 60" fill="none"
+                            <svg class="w-48 h-12 text-blue-600/80 mb-2" viewBox="0 0 200 60" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20 30 C 20 50, 80 50, 100 50 C 120 50, 180 50, 180 30" stroke="currentColor"
                                     stroke-width="1.5" stroke-linecap="round" class="opacity-50" />
@@ -597,10 +596,10 @@
                                 <circle cx="100" cy="55" r="2" fill="currentColor" />
                             </svg>
                             <div class="absolute top-2 w-full text-center">
-                                <p class="text-[10px] text-zinc-400 uppercase tracking-widest font-mono mb-0.5">Selected
+                                <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-mono mb-0.5">Selected
                                     by</p>
                                 <p
-                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-500">
+                                    class="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-700">
                                     SK AI Accelerator</p>
                             </div>
                         </div>
@@ -611,10 +610,10 @@
 
             <!-- Challenge Header -->
             <div class="flex flex-col items-center justify-center mt-64 mb-16 px-2 text-center" id="painpoint">
-                <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Product
+                <span class="text-[#d97706] text-xs font-mono uppercase tracking-widest mb-4 block">Product
                     Painpoint</span>
                 <h2
-                    class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 max-w-full mx-auto leading-snug">
+                    class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6 max-w-full mx-auto leading-snug">
                     Do we really have to check each product link <br /> in the video description one by one?
                 </h2>
             </div>
@@ -624,17 +623,17 @@
                 <div class="flex flex-col gap-3 max-w-2xl mx-auto">
                     <!-- Quote 1 -->
                     <div
-                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        class="glass-panel px-6 py-4 rounded-full border border-zinc-200 flex items-center gap-4 hover:bg-zinc-100 transition-colors">
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">I get tired checking comments one by one, so I usually just
+                        <p class="text-zinc-700 text-sm">I get tired checking comments one by one, so I usually just
                             give
                             up. <span class="text-zinc-500 ml-1">- Viewer B</span></p>
                     </div>
                     <!-- Quote 2 -->
                     <div
-                        class="glass-panel px-6 py-4 rounded-full border border-white/5 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                        class="glass-panel px-6 py-4 rounded-full border border-zinc-200 flex items-center gap-4 hover:bg-zinc-100 transition-colors">
                         <i class="fas fa-quote-left text-zinc-600 text-xs shrink-0"></i>
-                        <p class="text-zinc-300 text-sm">Organizing product info takes more time than filming. <span
+                        <p class="text-zinc-700 text-sm">Organizing product info takes more time than filming. <span
                                 class="text-zinc-500 ml-1">- Creator A</span></p>
                     </div>
                 </div>
@@ -659,14 +658,14 @@
                                 <span
                                     class="text-red-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Pain
                                     Point 1</span>
-                                <h3 class="text-white text-lg font-bold">Messy Description</h3>
+                                <h3 class="text-zinc-900 text-lg font-bold">Messy Description</h3>
                             </div>
 
                             <div
-                                class="relative w-[320px] h-[640px] bg-[#0f0f0f] rounded-[2.5rem] shadow-2xl border-[6px] border-[#2a2a2a] overflow-hidden flex flex-col scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
+                                class="relative w-[320px] h-[640px] bg-white rounded-[2.5rem] shadow-2xl border-[6px] border-zinc-200 overflow-hidden flex flex-col scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
                                 <!-- YouTube Header -->
                                 <div
-                                    class="flex justify-between items-center px-4 py-3 border-b border-white/5 h-12 shrink-0">
+                                    class="flex justify-between items-center px-4 py-3 border-b border-zinc-200 h-12 shrink-0">
                                     <div class="flex items-center gap-1">
                                         <div class="w-7 h-5 flex items-center justify-center">
                                             <svg viewBox="0 0 68 48" class="w-full h-full text-red-600 fill-current">
@@ -676,10 +675,10 @@
                                                 <path d="M 45,24 27,14 27,34" fill="white"></path>
                                             </svg>
                                         </div>
-                                        <span class="text-white font-bold text-sm tracking-tighter leading-none"
+                                        <span class="text-zinc-900 font-bold text-sm tracking-tighter leading-none"
                                             style="font-family: 'Roboto Condensed', sans-serif;">YouTube</span>
                                     </div>
-                                    <div class="flex items-center gap-4 text-white">
+                                    <div class="flex items-center gap-4 text-zinc-900">
                                         <i class="fas fa-search text-xs"></i>
                                         <div
                                             class="w-6 h-6 rounded-full bg-purple-600 text-[10px] flex items-center justify-center font-bold">
@@ -688,33 +687,33 @@
                                 </div>
 
                                 <!-- Video Player -->
-                                <div class="w-full aspect-video bg-[#1a1a1a] relative shrink-0">
+                                <div class="w-full aspect-video bg-zinc-50 relative shrink-0">
                                     <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
                                         class="w-full h-full object-cover opacity-60">
                                     <div class="absolute inset-0 flex items-center justify-center">
-                                        <i class="fas fa-play text-white text-3xl opacity-80 drop-shadow-lg"></i>
+                                        <i class="fas fa-play text-zinc-900 text-3xl opacity-80 drop-shadow-lg"></i>
                                     </div>
-                                    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+                                    <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-200">
                                         <div class="w-1/3 h-full bg-red-600"></div>
                                     </div>
                                     <div
-                                        class="absolute bottom-2 right-2 bg-black/80 px-1.5 py-0.5 rounded text-[10px] text-white font-medium">
+                                        class="absolute bottom-2 right-2 bg-white/90 shadow-sm text-zinc-900 px-1.5 py-0.5 rounded text-[10px] text-zinc-900 font-medium">
                                         12:45</div>
                                 </div>
 
                                 <!-- Video Info -->
                                 <div class="px-4 py-3 shrink-0">
-                                    <h1 class="text-white text-sm font-bold leading-snug mb-1.5 line-clamp-2">Minimalist
+                                    <h1 class="text-zinc-900 text-sm font-bold leading-snug mb-1.5 line-clamp-2">Minimalist
                                         Desk Setup 2024 | Productivity Tools & Gear</h1>
-                                    <div class="text-[11px] text-gray-400 mb-4">125K views • 2 days ago</div>
+                                    <div class="text-[11px] text-zinc-500 mb-4">125K views • 2 days ago</div>
                                     <div class="flex items-center justify-between mb-4">
                                         <div class="flex items-center gap-3">
                                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 class="w-9 h-9 rounded-full object-cover">
                                             <div class="flex flex-col justify-center">
-                                                <div class="text-white text-xs font-bold leading-tight">Creator Techie
+                                                <div class="text-zinc-900 text-xs font-bold leading-tight">Creator Techie
                                                 </div>
-                                                <div class="text-[10px] text-gray-400 leading-tight mt-0.5">48.2K
+                                                <div class="text-[10px] text-zinc-500 leading-tight mt-0.5">48.2K
                                                     subscribers</div>
                                             </div>
                                         </div>
@@ -725,51 +724,51 @@
 
                                 <!-- Description Box (The Problem) -->
                                 <div
-                                    class="flex-1 bg-[#1a1a1a] mx-4 mb-4 rounded-xl p-3 relative overflow-hidden flex flex-col border border-[#333]">
+                                    class="flex-1 bg-zinc-50 mx-4 mb-4 rounded-xl p-3 relative overflow-hidden flex flex-col border border-zinc-200">
                                     <div class="flex justify-between items-center mb-2 shrink-0">
-                                        <div class="text-white text-xs font-bold">Description</div>
-                                        <i class="fas fa-times text-gray-400 text-xs"></i>
+                                        <div class="text-zinc-900 text-xs font-bold">Description</div>
+                                        <i class="fas fa-times text-zinc-500 text-xs"></i>
                                     </div>
 
                                     <div class="messy-scroll overflow-y-auto h-full pr-1 space-y-3 relative pb-8">
-                                        <p class="text-gray-300 text-[11px] leading-relaxed">Here are all the links to
+                                        <p class="text-zinc-600 text-[11px] leading-relaxed">Here are all the links to
                                             the products I mentioned in the video! 👇</p>
 
                                         <!-- Clutter Box with RED Theme (Pain Point Focus) -->
-                                        <div class="bg-black/30 rounded-lg p-3 border border-red-500/50 relative">
+                                        <div class="bg-zinc-100 rounded-lg p-3 border border-red-500/50 relative">
                                             <!-- RED Badge -->
                                             <div
-                                                class="absolute -top-2 -right-2 bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-lg z-10 animate-subtle-pulse-red tracking-wide">
+                                                class="absolute -top-2 -right-2 bg-red-600 text-zinc-900 text-[9px] font-black px-2 py-0.5 rounded-full shadow-lg z-10 animate-subtle-pulse-red tracking-wide">
                                                 Manual & Messy
                                             </div>
 
                                             <div class="space-y-4">
                                                 <!-- Clicked Item Simulation -->
                                                 <div
-                                                    class="relative group p-1.5 -m-1.5 rounded bg-white/5 border border-white/10">
-                                                    <div class="text-[11px] text-white font-bold mb-0.5">1. Mechanical
+                                                    class="relative group p-1.5 -m-1.5 rounded bg-zinc-50 border border-zinc-200">
+                                                    <div class="text-[11px] text-zinc-900 font-bold mb-0.5">1. Mechanical
                                                         Keyboard (Q1)</div>
                                                     <div class="text-[10px] text-blue-400 font-bold truncate underline">
                                                         https://amazon.com/dp/B0CB2...</div>
                                                     <i
-                                                        class="fas fa-hand-pointer text-white absolute right-1 top-2 drop-shadow-md animate-tap text-sm -rotate-12"></i>
+                                                        class="fas fa-hand-pointer text-zinc-900 absolute right-1 top-2 drop-shadow-md animate-tap text-sm -rotate-12"></i>
                                                 </div>
 
                                                 <!-- Other Items -->
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">2.
+                                                    <div class="text-[11px] text-zinc-600 font-semibold mb-0.5">2.
                                                         Logitech MX Master 3S Mouse</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://amazon.com/dp/B09HM94VDS/ref=...</div>
                                                 </div>
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">3. BenQ
+                                                    <div class="text-[11px] text-zinc-600 font-semibold mb-0.5">3. BenQ
                                                         ScreenBar Halo</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://amazon.com/dp/B08C5HKCQY/...</div>
                                                 </div>
                                                 <div>
-                                                    <div class="text-[11px] text-gray-300 font-semibold mb-0.5">4.
+                                                    <div class="text-[11px] text-zinc-600 font-semibold mb-0.5">4.
                                                         Grovemade Desk Pad</div>
                                                     <div class="text-[10px] text-blue-400 truncate opacity-80">
                                                         https://grovemade.com/product/wool-felt...</div>
@@ -778,7 +777,7 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-[#1a1a1a] to-transparent pointer-events-none">
+                                        class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-zinc-50 to-transparent pointer-events-none">
                                     </div>
                                 </div>
                             </div>
@@ -788,7 +787,7 @@
                         <div
                             class="hidden md:flex flex-col items-center justify-center gap-2 text-red-500 z-10 h-[640px]">
                             <div
-                                class="text-[10px] font-mono uppercase tracking-widest bg-black/80 px-2 py-1 rounded border border-red-500/30 shadow-lg text-red-400">
+                                class="text-[10px] font-mono uppercase tracking-widest bg-white/90 shadow-sm text-zinc-900 px-2 py-1 rounded border border-red-500/30 shadow-lg text-red-400">
                                 Bad Experience
                             </div>
                             <i
@@ -806,31 +805,31 @@
                                 <span
                                     class="text-red-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Pain
                                     Point 2</span>
-                                <h3 class="text-white text-lg font-bold">Dead / Sold Out Links</h3>
+                                <h3 class="text-zinc-900 text-lg font-bold">Dead / Sold Out Links</h3>
                             </div>
 
                             <div
-                                class="relative w-[320px] h-[640px] bg-white rounded-[2.5rem] shadow-2xl border-[6px] border-[#2a2a2a] overflow-hidden flex flex-col text-left scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
+                                class="relative w-[320px] h-[640px] bg-white rounded-[2.5rem] shadow-2xl border-[6px] border-zinc-200 overflow-hidden flex flex-col text-left scale-[0.65] md:scale-[0.75] lg:scale-[0.8] origin-top">
 
                                 <!-- OS Browser Header -->
                                 <div
                                     class="bg-gray-100 px-4 py-2 border-b border-gray-200 flex items-center gap-2 h-11 shrink-0">
-                                    <i class="fas fa-lock text-gray-400 text-[10px]"></i>
+                                    <i class="fas fa-lock text-zinc-500 text-[10px]"></i>
                                     <div
                                         class="flex-1 bg-white rounded-md h-7 flex items-center px-3 text-[11px] text-gray-500 border border-gray-200 shadow-sm min-w-0">
                                         <span class="truncate w-full text-center">amazon.com/dp/B0CB2...</span>
                                     </div>
-                                    <i class="fas fa-redo-alt text-gray-400 text-[10px] ml-1"></i>
+                                    <i class="fas fa-redo-alt text-zinc-500 text-[10px] ml-1"></i>
                                 </div>
 
                                 <!-- Amazon Header -->
                                 <div class="bg-[#232f3e] px-4 py-3 flex items-center justify-between shrink-0">
                                     <div class="flex items-center gap-3">
-                                        <i class="fas fa-bars text-white text-sm"></i>
+                                        <i class="fas fa-bars text-zinc-900 text-sm"></i>
                                         <span
-                                            class="text-white font-bold text-lg italic tracking-tighter leading-none mt-1">amazon</span>
+                                            class="text-zinc-900 font-bold text-lg italic tracking-tighter leading-none mt-1">amazon</span>
                                     </div>
-                                    <div class="flex items-center gap-4 text-white">
+                                    <div class="flex items-center gap-4 text-zinc-900">
                                         <i class="far fa-user"></i>
                                         <i class="fas fa-shopping-cart"></i>
                                     </div>
@@ -838,8 +837,8 @@
 
                                 <!-- Delivery Location Bar -->
                                 <div
-                                    class="bg-[#37475a] px-4 py-2 flex items-center gap-2 text-white text-[11px] shrink-0">
-                                    <i class="fas fa-map-marker-alt text-gray-300"></i>
+                                    class="bg-[#37475a] px-4 py-2 flex items-center gap-2 text-zinc-900 text-[11px] shrink-0">
+                                    <i class="fas fa-map-marker-alt text-zinc-600"></i>
                                     <span class="truncate">Deliver to Republic of Korea</span>
                                 </div>
 
@@ -908,19 +907,19 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto px-4 mt-[-40px]">
                     <!-- Consumer Card -->
                     <div
-                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-white/5">
+                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-zinc-200">
                         <div class="relative z-10">
                             <div class="flex items-center gap-4 mb-6">
                                 <div
                                     class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400">
                                     <i class="fas fa-user-tag"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-white">For Consumers</h3>
+                                <h3 class="text-xl font-bold text-zinc-900">For Consumers</h3>
                             </div>
                             <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">Disconnected
                                 Journey</h4>
 
-                            <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                            <ul class="space-y-4 text-sm text-zinc-500 leading-relaxed">
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
                                     <span><strong>The Loop:</strong> Endless switching between YouTube comments and
@@ -938,19 +937,19 @@
 
                     <!-- Creator Card -->
                     <div
-                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-white/5">
+                        class="glass-panel p-8 bg-gradient-to-br from-white/5 to-transparent relative overflow-hidden flex-1 border border-zinc-200">
                         <div class="relative z-10">
                             <div class="flex items-center gap-4 mb-6">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                    class="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center text-[#d97706]">
                                     <i class="fas fa-video"></i>
                                 </div>
-                                <h3 class="text-xl font-bold text-white">For Creators</h3>
+                                <h3 class="text-xl font-bold text-zinc-900">For Creators</h3>
                             </div>
                             <h4 class="text-sm font-semibold text-zinc-500 mb-6 uppercase tracking-wide">Administrative
                                 Burden</h4>
 
-                            <ul class="space-y-4 text-sm text-zinc-400 leading-relaxed">
+                            <ul class="space-y-4 text-sm text-zinc-500 leading-relaxed">
                                 <li class="flex items-start gap-3">
                                     <span class="text-red-400 mt-1 text-xs shrink-0"><i class="fas fa-times"></i></span>
                                     <span><strong>Manual Curation:</strong> Organising purchase links in comments is a
@@ -978,12 +977,12 @@
             <!-- 2. The Solution (Feature Showcase) -->
             <div class="mb-16 mt-64" id="solution">
                 <div class="text-center mb-16">
-                    <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-2 block">Our
+                    <span class="text-[#d97706] text-xs font-mono uppercase tracking-widest mb-2 block">Our
                         Answer</span>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Automated Commerce
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">Automated Commerce
                         Engine
                     </h2>
-                    <p class="text-zinc-400 max-w-2xl mx-auto text-lg font-light">
+                    <p class="text-zinc-500 max-w-2xl mx-auto text-lg font-light">
                         Developed an end-to-end AI solution that integrates directly with platforms, automating
                         the
                         connection between content and sales.
@@ -993,17 +992,17 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                     <!-- Flow Card 1: Seamless Setup (Full Width) -->
                     <div
-                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-white/5">
+                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-zinc-200">
                         <div class="flex flex-col md:flex-row">
                             <!-- Text Content -->
                             <div class="p-6 md:p-8 md:w-5/12 flex flex-col justify-center relative z-20">
                                 <div class="flex items-center gap-3 mb-6">
                                     <div
-                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:border-amber-500/50 group-hover:text-amber-500 transition-colors">
+                                        class="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-500 group-hover:border-amber-500/50 group-hover:text-[#d97706] transition-colors">
                                         01</div>
-                                    <h3 class="text-2xl font-bold text-white">Seamless Setup</h3>
+                                    <h3 class="text-2xl font-bold text-zinc-900">Seamless Setup</h3>
                                 </div>
-                                <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                                <p class="text-zinc-500 text-lg leading-relaxed mb-8">
                                     Zero-friction onboarding for creators. Connect your channel once, and let
                                     our
                                     AI handle the rest. Automatic product detection and affiliate link
@@ -1011,14 +1010,14 @@
                                 </p>
 
                                 <div class="space-y-4">
-                                    <div class="flex items-center gap-4 text-zinc-300">
+                                    <div class="flex items-center gap-4 text-zinc-700">
                                         <div
                                             class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center text-green-500">
                                             <i class="fas fa-check text-xs"></i>
                                         </div>
                                         <span class="text-sm">One-click integration</span>
                                     </div>
-                                    <div class="flex items-center gap-4 text-zinc-300">
+                                    <div class="flex items-center gap-4 text-zinc-700">
                                         <div
                                             class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                                             <i class="fas fa-magic text-xs"></i>
@@ -1030,7 +1029,7 @@
 
                             <!-- Visual Content (The Flow) -->
                             <div
-                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-3 md:p-4 relative overflow-hidden border-l border-white/5">
+                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-3 md:p-4 relative overflow-hidden border-l border-zinc-200">
 
                                 <!-- Flow Container -->
                                 <!-- Flow Container -->
@@ -1038,23 +1037,23 @@
                                     class="space-y-3 md:space-y-4 relative z-10 w-full max-w-sm scale-[0.75] origin-center">
                                     <!-- Connecting Guide Line -->
                                     <div
-                                        class="absolute left-[24px] md:left-[28px] top-8 bottom-8 md:top-9 md:bottom-9 w-px border-l-2 border-dashed border-white/10 z-0">
+                                        class="absolute left-[24px] md:left-[28px] top-8 bottom-8 md:top-9 md:bottom-9 w-px border-l-2 border-dashed border-zinc-200 z-0">
                                     </div>
 
                                     <!-- STEP 1: START -->
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node -->
                                         <div
-                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-[#d97706] flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
                                             <i class="fas fa-play text-base md:text-lg ml-1"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
-                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                class="text-[#d97706] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Start</h3>
-                                            <p class="text-white font-bold text-lg md:text-xl">Create My Hopzie
+                                            <p class="text-zinc-900 font-bold text-lg md:text-xl">Create My Hopzie
                                                 URL</p>
                                         </div>
                                     </div>
@@ -1063,12 +1062,12 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node -->
                                         <div
-                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-zinc-200 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-[#d97706]">
                                             <i class="fas fa-globe text-base md:text-lg"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
                                                 class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Step 01</h3>
@@ -1081,12 +1080,12 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node -->
                                         <div
-                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-zinc-200 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-[#d97706]">
                                             <i class="fas fa-pen-fancy text-base md:text-lg"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
                                                 class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Step 02</h3>
@@ -1099,14 +1098,14 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node -->
                                         <div
-                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-white/10 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-zinc-200 text-zinc-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-[#d97706]">
                                             <div class="flex flex-col items-center leading-none gap-1">
                                                 <i class="fas fa-link text-xs md:text-sm"></i>
                                             </div>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
                                                 class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Step 03</h3>
@@ -1121,16 +1120,16 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node -->
                                         <div
-                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
+                                            class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#0a0a0a] border border-amber-500/50 text-[#d97706] flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.1)] node-icon transition-all duration-300">
                                             <i class="fas fa-check text-lg md:text-xl"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
                                             class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-md">
                                             <h3
-                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                class="text-[#d97706] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Goal</h3>
-                                            <p class="text-white font-bold text-lg md:text-xl">AI Automation
+                                            <p class="text-zinc-900 font-bold text-lg md:text-xl">AI Automation
                                                 Activated</p>
                                         </div>
                                     </div>
@@ -1142,30 +1141,30 @@
 
                     <!-- Flow Card 2: Creator Usage Flow (Full Width) -->
                     <div
-                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-white/5">
+                        class="glass-card p-0 md:col-span-2 bg-[#050505] relative overflow-hidden group border border-zinc-200">
                         <div class="flex flex-col md:flex-row">
                             <!-- Text Content -->
                             <div class="p-4 md:p-6 md:w-5/12 flex flex-col justify-center relative z-20">
                                 <div class="flex items-center gap-3 mb-6">
                                     <div
-                                        class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-zinc-400 group-hover:border-amber-500/50 group-hover:text-amber-500 transition-colors">
+                                        class="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-zinc-500 group-hover:border-amber-500/50 group-hover:text-[#d97706] transition-colors">
                                         02</div>
-                                    <h3 class="text-2xl font-bold text-white">Creator Usage Flow</h3>
+                                    <h3 class="text-2xl font-bold text-zinc-900">Creator Usage Flow</h3>
                                 </div>
-                                <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                                <p class="text-zinc-500 text-lg leading-relaxed mb-8">
                                     A streamlined experience designed for creators. Just check your email, edit
                                     the description, and paste one link. We handle the rest.
                                 </p>
 
                                 <div class="space-y-4">
-                                    <div class="flex items-center gap-4 text-zinc-300">
+                                    <div class="flex items-center gap-4 text-zinc-700">
                                         <div
-                                            class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                            class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center text-[#d97706]">
                                             <i class="fas fa-envelope-open-text text-xs"></i>
                                         </div>
                                         <span class="text-sm">Email-based trigger</span>
                                     </div>
-                                    <div class="flex items-center gap-4 text-zinc-300">
+                                    <div class="flex items-center gap-4 text-zinc-700">
                                         <div
                                             class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500">
                                             <i class="fas fa-link text-xs"></i>
@@ -1177,30 +1176,30 @@
 
                             <!-- Visual Content (The Usage Flow) -->
                             <div
-                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-4 relative overflow-hidden border-l border-white/5">
+                                class="flex-1 bg-[#0a0a0a] flex items-center justify-center p-4 relative overflow-hidden border-l border-zinc-200">
 
                                 <!-- Flow Container -->
                                 <div
                                     class="space-y-3 md:space-y-4 relative z-10 w-full max-w-sm scale-[0.75] origin-center">
                                     <!-- Connecting Guide Line -->
                                     <div
-                                        class="absolute left-[28px] top-8 bottom-8 w-px border-l-2 border-dashed border-white/10 z-0">
+                                        class="absolute left-[28px] top-8 bottom-8 w-px border-l-2 border-dashed border-zinc-200 z-0">
                                     </div>
 
                                     <!-- STEP 1: START (Receive URL) -->
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node: Round & Amber Border -->
                                         <div
-                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-[#d97706] flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
                                             <i class="fas fa-envelope-open-text text-lg"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
-                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                class="text-[#d97706] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Start</h3>
-                                            <p class="text-white font-bold text-lg md:text-xl">Receive Hopzie
+                                            <p class="text-zinc-900 font-bold text-lg md:text-xl">Receive Hopzie
                                                 URL</p>
                                             <p class="text-gray-500 text-xs md:text-sm mt-1">Check email inbox
                                             </p>
@@ -1211,12 +1210,12 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node: Round & Gray Border -->
                                         <div
-                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-white/20 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-zinc-300 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-[#d97706]">
                                             <i class="fab fa-youtube text-lg"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
-                                            class="flex-1 glass-panel p-3 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-md hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300">
+                                            class="flex-1 glass-panel p-3 rounded-2xl border border-zinc-200 bg-zinc-50 backdrop-blur-md hover:bg-zinc-100 hover:border-amber-500/30 transition-all duration-300">
                                             <h3
                                                 class="text-zinc-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Step 01</h3>
@@ -1229,19 +1228,19 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node: Round & Gray Border -->
                                         <div
-                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-white/20 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-amber-500">
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border border-zinc-300 text-gray-500 flex items-center justify-center shrink-0 z-10 node-icon transition-all duration-300 group-hover:border-amber-500/50 group-hover:text-[#d97706]">
                                             <i class="fas fa-link text-lg"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
                                             class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/5 border border-amber-500/10 backdrop-blur-md hover:bg-amber-500/10 transition-all duration-300">
                                             <h3
-                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                class="text-[#d97706] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Step 02</h3>
-                                            <p class="text-white font-bold text-lg md:text-xl">Input Hopzie URL
+                                            <p class="text-zinc-900 font-bold text-lg md:text-xl">Input Hopzie URL
                                             </p>
-                                            <div class="text-gray-400 text-xs md:text-sm mt-1">Just copy & paste
-                                                <span class="text-amber-500 font-bold">one link!</span>
+                                            <div class="text-zinc-500 text-xs md:text-sm mt-1">Just copy & paste
+                                                <span class="text-[#d97706] font-bold">one link!</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1250,16 +1249,16 @@
                                     <div class="flex gap-6 md:gap-8 items-start step-row group">
                                         <!-- Node: Round & Amber Border -->
                                         <div
-                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-amber-500 flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
+                                            class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 text-[#d97706] flex items-center justify-center shrink-0 z-10 shadow-[0_0_10px_rgba(217,119,6,0.2)] node-icon transition-all duration-300">
                                             <i class="fas fa-check text-xl"></i>
                                         </div>
                                         <!-- Card -->
                                         <div
                                             class="flex-1 glass-panel p-3 rounded-2xl bg-amber-500/10 border border-amber-500/20 backdrop-blur-md">
                                             <h3
-                                                class="text-amber-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
+                                                class="text-[#d97706] text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1">
                                                 Complete</h3>
-                                            <p class="text-white font-bold text-lg md:text-xl">Integration
+                                            <p class="text-zinc-900 font-bold text-lg md:text-xl">Integration
                                                 Finished</p>
                                         </div>
                                     </div>
@@ -1277,8 +1276,8 @@
             <div
                 class="glass-panel pt-16 pb-4 md:pt-24 md:pb-6 rounded-[3rem] relative overflow-hidden bg-gradient-to-b from-white/5 to-black">
                 <div class="relative z-10 max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold text-white mb-6">The Engine: AI-Driven Logic</h2>
-                    <p class="text-zinc-400 text-lg font-light max-w-2xl mx-auto mb-16 px-4">
+                    <h2 class="text-3xl font-bold text-zinc-900 mb-6">The Engine: AI-Driven Logic</h2>
+                    <p class="text-zinc-500 text-lg font-light max-w-2xl mx-auto mb-16 px-4">
                         Continuously analyzes commission rates and availability signals to optimize creator revenue and
                         user experience.
                     </p>
@@ -1287,16 +1286,16 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
                         <!-- Feature 1: Revenue Optimization -->
                         <div
-                            class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 backdrop-blur-sm group hover:border-amber-500/30 transition-all duration-300">
+                            class="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center gap-4 backdrop-blur-sm group hover:border-amber-500/30 transition-all duration-300">
                             <div
-                                class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                                class="w-10 h-10 rounded-xl bg-amber-500/10 text-[#d97706] flex items-center justify-center shrink-0">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-white text-base">Revenue Optimization Engine</h4>
+                                <h4 class="font-bold text-zinc-900 text-base">Revenue Optimization Engine</h4>
                                 <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Marketplace selection based on
                                     commission and profitability logic</p>
                             </div>
@@ -1304,7 +1303,7 @@
 
                         <!-- Feature 2: Link Resilience -->
                         <div
-                            class="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 backdrop-blur-sm group hover:border-blue-500/30 transition-all duration-300">
+                            class="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 flex items-center gap-4 backdrop-blur-sm group hover:border-blue-500/30 transition-all duration-300">
                             <div
                                 class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1313,7 +1312,7 @@
                                 </svg>
                             </div>
                             <div class="text-left">
-                                <h4 class="font-bold text-white text-base">Link Resilience Automation</h4>
+                                <h4 class="font-bold text-zinc-900 text-base">Link Resilience Automation</h4>
                                 <p class="text-[11px] text-zinc-500 mt-1 leading-relaxed">Real-time stock detection and
                                     dynamic rerouting</p>
                             </div>
@@ -1390,16 +1389,16 @@
                             <div class="flex flex-col items-center gap-4 relative z-10 mx-2">
                                 <div class="text-center mb-2">
                                     <span
-                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
+                                        class="text-[#d97706] font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
                                         01</span>
-                                    <h3 class="text-white text-lg font-bold">Viewer Clicks Link</h3>
+                                    <h3 class="text-zinc-900 text-lg font-bold">Viewer Clicks Link</h3>
                                 </div>
 
                                 <div
-                                    class="relative w-[260px] h-[520px] bg-[#0f0f0f] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
+                                    class="relative w-[260px] h-[520px] bg-white rounded-[2.5rem] border-[4px] border-zinc-200 shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
                                     <!-- YouTube Header -->
                                     <div
-                                        class="px-4 py-3 bg-[#1a1a1a] flex justify-between items-center h-12 shrink-0 border-b border-white/5">
+                                        class="px-4 py-3 bg-zinc-50 flex justify-between items-center h-12 shrink-0 border-b border-zinc-200">
                                         <div class="flex items-center gap-1">
                                             <div class="w-6 h-4 flex items-center justify-center">
                                                 <svg viewBox="0 0 24 24" class="w-full h-full">
@@ -1408,52 +1407,52 @@
                                                     <path fill="#FFF" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                                                 </svg>
                                             </div>
-                                            <span class="text-white font-bold text-xs tracking-tighter ml-1"
+                                            <span class="text-zinc-900 font-bold text-xs tracking-tighter ml-1"
                                                 style="font-family: 'Roboto Condensed', sans-serif;">YouTube</span>
                                         </div>
-                                        <div class="flex gap-3 text-white">
+                                        <div class="flex gap-3 text-zinc-900">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                             </svg>
                                             <div
-                                                class="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-[8px] text-white font-bold">
+                                                class="w-5 h-5 rounded-full bg-purple-600 flex items-center justify-center text-[8px] text-zinc-900 font-bold">
                                                 C</div>
                                         </div>
                                     </div>
 
                                     <!-- Content -->
                                     <div class="p-0">
-                                        <div class="aspect-video bg-[#222] relative">
+                                        <div class="aspect-video bg-zinc-50 relative">
                                             <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
                                                 class="w-full h-full object-cover opacity-60">
                                             <div class="absolute inset-0 flex items-center justify-center">
-                                                <svg class="w-10 h-10 text-white opacity-80" fill="currentColor"
+                                                <svg class="w-10 h-10 text-zinc-900 opacity-80" fill="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path d="M8 5v14l11-7z" />
                                                 </svg>
                                             </div>
                                             <!-- Progress Bar -->
-                                            <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+                                            <div class="absolute bottom-0 left-0 w-full h-1 bg-zinc-200">
                                                 <div class="w-1/3 h-full bg-red-600"></div>
                                             </div>
                                             <div
-                                                class="absolute bottom-2 right-2 bg-black/80 px-1 rounded text-[8px] text-white font-mono">
+                                                class="absolute bottom-2 right-2 bg-white/90 shadow-sm text-zinc-900 px-1 rounded text-[8px] text-zinc-900 font-mono">
                                                 10:24</div>
                                         </div>
                                         <div class="p-4">
-                                            <h3 class="text-white text-xs font-bold leading-snug line-clamp-2 mb-1">
+                                            <h3 class="text-zinc-900 text-xs font-bold leading-snug line-clamp-2 mb-1">
                                                 Minimalist Desk Setup 2024 | Productivity Gear Review</h3>
-                                            <div class="text-[9px] text-gray-400 mb-3">125K views • 2 days
+                                            <div class="text-[9px] text-zinc-500 mb-3">125K views • 2 days
                                                 ago</div>
 
                                             <!-- Profile & Subscribe -->
                                             <div class="flex items-center justify-between mb-4">
                                                 <div class="flex items-center gap-2">
                                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                                        class="w-8 h-8 rounded-full object-cover border border-white/10">
+                                                        class="w-8 h-8 rounded-full object-cover border border-zinc-200">
                                                     <div class="flex flex-col">
-                                                        <span class="text-white text-[10px] font-bold">Creator
+                                                        <span class="text-zinc-900 text-[10px] font-bold">Creator
                                                             Techie</span>
                                                         <span class="text-gray-500 text-[8px]">48.2K
                                                             subscribers</span>
@@ -1466,44 +1465,44 @@
                                             <!-- Action Buttons -->
                                             <div class="flex gap-2 overflow-x-hidden opacity-60 mb-3">
                                                 <div
-                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
-                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    class="bg-zinc-50 px-2 py-1 rounded-full flex items-center gap-1 border border-zinc-200">
+                                                    <svg class="w-3 h-3 text-zinc-900" fill="none" stroke="currentColor"
                                                         viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
                                                             d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5">
                                                         </path>
-                                                    </svg><span class="text-[8px] text-white">4.5K</span>
+                                                    </svg><span class="text-[8px] text-zinc-900">4.5K</span>
                                                 </div>
                                                 <div
-                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
-                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    class="bg-zinc-50 px-2 py-1 rounded-full flex items-center gap-1 border border-zinc-200">
+                                                    <svg class="w-3 h-3 text-zinc-900" fill="none" stroke="currentColor"
                                                         viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
                                                             d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
                                                         </path>
-                                                    </svg><span class="text-[8px] text-white">Share</span>
+                                                    </svg><span class="text-[8px] text-zinc-900">Share</span>
                                                 </div>
                                                 <div
-                                                    class="bg-[#222] px-2 py-1 rounded-full flex items-center gap-1 border border-white/5">
-                                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor"
+                                                    class="bg-zinc-50 px-2 py-1 rounded-full flex items-center gap-1 border border-zinc-200">
+                                                    <svg class="w-3 h-3 text-zinc-900" fill="none" stroke="currentColor"
                                                         viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
                                                             d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4">
                                                         </path>
-                                                    </svg><span class="text-[8px] text-white">Download</span>
+                                                    </svg><span class="text-[8px] text-zinc-900">Download</span>
                                                 </div>
                                             </div>
 
                                             <!-- Link Box -->
-                                            <div class="bg-[#1a1a1a] rounded-xl p-3 border border-white/10 relative">
-                                                <p class="text-[10px] text-gray-400 mb-2">Featured Products:
+                                            <div class="bg-zinc-50 rounded-xl p-3 border border-zinc-200 relative">
+                                                <p class="text-[10px] text-zinc-500 mb-2">Featured Products:
                                                 </p>
                                                 <div
                                                     class="flex items-center gap-2 p-2 rounded-lg bg-amber-500/10 border border-amber-500/50 cursor-pointer animate-soft-pulse relative z-10">
-                                                    <svg class="w-3 h-3 text-amber-500" fill="none"
+                                                    <svg class="w-3 h-3 text-[#d97706]" fill="none"
                                                         stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
@@ -1511,7 +1510,7 @@
                                                         </path>
                                                     </svg>
                                                     <span
-                                                        class="text-amber-500 text-[10px] font-bold">hopzie.co/@techie</span>
+                                                        class="text-[#d97706] text-[10px] font-bold">hopzie.co/@techie</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1521,7 +1520,7 @@
 
                             <!-- CONNECTOR 1: Simple Arrow -->
                             <div
-                                class="flex items-center justify-center h-[520px] w-20 pb-12 opacity-50 text-amber-500">
+                                class="flex items-center justify-center h-[520px] w-20 pb-12 opacity-50 text-[#d97706]">
                                 <svg class="w-8 h-8 animate-pulse" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -1533,43 +1532,43 @@
                             <div class="flex flex-col items-center gap-4 mx-2">
                                 <div class="text-center mb-2">
                                     <span
-                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
+                                        class="text-[#d97706] font-mono text-xs font-bold tracking-widest uppercase block mb-1">Step
                                         02</span>
-                                    <h3 class="text-white text-lg font-bold">Creator's Shop Page</h3>
+                                    <h3 class="text-zinc-900 text-lg font-bold">Creator's Shop Page</h3>
                                 </div>
 
                                 <div
-                                    class="relative w-[260px] h-[520px] bg-[#0f0f0f] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
+                                    class="relative w-[260px] h-[520px] bg-white rounded-[2.5rem] border-[4px] border-zinc-200 shadow-2xl overflow-hidden flex flex-col group text-left transition-transform hover:-translate-y-1 duration-300">
                                     <!-- Shop Header -->
                                     <div
-                                        class="h-32 bg-gradient-to-b from-[#1a1a1a] to-black p-4 flex flex-col items-center justify-center shrink-0 border-b border-white/5 relative">
+                                        class="h-32 bg-gradient-to-b from-zinc-50 to-black p-4 flex flex-col items-center justify-center shrink-0 border-b border-zinc-200 relative">
                                         <div
                                             class="w-14 h-14 rounded-full p-[2px] bg-gradient-to-tr from-amber-500 to-purple-600 mb-2">
                                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 class="w-full h-full rounded-full object-cover border-2 border-black">
                                         </div>
-                                        <span class="text-white text-xs font-bold">@CreatorTechie</span>
+                                        <span class="text-zinc-900 text-xs font-bold">@CreatorTechie</span>
                                     </div>
 
                                     <!-- List -->
                                     <div class="p-4 flex-1 space-y-3">
                                         <!-- Item 1 (Selected -> Amazon) -->
                                         <div
-                                            class="bg-white/5 rounded-xl p-3 border border-amber-500/50 flex items-center gap-3 relative cursor-pointer hover:bg-white/10 transition-colors group/item">
+                                            class="bg-zinc-50 rounded-xl p-3 border border-amber-500/50 flex items-center gap-3 relative cursor-pointer hover:bg-zinc-100 transition-colors group/item">
                                             <div
                                                 class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shrink-0">
                                                 <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=100&q=80"
                                                     class="w-full h-full object-cover rounded-lg">
                                             </div>
                                             <div class="flex-1 min-w-0">
-                                                <div class="text-white text-[10px] font-bold truncate">
+                                                <div class="text-zinc-900 text-[10px] font-bold truncate">
                                                     Keychron Q1 Pro</div>
                                                 <div class="flex items-center gap-1 mt-0.5">
                                                     <span
                                                         class="text-[8px] bg-[#FF9900] text-black px-1.5 py-0.5 rounded font-bold">Amazon</span>
                                                 </div>
                                             </div>
-                                            <svg class="w-3 h-3 text-amber-500" fill="none" stroke="currentColor"
+                                            <svg class="w-3 h-3 text-[#d97706]" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M9 5l7 7-7 7"></path>
@@ -1577,28 +1576,28 @@
                                         </div>
                                         <!-- Other Items (Dimmed) -->
                                         <div
-                                            class="bg-white/5 rounded-xl p-3 border border-white/5 flex items-center gap-3 opacity-50">
+                                            class="bg-zinc-50 rounded-xl p-3 border border-zinc-200 flex items-center gap-3 opacity-50">
                                             <div class="w-10 h-10 bg-white rounded-lg overflow-hidden shrink-0">
                                                 <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=100&q=80"
                                                     class="w-full h-full object-cover">
                                             </div>
                                             <div class="flex-1 min-w-0">
-                                                <div class="text-white text-[10px] font-bold truncate">
+                                                <div class="text-zinc-900 text-[10px] font-bold truncate">
                                                     Logitech Mouse</div><span
-                                                    class="text-[8px] bg-[#0046BE] text-white px-1.5 py-0.5 rounded font-bold">Best
+                                                    class="text-[8px] bg-[#0046BE] text-zinc-900 px-1.5 py-0.5 rounded font-bold">Best
                                                     Buy</span>
                                             </div>
                                         </div>
                                         <div
-                                            class="bg-white/5 rounded-xl p-3 border border-white/5 flex items-center gap-3 opacity-50">
+                                            class="bg-zinc-50 rounded-xl p-3 border border-zinc-200 flex items-center gap-3 opacity-50">
                                             <div class="w-10 h-10 bg-white rounded-lg overflow-hidden shrink-0">
                                                 <img src="https://images.unsplash.com/photo-1616628188859-7a11abb6fcc9?auto=format&fit=crop&w=100&q=80"
                                                     class="w-full h-full object-cover">
                                             </div>
                                             <div class="flex-1 min-w-0">
-                                                <div class="text-white text-[10px] font-bold truncate">Sony
+                                                <div class="text-zinc-900 text-[10px] font-bold truncate">Sony
                                                     Headphones</div><span
-                                                    class="text-[8px] bg-gray-600 text-white px-1.5 py-0.5 rounded font-bold">Brand
+                                                    class="text-[8px] bg-gray-600 text-zinc-900 px-1.5 py-0.5 rounded font-bold">Brand
                                                     Store</span>
                                             </div>
                                         </div>
@@ -1633,14 +1632,14 @@
                                     <!-- Icon -->
                                     <div
                                         class="w-12 h-12 rounded-full bg-[#0a0a0a] border-2 border-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)] relative z-10">
-                                        <svg class="w-6 h-6 text-amber-500 fill-current" viewBox="0 0 24 24">
+                                        <svg class="w-6 h-6 text-[#d97706] fill-current" viewBox="0 0 24 24">
                                             <path d="M7 2v11h3v9l7-12h-4l4-8z" />
                                         </svg>
                                     </div>
 
                                     <div class="text-center mt-3 bg-[#0a0a0a] px-2 relative z-10">
                                         <span
-                                            class="text-amber-500 text-[10px] font-bold uppercase tracking-widest block">Direct
+                                            class="text-[#d97706] text-[10px] font-bold uppercase tracking-widest block">Direct
                                             Web Engine</span>
                                         <span class="text-gray-500 text-[9px]">No Redirects</span>
                                     </div>
@@ -1651,17 +1650,17 @@
                             <div class="flex flex-col items-center gap-4 mx-2">
                                 <div class="text-center mb-2">
                                     <span
-                                        class="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase block mb-1">Goal</span>
-                                    <h3 class="text-white text-lg font-bold">Seamless Purchase</h3>
+                                        class="text-[#d97706] font-mono text-xs font-bold tracking-widest uppercase block mb-1">Goal</span>
+                                    <h3 class="text-zinc-900 text-lg font-bold">Seamless Purchase</h3>
                                 </div>
 
                                 <!-- Amazon Mockup with Fixed Header Color -->
                                 <div
-                                    class="relative w-[260px] h-[520px] bg-[#232f3e] rounded-[2.5rem] border-[4px] border-[#2a2a2a] shadow-2xl overflow-hidden flex flex-col text-left transition-transform hover:-translate-y-1 duration-300">
+                                    class="relative w-[260px] h-[520px] bg-[#232f3e] rounded-[2.5rem] border-[4px] border-zinc-200 shadow-2xl overflow-hidden flex flex-col text-left transition-transform hover:-translate-y-1 duration-300">
                                     <!-- Header (Amazon) -->
                                     <div
                                         class="bg-[#232f3e] px-3 py-2 border-b border-[#232f3e] flex items-center gap-2 h-12 shrink-0">
-                                        <span class="text-white font-bold text-xs italic tracking-tighter">amazon</span>
+                                        <span class="text-zinc-900 font-bold text-xs italic tracking-tighter">amazon</span>
                                         <div
                                             class="flex-1 bg-white rounded h-7 flex items-center px-2 text-[8px] text-gray-600 min-w-0 border-none shadow-inner">
                                             <svg class="w-2 h-2 text-gray-500 mr-1" fill="none" stroke="currentColor"
@@ -1711,25 +1710,25 @@
 
                     <!-- Live Deliverables -->
                     <div
-                        class="relative z-10 mt-1.5 mb-2 flex flex-col items-center gap-4 border-t border-white/5 pt-6 pb-2">
+                        class="relative z-10 mt-1.5 mb-2 flex flex-col items-center gap-4 border-t border-zinc-200 pt-6 pb-2">
                         <span class="text-zinc-500 text-[10px] font-mono uppercase tracking-[0.3em]">Live Product
                             Artifacts</span>
                         <div class="flex flex-wrap justify-center gap-4">
                             <a href="https://www.hopzie.co/@jung__won.k/0H1vns" target="_blank"
-                                class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 transition-all duration-300 flex items-center gap-3 group">
+                                class="px-5 py-3 rounded-xl bg-zinc-50 border border-zinc-200 hover:bg-zinc-100 hover:border-amber-500/50 transition-all duration-300 flex items-center gap-3 group">
                                 <span
-                                    class="text-zinc-300 text-xs font-medium group-hover:text-white transition-colors">Shop
+                                    class="text-zinc-700 text-xs font-medium group-hover:text-zinc-900 transition-colors">Shop
                                     Artifact 01</span>
                                 <i
-                                    class="fas fa-external-link-alt text-[10px] text-zinc-600 group-hover:text-amber-500 transition-colors"></i>
+                                    class="fas fa-external-link-alt text-[10px] text-zinc-600 group-hover:text-[#d97706] transition-colors"></i>
                             </a>
                             <a href="https://www.hopzie.co/@limbbeumlim/0IAKK8" target="_blank"
-                                class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 transition-all duration-300 flex items-center gap-3 group">
+                                class="px-5 py-3 rounded-xl bg-zinc-50 border border-zinc-200 hover:bg-zinc-100 hover:border-amber-500/50 transition-all duration-300 flex items-center gap-3 group">
                                 <span
-                                    class="text-zinc-300 text-xs font-medium group-hover:text-white transition-colors">Shop
+                                    class="text-zinc-700 text-xs font-medium group-hover:text-zinc-900 transition-colors">Shop
                                     Artifact 02</span>
                                 <i
-                                    class="fas fa-external-link-alt text-[10px] text-zinc-600 group-hover:text-amber-500 transition-colors"></i>
+                                    class="fas fa-external-link-alt text-[10px] text-zinc-600 group-hover:text-[#d97706] transition-colors"></i>
                             </a>
                         </div>
                     </div>
@@ -1739,11 +1738,11 @@
             <!-- 4. Impact (Stats & Partners) -->
             <div class="mb-24 max-w-6xl mx-auto px-4 mt-64" id="impact">
                 <div class="text-center mb-16">
-                    <span class="text-amber-500 text-xs font-mono uppercase tracking-widest mb-4 block">Performance
+                    <span class="text-[#d97706] text-xs font-mono uppercase tracking-widest mb-4 block">Performance
                         Reach</span>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Impact on the Business &
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900">Impact on the Business &
                         Products</h2>
-                    <p class="text-zinc-400 text-sm md:text-base font-light mx-auto mt-4 whitespace-nowrap">Secured
+                    <p class="text-zinc-500 text-sm md:text-base font-light mx-auto mt-4 whitespace-nowrap">Secured
                         major institutional funding from Google and SK, reaching 895K users within 3 months of MVP
                         validation.</p>
                 </div>
@@ -1754,10 +1753,10 @@
                         class="glass-card p-8 bg-amber-500/[0.03] border-amber-500/10 group hover:border-amber-500/30 transition-all duration-500">
                         <div class="flex items-center gap-4 mb-8">
                             <div
-                                class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-[#d97706]">
                                 <i class="fas fa-hand-holding-usd text-xl"></i>
                             </div>
-                            <h3 class="text-white text-xl font-bold">Funding & Validation</h3>
+                            <h3 class="text-zinc-900 text-xl font-bold">Funding & Validation</h3>
                         </div>
                         <ul class="space-y-6">
                             <li class="flex gap-4">
@@ -1768,7 +1767,7 @@
                                     <a href="https://newsinitiative.withgoogle.com/ko-kr/resources/programs/innovation-challenges/selected-projects/?region=asia-pacific"
                                         target="_blank" class="flex justify-between items-center group/link">
                                         <p
-                                            class="text-white font-bold text-sm group-hover/link:text-amber-400 transition-colors">
+                                            class="text-zinc-900 font-bold text-sm group-hover/link:text-amber-400 transition-colors">
                                             Google for Media Startups</p>
                                         <i
                                             class="fab fa-google text-[10px] text-zinc-700 group-hover/link:text-amber-400/50 transition-colors"></i>
@@ -1784,7 +1783,7 @@
                                     <a href="https://sktch.sktelecom.com/ko/startups.do" target="_blank"
                                         class="flex justify-between items-center group/link">
                                         <p
-                                            class="text-white font-bold text-sm group-hover/link:text-amber-400 transition-colors">
+                                            class="text-zinc-900 font-bold text-sm group-hover/link:text-amber-400 transition-colors">
                                             SK AI Accelerator</p>
                                         <i
                                             class="fas fa-bolt text-[10px] text-zinc-700 group-hover/link:text-amber-400/50 transition-colors"></i>
@@ -1807,13 +1806,13 @@
                                 class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">
                                 <i class="fas fa-chart-line text-xl"></i>
                             </div>
-                            <h3 class="text-white text-xl font-bold">Market Expansion</h3>
+                            <h3 class="text-zinc-900 text-xl font-bold">Market Expansion</h3>
                         </div>
                         <ul class="space-y-6">
                             <li class="flex gap-4">
                                 <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
-                                    <p class="text-white font-bold text-sm transition-colors">
+                                    <p class="text-zinc-900 font-bold text-sm transition-colors">
                                         Launched Nov 2023</p>
                                     <p class="text-zinc-500 text-xs mt-1">Market Entry & MVP Validation</p>
                                 </div>
@@ -1821,7 +1820,7 @@
                             <li class="flex gap-4">
                                 <div class="w-px h-10 bg-gradient-to-b from-blue-500 to-transparent opacity-50"></div>
                                 <div>
-                                    <p class="text-white font-bold text-sm">895K Combined Reach
+                                    <p class="text-zinc-900 font-bold text-sm">895K Combined Reach
                                     </p>
                                     <p class="text-zinc-500 text-xs mt-1">Global Influence Metric</p>
                                 </div>
@@ -1831,7 +1830,7 @@
                                     class="w-px bg-gradient-to-b from-blue-500/80 to-transparent self-stretch flex-shrink-0">
                                 </div>
                                 <div>
-                                    <p class="text-white font-bold text-sm transition-colors">
+                                    <p class="text-zinc-900 font-bold text-sm transition-colors">
                                         Archived Feb 2024</p>
                                     <p class="text-zinc-500 text-xs leading-relaxed mt-1">Validated market demand
                                         through MVP launch and archived after strategic pivot.</p>
@@ -1841,7 +1840,7 @@
                                     <div class="mt-4 p-3 rounded-lg bg-blue-500/5 border border-blue-500/10">
                                         <p class="text-zinc-500 text-[9px] uppercase tracking-widest mb-2">Strategic
                                             Archive Rationale</p>
-                                        <p class="text-zinc-400 text-[10px] leading-relaxed italic">
+                                        <p class="text-zinc-500 text-[10px] leading-relaxed italic">
                                             Archived following YouTube's accelerated platform-native commerce expansion
                                             (<a href="https://blog.youtube/creator-and-artist-stories/eoy-shopping/"
                                                 target="_blank"
@@ -1863,18 +1862,18 @@
                                 class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
                                 <i class="fas fa-bolt text-xl"></i>
                             </div>
-                            <h3 class="text-white text-xl font-bold">Performance Impact</h3>
+                            <h3 class="text-zinc-900 text-xl font-bold">Performance Impact</h3>
                         </div>
                         <div class="space-y-2 relative">
                             <div class="grid grid-cols-1 gap-4">
-                                <div class="bg-white/5 rounded-xl p-4 border border-white/5">
+                                <div class="bg-zinc-50 rounded-xl p-4 border border-zinc-200">
                                     <p class="text-emerald-400 text-2xl font-bold font-mono">30,488</p>
                                     <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Page Views</p>
                                     <p class="text-zinc-600 text-[10px] italic mt-0.5 opacity-80">Unique Page Loads</p>
                                 </div>
                                 <div class="flex gap-4">
-                                    <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
-                                        <p class="text-white text-xl font-bold font-mono">7.02%</p>
+                                    <div class="flex-1 bg-zinc-50 rounded-xl p-4 border border-zinc-200">
+                                        <p class="text-zinc-900 text-xl font-bold font-mono">7.02%</p>
                                         <p
                                             class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1 leading-tight">
                                             Conversion Rate</p>
@@ -1882,8 +1881,8 @@
                                             Purchase
                                             Click /<br>Unique Visitors</p>
                                     </div>
-                                    <div class="flex-1 bg-white/5 rounded-xl p-4 border border-white/5">
-                                        <p class="text-white text-xl font-bold font-mono">80.18%</p>
+                                    <div class="flex-1 bg-zinc-50 rounded-xl p-4 border border-zinc-200">
+                                        <p class="text-zinc-900 text-xl font-bold font-mono">80.18%</p>
                                         <p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">In-page CTR
                                         </p>
                                         <p class="text-zinc-600 text-[10px] italic mt-1 opacity-80">Product Click / Page
@@ -1910,10 +1909,10 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- Media Card 1: SK AI -->
                         <a href="https://news.sktelecom.com/201128" target="_blank"
-                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-zinc-200 hover:border-zinc-300 transition-all duration-300">
                             <!-- Image Container -->
                             <div
-                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-zinc-200">
                                 <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent">
                                 </div>
                                 <img src="images/hopzie/NEWS-SK-AI-Accerlator.png"
@@ -1926,10 +1925,10 @@
                                         class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
                                         SK Newsroom</div>
                                     <i
-                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-500 text-xs transition-colors"></i>
                                 </div>
                                 <h4
-                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    class="text-zinc-700 group-hover:text-zinc-900 font-medium leading-snug mb-4 transition-colors">
                                     SKT Selects Promising AI Startups for the 'SK AI Accelerator' Program
                                 </h4>
                                 <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Feb 2024</span>
@@ -1938,10 +1937,10 @@
 
                         <!-- Media Card 2: Google Fellowship -->
                         <a href="https://v.daum.net/v/6CkkGCOKk5" target="_blank"
-                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-zinc-200 hover:border-zinc-300 transition-all duration-300">
                             <!-- Image Container -->
                             <div
-                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-zinc-200">
                                 <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent">
                                 </div>
                                 <img src="images/hopzie/p29-google funding.png"
@@ -1954,10 +1953,10 @@
                                         class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
                                         Daum News</div>
                                     <i
-                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-500 text-xs transition-colors"></i>
                                 </div>
                                 <h4
-                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    class="text-zinc-700 group-hover:text-zinc-900 font-medium leading-snug mb-4 transition-colors">
                                     Final Selection for Google GNI Innovation Fellowship: Empowering Media Tech
                                     Ecosystems
                                 </h4>
@@ -1967,10 +1966,10 @@
 
                         <!-- Media Card 3: The VC -->
                         <a href="https://thevc.kr/sliver?view=chart" target="_blank"
-                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-white/5 hover:border-white/10 transition-all duration-300">
+                            class="group relative block overflow-hidden rounded-2xl bg-[#080808] border border-zinc-200 hover:border-zinc-300 transition-all duration-300">
                             <!-- Image Container -->
                             <div
-                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-white/5">
+                                class="aspect-video w-full bg-zinc-900 flex items-center justify-center relative overflow-hidden border-b border-zinc-200">
                                 <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent">
                                 </div>
                                 <img src="images/hopzie/Sliver.png"
@@ -1983,10 +1982,10 @@
                                         class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded">
                                         Venture Capital</div>
                                     <i
-                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-400 text-xs transition-colors"></i>
+                                        class="fas fa-external-link-alt text-zinc-700 group-hover:text-zinc-500 text-xs transition-colors"></i>
                                 </div>
                                 <h4
-                                    class="text-zinc-300 group-hover:text-white font-medium leading-snug mb-4 transition-colors">
+                                    class="text-zinc-700 group-hover:text-zinc-900 font-medium leading-snug mb-4 transition-colors">
                                     Company Introduction: Sliver
                                 </h4> <span class="text-zinc-600 text-[10px] uppercase tracking-wider">Nov 2023</span>
                             </div>
@@ -2278,47 +2277,47 @@
                                 <span
                                     class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Problem
                                     Solving</span>
-                                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
                                     Challenges & <span
                                         class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Solutions</span>
                                 </h2>
-                                <p class="text-zinc-400 text-lg font-light mx-auto text-center whitespace-nowrap">
+                                <p class="text-zinc-500 text-lg font-light mx-auto text-center whitespace-nowrap">
                                     Navigating the hurdles of scaling an AI commerce engine while maintaining trust.</p>
                             </div>
 
                             <div class="grid grid-cols-1 gap-8">
                                 <!-- Challenge 1 -->
                                 <div
-                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative group overflow-hidden">
+                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-zinc-200 relative group overflow-hidden">
                                     <div
                                         class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                        <span class="text-6xl font-serif italic text-white">01</span>
+                                        <span class="text-6xl font-serif italic text-zinc-900">01</span>
                                     </div>
 
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
                                         <!-- Problem Side -->
                                         <div>
                                             <div
-                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[#d97706] text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Pivot Under
+                                            <h3 class="text-2xl font-bold text-zinc-900 mb-4 leading-tight">Pivot Under
                                                 Legal Constraint</h3>
                                             <div class="space-y-4">
                                                 <div>
                                                     <span
-                                                        class="text-amber-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Context</span>
-                                                    <p class="text-zinc-400 leading-relaxed text-sm">
+                                                        class="text-[#d97706]/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Context</span>
+                                                    <p class="text-zinc-500 leading-relaxed text-sm">
                                                         Regulatory changes killed the original direction after funding
                                                         was secured from Google.
                                                     </p>
                                                 </div>
                                                 <div>
                                                     <span
-                                                        class="text-amber-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Constraint</span>
-                                                    <p class="text-zinc-400 leading-relaxed text-sm">
+                                                        class="text-[#d97706]/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Constraint</span>
+                                                    <p class="text-zinc-500 leading-relaxed text-sm">
                                                         We had to reposition without losing runway or investor trust.
                                                     </p>
                                                 </div>
@@ -2326,7 +2325,7 @@
                                         </div>
 
                                         <!-- Solution Side -->
-                                        <div class="lg:border-l lg:border-white/5 lg:pl-12">
+                                        <div class="lg:border-l lg:border-zinc-200 lg:pl-12">
                                             <div
                                                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -2337,18 +2336,18 @@
                                                     <span
                                                         class="text-emerald-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Action</span>
                                                     <ul class="space-y-2">
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Reframed the problem as creator-commerce
                                                                 infrastructure in YouTube from expansion of creator
                                                                 economy.</span>
                                                         </li>
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Validated demand via rapid user interviews - 5
                                                                 creators & viewers.</span>
                                                         </li>
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Cut scope to an MVP that proves repeatable
                                                                 link-to-purchase flow.</span>
@@ -2358,7 +2357,7 @@
                                                 <div>
                                                     <span
                                                         class="text-emerald-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Outcome</span>
-                                                    <p class="text-zinc-400 text-sm leading-relaxed">
+                                                    <p class="text-zinc-500 text-sm leading-relaxed">
                                                         Shipped MVP fast, kept the funding narrative intact.
                                                     </p>
                                                 </div>
@@ -2369,35 +2368,35 @@
 
                                 <!-- Challenge 2 -->
                                 <div
-                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative group overflow-hidden">
+                                    class="glass-panel p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-zinc-200 relative group overflow-hidden">
                                     <div
                                         class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                        <span class="text-6xl font-serif italic text-white">02</span>
+                                        <span class="text-6xl font-serif italic text-zinc-900">02</span>
                                     </div>
 
                                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
                                         <!-- Problem Side -->
                                         <div>
                                             <div
-                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-mono uppercase tracking-widest mb-6">
+                                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-[#d97706] text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span
                                                     class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
                                                 The Challenge
                                             </div>
-                                            <h3 class="text-2xl font-bold text-white mb-4 leading-tight">Scale
+                                            <h3 class="text-2xl font-bold text-zinc-900 mb-4 leading-tight">Scale
                                                 Commitment Decision</h3>
                                             <div class="space-y-4">
                                                 <div>
                                                     <span
-                                                        class="text-amber-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Context</span>
-                                                    <p class="text-zinc-400 leading-relaxed text-sm">
+                                                        class="text-[#d97706]/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Context</span>
+                                                    <p class="text-zinc-500 leading-relaxed text-sm">
                                                         MVP was validated and early traction was visible.
                                                     </p>
                                                 </div>
                                                 <div>
                                                     <span
-                                                        class="text-amber-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Constraint</span>
-                                                    <p class="text-zinc-400 leading-relaxed text-sm">
+                                                        class="text-[#d97706]/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Constraint</span>
+                                                    <p class="text-zinc-500 leading-relaxed text-sm">
                                                         Scaling required deeper capital commitment within an ecosystem
                                                         rapidly consolidating under platform-native commerce.
                                                     </p>
@@ -2406,7 +2405,7 @@
                                         </div>
 
                                         <!-- Solution Side -->
-                                        <div class="lg:border-l lg:border-white/5 lg:pl-12">
+                                        <div class="lg:border-l lg:border-zinc-200 lg:pl-12">
                                             <div
                                                 class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-mono uppercase tracking-widest mb-6">
                                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -2417,11 +2416,11 @@
                                                     <span
                                                         class="text-emerald-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Action</span>
                                                     <ul class="space-y-2">
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Contact to Google platform representative.</span>
                                                         </li>
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Initiated independent discussion to assess long-term
                                                                 viability and roadmap direction.</span>
@@ -2432,7 +2431,7 @@
                                                     class="mt-2 p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
                                                     <span
                                                         class="text-emerald-500/60 text-[9px] uppercase font-mono tracking-widest block mb-2">Insight</span>
-                                                    <p class="text-zinc-400 text-[10px] leading-relaxed italic">
+                                                    <p class="text-zinc-500 text-[10px] leading-relaxed italic">
                                                         The platform was evolving from distribution channel to commerce
                                                         infrastructure.
                                                     </p>
@@ -2441,12 +2440,12 @@
                                                     <span
                                                         class="text-emerald-500/60 text-[10px] uppercase font-mono tracking-wider block mb-1">Decision</span>
                                                     <ul class="space-y-2">
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Archived before sunk cost and platform dependency
                                                                 deepened.</span>
                                                         </li>
-                                                        <li class="flex gap-2 text-zinc-400 text-sm leading-relaxed">
+                                                        <li class="flex gap-2 text-zinc-500 text-sm leading-relaxed">
                                                             <span class="text-emerald-500/50">•</span>
                                                             <span>Chose capital discipline over expanding into a
                                                                 structurally narrowing surface.</span>
@@ -2466,21 +2465,21 @@
                         <div class="text-center mb-16">
                             <span
                                 class="text-emerald-500 text-xs font-mono uppercase tracking-widest mb-4 block">Retrospective</span>
-                            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
+                            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-6">
                                 What I <span
                                     class="font-serif italic bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent pr-1">Learned</span>
                             </h2>
-                            <p class="text-zinc-400 text-lg font-light mx-auto text-center whitespace-nowrap">Learned
+                            <p class="text-zinc-500 text-lg font-light mx-auto text-center whitespace-nowrap">Learned
                                 that building products is not only about launch, but about reading market signals and
                                 knowing when to stop.</p>
                         </div>
                         <div class="flex flex-col gap-6 max-w-6xl mx-auto">
                             <!-- Insight A: Efficiency Driven -->
                             <div
-                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                class="glass-card p-6 bg-white/[0.02] border-zinc-200 group hover:bg-white/[0.04] transition-all duration-300">
                                 <div class="flex gap-4">
                                     <div
-                                        class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500/60 flex items-center justify-center shrink-0">
+                                        class="w-10 h-10 rounded-xl bg-amber-500/10 text-[#d97706]/60 flex items-center justify-center shrink-0">
                                         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -2488,19 +2487,19 @@
                                     </div>
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-2">
-                                            <h4 class="text-white font-bold">Efficiency Driven</h4>
+                                            <h4 class="text-zinc-900 font-bold">Efficiency Driven</h4>
                                             <span
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 01</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Validated user intent
+                                        <p class="text-zinc-500 text-xs leading-relaxed mb-4">Validated user intent
                                             through rapid interviews and MVP launch, minimizing overengineering before
                                             structural risk assessment.</p>
-                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-zinc-200">
                                             <p
-                                                class="text-[10px] text-amber-500/60 font-mono uppercase tracking-wider mb-2">
+                                                class="text-[10px] text-[#d97706]/60 font-mono uppercase tracking-wider mb-2">
                                                 Applied Result</p>
-                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Quick interviews across
+                                            <p class="text-zinc-500 text-[11px] leading-relaxed">Quick interviews across
                                                 layer-1 viewers & creators (Sep 2023) → MVP launch timeline focusing on
                                                 core intent (Nov 2023)</p>
                                         </div>
@@ -2509,7 +2508,7 @@
                             </div>
                             <!-- Insight B: Communication Architect -->
                             <div
-                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                class="glass-card p-6 bg-white/[0.02] border-zinc-200 group hover:bg-white/[0.04] transition-all duration-300">
                                 <div class="flex gap-4">
                                     <div
                                         class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400/60 flex items-center justify-center shrink-0">
@@ -2520,19 +2519,19 @@
                                     </div>
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-2">
-                                            <h4 class="text-white font-bold">Communication Architect</h4>
+                                            <h4 class="text-zinc-900 font-bold">Communication Architect</h4>
                                             <span
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 02</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Translated platform
+                                        <p class="text-zinc-500 text-xs leading-relaxed mb-4">Translated platform
                                             constraints into internal alignment, clarifying where automation adds value
                                             versus fixed infrastructure.</p>
-                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-zinc-200">
                                             <p
                                                 class="text-[10px] text-indigo-400/60 font-mono uppercase tracking-wider mb-2">
                                                 Applied Result</p>
-                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Defined standardized
+                                            <p class="text-zinc-500 text-[11px] leading-relaxed">Defined standardized
                                                 commerce UI components to reduce coordination cost; balanced AI
                                                 auto-curation vs regional manual control.</p>
                                         </div>
@@ -2541,7 +2540,7 @@
                             </div>
                             <!-- Insight C: Inquiry-Driven Detection -->
                             <div
-                                class="glass-card p-6 bg-white/[0.02] border-white/5 group hover:bg-white/[0.04] transition-all duration-300">
+                                class="glass-card p-6 bg-white/[0.02] border-zinc-200 group hover:bg-white/[0.04] transition-all duration-300">
                                 <div class="flex gap-4">
                                     <div
                                         class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500/60 flex items-center justify-center shrink-0">
@@ -2552,19 +2551,19 @@
                                     </div>
                                     <div class="flex-1">
                                         <div class="flex items-center justify-between mb-2">
-                                            <h4 class="text-white font-bold">Inquiry-Driven Detection</h4>
+                                            <h4 class="text-zinc-900 font-bold">Inquiry-Driven Detection</h4>
                                             <span
                                                 class="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">Principle
                                                 03</span>
                                         </div>
-                                        <p class="text-zinc-400 text-xs leading-relaxed mb-4">Used external platform
+                                        <p class="text-zinc-500 text-xs leading-relaxed mb-4">Used external platform
                                             signals to decide when to stop—before sunk-cost drift intensified by
                                             competitive pressure.</p>
-                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/5">
+                                        <div class="p-4 rounded-xl bg-white/[0.03] border border-zinc-200">
                                             <p
                                                 class="text-[10px] text-emerald-500/60 font-mono uppercase tracking-wider mb-2">
                                                 Applied Result</p>
-                                            <p class="text-zinc-400 text-[11px] leading-relaxed">Detected
+                                            <p class="text-zinc-500 text-[11px] leading-relaxed">Detected
                                                 platform-native consolidation signals early; made critical pivot
                                                 decision before competitive decompression.</p>
                                         </div>
@@ -2576,7 +2575,7 @@
                 </div>
 
                 <!-- Footer Tech Stack -->
-                <div class="mt-32 border-t border-white/5 pt-12 flex flex-wrap gap-4 items-center justify-center">
+                <div class="mt-32 border-t border-zinc-200 pt-12 flex flex-wrap gap-4 items-center justify-center">
                     <span class="text-xs text-zinc-600 uppercase tracking-widest mr-4">Technologies</span>
                     <span class="tech-tag">AI Recommendation</span>
                     <span class="tech-tag">Cross-platform API</span>
