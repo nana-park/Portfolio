@@ -2909,7 +2909,7 @@
                         radial-gradient(circle at 52% 46%, rgba(232, 117, 0, 0.08), transparent 28%),
                         linear-gradient(180deg, #ffffff, #fafafa);
                     overflow: hidden;
-                    margin-top: 64px;
+                    margin-top: 24px;
                 }
 
                 .builder-stage::before {
@@ -3291,11 +3291,24 @@
                 }
             </style>
 
-            <div class="text-center mt-48 mb-10 font-sans">
-                <h3 class="text-[20px] md:text-[24px] text-black font-medium tracking-tight leading-[1.4]">
+            <div class="text-center mt-48 mb-8 font-sans">
+                <h3 class="text-[24px] md:text-[32px] text-black font-medium tracking-tight leading-[1.4]">
                     Creators only submit:<br>
-                    <span class="text-black font-normal">channel &middot; video &middot; product links</span>
+                    <span class="text-black font-normal">video &middot; product links</span>
                 </h3>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 mb-8 font-sans">
+                <button class="px-5 py-2 bg-black text-white rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors">
+                    Building
+                </button>
+                <button class="px-5 py-2 text-zinc-500 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors">
+                    Commission Optimization
+                </button>
+                <button class="px-5 py-2 text-zinc-500 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors">
+                    Link Resilience
+                </button>
             </div>
 
             <div class="builder-stage" aria-label="Hopzie creator input to storefront concept">
@@ -3398,17 +3411,26 @@
 
             <div class="concept-note">
                 <div class="note-card">
-                    <span class="note-value">Input Simplification</span>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span class="note-value !mb-0">Input Simplification</span>
+                        <span class="px-2 py-0.5 rounded-md bg-zinc-800 text-white text-[10px] font-bold tracking-wider uppercase shadow-sm">for creators</span>
+                    </div>
                     <span class="note-label">Reduced creator publishing into only the creator URL, video URL, and
                         product links.</span>
                 </div>
                 <div class="note-card">
-                    <span class="note-value">Video-based Discovery</span>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span class="note-value !mb-0">Video-based Discovery</span>
+                        <span class="px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200 text-zinc-600 text-[10px] font-bold tracking-wider uppercase">for consumers</span>
+                    </div>
                     <span class="note-label">Organized products by creator content so audiences could shop without
                         leaving the viewing context.</span>
                 </div>
                 <div class="note-card">
-                    <span class="note-value">Commerce Orchestration</span>
+                    <div class="flex justify-between items-center mb-1.5">
+                        <span class="note-value !mb-0">Commerce Orchestration</span>
+                        <span class="px-2 py-0.5 rounded-md bg-zinc-800 text-white text-[10px] font-bold tracking-wider uppercase shadow-sm">for creators</span>
+                    </div>
                     <span class="note-label">Connected links, product metadata, routing logic, and storefront generation
                         into one flow.</span>
                 </div>
