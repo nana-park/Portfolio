@@ -22,7 +22,7 @@
     /* Typography */
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-body: 'Lora', serif;
-    --font-sans: 'Inter', sans-serif;
+    --font-sans: 'Pretendard', 'Inter', sans-serif;
 
     /* Transitions */
     --transition-fast: 0.2s ease;
