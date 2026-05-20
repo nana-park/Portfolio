@@ -129,6 +129,7 @@ const routerConfig = {
     'research': ['research'],
     'articles': ['articles'],
     'article-detail': ['article-detail'],
+    'hopzie-oneclickbuilder': ['hopzie-oneclickbuilder'],
     'lectures': ['lectures'],
     'awards': ['awards'],
     'contact': ['contact']
@@ -230,7 +231,8 @@ function handleRoute() {
         'life': 'about',
         'research': 'projects',
         'articles': 'projects',
-        'article-detail': 'projects'
+        'article-detail': 'projects',
+        'hopzie-oneclickbuilder': 'projects'
     };
     const highlightTab = parentMap[activeTab] || activeTab;
 
@@ -246,7 +248,13 @@ function handleRoute() {
 
     // Handle scroll position (Top for main tabs, smooth scroll for sub-sections)
     if (activeTab === targetSection) {
-        window.scrollTo(0, 0);
+        if (activeTab === 'projects' && sessionStorage.getItem('projectsScrollY')) {
+            const scrollPos = parseInt(sessionStorage.getItem('projectsScrollY'));
+            setTimeout(() => { window.scrollTo(0, scrollPos); }, 10);
+            sessionStorage.removeItem('projectsScrollY');
+        } else {
+            window.scrollTo(0, 0);
+        }
     } else {
         setTimeout(() => {
             const targetEl = document.getElementById(targetSection);
@@ -263,7 +271,7 @@ function handleRoute() {
     }
     
     // Light pages force the scrolled UI to make header visible
-    const lightPages = ['life', 'projects', 'research', 'articles', 'article-detail', 'awards', 'contact'];
+    const lightPages = ['life', 'projects', 'research', 'articles', 'article-detail', 'hopzie-oneclickbuilder', 'awards', 'contact'];
     if (lightPages.includes(activeTab)) {
         navbar.classList.add('force-scrolled');
     } else {
