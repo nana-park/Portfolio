@@ -1,0 +1,280 @@
+﻿<!-- Dedicated Creator Marquee -->
+                    <div class="mt-32 mb-32">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h3 class="text-zinc-500 text-xs font-mono uppercase tracking-[0.3em]">Trusted by Global
+                                Creators</h3>
+                            <div class="h-px flex-1 bg-gradient-to-r from-zinc-200 to-transparent"></div>
+                        </div>
+
+                        <div class="relative w-full overflow-hidden py-8">
+                            <!-- Fade Gradient Overlays -->
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+                            </div>
+                            <div
+                                class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+                            </div>
+
+                            <div class="animate-marquee flex gap-12">
+                                <!-- Set 1 -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Haeyong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@haeyongtv/0OyhRg" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@haeyongtv" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="LimBbeum"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@limbbeumlim/0IAKK8" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@limbbeumlim" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="JungWon"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@jung__won.k/0H1vns" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@jung__won.k" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Dashu"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@dashu_official/0KR7Me" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@dashu_official" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Gomikong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@gomikong/0ZCG80" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@gomikong" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Set 2 (Duplicate for Infinite Scroll) -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Haeyong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@haeyongtv/0OyhRg" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@haeyongtv" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="LimBbeum"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@limbbeumlim/0IAKK8" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@limbbeumlim" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="JungWon"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@jung__won.k/0H1vns" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@jung__won.k" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Dashu"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@dashu_official/0KR7Me" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@dashu_official" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj"
+                                            class="creator-avatar" alt="Gomikong"
+                                            onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                            <div class="creator-actions">
+                                                <a href="https://www.hopzie.co/@gomikong/0ZCG80" target="_blank"
+                                                    class="store">Store</a>
+                                                <span class="dot"></span>
+                                                <a href="https://www.youtube.com/@gomikong" target="_blank"
+                                                    class="channel">YouTube</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        .creator-mini-card {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.25rem;
+                            padding: 1.25rem 1.75rem;
+                            border-radius: 1.25rem;
+                            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+                            border: 1px solid rgba(255, 255, 255, 0.12);
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            min-width: 320px;
+                            flex-shrink: 0;
+                            backdrop-filter: blur(8px);
+                        }
+
+                        .creator-mini-card:hover {
+                            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+                            border-color: rgba(251, 191, 36, 0.3);
+                            transform: translateY(-6px) scale(1.02);
+                            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7), 0 0 20px rgba(251, 191, 36, 0.05);
+                        }
+
+                        .creator-avatar {
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 9999px;
+                            border: 2px solid rgba(255, 255, 255, 0.08);
+                            object-fit: cover;
+                            transition: all 0.4s ease;
+                            filter: grayscale(0.2);
+                        }
+
+                        .creator-mini-card:hover .creator-avatar {
+                            filter: grayscale(0);
+                            border-color: rgba(251, 191, 36, 0.4);
+                        }
+
+                        .creator-id {
+                            color: white;
+                            font-weight: 700;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.2rem;
+                            line-height: 1;
+                        }
+
+                        .creator-stats {
+                            color: #71717a;
+                            font-size: 0.65rem;
+                            font-family: 'JetBrains Mono', monospace;
+                            margin-bottom: 1rem;
+                        }
+
+                        .creator-actions {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                        }
+
+                        .creator-actions a {
+                            color: #a1a1aa;
+                            font-size: 0.65rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            letter-spacing: 0.15em;
+                            transition: all 0.2s ease;
+                            text-decoration: none;
+                        }
+
+                        .creator-actions a:hover {
+                            color: #fbbf24;
+                        }
+
+                        .creator-actions .dot {
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 9999px;
+                            background-color: #3f3f46;
+                        }
+                    </style>
+
+                    
