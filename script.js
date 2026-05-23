@@ -994,7 +994,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 initializedScroll = true;
                 const card = cards[currentIndex];
                 const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
+                
+                // Temporarily disable scroll-snap to force browser to accept the scroll
+                const originalSnap = container.style.scrollSnapType;
+                container.style.scrollSnapType = 'none';
+                
                 container.scrollTo({ left: scrollPos, behavior: 'auto' });
+                
+                // Restore scroll-snap
+                setTimeout(() => {
+                    container.style.scrollSnapType = originalSnap || '';
+                }, 50);
+                
                 updateActiveState(currentIndex);
             }
         };
@@ -1200,3 +1211,4 @@ window.updateLectureCarousel = function(carousel) {
         }
     });
 };
+
