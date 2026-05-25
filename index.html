@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -3764,7 +3764,1622 @@
                             </div>
                         </section>
 
-<!-- LLM Voice IVR Section -->
+                        <style>
+                            .commission-matching-demo {
+                                width: 100%;
+                                height: 580px;
+                                display: flex;
+                                align-items: center;
+                                padding: 44px 32px;
+                                background:
+                                    linear-gradient(#f1f1f1 1px, transparent 1px),
+                                    linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+                                background-size: 28px 28px;
+                                box-sizing: border-box;
+                            }
+
+                            .commission-flow-split {
+                                width: 830px;
+                                max-width: 100%;
+                                margin: 0 auto;
+                                display: grid;
+                                grid-template-columns: 1fr 40px 1fr;
+                                gap: 16px;
+                                align-items: stretch;
+                            }
+
+                            .flow-left-col,
+                            .flow-right-col {
+                                display: flex;
+                                flex-direction: column;
+                            }
+
+                            .flow-right-col {
+                            }
+
+                            .panel {
+                                background: #ffffff;
+                                border: 1px solid #e5e7eb;
+                                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+                                overflow: hidden;
+                            }
+
+                            .storefront-panel {
+                                display: flex;
+                                flex-direction: column;
+                            }
+
+                            .panel-header {
+                                padding: 14px 16px;
+                                border-bottom: 1px solid #f1f3f5;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background: #ffffff;
+                            }
+
+                            .panel-title {
+                                font-size: 13px;
+                                font-weight: 700;
+                                color: #1f2937;
+                                letter-spacing: -0.02em;
+                            }
+
+                            .mini-badge,
+                            .ai-badge {
+                                padding: 5px 8px;
+                                border-radius: 6px;
+                                border: 1px solid #e5e7eb;
+                                background: #fafafa;
+                                font-size: 10px;
+                                font-weight: 700;
+                                color: #6b7280;
+                                text-transform: uppercase;
+                                letter-spacing: 0.05em;
+                            }
+
+                            .ai-badge {
+                                border-color: #f3a75f;
+                                background: #fff7ed;
+                                color: #d97706;
+                            }
+
+                            .ai-matching-panel {
+                                border-color: #f3a75f;
+                                box-shadow:
+                                    0 20px 60px rgba(0, 0, 0, 0.05),
+                                    0 0 0 3px rgba(243, 167, 95, 0.12);
+                            }
+
+                            .url-card {
+                                padding: 16px;
+                                display: grid;
+                                grid-template-columns: 36px 1fr;
+                                gap: 12px;
+                                align-items: center;
+                            }
+
+                            .url-icon {
+                                width: 36px;
+                                height: 36px;
+                                display: grid;
+                                place-items: center;
+                                  background: #111827;
+                                  color: white;
+                                font-size: 14px;
+                                font-weight: 700;
+                            }
+
+                            .url-kicker {
+                                font-size: 11px;
+                                font-weight: 700;
+                                color: #9ca3af;
+                                margin-bottom: 4px;
+                            }
+
+                            .url-text {
+                                font-size: 12px;
+                                color: #1f2937;
+                                word-break: break-all;
+                                line-height: 1.5;
+                            }
+
+                            .flow-arrow-down {
+                                height: 38px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                color: #d97706;
+                                font-size: 16px;
+                                font-weight: 800;
+                            }
+
+                            .flow-arrow-down span {
+                                width: 1px;
+                                height: 18px;
+                                background: linear-gradient(to bottom, transparent, #d97706);
+                                display: block;
+                                margin-bottom: -2px;
+                            }
+
+                            .flow-arrow-right {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #d97706;
+                                font-size: 18px;
+                                font-weight: 800;
+                                gap: 4px;
+                            }
+
+                            .line-h {
+                                width: 14px;
+                                height: 2px;
+                                background: linear-gradient(to right, transparent, #d97706);
+                            }
+
+                            @media (max-width: 860px) {
+                                .commission-flow-split {
+                                    grid-template-columns: 1fr;
+                                }
+
+                                .flow-arrow-right {
+                                    transform: rotate(90deg);
+                                    margin: 16px 0;
+                                }
+                            }
+
+                            .matching-list {
+                                padding: 14px;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                            }
+
+                            .match-row {
+                                display: grid;
+                                grid-template-columns: 1fr auto auto;
+                                gap: 18px;
+                                align-items: center;
+                                padding: 12px 14px;
+                                border: 1px solid #eceff3;
+                                background: #fafafa;
+                            }
+
+                            .match-row.active {
+                                background: #ffffff;
+                                border-color: #111827;
+                                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+                            }
+
+                            .platform-info strong {
+                                display: block;
+                                font-size: 13px;
+                                font-weight: 700;
+                                color: #111827;
+                            }
+
+                            .platform-info p {
+                                margin: 4px 0 0;
+                                font-size: 11px;
+                                color: #9ca3af;
+                            }
+
+                            .commission-rate {
+                                text-align: right;
+                                min-width: 76px;
+                            }
+
+                            .commission-rate strong {
+                                display: block;
+                                font-size: 15px;
+                                font-weight: 700;
+                                color: #111827;
+                                letter-spacing: -0.03em;
+                            }
+
+                            .commission-rate span {
+                                display: block;
+                                margin-top: 2px;
+                                font-size: 10px;
+                                color: #9ca3af;
+                                white-space: nowrap;
+                            }
+
+                            .match-row em {
+                                padding: 7px 10px;
+                                border-radius: 999px;
+                                background: #f3f4f6;
+                                color: #6b7280;
+                                font-size: 10px;
+                                font-style: normal;
+                                font-weight: 700;
+                                white-space: nowrap;
+                            }
+
+                            .match-row.active em {
+                                background: #111827;
+                                color: #ffffff;
+                            }
+
+                            .storefront-body {
+                                padding: 14px;
+                                background: #fafafa;
+                                flex-grow: 1;
+                            }
+
+                            .commission-flow-split .creator-row {
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+                                margin-bottom: 14px;
+                            }
+
+                            .commission-flow-split .creator-avatar {
+                                width: 34px;
+                                height: 34px;
+                                border-radius: 999px;
+                                object-fit: cover;
+                                flex-shrink: 0;
+                            }
+
+                            .commission-flow-split .creator-name {
+                                font-size: 13px;
+                                font-weight: 700;
+                                color: #111827;
+                            }
+
+                            .commission-flow-split .creator-sub {
+                                margin-top: 2px;
+                                font-size: 11px;
+                                color: #9ca3af;
+                            }
+
+                            .commission-flow-split .product-card {
+                                background: #ffffff;
+                                border: 1px solid #e5e7eb;
+                                padding: 10px;
+                                border-radius: 8px;
+                            }
+
+                            .commission-flow-split .product-image {
+                                width: 100%;
+                                height: 122px;
+                                object-fit: cover;
+                                background: #f4eee6;
+                                border-radius: 4px;
+                            }
+
+                            .commission-flow-split .product-title {
+                                margin-top: 12px;
+                                font-size: 13px;
+                                font-weight: 700;
+                                color: #111827;
+                                letter-spacing: -0.02em;
+                            }
+
+                            .commission-flow-split .product-meta {
+                                margin-top: 8px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+
+                            .commission-flow-split .product-source {
+                                font-size: 10.5px;
+                                font-weight: 700;
+                                color: #d97706;
+                                background: #fffbeb;
+                                border: 1px solid #fde68a;
+                                padding: 3px 8px;
+                                border-radius: 12px;
+                            }
+
+                            .commission-flow-split .product-price {
+                                font-size: 12px;
+                                font-weight: 600;
+                                color: #111827;
+                            }
+
+                            .commission-flow-split .applied-state {
+                                margin-top: 10px;
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                                padding: 8px 9px;
+                                border: 1px solid #eceff3;
+                                background: #fafafa;
+                                font-size: 10.5px;
+                                font-weight: 650;
+                                color: #6b7280;
+                            }
+
+                            .commission-flow-split .dot {
+                                width: 6px;
+                                height: 6px;
+                                border-radius: 999px;
+                                background: #d97706;
+                                flex-shrink: 0;
+                            }
+
+                            .commission-flow-split .buy-button {
+                                  margin-top: 10px;
+                                  background: #111827;
+                                  color: white;
+                                text-align: center;
+                                font-size: 11px;
+                                font-weight: 700;
+                                padding: 8px 0;
+                                border-radius: 6px;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Resilience -->
+            <div id="tab-resilience" class="hopzie-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+                        <div class="concept-note"
+                            style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Link Resilience
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Hopzie detects unavailable product links and reconnects valid commerce routes, keeping the storefront experience active without creator-side maintenance.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">storefront continuity</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">fallback routing</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">zero-maintenance UX</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resilience Mockup -->
+                        <section class="link-resilience-demo" style="zoom: 0.8; border-radius: 16px; overflow: hidden; width: 100%;">
+                              <div class="commission-flow-split">
+
+                                <!-- Left Column -->
+                                <div class="flow-left-col">
+                                    <!-- LEFT: ORIGINAL LINK -->
+                                    <div class="panel url-panel">
+                                      <div class="panel-header">
+                                        <span class="panel-title">Original Product Link</span>
+                                        <span class="mini-badge">Submitted</span>
+                                      </div>
+
+                                      <div class="url-card">
+                                        <div class="url-icon" style="background: #fef2f2; color: #ef4444;">
+                                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M7 17L17 7" />
+                                            <polyline points="7 7 17 7 17 17" />
+                                            <line x1="3" y1="3" x2="21" y2="21" />
+                                          </svg>
+                                        </div>
+                                        <div>
+                                          <div class="url-kicker" style="color: #ef4444;">Link unavailable</div>
+                                          <div class="url-text" style="color: #9ca3af; text-decoration: line-through;">coupang.com/vp/keyboard-old</div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <!-- DOWN ARROW -->
+                                    <div class="flow-arrow-down">
+                                        <span></span>
+                                        ↓
+                                    </div>
+
+                                    <!-- LEFT: RECOVERY -->
+                                    <div class="panel ai-matching-panel">
+                                      <div class="panel-header">
+                                        <span class="panel-title">Link Reconnection</span>
+                                        <span class="ai-badge">AI Recovered</span>
+                                      </div>
+
+                                      <div class="recovery-list">
+                                        <div class="recovery-row inactive">
+                                          <div>
+                                            <strong>Coupang</strong>
+                                            <p>Original route unavailable</p>
+                                          </div>
+                                          <span>Broken</span>
+                                        </div>
+
+                                        <div class="recovery-row active">
+                                          <div>
+                                            <strong>Amazon</strong>
+                                            <p>Alternative route detected</p>
+                                          </div>
+                                          <span>Reconnected</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT ARROW -->
+                                <div class="flow-arrow-right">
+                                    <div class="line-h"></div>
+                                    →
+                                </div>
+
+                                <!-- RIGHT: STOREFRONT -->
+                                <div class="flow-right-col">
+                                    <div class="panel storefront-panel">
+                                      <div class="panel-header">
+                                        <span class="panel-title">Storefront Continuity</span>
+                                        <span class="mini-badge" style="color: #4b5563;">Live</span>
+                                      </div>
+
+                                  <div class="storefront-body">
+                                    <div class="creator-row">
+                                      <img
+                                        src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png"
+                                        alt="Noa Studio"
+                                        class="creator-avatar"
+                                      />
+
+                                      <div>
+                                        <div class="creator-name">Noa Studio</div>
+                                        <div class="creator-sub">Lifestyle picks</div>
+                                      </div>
+                                    </div>
+
+                                    <div class="product-card">
+                                      <img
+                                        src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_creamy%20wireless%20keyboard.png"
+                                        class="product-image"
+                                        alt="creamy wireless keyboard"
+                                      />
+
+                                      <div class="product-title">creamy wireless keyboard</div>
+
+                                      <div class="product-meta">
+                                        <span class="product-source">Reconnected via Amazon</span>
+                                        <span class="product-price">$89.00</span>
+                                      </div>
+
+                                      <div class="buy-button">Buy</div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div style="margin-top: 16px; text-align: center; font-size: 13px; letter-spacing: -0.01em; font-weight: 700; color: #d97706;">
+                                    Storefront remained active after link recovery
+                                </div>
+
+                              </div>
+
+                              <style>
+                                .link-resilience-demo {
+                                  position: relative;
+                                  width: 100%;
+                                  height: 580px;
+                                  display: flex;
+                                  align-items: center;
+                                  padding: 44px 32px;
+                                  background:
+                                    linear-gradient(#f1f1f1 1px, transparent 1px),
+                                    linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+                                  background-size: 28px 28px;
+                                  box-sizing: border-box;
+                                }
+
+                                .link-status {
+                                  margin: 0 16px 16px;
+                                  padding: 9px 10px;
+                                  border: 1px solid #f2d5b5;
+                                  background: #fff8f0;
+                                  color: #d97706;
+                                  font-size: 11px;
+                                  font-weight: 700;
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 7px;
+                                }
+
+                                .status-dot {
+                                  width: 7px;
+                                  height: 7px;
+                                  border-radius: 999px;
+                                  background: #d97706;
+                                  flex-shrink: 0;
+                                }
+
+                                .recovery-list {
+                                  padding: 14px;
+                                  display: flex;
+                                  flex-direction: column;
+                                  gap: 10px;
+                                }
+
+                                .recovery-row {
+                                  display: grid;
+                                  grid-template-columns: 1fr auto;
+                                  gap: 16px;
+                                  align-items: center;
+                                  padding: 12px 14px;
+                                  border: 1px solid #eceff3;
+                                  background: #fafafa;
+                                }
+
+                                .recovery-row.active {
+                                  background: #ffffff;
+                                  border-color: #111827;
+                                  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+                                }
+
+                                .recovery-row.inactive {
+                                  opacity: 0.72;
+                                }
+
+                                .recovery-row strong {
+                                  display: block;
+                                  font-size: 13px;
+                                  font-weight: 700;
+                                  color: #111827;
+                                }
+
+                                .recovery-row p {
+                                  margin: 4px 0 0;
+                                  font-size: 11px;
+                                  color: #9ca3af;
+                                }
+
+                                .recovery-row span {
+                                  padding: 7px 10px;
+                                  border-radius: 999px;
+                                  background: #f3f4f6;
+                                  color: #6b7280;
+                                  font-size: 10px;
+                                  font-weight: 700;
+                                  white-space: nowrap;
+                                }
+
+                                .recovery-row.active span {
+                                  background: #111827;
+                                  color: #ffffff;
+                                }
+
+                                .continuity-note {
+                                  margin-top: 10px;
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 6px;
+                                  padding: 8px 9px;
+                                  border: 1px solid #eceff3;
+                                  background: #fafafa;
+                                  font-size: 10.5px;
+                                  font-weight: 650;
+                                  color: #6b7280;
+                                }
+                              </style>
+                            </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: YouTube Description -->
+            <div id="tab-youtube" class="hopzie-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+                        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Cleaner Video Descriptions
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Replace long product URLs with a single synced storefront link.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">description cleanup</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">e-commerce experience</span>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="youtube-description-compare" style="zoom: 0.8; border-radius: 16px; overflow: hidden; width: 100%;">
+                      <div class="description-compare-grid">
+                        <!-- AS-IS -->
+                        <div class="yt-card">
+                          <div class="section-label">AS-IS</div>
+                          <h3>Manual Description Management</h3>
+
+                          <div class="yt-window">
+                            <div class="yt-topbar">
+                              <div class="yt-brand">
+                                <span class="yt-play">▶</span>
+                                <span>YouTube</span>
+                              </div>
+                              <div class="yt-search"></div>
+                              <div class="yt-avatar"><img src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" alt="creator"></div>
+                            </div>
+
+                            <div class="yt-video">
+                              <img src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png" alt="video thumbnail" />
+                              <div class="play-button">▶</div>
+                            </div>
+
+                            <div class="yt-info">
+                              <h4>✨WHAT'S ON MY DESK🍁 - pinterest | room decor | cozy dream desk set up</h4>
+                              <p>125K views · 2 days ago</p>
+                            </div>
+
+                            <div class="description-box messy">
+                              <div class="desc-header">
+                                <strong>Description</strong>
+                              </div>
+
+                              <div class="yt-raw-text">
+                                Hi everyone, welcome back to the channel! 😃<br><br>
+                                Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
+                                —<br><br>
+                                📎 Product Links<br><br>
+                                ▪ Creamy Wireless Keyboard<br>
+                                <a href="javascript:void(0)">https://coupang.com/vp/products/934...</a><br><br>
+                                ▪ Monitor Light Bar<br>
+                                <a href="javascript:void(0)">https://amazon.com/dp/B0DESKLAMP...</a><br><br>
+                                ▪ Ergonomic Desk Chair<br>
+                                <a href="javascript:void(0)">https://musinsa.com/app/goods/248...</a><br><br>
+                                ▪ Walnut Desk Shelf<br>
+                                <a href="javascript:void(0)">https://amazon.com/dp/B0DESKSHLF...</a><br><br>
+                                ▪ Cozy Desk Mat<br>
+                                <a href="javascript:void(0)">https://ozip.me/671Q5DZ...</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- CONNECTOR -->
+                        <div class="center-transition-pill">
+                            <span class="badge-bad">Manual & messy</span>
+                            <div class="flow-arrow-right" style="margin: 8px 0;">
+                                <div class="line-h"></div>
+                                →
+                            </div>
+                            <span class="badge-good">Synced by Hopzie</span>
+                        </div>
+
+                        <!-- TO-BE -->
+                        <div class="yt-card">
+                          <div class="section-label accent">TO-BE</div>
+                          <h3>One-link Creator Commerce</h3>
+
+                          <div class="yt-window">
+                            <div class="yt-topbar">
+                              <div class="yt-brand">
+                                <span class="yt-play">▶</span>
+                                <span>YouTube</span>
+                              </div>
+                              <div class="yt-search"></div>
+                              <div class="yt-avatar"><img src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" alt="creator"></div>
+                            </div>
+
+                            <div class="yt-video">
+                              <img src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png" alt="video thumbnail" />
+                              <div class="play-button">▶</div>
+                            </div>
+
+                            <div class="yt-info">
+                              <h4>✨WHAT'S ON MY DESK🍁 - pinterest | room decor | cozy dream desk set up</h4>
+                              <p>125K views · 2 days ago</p>
+                            </div>
+
+                            <div class="description-box clean">
+                              <div class="desc-header">
+                                <strong>Description</strong>
+                              </div>
+
+                              <div class="yt-raw-text" style="height: auto; mask-image: none; -webkit-mask-image: none;">
+                                Hi everyone, welcome back to the channel! 😃<br><br>
+                                Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
+                                Shop everything from this setup in one organized place below! 👇<br><br>
+                                <a href="javascript:void(0)" onclick="document.querySelector('.hopzie-tab-btn[data-target=\'tab-storefront\']').click(); return false;">https://hopzie.co/@noa-studio</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @keyframes tabFadeInSlideUp {
+                    from { opacity: 0; transform: translateY(16px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .tab-animate-in {
+                    animation: tabFadeInSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const hopzieBtns = document.querySelectorAll('.hopzie-tab-btn');
+                    const hopzieContents = document.querySelectorAll('.hopzie-tab-content');
+
+                    hopzieBtns.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            // Reset all buttons
+                            hopzieBtns.forEach(b => {
+                                b.classList.remove('bg-black', 'text-white', 'active');
+                                b.classList.add('text-zinc-500', 'hover:bg-gray-100', 'hover:text-zinc-900');
+                            });
+                            // Set active button
+                            btn.classList.remove('text-zinc-500', 'hover:bg-gray-100', 'hover:text-zinc-900');
+                            btn.classList.add('bg-black', 'text-white', 'active');
+
+                            // Hide all contents
+                            hopzieContents.forEach(c => {
+                                c.classList.remove('block', 'tab-animate-in');
+                                c.classList.add('hidden');
+                            });
+
+                            // Show target content
+                            const targetId = btn.getAttribute('data-target');
+                            const targetEl = document.getElementById(targetId);
+                            if (targetEl) {
+                                targetEl.classList.remove('hidden');
+                                targetEl.classList.add('block');
+                                
+                                // Force reflow to restart animation
+                                void targetEl.offsetWidth;
+                                
+                                targetEl.classList.add('tab-animate-in');
+                            }
+                        });
+                    });
+                });
+            </script>
+
+            <!-- WHY Section -->
+            <div class="text-center mt-48 mb-8 font-sans flex flex-col items-center">
+                <span class="text-[12px] font-bold text-zinc-500 uppercase tracking-widest mb-3 block">WHY</span>
+                <h3 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">
+                    Creators were spending more time<br class="hidden md:block">
+                    maintaining commerce links<br class="hidden md:block">
+                    than creating content
+                </h3>
+            </div>
+            
+            <div class="flex flex-col items-center mb-8 font-sans px-4">
+                <div class="w-full max-w-[840px] overflow-hidden rounded-[16px] border border-zinc-200 bg-white shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[600px]">
+                            <thead>
+                                <tr class="border-b border-zinc-200 bg-zinc-50/80">
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[36%]">Workflow</th>
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[32%]">Existing</th>
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[32%]">With Hopzie</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[14px] md:text-[15px]">
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Storefront setup</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">30–50 min/video</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Under 3 min</td>
+                                </tr>
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Affiliate link management</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">Manual</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Automated</td>
+                                </tr>
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Sold-out link updates</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">Manual re-editing</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Real-time reconnection</td>
+                                </tr>
+                                <tr class="transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Multi-platform fee comparison</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">Manual calculation</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">AI-optimized</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="w-full max-w-[840px] mt-4 text-left px-2">
+                    <details class="group block w-full">
+                        <summary class="inline-flex items-center gap-1.5 cursor-pointer text-zinc-500 hover:text-zinc-800 transition-colors list-none font-sans text-[13px] font-medium outline-none [&::-webkit-details-marker]:hidden underline underline-offset-4 select-none">
+                            View user research
+                            <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <div class="mt-4 text-zinc-400 text-[13px] italic font-sans pl-1">
+                            Scheduled to be updated.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- YouTube Description Compare CSS -->
+            <style>
+              .youtube-description-compare {
+                width: 100%;
+                padding: 44px 32px;
+                background:
+                  linear-gradient(#f1f1f1 1px, transparent 1px),
+                  linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+                background-size: 28px 28px;
+                box-sizing: border-box;
+              }
+
+              .description-compare-grid {
+                max-width: 1080px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 48px 1fr;
+                gap: 28px;
+                align-items: start;
+              }
+
+              .yt-card {
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                padding: 22px;
+                border-radius: 12px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+              }
+
+              .section-label {
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                color: #9ca3af;
+                margin-bottom: 8px;
+              }
+
+              .section-label.accent {
+                color: #d97706;
+              }
+
+              .yt-card h3 {
+                margin: 0 0 18px;
+                font-size: 22px;
+                letter-spacing: -0.04em;
+                color: #111827;
+              }
+
+              .yt-window {
+                max-width: 380px;
+                margin: 0 auto;
+                border: 1px solid #e5e7eb;
+                background: #ffffff;
+                border-radius: 8px;
+                overflow: hidden;
+              }
+
+              .yt-topbar {
+                height: 44px;
+                padding: 0 14px;
+                border-bottom: 1px solid #eef0f3;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+              }
+
+              .yt-brand {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 12px;
+                font-weight: 800;
+                color: #111827;
+                min-width: 86px;
+              }
+
+              .yt-play {
+                width: 24px;
+                height: 17px;
+                border-radius: 5px;
+                background: #ef4444;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 8px;
+              }
+
+              .yt-search {
+                flex: 1;
+                height: 24px;
+                border-radius: 999px;
+                background: #f3f4f6;
+                border: 1px solid #e5e7eb;
+              }
+
+              .yt-avatar {
+                width: 24px;
+                height: 24px;
+                border-radius: 999px;
+                background: #111827;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 10px;
+                font-weight: 800;
+              }
+
+              .yt-video {
+                position: relative;
+                aspect-ratio: 16 / 9;
+                background: #f4eee6;
+                overflow: hidden;
+              }
+
+              .yt-video img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1.035);
+              }
+
+              .play-button {
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                width: 48px;
+                height: 48px;
+                border-radius: 999px;
+                background: rgba(17, 24, 39, 0.78);
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 15px;
+              }
+
+              .yt-info {
+                padding: 14px 16px 8px;
+              }
+
+              .yt-info h4 {
+                margin: 0 0 5px;
+                font-size: 14px;
+                line-height: 1.35;
+                color: #111827;
+                letter-spacing: -0.02em;
+              }
+
+              .yt-info p {
+                margin: 0;
+                font-size: 11px;
+                color: #9ca3af;
+              }
+
+              .description-box {
+                margin: 12px 16px 16px;
+                padding: 14px;
+                border-radius: 8px;
+                background: #fafafa;
+              }
+
+              .description-box.messy {
+                background: #fef2f2;
+              }
+
+              .description-box.clean {
+                background: #fff7ed;
+              }
+
+              .desc-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+              }
+
+              .desc-header strong {
+                font-size: 12px;
+                color: #111827;
+              }
+
+              .desc-header span {
+                padding: 5px 8px;
+                border-radius: 999px;
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                font-size: 10px;
+                font-weight: 800;
+                color: #6b7280;
+              }
+
+              .messy .desc-header span {
+                color: #dc2626;
+                border-color: #fca5a5;
+              }
+
+              .clean .desc-header span {
+                color: #d97706;
+                border-color: #f3a75f;
+              }
+
+              .description-box p {
+                margin: 0 0 12px;
+                font-size: 11.5px;
+                line-height: 1.55;
+                color: #6b7280;
+              }
+
+              .yt-raw-text {
+                font-size: 11px;
+                color: #4b5563;
+                line-height: 1.5;
+                height: 400px;
+                overflow: hidden;
+                mask-image: linear-gradient(to bottom, black 80%, transparent);
+                -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+              }
+              .yt-raw-text a {
+                color: #3b82f6;
+                text-decoration: none;
+              }
+              .yt-raw-text .time {
+                color: #3b82f6;
+              }
+
+              .hopzie-link {
+                display: grid;
+                grid-template-columns: 38px 1fr;
+                gap: 12px;
+                align-items: center;
+                padding: 12px;
+                background: #fff;
+                border: 1px solid #f3a75f;
+                border-radius: 8px;
+              }
+
+              .hopzie-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 6px;
+                background: #111827;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 14px;
+                font-weight: 800;
+              }
+
+              .hopzie-link strong {
+                display: block;
+                font-size: 13px;
+                color: #111827;
+                margin-bottom: 4px;
+              }
+
+              .hopzie-link em {
+                display: block;
+                font-size: 10.5px;
+                color: #9ca3af;
+                font-style: normal;
+              }
+
+              .sync-note {
+                margin-top: 11px;
+                display: flex;
+                align-items: flex-start;
+                gap: 7px;
+                font-size: 10.5px;
+                line-height: 1.55;
+                color: #6b7280;
+              }
+
+              .sync-note span {
+                width: 6px;
+                height: 6px;
+                margin-top: 5px;
+                border-radius: 999px;
+                background: #d97706;
+                flex-shrink: 0;
+              }
+
+              .center-transition-pill {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                align-self: start;
+                margin-top: 240px;
+                z-index: 10;
+                width: max-content;
+                justify-self: center;
+                text-align: center;
+              }
+
+              .center-transition-pill .badge-bad {
+                color: #9ca3af;
+                font-size: 10px;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+              }
+
+              .center-transition-pill .badge-good {
+                color: #d97706;
+                font-size: 10px;
+                font-weight: 800;
+                letter-spacing: 0.02em;
+              }
+
+              @media (max-width: 900px) {
+                .description-compare-grid {
+                  grid-template-columns: 1fr;
+                }
+
+                .center-transition-pill {
+                  margin-top: 0;
+                  margin-bottom: 24px;
+                  align-self: center;
+                }
+              }
+            </style>
+<!-- 4. Impact (Stats & Partners) -->
+            <div class="mt-48 mb-12 max-w-[1100px] mx-auto" id="impact">
+                <div class="text-center mb-8">
+                      <span class="text-[12px] font-bold text-zinc-500 uppercase tracking-widest mb-3 block">Result</span>
+                    <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Validated as a Creator-Commerce MVP</h2>
+                    
+                </div>
+
+                                  <div class="grid grid-cols-1 md:grid-cols-5 border border-zinc-200 bg-white rounded-[4px] max-w-[1120px] mx-auto overflow-hidden">
+                      <!-- Item 1 -->
+                      <div class="flex flex-col justify-between p-6 md:p-5 lg:p-6 border-b md:border-b-0 md:border-r border-zinc-200 min-h-[140px]">
+                          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600">01</span>
+                          <div>
+                              <strong class="block mt-5 text-[14px] leading-[1.35] text-zinc-900 tracking-tight font-bold">Google for Media Startups</strong>
+                              <p class="m-0 mt-2 text-[12px] leading-[1.5] text-zinc-500">Institutional funding</p>
+                          </div>
+                      </div>
+
+                      <!-- Item 2 -->
+                      <div class="flex flex-col justify-between p-6 md:p-5 lg:p-6 border-b md:border-b-0 md:border-r border-zinc-200 min-h-[140px]">
+                          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600">02</span>
+                          <div>
+                              <strong class="block mt-5 text-[14px] leading-[1.35] text-zinc-900 tracking-tight font-bold">SK AI Accelerator</strong>
+                              <p class="m-0 mt-2 text-[12px] leading-[1.5] text-zinc-500">Final selection</p>
+                          </div>
+                      </div>
+
+                      <!-- Item 3 -->
+                      <div class="flex flex-col justify-between p-6 md:p-5 lg:p-6 border-b md:border-b-0 md:border-r border-zinc-200 min-h-[140px]">
+                          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600">03</span>
+                          <div>
+                              <strong class="block mt-5 text-[14px] leading-[1.35] text-zinc-900 tracking-tight font-bold">MVP Launch</strong>
+                              <p class="m-0 mt-2 text-[12px] leading-[1.5] text-zinc-500">Launched Nov 2023</p>
+                          </div>
+                      </div>
+
+                      <!-- Item 4 -->
+                      <div class="flex flex-col justify-between p-6 md:p-5 lg:p-6 border-b md:border-b-0 md:border-r border-zinc-200 min-h-[140px]">
+                          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600">04</span>
+                          <div>
+                              <strong class="block mt-5 text-[14px] leading-[1.35] text-zinc-900 tracking-tight font-bold">895K Combined Reach</strong>
+                              <p class="m-0 mt-2 text-[12px] leading-[1.5] text-zinc-500">Early market signal</p>
+                          </div>
+                      </div>
+
+                      <!-- Item 5 -->
+                      <div class="flex flex-col justify-between p-6 md:p-5 lg:p-6 min-h-[140px]">
+                          <span class="text-[10px] font-bold tracking-widest uppercase text-amber-600">05</span>
+                          <div>
+                              <strong class="block mt-5 text-[14px] leading-[1.35] text-zinc-900 tracking-tight font-bold">Strategic Archive</strong>
+                              <p class="m-0 mt-2 text-[12px] leading-[1.5] text-zinc-500">Archived Feb 2024</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-4 lg:gap-6 mt-4 lg:gap-6 max-w-[1120px] mx-auto">
+                      <!-- Metric 1 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px]">
+                          <span class="block mb-2 text-[10px] font-bold tracking-widest uppercase text-zinc-400">Page Views</span>
+                          <strong class="block text-[30px] lg:text-[36px] leading-none tracking-tight text-[#059669]">30,488</strong>
+                          <p class="m-0 mt-3 text-[12px] lg:text-[13px] text-zinc-500">Unique page loads</p>
+                      </div>
+
+                      <!-- Metric 2 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px]">
+                          <span class="block mb-2 text-[10px] font-bold tracking-widest uppercase text-zinc-400">Conversion Rate</span>
+                          <strong class="block text-[30px] lg:text-[36px] leading-none tracking-tight text-zinc-900">7.02%</strong>
+                          <p class="m-0 mt-3 text-[12px] lg:text-[13px] text-zinc-500">Purchase click / unique visitors</p>
+                      </div>
+
+                      <!-- Metric 3 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px]">
+                          <span class="block mb-2 text-[10px] font-bold tracking-widest uppercase text-zinc-400">In-page CTR</span>
+                          <strong class="block text-[30px] lg:text-[36px] leading-none tracking-tight text-zinc-900">80.18%</strong>
+                          <p class="m-0 mt-3 text-[12px] lg:text-[13px] text-zinc-500">Product click / page view</p>
+                      </div>
+                  </div>
+              </div>
+  
+                    <!-- Strategy Snapshot Section -->
+                  <div class="mt-[218px] mb-16">
+                      <div class="text-center mb-11">
+                          <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest mb-2.5 block">Strategy</span>
+                          <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Key product decisions made<br class="hidden md:block"> while validating Hopzie as a creator-commerce system.</h2>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-[18px] max-w-[1040px] mx-auto">
+                          <!-- Card 01 -->
+                          <div class="bg-white border border-zinc-200 p-[26px_28px_24px] shadow-[0_18px_50px_rgba(0,0,0,0.035)]">
+                              <div class="flex items-center justify-between mb-7">
+                                  <span class="px-2.5 py-1.5 border border-zinc-200 bg-zinc-50 rounded-full text-[10px] font-bold tracking-widest uppercase text-zinc-500">PIVOT</span>
+                                  <span class="text-[12px] font-bold tracking-widest text-zinc-300">01</span>
+                              </div>
+                              
+                              <h3 class="m-0 mb-[26px] max-w-[390px] text-[20px] md:text-[22px] leading-[1.28] tracking-tight text-zinc-900 font-normal">Reframed the product<br class="hidden md:block"> under legal constraint.</h3>
+                              
+                              <div class="border-t border-[#eef0f3]">
+                                  <div class="py-[15px] border-b border-[#eef0f3]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">Constraint</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Media regulatory changes made the original direction difficult<br class="hidden md:block"> to scale after funding was secured from Google.</p>
+                                  </div>
+                                  
+                                  <div class="py-[15px] border-b border-[#eef0f3]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">Decision</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Shifted Hopzie into creator-commerce infrastructure<br class="hidden md:block"> for YouTube-based product discovery from online news creation.</p>
+                                  </div>
+                                  
+                                  <div class="pt-[15px]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-amber-600">Result</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-900 font-medium">Reduced scope into creator-commerce workflows<br class="hidden md:block"> with lower regulatory exposure within the same creation ecosystem,<br class="hidden md:block"> validated through rapid interviews with 5 creators and viewers.</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Card 02 -->
+                          <div class="bg-white border border-zinc-200 p-[26px_28px_24px] shadow-[0_18px_50px_rgba(0,0,0,0.035)]">
+                              <div class="flex items-center justify-between mb-7">
+                                  <span class="px-2.5 py-1.5 border border-zinc-200 bg-zinc-50 rounded-full text-[10px] font-bold tracking-widest uppercase text-zinc-500">SCALE</span>
+                                  <span class="text-[12px] font-bold tracking-widest text-zinc-300">02</span>
+                              </div>
+                              
+                              <h3 class="m-0 mb-[26px] max-w-[390px] text-[20px] md:text-[22px] leading-[1.28] tracking-tight text-zinc-900 font-normal">Chose strategic archive<br class="hidden md:block"> over platform dependency.</h3>
+                              
+                              <div class="border-t border-[#eef0f3]">
+                                  <div class="py-[15px]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">Signal</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">MVP traction was visible,<br class="hidden md:block"> but platform-native commerce was rapidly expanding.</p>
+                                  </div>
+                                  
+                                  <div class="my-2.5 p-[14px_16px] border border-zinc-200 bg-zinc-50 rounded-[4px]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-500">Insight</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-600">Platform-native commerce was shifting from distribution channel<br class="hidden md:block"> to internal commerce infrastructure in YouTube product strategy.</p>
+                                  </div>
+                                  
+                                  <div class="pt-[15px] border-t border-[#eef0f3]">
+                                      <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-amber-600">Decision</span>
+                                      <p class="m-0 text-[13px] leading-[1.65] text-zinc-900 font-medium">Archived before sunk cost and dependency risk deepened.</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="mt-20">
+                                        <div class="text-center mb-8 mt-[218px]">
+                        <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">News</h2>
+                    </div>
+
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
+                        <!-- Media Card 1: SK AI -->
+                        <a href="https://news.sktelecom.com/201128" target="_blank"
+                            class="group block flex flex-col gap-4">
+                            <!-- Image Container -->
+                            <div class="aspect-video w-full bg-zinc-100 flex items-center justify-center relative overflow-hidden rounded-[4px]">
+                                <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent z-10 pointer-events-none"></div>
+                                <img src="images/hopzie/hopzie_oneclickbuilder_news_SK Newsroom.png"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="flex flex-col">
+                                <h4 class="text-[18px] md:text-[20px] text-zinc-900 font-medium tracking-tight leading-[1.3] mb-3 transition-colors">
+                                    SKT Selects Promising AI Startups for the 'SK AI Accelerator' Program
+                                </h4>
+                                <div class="flex items-center gap-3">
+                                    <div class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-200 px-2 py-1 rounded">
+                                        SK Newsroom</div>
+                                    <span class="text-zinc-500 text-[11px] uppercase tracking-wider">Feb 2024</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Media Card 2: Google Fellowship -->
+                        <a href="https://v.daum.net/v/6CkkGCOKk5" target="_blank"
+                            class="group block flex flex-col gap-4">
+                            <!-- Image Container -->
+                            <div class="aspect-video w-full bg-zinc-100 flex items-center justify-center relative overflow-hidden rounded-[4px]">
+                                <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent z-10 pointer-events-none"></div>
+                                <img src="images/hopzie/hopzie_oneclickbuilder_news_daum news.png"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="flex flex-col">
+                                <h4 class="text-[18px] md:text-[20px] text-zinc-900 font-medium tracking-tight leading-[1.3] mb-3 transition-colors">
+                                    Final Selection for Google GNI Innovation Fellowship: Empowering Media Tech Ecosystems
+                                </h4>
+                                <div class="flex items-center gap-3">
+                                    <div class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-200 px-2 py-1 rounded">
+                                        Daum News</div>
+                                    <span class="text-zinc-500 text-[11px] uppercase tracking-wider">Dec 2023</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Media Card 3: The VC -->
+                        <a href="https://thevc.kr/sliver?view=chart" target="_blank"
+                            class="group block flex flex-col gap-4">
+                            <!-- Image Container -->
+                            <div class="aspect-video w-full bg-zinc-100 flex items-center justify-center relative overflow-hidden rounded-[4px]">
+                                <div class="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-transparent z-10 pointer-events-none"></div>
+                                <img src="images/hopzie/hopzie_oneclickbuilder_news_venture capital.png"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                            </div>
+                            <!-- Content -->
+                            <div class="flex flex-col">
+                                <h4 class="text-[18px] md:text-[20px] text-zinc-900 font-medium tracking-tight leading-[1.3] mb-3 transition-colors">
+                                    Company Introduction: Sliver
+                                </h4>
+                                <div class="flex items-center gap-3">
+                                    <div class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest border border-zinc-200 px-2 py-1 rounded">
+                                        Venture Capital</div>
+                                    <span class="text-zinc-500 text-[11px] uppercase tracking-wider">Nov 2023</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Dedicated Creator Marquee -->
+                    <div class="mt-[218px] mb-32">
+                                                <div class="text-center mb-4">
+                            <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Trusted by Global Creators</h2>
+                        </div>
+
+                        <div class="relative w-full overflow-hidden py-8">
+                            <!-- Fade Gradient Overlays -->
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none">
+                            </div>
+                            <div
+                                class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none">
+                            </div>
+
+                            <div class="animate-marquee flex">
+                                <!-- Set 1 -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@haeyongtv" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Haeyong" onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@limbbeumlim" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="LimBbeum" onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@jung__won.k" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="JungWon" onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@dashu_official" target="_blank" class="shrink-0">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Dashu" onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@gomikong" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Gomikong" onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Set 2 (Duplicate for Infinite Scroll) -->
+                                <div class="flex gap-12 pr-12">
+                                    <!-- @haeyongtv -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@haeyongtv" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/_CmZuSRxDpptphlser1tt92IWv-AFF4imlVSijmpMEj-YG-WvnSfzLsdJTA57ooX0PsXfO7BDg=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Haeyong" onerror="this.src='https://ui-avatars.com/api/?name=H&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@haeyongtv</p>
+                                            <p class="creator-stats">214K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @limbbeumlim -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@limbbeumlim" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/ddGqT9jBzF2JIgMO6XF-wMbrxOJ1BIiBPXjdQ-ySakIJgdxLwExhdpHWRWZTqRfF9e5FeSE8_w=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="LimBbeum" onerror="this.src='https://ui-avatars.com/api/?name=L&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@limbbeumlim</p>
+                                            <p class="creator-stats">152K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @jung__won.k -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@jung__won.k" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/NuFRm1iBv0N3MY_ym0s4S8u-GimwRhzCii4wAuNhXBbLifbW3kFVatJyXq9jZFKMvH3i2n67_g=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="JungWon" onerror="this.src='https://ui-avatars.com/api/?name=J&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@jung__won.k</p>
+                                            <p class="creator-stats">84K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @dashu_official -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@dashu_official" target="_blank" class="shrink-0">
+                                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_nexS_B-v-Cok7f6k5TtZrQjMFyaWuu6b7bgjNfxKxYaQ=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Dashu" onerror="this.src='https://ui-avatars.com/api/?name=D&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@dashu_official</p>
+                                            <p class="creator-stats">320K Subscribers</p>
+                                        </div>
+                                    </div>
+                                    <!-- @gomikong -->
+                                    <div class="creator-mini-card group">
+                                        <a href="https://www.youtube.com/@gomikong" target="_blank" class="shrink-0">
+                                            <img src="https://images.weserv.nl/?url=yt3.googleusercontent.com/QFtHRb9kEd516p1fg-S8nTMwIjTdthtdWhA1CQ-MFNGbTzuWh_OKBXiqmQeXQTnPs2liW30E9g=s160-c-k-c0x00ffffff-no-rj" class="creator-avatar" alt="Gomikong" onerror="this.src='https://ui-avatars.com/api/?name=G&background=050505&color=fff'">
+                                        </a>
+                                        <div class="creator-content">
+                                            <p class="creator-id">@gomikong</p>
+                                            <p class="creator-stats">125K Subscribers</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        
+                        /* Marquee Animation */
+                        @keyframes marquee {
+                            0% {
+                                transform: translateX(0);
+                            }
+
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        .animate-marquee {
+                            display: flex;
+                            width: max-content;
+                            animation: marquee 30s linear infinite;
+                        }
+
+                        .animate-marquee:hover {
+                            animation-play-state: paused;
+                        }
+
+
+                        .creator-mini-card {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.25rem;
+                            padding: 1.25rem 1.75rem;
+                            border-radius: 4px;
+                            background: #ffffff;
+                            border: 1px solid #e4e4e7;
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            min-width: 320px;
+                            flex-shrink: 0;
+                            backdrop-filter: blur(8px);
+                        }
+
+                        .creator-mini-card:hover {
+                            background: #ffffff;
+                            border-color: #d4d4d8;
+                            transform: translateY(-6px) scale(1.02);
+                            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .creator-avatar {
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 9999px;
+                            border: 2px solid rgba(0, 0, 0, 0.05);
+                            object-fit: cover;
+                            transition: all 0.4s ease;
+                            filter: grayscale(0.2);
+                        }
+
+                        .creator-mini-card:hover .creator-avatar {
+                            filter: grayscale(0);
+                            border-color: #e4e4e7;
+                        }
+
+                        .creator-content {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                          }
+
+                          .creator-content {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                          }
+
+                          .creator-id {
+                            color: #18181b;
+                            font-weight: 700;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.2rem;
+                            line-height: 1;
+                        }
+
+                        .creator-stats {
+                              color: #71717a;
+                              font-size: 0.65rem;
+                              text-transform: uppercase;
+                              letter-spacing: 0.1em;
+                          }
+
+                        .creator-actions {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                        }
+
+                        .creator-actions a {
+                            color: #a1a1aa;
+                            font-size: 0.65rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            letter-spacing: 0.15em;
+                            transition: all 0.2s ease;
+                            text-decoration: none;
+                        }
+
+                        .creator-actions a:hover {
+                            color: #18181b;
+                        }
+
+                        .creator-actions .dot {
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 9999px;
+                            background-color: #3f3f46;
+                        }
+                    </style>
+                    
+        </div>
+    </section>
+
+    <!-- Lectures Section -->
+
+        </div>
+    </section>
+
+    <!-- LLM Voice IVR Section -->
     <section class="pb-24 bg-white" id="llm-based-voice-ivr" style="display: none; padding-top: 12rem;">
         <div class="container mx-auto px-4 lg:px-12 max-w-[1100px]">
             <button onclick="window.location.hash='#projects'"
@@ -6427,7 +8042,6 @@
 
         </div>
     </section>
-
     <!-- Lectures Section -->
     <section class="pb-16 md:pb-24 bg-white" id="lectures" style="display: none; padding-top: 12rem;">
         <div class="container mx-auto px-4 lg:px-12 max-w-[1400px]">
@@ -8781,13 +10395,12 @@
 
     <script src="articles_data.js"></script>
     <script src="article_renderer.js"></script>
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=4"></script>
     <script src="how-i-work.js"></script>
 
 </body>
 
 </html>
-
 
 
 
