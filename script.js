@@ -1,4 +1,4 @@
-// ===========================
+﻿// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -130,6 +130,7 @@ const routerConfig = {
     'articles': ['articles'],
     'article-detail': ['article-detail'],
     'hopzie-oneclickbuilder': ['hopzie-oneclickbuilder'],
+    'llm-based-voice-ivr': ['llm-based-voice-ivr'],
     'lectures': ['lectures'],
     'awards': ['awards'],
     'contact': ['contact']
@@ -232,7 +233,8 @@ function handleRoute() {
         'research': 'projects',
         'articles': 'projects',
         'article-detail': 'projects',
-        'hopzie-oneclickbuilder': 'projects'
+        'hopzie-oneclickbuilder': 'projects',
+        'llm-based-voice-ivr': 'projects'
     };
     const highlightTab = parentMap[activeTab] || activeTab;
 
@@ -271,7 +273,7 @@ function handleRoute() {
     }
     
     // Light pages force the scrolled UI to make header visible
-    const lightPages = ['life', 'projects', 'research', 'articles', 'article-detail', 'hopzie-oneclickbuilder', 'awards', 'contact'];
+    const lightPages = ['life', 'projects', 'research', 'articles', 'article-detail', 'hopzie-oneclickbuilder', 'llm-based-voice-ivr', 'awards', 'contact'];
     if (lightPages.includes(activeTab)) {
         navbar.classList.add('force-scrolled');
     } else {
@@ -1211,4 +1213,5 @@ window.updateLectureCarousel = function(carousel) {
         }
     });
 };
+
 
