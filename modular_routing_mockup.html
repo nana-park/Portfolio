@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AiCall Modular Routing Mockup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      font-family: Inter, Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: #111;
+    }
+
+    .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      background: transparent;
+    }
+
+    .stage {
+      position: relative;
+      width: min(1320px, 100%);
+      aspect-ratio: 16 / 9;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(17,17,17,.08);
+      background:
+        linear-gradient(rgba(17,17,17,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,17,17,.028) 1px, transparent 1px),
+        rgba(255,255,255,.93);
+      background-size: 48px 48px;
+      box-shadow: 0 34px 100px rgba(15,23,42,.11);
+    }
+
+    .stage::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 50% 54%, transparent 0%, transparent 54%, rgba(255,255,255,.86) 100%);
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .header {
+      position:absolute;
+      top:34px;
+      left:42px;
+      right:42px;
+      z-index:10;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+
+    .eyebrow {
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:#8a8a8a;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+
+    h1 {
+      margin:0;
+      font-size: clamp(30px, 3vw, 46px);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      font-weight:650;
+    }
+
+    .sub {
+      margin-top:12px;
+      max-width:620px;
+      color:#71717a;
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .pill {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(17,17,17,.08);
+      box-shadow:0 10px 30px rgba(15,23,42,.06);
+      backdrop-filter:blur(16px);
+      font-size:12px;
+      font-weight:750;
+      color:#52525b;
+    }
+    .dot { width:7px; height:7px; border-radius:999px; background:#10b981; box-shadow:0 0 14px #10b981; }
+
+    .diagram {
+      position:absolute;
+      inset:145px 50px 42px 50px;
+      z-index:3;
+    }
+
+    .lane-title {
+      position:absolute;
+      left:-4px;
+      font-size:11px;
+      font-weight:750;
+      letter-spacing:-.01em;
+      color:#71717a;
+      z-index:7;
+      background:transparent;
+      border:none;
+      padding:0;
+      text-transform:none;
+    }
+    .top-title { top:6px; }
+    .kit-title { top:214px; color:#059669; }
+    .bottom-title { bottom:112px; }
+
+    svg.lines {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      overflow:visible;
+      z-index:2;
+    }
+    .line-base { fill:none; stroke:rgba(15,23,42,.14); stroke-width:1.15; }
+    .line-kit { fill:none; stroke:rgba(16,185,129,.82); stroke-width:1.25; stroke-dasharray:6 8; filter:drop-shadow(0 0 6px rgba(16,185,129,.36)); animation:dash 6s linear infinite; }
+    .line-domain { fill:none; stroke:rgba(245,158,11,.74); stroke-width:1.15; stroke-dasharray:5 8; filter:drop-shadow(0 0 5px rgba(245,158,11,.23)); animation:dash 7s linear infinite; }
+    @keyframes dash { to { stroke-dashoffset:-120; } }
+
+    .flow-card {
+      position:absolute;
+      width:214px;
+      border-radius:18px;
+      padding:12px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(17,17,17,.08);
+      box-shadow:0 16px 42px rgba(15,23,42,.075);
+      backdrop-filter:blur(16px);
+      z-index:5;
+    }
+
+    .flow-card.primary {
+      border-color:rgba(16,185,129,.18);
+    }
+
+    .delivery-1 { left:10%; top:45px; }
+    .delivery-2 { left:50%; top:45px; transform:translateX(-50%); }
+    .delivery-3 { right:10%; top:45px; }
+
+    .telecom-1 { left:10%; bottom:0; }
+    .telecom-2 { left:50%; bottom:0; transform:translateX(-50%); }
+    .telecom-3 { right:10%; bottom:0; }
+
+    .card-head {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:9px;
+    }
+    .title {
+      display:flex;
+      align-items:center;
+      gap:7px;
+      font-size:12.5px;
+      font-weight:820;
+      letter-spacing:-.02em;
+      white-space:nowrap;
+      color:#18181b;
+    }
+    .icon {
+      width:19px;
+      height:19px;
+      border-radius:7px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      color:#10b981;
+      background:rgba(16,185,129,.10);
+    }
+    .icon.orange { color:#f59e0b; background:rgba(245,158,11,.12); }
+
+    .badge {
+      display:inline-flex;
+      align-items:center;
+      padding:5px 7px;
+      border-radius:999px;
+      font-size:8.5px;
+      font-weight:850;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:#71717a;
+      background:rgba(244,244,245,.85);
+      border:1px solid rgba(17,17,17,.06);
+      white-space:nowrap;
+    }
+    .badge.green { color:#059669; background:rgba(16,185,129,.09); border-color:rgba(16,185,129,.18); }
+    .badge.orange { color:#b45309; background:rgba(245,158,11,.11); border-color:rgba(245,158,11,.19); }
+
+    .bubble {
+      border-radius:10px;
+      padding:7px 9px;
+      font-size:9.8px;
+      line-height:1.32;
+      letter-spacing:-.015em;
+      margin-top:6px;
+    }
+    .label {
+      display:block;
+      font-size:7.6px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:3px;
+      opacity:.62;
+    }
+    .system { background:#111; color:#fff; }
+    .user { background:#f1f5f9; color:#52525b; }
+    .green-bubble { background:linear-gradient(135deg, #34d399, #14b8a6); color:white; }
+    .orange-bubble { background:linear-gradient(135deg, #fbbf24, #f59e0b); color:white; }
+
+    .chips { display:flex; gap:5px; flex-wrap:wrap; margin-top:9px; }
+    .chip {
+      font-size:8.7px;
+      font-weight:800;
+      color:#52525b;
+      padding:4.5px 6.5px;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid rgba(17,17,17,.06);
+      white-space:nowrap;
+    }
+    .chip.green { color:#059669; background:rgba(16,185,129,.08); }
+    .chip.orange { color:#b45309; background:rgba(245,158,11,.10); }
+
+    .kit-board {
+      position:absolute;
+      left:50%;
+      top:265px;
+      transform:translate(-50%, -50%);
+      width:660px;
+      border-radius:26px;
+      padding:18px 20px 17px;
+      background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(248,250,252,.86));
+      border:1px solid rgba(16,185,129,.22);
+      box-shadow:0 24px 78px rgba(16,185,129,.16), 0 16px 44px rgba(15,23,42,.08);
+      backdrop-filter:blur(18px);
+      z-index:6;
+    }
+
+    .kit-board::before {
+      content:"";
+      position:absolute;
+      inset:-24px;
+      border-radius:40px;
+      background:radial-gradient(circle, rgba(20,184,166,.20), transparent 70%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .kit-head {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:13px;
+    }
+    .kit-name {
+      display:flex;
+      align-items:center;
+      gap:9px;
+      font-size:15px;
+      font-weight:850;
+      letter-spacing:-.025em;
+    }
+    .kit-desc {
+      margin-top:5px;
+      color:#71717a;
+      font-size:11px;
+      line-height:1.45;
+      font-weight:600;
+    }
+    .kit-grid {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+    }
+    .module {
+      min-height:86px;
+      border-radius:16px;
+      padding:11px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(16,185,129,.14);
+      box-shadow:0 8px 26px rgba(15,23,42,.05);
+    }
+    .module-top {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:6px;
+      margin-bottom:8px;
+    }
+    .module-title {
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:-.02em;
+    }
+    .mini-dot {
+      width:6px;
+      height:6px;
+      border-radius:999px;
+      background:#10b981;
+      box-shadow:0 0 10px rgba(16,185,129,.7);
+      flex:0 0 auto;
+    }
+    .module-copy {
+      font-size:9.4px;
+      line-height:1.36;
+      color:#71717a;
+      font-weight:650;
+    }
+
+    .domain-tag {
+      position:absolute;
+      transform:translate(-50%, -50%);
+      padding:6px 9px;
+      border-radius:999px;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(16,185,129,.20);
+      color:#0f766e;
+      box-shadow:0 10px 28px rgba(15,23,42,.06);
+      font-size:9px;
+      font-weight:850;
+      backdrop-filter:blur(12px);
+      white-space:nowrap;
+      z-index:7;
+    }
+    .tag-a { left:24%; top:198px; }
+    .tag-b { left:50%; top:198px; }
+    .tag-c { left:76%; top:198px; }
+    .tag-d { left:24%; top:370px; color:#b45309; border-color:rgba(245,158,11,.20); }
+    .tag-e { left:50%; top:370px; color:#b45309; border-color:rgba(245,158,11,.20); }
+    .tag-f { left:76%; top:370px; color:#b45309; border-color:rgba(245,158,11,.20); }
+
+    .caption {
+      position:absolute;
+      left:42px;
+      bottom:28px;
+      z-index:10;
+      color:#a1a1aa;
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    @media (max-width:900px) {
+      .wrap { padding:0px; }
+      .stage { aspect-ratio:auto; min-height:1400px; }
+      .header { position:relative; inset:auto; padding:28px; }
+      .pill { display:none; }
+      .diagram { inset:200px 22px 42px 22px; display:flex; flex-direction:column; gap:14px; }
+      .flow-card, .kit-board, .delivery-1, .delivery-2, .delivery-3, .telecom-1, .telecom-2, .telecom-3 {
+        position:relative; left:auto; right:auto; top:auto; bottom:auto; transform:none; width:100%;
+      }
+      .kit-grid { grid-template-columns:1fr 1fr; }
+      svg.lines, .domain-tag, .lane-title { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="stage">
+      <div class="header">
+        <div>
+          <div class="eyebrow">Modular Routing</div>
+          <h1>Reusable AiCall Kit<br/>across domain ARS flows.</h1>
+          <p class="sub">Delivery and telecom ARS chatbots can reuse the same generated modules instead of rebuilding identical call steps in each flow.</p>
+        </div>
+        <div class="pill"><span class="dot"></span> Shared module library</div>
+      </div>
+
+      <div class="diagram">
+        <div class="lane-title top-title">Delivery company ARS chatbot flow</div>
+        <div class="lane-title kit-title">AiCall Kit · generated reusable modules</div>
+        <div class="lane-title bottom-title">Telecom company ARS chatbot flow</div>
+
+        <svg class="lines" viewBox="0 0 1000 540" preserveAspectRatio="none">
+          <!-- delivery flow internal -->
+          <path class="line-base" d="M244 96 C330 90 390 90 455 96" />
+          <path class="line-base" d="M545 96 C610 90 670 90 756 96" />
+          <!-- delivery to kit -->
+          <path class="line-base" d="M180 162 C220 202 270 224 335 242" />
+          <path class="line-base" d="M500 162 C500 192 500 214 500 232" />
+          <path class="line-base" d="M820 162 C780 202 730 224 665 242" />
+          <path class="line-kit" d="M180 162 C220 202 270 224 335 242" />
+          <path class="line-kit" d="M500 162 C500 192 500 214 500 232" />
+          <path class="line-kit" d="M820 162 C780 202 730 224 665 242" />
+
+          <!-- kit to telecom -->
+          <path class="line-base" d="M335 304 C270 330 220 354 180 388" />
+          <path class="line-base" d="M500 306 C500 340 500 365 500 388" />
+          <path class="line-base" d="M665 304 C730 330 780 354 820 388" />
+          <path class="line-domain" d="M335 304 C270 330 220 354 180 388" />
+          <path class="line-domain" d="M500 306 C500 340 500 365 500 388" />
+          <path class="line-domain" d="M665 304 C730 330 780 354 820 388" />
+          <!-- telecom flow internal -->
+          <path class="line-base" d="M244 456 C330 462 390 462 455 456" />
+          <path class="line-base" d="M545 456 C610 462 670 462 756 456" />
+        </svg>
+
+        <!-- Delivery ARS call flow: multiple conversation nodes -->
+        <article class="flow-card delivery-1 primary">
+          <div class="card-head">
+            <div class="title"><span class="icon">☎</span> Delivery Tracking</div>
+            
+          </div>
+          <div class="bubble system"><span class="label">AI</span>I can help track your package. Please tell me your tracking number.</div>
+          <div class="bubble user"><span class="label">User</span>It is 1234 5678.</div>
+          <div class="chips"><span class="chip">tracking</span><span class="chip green">reuse name</span></div>
+        </article>
+
+        <article class="flow-card delivery-2 primary">
+          <div class="card-head">
+            <div class="title"><span class="icon">↳</span> Address Change</div>
+            
+          </div>
+          <div class="bubble system"><span class="label">AI</span>Please tell me the new delivery address.</div>
+          <div class="bubble user"><span class="label">User</span>Send it to Seongsu-dong, Seoul.</div>
+          <div class="chips"><span class="chip">address</span><span class="chip green">shared module</span></div>
+        </article>
+
+        <article class="flow-card delivery-3 primary">
+          <div class="card-head">
+            <div class="title"><span class="icon">↳</span> Return Request</div>
+            
+          </div>
+          <div class="bubble system"><span class="label">AI</span>I’ll help with your return. What is the reason?</div>
+          <div class="bubble user"><span class="label">User</span>The item arrived damaged.</div>
+          <div class="chips"><span class="chip">return</span><span class="chip green">reuse address</span></div>
+        </article>
+
+        <div class="domain-tag tag-a">calls module</div>
+        <div class="domain-tag tag-b">calls module</div>
+        <div class="domain-tag tag-c">calls module</div>
+
+        <!-- AiCall Kit: module library, not a chat flow -->
+        <section class="kit-board">
+          <div class="kit-head">
+            <div>
+              <div class="kit-name"><span class="icon">✦</span> AiCall Kit</div>
+              <div class="kit-desc">Generated chatbot components that can be plugged into different ARS scenarios.</div>
+            </div>
+            <div class="badge green">module library</div>
+          </div>
+          <div class="kit-grid">
+            <div class="module">
+              <div class="module-top"><div class="module-title">Name Capture</div><span class="mini-dot"></span></div>
+              <div class="module-copy">Split full name into structured fields.</div>
+            </div>
+            <div class="module">
+              <div class="module-top"><div class="module-title">Address Capture</div><span class="mini-dot"></span></div>
+              <div class="module-copy">Collect and validate delivery or billing address.</div>
+            </div>
+            <div class="module">
+              <div class="module-top"><div class="module-title">Phone Verify</div><span class="mini-dot"></span></div>
+              <div class="module-copy">Confirm identity through phone number flow.</div>
+            </div>
+            <div class="module">
+              <div class="module-top"><div class="module-title">Agent Handoff</div><span class="mini-dot"></span></div>
+              <div class="module-copy">Transfer with summarized call context.</div>
+            </div>
+          </div>
+        </section>
+
+        <div class="domain-tag tag-d">reused in telecom</div>
+        <div class="domain-tag tag-e">reused in telecom</div>
+        <div class="domain-tag tag-f">reused in telecom</div>
+
+        <!-- Telecom ARS call flow: multiple conversation nodes -->
+        <article class="flow-card telecom-1">
+          <div class="card-head">
+            <div class="title"><span class="icon orange">☎</span> Billing Inquiry</div>
+            
+          </div>
+          <div class="bubble orange-bubble"><span class="label">AI</span>I can check your latest bill. May I verify your account?</div>
+          <div class="bubble user"><span class="label">User</span>Yes, please check this month’s bill.</div>
+          <div class="chips"><span class="chip orange">billing</span><span class="chip green">reuse verify</span></div>
+        </article>
+
+        <article class="flow-card telecom-2">
+          <div class="card-head">
+            <div class="title"><span class="icon orange">↳</span> Identity Check</div>
+            
+          </div>
+          <div class="bubble orange-bubble"><span class="label">AI</span>Please say your name and phone number for verification.</div>
+          <div class="bubble user"><span class="label">User</span>My name is Nahyun Park.</div>
+          <div class="chips"><span class="chip orange">identity</span><span class="chip green">shared module</span></div>
+        </article>
+
+        <article class="flow-card telecom-3">
+          <div class="card-head">
+            <div class="title"><span class="icon orange">↳</span> Agent Handoff</div>
+            
+          </div>
+          <div class="bubble orange-bubble"><span class="label">AI</span>I’ll connect you to an agent with this call summary.</div>
+          <div class="bubble user"><span class="label">User</span>Yes, connect me to an agent.</div>
+          <div class="chips"><span class="chip orange">handoff</span><span class="chip green">reuse summary</span></div>
+        </article>
+      </div>
+
+      <div class="caption">AiCall · Modular Routing Mockup</div>
+    </section>
+  </main>
+</body>
+</html>
