@@ -1,4 +1,4 @@
-﻿// ===========================
+// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -993,22 +993,27 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const initScroll = () => {
             if (!initializedScroll && container && cards[currentIndex] && container.offsetWidth > 0) {
-                initializedScroll = true;
-                const card = cards[currentIndex];
-                const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
-                
-                // Temporarily disable scroll-snap to force browser to accept the scroll
-                const originalSnap = container.style.scrollSnapType;
-                container.style.scrollSnapType = 'none';
-                
-                container.scrollTo({ left: scrollPos, behavior: 'auto' });
-                
-                // Restore scroll-snap
+                // Wait a tick to ensure offsetLeft is calculated correctly after display:block
                 setTimeout(() => {
-                    container.style.scrollSnapType = originalSnap || '';
+                    if (initializedScroll) return; // double check
+                    initializedScroll = true;
+                    
+                    const card = cards[currentIndex];
+                    const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
+                    
+                    // Temporarily disable scroll-snap to force browser to accept the scroll
+                    const originalSnap = container.style.scrollSnapType;
+                    container.style.scrollSnapType = 'none';
+                    
+                    container.scrollTo({ left: scrollPos, behavior: 'auto' });
+                    
+                    // Restore scroll-snap
+                    setTimeout(() => {
+                        container.style.scrollSnapType = originalSnap || '';
+                    }, 50);
+                    
+                    updateActiveState(currentIndex);
                 }, 50);
-                
-                updateActiveState(currentIndex);
             }
         };
 

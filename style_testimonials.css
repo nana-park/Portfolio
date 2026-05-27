@@ -1,4 +1,4 @@
-﻿/* Testimonials Section Styles */
+/* Testimonials Section Styles */
 #testimonials {
     padding: var(--spacing-xl) 0;
     position: relative;
@@ -36,8 +36,6 @@
     margin-bottom: 2.5rem;
     /* Gap B = 2.5rem */
 }
-
-
 
 /* Carousel Container */
 .testimonials-container {
@@ -295,6 +293,7 @@
     position: relative;
     z-index: 2;
 }
+
 
 
 
