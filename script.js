@@ -1157,8 +1157,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (totalSlides <= 1) return;
 
         // Make arrows visible and indicators visible
-        if(prevBtn) prevBtn.classList.remove('hidden');
-        if(nextBtn) nextBtn.classList.remove('hidden');
+        if(prevBtn) {
+            prevBtn.classList.remove('hidden');
+            prevBtn.onclick = (e) => { e.stopPropagation(); window.moveLectureSlide(prevBtn, -1); };
+        }
+        if(nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.onclick = (e) => { e.stopPropagation(); window.moveLectureSlide(nextBtn, 1); };
+        }
         if(indicatorsContainer) indicatorsContainer.classList.remove('hidden');
 
         // Initialize indicators

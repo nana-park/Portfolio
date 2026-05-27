@@ -557,17 +557,6 @@
         <div class="container mx-auto px-4 lg:px-12 max-w-[1400px]">
 
             <div class="relative w-full group">
-                <!-- Left Hover Scroll Zone -->
-                <div id="fp-scroll-left"
-                    class="absolute left-[-16px] md:left-[-48px] top-0 -bottom-16 md:-bottom-24 pb-16 md:pb-32 w-[80px] md:w-[120px] z-50 cursor-pointer bg-gradient-to-r from-white via-white/90 to-transparent items-center justify-start opacity-0 transition-opacity duration-500 hidden md:flex pointer-events-none">
-                    <div
-                        class="w-12 h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-gray-100/50 text-gray-500 ml-6 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-500 ease-out">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
 
                 <!-- Horizontal Scroll Gallery -->
                 <div class="footprint-gallery-container flex gap-4 md:gap-6 overflow-x-auto pt-4 pb-8 -mt-4 snap-x snap-mandatory"
@@ -743,49 +732,16 @@
                                 class="font-medium text-zinc-800">Speaker</span> · Jul 2022</p>
                     </div>
                 </div>
-
-                <!-- Right Hover Scroll Zone -->
-                <div id="fp-scroll-right"
-                    class="absolute right-[-16px] md:right-[-48px] top-0 -bottom-16 md:-bottom-24 pb-16 md:pb-32 w-[80px] md:w-[120px] z-50 cursor-pointer bg-gradient-to-l from-white via-white/90 to-transparent items-center justify-end opacity-0 transition-opacity duration-500 hidden md:flex pointer-events-none">
-                    <div
-                        class="w-12 h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] flex items-center justify-center border border-gray-100/50 text-gray-500 mr-6 transform translate-x-2 group-hover:translate-x-0 transition-all duration-500 ease-out">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
             </div>
+        </div>
 
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
                     const gallery = document.querySelector('.footprint-gallery-container');
-                    const leftZone = document.getElementById('fp-scroll-left');
-                    const rightZone = document.getElementById('fp-scroll-right');
-                    const cards = gallery ? gallery.querySelectorAll('.group\\/card') : [];
+                    if (!gallery) return;
+                    const cards = gallery.querySelectorAll('.group\\/card');
+                    
                     let isSmoothScrolling = false;
-
-                    if (!gallery || !leftZone || !rightZone) return;
-
-                    // Click arrows/zones to scroll by one card
-                    function clickScroll(direction, e) {
-                        if (e) e.stopPropagation();
-                        isSmoothScrolling = true;
-
-                        // Disable snap temporarily so smooth scroll isn't interrupted
-                        gallery.style.scrollSnapType = 'none';
-
-                        const cardWidth = gallery.children[0].offsetWidth + 24; // roughly card + gap
-                        gallery.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
-
-                        setTimeout(() => {
-                            gallery.style.scrollSnapType = 'x mandatory';
-                            isSmoothScrolling = false;
-                        }, 600);
-                    }
-
-                    leftZone.addEventListener('click', (e) => clickScroll(-1, e));
-                    rightZone.addEventListener('click', (e) => clickScroll(1, e));
 
                     // Click any card to center it
                     cards.forEach(card => {
@@ -810,36 +766,8 @@
                         // Change cursor to pointer to indicate clickability
                         card.style.cursor = 'pointer';
                     });
-
-                    function updateZones() {
-                        if (!gallery) return;
-                        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-
-                        if (gallery.scrollLeft <= 5) {
-                            leftZone.style.opacity = '0';
-                            leftZone.style.pointerEvents = 'none';
-                        } else {
-                            leftZone.style.opacity = '1';
-                            leftZone.style.pointerEvents = 'auto';
-                        }
-
-                        if (gallery.scrollLeft >= maxScroll - 5) {
-                            rightZone.style.opacity = '0';
-                            rightZone.style.pointerEvents = 'none';
-                        } else {
-                            rightZone.style.opacity = '1';
-                            rightZone.style.pointerEvents = 'auto';
-                        }
-                    }
-
-                    gallery.addEventListener('scroll', () => {
-                        if (!isSmoothScrolling) updateZones();
-                    });
-                    setTimeout(updateZones, 300);
-                    window.addEventListener('resize', updateZones);
                 });
             </script>
-        </div>
     </section>
 
     <style>
