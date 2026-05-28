@@ -968,10 +968,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = cards[index];
 
             const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
+            
+            // 튕김(Glitch) 현상을 방지하기 위해 이동하는 동안 잠시 scroll-snap을 끕니다.
+            container.style.scrollSnapType = 'none';
+            
             container.scrollTo({
                 left: scrollPos,
                 behavior: 'smooth'
             });
+
+            // 부드러운 이동(smooth)이 끝날 즈음(약 600ms 후) 다시 scroll-snap을 켭니다.
+            setTimeout(() => {
+                container.style.scrollSnapType = '';
+            }, 600);
 
             updateActiveState(index);
         };
