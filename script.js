@@ -967,18 +967,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const card = cards[index];
 
-            const scrollPos = card.offsetLeft - (container.offsetWidth / 2) + (card.offsetWidth / 2);
-            
-            // 튕김(Glitch) 현상을 방지하기 위해 이동하는 동안 잠시 scroll-snap을 끕니다.
+            // 스냅(Snap)과 부드러운 스크롤이 충돌하여 덜커덕거리는 현상을 막기 위해 잠시 스냅을 끕니다.
             container.style.scrollSnapType = 'none';
             
-            container.scrollTo({
-                left: scrollPos,
-                behavior: 'smooth'
+            // 강제 렌더링(Reflow)으로 스냅 해제를 브라우저에 즉시 반영
+            void container.offsetHeight;
+
+            card.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
             });
 
-            // 부드러운 이동(smooth)이 끝날 즈음(약 600ms 후) 다시 scroll-snap을 켭니다.
-            setTimeout(() => {
+            // 스크롤 이동이 완료될 즈음 다시 스냅 원복
+            if (container.snapTimeout) clearTimeout(container.snapTimeout);
+            container.snapTimeout = setTimeout(() => {
                 container.style.scrollSnapType = '';
             }, 600);
 
