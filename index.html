@@ -1347,6 +1347,31 @@
 
                             <script>
 
+                                function expandProjects(btn) {
+                                    const card = btn.parentElement;
+                                    const hiddenItems = Array.from(card.querySelectorAll('.hidden-project'));
+                                    const currentlyHidden = hiddenItems.filter(item => item.classList.contains('hidden'));
+                                    
+                                    if (currentlyHidden.length > 0) {
+                                        const toShow = currentlyHidden.slice(0, 3);
+                                        toShow.forEach(item => item.classList.remove('hidden'));
+                                        
+                                        const stillHidden = hiddenItems.filter(item => item.classList.contains('hidden'));
+                                        if (stillHidden.length === 0) {
+                                            card.classList.add('is-expanded');
+                                            btn.setAttribute('aria-expanded', 'true');
+                                            btn.querySelector('span').textContent = 'View fewer projects';
+                                            btn.querySelector('svg').classList.add('rotate-180');
+                                        }
+                                    } else {
+                                        hiddenItems.forEach(item => item.classList.add('hidden'));
+                                        card.classList.remove('is-expanded');
+                                        btn.setAttribute('aria-expanded', 'false');
+                                        btn.querySelector('span').textContent = 'View more projects';
+                                        btn.querySelector('svg').classList.remove('rotate-180');
+                                    }
+                                }
+
                                 let currentCareerPage = 1;
 
                                 function toggleCareerPage() {
@@ -1646,7 +1671,7 @@
                                 </div>
                             </div>
                             <button
-                                onclick="const card = this.parentElement; const isExpanded = card.classList.toggle('is-expanded'); card.querySelectorAll('.hidden-project').forEach(el => el.classList.toggle('hidden')); this.setAttribute('aria-expanded', String(isExpanded)); this.querySelector('span').textContent = isExpanded ? 'View fewer projects' : 'View more projects'; this.querySelector('svg').classList.toggle('rotate-180', isExpanded);"
+                                onclick="expandProjects(this)"
                                 aria-expanded="false"
                                 class="flex items-center text-left font-sans text-[13px] font-medium text-zinc-800 hover:text-[#d97706] transition-colors cursor-pointer w-fit mt-4 group/btn">
                                 <span class="transition-colors">View more projects</span>
@@ -1658,7 +1683,7 @@
                             </button>
                         </div>
 
-                        <!-- CLOVA CareCall -->
+                        <!-- NAVER CareCall -->
                         <div class="flex flex-col h-full group focus:outline-none w-full relative">
                             <a href="projects/clova-carecall.html" class="block cursor-pointer">
                                 <div
@@ -1673,7 +1698,7 @@
                                             Product Launch</div>
                                     </div>
                                     <img src="nahyun_imported/image_source/Projects_Products/thumnail_carecall.png"
-                                        alt="CLOVA CareCall" class="w-full h-full object-cover">
+                                        alt="NAVER CareCall" class="w-full h-full object-cover">
                                     <div class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 z-10">
                                         <div
                                             class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
@@ -1689,7 +1714,7 @@
                             </a>
                             <p
                                 class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
-                                CLOVA CareCall</p>
+                                NAVER CareCall</p>
                             <h3 style="font-family: 'Inter', sans-serif;"
                                 class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
                                 Senior Care AI Call-bot</h3>
@@ -1733,25 +1758,39 @@
                             <div class="flex flex-col border-t border-b border-zinc-200 mt-2 divide-y divide-zinc-100">
                                 <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
                                     <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
-                                        LLM-based Open-domain Call</div>
+                                        Multimodal Avatar-based CareCall</div>
                                 </div>
                                 <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
                                     <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
-                                        Multimodal Avatar-based VUI</div>
+                                        WebRTC Barge-in Voice Interaction</div>
                                 </div>
                                 <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
                                     <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
-                                        Objective-driven Dialogue Scenarios</div>
-                                    
+                                        Real-time Context-aware Dialogue</div>
                                 </div>
                                 <div class="hidden-project hidden flex flex-col justify-center min-h-[76px] py-4 relative">
                                     <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
-                                        Japan B2G Pilot Expansion</div>
-                                    
+                                        Japan B2G Localization</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[76px] py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
+                                        Persona-driven Dialogue Customization</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[76px] py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
+                                        Medication Adherence Dialogue</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[76px] py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
+                                        Safe return home Check-in Call</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[76px] py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">
+                                        Inbound CareCall Experience</div>
                                 </div>
                             </div>
                             <button
-                                onclick="const card = this.parentElement; const isExpanded = card.classList.toggle('is-expanded'); card.querySelectorAll('.hidden-project').forEach(el => el.classList.toggle('hidden')); this.setAttribute('aria-expanded', String(isExpanded)); this.querySelector('span').textContent = isExpanded ? 'View fewer projects' : 'View more projects'; this.querySelector('svg').classList.toggle('rotate-180', isExpanded);"
+                                onclick="expandProjects(this)"
                                 aria-expanded="false"
                                 class="flex items-center text-left font-sans text-[13px] font-medium text-zinc-800 hover:text-[#d97706] transition-colors cursor-pointer w-fit mt-4 group/btn">
                                 <span class="transition-colors">View more projects</span>
@@ -1763,13 +1802,13 @@
                             </button>
                         </div>
 
-                        <!-- CLOVA CareCall Console -->
+                        <!-- NAVER CareCall Console -->
                         <div class="flex flex-col h-full group focus:outline-none w-full relative">
                             <a href="#" class="block cursor-pointer">
                                 <div
                                     class="relative w-full h-[220px] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
                                     <img src="nahyun_imported/image_source/Projects_Products/thumnail_console.png"
-                                        alt="CLOVA CareCall Console" class="w-full h-full object-cover">
+                                        alt="NAVER CareCall Console" class="w-full h-full object-cover">
                                     <div class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 z-10">
                                         <div
                                             class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
@@ -1782,7 +1821,7 @@
                             </a>
                             <p
                                 class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
-                                CLOVA CareCall Console</p>
+                                NAVER CareCall Console</p>
                             <h3 style="font-family: 'Inter', sans-serif;"
                                 class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
                                 AI Call Operation System</h3>
@@ -1844,7 +1883,7 @@
                                 </div>
                             </div>
                             <button
-                                onclick="const card = this.parentElement; const isExpanded = card.classList.toggle('is-expanded'); card.querySelectorAll('.hidden-project').forEach(el => el.classList.toggle('hidden')); this.setAttribute('aria-expanded', String(isExpanded)); this.querySelector('span').textContent = isExpanded ? 'View fewer projects' : 'View more projects'; this.querySelector('svg').classList.toggle('rotate-180', isExpanded);"
+                                onclick="expandProjects(this)"
                                 aria-expanded="false"
                                 class="flex items-center text-left font-sans text-[13px] font-medium text-zinc-800 hover:text-[#d97706] transition-colors cursor-pointer w-fit mt-4 group/btn">
                                 <span class="transition-colors">View more projects</span>
@@ -2160,10 +2199,10 @@
                         class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 max-w-[1200px] mx-auto w-full px-4 lg:px-0 items-start">
 
                         <!-- Left Column: Just Do It -->
-                        <div class="flex flex-col">
+                        <div class="flex flex-col gap-10">
                             <!-- Just Do It -->
                             <div
-                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start pb-8">
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start">
                                 <div
                                     class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#e7f1e8] via-[#f7f4ea] to-white">
                                     <div
@@ -2219,6 +2258,65 @@
                                             <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">User Research & Pivot</div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- Paper 2 (Moved from Right Column) -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start lg:mt-[44px]">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#f3f4f6] via-[#f9fafb] to-white">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[9px] leading-none font-semibold text-zinc-900 z-10 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        SSCI</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_digital%20transformation.png"
+                                        alt="Exploratory Reading Interaction System"
+                                        class="w-full h-full object-cover object-center p-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Information Development</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2">
+                                        Digital Book Discovery Experience</h3>
+                                    <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 min-h-[42px]">
+                                        Redesigned online book discovery through interactive preview UX.
+                                    </p>
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+27%</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher satisfaction<br>in random vs. front previews</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+26%</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher purchase intention<br>in exploratory previews</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-5">
+                                        <span
+                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Exploratory
+                                            UX</span>
+                                        <span
+                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Information
+                                            Behavior</span>
+                                        <span class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Digital Transformation</span>
+                                    </div>
+
+                                    <div class="flex flex-col border-t border-b border-zinc-200 mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Offline-to-Online Browsing UX</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Serendipitous Discovery Flow</div>
+                                        </div>
+                                    </div>
+                                    <a href="https://doi.org/10.1177/02666669251399814" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                        View paper
+                                        <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -2287,59 +2385,57 @@
                                 </div>
                             </div>
 
-<!-- Paper 2 -->
+                            <!-- New Project: PFP NFT Consumer Journey -->
                             <div
                                 class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start">
                                 <div
                                     class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#f3f4f6] via-[#f9fafb] to-white">
                                     <div
                                         class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[9px] leading-none font-semibold text-zinc-900 z-10 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
-                                        SSCI</div>
-                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_digital%20transformation.png"
-                                        alt="Exploratory Reading Interaction System"
+                                        Conference</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_nft.png"
+                                        alt="PFP NFT Consumer Journey"
                                         class="w-full h-full object-cover object-center p-0">
                                 </div>
                                 <div class="flex flex-col">
                                     <p
                                         class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
-                                        Information Development</p>
+                                        Korea Society of IT Services</p>
                                     <h3 style="font-family: 'Inter', sans-serif;"
                                         class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2">
-                                        Digital Book Discovery Experience</h3>
+                                        PFP NFT Consumer Journey</h3>
                                     <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 min-h-[42px]">
-                                        Redesigned online book discovery through interactive preview UX.
+                                        Mapped how rarity, community belonging, and social signaling shape digital ownership behavior.
                                     </p>
 
                                     <div class="grid grid-cols-2 gap-2 mb-4">
                                         <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
-                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+27%</span>
-                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher satisfaction<br>in random vs. front previews</span>
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">3 User Types</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Segmented by purchasing patterns</span>
                                         </div>
                                         <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
-                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+26%</span>
-                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher purchase intention<br>in exploratory previews</span>
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">5 Decision Stages</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">CDM-based behavioral journey</span>
                                         </div>
                                     </div>
 
                                     <div class="flex flex-wrap gap-1.5 mb-5">
                                         <span
-                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Exploratory
-                                            UX</span>
+                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">#Web3</span>
                                         <span
-                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Information
-                                            Behavior</span>
-                                        <span class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">Digital Transformation</span>
+                                            class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">#Cryptocurrency</span>
+                                        <span class="px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-none text-zinc-500 bg-zinc-50">#Trust Signals</span>
                                     </div>
 
                                     <div class="flex flex-col border-t border-b border-zinc-200 mt-2 divide-y divide-zinc-100">
                                         <div class="block py-4 relative">
-                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Offline-to-Online Browsing UX</div>
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Community-based Discovery Flow</div>
                                         </div>
                                         <div class="block py-4 relative">
-                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Serendipitous Discovery Flow</div>
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1">Multi-channel Trust Formation</div>
                                         </div>
                                     </div>
-                                    <a href="https://doi.org/10.1177/02666669251399814" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                    <a href="nahyun_imported/document_source/Projects_Research/(EN)Korea%20Society%20of%20IT%20Services.pdf" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
                                         View paper
                                         <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
                                     </a>
@@ -2495,9 +2591,13 @@
                             <p class="font-sans text-zinc-600 text-[13px] leading-relaxed pr-0 md:pr-12">Maps the
                                 psychological and functional journey of users interacting with Ethereum-based Generative
                                 AI Profile Picture (PFP) networks.</p>
-                            <a href="https://share.google/diY1WuICUFJxf7NNe" target="_blank"
-                                class="shrink-0 px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap">Read
-                                Paper</a>
+                            <div class="flex flex-col gap-2 shrink-0">
+                                <a href="https://share.google/diY1WuICUFJxf7NNe" target="_blank"
+                                    class="px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap text-center">Conference</a>
+                                <a href="nahyun_imported/document_source/Projects_Research/(EN)Korea%20Society%20of%20IT%20Services.pdf" target="_blank"
+                                    class="px-5 py-2 rounded-full border border-gray-300 font-sans text-[12px] font-semibold text-zinc-900 hover:bg-zinc-100 transition-colors whitespace-nowrap text-center">Read
+                                    Paper</a>
+                            </div>
                         </div>
                     </div>
 
@@ -7429,6 +7529,7 @@
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                     allowfullscreen
+                                    style="transform: scale(1.02); border: none;"
                                     class="absolute top-0 left-0 w-full h-full border-0">
                                 </iframe>
                             </div>
