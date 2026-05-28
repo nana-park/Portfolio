@@ -42,6 +42,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 1.5rem;
+    position: relative;
     /* Extra generous padding on left and right allows the very first and very last card to be perfectly centered */
     padding: 3rem calc(50% - 190px) 3rem;
     overflow-x: auto;
@@ -49,8 +50,11 @@
     scroll-behavior: auto;
     scroll-snap-type: x mandatory;
     /* Replaced smooth to let JS handle it without glitching */
-    max-width: 1200px;
+    max-width: 820px;
     margin: 0 auto;
+    /* Soft fade edges so side cards aren't cut off sharply */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .testimonials-container::-webkit-scrollbar {
@@ -76,20 +80,18 @@
     color: white;
     position: relative;
 
-    /* Full Visibility for all cards */
-    opacity: 0.4;
-    /* Faded by default */
-    transform: scale(0.9);
-    filter: blur(1px);
+    /* Smaller and faded for inactive cards */
+    opacity: 0.5;
+    transform: scale(0.85);
+    filter: blur(0);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
 .testimonial-card.active {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     opacity: 1;
     transform: scale(1);
-    filter: blur(0);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-card:hover {

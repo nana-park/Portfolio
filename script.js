@@ -947,7 +947,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Center-Focus Logic: Open to the "Blue" card (Index 1) as requested
         // [0: Purple, 1: Blue, 2: Green ...]
-        let currentIndex = cards.length > 1 ? 1 : 0;
+        let currentIndex = 1;
 
         const updateActiveState = (index) => {
             cards.forEach((card, idx) => {
