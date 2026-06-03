@@ -1,4 +1,4 @@
-// ===========================
+﻿// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -125,7 +125,7 @@ const routerConfig = {
     'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision'],
     'about': ['about', 'toolkit-grid', 'certifications-runway', 'ongoing-banner', 'how-work', 'media', 'testimonials'],
     'life': ['life'],
-    'projects': ['projects'],
+    'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products'],
     'research': ['research'],
     'articles': ['articles'],
     'article-detail': ['article-detail'],
@@ -1237,4 +1237,7 @@ window.updateLectureCarousel = function(carousel) {
     });
 };
 
+
+
+document.querySelectorAll('.nav-link, .lnb-link').forEach(link => { link.addEventListener('click', () => { sessionStorage.removeItem('projectsScrollY'); }); });
 

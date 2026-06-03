@@ -60,7 +60,7 @@
                     'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision', 'contact'],
                     'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
                     'life': ['life', 'contact'],
-                    'projects': ['projects', 'contact'],
+                    'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products', 'contact'],
                     'research': ['research', 'contact'],
                     'articles': ['articles', 'contact'],
                     'lectures': ['lectures', 'contact'],
@@ -347,6 +347,18 @@
 </head>
 
 <body>
+<svg width="0" height="0" style="position:absolute; width:0; height:0;">
+    <defs>
+        <linearGradient id="arrow-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="arrow-grad-down" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+    </defs>
+</svg>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -419,7 +431,7 @@
                         class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio
                         PDF</a>
                 </div>
-                <!-- ???ル∥?????癲ル슢?????????ル∥??????ル∥?????關履????ル∥吏????flex-1 justify-end ???ル∥吏?????袁⑸즲???-->
+                <!-- ル∥ル∥吏????flex-1 justify-end 袁⑸즲???-->
                 <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
                     <span></span>
                     <span></span>
@@ -1561,7 +1573,7 @@
             <div class="flex flex-col items-center pt-16 md:pt-24 w-full text-left">
 
                 <!-- Group 1: Naver -->
-                <div class="w-full mb-20 lg:mb-28">
+                <div id="e2e-ai-voice-products" class="w-full mb-20 lg:mb-28">
                     <div class="max-w-[1200px] mx-auto w-full px-4 lg:px-0 mb-12 md:mb-16 text-left">
                         <div class="text-[11px] text-zinc-400 uppercase tracking-[0.2em] mb-3 font-medium font-sans">E2E
                             AI Voice Products</div>
@@ -2790,7 +2802,7 @@
     <!-- Hopzie Oneclickbuilder Section -->
     <section class="pb-24 bg-white" id="hopzie-oneclickbuilder" style="display: none; padding-top: 12rem;">
         <div class="container mx-auto px-4 lg:px-12 max-w-[1100px]">
-            <button onclick="window.location.hash='#projects'"
+            <button onclick="window.location.hash='#featured-ai-products'"
                 class="mb-16 px-5 py-2 border border-gray-200 rounded-full hover:bg-zinc-50 text-[13px] text-zinc-600 hover:text-zinc-900 font-sans font-medium transition-colors inline-flex items-center gap-2 group">
                 <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
@@ -2875,7 +2887,7 @@
                     border: none;
                     max-width: 960px;
                     margin: 0 auto;
-                    grid-template-columns: 1fr 160px 0.85fr;
+                    grid-template-columns: 1fr 160px 1fr;
                     gap: 24px;
                     align-items: stretch;
                     padding: 28px;
@@ -3092,7 +3104,7 @@
                 }
 
                 .video-mini-thumb::after {
-                    content: "??;
+                    content: "▶";
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -3205,6 +3217,7 @@
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
+                    gap: 8px;
                     margin-top: auto;
                 }
 
@@ -3292,16 +3305,9 @@
                     position: relative;
                 }
 
-                .safari-dots {
-                    display: flex;
-                    gap: 4px;
-                }
+                .safari-dots { display: flex; align-items: center; gap: 4px; }
 
-                .safari-dot {
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
-                }
+                .safari-dot { width: 6px; height: 6px; border-radius: 50%; }
 
                 .safari-dot.red {
                     background: #ff5f56;
@@ -3441,12 +3447,8 @@
                                     <div class="safari-dot green"></div>
                                 </div>
                                 <div class="safari-url-bar">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.51c-.32-.73-1.05-1.25-1.9-1.39l-1.04-.17c-.45-.07-.79-.47-.79-.92v-1.12c0-.52-.39-.96-.91-1.02l-1.95-.24a.49.49 0 0 1-.43-.49v-1.28c0-.28.22-.5.5h1.22c.62 0 1.17-.43 1.34-1.03l.23-.78A1.5 1.5 0 0 0 11.75 6H10V5.5C10 4.67 10.67 4 11.5 4h.87c2.61.54 4.8 2.37 5.75 4.86l-1.32.79c-.5.3-.8.84-.8 1.41v1.65c0 .32.16.63.43.81l1.52 1.01c.42.28.62.8.49 1.29l-.54 1.6z" />
-                                    </svg>
-                                    hopzie.co/@noa-studio
-                                </div>
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px; margin-top: 1.5px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>hopzie.co/@noa-studio
+</div>
                             </div>
                             <div class="safari-content-wrap" style="padding: 0; background: #f9fafb;">
                                 <div class="storefront w-full bg-white pb-5"
@@ -3512,7 +3514,7 @@
                                             </div>
                                             <div class="video-title"
                                                 style="font-size: 13.5px; font-weight: 500; color: #374151; line-height: 1.4;">
-                                                ???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏??- pinterest | room decor | cozy dream desk set up
+                                                WHAT'S ON MY DESK- pinterest | room decor | cozy dream desk set up
                                             </div>
                                             <div
                                                 style="background: #111827; color: white; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 20px; cursor: pointer;">
@@ -3539,7 +3541,7 @@
                                     Creator Input Simplification
                                 </h3>
                                 <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                                    Creators only submit a profile, video link, and shopping products ??turning
+                                    Creators only submit a profile, video link, and shopping products — turning
                                     storefront setup into a simple flow.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
@@ -3669,7 +3671,7 @@
                                             <div class="video-mini-thumb"
                                                 style="background: url('nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png') center / cover no-repeat;">
                                             </div>
-                                            <div class="video-title">???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏</div>
+                                            <div class="video-title">WHAT'S ON MY DESK</div>
                                             <div
                                                 style="background: #111827; color: white; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 20px; cursor: pointer;">
                                                 Continue watching</div>
@@ -3722,7 +3724,7 @@
                                         </div>
 
                                         <div class="url-card">
-                                            <div class="url-icon"></div>
+                                            <div class="url-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div>
                                             <div class="url-content">
                                                 <div class="url-kicker">1 product link submitted</div>
                                                 <div class="url-text">coupang.com/vp/products/keyboard</div>
@@ -3731,9 +3733,8 @@
                                     </div>
 
                                     <div class="flow-arrow-down">
-                                        <span></span>
-                                        ??
-                                    </div>
+    <svg width="14" height="36" viewBox="0 0 14 36" fill="none"><path d="M7 0 V34 M1 28 L7 34 L13 28" stroke="url(#arrow-grad-down)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                     <!-- COMMISSION MATCHING -->
                                     <div class="panel mini-panel ai-matching-panel">
@@ -3790,9 +3791,8 @@
 
                                 <!-- Left to Right Arrow -->
                                 <div class="flow-arrow-right">
-                                    <div class="line-h"></div>
-                                    ??
-                                </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                 <!-- Right Column (Storefront Result) -->
                                 <div class="flow-right-col">
@@ -3955,7 +3955,7 @@
                                 line-height: 1.5;
                             }
 
-                            .flow-arrow-down {
+                            .flow-arrow-down { margin-bottom: 8px; margin-top: 4px;
                                 height: 38px;
                                 display: flex;
                                 flex-direction: column;
@@ -3981,7 +3981,7 @@
                                 color: #d97706;
                                 font-size: 18px;
                                 font-weight: 800;
-                                gap: 4px;
+                                gap: 0;
                             }
 
                             .line-h {
@@ -4241,9 +4241,8 @@
 
                                     <!-- DOWN ARROW -->
                                     <div class="flow-arrow-down">
-                                        <span></span>
-                                        ??
-                                    </div>
+    <svg width="14" height="36" viewBox="0 0 14 36" fill="none"><path d="M7 0 V34 M1 28 L7 34 L13 28" stroke="url(#arrow-grad-down)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                     <!-- LEFT: RECOVERY -->
                                     <div class="panel ai-matching-panel">
@@ -4274,9 +4273,8 @@
 
                                 <!-- RIGHT ARROW -->
                                 <div class="flow-arrow-right">
-                                    <div class="line-h"></div>
-                                    ??
-                                </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                 <!-- RIGHT: STOREFRONT -->
                                 <div class="flow-right-col">
@@ -4461,7 +4459,7 @@
                           <div class="yt-window">
                             <div class="yt-topbar">
                               <div class="yt-brand">
-                                <span class="yt-play">??/span>
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
                                 <span>YouTube</span>
                               </div>
                               <div class="yt-search"></div>
@@ -4474,8 +4472,8 @@
                             </div>
 
                             <div class="yt-info">
-                              <h4>???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏??- pinterest | room decor | cozy dream desk set up</h4>
-                              <p>125K views 勇?2 days ago</p>
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
                             </div>
 
                             <div class="description-box messy">
@@ -4484,19 +4482,19 @@
                               </div>
 
                               <div class="yt-raw-text">
-                                Hi everyone, welcome back to the channel! ???ル∥吏??br><br>
+                                Hi everyone, welcome back to the channel! <br><br>
                                 Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
-                                ??br><br>
-                                ???ル∥吏??Product Links<br><br>
-                                ??Creamy Wireless Keyboard<br>
+                                <br><br>
+                                Product Links<br><br>
+                                Creamy Wireless Keyboard<br>
                                 <a href="javascript:void(0)">https://coupang.com/vp/products/934...</a><br><br>
-                                ??Monitor Light Bar<br>
+                                Monitor Light Bar<br>
                                 <a href="javascript:void(0)">https://amazon.com/dp/B0DESKLAMP...</a><br><br>
-                                ??Ergonomic Desk Chair<br>
+                                Ergonomic Desk Chair<br>
                                 <a href="javascript:void(0)">https://musinsa.com/app/goods/248...</a><br><br>
-                                ??Walnut Desk Shelf<br>
+                                Walnut Desk Shelf<br>
                                 <a href="javascript:void(0)">https://amazon.com/dp/B0DESKSHLF...</a><br><br>
-                                ??Cozy Desk Mat<br>
+                                Cozy Desk Mat<br>
                                 <a href="javascript:void(0)">https://ozip.me/671Q5DZ...</a>
                               </div>
                             </div>
@@ -4507,9 +4505,8 @@
                         <div class="center-transition-pill">
                             <span class="badge-bad">Manual & messy</span>
                             <div class="flow-arrow-right" style="margin: 8px 0;">
-                                <div class="line-h"></div>
-                                ??
-                            </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
                             <span class="badge-good">Synced by Hopzie</span>
                         </div>
 
@@ -4521,7 +4518,7 @@
                           <div class="yt-window">
                             <div class="yt-topbar">
                               <div class="yt-brand">
-                                <span class="yt-play">??/span>
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
                                 <span>YouTube</span>
                               </div>
                               <div class="yt-search"></div>
@@ -4534,8 +4531,8 @@
                             </div>
 
                             <div class="yt-info">
-                              <h4>???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏??- pinterest | room decor | cozy dream desk set up</h4>
-                              <p>125K views 勇?2 days ago</p>
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
                             </div>
 
                             <div class="description-box clean">
@@ -4544,9 +4541,9 @@
                               </div>
 
                               <div class="yt-raw-text" style="height: auto; mask-image: none; -webkit-mask-image: none;">
-                                Hi everyone, welcome back to the channel! ???ル∥吏??br><br>
+                                Hi everyone, welcome back to the channel! <br><br>
                                 Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
-                                Shop everything from this setup in one organized place below! ???ル∥吏??br><br>
+                                Shop everything from this setup in one organized place below! <br><br>
                                 <a href="javascript:void(0)" onclick="document.querySelector('.hopzie-tab-btn[data-target=\'tab-storefront\']').click(); return false;">https://hopzie.co/@noa-studio</a>
                               </div>
                             </div>
@@ -4630,7 +4627,7 @@
                             <tbody class="text-[14px] md:text-[15px]">
                                 <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
                                     <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Storefront setup</td>
-                                    <td class="py-5 px-6 md:px-8 text-zinc-500">30??0 min/video</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">30-60 min/video</td>
                                     <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Under 3 min</td>
                                 </tr>
                                 <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
@@ -5488,8 +5485,7 @@
     <!-- LLM Voice IVR Section -->
     <section class="pb-24 bg-white" id="llm-based-voice-ivr" style="display: none; padding-top: 12rem;">
         <div class="container mx-auto px-4 lg:px-12 max-w-[1100px]">
-            <button
-                class="mb-16 px-5 py-2 border border-gray-200 rounded-full hover:bg-zinc-50 text-[13px] text-zinc-600 hover:text-zinc-900 font-sans font-medium transition-colors inline-flex items-center gap-2 group">
+            <button onclick="window.location.hash='#e2e-ai-voice-products'" class="mb-16 px-5 py-2 border border-gray-200 rounded-full hover:bg-zinc-50 text-[13px] text-zinc-600 hover:text-zinc-900 font-sans font-medium transition-colors inline-flex items-center gap-2 group">
                 <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -5504,7 +5500,7 @@
                     </div>
 
                     <h1 class="font-sans text-zinc-900 text-[32px] md:text-[40px] lg:text-[48px] leading-[1.1] tracking-tight font-medium mb-6"
-                        style="word-break: keep-all;">Enterprise LLM-based Voice IVR</h1>
+                        style="word-break: keep-all;">LLM-based Voice IVR</h1>
 
                     <p class="text-[18px] md:text-[20px] lg:text-[22px] text-zinc-500 leading-[1.4] font-light mb-12">
                         AI call automation and intelligent routing system for enterprise contact centers.
@@ -5560,7 +5556,7 @@
                     border: none;
                     max-width: 960px;
                     margin: 0 auto;
-                    grid-template-columns: 1fr 160px 0.85fr;
+                    grid-template-columns: 1fr 160px 1fr;
                     gap: 24px;
                     align-items: stretch;
                     padding: 28px;
@@ -5777,7 +5773,7 @@
                 }
 
                 .video-mini-thumb::after {
-                    content: "??;
+                    content: "▶";
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -5977,16 +5973,9 @@
                     position: relative;
                 }
 
-                .safari-dots {
-                    display: flex;
-                    gap: 4px;
-                }
+                .safari-dots { display: flex; align-items: center; gap: 4px; }
 
-                .safari-dot {
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
-                }
+                .safari-dot { width: 6px; height: 6px; border-radius: 50%; }
 
                 .safari-dot.red {
                     background: #ff5f56;
@@ -6188,34 +6177,39 @@
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  width: 30px;
-                  height: 30px;
+                  width: 24px;
+                  height: 24px;
                   border-radius: 999px;
-                  background: #111;
-                  color: #fff;
-                  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+                  background: #ffffff;
+                  border: 1px solid #e5e7eb;
+                  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
                   flex: 0 0 auto;
                 }
-                .mini-player.light { background: #f4f4f5; color: #52525b; box-shadow: none; border: 1px solid #e5e7eb; }
+
+                
+
                 
                 /* RENAMED play-button to aicall-play-button to avoid global Hopzie class conflicts */
+                
                 .aicall-play-button {
-                  width: 22px;
-                  height: 22px;
+                  width: 16px;
+                  height: 16px;
                   border-radius: 50%;
                   border: none;
-                  background: #fff;
-                  color: #111;
+                  background: transparent;
+                  color: #3f3f46;
                   display: inline-flex;
                   align-items: center;
                   justify-content: center;
-                  font-size: 8px;
+                  font-size: 9px;
                   padding-left: 2px;
                   flex: 0 0 auto;
-                  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+                  box-shadow: none;
                   cursor: pointer;
                 }
-                .mini-player.light .aicall-play-button { background: #111; color: #fff; }
+
+                
+
                 
                 .call-area {
                   padding: 18px;
@@ -6251,12 +6245,12 @@
                   background: #f4f4f5;
                   color: #27272a;
                   font-size: 12px;
-                  line-height: 1.45;
-                  font-weight: 750;
+                  line-height: 1.55;
+                  font-weight: 500;
                   letter-spacing: -0.02em;
                   white-space: pre-wrap;
                 }
-                .bubble.ai { background: #ecfdf3; color: #064e3b; }
+                .bubble.ai { background: #ecfdf3; color: #065f46; font-weight: 500; }
                 .as-is-menu { display: grid; gap: 9px; margin-top: 10px; }
                 .menu-step {
                   display: flex;
@@ -6268,7 +6262,7 @@
                   background: #fbfbfb;
                   color: #52525b;
                   font-size: 11.5px;
-                  font-weight: 800;
+                  font-weight: 500;
                   line-height: 1.25;
                 }
                 .menu-step .num {
@@ -6291,40 +6285,22 @@
                   gap: 10px;
                   margin-bottom: 24px;
                 }
-                .conversation-flow::after {
-                  content: "";
-                  position: absolute;
-                  left: 50%;
-                  top: calc(100% + 4px);
-                  width: 1px;
-                  height: 32px;
-                  background: linear-gradient(to bottom, rgba(0,199,60,0.45), rgba(0,199,60,0));
-                  transform: translateX(-50%);
-                  z-index: 1;
-                }
+                
                 .ai-turn {
                   position: relative;
                 }
                 .ai-turn::after {
-                  content: "";
-                  position: absolute;
-                  left: 50%;
-                  bottom: -24px;
-                  width: 10px;
-                  height: 10px;
-                  border-right: 1.5px solid rgba(0,199,60,0.55);
-                  border-bottom: 1.5px solid rgba(0,199,60,0.55);
-                  transform: translateX(-50%) rotate(45deg);
-                  z-index: 2;
+                  display: none;
                 }
                 
-                /* Removed grey box styling to untrap the bubbles */
+                /* B layout: classifier -> orb -> three equal routing nodes */
                 .to-flow {
                   position: relative;
-                  min-height: 240px;
-                  background: radial-gradient(circle at 50% 40%, rgba(0,199,60,0.08), transparent 45%);
+                  min-height: 268px;
+                  background: radial-gradient(circle at 50% 46%, rgba(0,199,60,0.08), transparent 48%);
+                  padding-top: 0;
                 }
-                
+
                 .intent-panel {
                   position: relative;
                   width: calc(100% - 26px);
@@ -6352,22 +6328,23 @@
                   left: 50%;
                   top: 60px;
                   transform: translate(-50%, -50%);
-                  width: 86px;
-                  height: 86px;
+                  width: 66px;
+                  height: 66px;
                   border-radius: 999px;
                   background:
                     radial-gradient(circle at 34% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0.15) 25%, transparent 35%),
                     linear-gradient(135deg, #00c73c, #14b8a6 48%, #3157ff);
                   box-shadow:
-                    0 0 0 9px rgba(0,199,60,0.08),
-                    0 0 0 20px rgba(49,87,255,0.035),
-                    0 22px 48px rgba(0,199,60,0.22);
+                    0 0 0 8px rgba(0,199,60,0.08),
+                    0 0 0 17px rgba(49,87,255,0.035),
+                    0 18px 42px rgba(0,199,60,0.20);
                   z-index: 2;
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  text-align: center;
                   color: #fff;
-                  font-size: 11px;
+                  font-size: 10px;
                   font-weight: 900;
                   letter-spacing: -0.02em;
                 }
@@ -6378,18 +6355,28 @@
                 }
                 .routing-line svg { width: 100%; height: 100%; overflow: visible; }
                 .routing-line path { fill: none; stroke: rgba(0,199,60,0.62); stroke-width: 1.35; stroke-dasharray: 5 6; }
-                
-                /* Adjusted vertical coordinates for the new to-flow layout */
-                .line-intent { left: 50%; top: -14px; width: 1px; height: 74px; transform: translateX(-50%); }
-                .line-left { left: 82px; top: 82px; width: 148px; height: 64px; }
-                .line-right { right: 82px; top: 82px; width: 148px; height: 64px; transform: scaleX(-1); }
-                .line-down { left: 50%; top: 114px; width: 1px; height: 54px; transform: translateX(-50%); }
-                
-                .scenario-card {
+                /* B layout routing lines */
+                .line-intent { left: 50%; top: -14px; width: 1px; height: 42px; transform: translateX(-50%); }
+                .line-left { right: 50%; top: 76px; width: calc(33.33% - 3px); height: 96px; }
+                .line-right { left: 50%; top: 76px; width: calc(33.33% - 3px); height: 96px; transform: scaleX(-1); }
+                .line-down { left: 50%; top: 82px; width: 1px; height: 90px; transform: translateX(-50%); }
+                .scenario-row {
                   position: absolute;
+                  left: 0;
+                  right: 0;
+                  bottom: 18px;
                   z-index: 3;
-                  width: 108px;
-                  padding: 11px 9px;
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 10px;
+                  padding: 0 10px;
+                  align-items: stretch;
+                }
+                .scenario-card {
+                  position: relative;
+                  width: auto;
+                  min-height: 54px;
+                  padding: 11px 8px;
                   border: 1px solid #dfe3ea;
                   border-radius: 12px;
                   background: rgba(255,255,255,0.95);
@@ -6398,12 +6385,12 @@
                   font-size: 11px;
                   font-weight: 900;
                   text-align: center;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
                 }
                 .scenario-card.active { border-color: rgba(0,199,60,0.55); box-shadow: 0 0 0 4px rgba(0,199,60,0.08), 0 14px 34px rgba(0,199,60,0.14); color: #047857; }
                 .scenario-card small { display: block; margin-top: 4px; color: #8b8f99; font-size: 9px; font-weight: 800; }
-                .scenario-card.delivery { left: 18px; top: 72px; }
-                .scenario-card.returns { right: 18px; top: 72px; }
-                .scenario-card.faq { left: 50%; bottom: 18px; transform: translateX(-50%); }
                 
                 .middle-arrow {
                   display: flex;
@@ -6462,19 +6449,19 @@
                         <div class="phone-top">
                             <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v1</span></div>
                             <div class="mini-player light">
-                                <button class="aicall-play-button" aria-label="Play AiCall v1 demo">&#9654;</button>
+                                <button class="aicall-play-button" aria-label="Play AiCall v1 demo">▶</button>
                             </div>
                         </div>
 
                         <div class="call-area">
                             <div class="live-transcript">
                                 <div class="turn">
-                                    <div class="avatar">&#128100;</div>
-                                    <div class="bubble">&ldquo;Where is my delivery?&rdquo;</div>
+                                    <div class="avatar">👤</div>
+                                    <div class="bubble">“Where is my delivery?”</div>
                                 </div>
                                 <div class="turn">
                                     <div class="avatar ai">AI</div>
-                                    <div class="bubble">&ldquo;For delivery inquiries, press 1.&rdquo;</div>
+                                    <div class="bubble">“For delivery inquiries, press 1.”</div>
                                 </div>
                             </div>
 
@@ -6491,7 +6478,7 @@
 
                 <div class="middle-arrow">
                     <small>Menu-driven</small>
-                    &#8594;
+                    <svg width="28" height="14" viewBox="0 0 28 14" fill="none" style="margin: 8px 0;"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     <div class="sync">LLM<br>routing</div>
                 </div>
 
@@ -6505,7 +6492,7 @@
                         <div class="phone-top">
                             <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v2</span></div>
                             <div class="mini-player">
-                                <button class="aicall-play-button" aria-label="Play AiCall v2 demo">&#9654;</button>
+                                <button class="aicall-play-button" aria-label="Play AiCall v2 demo">▶</button>
                             </div>
                         </div>
 
@@ -6513,31 +6500,39 @@
                             <!-- Bubbles un-trapped! Moved out of .to-flow -->
                             <div class="conversation-flow">
                                 <div class="turn user-turn">
-                                    <div class="avatar">&#128100;</div>
-                                    <div class="bubble">&ldquo;Where is my delivery?&rdquo;</div>
+                                    <div class="avatar">👤</div>
+                                    <div class="bubble">“Where is my delivery?”</div>
                                 </div>
                                 <div class="turn ai-turn">
                                     <div class="avatar ai">AI</div>
-                                    <div class="bubble ai" style="max-width: 90%;">&ldquo;I can help with that. I&rsquo;ll connect you to the delivery flow.&rdquo;</div>
+                                    <div class="bubble ai" style="max-width: 90%;">“I can help with that. I’ll connect you to the delivery flow.”</div>
                                 </div>
                             </div>
 
                             <div class="to-flow">
-                                <div class="intent-panel">
-                                    <small>LLM classification</small>
-                                    <strong>Delivery Inquiry</strong>
+<div class="routing-line line-intent"><svg><path d="M0 0 L0 42"></path></svg></div>
+                                <div class="routing-line line-left"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100 0 C72 16 46 41 0 100" vector-effect="non-scaling-stroke"></path></svg></div>
+                                <div class="routing-line line-right"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M100 0 C72 16 46 41 0 100" vector-effect="non-scaling-stroke"></path></svg></div>
+                                <div class="routing-line line-down"><svg><path d="M0 0 C0 36 0 60 0 90"></path></svg></div>
+
+                                <div class="intent-orb">
+                                    <div>
+                                        <strong>LLM</strong>
+                                        <small>Classification</small>
+                                    </div>
                                 </div>
 
-                                <div class="routing-line line-intent"><svg><path d="M0 0 L0 74" /></svg></div>
-                                <div class="routing-line line-left"><svg><path d="M148 0 C104 8 64 24 0 64" /></svg></div>
-                                <div class="routing-line line-right"><svg><path d="M148 0 C104 8 64 24 0 64" /></svg></div>
-                                <div class="routing-line line-down"><svg><path d="M0 0 C0 22 0 40 0 54" /></svg></div>
-
-                                <div class="intent-orb">LLM</div>
-
-                                <div class="scenario-card delivery active">Delivery<small>selected flow</small></div>
-                                <div class="scenario-card returns">Returns<small>not selected</small></div>
-                                <div class="scenario-card faq">FAQ / SMS<small>self-service</small></div>
+                                <div class="scenario-row">
+                                    <div class="scenario-card delivery active">
+                                        <span class="route-title">✓ Delivery-tracking</span>
+                                    </div>
+                                    <div class="scenario-card faq">
+                                        <span class="route-title">Pick-up</span>
+                                    </div>
+                                    <div class="scenario-card returns">
+                                        <span class="route-title">Returns</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -6545,10 +6540,10 @@
             </div>
 
             <div class="civr-bottom-kpi">
-                <div class="kpi-item"><strong>&darr; IVR depth</strong>Natural speech replaces menu traversal.</div>
-                <div class="kpi-item"><strong>&darr; unnecessary handling</strong>LLM interprets caller intent before transfer.</div>
-                <div class="kpi-item"><strong>&uarr; routing efficiency</strong>Connects to the right scenario or team.</div>
-                <div class="kpi-item"><strong>&uarr; scalable operations</strong>New scenarios can be added as modules.</div>
+                <div class="kpi-item"><strong>↓ IVR depth</strong>Natural speech replaces menu traversal.</div>
+                <div class="kpi-item"><strong>↓ unnecessary handling</strong>LLM interprets caller intent before transfer.</div>
+                <div class="kpi-item"><strong>↑ routing efficiency</strong>Connects to the right scenario or team.</div>
+                <div class="kpi-item"><strong>↑ scalable operations</strong>New scenarios can be added as modules.</div>
             </div>
         </div>
     </div>
@@ -6569,7 +6564,7 @@
                                     Creator Input Simplification
                                 </h3>
                                 <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                                    Creators only submit a profile, video link, and shopping products ??turning
+                                    Creators only submit a profile, video link, and shopping products — turning
                                     storefront setup into a simple flow.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
@@ -6699,7 +6694,7 @@
                                             <div class="video-mini-thumb"
                                                 style="background: url('nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png') center / cover no-repeat;">
                                             </div>
-                                            <div class="video-title">???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏</div>
+                                            <div class="video-title">WHAT'S ON MY DESK</div>
                                             <div
                                                 style="background: #111827; color: white; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 20px; cursor: pointer;">
                                                 Continue watching</div>
@@ -6752,7 +6747,7 @@
                                         </div>
 
                                         <div class="url-card">
-                                            <div class="url-icon"></div>
+                                            <div class="url-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div>
                                             <div class="url-content">
                                                 <div class="url-kicker">1 product link submitted</div>
                                                 <div class="url-text">coupang.com/vp/products/keyboard</div>
@@ -6761,9 +6756,8 @@
                                     </div>
 
                                     <div class="flow-arrow-down">
-                                        <span></span>
-                                        ??
-                                    </div>
+    <svg width="14" height="36" viewBox="0 0 14 36" fill="none"><path d="M7 0 V34 M1 28 L7 34 L13 28" stroke="url(#arrow-grad-down)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                     <!-- COMMISSION MATCHING -->
                                     <div class="panel mini-panel ai-matching-panel">
@@ -6820,9 +6814,8 @@
 
                                 <!-- Left to Right Arrow -->
                                 <div class="flow-arrow-right">
-                                    <div class="line-h"></div>
-                                    ??
-                                </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                 <!-- Right Column (Storefront Result) -->
                                 <div class="flow-right-col">
@@ -6985,7 +6978,7 @@
                                 line-height: 1.5;
                             }
 
-                            .flow-arrow-down {
+                            .flow-arrow-down { margin-bottom: 8px; margin-top: 4px;
                                 height: 38px;
                                 display: flex;
                                 flex-direction: column;
@@ -7011,7 +7004,7 @@
                                 color: #d97706;
                                 font-size: 18px;
                                 font-weight: 800;
-                                gap: 4px;
+                                gap: 0;
                             }
 
                             .line-h {
@@ -7271,9 +7264,8 @@
 
                                     <!-- DOWN ARROW -->
                                     <div class="flow-arrow-down">
-                                        <span></span>
-                                        ??
-                                    </div>
+    <svg width="14" height="36" viewBox="0 0 14 36" fill="none"><path d="M7 0 V34 M1 28 L7 34 L13 28" stroke="url(#arrow-grad-down)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                     <!-- LEFT: RECOVERY -->
                                     <div class="panel ai-matching-panel">
@@ -7304,9 +7296,8 @@
 
                                 <!-- RIGHT ARROW -->
                                 <div class="flow-arrow-right">
-                                    <div class="line-h"></div>
-                                    ??
-                                </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
                                 <!-- RIGHT: STOREFRONT -->
                                 <div class="flow-right-col">
@@ -7491,7 +7482,7 @@
                           <div class="yt-window">
                             <div class="yt-topbar">
                               <div class="yt-brand">
-                                <span class="yt-play">??/span>
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
                                 <span>YouTube</span>
                               </div>
                               <div class="yt-search"></div>
@@ -7504,8 +7495,8 @@
                             </div>
 
                             <div class="yt-info">
-                              <h4>???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏??- pinterest | room decor | cozy dream desk set up</h4>
-                              <p>125K views 勇?2 days ago</p>
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
                             </div>
 
                             <div class="description-box messy">
@@ -7514,19 +7505,19 @@
                               </div>
 
                               <div class="yt-raw-text">
-                                Hi everyone, welcome back to the channel! ???ル∥吏??br><br>
+                                Hi everyone, welcome back to the channel! <br><br>
                                 Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
-                                ??br><br>
-                                ???ル∥吏??Product Links<br><br>
-                                ??Creamy Wireless Keyboard<br>
+                                <br><br>
+                                Product Links<br><br>
+                                Creamy Wireless Keyboard<br>
                                 <a href="javascript:void(0)">https://coupang.com/vp/products/934...</a><br><br>
-                                ??Monitor Light Bar<br>
+                                Monitor Light Bar<br>
                                 <a href="javascript:void(0)">https://amazon.com/dp/B0DESKLAMP...</a><br><br>
-                                ??Ergonomic Desk Chair<br>
+                                Ergonomic Desk Chair<br>
                                 <a href="javascript:void(0)">https://musinsa.com/app/goods/248...</a><br><br>
-                                ??Walnut Desk Shelf<br>
+                                Walnut Desk Shelf<br>
                                 <a href="javascript:void(0)">https://amazon.com/dp/B0DESKSHLF...</a><br><br>
-                                ??Cozy Desk Mat<br>
+                                Cozy Desk Mat<br>
                                 <a href="javascript:void(0)">https://ozip.me/671Q5DZ...</a>
                               </div>
                             </div>
@@ -7537,9 +7528,8 @@
                         <div class="center-transition-pill">
                             <span class="badge-bad">Manual & messy</span>
                             <div class="flow-arrow-right" style="margin: 8px 0;">
-                                <div class="line-h"></div>
-                                ??
-                            </div>
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
                             <span class="badge-good">Synced by Hopzie</span>
                         </div>
 
@@ -7551,7 +7541,7 @@
                           <div class="yt-window">
                             <div class="yt-topbar">
                               <div class="yt-brand">
-                                <span class="yt-play">??/span>
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
                                 <span>YouTube</span>
                               </div>
                               <div class="yt-search"></div>
@@ -7564,8 +7554,8 @@
                             </div>
 
                             <div class="yt-info">
-                              <h4>???ルㅏ夷쬓AT'S ON MY DESK???ル∥吏??- pinterest | room decor | cozy dream desk set up</h4>
-                              <p>125K views 勇?2 days ago</p>
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
                             </div>
 
                             <div class="description-box clean">
@@ -7574,9 +7564,9 @@
                               </div>
 
                               <div class="yt-raw-text" style="height: auto; mask-image: none; -webkit-mask-image: none;">
-                                Hi everyone, welcome back to the channel! ???ル∥吏??br><br>
+                                Hi everyone, welcome back to the channel! <br><br>
                                 Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
-                                Shop everything from this setup in one organized place below! ???ル∥吏??br><br>
+                                Shop everything from this setup in one organized place below! <br><br>
                                 <a href="javascript:void(0)">https://hopzie.co/@noa-studio</a>
                               </div>
                             </div>
@@ -7715,6 +7705,17 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="w-full max-w-[840px] mt-4 text-left px-2">
+                    <details class="group block w-full">
+                        <summary class="inline-flex items-center gap-1.5 cursor-pointer text-zinc-500 hover:text-zinc-800 transition-colors list-none font-sans text-[13px] font-medium outline-none [&::-webkit-details-marker]:hidden underline underline-offset-4 select-none">
+                            View user research
+                            <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <div class="mt-4 text-zinc-400 text-[13px] italic font-sans pl-1">
+                            Scheduled to be updated.
+                        </div>
+                    </details>
                 </div>
 
             </div>
@@ -10729,7 +10730,7 @@
     <div class="modal" id="projectModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">??/button>
+            <button class="modal-close" id="modalClose">✕</button>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
@@ -10845,6 +10846,47 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
