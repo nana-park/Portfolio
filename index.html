@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1701,10 +1701,9 @@
                                 <div
                                     class="relative w-full h-[220px] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
                                     <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
-                                                                                  <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">No.1 Market Share</div>
-<div
-                                            class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
-                                            Award-winning</div>
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">No.1 Market Share</div>
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">Award-winning</div>
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">APEC 2025</div>
                                         <div
                                             class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
                                             Product Launch</div>
@@ -6111,7 +6110,7 @@
                   align-items: start;
                 }
                 .mock-card {
-                  min-height: 620px;
+                  min-height: fit-content;
                   border: 1px solid #dedfe5;
                   border-radius: 14px;
                   background: rgba(255, 255, 255, 0.94);
@@ -6217,7 +6216,7 @@
                 
                 .call-area {
                   padding: 18px;
-                  min-height: 394px;
+                  min-height: auto;
                   display: flex;
                   flex-direction: column;
                 }
@@ -6464,14 +6463,36 @@
                                     <div class="avatar ai">AI</div>
                                     <div class="bubble">“Please select an option from the menu.”</div>
                                 </div>
-                            </div>
-
-                            <div class="as-is-menu">
-                                <div class="menu-step"><span class="num">1</span> Delivery inquiries</div>
-                                <div class="menu-step"><span class="num">2</span> Reservation changes</div>
-                                <div class="menu-step"><span class="num">3</span> Returns / refunds</div>
-                                <div class="menu-step"><span class="num">4</span> Agent connection</div>
-                                <div class="menu-step"><span class="num">5</span> Other inquiries</div>
+                                <div class="turn" style="margin-top: 4px;">
+                                    <div class="avatar ai">AI</div>
+                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
+                                        <span class="num">1</span> Delivery inquiries
+                                    </div>
+                                </div>
+                                <div class="turn" style="margin-top: 4px;">
+                                    <div class="avatar" style="visibility: hidden;">AI</div>
+                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
+                                        <span class="num">2</span> Reservation changes
+                                    </div>
+                                </div>
+                                <div class="turn" style="margin-top: 4px;">
+                                    <div class="avatar" style="visibility: hidden;">AI</div>
+                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
+                                        <span class="num">3</span> Returns / refunds
+                                    </div>
+                                </div>
+                                <div class="turn" style="margin-top: 4px;">
+                                    <div class="avatar" style="visibility: hidden;">AI</div>
+                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
+                                        <span class="num">4</span> Agent connection
+                                    </div>
+                                </div>
+                                <div class="turn" style="margin-top: 4px;">
+                                    <div class="avatar" style="visibility: hidden;">AI</div>
+                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
+                                        <span class="num">5</span> Other inquiries
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -6556,12 +6577,16 @@
             <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
                 <div class="mb-8 font-sans">
                     <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
-                        Reusable scenario kits for scalable CS chatbot building
+                        Reusable Scenario Kits
                     </h3>
                     <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                        I modularized repeated CS tasks into reusable scenario kits, allowing different ARS chatbot domains
-                        to share the same collection logic without rebuilding each flow from scratch.
+                        Build once, reuse across multiple chatbot domains. Reusable modules accelerate deployment for developers and give customers the flexibility to configure their own workflows.
                     </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">low-code</span>
+                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">module</span>
+                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">architecture</span>
+                    </div>
                 </div>
             </div>
 
@@ -6623,7 +6648,11 @@
                       </div>
                       <h3>Name Collection</h3>
                       <div class="bubble amber">Please tell me your name.</div>
-<div class="logic-row">DB · first name / last name</div>
+<div class="logic-row-tags">
+                        <span class="tag-system">DB</span>
+                        <span class="tag-field">first name</span>
+                        <span class="tag-field">last name</span>
+                      </div>
                     </article>
 
                     <article class="kit-card">
@@ -6633,7 +6662,11 @@
                       </div>
                       <h3>Phone Number Collection</h3>
                       <div class="bubble amber">Please tell me your phone number.</div>
-                      <div class="logic-row">DB · phone number / consent Y·N</div>
+                      <div class="logic-row-tags">
+                        <span class="tag-system">DB</span>
+                        <span class="tag-field">phone number</span>
+                        <span class="tag-field">SMS consent Y/N</span>
+                      </div>
                     </article>
 
                     <article class="kit-card">
@@ -6643,7 +6676,12 @@
                       </div>
                       <h3>Address Collection</h3>
                       <div class="bubble amber">Please tell me your address.</div>
-                      <div class="logic-row">DB · region / street / postal code</div>
+                      <div class="logic-row-tags">
+                        <span class="tag-system">DB</span>
+                        <span class="tag-field">region</span>
+                        <span class="tag-field">street</span>
+                        <span class="tag-field">postal code</span>
+                      </div>
                     </article>
                   </div>
 
@@ -6853,6 +6891,34 @@
     padding: 14px;
     border-color: rgba(217,119,6,0.34);
     box-shadow: 0 26px 60px rgba(217,119,6,0.14);
+  }
+
+
+  .logic-row-tags {
+    margin-top: 10px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .tag-system {
+    background: #3f3f46;
+    color: #ffffff;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .tag-field {
+    background: #f4f4f5;
+    color: #52525b;
+    border: 1px solid #e4e4e7;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
   }
 
   .card-meta,
@@ -7935,7 +8001,7 @@
                         <div class="w-full mt-8 lg:mt-0 w-full flex justify-center">
                             <div class="w-full bg-zinc-100 rounded-[12px] overflow-hidden relative shadow-sm border border-zinc-200" style="aspect-ratio: 16/9; min-height: 300px; width: 100%; display: block;">
                                 <iframe width="100%" height="100%" 
-                                    src="https://www.youtube.com/embed/ma-IFITSs6o?autoplay=1&mute=1&loop=1&playlist=ma-IFITSs6o&controls=0&rel=0&modestbranding=1" 
+                                    src="https://www.youtube.com/embed/ma-IFITSs6o?autoplay=1&mute=1&loop=1&playlist=ma-IFITSs6o&controls=1&rel=0&modestbranding=1" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                     allowfullscreen
@@ -11180,6 +11246,9 @@
 </body>
 
 </html>
+
+
+
 
 
 
