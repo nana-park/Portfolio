@@ -6073,6 +6073,11 @@
                     <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">LLM routing</span>
                     <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">voice-first UX</span>
                 </div>
+
+<div class="civr-bottom-kpi">
+                <div class="kpi-item"><strong>Lower IVR depth.</strong>Natural speech replaces menu traversal.</div>
+                <div class="kpi-item"><strong>Scalable operations.</strong>New scenarios can be added as modules.</div>
+            </div>
             </div>
         </div>
 
@@ -6192,8 +6197,8 @@
                 /* RENAMED play-button to aicall-play-button to avoid global Hopzie class conflicts */
                 
                 .aicall-play-button {
-                  width: 16px;
-                  height: 16px;
+                  width: 20px;
+                  height: 20px;
                   border-radius: 50%;
                   border: none;
                   background: transparent;
@@ -6201,8 +6206,7 @@
                   display: inline-flex;
                   align-items: center;
                   justify-content: center;
-                  font-size: 9px;
-                  padding-left: 2px;
+                  padding: 0;
                   flex: 0 0 auto;
                   box-shadow: none;
                   cursor: pointer;
@@ -6238,6 +6242,7 @@
                   background: #fff;
                 }
                 .avatar.ai { border-color: rgba(0,199,60,0.25); background: #ecfdf3; color: #047857; font-size: 11px; font-weight: 900; }
+                .as-is .avatar.ai { border-color: #e4e4e7; background: #f4f4f5; color: #52525b; }
                 .bubble {
                   max-width: 100%;
                   padding: 11px 13px;
@@ -6409,32 +6414,28 @@
                 .civr-bottom-kpi {
                   position: relative;
                   z-index: 2;
-                  display: grid;
-                  grid-template-columns: repeat(4, 1fr);
-                  gap: 12px;
-                  margin-top: 24px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 32px;
+                  margin-top: 40px;
+                  padding-left: 4px;
                 }
                 .kpi-item {
-                  border: 1px solid #ececf1;
-                  border-radius: 14px;
-                  background: rgba(255,255,255,0.84);
-                  padding: 14px;
-                  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.035);
-                  color: #52525b;
-                  font-size: 12px;
-                  line-height: 1.35;
-                  font-weight: 800;
-                  letter-spacing: -0.02em;
+                  color: #71717a;
+                  font-size: 14px;
+                  line-height: 1.5;
+                  font-weight: 500;
+                  letter-spacing: -0.01em;
                 }
-                .kpi-item strong { display: block; color: #111; font-size: 13px; margin-bottom: 5px; }
+                .kpi-item strong { display: block; color: #27272a; font-size: 17px; margin-bottom: 6px; font-weight: 500; letter-spacing: -0.02em; }
                 @media (max-width: 860px) {
                   .civr-comparison { grid-template-columns: 1fr; }
                   .middle-arrow { transform: rotate(90deg); min-height: 60px; }
-                  .civr-bottom-kpi { grid-template-columns: 1fr 1fr; }
+
                   .mock-card { min-height: auto; }
                 }
                 @media (max-width: 560px) {
-                  .civr-bottom-kpi { grid-template-columns: 1fr; }
+
                 }
             </style>
 
@@ -6449,7 +6450,7 @@
                         <div class="phone-top">
                             <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v1</span></div>
                             <div class="mini-player light">
-                                <button class="aicall-play-button" aria-label="Play AiCall v1 demo">▶</button>
+                                <button class="aicall-play-button" aria-label="Play AiCall v1 demo"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="transform: translateX(-0.5px);"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.03 21c.78 0 1.05-.62 1.05-1.14v-3.49c0-.54-.45-.99-.99-.99z"/></svg></button>
                             </div>
                         </div>
 
@@ -6461,7 +6462,7 @@
                                 </div>
                                 <div class="turn">
                                     <div class="avatar ai">AI</div>
-                                    <div class="bubble">“For delivery inquiries, press 1.”</div>
+                                    <div class="bubble">“Please select an option from the menu.”</div>
                                 </div>
                             </div>
 
@@ -6492,7 +6493,7 @@
                         <div class="phone-top">
                             <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v2</span></div>
                             <div class="mini-player">
-                                <button class="aicall-play-button" aria-label="Play AiCall v2 demo">▶</button>
+                                <button class="aicall-play-button" aria-label="Play AiCall v2 demo"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="none" style="transform: translateX(-0.5px);"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.03 21c.78 0 1.05-.62 1.05-1.14v-3.49c0-.54-.45-.99-.99-.99z"/></svg></button>
                             </div>
                         </div>
 
@@ -6505,7 +6506,7 @@
                                 </div>
                                 <div class="turn ai-turn">
                                     <div class="avatar ai">AI</div>
-                                    <div class="bubble ai" style="max-width: 90%;">“I can help with that. I’ll connect you to the delivery flow.”</div>
+                                    <div class="bubble ai" style="max-width: 90%;">“Yes, I'll check your current delivery location.”</div>
                                 </div>
                             </div>
 
@@ -6539,12 +6540,7 @@
                 </article>
             </div>
 
-            <div class="civr-bottom-kpi">
-                <div class="kpi-item"><strong>↓ IVR depth</strong>Natural speech replaces menu traversal.</div>
-                <div class="kpi-item"><strong>↓ unnecessary handling</strong>LLM interprets caller intent before transfer.</div>
-                <div class="kpi-item"><strong>↑ routing efficiency</strong>Connects to the right scenario or team.</div>
-                <div class="kpi-item"><strong>↑ scalable operations</strong>New scenarios can be added as modules.</div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -6553,159 +6549,497 @@
 
             <!-- Tab Content: Building -->
             <div id="tab-aicall-scenarios" class="aicall-tab-content hidden mb-12">
-                <div class="flex justify-center w-full">
-                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
-                        <div class="concept-note"
-                            style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
-
-                            <div class="mb-8 font-sans">
-                                <h3
-                                    class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
-                                    Creator Input Simplification
-                                </h3>
-                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                                    Creators only submit a profile, video link, and shopping products — turning
-                                    storefront setup into a simple flow.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">creator-first</span>
-                                    <span
-                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">minimal
-                                        setup</span>
-                                    <span
-                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">low-friction
-                                        publishing</span>
-                                </div>
-                            </div>
-
-                            <div class="mb-8 font-sans">
-                                <h3
-                                    class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
-                                    Commerce Orchestration
-                                </h3>
-                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                                    Hopzie connects products, metadata, and creator content into a structured shopping
-                                    experience automatically.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span
-                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">storefront
-                                        automation</span>
-                                    <span
-                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">content-native</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="builder-stage" aria-label="Hopzie creator input to storefront concept"
-                            style="max-width: 100%; margin: 0; zoom: 0.8;">
-                            <div class="panel creator-input-panel" style="flex-grow: 1;">
-                                <div class="panel-header">
-                                    <span class="panel-title">Creator Submission Form</span>
-                                    <span
-                                        class="px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200 text-zinc-600 text-[10px] font-bold tracking-wider uppercase">3
-                                        inputs</span>
-                                </div>
-                                <div class="input-form">
-                                    <div class="input-group">
-                                        <span class="input-label">Hopzie URL</span>
-                                        <div class="input-field">hopzie.co/@noa-studio</div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-label">YouTube Video</span>
-                                        <div class="input-field">youtube.com/watch?v=cozy-desk-setup</div>
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-label">Shopping Links</span>
-                                        <div class="link-stack">
-                                            <div class="input-field">amazon.com/dp/B0DESKLAMP01</div>
-                                            <div class="input-field">coupang.com/vp/products/9347821</div>
-                                            <div class="input-field">musinsa.com/app/goods/2481093</div>
-                                        </div>
-                                    </div>
-                                    <button class="builder-button"
-                                       >Generate
-                                        Commerce Page</button>
-                                </div>
-                            </div>
-
-                            <div class="flow-core">
-                                <div class="flow-line"></div>
-                                <div class="ai-node">AI</div>
-                                <div class="flow-caption">
-                                    <span style="white-space: nowrap;">content</span> &middot;
-                                    <span style="white-space: nowrap;">products metadata</span>
-                                </div>
-                            </div>
-
-                            <div class="panel storefront-panel">
-                                <div class="panel-header">
-                                    <span class="panel-title">Generated Storefront</span>
-                                    <span
-                                        class="px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200 text-zinc-600 text-[10px] font-bold tracking-wider uppercase">Published</span>
-                                </div>
-                                <div class="storefront" style="position: relative;">
-                                    <!-- Faded overlay to shift focus to the input form -->
-                                    <div id="storefront-overlay"
-                                        style="position: absolute; inset: 0; background: rgba(255, 255, 255, 0.35); backdrop-filter: saturate(0.6); z-index: 10; pointer-events: none; border-radius: inherit; transition: opacity 0.5s ease;">
-                                    </div>
-
-                                    <div class="store-content">
-                                        <div class="creator-row" style="margin-bottom: 10px;">
-                                            <img src="nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png"
-                                                alt="Noa Studio"
-                                                class="w-[34px] h-[34px] rounded-full object-cover shrink-0" />
-                                            <div>
-                                                <div class="creator-name">Noa Studio</div>
-                                                <div class="creator-sub">Lifestyle picks</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="product-row" style="grid-template-columns: repeat(2, 1fr);">
-                                            <div class="product-item">
-                                                <div class="product-img w-full" style="background: url('nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_monitor%20light%20bar.png') center / cover no-repeat;" aria-label="monitor light bar"></div>
-                                                <div class="product-title">monitor light bar</div>
-                                                <div class="product-meta">
-                                                    <span class="product-source">Amazon</span>
-                                                    <span class="product-price">$39.99</span>
-                                                </div>
-                                                <div
-                                                    style="margin-top: 10px; background: #111827; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 6px 0; border-radius: 6px; cursor: pointer;">
-                                                    Buy</div>
-                                            </div>
-                                            <div class="product-item">
-                                                <div class="product-img w-full" style="background: url('nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_creamy%20wireless%20keyboard.png') center / 120% no-repeat;" aria-label="creamy wireless keyboard"></div>
-                                                <div class="product-title">creamy wireless keyboard</div>
-                                                <div class="product-meta">
-                                                    <span class="product-source">Coupang</span>
-                                                    <span class="product-price">$89.00</span>
-                                                </div>
-                                                <div
-                                                    style="margin-top: 10px; background: #111827; color: white; text-align: center; font-size: 11px; font-weight: 600; padding: 6px 0; border-radius: 6px; cursor: pointer;">
-                                                    Buy</div>
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            style="font-size: 13px; font-weight: 650; color: #4b515a; margin-top: 24px; margin-bottom: -4px;">
-                                            Products from this video</div>
-                                        <div class="video-link-card" style="margin-top: 0;">
-                                            <div class="video-mini-thumb"
-                                                style="background: url('nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png') center / cover no-repeat;">
-                                            </div>
-                                            <div class="video-title">WHAT'S ON MY DESK</div>
-                                            <div
-                                                style="background: #111827; color: white; font-size: 11px; font-weight: 600; padding: 6px 14px; border-radius: 20px; cursor: pointer;">
-                                                Continue watching</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="flex justify-center w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+            
+            <!-- Left: Title Area -->
+            <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                <div class="mb-8 font-sans">
+                    <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                        Reusable scenario kits for scalable CS chatbot building
+                    </h3>
+                    <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                        I modularized repeated CS tasks into reusable scenario kits, allowing different ARS chatbot domains
+                        to share the same collection logic without rebuilding each flow from scratch.
+                    </p>
                 </div>
-            </div> <!-- End tab-building -->
+            </div>
+
+            <!-- Right: Board Area -->
+            <div class="w-full">
+                <div class="reuse-board">
+
+                  <!-- Left: Delivery Flow -->
+                  <div class="domain-column domain-left">
+                    <div class="column-label">Applied Domain 01</div>
+
+                    <article class="ars-card-fixed">
+                      <div class="card-meta">
+                        <span>Delivery ARS Chatbot</span>
+                        
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“Where is my delivery?”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Name Collection</div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="ars-card-fixed">
+                      <div class="card-meta">
+                        <span>Delivery ARS Chatbot</span>
+                        
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I want to return a package.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Address Collection</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Center: Reusable Kits -->
+                  <div class="kit-column">
+                    <div class="center-label">Reusable Scenario Kits</div>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Name Collection</h3>
+                      <div class="bubble amber">Please tell me your name.</div>
+<div class="logic-row">DB · first name / last name</div>
+                    </article>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Phone Number Collection</h3>
+                      <div class="bubble amber">Please tell me your phone number.</div>
+                      <div class="logic-row">DB · phone number / consent Y·N</div>
+                    </article>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Address Collection</h3>
+                      <div class="bubble amber">Please tell me your address.</div>
+                      <div class="logic-row">DB · region / street / postal code</div>
+                    </article>
+                  </div>
+
+                  <!-- Right: Telecom Flow -->
+                  <div class="domain-column domain-right">
+                    <div class="column-label">Applied Domain 02</div>
+
+                    <article class="ars-card-fixed">
+                      <div class="card-meta">
+                        <span>Telecom ARS Chatbot</span>
+                        
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I'd like a copy of my bill.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Phone Number Collection</div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="ars-card-fixed">
+                      <div class="card-meta">
+                        <span>Telecom ARS Chatbot</span>
+                        
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I changed my address.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Address Collection</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Flow Lines -->
+                  <div class="flow-line left-line"></div>
+                  <div class="flow-line right-line"></div>
+                  
+                  
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+<style>
+  .reuse-board {
+    position: relative;
+    min-height: 600px;
+    padding: 32px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+  }
+
+  .reuse-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.08), transparent 50%),
+      linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.86));
+    pointer-events: none;
+  }
+
+  .domain-column,
+  .kit-column {
+    position: relative;
+    z-index: 5;
+  }
+
+  .domain-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 1;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .kit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(6px);
+  }
+
+  .column-label,
+  .center-label {
+    margin-bottom: 0px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .column-label {
+    color: #a1a1aa;
+  }
+
+  .center-label {
+    color: #d97706;
+    text-align: center;
+  }
+
+  .ars-card,
+
+  /* Highlight the AI avatar in signature orange to match the kit */
+  .ars-card-fixed .avatar.ai {
+    background: #ffffff !important;
+    color: #d97706 !important;
+    border: 1px solid rgba(217, 119, 6, 0.3) !important;
+  }
+
+  /* Highlight the reusable scenario bubble in signature orange */
+  .ars-card-fixed .bubble.ai {
+    background: rgba(217, 119, 6, 0.08) !important;
+    color: #d97706 !important;
+    border: 1px solid rgba(217, 119, 6, 0.2) !important;
+    font-weight: 700;
+  }
+
+  .ars-card-fixed {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(17,17,17,0.08);
+    border-radius: 10px;
+    padding: 10px 12px 12px 12px;
+    box-shadow: 0 18px 40px rgba(17,17,17,0.055);
+    backdrop-filter: blur(10px);
+    /* filter: grayscale(1); removed to allow orange highlights */
+    /* Prevent any vertical stretch */
+    display: block !important;
+    height: fit-content !important;
+    width: 100% !important; align-self: stretch !important;
+    flex: 0 0 auto !important;
+  }
+
+  .kit-card {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(17,17,17,0.08);
+    border-radius: 10px;
+    padding: 8px 12px;
+    box-shadow: 0 18px 40px rgba(17,17,17,0.055);
+    backdrop-filter: blur(10px);
+  }
+
+  .ars-card {
+    /* filter: grayscale(1); removed to allow orange highlights */
+    height: max-content !important;
+    min-height: 0 !important;
+    width: 100% !important; align-self: stretch !important;
+    flex: none !important;
+    display: block !important;
+  }
+
+  
+
+
+  /* Highlight the AI avatar in signature orange to match the kit */
+  .ars-card-fixed .avatar.ai {
+    background: #ffffff !important;
+    color: #d97706 !important;
+    border: 1px solid rgba(217, 119, 6, 0.3) !important;
+  }
+
+  /* Highlight the reusable scenario bubble in signature orange */
+  .ars-card-fixed .bubble.ai {
+    background: rgba(217, 119, 6, 0.08) !important;
+    color: #d97706 !important;
+    border: 1px solid rgba(217, 119, 6, 0.2) !important;
+    font-weight: 700;
+  }
+
+  .ars-card-fixed {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(17,17,17,0.08);
+    border-radius: 10px;
+    padding: 10px 12px 12px 12px;
+    box-shadow: 0 18px 40px rgba(17,17,17,0.055);
+    backdrop-filter: blur(10px);
+    /* filter: grayscale(1); removed to allow orange highlights */
+    /* Prevent any vertical stretch */
+    display: block !important;
+    height: fit-content !important;
+    width: 100% !important; align-self: stretch !important;
+    flex: 0 0 auto !important;
+  }
+
+  .kit-card {
+    min-height: 140px;
+    padding: 14px;
+    border-color: rgba(217,119,6,0.34);
+    box-shadow: 0 26px 60px rgba(217,119,6,0.14);
+  }
+
+  .card-meta,
+  .kit-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .card-meta span:last-child {
+    color: #a1a1aa;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .kit-type {
+    color: #d97706;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .lineworks {
+    color: #111111;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+
+  .kit-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  .live-transcript {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    height: max-content;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .turn {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #d4d4d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #71717a;
+    font-size: 14px;
+    flex: 0 0 auto;
+    background: #fff;
+  }
+
+  .avatar.ai {
+    border-color: rgba(217,119,6,0.25);
+    background: #fff7ed;
+    color: #d97706;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  .bubble,
+  .logic-row {
+    margin-top: 6px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    line-height: 1.38;
+  }
+
+  .turn .bubble {
+    margin-top: 0;
+    border-radius: 12px 12px 12px 4px;
+    background: #f4f4f5;
+    color: #27272a;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .turn .bubble.ai {
+    background: #fff7ed;
+    color: #92400e;
+    font-weight: 700;
+  }
+
+  .bubble.amber {
+    background: #d97706;
+    color: #ffffff;
+  }
+
+  .logic-row {
+    background: #fafafa;
+    color: #52525b;
+    border: 1px solid #e4e4e7;
+    font-size: 10px;
+  }
+
+  .flow-line {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(217,119,6,0), rgba(217,119,6,0.72), rgba(217,119,6,0));
+    z-index: 1;
+  }
+
+  .left-line {
+    left: 28.5%;
+  }
+
+  .right-line {
+    right: 28.5%;
+  }
+
+  .flow-line::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #d97706;
+    border-right: 1px solid #d97706;
+    transform: rotate(45deg);
+  }
+
+  .right-line::after {
+    left: 0;
+    right: auto;
+    transform: rotate(-135deg);
+  }
+
+  .flow-tag {
+    position: absolute;
+    top: calc(50% + 14px);
+    z-index: 3;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(217,119,6,0.28);
+    color: #d97706;
+    font-size: 9px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(17,17,17,0.06);
+    white-space: nowrap;
+  }
+
+  .left-tag {
+    left: 20%;
+  }
+
+  .right-tag {
+    right: 20%;
+  }
+
+  @media (max-width: 1200px) {
+    .reuse-board {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 24px;
+    }
+    .flow-line, .flow-tag {
+      display: none;
+    }
+  }
+</style>
+</div>
 
             <!-- Tab Content: Commission -->
             <div id="tab-aicall-building" class="aicall-tab-content hidden mb-12">
@@ -10846,6 +11180,30 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
