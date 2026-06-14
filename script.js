@@ -1,4 +1,4 @@
-﻿// ===========================
+// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -130,6 +130,7 @@ const routerConfig = {
     'articles': ['articles'],
     'article-detail': ['article-detail'],
     'hopzie-oneclickbuilder': ['hopzie-oneclickbuilder'],
+    'ai-mentoring-agent-detail': ['ai-mentoring-agent-detail'],
     'llm-based-voice-ivr': ['llm-based-voice-ivr'],
     'lectures': ['lectures'],
     'awards': ['awards'],
