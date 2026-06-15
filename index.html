@@ -10393,8 +10393,70 @@
                         </div>
 
                         <!-- Right: Content Area -->
-                        <div class="w-full flex justify-center lg:justify-start">
+                        <div class="w-full flex flex-col justify-center lg:justify-start items-center">
                             <!-- MOCKUP START -->
+<div class="builder-demo">
+  <div class="builder-header">
+    <div>
+      <h3>User Variables</h3>
+      <p>Use predefined shared variables across connected chatbot domains.</p>
+    </div>
+  </div>
+
+  <div class="tab-area">
+    <button class="tab">User variables</button>
+    <button class="tab active">Built-in variable</button>
+  </div>
+
+  <section class="variable-section">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Built-in variable name</th>
+            <th>Description / Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="highlight-row">
+            <td>JSON</td>
+            <td><code>*transferDomain.domainCode</code></td>
+            <td>
+              Saves the previous domain code.<br />
+              <span>“abc.aicall”</span>
+            </td>
+          </tr>
+
+          <tr class="highlight-row">
+            <td>JSON</td>
+            <td><code>*transferDomain.userVariables</code></td>
+            <td>
+              Carries shared user variables from the previous chatbot domain.<br />
+              <span>{ "isMobile": null, "phoneNumber": null }</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+</div>
+
+<!-- DOWN ARROW -->
+<div style="margin: 16px 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  <svg width="14" height="36" viewBox="0 0 14 36" fill="none" style="display: block;">
+    <defs>
+      <linearGradient id="builder-arrow-grad" x1="0" y1="0" x2="0" y2="36">
+        <stop offset="0%" stop-color="#fbbf24"/>
+        <stop offset="100%" stop-color="#d97706"/>
+      </linearGradient>
+    </defs>
+    <path d="M7 0 V34 M1 28 L7 34 L13 28" stroke="url(#builder-arrow-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
+
 <div class="builder-demo">
   <div class="builder-header">
     <div>
@@ -10404,8 +10466,8 @@
   </div>
 
   <div class="accordion">Condition</div>
-  <div class="accordion disabled">User Variables</div>
-  <div class="accordion disabled">Action Script</div>
+  <div class="accordion">User Variables</div>
+  <div class="accordion">Action Script</div>
 
   <div class="accordion active">
     <div class="accordion-title">
@@ -10414,7 +10476,6 @@
     </div>
 
     <div class="answer-content">
-      <div class="speech-count">Speech balloon 1 total</div>
       <div class="speech-bubble">
         Would you like to proceed with a refund request?
       </div>
@@ -10445,9 +10506,7 @@
         <input type="text" value="I'd like to request a refund." readonly />
       </div>
 
-      <p class="notice">
-        ※ Return to Task settings are deactivated once saving is complete after setting Transfer domain.
-      </p>
+
 
       <div class="domain-card">
         <div class="domain-icon">↗</div>
@@ -10462,17 +10521,7 @@
     </div>
   </div>
 
-  <div class="accordion disabled">User Tag Information</div>
-
   <div class="bottom-area">
-    <div class="service-toggle">
-      <span>AiCall</span>
-      <small>Service availability</small>
-      <div class="toggle active">
-        <div class="knob"></div>
-      </div>
-    </div>
-
     <button class="save-btn">Save Answer</button>
   </div>
 </div>
@@ -10507,6 +10556,131 @@
     margin: 6px 0 0;
     font-size: 13px;
     color: #6b7280;
+  }
+
+  .tab-area {
+    display: flex;
+    gap: 6px;
+    padding: 18px 24px 0;
+    background: #f6f7f9;
+    border-bottom: 2px solid #111827;
+  }
+
+  .tab {
+    height: 38px;
+    padding: 0 18px;
+    border: 1px solid #d9dee7;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    color: #374151;
+  }
+
+  .tab.active {
+    background: #111827;
+    border-color: #111827;
+    color: #fff;
+  }
+
+  .variable-section {
+    padding: 24px;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .section-title h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: #168bd8;
+  }
+
+  .section-title p {
+    margin: 8px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .table-wrap {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead {
+    background: #fbfcfd;
+  }
+
+  th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 800;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111827;
+  }
+
+  td {
+    padding: 16px;
+    border-bottom: 1px solid #eef2f7;
+    vertical-align: top;
+    line-height: 1.55;
+    color: #374151;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  td:first-child {
+    width: 150px;
+    font-weight: 700;
+    color: #4b5563;
+  }
+
+  td:nth-child(2) {
+    width: 380px;
+  }
+
+  code {
+    padding: 3px 6px;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #111827;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 12px;
+  }
+
+  td span {
+    color: #6b7280;
+    font-size: 12px;
+  }
+
+  .highlight-row {
+    background: #f8fbff;
+  }
+
+  .highlight-row td {
+    border-bottom-color: #d8ebff;
+  }
+
+  @media (max-width: 720px) {
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      min-width: 760px;
+    }
   }
 
   .accordion {
