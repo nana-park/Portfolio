@@ -8867,7 +8867,7 @@
                   font-size: 22px;
                   min-height: 620px;
                 }
-                .middle-arrow small { color: #a1a1aa; font-size: 12px; line-height: 1.2; text-align: center; font-weight: 900; letter-spacing: -0.02em; }
+                .middle-arrow small { color: #a1a1aa; font-size: 12px; line-height: 1.2; text-align: center; font-weight: 500; letter-spacing: -0.02em; }
                 .middle-arrow .sync { color: var(--amber); font-size: 12px; text-align: center; font-weight: 900; }
                 .civr-bottom-kpi {
                   position: relative;
@@ -9047,50 +9047,56 @@
 
             <!-- Right: Board Area -->
             <div class="w-full">
-                <div class="reuse-board">
+                <div class="flex flex-col xl:flex-row items-center xl:items-start gap-8 xl:gap-6 font-sans" style="zoom: 0.75;">
+                    
+                    <!-- AS-IS Mockup -->
+                    <div class="reuse-as-is-card shrink-0 mt-6 xl:mt-8">
+                        <div class="mockup-label">AS-IS</div>
+                        <h3>Duplicated Collection Logic</h3>
 
-                  <!-- Left: Delivery Flow -->
-                  <div class="domain-column domain-left">
-                    <div class="column-label">Applied Domain 01</div>
+                        <div class="domain-stack">
 
-                    <article class="ars-card-fixed">
-                      <div class="card-meta">
-                        <span>Delivery ARS Chatbot</span>
-                        
-                      </div>
+                            <div class="domain-box">
+                                <div class="domain-title">Delivery ARS Chatbot</div>
 
-                      <div class="live-transcript">
-                        <div class="turn">
-                          <div class="avatar">👤</div>
-                          <div class="bubble">“Where is my delivery?”</div>
+                                <div class="collection-flow">
+                                    <div>Name Collection</div>
+                                    <div>Phone Collection</div>
+                                    <div>Address Collection</div>
+                                </div>
+                            </div>
+
+                            <div class="domain-box">
+                                <div class="domain-title">Telecom ARS Chatbot</div>
+
+                                <div class="collection-flow">
+                                    <div>Name Collection</div>
+                                    <div>Phone Collection</div>
+                                    <div>Address Collection</div>
+                                </div>
+                            </div>
+
+
+
                         </div>
 
-                        <div class="turn">
-                          <div class="avatar ai">AI</div>
-                          <div class="bubble ai">✓ Customer Verification</div>
+                        <div class="problem-box">
+                            Same collection scenarios are implemented repeatedly in each domain.
                         </div>
-                      </div>
-                    </article>
+                    </div>
 
-                    <article class="ars-card-fixed">
-                      <div class="card-meta">
-                        <span>Delivery ARS Chatbot</span>
-                        
-                      </div>
+                    <!-- Arrow -->
+                    <div class="hidden xl:flex flex-col items-center justify-center shrink-0 mt-[250px]">
+                        <small style="color: #a1a1aa; font-size: 12px; line-height: 1.2; text-align: center; font-weight: 500; letter-spacing: -0.02em;">Duplicated</small>
+                        <svg width="28" height="14" viewBox="0 0 28 14" fill="none" style="margin: 12px 0;"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <div style="color: #d97706; font-size: 12px; text-align: center; font-weight: 900; line-height: 1.2;">Shared<br>Logic</div>
+                    </div>
 
-                      <div class="live-transcript">
-                        <div class="turn">
-                          <div class="avatar">👤</div>
-                          <div class="bubble">“I want to return a package.”</div>
-                        </div>
-
-                        <div class="turn">
-                          <div class="avatar ai">AI</div>
-                          <div class="bubble ai">✓ Customer Verification</div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
+                    <!-- TO-BE Mockup -->
+                    <div class="w-full">
+                        <div class="mockup-label" style="color: #d97706; margin-bottom: 4px; margin-left: 4px; margin-top: 24px;">TO-BE</div>
+                        <h3 style="margin: 0 0 22px 4px; font-size: 22px; font-weight: 500; color: #18181b;">Centralized Scenario Kits</h3>
+                        <div class="reuse-board" style="border-radius: 18px; border: 1px solid #dde1e7; min-height: auto;">
 
                   <!-- Center: Reusable Kits -->
                   <div class="kit-column">
@@ -9140,14 +9146,35 @@
                     </article>
                   </div>
 
-                  <!-- Right: Telecom Flow -->
+                  <!-- Right: Applied Domains -->
                   <div class="domain-column domain-right">
+                    <div class="column-label">Applied Domain 01</div>
+
+
+
+                    <article class="ars-card-fixed" style="margin-bottom: 24px;">
+                      <div class="card-meta">
+                        <span>Delivery ARS Chatbot</span>
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I want to return a package.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Customer Verification</div>
+                        </div>
+                      </div>
+                    </article>
+
                     <div class="column-label">Applied Domain 02</div>
 
-                    <article class="ars-card-fixed">
+                    <article class="ars-card-fixed" style="margin-bottom: 8px;">
                       <div class="card-meta">
                         <span>Telecom ARS Chatbot</span>
-                        
                       </div>
 
                       <div class="live-transcript">
@@ -9163,32 +9190,13 @@
                       </div>
                     </article>
 
-                    <article class="ars-card-fixed">
-                      <div class="card-meta">
-                        <span>Telecom ARS Chatbot</span>
-                        
-                      </div>
 
-                      <div class="live-transcript">
-                        <div class="turn">
-                          <div class="avatar">👤</div>
-                          <div class="bubble">“I changed my address.”</div>
-                        </div>
-
-                        <div class="turn">
-                          <div class="avatar ai">AI</div>
-                          <div class="bubble ai">✓ Customer Verification</div>
-                        </div>
-                      </div>
-                    </article>
                   </div>
-
-                  <!-- Flow Lines -->
-                  <div class="flow-line left-line"></div>
-                  <div class="flow-line right-line"></div>
                   
                   
 
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -9196,16 +9204,88 @@
     </div>
 
 <style>
+
+.reuse-as-is-card {
+    width: 320px;
+    padding: 0;
+    font-family: Inter, sans-serif;
+}
+
+.mockup-label {
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    color: #9aa0ad;
+    margin-bottom: 4px;
+}
+
+.reuse-as-is-card h3 {
+    margin: 0 0 22px;
+    font-size: 22px;
+    font-weight: 500;
+    color: #18181b;
+}
+
+.domain-stack {
+    display: grid;
+    gap: 14px;
+}
+
+.domain-box {
+    background: #f7f7f8;
+    border: 1px solid #ebedf1;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.domain-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 12px;
+}
+
+.collection-flow {
+    display: grid;
+    gap: 8px;
+}
+
+.collection-flow div {
+    background: #ececef;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555b65;
+}
+
+.problem-box {
+    margin-top: 18px;
+    background: #f7f7f8;
+    border-radius: 14px;
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b6f7a;
+}
+
   .reuse-board {
     position: relative;
     min-height: 600px;
     padding: 32px 24px;
     display: grid;
-    grid-template-columns: 1fr 1.15fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 32px;
     align-items: center;
     border-left: 1px solid rgba(0, 0, 0, 0.02);
     overflow: hidden;
+  }
+
+  .domain-column .ars-card-fixed .bubble {
+    font-size: 11.5px !important;
+    padding: 6px 10px !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
   }
 
   .reuse-board::before {
