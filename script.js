@@ -99,11 +99,7 @@ mobileToggle.addEventListener('click', () => {
 const navLinksAll = document.querySelectorAll('.nav-link, .lnb-link');
 navLinksAll.forEach(link => {
     link.addEventListener('click', (e) => {
-        // Prevent click routing on all devices for Dropdown parent nodes (e.g. ABOUT, PROJECTS)
-        if (link.parentElement && link.parentElement.classList.contains('has-dropdown') && link.classList.contains('nav-link')) {
-            e.preventDefault();
-            return;
-        }
+        // Allow routing for all links (ABOUT, PROJECTS, etc.) to their respective sections
 
         // Retract Mobile menu
         navMenu.classList.remove('active');

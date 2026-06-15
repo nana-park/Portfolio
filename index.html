@@ -225,6 +225,11 @@
             background: #ffffff !important;
         }
 
+        /* Hide floating email popup when mobile menu is open */
+        .navbar:has(.nav-menu.active) ~ #email-popup {
+            display: none !important;
+        }
+
         /* [Critical Fix] Ensure active/hover links stay orange when scrolled (Desktop Only) */
         @media (min-width: 1025px) {
 
