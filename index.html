@@ -8516,6 +8516,11 @@
                   </button>
                   <button
                       class="aicall-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-aicall-builder">
+                      Building
+                  </button>
+                  <button
+                      class="aicall-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
                       data-target="tab-aicall-demo">
                       Demo Call
                   </button>
@@ -8577,7 +8582,7 @@
                   align-items: center;
                   justify-content: space-between;
                   gap: 12px;
-                  margin-bottom: 14px;
+                  margin-bottom: 4px;
                 }
                 .mock-label {
                   color: #9ca3af;
@@ -8699,11 +8704,11 @@
                 .as-is .avatar.ai { border-color: #e4e4e7; background: #f4f4f5; color: #52525b; }
                 .bubble {
                   max-width: 100%;
-                  padding: 11px 13px;
+                  padding: 12px 14px;
                   border-radius: 15px 15px 15px 4px;
                   background: #f4f4f5;
                   color: #27272a;
-                  font-size: 13px;
+                  font-size: 15px;
                   line-height: 1.45;
                   font-weight: 500;
                   letter-spacing: -0.01em;
@@ -8715,12 +8720,12 @@
                   display: flex;
                   align-items: center;
                   gap: 10px;
-                  padding: 11px 12px;
+                  padding: 12px 14px;
                   border: 1px solid #e5e7eb;
                   border-radius: 10px;
                   background: #fbfbfb;
                   color: #52525b;
-                  font-size: 11.5px;
+                  font-size: 14px;
                   font-weight: 500;
                   line-height: 1.25;
                 }
@@ -8756,7 +8761,7 @@
                 .to-flow {
                   position: relative;
                   min-height: 268px;
-                  background: radial-gradient(circle at 50% 46%, rgba(0,199,60,0.08), transparent 48%);
+                  background: radial-gradient(circle at 50% 46%, rgba(217,119,6,0.08), transparent 48%);
                   padding-top: 0;
                 }
 
@@ -8864,8 +8869,8 @@
                   font-size: 22px;
                   min-height: 620px;
                 }
-                .middle-arrow small { color: #a1a1aa; font-size: 10px; line-height: 1.2; text-align: center; font-weight: 900; letter-spacing: -0.02em; }
-                .middle-arrow .sync { color: var(--amber); font-size: 10px; text-align: center; font-weight: 900; }
+                .middle-arrow small { color: #a1a1aa; font-size: 12px; line-height: 1.2; text-align: center; font-weight: 900; letter-spacing: -0.02em; }
+                .middle-arrow .sync { color: var(--amber); font-size: 12px; text-align: center; font-weight: 900; }
                 .civr-bottom-kpi {
                   position: relative;
                   z-index: 2;
@@ -8940,13 +8945,7 @@
                                 <div class="turn" style="margin-top: 4px;">
                                     <div class="avatar" style="visibility: hidden;">AI</div>
                                     <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
-                                        <span class="num">4</span> Agent connection
-                                    </div>
-                                </div>
-                                <div class="turn" style="margin-top: 4px;">
-                                    <div class="avatar" style="visibility: hidden;">AI</div>
-                                    <div class="bubble menu-step" style="flex: 1; margin-bottom: 0; border: none; white-space: normal; align-items: center;">
-                                        <span class="num">5</span> Other inquiries
+                                        <span class="num">0</span> Agent connection
                                     </div>
                                 </div>
                             </div>
@@ -9039,12 +9038,11 @@
                         Reusable Scenario Kits
                     </h3>
                     <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
-                        Build once, reuse across multiple chatbot domains. Reusable modules accelerate deployment for developers and give customers the flexibility to configure their own workflows.
+                        Build once, reuse across multiple chatbot domains.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">low-code</span>
-                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">module</span>
-                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">architecture</span>
+                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">shared logic</span>
+                        <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">intake modules</span>
                     </div>
                 </div>
             </div>
@@ -9473,7 +9471,7 @@
     border-radius: 12px 12px 12px 4px;
     background: #f4f4f5;
     color: #27272a;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.5;
     font-weight: 500;
     letter-spacing: -0.02em;
@@ -9707,11 +9705,12 @@
 }
 
 .card-label {
-  margin-bottom: 14px;
-  color: #9aa0ad;
-  font-size: 12px;
+  margin-bottom: 4px;
+  color: #9ca3af;
+  font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .card-label.orange {
@@ -9719,10 +9718,12 @@
 }
 
 .arch-card h3 {
-  margin: 0 0 20px;
-  font-size: 22px;
-  font-weight: 500;
+  margin: 0 0 18px;
+  color: #15151b;
+  font-size: 21px;
+  line-height: 1.2;
   letter-spacing: -0.04em;
+  font-weight: 500;
 }
 
 .bot-shell {
@@ -10368,6 +10369,401 @@
                         </div>
                       </div>
                         </section>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-aicall-builder" class="aicall-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+                        
+                        <!-- Left: Title Area -->
+                        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Builder Interface
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Easily configure complex conversational flows using our intuitive builder interface.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">builder</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Content Area -->
+                        <div class="w-full flex justify-center lg:justify-start">
+                            <!-- MOCKUP START -->
+<div class="builder-demo">
+  <div class="builder-header">
+    <div>
+      <h3>Chatbot Answer Registration</h3>
+      <p>Configure chatbot responses and reusable follow-up routing.</p>
+    </div>
+  </div>
+
+  <div class="accordion">Condition</div>
+  <div class="accordion disabled">User Variables</div>
+  <div class="accordion disabled">Action Script</div>
+
+  <div class="accordion active">
+    <div class="accordion-title">
+      <span class="arrow"></span>
+      Answer
+    </div>
+
+    <div class="answer-content">
+      <div class="speech-count">Speech balloon 1 total</div>
+      <div class="speech-bubble">
+        Would you like to proceed with a refund request?
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion active">
+    <div class="accordion-title">
+      <span class="arrow"></span>
+      Follow-up Move
+    </div>
+
+    <div class="followup-content">
+      <div class="field-row">
+        <select>
+          <option>Transfer domain</option>
+        </select>
+
+        <select>
+          <option>Domain Code</option>
+        </select>
+
+        <input type="text" value="REFUND-001" readonly />
+      </div>
+
+      <div class="field-row question">
+        <label>Input Question</label>
+        <input type="text" value="I'd like to request a refund." readonly />
+      </div>
+
+      <p class="notice">
+        ※ Return to Task settings are deactivated once saving is complete after setting Transfer domain.
+      </p>
+
+      <div class="domain-card">
+        <div class="domain-icon">↗</div>
+
+        <div>
+          <div class="domain-title">Domain Jump</div>
+          <div class="domain-desc">
+            Connect and reuse specialized chatbot domains using a single domain code.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion disabled">User Tag Information</div>
+
+  <div class="bottom-area">
+    <div class="service-toggle">
+      <span>AiCall</span>
+      <small>Service availability</small>
+      <div class="toggle active">
+        <div class="knob"></div>
+      </div>
+    </div>
+
+    <button class="save-btn">Save Answer</button>
+  </div>
+</div>
+
+<style>
+  .builder-demo {
+    width: 100%;
+    max-width: 1040px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    overflow: hidden;
+    font-family: Inter, Pretendard, Arial, sans-serif;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    color: #111827;
+    zoom: 0.65;
+  }
+
+  .builder-header {
+    padding: 24px 28px;
+    border-bottom: 1px solid #eef2f7;
+  }
+
+  .builder-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: #0b7ed5;
+  }
+
+  .builder-header p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+  }
+
+  .accordion {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #eef2f7;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    background: #fff;
+  }
+
+  .accordion::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #9ca3af;
+    border-bottom: 2px solid #9ca3af;
+    transform: rotate(45deg);
+    margin-right: 14px;
+  }
+
+  .accordion.active {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
+
+  .accordion.active::before {
+    display: none;
+  }
+
+  .accordion-title {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #eef2f7;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .arrow {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #6b7280;
+    border-bottom: 2px solid #6b7280;
+    transform: rotate(-135deg);
+    margin-right: 14px;
+  }
+
+  .disabled {
+    opacity: 0.45;
+    background: #fafafa;
+  }
+
+  .answer-content,
+  .followup-content {
+    padding: 22px 24px;
+  }
+
+  .speech-count {
+    margin-bottom: 12px;
+    color: #168bd8;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .speech-bubble {
+    display: inline-block;
+    max-width: 460px;
+    padding: 14px 18px;
+    background: #f8fbff;
+    border: 1px solid #d8ebff;
+    border-radius: 16px 16px 16px 6px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .field-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .field-row select,
+  .field-row input {
+    height: 40px;
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    padding: 0 14px;
+    background: #fff;
+    font-size: 14px;
+    color: #111827;
+  }
+
+  .field-row select {
+    width: 180px;
+  }
+
+  .field-row input {
+    flex: 1;
+  }
+
+  .question {
+    align-items: center;
+  }
+
+  .question label {
+    width: 120px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .notice {
+    margin: 2px 0 20px;
+    font-size: 12px;
+    color: #ff4d4f;
+  }
+
+  .domain-card {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #f8fbff;
+    border: 1px solid #d8ebff;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .domain-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #168bd8;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .domain-title {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .domain-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #6b7280;
+  }
+
+  .bottom-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 24px;
+    border-top: 1px solid #eef2f7;
+    background: #fbfcfd;
+  }
+
+  .service-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #374151;
+  }
+
+  .service-toggle span {
+    height: 36px;
+    padding: 0 14px;
+    border: 1px solid #d9dee7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    font-weight: 600;
+  }
+
+  .service-toggle small {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .toggle {
+    width: 44px;
+    height: 24px;
+    border-radius: 999px;
+    background: #d1d5db;
+    position: relative;
+  }
+
+  .toggle.active {
+    background: #1698e8;
+  }
+
+  .knob {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+  }
+
+  .save-btn {
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 8px;
+    background: #1698e8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .field-row {
+      flex-direction: column;
+    }
+
+    .field-row select,
+    .field-row input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .question {
+      align-items: flex-start;
+    }
+
+    .question label {
+      width: auto;
+    }
+
+    .bottom-area {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .save-btn {
+      width: 100%;
+    }
+  }
+</style>
+                            <!-- MOCKUP END -->
+                        </div>
                     </div>
                 </div>
             </div>
