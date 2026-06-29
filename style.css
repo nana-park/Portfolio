@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    CSS Custom Properties
    =========================== */
 :root {
@@ -3332,6 +3332,8 @@ section {
     font-size: 13px !important; font-family: var(--font-sans); color: rgba(255,255,255,0.7) !important; line-height: 1.4 !important; text-align: left; font-weight: normal !important; transform: translateY(5px) !important;
 }
 .award-title-footer strong { color: white; font-weight: 600; }
+
+
 
 
 

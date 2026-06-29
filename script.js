@@ -1,4 +1,4 @@
-// ===========================
+﻿// ===========================
 // Typing Animation
 // ===========================
 const typedTextElement = document.getElementById('typedText');
@@ -120,7 +120,6 @@ navLinksAll.forEach(link => {
 const routerConfig = {
     'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision'],
     'about': ['about', 'toolkit-grid', 'certifications-runway', 'ongoing-banner', 'how-work', 'media', 'testimonials'],
-    'life': ['life'],
     'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products'],
     'research': ['research'],
     'articles': ['articles'],
@@ -138,7 +137,7 @@ let previousTab = null;
 
 function handleRoute() {
     if (window.isStandalonePage) return;
-    let fullHash = window.location.hash.replace('#', '') || 'home';
+    let fullHash = window.location.hash.replace('#', '') || window.defaultRoute || 'home';
     let rawHash = fullHash.split('?')[0];
     let activeTab = null;
     let targetSection = rawHash;
@@ -1238,4 +1237,7 @@ window.updateLectureCarousel = function(carousel) {
 
 
 document.querySelectorAll('.nav-link, .lnb-link').forEach(link => { link.addEventListener('click', () => { sessionStorage.removeItem('projectsScrollY'); }); });
+
+
+
 
