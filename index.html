@@ -453,22 +453,26 @@
              so "to Everyone" text below is naturally covered slightly at the overlap point -->
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/wLEe3qQhZTm7cvPS/scene.splinecode"
-            style="position:absolute; left:50%; top:57%; transform:translate(-50%, -50%); width:80vw; height:80vh; z-index:0; pointer-events:auto;"></spline-viewer>
+            style="position:absolute; left:50%; top:52%; transform:translate(-50%, -50%); width:80vw; height:80vh; z-index:0; pointer-events:auto;"></spline-viewer>
 
 
 
-        <!-- Text block: anchored at top ??"to Everyone" sits right where Spline top edge begins -->
-        <div class="absolute left-0 right-0 flex flex-col items-center" style="top: 14vh; pointer-events:none;">
+        <!-- Text block: anchored at top -->
+        <div class="absolute left-0 right-0 flex flex-col items-center" style="top: 14vh; pointer-events:none; z-index:10;">
             <p class="font-sans uppercase tracking-[0.25em] text-[11px] md:text-[13px] font-medium mb-5"
                 style="color: #a1a1aa;">
-                AI Product Manager · Psychology · UX Research
+                AI PRODUCT MANAGER · UX RESEARCH · PSYCHOLOGY
             </p>
             <h1 class="font-sans font-semibold text-center"
                 style="font-size: clamp(1.56rem, 3.6vw, 3.6rem); line-height: 1.1; letter-spacing: -0.02em; color: #111111;">
                 Designing Actionable AI
             </h1>
-            <p class="font-sans text-center mt-5 md:mt-6 text-[16px] md:text-[18px]" style="color: #52525b; font-weight: 400; line-height: 1.5; letter-spacing: -0.01em;">
-                AI that helps people take the next step.
+        </div>
+        
+        <!-- Text block: anchored at bottom -->
+        <div class="absolute left-0 right-0 flex flex-col items-center" style="bottom: 10vh; pointer-events:none; z-index:10;">
+            <p class="font-sans text-center text-[18px] md:text-[22px]" style="color: #52525b; font-weight: 500; line-height: 1.5; letter-spacing: -0.01em;">
+                Helping people follow through:
             </p>
         </div>
 
