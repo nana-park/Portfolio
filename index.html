@@ -383,12 +383,12 @@
 
                 <!-- ABOUT Dropdown -->
                 <div class="group has-dropdown about-dropdown h-full flex items-center relative">
-                    <a href="#about" class="nav-link flex items-center h-full">ABOUT</a>
+                    <a href="about.html" class="nav-link flex items-center h-full">ABOUT</a>
 
                     <!-- Seamless Submenu Aligned to Parent -->
                     <div
                         class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
-                        <a href="#about"
+                        <a href="about.html"
                             class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
                             breadme
                         </a>
@@ -816,168 +816,7 @@
         }
     </style>
 
-    <!-- About Section -->
-    <section class="about pt-[70px]" id="about"
-        style="display: none; background: #ffffff; text-align: center; overflow: hidden; padding-bottom: 2rem;">
 
-        <!-- Video Hero Block (Runway Reference) -->
-        <div
-            class="relative w-full h-[75vh] min-h-[600px] max-h-[900px] flex flex-col items-center justify-center mb-16 overflow-hidden">
-            <!-- Video Background -->
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-                <source src="nahyun_imported/video_source/ABOUT_Background.mp4" type="video/mp4">
-            </video>
-
-            <!-- Dark Cinematic Overlay -->
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
-
-            <!-- Content -->
-            <div class="container mx-auto px-6 relative z-20 flex flex-col items-center">
-                <h2 class="font-sans text-white text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-6 drop-shadow-lg"
-                    style="word-break: keep-all;">
-                    Designing AI as a daily staple.
-                </h2>
-                <p
-                    class="font-sans text-white/90 text-[16px] md:text-[18px] leading-[1.7] max-w-[800px] mx-auto font-light mb-16 drop-shadow-md">
-                    My professional handle, 'BREADME,' is derived from my childhood nickname.<br
-                        class="hidden md:block">
-                    Just as bread is a fundamental source of sustenance,<br class="hidden md:block">
-                    my mission is to make AI services accessible and essential for everyone.
-                </p>
-
-
-
-                <div class="flex justify-center">
-                    <a href="#projects"
-                        class="inline-flex items-center justify-center px-4 py-2 bg-white text-black font-semibold text-sm rounded hover:bg-zinc-200 transition-all duration-300 group">
-                        View my projects
-                        <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mx-auto">
-            <div class="id-diagram-container">
-                <div class="id-root-section">
-                    <div class="id-root-label">ORIGINAL NAME</div>
-                    <div class="id-root-name">Park Nahyun</div>
-                </div>
-                <div class="id-vertical-line"></div>
-                <div class="id-pronunciation-label">PRONUNCIATION</div>
-                <div class="id-derivation-row">
-                    <div class="id-decorator-slash id-slash-left">/</div>
-                    <div class="id-decorator-slash id-slash-right">/</div>
-                    <div class="id-translation-group">
-                        <div class="id-floating-label">
-                            <div class="id-floating-badge">
-                                <span class="id-floating-text">TRANSLATED TO ENGLISH</span>
-                            </div>
-                        </div>
-                        <div class="id-dashed-line"></div>
-                        <div class="id-phonetic-part">
-                            <div class="id-phonetic-symbol">b&#x325;a&#331;</div>
-                            <div class="id-connector"></div>
-                            <div class="id-meaning">
-                                <div class="id-meaning-text">BREAD</div>
-                            </div>
-                        </div>
-                        <div class="id-phonetic-part">
-                            <div class="id-phonetic-symbol">na</div>
-                            <div class="id-connector"></div>
-                            <div class="id-meaning">
-                                <div class="id-meaning-text">ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="id-phonetic-part id-faded-part">
-                        <div class="id-faded-symbol">hj&#652;n</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature Block: Building Warm Conversation (Runway Reference) -->
-    <section id="media" class="w-full bg-[#0a0a0a] py-20 md:py-32">
-        <div class="container mx-auto px-4 md:px-6 flex flex-col items-center">
-            <!-- Media Container (16:9) -->
-            <div
-                class="relative w-full max-w-[1000px] aspect-[16/9] bg-[#111111] rounded-[8px] overflow-hidden mb-10 lg:mb-14 shadow-2xl border border-white/5">
-                <!-- YouTube API Managed Player for Seamless Video Splicing -->
-                <div id="ebs-yt-player" class="absolute inset-0 w-full h-full"></div>
-                <script>
-                    if (!window.YT) {
-                        var tag = document.createElement('script');
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                    }
-
-                    var ebsPlayer;
-                    var ytClipIndex = 0;
-                    var ytClips = [
-                        { start: 2230, end: 2257 }, // 37:10 ~ 37:37
-                        { start: 2295, end: 2310 }  // 38:15 ~ 38:30
-                    ];
-
-                    function onYouTubeIframeAPIReady() {
-                        ebsPlayer = new YT.Player('ebs-yt-player', {
-                            videoId: 'BQGPG91YsLo',
-                            playerVars: { 'autoplay': 1, 'mute': 1, 'controls': 1, 'rel': 0, 'playsinline': 1 },
-                            events: {
-                                'onReady': function (e) {
-                                    e.target.seekTo(ytClips[0].start);
-                                    e.target.playVideo();
-
-                                    // Custom polling loop to jump seamlessly at specific end markers
-                                    setInterval(function () {
-                                        if (ebsPlayer && ebsPlayer.getCurrentTime) {
-                                            var t = ebsPlayer.getCurrentTime();
-                                            if (t >= ytClips[ytClipIndex].end) {
-                                                ytClipIndex++;
-                                                if (ytClipIndex >= ytClips.length) ytClipIndex = 0; // Infinite loop
-                                                ebsPlayer.seekTo(ytClips[ytClipIndex].start);
-                                            }
-                                        }
-                                    }, 250);
-                                }
-                            }
-                        });
-                    }
-                </script>
-            </div>
-
-            <!-- Text Content -->
-            <div class="flex flex-col items-center text-center">
-                <div
-                    class="inline-block px-3 py-1 mb-5 md:mb-6 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.2em] border border-white/20 rounded">
-                    Featured Interview
-                </div>
-                <h2
-                    class="font-sans text-white text-[32px] md:text-[40px] lg:text-[48px] font-medium tracking-tight leading-[1.1] mb-5">
-                    Building Warm Conversation
-                </h2>
-                <p
-                    class="font-sans text-zinc-400 text-[14px] md:text-[15px] leading-[1.6] max-w-[600px] font-light mb-8">
-                    Across ages, cultures, and real-life contexts.<br>Blending psychology, field research, and product
-                    strategy to build AI people actually use.
-                </p>
-                <div class="flex justify-center">
-                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank"
-                        class="inline-flex items-center justify-center px-6 py-2.5 bg-white text-[#1a1a1a] font-sans text-[13px] font-semibold rounded hover:bg-zinc-200 transition-colors group">
-                        Watch full interview
-                        <span
-                            class="ml-1.5 translate-y-[1px] group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-300">↗</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- History Section (RunwayML Style) -->
     <section class="relative w-full bg-white pb-12 pt-16 md:pt-24 flex flex-col items-center" id="history">
@@ -12984,68 +12823,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials !bg-white py-16 md:py-24" id="testimonials"
-        style="background-color: #ffffff !important;">
-        <div class="container">
-            <div class="flex flex-col items-center text-center w-full mb-12 lg:mb-16">
-                <h2
-                    class="font-sans text-zinc-900 text-[32px] md:text-[40px] tracking-tight font-medium mb-5 leading-[1.15]">
-                    Building high-trust teams<br>
-                    that deliver at scale.
-                </h2>
-                <p class="font-sans text-zinc-600 text-[15px] md:text-[18px] font-light leading-[1.6] max-w-[750px] mx-auto"
-                    style="word-break: keep-all;">
-                    Unfiltered voices from the cross-functional partners and leaders<br>
-                    who have navigated complex product journeys alongside me.
-                </p>
-            </div>
-            <div class="testimonials-container" id="testimonialsContainer">
-                <div class="testimonial-card card-gradient-1">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Nahyun-san finally made the Korea-Japan collaboration happen. Her drive and
-                        quality shocked us - and yes, all of us Japanese teammates think we should learn from her."</p>
-                    <div class="card-signature">J<span class="card-author-title">Product Lead<br>LINE WORKS Japan</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-2 active">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Things were stuck between engineering and planning, but her positive energy
-                        and communication helped reset the relationship and move the work forward.</p>
-                    <div class="card-signature">P<span class="card-author-title">Lead Product Manager<br>Naver
-                            Cloud</span></div>
-                </div>
-                <div class="testimonial-card card-gradient-3">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Working with her reduces alignment cost. Decisions happen faster because
-                        everyone understands the 'why.'</p>
-                    <div class="card-signature">O<span class="card-author-title">AI Development<br>Naver Cloud</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-5">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"From kickoff to delivery, her thoughtful comments helped organize what was
-                        needed and turn it into real outcomes."</p>
-                    <div class="card-signature">H<span class="card-author-title">Researcher<br>External Partner</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-6">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"She doesn't wait for work. She finds it - and makes sure everyone knows."</p>
-                    <div class="card-signature">L<span class="card-author-title">Senior Product Manager<br>SK
-                            Telecom</span></div>
-                </div>
-                <div class="testimonial-card card-gradient-4">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Her only weaknesses? She doesn't drink, doesn't like coffee, and doesn't
-                        smoke."</p>
-                    <div class="card-signature">K<span class="card-author-title">Director of AI Solution
-                            Planning<br>Naver Cloud</span></div>
-                </div>
-            </div>
-
-        </div>
-    </section>
 
     <!-- Contact / CTA Section (Runway Style, bottom of HOME) -->
     <section class="relative w-full bg-white pb-24 pt-12 flex flex-col items-center" id="vision">
@@ -13086,7 +12863,7 @@
                     style="word-break: keep-all;">
                     Discover the academic background, certifications, and working principles that shape my approach.
                 </p>
-                <a href="#about"
+                <a href="about.html"
                     class="relative z-10 inline-flex items-center justify-center px-6 py-2.5 bg-white text-black font-sans text-[13px] font-semibold rounded hover:bg-zinc-200 transition-all duration-300 group/btn">
                     Explore How I Work
                     <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
@@ -13530,6 +13307,8 @@
 </body>
 
 </html>
+
+
 
 
 
