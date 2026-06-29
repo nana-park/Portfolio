@@ -137,6 +137,7 @@ let isFirstLoad = true;
 let previousTab = null;
 
 function handleRoute() {
+    if (window.isStandalonePage) return;
     let fullHash = window.location.hash.replace('#', '') || 'home';
     let rawHash = fullHash.split('?')[0];
     let activeTab = null;
