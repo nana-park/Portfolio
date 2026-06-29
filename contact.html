@@ -46,46 +46,7 @@
     <link rel="stylesheet" href="style_media.css">
     <script>
             // [FOUC Prevention] Synchronously hide sections that don't belong to the active URL hash before DOM parses
-            (function () {
-                var hash = window.location.hash.replace('#', '') || 'home';
-                // Valid parent tabs
-                var valid = ['home', 'about', 'life', 'projects', 'research', 'articles', 'lectures', 'awards', 'contact'];
-                if (valid.indexOf(hash) === -1) {
-                    for (var key in { home: 1, about: 1, life: 1, projects: 1, research: 1, articles: 1, lectures: 1, awards: 1, contact: 1 }) {
-                        if (window.location.hash.indexOf(key) !== -1) hash = key;
-                    }
-                }
-                if (valid.indexOf(hash) === -1) hash = 'home';
 
-                var routes = {
-                    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision', 'contact'],
-                    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
-                    'life': ['life', 'contact'],
-                    'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products', 'contact'],
-                    'research': ['research', 'contact'],
-                    'articles': ['articles', 'contact'],
-                    'lectures': ['lectures', 'contact'],
-                    'awards': ['awards', 'contact'],
-                    'contact': ['contact']
-                };
-
-                var style = document.createElement('style');
-                style.id = 'spa-fouc-preventer';
-
-                // Build CSS to initially hide everything NOT in the active route array
-                var css = '';
-                var allSections = [].concat(routes['home'], routes['about'], routes['life'], routes['projects'], routes['research'], routes['articles'], routes['lectures'], routes['awards'], routes['contact']);
-                var activeIds = routes[hash];
-
-                for (var i = 0; i < allSections.length; i++) {
-                    if (activeIds.indexOf(allSections[i]) === -1) {
-                        css += 'section#' + allSections[i] + ' { display: none !important; }\n';
-                    }
-                }
-
-                style.innerHTML = css;
-                document.head.appendChild(style);
-            })();
     </script>
     <style>
         /* Mobile Menu Override */
@@ -414,7 +375,7 @@
                             class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
                             Products
                         </a>
-                        <a href="index.html#research"
+                        <a href="research.html"
                             class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
                             Research
                         </a>
@@ -429,7 +390,7 @@
                     </div>
                 </div>
 
-                <div class="flex items-center h-full"><a href="index.html#awards" class="nav-link">AWARDS</a></div>
+                <div class="flex items-center h-full"><a href="awards.html" class="nav-link">AWARDS</a></div>
                 <div class="flex items-center h-full"><a href="contact.html" class="nav-link active">CONTACT</a></div>
             </div>
             <div class="flex-1 flex justify-end items-center gap-3">
@@ -805,6 +766,9 @@
 </body>
 
 </html>
+
+
+
 
 
 
