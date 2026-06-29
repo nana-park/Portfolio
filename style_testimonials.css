@@ -3,7 +3,6 @@
     padding: var(--spacing-xl) 0;
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 .testimonials-header {
@@ -295,6 +294,7 @@
     position: relative;
     z-index: 2;
 }
+
 
 
 
