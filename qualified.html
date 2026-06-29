@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahyun Park | AI Chatbot Product Manager</title>
+    <meta name="description"
+        content="Nahyun Park - AI Chatbot Product Manager at NAVER CLOUD, specializing in conversational AI, senior care solutions, and human-AI interaction design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_testimonials.css">
+    <link rel="stylesheet" href="style_contact.css">
+    <link rel="stylesheet" href="footer_override.css">
+    <link rel="stylesheet" href="style_research.css">
+    <link rel="stylesheet" href="style_brand_story.css">
+    <link rel="stylesheet" href="style_expertise.css">
+    <link rel="stylesheet" href="style_expertise_override.css">
+    <link rel="stylesheet" href="history_override.css">
+    <link rel="stylesheet" href="how-i-work.css">
+    <link rel="stylesheet" href="style_awards.css">
+    <link rel="stylesheet" href="style_banner.css">
+    <link rel="stylesheet" href="style_gradient_override.css">
+    <link rel="stylesheet" href="style_media.css">
+    <script>
+        window.isStandalonePage = true;
+    </script>
+    <style>
+        /* Mobile Menu Override */
+        @media (max-width: 1024px) {
+            .nav-menu.active {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: 100dvh;
+                background: #111111;
+                z-index: 9999;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                gap: 1rem;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active>div {
+                height: auto !important;
+                /* Override desktop h-full */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu.active .nav-link {
+                display: flex !important;
+                height: auto !important;
+                width: 100% !important;
+                padding: 15px 0;
+                font-size: 16px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                color: #ffffff !important;
+            }
+
+            .nav-menu.active .has-dropdown .invisible {
+                /* Expose submenus clearly on mobile */
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column;
+                top: 0 !important;
+                left: 0 !important;
+                /* Kill desktop left-1/2 */
+                transform: none !important;
+                /* Kill desktop translate-x */
+                opacity: 1 !important;
+                visibility: visible !important;
+                height: auto !important;
+                width: 100% !important;
+                /* Kill desktop w-[200px] */
+                margin-top: 0;
+                gap: 0;
+                background: #1a1a1a !important;
+                padding: 5px 0;
+                border-top: 1px solid #333333;
+                border-bottom: 1px solid #333333;
+            }
+
+            .nav-menu.active .has-dropdown .lnb-link {
+                display: flex !important;
+                color: #aaaaaa !important;
+                /* Override desktop text-white */
+                font-size: 14px;
+                padding: 12px 0;
+                font-weight: 400;
+                width: 100% !important;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* Navbar Scrolled explicitly dark texts on Light Pages */
+        .navbar.force-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar.force-scrolled .mobile-toggle span {
+            background: #111111 !important;
+        }
+
+        .navbar.force-scrolled .logo,
+        .navbar.force-scrolled .nav-link {
+            color: #111111 !important;
+        }
+
+        /* [Critical Fix] Mega Menu (.gnb-expanded) must strictly override scrolled black texts */
+        .navbar.gnb-expanded .logo {
+            color: #ffffff !important;
+        }
+
+        .navbar.gnb-expanded .nav-link {
+            color: #888888 !important;
+        }
+
+        .navbar.gnb-expanded .nav-link:hover,
+        .navbar.gnb-expanded .nav-link.active,
+        .navbar.gnb-expanded .has-dropdown:hover>.nav-link {
+            color: #d97706 !important;
+        }
+
+        .navbar.gnb-expanded .mobile-toggle span {
+            background: #ffffff !important;
+        }
+
+        /* [Critical Fix] Mobile Menu should always be perfectly dark and not inherit desktop orange active states */
+        .nav-menu.active .nav-link,
+        .nav-menu.active .nav-link.active,
+        .nav-menu.active .nav-link:hover,
+        .nav-menu.active .has-dropdown:hover>.nav-link,
+        .navbar.force-scrolled .nav-menu.active .nav-link {
+            color: #ffffff !important;
+        }
+
+        /* Force Navbar strictly dark if the mobile menu is active */
+        .navbar:has(.nav-menu.active) {
+            background: #111111 !important;
+            border-bottom: 1px solid #333333 !important;
+        }
+
+        .navbar:has(.nav-menu.active) .logo {
+            color: #ffffff !important;
+        }
+
+        .navbar:has(.nav-menu.active) .mobile-toggle span {
+            background: #ffffff !important;
+        }
+
+        /* Hide floating email popup when mobile menu is open */
+        .navbar:has(.nav-menu.active) ~ #email-popup {
+            display: none !important;
+        }
+
+        /* [Critical Fix] Ensure active/hover links stay orange when scrolled (Desktop Only) */
+        @media (min-width: 1025px) {
+
+            .navbar.force-scrolled .nav-link:hover,
+            .navbar.force-scrolled .nav-link.active,
+            .navbar.force-scrolled .has-dropdown:hover>.nav-link {
+                color: #d97706 !important;
+            }
+        }
+
+        /* Article Detail Content Styling */
+        #article-detail-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        #article-detail-content b,
+        #article-detail-content strong {
+            font-weight: 600;
+            color: #111111;
+        }
+
+        /* Figure and Captions Redesign */
+        #article-detail-content .cheditor-caption-wrapper {
+            text-align: center !important;
+            margin: 2rem 0 !important;
+            display: block !important;
+        }
+
+        #article-detail-content .cheditor-caption {
+            border: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        #article-detail-content .cheditor-caption img {
+            margin: 0 !important;
+            /* overrides the general img margin */
+            border-radius: 8px !important;
+        }
+
+        #article-detail-content .cheditor-caption-text {
+            margin: 12px 0 0 0 !important;
+            text-align: center !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 13px !important;
+            color: #888888 !important;
+            /* Subtle gray for captions */
+            font-style: italic !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+        }
+
+        /* References and Notes */
+        #article-detail-content .article-reference {
+            font-size: 13px !important;
+            color: #888888 !important;
+            text-align: right !important;
+            margin-top: 4px !important;
+            margin-bottom: 4px !important;
+        }
+
+        /* Blockquotes */
+        #article-detail-content blockquote {
+            background: transparent !important;
+            border: none !important;
+            padding: 1.5rem 2.5rem !important;
+            margin: 2rem auto !important;
+            max-width: 90% !important;
+            color: #52525b !important;
+            font-style: italic !important;
+            font-size: 1.05rem !important;
+            line-height: 1.75 !important;
+            text-align: center !important;
+            border-radius: 0 !important;
+        }
+
+        #article-detail-content blockquote p {
+            margin: 0 !important;
+            text-align: center !important;
+        }
+
+        #article-detail-content blockquote p[style*="text-align: right"],
+        #article-detail-content blockquote p[style*="text-align:right"] {
+            text-align: right !important;
+            font-size: 0.85rem !important;
+            color: #888888 !important;
+            margin-top: 0.75rem !important;
+            font-style: normal !important;
+        }
+
+        /* Subheadings */
+        #article-detail-content .article-subheading {
+            margin-top: 5rem !important;
+            /* ~4 lines of spacing above */
+            margin-bottom: 0.25rem !important;
+            /* minimal below */
+            padding-bottom: 0.5rem !important;
+            border-bottom: 1px solid #e5e7eb !important;
+        }
+
+        #article-detail-content .article-subheading span,
+        #article-detail-content .article-subheading b,
+        #article-detail-content .article-subheading strong {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+        }
+    </style>
+</head>
+
+<body>
+<svg width="0" height="0" style="position:absolute; width:0; height:0;">
+    <defs>
+        <linearGradient id="arrow-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="arrow-grad-down" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+    </defs>
+</svg>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+
+        <!-- Full-Width Mega Menu Backdrop (Controlled by JS) -->
+        <div
+            class="fixed top-[70px] left-0 w-full bg-[#111111] border-t border-[#333] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] z-[-1] mega-backdrop">
+        </div>
+
+        <div class="container mx-auto flex justify-between items-center h-full relative">
+            <div class="flex-1 flex justify-start items-center">
+                <a href="index.html#home" class="logo text-lg font-bold text-black"><span
+                        style="color: #D97706;">bread</span>me</a>
+            </div>
+            <div class="nav-menu hidden lg:flex justify-center gap-12 flex-shrink-0 shrink-0 h-full" id="navMenu">
+                <div class="flex items-center h-full"><a href="index.html#home" class="nav-link">HOME</a></div>
+
+                <!-- ABOUT Dropdown -->
+                <div class="group has-dropdown about-dropdown h-full flex items-center relative">
+                    <a href="index.html#about" class="nav-link flex items-center h-full active" style="color: #D97706;">ABOUT</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="index.html#about"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            breadme
+                        </a>
+                        <a href="career.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Career
+                        </a>
+                        <a href="qualified.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Qualified
+                        </a>
+                        <a href="enjoy.html" style="display: none !important;"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Enjoy
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECTS Dropdown -->
+                <div class="group has-dropdown h-full flex items-center relative">
+                    <a href="index.html#projects" class="nav-link flex items-center h-full">PROJECTS</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="index.html#projects"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Products
+                        </a>
+                        <a href="index.html#research"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Research
+                        </a>
+                        <a href="index.html#articles"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Articles
+                        </a>
+                        <a href="index.html#lectures"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Lectures
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center h-full"><a href="index.html#awards" class="nav-link">AWARDS</a></div>
+                <div class="flex items-center h-full"><a href="index.html#contact" class="nav-link">CONTACT</a></div>
+            </div>
+            <div class="flex-1 flex justify-end items-center gap-3">
+                <div class="hidden lg:flex gap-3">
+                    <a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded transition-colors uppercase tracking-wider">Resume</a>
+                    <a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio
+                        PDF</a>
+                </div>
+                <!-- ?モ닪?モ닪筌????flex-1 justify-end 熬곣뫖利???-->
+                <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about pt-[70px]" id="about"
+        style="background: #ffffff; text-align: center; overflow: hidden; padding-bottom: 2rem;">
+
+        <!-- Hero Block -->
+        <div
+            class="relative w-full pt-[7.5rem] pb-8 flex flex-col items-center justify-center mb-12 overflow-hidden">
+            <!-- Content -->
+            <div class="container mx-auto px-6 relative z-20 flex flex-col items-center">
+                <h2 class="font-sans tracking-tight text-zinc-900 text-[32px] md:text-[44px] leading-[1.1] font-normal mb-16 text-center"
+                    style="word-break: keep-all;">
+                    The foundation behind my product decisions.
+                </h2>
+
+                <!-- Page Contents Index (Runway Style) -->
+                <div
+                    class="flex items-center justify-center flex-wrap gap-3 md:gap-4 text-zinc-500 font-sans text-[11px] md:text-[12.5px] font-semibold uppercase tracking-[0.1em] mb-16">
+                    <span>Core Competencies</span>
+                    <span class="text-zinc-300 font-light font-sans">|</span>
+                    <span>Product Principles</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bg-white py-24 md:py-32" id="toolkit-grid">
+        <div class="container mx-auto px-6 max-w-[1200px]">
+
+            <!-- Header -->
+            <div class="text-center mb-16 md:mb-24 max-w-[800px] mx-auto flex flex-col items-center">
+                <h2
+                    class="font-sans text-zinc-900 text-[32px] md:text-[40px] tracking-tight font-medium mb-5 leading-[1.15]">
+                    Every core competency you need<br>to make anything you want.
+                </h2>
+                <p class="font-sans text-zinc-600 text-[15px] md:text-[18px] font-light leading-relaxed max-w-[650px]">
+                    Bring your entire product workflow together with access<br class="hidden md:block">to advanced
+                    conversational AI design, robust strategy, and data-driven insights.
+                </p>
+            </div>
+
+            <!-- The Tool Grid -->
+            <!-- 3 Columns for larger screens, 2 for tablets, 1 for mobile -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 max-w-[1000px] mx-auto">
+                <!-- Item 1: Domains -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Domains</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">Conversational
+                            AI Design<br>Voice UX<br>AI Contact Center<br>Chatbot</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2: Product Strategy -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Product
+                            Strategy</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">AI Product
+                            Roadmap<br>PRD & Service Architecture<br>Agile / Scrum / WBS<br>Stakeholder Management</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3: Business & Markets -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Business
+                            & Markets</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">B2B / B2G2C
+                            Models<br>Cross-border Expansion<br>Market Localization</h3>
+                    </div>
+                </div>
+
+                <!-- Item 4: Leadership -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Leadership</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">
+                            Story-telling<br>Cross-functional Collaboration<br>Cross-border Collaboration<br>Enterprise
+                            Client Communication</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5: Research & Analytics -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Research
+                            & Analytics</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">Data-Driven
+                            UX<br>Quantitative Analysis (SPSS, R, SQL)<br>Survey & Interviews</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6: Tools -->
+                <div class="flex items-start gap-4 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-zinc-50 border border-zinc-100 flex items-center justify-center shrink-0 text-zinc-800 transition-colors group-hover:bg-zinc-100 group-hover:border-zinc-200">
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span
+                            class="block font-sans text-[11px] text-zinc-400 font-bold tracking-[0.15em] uppercase mb-1.5">Tools</span>
+                        <h3 class="font-sans text-zinc-900 text-[13.5px] font-medium leading-[1.6] mb-2">LLMs (ChatGPT,
+                            Claude)<br>Figma<br>Python<br>JavaScript</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Old Expertise Section End (Superseded by Toolkit Grid) -->
+
+    <!-- Certifications Section (Runway Style) -->
+    <section class="certifications-runway bg-[#fafafa] py-24 md:py-32" id="certifications-runway">
+        <div class="container mx-auto px-6 max-w-[1400px]">
+            <!-- Header & Tabs -->
+            <div class="text-center mb-16 lg:mb-24 flex flex-col items-center">
+                <h2
+                    class="font-sans text-zinc-900 text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-10">
+                    Industry-vetted standards.<br>Certified ways to create.
+                </h2>
+
+                <!-- Horizontal Tabs (Imitating Runway) -->
+                <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3 text-sm font-sans font-semibold"
+                    id="cert-tabs">
+                    <button
+                        class="cert-tab-btn active bg-zinc-900 text-white px-4 py-2 rounded transition-colors whitespace-nowrap shadow-md"
+                        data-target="cert-ai">AI & Tools</button>
+                    <button
+                        class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap"
+                        data-target="cert-data">Data & Statistics</button>
+                    <button
+                        class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap"
+                        data-target="cert-psycho">Psychology</button>
+                    <button
+                        class="cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap"
+                        data-target="cert-lang">Languages</button>
+                </div>
+            </div>
+
+            <!-- Content Area Base -->
+            <div class="relative w-full max-w-[1100px] mx-auto min-h-[400px]" id="cert-panels-wrap">
+
+                <!-- PANEL 1: AI & Tools -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-100"
+                    id="cert-ai">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            AI & Tools
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            With solid foundations in prompt engineering and generative models, you can restyle
+                            technical products with endless possibilities. No additional onboarding or fundamental
+                            training required.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Google Generative
+                                        AI Leader</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Google</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2026</span></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">AI-POT (AI
+                                        Prompt)</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Korea Productivity Center (KPC)</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2025</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: Data & Statistics -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0"
+                    id="cert-data" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Data & Statistics
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Analyzing patterns and deriving actionable insights using rigorous statistical methods,
+                            database management, and advanced analytics frameworks.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Advanced Data
+                                        Analytics (ADsP)</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Korea Data Agency</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Mar 2024</span></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Google Analytics
+                                        Certification</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Google</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Jan 2024</span></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Computer
+                                        Specialist (Database)</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Korea Chamber of Commerce and Industry (KCCI)</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Dec 2020</span></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">Survey Analyst
+                                        Junior (SPSS)</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Ministry of Data and Statistics</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Jun 2020</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 3: Psychology -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0"
+                    id="cert-psycho" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Psychology
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Grounding user experience and product strategy in deep cognitive and behavioral psychology
+                            principles verified by national standards.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px]">General
+                                        Psychologist</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Korean Psychology Association</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Feb 2023</span></div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                                <div>
+                                    <h4 class="font-sans text-zinc-900 font-semibold mb-2 text-[17px] leading-tight">
+                                        Industrial & Organization Psychologist</h4>
+                                    <p class="font-sans text-zinc-500 text-[14px] flex items-center gap-1.5 mt-2"><svg
+                                            width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            class="stroke-current stroke-2">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        </svg> Korean Psychology Association</p>
+                                </div>
+                                <div class="sm:text-right shrink-0"><span
+                                        class="inline-block px-3 py-1.5 bg-zinc-50 border border-zinc-200 text-zinc-600 rounded-md text-[11px] font-bold tracking-widest uppercase">Dec 2021</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 4: Languages -->
+                <div class="cert-panel grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start w-full transition-opacity duration-300 opacity-0"
+                    id="cert-lang" style="display: none;">
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <h3 class="font-sans text-[26px] md:text-[32px] tracking-tight font-medium text-zinc-900 mb-4">
+                            Languages
+                        </h3>
+                        <p class="font-sans text-zinc-600 text-[15px] leading-[1.6] font-light max-w-[400px]">
+                            Navigating cross-cultural environments and driving global product expansion with advanced
+                            linguistic capabilities and cultural insights.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-7 w-full flex flex-col gap-4">
+
+                        <!-- English Block -->
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                            <!-- Header: Language Name & Level -->
+                            <div class="flex items-center gap-3 mb-5 pb-4 border-b border-zinc-100">
+                                <h4 class="font-sans text-zinc-900 font-semibold text-[18px]">English</h4>
+                                <div class="ml-auto flex items-center">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-zinc-800 text-white rounded font-sans text-[11px] font-bold tracking-widest uppercase shadow-sm">Fluent</span>
+                                </div>
+                            </div>
+
+                            <!-- Sub-items List -->
+                            <div class="flex flex-col gap-5">
+                                <!-- Item 1 -->
+                                <div class="flex flex-col">
+                                    <h5 class="font-sans text-zinc-900 font-medium text-[15px] mb-2 cursor-default">OPIc
+                                        (AM)</h5>
+                                    <div class="flex items-center justify-between">
+                                        <p class="font-sans text-zinc-500 text-[13px] flex items-center gap-1.5"><svg
+                                                width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                class="stroke-current stroke-2">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                            </svg> ACTFL</p>
+                                        <span
+                                            class="text-zinc-600 font-sans text-[11px] font-bold tracking-widest uppercase">Sep
+                                            2025</span>
+                                    </div>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div class="flex flex-col pt-5 border-t border-zinc-100/80 border-dashed">
+                                    <h5 class="font-sans text-zinc-900 font-medium text-[15px] mb-2 cursor-default">
+                                        Overseas Language Immersion</h5>
+                                    <div class="flex items-center justify-between">
+                                        <p class="font-sans text-zinc-500 text-[13px] flex items-center gap-1.5"><svg
+                                                width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                class="stroke-current stroke-2">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                            </svg> Philippines</p>
+                                        <span
+                                            class="text-zinc-600 font-sans text-[11px] font-bold tracking-widest uppercase">2007</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Korean Block -->
+                        <div
+                            class="bg-white border border-zinc-200 rounded p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 mt-1">
+                            <!-- Header: Language Name & Level -->
+                            <div class="flex items-center gap-3">
+                                <h4 class="font-sans text-zinc-900 font-semibold text-[18px]">Korean</h4>
+                                <div class="ml-auto flex items-center">
+                                    <span
+                                        class="inline-block px-3 py-1 bg-zinc-800 text-white rounded font-sans text-[11px] font-bold tracking-widest uppercase shadow-sm">Native</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Inline Tab Switching Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const tabBtns = document.querySelectorAll('.cert-tab-btn');
+                const panels = document.querySelectorAll('.cert-panel');
+
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const targetId = btn.getAttribute('data-target');
+
+                        // Reset all buttons
+                        tabBtns.forEach(b => {
+                            b.className = "cert-tab-btn text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200/50 px-4 py-2 rounded transition-colors whitespace-nowrap";
+                        });
+                        // Highlight active button
+                        btn.className = "cert-tab-btn active bg-zinc-900 text-white px-4 py-2 rounded transition-colors whitespace-nowrap shadow-md";
+
+                        // Hide all panels
+                        panels.forEach(p => {
+                            p.style.display = 'none';
+                            p.style.opacity = '0';
+                        });
+
+                        // Show target panel with reflow to trigger opacity transition
+                        const targetPanel = document.getElementById(targetId);
+                        if (targetPanel) {
+                            targetPanel.style.display = 'grid'; // Maintain grid layout
+                            void targetPanel.offsetWidth; // Force Reflow
+                            targetPanel.style.opacity = '1';
+                        }
+                    });
+                });
+            });
+        </script>
+    </section>
+
+
+    <!-- How I Work Section -->
+    <section class="how-i-work-section bg-white py-16 md:py-24" id="how-work">
+        <div class="container">
+            <div class="flex flex-col items-center text-center mb-16 md:mb-24 max-w-[1000px] mx-auto px-4">
+                <h2
+                    class="font-sans text-zinc-900 text-[32px] md:text-[40px] tracking-tight font-medium mb-5 leading-[1.15]">
+                    Core principles driving<br>
+                    next-gen AI products.
+                </h2>
+                <p class="font-sans text-zinc-600 text-[15px] md:text-[18px] font-light leading-[1.6] max-w-full mx-auto"
+                    style="word-break: keep-all;">
+                    Driving scalable product lifecycles through persuasive storytelling, empathic alignment, and
+                    relentless efficiency.<br>
+                    I unite engineering and strategy to translate ambiguous technical possibilities into user-centric
+                    realities.
+                </p>
+            </div>
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 w-full max-w-[1240px] mx-auto px-4">
+                <!-- Item 1: Persuasive Storytelling -->
+                <div
+                    class="flex flex-col bg-white border border-zinc-200 shadow-sm rounded-[16px] p-5 lg:p-6 group hover:shadow-md transition-shadow duration-300">
+                    <h3 class="font-sans text-[22px] font-medium leading-[1.2] text-zinc-900 mb-2">Persuasive
+                        Storytelling</h3>
+                    <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 shrink-0">Crafting narratives
+                        through analysis and writing. Enabling confident decision-making across teams and stakeholders
+                        through alignment-driven writing.</p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-6 mt-auto">
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Published Writing</span>
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Data Conviction</span>
+                    </div>
+
+                    <div
+                        class="w-full aspect-video rounded-[8px] overflow-hidden shrink-0 relative bg-zinc-100 border border-zinc-100/50">
+                        <img src="how_work_story_new_169.png" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Item 2: Efficiency Driven -->
+                <div
+                    class="flex flex-col bg-white border border-zinc-200 shadow-sm rounded-[16px] p-5 lg:p-6 group hover:shadow-md transition-shadow duration-300">
+                    <h3 class="font-sans text-[22px] font-medium leading-[1.2] text-zinc-900 mb-2">Efficiency-Driven
+                    </h3>
+                    <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 shrink-0">Focused on one clear goal
+                        driving it to resolution. Establishes a plan early from signals, aligns communication and
+                        resources to remove friction.</p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-6 mt-auto">
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Deliver Results</span>
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Experiment & Iterate</span>
+                    </div>
+
+                    <div
+                        class="w-full aspect-video rounded-[8px] overflow-hidden shrink-0 relative bg-zinc-100 border border-zinc-100/50">
+                        <img src="how_work_efficiency_new_169.png" class="w-full h-full object-cover ">
+                    </div>
+                </div>
+
+                <!-- Item 3: Communication Architect -->
+                <div
+                    class="flex flex-col bg-white border border-zinc-200 shadow-sm rounded-[16px] p-5 lg:p-6 group hover:shadow-md transition-shadow duration-300">
+                    <h3 class="font-sans text-[22px] font-medium leading-[1.2] text-zinc-900 mb-2">Communication
+                        Architect</h3>
+                    <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 shrink-0">Facilitating alignment
+                        through transparent systems. Automates coordination and builds rapport, enabling issues to
+                        surface early.</p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-6 mt-auto">
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Cross-functional</span>
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Psychology-informed</span>
+                    </div>
+
+                    <div
+                        class="w-full aspect-video rounded-[8px] overflow-hidden shrink-0 relative bg-zinc-100 border border-zinc-100/50">
+                        <img src="how_work_comm_new_169.png" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Item 4: Inquiry-Driven Detection -->
+                <div
+                    class="flex flex-col bg-white border border-zinc-200 shadow-sm rounded-[16px] p-5 lg:p-6 group hover:shadow-md transition-shadow duration-300">
+                    <h3 class="font-sans text-[22px] font-medium leading-[1.2] text-zinc-900 mb-2">
+                        Inquiry-Driven<br>Detection</h3>
+                    <p class="font-sans text-[13px] leading-[1.5] text-zinc-500 mb-4 shrink-0">Actively uncovering
+                        signals through inquiry. Gathers perspectives from first-hand field insights, interviews, and
+                        industry seminars.</p>
+
+                    <div class="flex flex-wrap gap-1.5 mb-6 mt-auto">
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Field-driven Insights</span>
+                        <span
+                            class="inline-block px-2.5 py-1 text-[10px] font-bold text-zinc-600 bg-zinc-50 border border-zinc-200/60 rounded-[4px] tracking-wide uppercase">Trend Analysis</span>
+                    </div>
+
+                    <div
+                        class="w-full aspect-video rounded-[8px] overflow-hidden shrink-0 relative bg-zinc-100 border border-zinc-100/50">
+                        <img src="how_work_detect_new_169.png" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Old Media Section Removed -->
+
+
+
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">??/button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic &amp; Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');">Interviews</a></li>
+                        <li><a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');">Seminars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Vision</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank"
+                            aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg></a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang"><button class="lang-btn active"><span class="lang-dot"></span>
+                        English</button><button class="lang-btn" onclick="event.preventDefault(); alert('Coming soon!');">Korean</button></div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Popup -->
+    <div id="email-popup" class="email-popup minimized"
+        style="position: fixed; top: auto; bottom: 2rem; right: 2rem; transform: none;">
+        <button class="popup-toggle" id="popupToggle" aria-label="Open Email Popup"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg></button>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 style="font-size: 16px; font-weight: 700; color: #111;">Application Materials</h3>
+                <button class="popup-minimize" id="popupMinimize" aria-label="Minimize Popup"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></button>
+            </div>
+            <p class="popup-description">Leave your email below to instantly receive the complete portfolio and resume
+                package.</p>
+            <div class="relative mt-2">
+                <form id="emailPopupForm" class="popup-form relative z-0">
+                    <input type="email" id="popupEmailInput" placeholder="Enter your email address"
+                        class="w-full bg-white border border-gray-200 text-[#111] text-[13.5px] font-sans px-5 py-2.5 focus:outline-none focus:border-gray-400 focus:shadow-sm transition-all"
+                        style="border-radius: 50px;" required>
+                    <button type="submit" class="popup-submit-btn group hover:bg-gray-50 transition-colors duration-300"
+                        style="background: #ffffff; color: #52525b; border: 1px solid #d4d4d8; border-radius: 50px;">
+                        <span style="color: #52525b; font-weight: 700;">Receive <span
+                                style="color: #D97706; font-weight: 700;" class="ml-1">bread</span><span
+                                style="color: #111111; font-weight: 700;">me</span> package</span>
+                        <svg class="send-icon transition-transform duration-500 group-hover:translate-x-1.5 group-hover:-translate-y-1.5"
+                            style="color: #111111;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                <!-- Coming Soon Overlay -->
+                <div class="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-xl pointer-events-auto"
+                    style="background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.8) 100%); backdrop-filter: blur(1px); margin: -4px;">
+                    <span class="inline-flex items-center justify-center px-4 pt-[7px] pb-[5px] rounded-full text-[11px] font-bold tracking-widest uppercase shadow-sm leading-none"
+                        style="background: #111111; color: #ffffff; border: 1px solid #333;">
+                        Coming Soon
+                    </span>
+                </div>
+            </div>
+            <div id="popupFeedback" class="popup-feedback"></div>
+        </div>
+    </div>
+
+    <script src="articles_data.js"></script>
+    <script src="article_renderer.js"></script>
+    <script src="script.js?v=4"></script>
+    <script src="how-i-work.js"></script>
+
+    <!-- Mobile Warning Popup -->
+    <div id="mobile-warning-overlay" class="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-6 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center transform scale-95 transition-transform duration-300" id="mobile-warning-modal">
+            <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center mx-auto mb-5">
+                <svg class="w-8 h-8 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <h3 class="text-[20px] font-bold text-zinc-900 mb-3 tracking-tight font-sans">Desktop Recommended</h3>
+            <p class="text-zinc-500 text-[14px] leading-relaxed mb-8 font-sans font-medium">
+                This portfolio is optimized for larger screens.<br>For the best viewing experience, we highly recommend visiting on a desktop or laptop.
+            </p>
+            <button id="mobile-warning-close" class="w-full py-3.5 bg-[#111] text-white text-[14px] font-bold rounded-xl shadow-md hover:bg-zinc-800 transition-colors font-sans tracking-wide">
+                Continue anyway
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+            const dismissed = localStorage.getItem('mobile_warning_dismissed');
+
+            if (isMobile && !dismissed) {
+                const overlay = document.getElementById('mobile-warning-overlay');
+                const modal = document.getElementById('mobile-warning-modal');
+                const closeBtn = document.getElementById('mobile-warning-close');
+                
+                overlay.classList.remove('hidden');
+                
+                requestAnimationFrame(() => {
+                    overlay.classList.remove('opacity-0');
+                    modal.classList.remove('scale-95');
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    localStorage.setItem('mobile_warning_dismissed', 'true');
+                    overlay.classList.add('opacity-0');
+                    modal.classList.add('scale-95');
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                    }, 300);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
