@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script>window.isStandalonePage = true;</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahyun Park | AI Chatbot Product Manager</title>
@@ -44,7 +45,47 @@
     <link rel="stylesheet" href="style_gradient_override.css">
     <link rel="stylesheet" href="style_media.css">
     <script>
-        window.isStandalonePage = true;
+            // [FOUC Prevention] Synchronously hide sections that don't belong to the active URL hash before DOM parses
+            (function () {
+                var hash = window.location.hash.replace('#', '') || 'home';
+                // Valid parent tabs
+                var valid = ['home', 'about', 'life', 'projects', 'research', 'articles', 'lectures', 'awards', 'contact'];
+                if (valid.indexOf(hash) === -1) {
+                    for (var key in { home: 1, about: 1, life: 1, projects: 1, research: 1, articles: 1, lectures: 1, awards: 1, contact: 1 }) {
+                        if (window.location.hash.indexOf(key) !== -1) hash = key;
+                    }
+                }
+                if (valid.indexOf(hash) === -1) hash = 'home';
+
+                var routes = {
+                    'home': ['home', 'partners', 'footprint', 'history', 'history-2', 'vision', 'contact'],
+                    'about': ['about', 'toolkit-grid', 'certifications-runway', 'how-work', 'media', 'testimonials', 'contact'],
+                    'life': ['life', 'contact'],
+                    'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products', 'contact'],
+                    'research': ['research', 'contact'],
+                    'articles': ['articles', 'contact'],
+                    'lectures': ['lectures', 'contact'],
+                    'awards': ['awards', 'contact'],
+                    'contact': ['contact']
+                };
+
+                var style = document.createElement('style');
+                style.id = 'spa-fouc-preventer';
+
+                // Build CSS to initially hide everything NOT in the active route array
+                var css = '';
+                var allSections = [].concat(routes['home'], routes['about'], routes['life'], routes['projects'], routes['research'], routes['articles'], routes['lectures'], routes['awards'], routes['contact']);
+                var activeIds = routes[hash];
+
+                for (var i = 0; i < allSections.length; i++) {
+                    if (activeIds.indexOf(allSections[i]) === -1) {
+                        css += 'section#' + allSections[i] + ' { display: none !important; }\n';
+                    }
+                }
+
+                style.innerHTML = css;
+                document.head.appendChild(style);
+            })();
     </script>
     <style>
         /* Mobile Menu Override */
@@ -183,11 +224,6 @@
 
         .navbar:has(.nav-menu.active) .mobile-toggle span {
             background: #ffffff !important;
-        }
-
-        /* Hide floating email popup when mobile menu is open */
-        .navbar:has(.nav-menu.active) ~ #email-popup {
-            display: none !important;
         }
 
         /* [Critical Fix] Ensure active/hover links stay orange when scrolled (Desktop Only) */
@@ -343,7 +379,7 @@
 
                 <!-- ABOUT Dropdown -->
                 <div class="group has-dropdown about-dropdown h-full flex items-center relative">
-                    <a href="about.html" class="nav-link flex items-center h-full active" style="color: #D97706;">ABOUT</a>
+                    <a href="about.html" class="nav-link flex items-center h-full">ABOUT</a>
 
                     <!-- Seamless Submenu Aligned to Parent -->
                     <div
@@ -394,17 +430,17 @@
                 </div>
 
                 <div class="flex items-center h-full"><a href="index.html#awards" class="nav-link">AWARDS</a></div>
-                <div class="flex items-center h-full"><a href="contact.html" class="nav-link">CONTACT</a></div>
+                <div class="flex items-center h-full"><a href="contact.html" class="nav-link active">CONTACT</a></div>
             </div>
             <div class="flex-1 flex justify-end items-center gap-3">
                 <div class="hidden lg:flex gap-3">
-                    <a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');"
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
                         class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded transition-colors uppercase tracking-wider">Resume</a>
-                    <a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');"
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
                         class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio
                         PDF</a>
                 </div>
-                <!-- ?モ닪?モ닪筌????flex-1 justify-end 熬곣뫖利???-->
+                <!-- ル∥ル∥吏????flex-1 justify-end 袁⑸즲???-->
                 <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
                     <span></span>
                     <span></span>
@@ -413,230 +449,242 @@
             </div>
         </div>
     </nav>
-    <section class="about pt-[70px]" id="about"
-        style="background: #ffffff; text-align: center; overflow: hidden; padding-bottom: 2rem;">
 
-        <!-- Video Hero Block (Runway Reference) -->
+    <!-- Dedicated Contact Page Section -->
+    <section class="relative w-full bg-white pb-24 pt-[70px] flex flex-col items-center min-h-[100vh]" id="contact"
+        >
+
+        <!-- Full-Width Banner -->
         <div
-            class="relative w-full h-[75vh] min-h-[600px] max-h-[900px] flex flex-col items-center justify-center mb-16 overflow-hidden">
-            <!-- Video Background -->
-            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
-                <source src="nahyun_imported/video_source/ABOUT_Background.mp4" type="video/mp4">
-            </video>
+            class="relative w-full h-[350px] lg:h-[500px] overflow-hidden flex flex-col items-center justify-center text-center px-4">
+            <!-- Background Image -->
+            <img src="nahyun_imported/image_source/Contact/bg.png"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+            <!-- Subtle overlay just for text legibility -->
+            <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
 
-            <!-- Dark Cinematic Overlay -->
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
-
-            <!-- Content -->
-            <div class="container mx-auto px-6 relative z-20 flex flex-col items-center">
-                <h2 class="font-sans text-white text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-6 drop-shadow-lg"
+            <div class="relative z-10 max-w-[800px]">
+                <h2 class="font-sans text-white text-[32px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium mb-6 drop-shadow-lg"
                     style="word-break: keep-all;">
-                    Designing AI as a daily staple.
+                    Please be my next colleagues!
                 </h2>
-                <p
-                    class="font-sans text-white/90 text-[16px] md:text-[18px] leading-[1.7] max-w-[800px] mx-auto font-light mb-16 drop-shadow-md">
-                    My professional handle, 'BREADME,' is derived from my childhood nickname.<br
-                        class="hidden md:block">
-                    Just as bread is a fundamental source of sustenance,<br class="hidden md:block">
-                    my mission is to make AI services accessible and essential for everyone.
+                <p class="font-sans text-white/90 text-[15px] md:text-[16px] leading-[1.6] mx-auto font-light drop-shadow-md"
+                    style="word-break: keep-all;">
+                    Open to joining teams building the next frontier of conversational AI.<br class="hidden md:block">
+                    Let's create dialogue experiences driven by deep human intent.
                 </p>
+            </div>
+        </div>
 
+        <!-- Bulletproof Spacer -->
+        <div style="width: 100%; height: 120px;" class="hidden md:block"></div>
+        <div style="width: 100%; height: 80px;" class="block md:hidden"></div>
 
+        <div class="container mx-auto w-full relative px-4 md:px-0 mb-24">
+            <!-- Restored Contact Cards (Runway Meetups Style) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-[1200px] mx-auto">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
+                    <div
+                        class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">
+                        Domain</div>
+                    <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">AI Product Management</h4>
+                    <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Conversational AI
+                        Design<br>Global AI Expansion</p>
 
-                <div class="flex justify-center">
-                    <a href="#projects"
-                        class="inline-flex items-center justify-center px-4 py-2 bg-white text-black font-semibold text-sm rounded hover:bg-zinc-200 transition-all duration-300 group">
-                        View my projects
-                        <svg class="ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                    <a href="index.html#projects"
+                        class="w-full group inline-flex items-center justify-center px-5 py-2.5 bg-white border border-gray-200 text-[#111] text-[13.5px] font-medium rounded-md shadow-[0_1px_2px_rgba(0,0,0,0.04)] hover:shadow hover:border-gray-300 transition-all mt-auto">
+                        Review Projects
+                        <svg class="ml-1.5 w-3.5 h-3.5 text-gray-400 group-hover:text-[#111] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M7 17L17 7M17 7H10M17 7V14"></path>
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
 
-        <div class="container mx-auto">
-            <div class="id-diagram-container">
-                <div class="id-root-section">
-                    <div class="id-root-label">ORIGINAL NAME</div>
-                    <div class="id-root-name">Park Nahyun</div>
-                </div>
-                <div class="id-vertical-line"></div>
-                <div class="id-pronunciation-label">PRONUNCIATION</div>
-                <div class="id-derivation-row">
-                    <div class="id-decorator-slash id-slash-left">/</div>
-                    <div class="id-decorator-slash id-slash-right">/</div>
-                    <div class="id-translation-group">
-                        <div class="id-floating-label">
-                            <div class="id-floating-badge">
-                                <span class="id-floating-text">TRANSLATED TO ENGLISH</span>
-                            </div>
-                        </div>
-                        <div class="id-dashed-line"></div>
-                        <div class="id-phonetic-part">
-                            <div class="id-phonetic-symbol">b&#x325;a&#331;</div>
-                            <div class="id-connector"></div>
-                            <div class="id-meaning">
-                                <div class="id-meaning-text">BREAD</div>
-                            </div>
-                        </div>
-                        <div class="id-phonetic-part">
-                            <div class="id-phonetic-symbol">na</div>
-                            <div class="id-connector"></div>
-                            <div class="id-meaning">
-                                <div class="id-meaning-text">ME</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="id-phonetic-part id-faded-part">
-                        <div class="id-faded-symbol">hj&#652;n</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-            <!-- Feature Block: Building Warm Conversation (Runway Reference) -->
-    <section id="media" class="w-full bg-[#0a0a0a] py-20 md:py-32">
-        <div class="container mx-auto px-4 md:px-6 flex flex-col items-center">
-            <!-- Media Container (16:9) -->
-            <div
-                class="relative w-full max-w-[1000px] aspect-[16/9] bg-[#111111] rounded-[8px] overflow-hidden mb-10 lg:mb-14 shadow-2xl border border-white/5">
-                <!-- YouTube API Managed Player for Seamless Video Splicing -->
-                <div id="ebs-yt-player" class="absolute inset-0 w-full h-full"></div>
-                <script>
-                    if (!window.YT) {
-                        var tag = document.createElement('script');
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                    }
-
-                    var ebsPlayer;
-                    var ytClipIndex = 0;
-                    var ytClips = [
-                        { start: 2230, end: 2257 }, // 37:10 ~ 37:37
-                        { start: 2295, end: 2310 }  // 38:15 ~ 38:30
-                    ];
-
-                    function onYouTubeIframeAPIReady() {
-                        ebsPlayer = new YT.Player('ebs-yt-player', {
-                            videoId: 'BQGPG91YsLo',
-                            playerVars: { 'autoplay': 1, 'mute': 1, 'controls': 1, 'rel': 0, 'playsinline': 1 },
-                            events: {
-                                'onReady': function (e) {
-                                    e.target.seekTo(ytClips[0].start);
-                                    e.target.playVideo();
-
-                                    // Custom polling loop to jump seamlessly at specific end markers
-                                    setInterval(function () {
-                                        if (ebsPlayer && ebsPlayer.getCurrentTime) {
-                                            var t = ebsPlayer.getCurrentTime();
-                                            if (t >= ytClips[ytClipIndex].end) {
-                                                ytClipIndex++;
-                                                if (ytClipIndex >= ytClips.length) ytClipIndex = 0; // Infinite loop
-                                                ebsPlayer.seekTo(ytClips[ytClipIndex].start);
-                                            }
-                                        }
-                                    }, 250);
-                                }
-                            }
-                        });
-                    }
-                </script>
-            </div>
-
-            <!-- Text Content -->
-            <div class="flex flex-col items-center text-center">
+                <!-- Card 2 -->
                 <div
-                    class="inline-block px-3 py-1 mb-5 md:mb-6 text-[9px] md:text-[10px] font-bold text-white uppercase tracking-[0.2em] border border-white/20 rounded">
-                    Featured Interview
+                    class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
+                    <div
+                        class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">
+                        Connect</div>
+                    <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Let's build something together.
+                    </h4>
+                    <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Feel free to reach
+                        out.</p>
+
+                    <div class="mt-auto w-full pt-4 border-t border-gray-100 flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/"
+                                target="_blank"
+                                class="font-sans text-[12px] text-gray-500 hover:text-black transition-colors flex items-center gap-1 group/link">
+                                View Profile <svg
+                                    class="w-3.5 h-3.5 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">Email</span>
+                            <button
+                               
+                                class="font-sans text-[12px] text-gray-500 hover:text-black transition-colors flex items-center gap-1 group/btn tracking-wide">
+                                breadme00@gmail.com <svg
+                                    class="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:scale-110"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <h2
-                    class="font-sans text-white text-[32px] md:text-[40px] lg:text-[48px] font-medium tracking-tight leading-[1.1] mb-5">
-                    Building Warm Conversation
-                </h2>
-                <p
-                    class="font-sans text-zinc-400 text-[14px] md:text-[15px] leading-[1.6] max-w-[600px] font-light mb-8">
-                    Across ages, cultures, and real-life contexts.<br>Blending psychology, field research, and product
-                    strategy to build AI people actually use.
-                </p>
-                <div class="flex justify-center">
-                    <a href="https://youtu.be/BQGPG91YsLo?t=2231" target="_blank"
-                        class="inline-flex items-center justify-center px-6 py-2.5 bg-white text-[#1a1a1a] font-sans text-[13px] font-semibold rounded hover:bg-zinc-200 transition-colors group">
-                        Watch full interview
-                        <span
-                            class="ml-1.5 translate-y-[1px] group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-transform duration-300">↗</span>
-                    </a>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-[8px] p-6 lg:p-8 flex flex-col hover:shadow-md transition-all duration-300">
+                    <div
+                        class="inline-block bg-[#f4f4f5] text-[#3f3f46] font-sans font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-6 w-max">
+                        Location</div>
+                    <h4 class="text-[17px] font-medium text-[#111] mb-2 leading-[1.3]">Seoul, Korea</h4>
+                    <p class="text-[14px] text-gray-500 font-light leading-[1.5] mb-12 flex-grow">Open to work
+                        everywhere,<br>including remote</p>
+
+                    <div class="mt-auto w-full pt-4 border-t border-gray-100 flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">Korean</span>
+                            <span class="font-sans text-[12px] text-gray-500">Native</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-sans text-[13px] font-medium text-[#111]">English</span>
+                            <span class="font-sans text-[12px] text-gray-500">Fluent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email Delivery Form (Runway style) -->
+            <div
+                class="relative w-full max-w-[1200px] mx-auto mt-12 bg-[#f9f9f9] rounded-[10px] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-24 border border-zinc-200 shadow-sm text-left">
+                <!-- Left: Copy -->
+                <div class="flex-1 flex flex-col">
+                    <p class="font-sans text-[12px] font-bold text-zinc-600 mb-6 tracking-tight uppercase">Resume &
+                        Portfolio Package</p>
+                    <h3
+                        class="font-sans text-[22px] md:text-[32px] leading-[1.15] tracking-tight font-medium text-[#111111] mb-6 pe-2">
+                        Get my full resume package<br>sent straight to your inbox.
+                    </h3>
+                    <p class="font-sans text-[15px] font-light text-[#555] leading-[1.6] mb-8 pe-4">
+                        Leave your email below to instantly receive a complete package containing my updated resume,
+                        detailed PDF portfolio, and direct links to this website and contacts so you can review them all
+                        at once.
+                    </p>
+                    <div class="font-sans mt-auto">
+                        <span class="block text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-3">Or Direct
+                            Action</span>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                                class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Resume
+                            </a>
+                            <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                                class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Portfolio PDF
+                            </a>
+                            <button
+                               
+                                class="px-4 py-2 bg-white border border-gray-200 text-[#111] text-[12px] font-bold rounded-[6px] shadow-sm hover:border-gray-300 transition-colors inline-flex items-center gap-2">
+                                <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                    </path>
+                                </svg>
+                                Copy URL
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="flex-1 relative">
+                    <form onsubmit="event.preventDefault(); alert('Request sent! Please check your inbox shortly.');"
+                        class="flex flex-col gap-8 relative z-0">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="flex flex-col gap-2 relative">
+                                <label class="font-sans text-[12.5px] font-bold text-[#111]">First Name*</label>
+                                <input type="text" required placeholder="Type your first name"
+                                    class="w-full bg-transparent border-b border-zinc-300 pb-2 text-[14px] font-light text-[#111] placeholder:text-zinc-400 focus:outline-none focus:border-amber-500 transition-colors">
+                            </div>
+                            <div class="flex flex-col gap-2 relative">
+                                <label class="font-sans text-[12.5px] font-bold text-[#111]">Last Name*</label>
+                                <input type="text" required placeholder="Type your last name"
+                                    class="w-full bg-transparent border-b border-zinc-300 pb-2 text-[14px] font-light text-[#111] placeholder:text-zinc-400 focus:outline-none focus:border-amber-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2 relative">
+                            <label class="font-sans text-[12.5px] font-bold text-[#111]">Business Email*</label>
+                            <input type="email" required placeholder="Type your business email"
+                                class="w-full bg-transparent border-b border-zinc-300 pb-2 text-[14px] font-light text-[#111] placeholder:text-zinc-400 focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+
+                        <div class="flex flex-col gap-2 relative">
+                            <label class="font-sans text-[12.5px] font-bold text-[#111]">Company*</label>
+                            <input type="text" required placeholder="Type your company name"
+                                class="w-full bg-transparent border-b border-zinc-300 pb-2 text-[14px] font-light text-[#111] placeholder:text-zinc-400 focus:outline-none focus:border-amber-500 transition-colors">
+                        </div>
+
+
+                        <div class="mt-4">
+                            <button type="submit"
+                                class="bg-white hover:bg-gray-50 border border-gray-300 text-gray-600 text-[13.5px] px-8 py-2.5 rounded-full transition-all inline-block text-center shadow-sm flex items-center justify-center mx-auto">
+                                <span style="color: #52525b; font-weight: 700;">Receive <span
+                                        style="color: #D97706; font-weight: 700;" class="ml-1">bread</span><span
+                                        style="color: #111111; font-weight: 700;">me</span> package</span>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Coming Soon Overlay -->
+                    <div class="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-xl pointer-events-auto"
+                        style="background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.8) 100%); backdrop-filter: blur(1px); margin: -12px;">
+                        <span class="inline-flex items-center justify-center px-4 pt-[7px] pb-[5px] rounded-full text-[11px] font-bold tracking-widest uppercase shadow-sm leading-none"
+                            style="background: #111111; color: #ffffff; border: 1px solid #333;">
+                            Coming Soon
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- Testimonials Section -->
-    <section class="testimonials !bg-white py-16 md:py-24" id="testimonials"
-        style="background-color: #ffffff !important;">
-        <div class="container">
-            <div class="flex flex-col items-center text-center w-full mb-12 lg:mb-16">
-                <h2
-                    class="font-sans text-zinc-900 text-[32px] md:text-[40px] tracking-tight font-medium mb-5 leading-[1.15]">
-                    Building high-trust teams<br>
-                    that deliver at scale.
-                </h2>
-                <p class="font-sans text-zinc-600 text-[15px] md:text-[18px] font-light leading-[1.6] max-w-[750px] mx-auto"
-                    style="word-break: keep-all;">
-                    Unfiltered voices from the cross-functional partners and leaders<br>
-                    who have navigated complex product journeys alongside me.
-                </p>
-            </div>
-            <div class="testimonials-container" id="testimonialsContainer">
-                <div class="testimonial-card card-gradient-1">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Nahyun-san finally made the Korea-Japan collaboration happen. Her drive and
-                        quality shocked us - and yes, all of us Japanese teammates think we should learn from her."</p>
-                    <div class="card-signature">J<span class="card-author-title">Product Lead<br>LINE WORKS Japan</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-2 active">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Things were stuck between engineering and planning, but her positive energy
-                        and communication helped reset the relationship and move the work forward.</p>
-                    <div class="card-signature">P<span class="card-author-title">Lead Product Manager<br>Naver
-                            Cloud</span></div>
-                </div>
-                <div class="testimonial-card card-gradient-3">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Working with her reduces alignment cost. Decisions happen faster because
-                        everyone understands the 'why.'</p>
-                    <div class="card-signature">O<span class="card-author-title">AI Development<br>Naver Cloud</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-5">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"From kickoff to delivery, her thoughtful comments helped organize what was
-                        needed and turn it into real outcomes."</p>
-                    <div class="card-signature">H<span class="card-author-title">Researcher<br>External Partner</span>
-                    </div>
-                </div>
-                <div class="testimonial-card card-gradient-6">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"She doesn't wait for work. She finds it - and makes sure everyone knows."</p>
-                    <div class="card-signature">L<span class="card-author-title">Senior Product Manager<br>SK
-                            Telecom</span></div>
-                </div>
-                <div class="testimonial-card card-gradient-4">
-                    <div class="card-stars">★★★★★</div>
-                    <p class="card-quote">"Her only weaknesses? She doesn't drink, doesn't like coffee, and doesn't
-                        smoke."</p>
-                    <div class="card-signature">K<span class="card-author-title">Director of AI Solution
-                            Planning<br>Naver Cloud</span></div>
-                </div>
-            </div>
-
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-body" id="modalBody"></div>
         </div>
-    </section>
+    </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-columns">
@@ -650,8 +698,8 @@
                 <div class="footer-col">
                     <h4>Learn</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');">Interviews</a></li>
-                        <li><a href="index.html#" onclick="event.preventDefault(); alert('Coming soon!');">Seminars</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Interviews</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Seminars</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -754,56 +802,9 @@
     <script src="script.js?v=4"></script>
     <script src="how-i-work.js"></script>
 
-    <!-- Mobile Warning Popup -->
-    <div id="mobile-warning-overlay" class="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-6 opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center transform scale-95 transition-transform duration-300" id="mobile-warning-modal">
-            <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center mx-auto mb-5">
-                <svg class="w-8 h-8 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-            </div>
-            <h3 class="text-[20px] font-bold text-zinc-900 mb-3 tracking-tight font-sans">Desktop Recommended</h3>
-            <p class="text-zinc-500 text-[14px] leading-relaxed mb-8 font-sans font-medium">
-                This portfolio is optimized for larger screens.<br>For the best viewing experience, we highly recommend visiting on a desktop or laptop.
-            </p>
-            <button id="mobile-warning-close" class="w-full py-3.5 bg-[#111] text-white text-[14px] font-bold rounded-xl shadow-md hover:bg-zinc-800 transition-colors font-sans tracking-wide">
-                Continue anyway
-            </button>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
-            const dismissed = localStorage.getItem('mobile_warning_dismissed');
-
-            if (isMobile && !dismissed) {
-                const overlay = document.getElementById('mobile-warning-overlay');
-                const modal = document.getElementById('mobile-warning-modal');
-                const closeBtn = document.getElementById('mobile-warning-close');
-                
-                overlay.classList.remove('hidden');
-                
-                requestAnimationFrame(() => {
-                    overlay.classList.remove('opacity-0');
-                    modal.classList.remove('scale-95');
-                });
-
-                closeBtn.addEventListener('click', () => {
-                    localStorage.setItem('mobile_warning_dismissed', 'true');
-                    overlay.classList.add('opacity-0');
-                    modal.classList.add('scale-95');
-                    setTimeout(() => {
-                        overlay.classList.add('hidden');
-                    }, 300);
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
-
 
 
 
