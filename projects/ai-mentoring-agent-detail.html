@@ -1,0 +1,2669 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>window.isStandalonePage = true;</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mentoring Agent | Nahyun Park</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'Lora', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        zinc: {
+                            50: '#fafafa',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            600: '#52525b',
+                            700: '#3f3f46',
+                            800: '#27272a',
+                            900: '#18181b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../footer_override.css">
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-zinc-200 selection:text-zinc-900">
+    <nav class="navbar" id="navbar">
+
+        <!-- Full-Width Mega Menu Backdrop (Controlled by JS) -->
+        <div
+            class="fixed top-[70px] left-0 w-full bg-[#111111] border-t border-[#333] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] z-[-1] mega-backdrop">
+        </div>
+
+        <div class="container mx-auto flex justify-between items-center h-full relative">
+            <div class="flex-1 flex justify-start items-center">
+                <a href="../index.html#home" class="logo text-lg font-bold text-black"><span
+                        style="color: #D97706;">bread</span>me</a>
+            </div>
+            <div class="nav-menu hidden lg:flex justify-center gap-12 flex-shrink-0 shrink-0 h-full" id="navMenu">
+                <div class="flex items-center h-full"><a href="../index.html#home" class="nav-link">HOME</a></div>
+
+                <!-- ABOUT Dropdown -->
+                <div class="group has-dropdown about-dropdown h-full flex items-center relative">
+                    <a href="../about.html" class="nav-link flex items-center h-full">ABOUT</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[120px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="../about.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            breadme
+                        </a>
+                        <a href="../career.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Career
+                        </a>
+                        <a href="../qualified.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Qualified
+                        </a>
+                        <a href="../enjoy.html" style="display: none !important;"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Enjoy
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECTS Dropdown -->
+                <div class="group has-dropdown h-full flex items-center relative">
+                    <a href="../projects.html" class="nav-link flex items-center h-full">PROJECTS</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="../projects.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Products
+                        </a>
+                        <a href="../research.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Research
+                        </a>
+                        <a href="../articles.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Articles
+                        </a>
+                        <a href="../lectures.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Lectures
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center h-full"><a href="../awards.html" class="nav-link">AWARDS</a></div>
+                <div class="flex items-center h-full"><a href="../contact.html" class="nav-link">CONTACT</a></div>
+            </div>
+            <div class="flex-1 flex justify-end items-center gap-3">
+                <div class="hidden lg:flex gap-3">
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded transition-colors uppercase tracking-wider">Resume</a>
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio
+                        PDF</a>
+                </div>
+                <!-- ル∥ル∥吏????flex-1 justify-end 袁⑸즲???-->
+                <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+<svg width="0" height="0" style="position:absolute; width:0; height:0;">
+    <defs>
+        <linearGradient id="arrow-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="arrow-grad-down" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+    </defs>
+</svg>
+
+
+<section class="pb-24 bg-white" id="ai-mentoring-agent-detail" style="padding-top: 12rem;">
+        <div class="container mx-auto px-4 lg:px-12 max-w-[1100px]">
+            <button onclick="window.location.href='../projects.html'"
+                class="mb-16 px-5 py-2 border border-gray-200 rounded-full hover:bg-zinc-50 text-[13px] text-zinc-600 hover:text-zinc-900 font-sans font-medium transition-colors inline-flex items-center gap-2 group">
+                <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Back to Products
+            </button>
+
+            <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch">
+                <div class="flex-1">
+                    <div class="flex items-center mb-6">
+                        <span class="text-zinc-600 text-[13px] font-medium font-sans">Mentoring CRM &middot; Kyonggi University</span>
+                    </div>
+
+                    <h1 class="font-sans text-zinc-900 text-[32px] md:text-[40px] lg:text-[48px] leading-[1.1] tracking-tight font-medium mb-6"
+                        style="word-break: keep-all;">Mentor AI Operation System</h1>
+
+
+
+                    <div class="border border-zinc-200 bg-zinc-50/30 p-6 md:p-8 rounded-[2px] max-w-[700px]">
+                        <p class="text-[14px] md:text-[15px] text-zinc-600 leading-[1.6] font-sans">
+                            <strong class="text-zinc-900 font-semibold">Director's Log:</strong> I identified user problems through mentoring, translated them into product opportunities, designed the end-to-end knowledge workflow, and validated each feature through continuous real-world use.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-[320px] shrink-0 flex flex-col justify-end gap-6 font-sans">
+                    <div class="flex flex-col border-b border-zinc-200 pb-5">
+                        <span class="text-[11px] text-zinc-400 font-bold tracking-[0.08em] uppercase mb-2">Role</span>
+                        <span class="text-[14px] text-zinc-800 font-semibold">AI Product Manager</span>
+                    </div>
+                    <div class="flex flex-col border-b border-zinc-200 pb-5">
+                        <span class="text-[11px] text-zinc-400 font-bold tracking-[0.08em] uppercase mb-2">Focus</span>
+                        <span class="text-[14px] text-zinc-800 font-semibold">AI Automation</span>
+                    </div>
+                    <div class="flex flex-col border-b border-zinc-200 pb-5">
+                        <span
+                            class="text-[11px] text-zinc-400 font-bold tracking-[0.08em] uppercase mb-2">Timeline</span>
+                        <span class="text-[14px] text-zinc-800 font-semibold">May 2026 &mdash; Jun 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Awards / Recognition -->
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12 mt-16 mb-24">
+                
+                <!-- Award 1: Kyonggi University -->
+                <div class="relative group w-full md:w-[240px]">
+                    <div class="flex items-center justify-center gap-0">
+                        <div class="w-[40px] h-[80px] bg-no-repeat bg-left mix-blend-multiply opacity-90" style="background-image: url('../images/award.png'); background-size: 200% auto;"></div>
+                        <div class="text-center pb-1 w-[130px] shrink-0">
+                            <p class="text-[10px] text-zinc-500 uppercase tracking-widest font-mono mb-1">Selected by</p>
+                            <p class="text-[14px] font-bold text-zinc-900 leading-[1.3]">Kyonggi University</p>
+                        </div>
+                        <div class="w-[40px] h-[80px] bg-no-repeat bg-right mix-blend-multiply opacity-90" style="background-image: url('../images/award.png'); background-size: 200% auto;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- New Concept Diagram Block -->
+            <style>
+                .builder-stage {
+                    position: relative;
+                    display: grid;
+                    border: none;
+                    max-width: 960px;
+                    margin: 0 auto;
+                    grid-template-columns: 1fr 160px 1fr;
+                    gap: 24px;
+                    align-items: stretch;
+                    padding: 28px;
+                    background: radial-gradient(circle at 52% 46%, rgba(232, 117, 0, 0.08), transparent 28%);
+                    overflow: hidden;
+                    margin-top: 24px;
+                }
+
+                .builder-stage::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background-image: linear-gradient(#f1f1f1 1px, transparent 1px), linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+                    background-size: 28px 28px;
+                    pointer-events: none;
+                }
+
+                .panel {
+                    position: relative;
+                    z-index: 1;
+                    border: 1px solid #e3e6ea;
+                    background: rgba(255, 255, 255, 0.92);
+                    box-shadow: 0 18px 44px rgba(32, 37, 42, 0.06);
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .panel-header {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center; gap: 8px;
+                    padding: 14px 16px;
+                    border-bottom: 1px solid #edf0f2;
+                    font-size: 12px;
+                    color: #8a8f98;
+                }
+
+                .panel-title {
+                    font-size: 13px;
+                    font-weight: 650;
+                    color: #24272d;
+                }
+
+                .input-form {
+                    padding: 18px;
+                    flex-grow: 1;
+                }
+
+                .input-group {
+                    margin-bottom: 24px;
+                }
+
+                .input-label {
+                    display: block;
+                    margin-bottom: 7px;
+                    font-size: 11px;
+                    line-height: 1;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: #9aa0a6;
+                    font-weight: 600;
+                }
+
+                .input-field {
+                    display: flex;
+                    align-items: center;
+                    height: 38px;
+                    padding: 0 12px;
+                    border: 1px solid #e5e7eb;
+                    background: #fafafa;
+                    font-size: 13px;
+                    color: #3f444b;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+
+                .link-stack {
+                    display: grid;
+                    gap: 8px;
+                }
+
+                .builder-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 42px;
+                    border: 0;
+                    background: #202124;
+                    color: #fff;
+                    font-size: 13px;
+                    font-weight: 650;
+                    margin-top: 18px;
+                }
+
+                .flow-core {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 240px;
+                }
+
+                .flow-line {
+                    position: absolute;
+                    left: -20px;
+                    right: -20px;
+                    top: 50%;
+                    height: 2px;
+                    background: linear-gradient(90deg, transparent, rgba(232, 117, 0, 0.38), transparent);
+                    -webkit-mask-image: linear-gradient(90deg, black calc(50% - 54px), transparent calc(50% - 54px), transparent calc(50% + 54px), black calc(50% + 54px));
+                    mask-image: linear-gradient(90deg, black calc(50% - 54px), transparent calc(50% - 54px), transparent calc(50% + 54px), black calc(50% + 54px));
+                }
+
+                .ai-node {
+                    width: 104px;
+                    height: 104px;
+                    border-radius: 999px;
+                    display: grid;
+                    place-items: center;
+                    background:
+                        radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.9), rgba(232, 117, 0, 0.18) 38%, rgba(32, 37, 42, 0.08) 100%);
+                    border: 1px solid rgba(232, 117, 0, 0.22);
+                    box-shadow: 0 18px 40px rgba(232, 117, 0, 0.14);
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: #e87500;
+                    letter-spacing: 0.06em;
+                }
+
+                .flow-caption {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: 68px;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 12px;
+                    color: #8a8f98;
+                    line-height: 1.5;
+                }
+
+                .storefront {
+                    display: block;
+                    min-height: 310px;
+                    background: #ffffff;
+                    flex-grow: 1;
+                }
+
+                .store-banner {
+                    position: relative;
+                    height: 92px;
+                    background:
+                        linear-gradient(135deg, rgba(232, 117, 0, 0.14), transparent 44%),
+                        linear-gradient(135deg, #f6eadb, #f8f4ed 46%, #dfe7ef);
+                    overflow: hidden;
+                }
+
+                .store-banner::before {
+                    content: "";
+                    position: absolute;
+                    left: 18px;
+                    right: 18px;
+                    bottom: 14px;
+                    height: 44px;
+                    background: linear-gradient(135deg, #2b2d35, #5b453d 62%, #e87500);
+                    box-shadow: 0 10px 24px rgba(32, 37, 42, 0.16);
+                }
+
+                .store-banner::after {
+                    content: "NOA STUDIO";
+                    position: absolute;
+                    left: 28px;
+                    bottom: 46px;
+                    font-size: 9px;
+                    line-height: 1;
+                    letter-spacing: 0.12em;
+                    color: rgba(255, 255, 255, 0.78);
+                    font-weight: 650;
+                }
+
+                .store-banner.secondary {
+                    height: 56px;
+                    margin-top: 12px;
+                    opacity: 0.92;
+                }
+
+                .store-banner.secondary::before {
+                    height: 28px;
+                    bottom: 10px;
+                }
+
+                .store-banner.secondary::after {
+                    bottom: 30px;
+                }
+
+                .video-link-card {
+                    display: grid;
+                    grid-template-columns: 56px 1fr auto;
+                    gap: 10px;
+                    align-items: center;
+                    padding: 10px;
+                    border: 1px solid #e5e7eb;
+                    background: #fafafa;
+                    margin-top: 12px;
+                }
+
+                .video-mini-thumb {
+                    position: relative;
+                    height: 42px;
+                    background: linear-gradient(135deg, #292b31, #5a4638 58%, #e87500);
+                }
+
+                .video-mini-thumb::after {
+                    content: "▶";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 999px;
+                    display: grid;
+                    place-items: center;
+                    background: rgba(255, 255, 255, 0.88);
+                    color: #e87500;
+                    font-size: 10px;
+                }
+
+                .store-content {
+                    padding: 14px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                .creator-row {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 2px;
+                }
+
+                .hopzie-avatar {
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background: linear-gradient(135deg, #f4d9bb, #e87500);
+                    display: grid;
+                    place-items: center;
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #fff;
+                }
+
+                .creator-name {
+                    font-size: 14px;
+                    font-weight: 650;
+                    color: #24272d;
+                }
+
+                .creator-sub {
+                    font-size: 12px;
+                    color: #8a8f98;
+                    margin-top: 2px;
+                }
+
+                .video-title {
+                    font-size: 12px;
+                    color: #4b515a;
+                    line-height: 1.4;
+                }
+
+                .product-row {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 8px;
+                }
+
+                .product-item {
+                    border: 1px solid #e5e7eb;
+                    background: #fff;
+                    padding: 10px;
+                    min-height: 90px;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 12px;
+                }
+
+                .product-img {
+                    height: 52px;
+                    background: #f0f1f3;
+                    margin-bottom: 10px;
+                    border-radius: 6px;
+                }
+
+                .product-img.skincare {
+                    background: linear-gradient(135deg, #fff5ed, #e8d3c1);
+                }
+
+                .product-img.makeup {
+                    background: linear-gradient(135deg, #f4d0c7, #d8907d);
+                }
+
+                .product-img.fashion {
+                    background: linear-gradient(135deg, #dfe7ef, #aeb9c5);
+                }
+
+                .product-title {
+                    font-size: 10px;
+                    font-weight: 500;
+                    color: #202124;
+                    margin-bottom: 8px;
+                    line-height: 1.3;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    flex-grow: 1;
+                }
+
+                .product-meta {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: auto;
+                }
+
+                .product-source {
+                    display: inline-flex;
+                    padding: 4px 6px;
+                    border-radius: 999px;
+                    background: #f3f4f6;
+                    font-size: 9px;
+                    line-height: 1;
+                    color: #7a8089;
+                }
+
+                .product-price {
+                    font-size: 10px;
+                    font-weight: 650;
+                    color: #202124;
+                }
+
+                .concept-note {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 12px;
+                    margin-top: 24px;
+                }
+
+                .note-card {
+                    padding: 16px;
+                    border: 1px solid #e5e7eb;
+                    background: #fafafa;
+                }
+
+                .note-value {
+                    display: block;
+                    margin-bottom: 6px;
+                    font-size: 15px;
+                    font-weight: 650;
+                    color: #23262c;
+                }
+
+                .note-label {
+                    display: block;
+                    font-size: 12px;
+                    line-height: 1.55;
+                    color: #737982;
+                }
+
+                @media (max-width: 980px) {
+                    .builder-stage {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .flow-core {
+                        min-height: 120px;
+                    }
+
+                    .flow-line {
+                        display: none;
+                    }
+
+                    .concept-note {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                /* Safari Window Mockup */
+                .safari-window {
+                    background: #ffffff;
+                    border-radius: 12px;
+                    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05);
+                    overflow: hidden;
+                    width: 100%;
+                    max-width: 720px;
+                    margin: 0 auto;
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                }
+
+                .safari-header {
+                    background: #f1f1f1;
+                    height: 44px;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 16px;
+                    border-bottom: 1px solid #e5e5e5;
+                    position: relative;
+                }
+
+                .safari-dots { display: flex; align-items: center; gap: 4px; }
+
+                .safari-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+                .safari-dot.red {
+                    background: #ff5f56;
+                    border: 1px solid #e0443e;
+                }
+
+                .safari-dot.yellow {
+                    background: #ffbd2e;
+                    border: 1px solid #dea123;
+                }
+
+                .safari-dot.green {
+                    background: #27c93f;
+                    border: 1px solid #1aab29;
+                }
+
+                .safari-url-bar {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background: #ffffff;
+                    border-radius: 6px;
+                    height: 28px;
+                    width: 50%;
+                    max-width: 300px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 13px;
+                    color: #555;
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                    border: 1px solid #dfdfdf;
+                }
+
+                .safari-url-bar svg {
+                    width: 12px;
+                    height: 12px;
+                    margin-right: 6px;
+                    color: #888;
+                }
+
+                .safari-content-wrap {
+                    background: #f9fafb;
+                    padding: 40px 20px;
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+
+            <div class="text-center mt-48 mb-8 font-sans">
+                <h3 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">
+                    Mentors only focus on teaching.<br>
+                    <span class="text-black font-normal">AI organizes the rest.</span>
+                </h3>
+            </div>
+
+                        <!-- Tab Navigation -->
+            <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4 mb-8 font-sans" id="mentoring-tabs">
+                  <button
+                      class="mentoring-tab-btn active px-5 py-2 bg-black text-white rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-learner-memory">
+                      Learner Memory
+                  </button>
+                  <button
+                      class="mentoring-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-session-tracking">
+                      Workflow Automation
+                  </button>
+                  <button
+                      class="mentoring-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-meeting-parsing">
+                      Meeting Parsing
+                  </button>
+                  <button
+                      class="mentoring-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-insight-extraction">
+                      Insight Extraction
+                  </button>
+                  <button
+                      class="mentoring-tab-btn px-5 py-2 text-zinc-500 hover:bg-gray-100 hover:text-zinc-900 rounded-full text-[13px] md:text-[14px] font-semibold tracking-tight transition-colors"
+                      data-target="tab-teaching-retrospective">
+                      Memoirs
+                  </button>
+            </div>
+
+            <!-- Tab Content: Storefront -->
+            <div id="tab-learner-memory" class="mentoring-tab-content block mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_560px] gap-8 md:gap-16 items-start">
+                        <div class="concept-note"
+                            style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+
+                            <div class="mb-8 font-sans">
+                                <h3
+                                    class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Learner Context Memory
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Preserve learner backgrounds, assignments, and mentoring history across multiple sessions.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">personalized guidance</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">learning continuity</span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+<div class="vertical-automation-mockup">
+  <style>
+    .vertical-automation-mockup {
+      width: 100%;
+      max-width: 760px;
+      padding: 24px;
+      border-radius: 28px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .flow-step {
+      margin-bottom: 16px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #2f3542;
+    }
+
+    .step-title span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9aa3b2;
+    }
+
+    .mock-card {
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.06);
+      overflow: hidden;
+    }
+
+    .email-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+    }
+
+    .email-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .email-count {
+      margin-left: 6px;
+      font-size: 12px;
+      color: #9aa3b2;
+      font-weight: 600;
+    }
+
+    .email-actions {
+      display: flex;
+      gap: 12px;
+      color: #8a94a6;
+      font-size: 14px;
+    }
+
+    .email-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.05);
+      background: #fff;
+    }
+
+    .email-item.active {
+      background: #f7f9ff;
+    }
+
+    .email-avatar {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5ff;
+      color: #5b6ee1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .email-content {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .email-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .sender {
+      font-size: 13px;
+      font-weight: 800;
+      color: #222936;
+    }
+
+    .time {
+      font-size: 11px;
+      color: #9aa3b2;
+      white-space: nowrap;
+    }
+
+    .subject {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+      color: #7aa7f7;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .parse-card {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 12px 32px rgba(20, 24, 40, 0.05);
+    }
+
+    .parse-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #f1f5ff;
+      color: #5364d8;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .notion-card {
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.05);
+      overflow: hidden;
+    }
+
+    .notion-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 850;
+      color: #222936;
+      margin-bottom: 9px;
+    }
+
+    .view-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: #f0f0f0;
+      font-size: 10px;
+      font-weight: 600;
+      color: #5f6673;
+    }
+
+    .notion-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+    }
+
+    .notion-table th {
+      text-align: left;
+      padding: 8px 8px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.08);
+      color: #7b8494;
+      font-weight: 700;
+    }
+
+    .notion-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+      color: #303642;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #e6f4ea;
+      color: #3b7f45;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status.top {
+      background: #e8f2ff;
+      color: #2f6fb6;
+    }
+
+    @media (max-width: 640px) {
+      .vertical-automation-mockup {
+        padding: 16px;
+      }
+
+      .parse-card {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .notion-table {
+        font-size: 10px;
+      }
+    }
+  </style>
+
+  <div class="flow-step">
+    <div class="step-title">1. Email <span>Gemini notes</span></div>
+
+    <div class="mock-card" style="zoom: 0.75; transform-origin: top center;">
+      <div class="email-toolbar">
+        <div>
+          <span class="email-title">Inbox</span>
+          <span class="email-count">3</span>
+        </div>
+        <div class="email-actions">□ ↻ ⋮</div>
+      </div>
+
+      <div class="email-item active">
+        <div class="email-avatar">✦</div>
+        <div class="email-content">
+          <div class="email-top">
+            <span class="sender">Gemini</span>
+            <span class="time" style="color: #7b8494;">10:42 AM<span style="color:#5c7aff; margin-left:4px; font-size:10px;">●</span></span>
+          </div>
+          <div class="subject">Meeting Notes: "Service Planning_1:1 Session"</div>
+        </div>
+      </div>
+
+      <div class="email-item">
+        <div class="email-avatar">✦</div>
+        <div class="email-content">
+          <div class="email-top">
+            <span class="sender">Gemini</span>
+            <span class="time" style="color: #7b8494;">Yesterday</span>
+          </div>
+          <div class="subject">Meeting Notes: "AI Scenario Review"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+      <defs>
+        <linearGradient id="auto-arrow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+          <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+        </linearGradient>
+      </defs>
+      <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="flow-step">
+    <div class="step-title">2. AI Parse <span>key fields</span></div>
+
+    <div class="parse-card">
+      <div class="parse-chip">Student</div>
+      <div class="parse-chip">Session</div>
+      <div class="parse-chip">Summary</div>
+      <div class="parse-chip">Tasks</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">
+    <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+      <defs>
+        <linearGradient id="auto-arrow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#9baaff" />
+          <stop offset="100%" stop-color="#5b6ee1" />
+        </linearGradient>
+      </defs>
+      <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="flow-step">
+    <div class="step-title">3. Notion <span>Learner Memory</span></div>
+
+    <div class="notion-card">
+      <div class="notion-title">🧠 Learner Memory</div>
+
+
+      <table class="notion-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Student</th>
+            <th style="width: 22%;">Background</th>
+            <th style="width: 18%;">Status</th>
+            <th style="width: 18%;">Sessions</th>
+            <th>Next Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lee Min-su</td>
+            <td>Humanities</td>
+            <td><span class="status">Active</span></td>
+            <td>1st, 2nd</td>
+            <td>UX Research</td>
+          </tr>
+          <tr>
+            <td>Park Ji-hoon</td>
+            <td>Mechanical Eng.</td>
+            <td><span class="status">Active</span></td>
+            <td>1st, 2nd</td>
+            <td>Planning</td>
+          </tr>
+          <tr>
+            <td>Choi Yoo-jin</td>
+            <td>Public Admin.</td>
+            <td><span class="status top">Top</span></td>
+            <td>1st, 2nd</td>
+            <td>AI Scenario</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+
+            <!-- Tab Content: Building -->
+            <div id="tab-session-tracking" class="mentoring-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_640px] gap-8 md:gap-16 items-start">
+                        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+
+                            <div class="mb-8 font-sans">
+                                <h3
+                                    class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Automated Mentoring Operations
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Automatically collect meeting notes from Gmail, process mentoring records, and update CRM databases through UI.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">process automation</span>
+                                    <span
+                                        class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">flexible workflow</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        
+                        <div class="safari-window shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-zinc-200" style="margin: 0; max-width: 100%; border-radius: 12px; overflow: hidden;">
+                            <div class="safari-content-wrap" style="padding: 0; background: #f9fafb;">
+                                <iframe src="../mentoring_agent_mockup.html" scrolling="no" style="width: 100%; aspect-ratio: auto; height: 690px; border: none; display: block; border-radius: 12px;" title="Mentoring CRM Dashboard"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End tab-building -->
+
+            <!-- Tab Content: Commission -->
+            <!-- Tab Content: Meeting Parsing -->
+            <div id="tab-meeting-parsing" class="mentoring-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_560px] gap-8 md:gap-16 items-start">
+                        <div class="concept-note"
+                            style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Direct Meeting Parsing
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Instantly process raw meeting transcripts or offline notes by simply pasting them into the editor. AI automatically extracts key takeaways, assignments, and context.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">instant analysis</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">context extraction</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mockup-container" style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
+                            <!-- Editor Popup Mockup -->
+                            <div class="mock-card" style="padding: 0; background: #fff; border-radius: 16px; border: 1px solid rgba(20,24,40,0.08); box-shadow: 0 20px 50px rgba(0,0,0,0.1); display: flex; flex-direction: column; width: 100%; overflow: hidden; font-family: 'Inter', sans-serif;">
+                                
+                                <!-- Modal Header -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #f1f5f9; background: #f8fafc;">
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"><svg style="width: 100%; height: 100%;" viewBox="0 0 120 120" style="width: 100%; height: 100%; object-fit: contain;" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <mask id="hole-mask">
+                                                <rect width="120" height="120" fill="white"></rect>
+                                                <circle cx="25" cy="38" r="9" fill="black"></circle>
+                                                <circle cx="25" cy="62.5" r="9" fill="black"></circle>
+                                                <circle cx="25" cy="87" r="9" fill="black"></circle>
+                                            </mask>
+                                        </defs>
+                                        <g mask="url(#hole-mask)">
+                                            <path d="M 40 20 L 85 20 A 15 15 0 0 1 100 35 L 100 75 L 70 105 L 40 105 A 15 15 0 0 1 25 90 L 25 35 A 15 15 0 0 1 40 20 Z" fill="#e0e7ff"></path>
+                                            <path d="M 25 20 L 45 20 L 45 105 L 25 105 Z" fill="#c7d2fe" opacity="0.8"></path>
+                                        </g>
+                                        <path d="M 100 75 L 85 75 A 15 15 0 0 0 70 90 L 70 105 Z" fill="#818cf8"></path>
+                                    </svg></div>
+                                        <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Direct Entry Editor</div>
+                                    </div>
+                                    <div style="color: #94a3b8; font-size: 18px; font-weight: 300; cursor: pointer;">&times;</div>
+                                </div>
+                                <!-- Stepper (Step 1 Active) -->
+                                <div style="padding: 16px 20px 0; display: flex; flex-direction: column; align-items: center; background: #ffffff;">
+                                    <div style="display: flex; align-items: flex-start; width: 80%; position: relative;">
+        <div style="position: absolute; top: 12px; left: 10%; right: 10%; height: 2px; background: #e2e8f0; z-index: 1;"></div>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 50%; z-index: 2;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: #5364d8; color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 8px; border: 2px solid white; box-shadow: 0 0 0 1px #5364d8;">1</div>
+            <div style="font-size: 11px; font-weight: 700; color: #1e293b; margin-bottom: 12px;">Input &amp; Analysis</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 50%; z-index: 2;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: #f8fafc; color: #94a3b8; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 8px; border: 2px solid white; box-shadow: 0 0 0 1px #e2e8f0;">2</div>
+            <div style="font-size: 11px; font-weight: 600; color: #94a3b8; margin-bottom: 12px;">Review &amp; Execute</div>
+        </div>
+    </div>
+                                </div>
+
+                                <!-- Textarea Area -->
+                                <div style="padding: 20px; background: #ffffff;">
+                                    <div style="font-size: 12px; font-weight: 600; color: #64748b; margin-bottom: 8px;">Paste Raw Transcript / Notes</div>
+                                    <div style="width: 100%; height: 145px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; color: #475569; font-size: 11px; line-height: 1.6; font-family: 'Inter', monospace; overflow: hidden; position: relative;">
+    <span style="color: #3b82f6;">[10:02] Alex:</span> "I struggled a bit with setting up the AWS architecture for the deployment part..."<br><br>
+    <span style="color: #ef4444;">[10:04] Mentor:</span> "That's totally normal. Let's look at your VPC config first. Did you configure the subnets?"<br><br>
+    <span style="color: #3b82f6;">[10:05] Sarah_kh university:</span> "Ah, I missed the private subnet routing."<br>
+    <span style="color: #ef4444;">[10:07] Mentor:</span> "Let's check your security groups as well then."
+    <!-- Gradient Fade at bottom of text -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(to bottom, transparent, #f8fafc);"></div>
+</div>
+                                </div>
+
+                                <!-- Parse Button -->
+                                <div style="padding: 0 20px 20px; display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="font-size: 11px; color: #94a3b8;">Format: Text, Markdown, or Meet Transcript</div>
+                                    <div style="padding: 10px 20px; background: #f1f5ff; color: #5364d8; font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(31,41,55,0.2);">
+                                        Parse with Gemini
+                                    </div>
+                                </div>
+
+                            </div>
+<!-- Arrow pointing down -->
+<div style="display: flex; justify-content: center; margin: 16px 0;">
+    <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
+        <defs>
+            <linearGradient id="arrow-grad-meeting2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#9baaff" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1"/>
+            </linearGradient>
+        </defs>
+        <path d="M12 0 V36 M4 28 L12 36 L20 28" stroke="url(#arrow-grad-meeting2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+
+<!-- Step 2 Card -->
+<div class="mock-card" style="padding: 0; background: #fff; border-radius: 16px; border: 1px solid rgba(20,24,40,0.08); box-shadow: 0 20px 50px rgba(0,0,0,0.1); display: flex; flex-direction: column; width: 100%; overflow: hidden; font-family: 'Inter', sans-serif;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #f1f5f9; background: #f8fafc;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+                <svg style="width: 100%; height: 100%;" viewBox="0 0 120 120" style="object-fit: contain;" xmlns="http://www.w3.org/2000/svg"><defs><mask id="hole-mask"><rect width="120" height="120" fill="white"></rect><circle cx="25" cy="38" r="9" fill="black"></circle><circle cx="25" cy="62.5" r="9" fill="black"></circle><circle cx="25" cy="87" r="9" fill="black"></circle></mask></defs><g mask="url(#hole-mask)"><path d="M 40 20 L 85 20 A 15 15 0 0 1 100 35 L 100 75 L 70 105 L 40 105 A 15 15 0 0 1 25 90 L 25 35 A 15 15 0 0 1 40 20 Z" fill="#e0e7ff"></path><path d="M 25 20 L 45 20 L 45 105 L 25 105 Z" fill="#c7d2fe" opacity="0.8"></path></g><path d="M 100 75 L 85 75 A 15 15 0 0 0 70 90 L 70 105 Z" fill="#818cf8"></path></svg>
+            </div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f172a;">Direct Entry Editor</div>
+        </div>
+        <div style="color: #94a3b8; font-size: 18px; font-weight: 300; cursor: pointer;">&times;</div>
+    </div>
+    <div style="padding: 16px 20px 0; display: flex; flex-direction: column; align-items: center; background: #ffffff;">
+        <div style="display: flex; align-items: flex-start; width: 80%; position: relative;">
+        <div style="position: absolute; top: 12px; left: 10%; right: 10%; height: 2px; background: #5364d8; z-index: 1;"></div>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 50%; z-index: 2;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: #10b981; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; margin-bottom: 8px; border: 2px solid white; box-shadow: 0 0 0 1px #10b981;">&#10003;</div>
+            <div style="font-size: 11px; font-weight: 600; color: #64748b; margin-bottom: 12px;">Input &amp; Analysis</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 50%; z-index: 2;">
+            <div style="width: 24px; height: 24px; border-radius: 50%; background: #5364d8; color: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-bottom: 8px; border: 2px solid white; box-shadow: 0 0 0 1px #5364d8;">2</div>
+            <div style="font-size: 11px; font-weight: 700; color: #1e293b; margin-bottom: 12px;">Review &amp; Execute</div>
+        </div>
+    </div>
+    </div>
+    <div style="padding: 24px 20px 20px; background: #ffffff;">
+        <div style="font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 16px;">Please correct names if parsed incorrectly or if there are duplicates.</div>
+                        <div style="margin-bottom: 16px; padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Student 1</div>
+                <div style="font-size: 12px; font-weight: 600; color: #ef4444; cursor: pointer;">Remove</div>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #64748b; margin-bottom: 4px;">Name</div>
+                <div style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700; color: #0f172a; background: #ffffff;">Alex</div>
+            </div>
+            <div>
+                <div style="font-size: 11px; font-weight: 600; color: #64748b; margin-bottom: 4px;">Parsed Text</div>
+                <div style="width: 100%; height: 55px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; color: #334155; font-size: 11px; line-height: 1.6; font-family: 'Inter', monospace; overflow: hidden; position: relative;">
+    <span style="color: #3b82f6;">[10:02] Alex:</span> "I struggled a bit with setting up the AWS architecture for the deployment part..."<br><br>
+    <span style="color: #ef4444;">[10:04] Mentor:</span> "That's totally normal. Let's look at your VPC config first. Did you configure the subnets?"<br><br>
+    <span style="color: #3b82f6;">[10:05] Alex:</span> "Let me double check..."
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 25px; background: linear-gradient(to bottom, transparent, #ffffff);"></div>
+</div>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 16px; padding: 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Student 2</div>
+                <div style="font-size: 12px; font-weight: 600; color: #ef4444; cursor: pointer;">Remove</div>
+            </div>
+            <div style="margin-bottom: 12px;">
+                <div style="font-size: 11px; font-weight: 600; color: #64748b; margin-bottom: 4px;">Name</div>
+                <div style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; font-weight: 700; color: #0f172a; background: #ffffff;">Sarah</div>
+            </div>
+            <div>
+                <div style="font-size: 11px; font-weight: 600; color: #64748b; margin-bottom: 4px;">Parsed Text</div>
+                <div style="width: 100%; height: 55px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; color: #334155; font-size: 11px; line-height: 1.6; font-family: 'Inter', monospace; overflow: hidden; position: relative;">
+    <span style="color: #3b82f6;">[10:05] Sarah_kh university:</span> "Ah, I missed the private subnet routing."<br>
+    <span style="color: #ef4444;">[10:07] Mentor:</span> "No problem, you can easily attach it in the console."
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 25px; background: linear-gradient(to bottom, transparent, #ffffff);"></div>
+</div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 0 20px 20px; display: flex; flex-direction: column; gap: 8px;">
+        <div style="width: 100%; padding: 12px; background: #f1f5ff; color: #5364d8; font-size: 13px; font-weight: 700; border-radius: 8px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s ease;">
+            Execute &amp; Save to Notion (Step 2)
+        </div>
+        <div style="width: 100%; padding: 12px; background: #ffffff; color: #64748b; font-size: 13px; font-weight: 600; border-radius: 8px; border: 1px solid #e2e8f0; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: all 0.2s ease;">
+            &larr; Back
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-insight-extraction" class="mentoring-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_560px] gap-8 md:gap-16 items-start">
+                        <div class="concept-note"
+                            style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+
+                            <div class="mb-8 font-sans">
+                                <h3
+                                    class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Mentor Insight Extraction
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Transform mentoring conversations into reusable product planning insights.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">knowledge capture</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+<div class="insight-final-mockup vertical-automation-mockup">
+  <style>
+    .insight-final-mockup {
+      width: 100%;
+      max-width: 560px;
+      padding: 24px;
+      border-radius: 28px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .insight-flow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step {
+      margin-bottom: 0px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #2f3542;
+    }
+
+    .mock-card {
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.06);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+    }
+
+    .meeting-card {
+      padding: 14px;
+      background: #f8fafc;
+    }
+
+    .meeting-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      padding: 0 4px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #374151;
+    }
+
+    .live-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #eef8f1;
+      color: #3b7f45;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .meeting-people {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      height: 140px;
+    }
+
+    .person-tile {
+      position: relative;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .person-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #eef2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .person-avatar.mentor {
+      background: #f4f4f5;
+    }
+
+    .person-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: #4b5563;
+    }
+
+    .meeting-controls {
+      position: absolute;
+      bottom: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .control-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(31, 41, 55, 0.08);
+    }
+
+    .cluster-card {
+      padding: 16px;
+    }
+
+    .cluster-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 850;
+      color: #222936;
+    }
+
+    .cluster-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f1f5ff;
+      color: #5364d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .cluster-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cluster-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 15px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.06);
+      font-size: 12px;
+      font-weight: 800;
+      color: #303642;
+    }
+
+    .cluster-count {
+      font-size: 10px;
+      font-weight: 800;
+      color: #9aa3b2;
+    }
+
+    .notion-card {
+      padding: 16px 18px;
+    }
+
+    .notion-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 850;
+      color: #222936;
+      margin-bottom: 9px;
+    }
+
+    .view-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: #f0f0f0;
+      font-size: 10px;
+      font-weight: 600;
+      color: #5f6673;
+    }
+
+    .insight-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+    }
+
+    .insight-table th {
+      text-align: left;
+      padding: 8px 7px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.08);
+      color: #7b8494;
+      font-weight: 800;
+    }
+
+    .insight-table td {
+      padding: 9px 7px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+      color: #303642;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .insight-name {
+      font-weight: 800;
+      color: #222936;
+    }
+
+    .guidance {
+      color: #5f6673;
+    }
+  </style>
+
+  <div class="insight-flow">
+    <div class="flow-step">
+      <div class="step-title">1. Mentoring Session <span>Google Meet</span></div>
+      <div class="mock-card meeting-card">
+        <div class="meeting-top">
+          <span>Mentoring Call</span>
+          <span class="live-chip">LIVE</span>
+        </div>
+
+        <div class="meeting-people">
+          <div class="person-tile" style="background-image: url('../assets/video_call_student_style.png'); background-size: cover; background-position: top center; border: none; overflow: hidden; align-items: flex-start; justify-content: flex-end; padding: 10px;">
+            <div class="person-label" style="background: rgba(0,0,0,0.5); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px);">Student</div>
+          </div>
+
+          <div class="person-tile" style="background-image: url('../assets/video_call_mentor_style.png'); background-size: cover; background-position: center 15%; border: none; overflow: hidden; align-items: flex-start; justify-content: flex-end; padding: 10px;">
+            <div class="person-label" style="background: rgba(0,0,0,0.5); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(4px);">Mentor</div>
+
+            <div class="meeting-controls" style="position: absolute; bottom: 10px; right: 10px; display: flex; gap: 6px;">
+              <span class="control-dot" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(4px);"></span>
+              <span class="control-dot" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(4px);"></span>
+              <span class="control-dot" style="background: rgba(255,255,255,0.25); backdrop-filter: blur(4px);"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">
+      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+        <defs>
+          <linearGradient id="auto-arrow-grad-insight1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+            <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad-insight1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-title">2. AI Clustering <span>Insight Categories</span></div>
+      <div class="parse-card">
+        <div class="parse-chip">Career Path</div>
+        <div class="parse-chip">Attitude</div>
+        <div class="parse-chip">Practice</div>
+        <div class="parse-chip">Feedback</div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">
+      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+        <defs>
+          <linearGradient id="auto-arrow-grad-insight2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+            <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad-insight2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-title">3. Notion <span>Mentor Insights</span></div>
+      <div class="mock-card notion-card">
+        <div class="notion-title">🧠 Insight Library</div>
+        <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+          <div style="padding: 4px 10px; border-radius: 999px; background: transparent; color: #7b8494; font-size: 11px; font-weight: 600;">Career Path</div>
+          <div style="padding: 4px 10px; border-radius: 999px; background: transparent; color: #7b8494; font-size: 11px; font-weight: 600;">Learning Attitude</div>
+          <div style="padding: 4px 10px; border-radius: 999px; background: #f0f0f0; color: #222936; font-size: 11px; font-weight: 700;">Planning Practice</div>
+          <div style="padding: 4px 10px; border-radius: 999px; background: transparent; color: #7b8494; font-size: 11px; font-weight: 600;">Course Feedback</div>
+        </div>
+
+        <table class="insight-table">
+          <thead>
+            <tr>
+              <th style="width: 38%;">Insight</th>
+              <th>Generated Guidance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="insight-name">AI Scenario Design</td>
+              <td class="guidance">Focus on edge cases and handoff logic.</td>
+            </tr>
+            <tr>
+              <td class="insight-name">Documentation</td>
+              <td class="guidance">Separate main flow and exception flow.</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+
+        </div>
+            <!-- Tab Content: Resilience -->
+            <div id="tab-teaching-retrospective" class="mentoring-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+                        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    AI-generated Memoirs
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Summarize mentoring outcomes and key lessons from an entire course, while also extracting actionable professional insights for your career.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">reflective practice</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">continuous improvement</span>
+                                </div>
+                            </div>
+                        </div>
+
+                                                                        <div class="mockup-container" style="width: 100%; display: flex; flex-direction: column; gap: 10px;">
+                            
+                            <!-- Step 3 Card -->
+                            <div style="width: 100%; background: #f8fafc; border-radius: 10px; padding: 12px; border: 1px solid #e2e8f0; color: #1e293b; font-family: 'Inter', sans-serif;">
+                                <div style="font-size: 8.5px; font-weight: 700; color: #64748b; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+                                    STEP 3. ANALYSIS & REPORT
+                                    <div style="height: 1px; background: #e2e8f0; flex-grow: 1;"></div>
+                                </div>
+                                
+                                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+                                    <div style="display: flex; gap: 10px; align-items: center;">
+                                        <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 120 120" style="width:100%; height:100%;">
+    <rect x="15" y="15" width="90" height="90" rx="15" fill="#f8fafc" stroke="#e2e8f0" stroke-width="4"></rect>
+    <rect x="32" y="65" width="14" height="25" rx="3" fill="#e0e7ff"></rect>
+    <rect x="53" y="45" width="14" height="45" rx="3" fill="#c7d2fe"></rect>
+    <rect x="74" y="25" width="14" height="65" rx="3" fill="#818cf8"></rect>
+</svg></div>
+                                        <div>
+                                            <div style="font-size: 11.5px; font-weight: 700; color: #0f172a;">Summarize Insights</div>
+                                            <div style="font-size: 9.5px; color: #64748b; font-family: monospace;">summarize_insights.py</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="font-size: 9.5px; color: #475569; line-height: 1.3; white-space: nowrap; letter-spacing: -0.1px;">
+                                        Collect mentor insights to generate practical planning retrospectives.
+                                    </div>
+                                    
+                                    <div style="width: 100%; padding: 6px 0; background: #f1f5ff; color: #5364d8; font-size: 10px; font-weight: 700; text-align: center; border-radius: 4px; cursor: pointer; transition: all 0.2s ease;">
+                                        Generate Report
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Arrow pointing down -->
+                            <div style="display: flex; justify-content: center; align-items: center;">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <defs>
+                                      <linearGradient id="auto-arrow-grad-memoir" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+                                        <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+                                      </linearGradient>
+                                    </defs>
+                                    <path d="M10 0 V18 M4 12 L10 18 L16 12" stroke="url(#auto-arrow-grad-memoir)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <!-- Memoirs Mockup -->
+                            <div class="mock-card" style="padding: 20px; background: #fff; border-radius: 16px; border: 1px solid rgba(20,24,40,0.08); box-shadow: 0 16px 42px rgba(20,24,40,0.06); display: flex; flex-direction: column; gap: 14px; width: 100%;">
+                                
+                                <div style="margin-bottom: 2px;">
+                                    <div style="font-size: 15px; font-weight: 800; color: #1f2937; margin-bottom: 2px; display: flex; align-items: center; gap: 6px;">📝 Professional Memoir</div>
+                                    <div style="font-size: 11.5px; color: #6b7280; line-height: 1.4;">AI-extracted actionable PM principles from mentoring.</div>
+                                </div>
+
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div style="padding-left: 12px; border-left: 2px solid #5b6ee1;">
+                                        <div style="font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 3px;">Documentation as Developer's Language</div>
+                                        <ul style="margin: 0; padding-left: 16px; font-size: 11.5px; color: #64748b; line-height: 1.4; list-style-type: disc;">
+                                            <li>Separate 'Scenario' (Why) from 'Architecture' (How).</li>
+                                            <li>Close logic gaps with explicit Y/N paths for stability.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="padding-left: 12px; border-left: 2px solid #5b6ee1;">
+                                        <div style="font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 3px;">Dual Nature of AI Product Design</div>
+                                        <ul style="margin: 0; padding-left: 16px; font-size: 11.5px; color: #64748b; line-height: 1.4; list-style-type: disc;">
+                                            <li>Balance a writer's empathy with an architect's precision.</li>
+                                            <li>Emphasize 'Fallback Scenarios' alongside happy paths.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div style="padding-left: 12px; border-left: 2px solid #5b6ee1;">
+                                        <div style="font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 3px;">Breaking Analysis Paralysis</div>
+                                        <ul style="margin: 0; padding-left: 16px; font-size: 11.5px; color: #64748b; line-height: 1.4; list-style-type: disc;">
+                                            <li>A 'working MVP' outvalues a theoretical perfect document.</li>
+                                            <li>Prioritize rapid 1-Day user testing over edge-case fear.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div style="padding: 10px 12px; background: #f8fafc; border-radius: 10px; border: 1px solid rgba(20,24,40,0.05); margin-top: 2px;">
+                                    <div style="font-size: 12px; font-weight: 700; color: #475569; margin-bottom: 6px; display: flex; align-items: center; gap: 4px;">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                        Personal Action Items
+                                    </div>
+                                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+                                        <li style="display: flex; gap: 6px; align-items: flex-start; font-size: 11.5px; font-weight: 500; color: #64748b; line-height: 1.3;">
+                                            <div style="color: #94a3b8; font-size: 8px; margin-top: 3px;">▶</div>
+                                            <span>Enforce strict self-review for Y/N logic paths.</span>
+                                        </li>
+                                        <li style="display: flex; gap: 6px; align-items: flex-start; font-size: 11.5px; font-weight: 500; color: #64748b; line-height: 1.3;">
+                                            <div style="color: #94a3b8; font-size: 8px; margin-top: 3px;">▶</div>
+                                            <span>Prioritize fallback logic in all future PRDs.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: YouTube Description -->
+            <div id="tab-youtube" class="mentoring-tab-content hidden mb-12">
+                <div class="flex justify-center w-full">
+                    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+                        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                            <div class="mb-8 font-sans">
+                                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                                    Cleaner Video Descriptions
+                                </h3>
+                                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                                    Replace long product URLs with a single synced storefront link.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">description cleanup</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">e-commerce experience</span>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="youtube-description-compare" style="zoom: 0.8; border-radius: 16px; overflow: hidden; width: 100%;">
+                      <div class="description-compare-grid">
+                        <!-- AS-IS -->
+                        <div class="yt-card">
+                          <div class="section-label">AS-IS</div>
+                          <h3>Manual Description Management</h3>
+
+                          <div class="yt-window">
+                            <div class="yt-topbar">
+                              <div class="yt-brand">
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
+                                <span>YouTube</span>
+                              </div>
+                              <div class="yt-search"></div>
+                              <div class="yt-avatar"><img src="../nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" alt="creator"></div>
+                            </div>
+
+                            <div class="yt-video">
+                              <img src="../nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png" alt="video thumbnail" />
+                              <div class="play-button"></div>
+                            </div>
+
+                            <div class="yt-info">
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
+                            </div>
+
+                            <div class="description-box messy">
+                              <div class="desc-header">
+                                <strong>Description</strong>
+                              </div>
+
+                              <div class="yt-raw-text">
+                                Hi everyone, welcome back to the channel! <br><br>
+                                Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
+                                <br><br>
+                                Product Links<br><br>
+                                Creamy Wireless Keyboard<br>
+                                <a href="javascript:void(0)">https://coupang.com/vp/products/934...</a><br><br>
+                                Monitor Light Bar<br>
+                                <a href="javascript:void(0)">https://amazon.com/dp/B0DESKLAMP...</a><br><br>
+                                Ergonomic Desk Chair<br>
+                                <a href="javascript:void(0)">https://musinsa.com/app/goods/248...</a><br><br>
+                                Walnut Desk Shelf<br>
+                                <a href="javascript:void(0)">https://amazon.com/dp/B0DESKSHLF...</a><br><br>
+                                Cozy Desk Mat<br>
+                                <a href="javascript:void(0)">https://ozip.me/671Q5DZ...</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- CONNECTOR -->
+                        <div class="center-transition-pill">
+                            <span class="badge-bad">Manual & messy</span>
+                            <div class="flow-arrow-right" style="margin: 8px 0;">
+    <svg width="28" height="14" viewBox="0 0 28 14" fill="none"><path d="M0 7 H26 M20 1 L26 7 L20 13" stroke="url(#arrow-grad-right)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+                            <span class="badge-good">Synced by Hopzie</span>
+                        </div>
+
+                        <!-- TO-BE -->
+                        <div class="yt-card">
+                          <div class="section-label accent">TO-BE</div>
+                          <h3>One-link Creator Commerce</h3>
+
+                          <div class="yt-window">
+                            <div class="yt-topbar">
+                              <div class="yt-brand">
+                                <svg class="yt-play-svg" width="24" height="17" viewBox="0 0 24 17" fill="none"><rect width="24" height="17" rx="4" fill="#ef4444"/><path d="M15.5 8.5L9.5 12V5L15.5 8.5Z" fill="white"/></svg>
+                                <span>YouTube</span>
+                              </div>
+                              <div class="yt-search"></div>
+                              <div class="yt-avatar"><img src="../nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_profile.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" alt="creator"></div>
+                            </div>
+
+                            <div class="yt-video">
+                              <img src="../nahyun_imported/image_source/Projects_Products/hopzie_oneclickbuilder_video%20thumnail.png" alt="video thumbnail" />
+                              <div class="play-button"></div>
+                            </div>
+
+                            <div class="yt-info">
+                              <h4>WHAT'S ON MY DESK</h4>
+                              <p>125K views • 2 days ago</p>
+                            </div>
+
+                            <div class="description-box clean">
+                              <div class="desc-header">
+                                <strong>Description</strong>
+                              </div>
+
+                              <div class="yt-raw-text" style="height: auto; mask-image: none; -webkit-mask-image: none;">
+                                Hi everyone, welcome back to the channel! <br><br>
+                                Today I'm sharing all my cozy desk setup essentials that help me stay productive and bring joy to my workflow.<br><br>
+                                Shop everything from this setup in one organized place below! <br><br>
+                                <a href="javascript:void(0)" onclick="document.querySelector('.mentoring-tab-btn[data-target=\'tab-storefront\']').click(); return false;">https://hopzie.co/@noa-studio</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @keyframes tabFadeInSlideUp {
+                    from { opacity: 0; transform: translateY(16px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                .tab-animate-in {
+                    animation: tabFadeInSlideUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const hopzieBtns = document.querySelectorAll('.mentoring-tab-btn');
+                    const hopzieContents = document.querySelectorAll('.mentoring-tab-content');
+
+                    hopzieBtns.forEach(btn => {
+                        btn.addEventListener('click', () => {
+                            // Reset all buttons
+                            hopzieBtns.forEach(b => {
+                                b.classList.remove('bg-black', 'text-white', 'active');
+                                b.classList.add('text-zinc-500', 'hover:bg-gray-100', 'hover:text-zinc-900');
+                            });
+                            // Set active button
+                            btn.classList.remove('text-zinc-500', 'hover:bg-gray-100', 'hover:text-zinc-900');
+                            btn.classList.add('bg-black', 'text-white', 'active');
+
+                            // Hide all contents
+                            hopzieContents.forEach(c => {
+                                c.classList.remove('block', 'tab-animate-in');
+                                c.classList.add('hidden');
+                            });
+
+                            // Show target content
+                            const targetId = btn.getAttribute('data-target');
+                            const targetEl = document.getElementById(targetId);
+                            if (targetEl) {
+                                targetEl.classList.remove('hidden');
+                                targetEl.classList.add('block');
+                                
+                                // Force reflow to restart animation
+                                void targetEl.offsetWidth;
+                                
+                                targetEl.classList.add('tab-animate-in');
+                            }
+                        });
+                    });
+                });
+            </script>
+
+            <!-- WHY Section -->
+            <div class="text-center mt-48 mb-8 font-sans flex flex-col items-center">
+                <span class="text-[12px] font-bold text-zinc-500 uppercase tracking-widest mb-3 block">WHY</span>
+                <h3 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">
+                    Mentoring knowledge was being created,<br class="hidden md:block">
+                      but never systematically retained.
+                </h3>
+            </div>
+            
+            <div class="flex flex-col items-center mb-8 font-sans px-4">
+                <div class="w-full max-w-[840px] overflow-hidden rounded-[16px] border border-zinc-200 bg-white shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[600px]">
+                            <thead>
+                                <tr class="border-b border-zinc-200 bg-zinc-50/80">
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[36%]">Mentoring Workflow</th>
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[32%]">Existing</th>
+                                    <th class="py-5 px-6 md:px-8 text-[14px] font-semibold text-zinc-900 w-[32%]">With AI Agent</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[14px] md:text-[15px]">
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Session preparation</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">10-15 min</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-[#5364d8]">&lt; 1 min</td>
+                                </tr>
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Session notes</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">Manual</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Auto-collected</td>
+                                </tr>
+                                <tr class="border-b border-zinc-100/80 transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Student history</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">Scattered</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Unified memory</td>
+                                </tr>
+                                <tr class="transition-colors hover:bg-zinc-50/50">
+                                    <td class="py-5 px-6 md:px-8 font-medium text-zinc-800">Insight discovery</td>
+                                    <td class="py-5 px-6 md:px-8 text-zinc-500">-</td>
+                                    <td class="py-5 px-6 md:px-8 font-semibold text-zinc-900">Pattern extraction<br>AI-generated memoirs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- YouTube Description Compare CSS -->
+            <style>
+              .youtube-description-compare {
+                width: 100%;
+                padding: 44px 32px;
+                background:
+                  linear-gradient(#f1f1f1 1px, transparent 1px),
+                  linear-gradient(90deg, #f1f1f1 1px, transparent 1px);
+                background-size: 28px 28px;
+                box-sizing: border-box;
+              }
+
+              .description-compare-grid {
+                max-width: 1080px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 48px 1fr;
+                gap: 28px;
+                align-items: start;
+              }
+
+              .yt-card {
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                padding: 22px;
+                border-radius: 12px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+              }
+
+              .section-label {
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                color: #9ca3af;
+                margin-bottom: 8px;
+              }
+
+              .section-label.accent {
+                color: #d97706;
+              }
+
+              .yt-card h3 {
+                margin: 0 0 18px;
+                font-size: 22px;
+                letter-spacing: -0.04em;
+                color: #111827;
+              }
+
+              .yt-window {
+                max-width: 380px;
+                margin: 0 auto;
+                border: 1px solid #e5e7eb;
+                background: #ffffff;
+                border-radius: 8px;
+                overflow: hidden;
+              }
+
+              .yt-topbar {
+                height: 44px;
+                padding: 0 14px;
+                border-bottom: 1px solid #eef0f3;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+              }
+
+              .yt-brand {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 12px;
+                font-weight: 800;
+                color: #111827;
+                min-width: 86px;
+              }
+
+              .yt-play {
+                width: 24px;
+                height: 17px;
+                border-radius: 5px;
+                background: #ef4444;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 8px;
+              }
+
+              .yt-search {
+                flex: 1;
+                height: 24px;
+                border-radius: 999px;
+                background: #f3f4f6;
+                border: 1px solid #e5e7eb;
+              }
+
+              .yt-avatar {
+                width: 24px;
+                height: 24px;
+                border-radius: 999px;
+                background: #111827;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 10px;
+                font-weight: 800;
+              }
+
+              .yt-video {
+                position: relative;
+                aspect-ratio: 16 / 9;
+                background: #f4eee6;
+                overflow: hidden;
+              }
+
+              .yt-video img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: scale(1.035);
+              }
+
+              .play-button { padding-left: 2px;
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                width: 48px;
+                height: 48px;
+                border-radius: 999px;
+                background: rgba(17, 24, 39, 0.78);
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 15px;
+              }
+
+              .yt-info {
+                padding: 14px 16px 8px;
+              }
+
+              .yt-info h4 {
+                margin: 0 0 5px;
+                font-size: 14px;
+                line-height: 1.35;
+                color: #111827;
+                letter-spacing: -0.02em;
+              }
+
+              .yt-info p {
+                margin: 0;
+                font-size: 11px;
+                color: #9ca3af;
+              }
+
+              .description-box {
+                margin: 12px 16px 16px;
+                padding: 14px;
+                border-radius: 8px;
+                background: #fafafa;
+              }
+
+              .description-box.messy {
+                background: #fef2f2;
+              }
+
+              .description-box.clean {
+                background: #fff7ed;
+              }
+
+              .desc-header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 10px;
+              }
+
+              .desc-header strong {
+                font-size: 12px;
+                color: #111827;
+              }
+
+              .desc-header span {
+                padding: 5px 8px;
+                border-radius: 999px;
+                background: #fff;
+                border: 1px solid #e5e7eb;
+                font-size: 10px;
+                font-weight: 800;
+                color: #6b7280;
+              }
+
+              .messy .desc-header span {
+                color: #dc2626;
+                border-color: #fca5a5;
+              }
+
+              .clean .desc-header span {
+                color: #d97706;
+                border-color: #f3a75f;
+              }
+
+              .description-box p {
+                margin: 0 0 12px;
+                font-size: 11.5px;
+                line-height: 1.55;
+                color: #6b7280;
+              }
+
+              .yt-raw-text {
+                font-size: 11px;
+                color: #4b5563;
+                line-height: 1.5;
+                height: 400px;
+                overflow: hidden;
+                mask-image: linear-gradient(to bottom, black 80%, transparent);
+                -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent);
+              }
+              .yt-raw-text a {
+                color: #3b82f6;
+                text-decoration: none;
+              }
+              .yt-raw-text .time {
+                color: #3b82f6;
+              }
+
+              .hopzie-link {
+                display: grid;
+                grid-template-columns: 38px 1fr;
+                gap: 12px;
+                align-items: center;
+                padding: 12px;
+                background: #fff;
+                border: 1px solid #f3a75f;
+                border-radius: 8px;
+              }
+
+              .hopzie-icon {
+                width: 38px;
+                height: 38px;
+                border-radius: 6px;
+                background: #111827;
+                color: #fff;
+                display: grid;
+                place-items: center;
+                font-size: 14px;
+                font-weight: 800;
+              }
+
+              .hopzie-link strong {
+                display: block;
+                font-size: 13px;
+                color: #111827;
+                margin-bottom: 4px;
+              }
+
+              .hopzie-link em {
+                display: block;
+                font-size: 10.5px;
+                color: #9ca3af;
+                font-style: normal;
+              }
+
+              .sync-note {
+                margin-top: 11px;
+                display: flex;
+                align-items: flex-start;
+                gap: 7px;
+                font-size: 10.5px;
+                line-height: 1.55;
+                color: #6b7280;
+              }
+
+              .sync-note span {
+                width: 6px;
+                height: 6px;
+                margin-top: 5px;
+                border-radius: 999px;
+                background: #d97706;
+                flex-shrink: 0;
+              }
+
+              .center-transition-pill {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 6px;
+                align-self: start;
+                margin-top: 240px;
+                z-index: 10;
+                width: max-content;
+                justify-self: center;
+                text-align: center;
+              }
+
+              .center-transition-pill .badge-bad {
+                color: #9ca3af;
+                font-size: 10px;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+              }
+
+              .center-transition-pill .badge-good {
+                color: #d97706;
+                font-size: 10px;
+                font-weight: 800;
+                letter-spacing: 0.02em;
+              }
+
+              @media (max-width: 900px) {
+                .description-compare-grid {
+                  grid-template-columns: 1fr;
+                }
+
+                .center-transition-pill {
+                  margin-top: 0;
+                  margin-bottom: 24px;
+                  align-self: center;
+                }
+              }
+            </style>
+<!-- 4. Impact (Stats & Partners) -->
+            <div class="mt-48 mb-12 max-w-[1100px] mx-auto" id="impact">
+                <div class="text-center mb-8">
+                      <span class="text-[12px] font-bold text-zinc-500 uppercase tracking-widest mb-3 block">Result</span>
+                    <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Validated Through Real Mentoring</h2>
+                    
+                </div>
+
+                                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mt-4 lg:gap-6 max-w-[1120px] mx-auto">
+                      <!-- Metric 1 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px] text-center">
+                          <strong class="block text-[36px] lg:text-[42px] leading-none tracking-tight text-[#5364d8]">30+</strong>
+                          <p class="m-0 mt-3 text-[14px] lg:text-[15px] text-zinc-500 font-medium">1:1 Sessions</p>
+                      </div>
+
+                      <!-- Metric 2 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px] text-center">
+                          <strong class="block text-[36px] lg:text-[42px] leading-none tracking-tight text-[#5364d8]">100%</strong>
+                          <p class="m-0 mt-3 text-[14px] lg:text-[15px] text-zinc-500 font-medium">Program Completion</p>
+                      </div>
+                      
+                      <!-- Metric 3 -->
+                      <div class="p-6 lg:p-8 border border-zinc-200 bg-zinc-50 rounded-[4px] text-center">
+                          <strong class="block text-[36px] lg:text-[42px] leading-none tracking-tight text-[#5364d8]">#1</strong>
+                          <p class="m-0 mt-3 text-[14px] lg:text-[15px] text-zinc-500 font-medium">Graduate Track</p>
+                      </div>
+                  </div>
+              </div>
+  
+                    <!-- Strategy Snapshot Section -->
+                  <div class="mt-[218px] mb-16">
+                      <div class="text-center mb-11">
+                          <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest mb-2.5 block">Strategy</span>
+                          <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Mentoring knowledge was being created,<br class="hidden md:block"> but never systematically retained.</h2>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-[18px] max-w-[1040px] mx-auto">
+                          <!-- Card 01 -->
+                            <div class="bg-white border border-zinc-200 p-[26px_28px_24px] shadow-[0_18px_50px_rgba(0,0,0,0.035)]">
+                                <div class="flex items-center justify-between mb-7">
+                                    <span class="px-2.5 py-1.5 border border-zinc-200 bg-zinc-50 rounded-full text-[10px] font-bold tracking-widest uppercase text-zinc-500">PIVOT</span>
+                                    <span class="text-[12px] font-bold tracking-widest text-zinc-300">01</span>
+                                </div>
+                                
+                                <h3 class="m-0 mb-[26px] max-w-[390px] text-[20px] md:text-[22px] leading-[1.28] tracking-tight text-zinc-900 font-normal">From student CRM<br>to mentor knowledge system.</h3>
+                                
+                                <div class="border-t border-[#eef0f3]">
+                                    <div class="py-[15px] border-b border-[#eef0f3]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">SIGNAL</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Personalized mentoring depended on remembering each learner's background, experience level, and previous discussions.</p>
+                                    </div>
+                                    
+                                    <div class="py-[15px] border-b border-[#eef0f3]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">DECISION</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Built persistent learner memory and automated mentoring workflows instead of managing isolated student records.</p>
+                                    </div>
+                                    
+                                    <div class="pt-[15px]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-[#5364d8]">RESULT</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-900 font-medium">Enabled context-aware mentoring across sessions.</p>
+                                    </div>
+                                </div>
+                            </div>
+  
+                            <!-- Card 02 -->
+                            <div class="bg-white border border-zinc-200 p-[26px_28px_24px] shadow-[0_18px_50px_rgba(0,0,0,0.035)]">
+                                <div class="flex items-center justify-between mb-7">
+                                    <span class="px-2.5 py-1.5 border border-zinc-200 bg-zinc-50 rounded-full text-[10px] font-bold tracking-widest uppercase text-zinc-500">SCALE</span>
+                                    <span class="text-[12px] font-bold tracking-widest text-zinc-300">02</span>
+                                </div>
+                                
+                                <h3 class="m-0 mb-[26px] max-w-[390px] text-[20px] md:text-[22px] leading-[1.28] tracking-tight text-zinc-900 font-normal">From mentoring records<br>to professional playbooks.</h3>
+                                
+                                <div class="border-t border-[#eef0f3]">
+                                    <div class="py-[15px] border-b border-[#eef0f3]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">SIGNAL</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Repeated mentoring sessions were generating valuable planning principles, but those lessons were never retained beyond individual conversations.</p>
+                                    </div>
+                                    
+                                    <div class="py-[15px] border-b border-[#eef0f3]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-zinc-400">DECISION</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-500">Introduced insight extraction and AI-generated playbooks that synthesize recurring planning principles across mentoring experiences.</p>
+                                    </div>
+                                    
+                                    <div class="pt-[15px]">
+                                        <span class="block mb-1.5 text-[10px] font-bold tracking-widest uppercase text-[#5364d8]">RESULT</span>
+                                        <p class="m-0 text-[13px] leading-[1.65] text-zinc-900 font-medium">Created reusable planning knowledge beyond individual sessions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+  <div class="mt-20">
+
+                    <!-- Dedicated Partner Marquee -->
+                    <div class="mt-[218px] mb-32">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[22px] md:text-[28px] text-black font-normal tracking-tight leading-[1.4]">Trusted by Partners</h2>
+                        </div>
+
+                        <div class="flex flex-wrap justify-center gap-12">
+                            <!-- Kyonggi University -->
+                            <div class="creator-mini-card group">
+                                <div class="shrink-0">
+                                    <img src="../nahyun_imported/image_source/Projects_Products/mentoring_logo_kyonggi.png" class="creator-avatar" alt="Kyonggi University">
+                                </div>
+                                <div class="creator-content">
+                                    <p class="creator-id">Kyonggi University</p>
+                                    <p class="creator-stats">Partner</p>
+                                </div>
+                            </div>
+                            <!-- Remember -->
+                            <div class="creator-mini-card group">
+                                <div class="shrink-0">
+                                    <img src="../nahyun_imported/image_source/Projects_Products/mentoring_logo_remember.png" class="creator-avatar" alt="Remember">
+                                </div>
+                                <div class="creator-content">
+                                    <p class="creator-id">Remember</p>
+                                    <p class="creator-stats">Partner</p>
+                                </div>
+                            </div>
+                            <!-- Jasoseol.com -->
+                            <div class="creator-mini-card group">
+                                <div class="shrink-0">
+                                    <img src="../nahyun_imported/image_source/Projects_Products/mentoring_logo_jasoseol.png" class="creator-avatar" alt="Jasoseol.com">
+                                </div>
+                                <div class="creator-content">
+                                    <p class="creator-id">Jasoseol.com</p>
+                                    <p class="creator-stats">Partner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        
+                        /* Marquee Animation */
+                        @keyframes marquee {
+                            0% {
+                                transform: translateX(0);
+                            }
+
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        .animate-marquee {
+                            display: flex;
+                            width: max-content;
+                            animation: marquee 30s linear infinite;
+                        }
+
+                        .animate-marquee:hover {
+                            animation-play-state: paused;
+                        }
+
+
+                        .creator-mini-card {
+                            display: flex;
+                            align-items: center;
+                            gap: 1.25rem;
+                            padding: 1.25rem 1.75rem;
+                            border-radius: 4px;
+                            background: #ffffff;
+                            border: 1px solid #e4e4e7;
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            min-width: 320px;
+                            flex-shrink: 0;
+                            backdrop-filter: blur(8px);
+                        }
+
+                        .creator-mini-card:hover {
+                            background: #ffffff;
+                            border-color: #d4d4d8;
+                            transform: translateY(-6px) scale(1.02);
+                            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .creator-avatar {
+                            width: 4rem;
+                            height: 4rem;
+                            border-radius: 9999px;
+                            border: 2px solid rgba(0, 0, 0, 0.05);
+                            object-fit: cover;
+                            transition: all 0.4s ease;
+                            filter: grayscale(0.2);
+                        }
+
+                        .creator-mini-card:hover .creator-avatar {
+                            filter: grayscale(0);
+                            border-color: #e4e4e7;
+                        }
+
+                        .creator-content {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                          }
+
+                          .creator-content {
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: center;
+                          }
+
+                          .creator-id {
+                            color: #18181b;
+                            font-weight: 700;
+                            font-size: 0.9rem;
+                            margin-bottom: 0.2rem;
+                            line-height: 1;
+                        }
+
+                        .creator-stats {
+                              color: #71717a;
+                              font-size: 0.65rem;
+                              text-transform: uppercase;
+                              letter-spacing: 0.1em;
+                          }
+
+                        .creator-actions {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.75rem;
+                        }
+
+                        .creator-actions a {
+                            color: #a1a1aa;
+                            font-size: 0.65rem;
+                            font-weight: 800;
+                            text-transform: uppercase;
+                            letter-spacing: 0.15em;
+                            transition: all 0.2s ease;
+                            text-decoration: none;
+                        }
+
+                        .creator-actions a:hover {
+                            color: #18181b;
+                        }
+
+                        .creator-actions .dot {
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 9999px;
+                            background-color: #3f3f46;
+                        }
+                    </style>
+                    
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic &amp; Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Interviews</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Seminars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Vision</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank"
+                            aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg></a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang"><button class="lang-btn active"><span class="lang-dot"></span>
+                        English</button><button class="lang-btn" onclick="event.preventDefault(); alert('Coming soon!');">Korean</button></div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
+
+
+
+
+
