@@ -1,0 +1,434 @@
+﻿<div id="tab-aicall-scenarios" class="aicall-tab-content hidden mb-12">
+    <div class="flex justify-center w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start">
+            
+            <!-- Left: Title Area -->
+            <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+                <div class="mb-8 font-sans">
+                    <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                        Reusable scenario kits for scalable CS chatbot building
+                    </h3>
+                    <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                        I modularized repeated CS tasks into reusable scenario kits, allowing different ARS chatbot domains
+                        to share the same collection logic without rebuilding each flow from scratch.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right: Board Area -->
+            <div class="w-full">
+                <div class="reuse-board">
+
+                  <!-- Left: Delivery Flow -->
+                  <div class="domain-column domain-left">
+                    <div class="column-label">Applied Domain 01</div>
+
+                    <article class="ars-card">
+                      <div class="card-meta">
+                        <span>Delivery ARS Chatbot</span>
+                        <span>Applied Domain</span>
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“Where is my delivery?”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Delivery Tracking</div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="ars-card small-card">
+                      <div class="card-meta">
+                        <span>Delivery ARS Chatbot</span>
+                        <span>Applied Domain</span>
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I want to return a package.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Address Collection</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Center: Reusable Kits -->
+                  <div class="kit-column">
+                    <div class="center-label">Reusable Scenario Kits</div>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Name Collection</h3>
+                      <div class="bubble amber">Please tell me your name.</div>
+                      <div class="logic-row">Action Script · splitName()</div>
+                      <div class="logic-row">DB · first name / last name</div>
+                    </article>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Phone Number Collection</h3>
+                      <div class="bubble amber">Please tell me your phone number.</div>
+                      <div class="logic-row">DB · phone number / consent Y·N</div>
+                    </article>
+
+                    <article class="kit-card">
+                      <div class="kit-top">
+                        <span class="kit-type">Shared Logic</span>
+                        <span class="lineworks">LINE WORKS</span>
+                      </div>
+                      <h3>Address Collection</h3>
+                      <div class="bubble amber">Please tell me your address.</div>
+                      <div class="logic-row">DB · region / street / postal code</div>
+                    </article>
+                  </div>
+
+                  <!-- Right: Telecom Flow -->
+                  <div class="domain-column domain-right">
+                    <div class="column-label">Applied Domain 02</div>
+
+                    <article class="ars-card">
+                      <div class="card-meta">
+                        <span>Telecom ARS Chatbot</span>
+                        <span>Applied Domain</span>
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I'd like a copy of my bill.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Phone Number Collection</div>
+                        </div>
+                      </div>
+                    </article>
+
+                    <article class="ars-card small-card">
+                      <div class="card-meta">
+                        <span>Telecom ARS Chatbot</span>
+                        <span>Applied Domain</span>
+                      </div>
+
+                      <div class="live-transcript">
+                        <div class="turn">
+                          <div class="avatar">👤</div>
+                          <div class="bubble">“I changed my address.”</div>
+                        </div>
+
+                        <div class="turn">
+                          <div class="avatar ai">AI</div>
+                          <div class="bubble ai">✓ Address Collection</div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+
+                  <!-- Flow Lines -->
+                  <div class="flow-line left-line"></div>
+                  <div class="flow-line right-line"></div>
+                  <div class="flow-tag left-tag">Reuse in delivery flow</div>
+                  <div class="flow-tag right-tag">Reuse in telecom flow</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+<style>
+  .reuse-board {
+    position: relative;
+    /* Adjusting min-height slightly so it fits beautifully in the right column */
+    min-height: 600px;
+    padding: 32px 24px;
+    display: grid;
+    /* Adjusted columns slightly for the narrower space on the right side */
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    border-radius: 10px;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(217, 119, 6, 0.08), transparent 36%),
+      linear-gradient(#fafafa, #ffffff);
+    overflow: hidden;
+  }
+
+  .reuse-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(17,17,17,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17,17,17,0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(circle at center, black, transparent 78%);
+    pointer-events: none;
+  }
+
+  .domain-column,
+  .kit-column {
+    position: relative;
+    z-index: 2;
+  }
+
+  .domain-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0.72;
+  }
+
+  .kit-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(6px);
+  }
+
+  .column-label,
+  .center-label {
+    margin-bottom: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .column-label {
+    color: #a1a1aa;
+  }
+
+  .center-label {
+    color: #d97706;
+    text-align: center;
+  }
+
+  .ars-card,
+  .kit-card {
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(17,17,17,0.08);
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 18px 40px rgba(17,17,17,0.055);
+    backdrop-filter: blur(10px);
+  }
+
+  .ars-card {
+    filter: grayscale(1);
+  }
+
+  .small-card {
+    transform: scale(0.94);
+    transform-origin: top center;
+  }
+
+  .kit-card {
+    min-height: 140px;
+    padding: 14px;
+    border-color: rgba(217,119,6,0.34);
+    box-shadow: 0 26px 60px rgba(217,119,6,0.14);
+  }
+
+  .card-meta,
+  .kit-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .card-meta span:last-child {
+    color: #a1a1aa;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .kit-type {
+    color: #d97706;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .lineworks {
+    color: #111111;
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+
+  .kit-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+  }
+
+  .live-transcript {
+    display: grid;
+    gap: 8px;
+  }
+
+  .turn {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #d4d4d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #71717a;
+    font-size: 14px;
+    flex: 0 0 auto;
+    background: #fff;
+  }
+
+  .avatar.ai {
+    border-color: rgba(217,119,6,0.25);
+    background: #fff7ed;
+    color: #d97706;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  .bubble,
+  .logic-row {
+    margin-top: 6px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    line-height: 1.38;
+  }
+
+  .turn .bubble {
+    margin-top: 0;
+    border-radius: 12px 12px 12px 4px;
+    background: #f4f4f5;
+    color: #27272a;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  .turn .bubble.ai {
+    background: #fff7ed;
+    color: #92400e;
+    font-weight: 700;
+  }
+
+  .bubble.amber {
+    background: #d97706;
+    color: #ffffff;
+  }
+
+  .logic-row {
+    background: #fafafa;
+    color: #52525b;
+    border: 1px solid #e4e4e7;
+    font-size: 10px;
+  }
+
+  .flow-line {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(217,119,6,0), rgba(217,119,6,0.72), rgba(217,119,6,0));
+    z-index: 1;
+  }
+
+  .left-line {
+    left: 28.5%;
+  }
+
+  .right-line {
+    right: 28.5%;
+  }
+
+  .flow-line::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #d97706;
+    border-right: 1px solid #d97706;
+    transform: rotate(45deg);
+  }
+
+  .right-line::after {
+    left: 0;
+    right: auto;
+    transform: rotate(-135deg);
+  }
+
+  .flow-tag {
+    position: absolute;
+    top: calc(50% + 14px);
+    z-index: 3;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(217,119,6,0.28);
+    color: #d97706;
+    font-size: 9px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(17,17,17,0.06);
+    white-space: nowrap;
+  }
+
+  .left-tag {
+    left: 20%;
+  }
+
+  .right-tag {
+    right: 20%;
+  }
+
+  @media (max-width: 1200px) {
+    .reuse-board {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 24px;
+    }
+    .flow-line, .flow-tag {
+      display: none;
+    }
+  }
+</style>
+</div>
+
+
+

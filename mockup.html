@@ -1,0 +1,355 @@
+﻿<div class="vertical-automation-mockup">
+  <style>
+    .vertical-automation-mockup {
+      width: 100%;
+      max-width: 760px;
+      padding: 24px;
+      border-radius: 28px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .flow-step {
+      margin-bottom: 16px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #2f3542;
+    }
+
+    .step-title span {
+      font-size: 11px;
+      font-weight: 600;
+      color: #9aa3b2;
+    }
+
+    .mock-card {
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.06);
+      overflow: hidden;
+    }
+
+    .email-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 18px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+    }
+
+    .email-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .email-count {
+      margin-left: 6px;
+      font-size: 12px;
+      color: #9aa3b2;
+      font-weight: 600;
+    }
+
+    .email-actions {
+      display: flex;
+      gap: 12px;
+      color: #8a94a6;
+      font-size: 14px;
+    }
+
+    .email-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.05);
+      background: #fff;
+    }
+
+    .email-item.active {
+      background: #f7f9ff;
+    }
+
+    .email-avatar {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f1f5ff;
+      color: #5b6ee1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .email-content {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .email-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .sender {
+      font-size: 13px;
+      font-weight: 800;
+      color: #222936;
+    }
+
+    .time {
+      font-size: 11px;
+      color: #9aa3b2;
+      white-space: nowrap;
+    }
+
+    .subject {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+      color: #7aa7f7;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .parse-card {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 18px;
+      box-shadow: 0 12px 32px rgba(20, 24, 40, 0.05);
+    }
+
+    .parse-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: #f1f5ff;
+      color: #5364d8;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .notion-card {
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.05);
+      overflow: hidden;
+    }
+
+    .notion-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 850;
+      color: #222936;
+      margin-bottom: 9px;
+    }
+
+    .view-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      margin-bottom: 10px;
+      border-radius: 999px;
+      background: #f0f0f0;
+      font-size: 10px;
+      font-weight: 600;
+      color: #5f6673;
+    }
+
+    .notion-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+    }
+
+    .notion-table th {
+      text-align: left;
+      padding: 8px 8px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.08);
+      color: #7b8494;
+      font-weight: 700;
+    }
+
+    .notion-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+      color: #303642;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: #e6f4ea;
+      color: #3b7f45;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status.top {
+      background: #e8f2ff;
+      color: #2f6fb6;
+    }
+
+    @media (max-width: 640px) {
+      .vertical-automation-mockup {
+        padding: 16px;
+      }
+
+      .parse-card {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .notion-table {
+        font-size: 10px;
+      }
+    }
+  </style>
+
+  <div class="flow-step">
+    <div class="step-title">1. Email <span>Gemini notes</span></div>
+
+    <div class="mock-card">
+      <div class="email-toolbar">
+        <div>
+          <span class="email-title">Inbox</span>
+          <span class="email-count">3</span>
+        </div>
+        <div class="email-actions">□ ↻ ⋮</div>
+      </div>
+
+      <div class="email-item active">
+        <div class="email-avatar">✦</div>
+        <div class="email-content">
+          <div class="email-top">
+            <span class="sender">Gemini</span>
+            <span class="time">9:41 AM</span>
+          </div>
+          <div class="subject">Meeting Notes: "Service Planning_1:1 Session"</div>
+        </div>
+      </div>
+
+      <div class="email-item">
+        <div class="email-avatar">✦</div>
+        <div class="email-content">
+          <div class="email-top">
+            <span class="sender">Gemini</span>
+            <span class="time">9:41 AM</span>
+          </div>
+          <div class="subject">Meeting Notes: "AI Scenario Review"</div>
+        </div>
+      </div>
+
+      <div class="email-item">
+        <div class="email-avatar">✦</div>
+        <div class="email-content">
+          <div class="email-top">
+            <span class="sender">Gemini</span>
+            <span class="time">9:41 AM</span>
+          </div>
+          <div class="subject">Meeting Notes: "Portfolio Feedback Session"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <div class="flow-step">
+    <div class="step-title">2. AI Parse <span>key fields</span></div>
+
+    <div class="parse-card">
+      <div class="parse-chip">Student</div>
+      <div class="parse-chip">Session</div>
+      <div class="parse-chip">Summary</div>
+      <div class="parse-chip">Tasks</div>
+    </div>
+  </div>
+
+  <div class="flow-arrow">↓</div>
+
+  <div class="flow-step">
+    <div class="step-title">3. Notion <span>Learner Memory</span></div>
+
+    <div class="notion-card">
+      <div class="notion-title">🧠 Learner Memory</div>
+      <div class="view-chip">Default view</div>
+
+      <table class="notion-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Student</th>
+            <th style="width: 22%;">Background</th>
+            <th style="width: 18%;">Status</th>
+            <th style="width: 18%;">Sessions</th>
+            <th>Next Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kim Gyu-won</td>
+            <td>Humanities</td>
+            <td><span class="status">Active</span></td>
+            <td>1st, 2nd</td>
+            <td>UX Research</td>
+          </tr>
+          <tr>
+            <td>Kim Deok-gi</td>
+            <td>Mechanical Eng.</td>
+            <td><span class="status">Active</span></td>
+            <td>1st, 2nd</td>
+            <td>Service Planning</td>
+          </tr>
+          <tr>
+            <td>Kim Si-hyun</td>
+            <td>Public Admin.</td>
+            <td><span class="status top">Top</span></td>
+            <td>1st, 2nd</td>
+            <td>AI Scenario</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+

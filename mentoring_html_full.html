@@ -1,0 +1,90 @@
+﻿<body data-liner-extension-version="7.18.16">
+
+    <!-- Google Style Top Nav -->
+    <div class="top-nav">
+        <div class="nav-left">
+            <a class="top-link" onclick="switchView('history')">History</a>
+            <a class="top-link" onclick="switchView('docs')">Docs</a>
+        </div>
+        <div class="nav-right">
+            <img src="/static/images/breadme_logo.svg" class="profile-pic" alt="breadme profile" title="breadme">
+        </div>
+    </div>
+
+    <main>
+        <!-- Giant Center Logo -->
+        <div class="main-logo-container" onclick="switchView('home')">
+            <h1 class="main-logo-text">Mentoring Agent</h1>
+        </div>
+
+        <div class="header-title">
+            <h2 id="page-title">Automated record-keeping workspace for mentors.</h2>
+            <p id="page-desc">Click on the mode you wish to execute.</p>
+        </div>
+
+        <!-- Home View -->
+        <div id="home-view" style="width: 100%; display: grid; gap: 32px;">
+            
+            <!-- Automation Section -->
+            <div class="automation-container">
+                <div class="auto-header">
+                    <div class="auto-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                            <circle cx="12" cy="16" r="2"></circle>
+                        </svg>
+                        Scheduled Automation
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-to
+<truncated 45215 bytes>
+ct');
+            const text = document.getElementById('directText').value;
+            if(!text.trim()) { alert('Please enter the content.'); return; }
+
+            const span = btn.querySelector('span'), spinner = document.getElementById('direct-spinner');
+            if (!btn.dataset.origTxt) btn.dataset.origTxt = span.textContent;
+            
+            btn.style.opacity = '0.8'; span.textContent = 'Analyzing...'; spinner.style.display = 'block';
+            btn.disabled = true;
+            
+            try {
+                const res = await fetch('/api/run/direct/analyze', {
+                    method: 'POST', headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({text})
+                });
+                const data = await res.json();
+                if (data.success) {
+                    parsedStudentsGlobal = data.students;
+                    renderStudentList();
+                    document.getElementById('directStep1').style.display = 'none';
+                    document.getElementById('directStep2').style.display = 'flex';
+                    updateStepper(2);
+                } else {
+                    showToast(`❌ Analysis Failed: ${data.error}`, true);
+                }
+            } catch (e) { 
+                showToast(`❌ Network Error`, true); 
+            } finally { 
+                btn.style.opacity = '1'; span.textContent = btn.dataset.origTxt; spinner.style.display = 'none'; 
+                btn.disabled = false;
+            }
+        }
+        
+        function renderStudentList() {
+            const container = document.getElementById('studentListContainer');
+            container.innerHTML = '';
+            
+            parsedStudentsGlobal.forEach((stu, idx) => {
+                const box = document.createElement('div');
+                box.style.background = 'rgba(0,0,0,0.3)';
+        
+<truncated 23951 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+
+
+

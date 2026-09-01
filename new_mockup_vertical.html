@@ -1,0 +1,365 @@
+﻿<div class="insight-final-mockup vertical-automation-mockup">
+  <style>
+    .insight-final-mockup {
+      width: 100%;
+      max-width: 560px;
+      padding: 24px;
+      border-radius: 28px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .insight-flow {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flow-step {
+      margin-bottom: 0px;
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #2f3542;
+    }
+
+    .mock-card {
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.08);
+      border-radius: 22px;
+      box-shadow: 0 16px 42px rgba(20, 24, 40, 0.06);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .flow-arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+    }
+
+    .meeting-card {
+      padding: 14px;
+      background: #f8fafc;
+    }
+
+    .meeting-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+      padding: 0 4px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #374151;
+    }
+
+    .live-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #eef8f1;
+      color: #3b7f45;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .meeting-people {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      height: 140px;
+    }
+
+    .person-tile {
+      position: relative;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(20, 24, 40, 0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    }
+
+    .person-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #eef2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .person-avatar.mentor {
+      background: #f4f4f5;
+    }
+
+    .person-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: #4b5563;
+    }
+
+    .meeting-controls {
+      position: absolute;
+      bottom: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .control-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(31, 41, 55, 0.08);
+    }
+
+    .cluster-card {
+      padding: 16px;
+    }
+
+    .cluster-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: 850;
+      color: #222936;
+    }
+
+    .cluster-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f1f5ff;
+      color: #5364d8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .cluster-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cluster-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 15px;
+      background: #fbfbfd;
+      border: 1px solid rgba(20, 24, 40, 0.06);
+      font-size: 12px;
+      font-weight: 800;
+      color: #303642;
+    }
+
+    .cluster-count {
+      font-size: 10px;
+      font-weight: 800;
+      color: #9aa3b2;
+    }
+
+    .notion-card {
+      padding: 16px 18px;
+    }
+
+    .notion-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 17px;
+      font-weight: 850;
+      color: #222936;
+      margin-bottom: 9px;
+    }
+
+    .view-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: #f0f0f0;
+      font-size: 10px;
+      font-weight: 600;
+      color: #5f6673;
+    }
+
+    .insight-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 11px;
+    }
+
+    .insight-table th {
+      text-align: left;
+      padding: 8px 7px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.08);
+      color: #7b8494;
+      font-weight: 800;
+    }
+
+    .insight-table td {
+      padding: 9px 7px;
+      border-bottom: 1px solid rgba(20, 24, 40, 0.06);
+      color: #303642;
+      vertical-align: top;
+      line-height: 1.35;
+    }
+
+    .insight-name {
+      font-weight: 800;
+      color: #222936;
+    }
+
+    .guidance {
+      color: #5f6673;
+    }
+  </style>
+
+  <div class="insight-flow">
+    <div class="flow-step">
+      <div class="step-title">1. Mentoring Session</div>
+      <div class="mock-card meeting-card">
+        <div class="meeting-top">
+          <span>Mentoring Call</span>
+          <span class="live-chip">LIVE</span>
+        </div>
+
+        <div class="meeting-people">
+          <div class="person-tile">
+            <div class="person-avatar">👩</div>
+            <div class="person-label">Student</div>
+          </div>
+
+          <div class="person-tile">
+            <div class="person-avatar mentor">👩‍💻</div>
+            <div class="person-label">Mentor</div>
+
+            <div class="meeting-controls">
+              <span class="control-dot"></span>
+              <span class="control-dot"></span>
+              <span class="control-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">
+      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+        <defs>
+          <linearGradient id="auto-arrow-grad-insight1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+            <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad-insight1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-title">2. AI Clustering</div>
+      <div class="mock-card cluster-card">
+        <div class="cluster-header">
+          <div class="cluster-mark">✦</div>
+          <span>Pattern Detection</span>
+        </div>
+
+        <div class="cluster-list">
+          <div class="cluster-row">
+            <span>Career Transition</span>
+            <span class="cluster-count">12</span>
+          </div>
+
+          <div class="cluster-row">
+            <span>Planning Practice</span>
+            <span class="cluster-count">9</span>
+          </div>
+
+          <div class="cluster-row">
+            <span>AI Scenario Design</span>
+            <span class="cluster-count">6</span>
+          </div>
+
+          <div class="cluster-row">
+            <span>Developer Handoff</span>
+            <span class="cluster-count">4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">
+      <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+        <defs>
+          <linearGradient id="auto-arrow-grad-insight2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#5b6ee1" stop-opacity="0" />
+            <stop offset="100%" stop-color="#5b6ee1" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path d="M7 0 V18 M1 12 L7 18 L13 12" stroke="url(#auto-arrow-grad-insight2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="flow-step">
+      <div class="step-title">3. Mentor Insights</div>
+      <div class="mock-card notion-card">
+        <div class="notion-title">🧠 Insight Library</div>
+        <div class="view-chip">Default view</div>
+
+        <table class="insight-table">
+          <thead>
+            <tr>
+              <th style="width: 38%;">Insight</th>
+              <th>Generated Guidance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="insight-name">Career Transition</td>
+              <td class="guidance">Reframe prior experience as planning evidence.</td>
+            </tr>
+            <tr>
+              <td class="insight-name">AI Scenario Design</td>
+              <td class="guidance">Focus on edge cases and handoff logic.</td>
+            </tr>
+            <tr>
+              <td class="insight-name">Documentation</td>
+              <td class="guidance">Separate main flow and exception flow.</td>
+            </tr>
+            <tr>
+              <td class="insight-name">Portfolio Strategy</td>
+              <td class="guidance">Show decisions, not only features.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

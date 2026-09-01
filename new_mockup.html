@@ -1,0 +1,92 @@
+﻿<div class="builder-demo">
+  <div class="builder-header">
+    <div>
+      <h3>User Variables</h3>
+      <p>Use predefined shared variables across connected chatbot domains.</p>
+    </div>
+  </div>
+
+  <div class="tab-area">
+    <button class="tab">User variables</button>
+    <button class="tab active">Built-in variable</button>
+  </div>
+
+  <section class="variable-section">
+    <div class="section-title">
+      <h4>Built-in Variable</h4>
+      <p>Predefined variables are automatically saved and reused during domain transfer.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Built-in variable name</th>
+            <th>Description / Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Character string</td>
+            <td><code>*cicRequest.session.callInfo.callee</code></td>
+            <td>
+              Saves the recipient’s number.<br />
+              <span>“01012341234”</span>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Character string</td>
+            <td><code>*cicRequest.session.callInfo.caller</code></td>
+            <td>
+              Saves the sender’s number.<br />
+              <span>“01012341234”</span>
+            </td>
+          </tr>
+
+          <tr class="highlight-row">
+            <td>JSON</td>
+            <td><code>*transferDomain.domainCode</code></td>
+            <td>
+              Saves the previous domain code.<br />
+              <span>“abc.aicall”</span>
+            </td>
+          </tr>
+
+          <tr class="highlight-row">
+            <td>JSON</td>
+            <td><code>*transferDomain.userVariables</code></td>
+            <td>
+              Carries shared user variables from the previous chatbot domain.<br />
+              <span>{ "isMobile": null, "phoneNumber": null }</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="domain-card">
+      <div class="domain-icon">↔</div>
+
+      <div>
+        <div class="domain-title">Shared Context</div>
+        <div class="domain-desc">
+          Built-in variables preserve caller information, domain code, and shared user data
+          when moving between chatbot domains.
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- DOWN ARROW -->
+<div style="margin: 24px 0; display: flex; justify-content: center; color: #a1a1aa;">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 5v14M19 12l-7 7-7-7"/>
+  </svg>
+</div>
+
+
+

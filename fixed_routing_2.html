@@ -1,0 +1,487 @@
+﻿<div class="flex justify-center w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-[390px_1fr] gap-8 md:gap-16 items-start w-full max-w-[1340px]">
+        <div class="concept-note" style="grid-template-columns: 1fr; margin-top: 0; position: sticky; top: 120px;">
+            <div class="mb-8 font-sans">
+                <h3 class="text-[20px] md:text-[24px] text-zinc-900 font-normal tracking-tight leading-[1.25] mb-3">
+                    Conversational IVR
+                </h3>
+                <p class="text-zinc-500 text-[14px] md:text-[15px] leading-relaxed mb-3 font-medium">
+                    Replace static menu trees with live LLM voice routing.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">live call</span>
+                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">LLM routing</span>
+                    <span class="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[11px] font-semibold tracking-wide">voice-first UX</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="civr-stage font-sans" style="zoom: 0.95;">
+            <style>
+                .civr-stage {
+                  position: relative;
+                  min-height: 700px;
+                  border-left: 1px solid rgba(0, 0, 0, 0.02);
+                  overflow: hidden;
+                  padding: 48px 34px 40px;
+                  --amber: #d97706;
+                  --green: #00c73c;
+                }
+                .civr-stage::before {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  background:
+                    radial-gradient(circle at 72% 28%, rgba(0, 199, 60, 0.08), transparent 26%),
+                    radial-gradient(circle at 28% 62%, rgba(49, 87, 255, 0.08), transparent 22%),
+                    linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.86));
+                  pointer-events: none;
+                }
+                .civr-comparison {
+                  position: relative;
+                  z-index: 2;
+                  display: grid;
+                  grid-template-columns: 1fr 74px 1fr;
+                  gap: 24px;
+                  align-items: start;
+                }
+                .mock-card {
+                  min-height: 620px;
+                  border: 1px solid #dedfe5;
+                  border-radius: 14px;
+                  background: rgba(255, 255, 255, 0.94);
+                  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+                  overflow: hidden;
+                  padding: 22px;
+                }
+                .mock-label-row {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  gap: 12px;
+                  margin-bottom: 14px;
+                }
+                .mock-label {
+                  color: #9ca3af;
+                  font-size: 11px;
+                  font-weight: 900;
+                  letter-spacing: 0.14em;
+                  text-transform: uppercase;
+                }
+                .mock-card.to-be .mock-label { color: var(--amber); }
+                .version-pill {
+                  padding: 5px 10px;
+                  border-radius: 999px;
+                  background: #f4f4f5;
+                  color: #71717a;
+                  font-size: 10px;
+                  font-weight: 900;
+                  letter-spacing: -0.01em;
+                  white-space: nowrap;
+                }
+                .mock-card.to-be .version-pill { background: #fff7ed; color: var(--amber); }
+                .mock-card h3 {
+                  margin: 0 0 18px;
+                  color: #15151b;
+                  font-size: 21px;
+                  line-height: 1.2;
+                  letter-spacing: -0.04em;
+                  font-weight: 500;
+                }
+                .phone-shell { border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; background: #fff; }
+                .phone-top {
+                  height: 52px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  gap: 10px;
+                  padding: 0 14px;
+                  border-bottom: 1px solid #e5e7eb;
+                  background: #fafafa;
+                }
+                .phone-brand { display: flex; align-items: center; gap: 8px; color: #111827; font-size: 12px; font-weight: 900; }
+                .phone-brand .version-text { color: #71717a; font-size: 11px; font-weight: 900; }
+                .phone-brand .icon {
+                  width: 22px;
+                  height: 22px;
+                  border-radius: 6px;
+                  background: #111;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: 900;
+                }
+                .mini-player {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 999px;
+                  background: #111;
+                  color: #fff;
+                  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+                  flex: 0 0 auto;
+                }
+                .mini-player.light { background: #f4f4f5; color: #52525b; box-shadow: none; border: 1px solid #e5e7eb; }
+                
+                /* RENAMED play-button to aicall-play-button to avoid global Hopzie class conflicts */
+                .aicall-play-button {
+                  width: 22px;
+                  height: 22px;
+                  border-radius: 50%;
+                  border: none;
+                  background: #fff;
+                  color: #111;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 8px;
+                  padding-left: 2px;
+                  flex: 0 0 auto;
+                  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+                  cursor: pointer;
+                }
+                .mini-player.light .aicall-play-button { background: #111; color: #fff; }
+                
+                .call-area {
+                  padding: 18px;
+                  min-height: 394px;
+                  display: flex;
+                  flex-direction: column;
+                }
+                .live-transcript {
+                  display: grid;
+                  gap: 10px;
+                  margin-bottom: 16px;
+                  min-height: 94px;
+                }
+                .turn { display: flex; gap: 10px; align-items: flex-start; }
+                .avatar {
+                  width: 34px;
+                  height: 34px;
+                  border-radius: 50%;
+                  border: 1px solid #d4d4d8;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #71717a;
+                  font-size: 16px;
+                  flex: 0 0 auto;
+                  background: #fff;
+                }
+                .avatar.ai { border-color: rgba(0,199,60,0.25); background: #ecfdf3; color: #047857; font-size: 11px; font-weight: 900; }
+                .bubble {
+                  max-width: 100%;
+                  padding: 11px 13px;
+                  border-radius: 15px 15px 15px 4px;
+                  background: #f4f4f5;
+                  color: #27272a;
+                  font-size: 12px;
+                  line-height: 1.45;
+                  font-weight: 750;
+                  letter-spacing: -0.02em;
+                  white-space: pre-wrap;
+                }
+                .bubble.ai { background: #ecfdf3; color: #064e3b; }
+                .as-is-menu { display: grid; gap: 9px; margin-top: 10px; }
+                .menu-step {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 11px 12px;
+                  border: 1px solid #e5e7eb;
+                  border-radius: 10px;
+                  background: #fbfbfb;
+                  color: #52525b;
+                  font-size: 11.5px;
+                  font-weight: 800;
+                  line-height: 1.25;
+                }
+                .menu-step .num {
+                  width: 22px;
+                  height: 22px;
+                  border-radius: 50%;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  background: #eeeeef;
+                  color: #71717a;
+                  font-size: 10px;
+                  font-weight: 900;
+                  flex: 0 0 auto;
+                }
+                .conversation-flow {
+                  position: relative;
+                  z-index: 4;
+                  display: grid;
+                  gap: 10px;
+                  margin-bottom: 24px;
+                }
+                .conversation-flow::after {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  top: calc(100% + 4px);
+                  width: 1px;
+                  height: 32px;
+                  background: linear-gradient(to bottom, rgba(0,199,60,0.45), rgba(0,199,60,0));
+                  transform: translateX(-50%);
+                  z-index: 1;
+                }
+                .ai-turn {
+                  position: relative;
+                }
+                .ai-turn::after {
+                  content: "";
+                  position: absolute;
+                  left: 50%;
+                  bottom: -24px;
+                  width: 10px;
+                  height: 10px;
+                  border-right: 1.5px solid rgba(0,199,60,0.55);
+                  border-bottom: 1.5px solid rgba(0,199,60,0.55);
+                  transform: translateX(-50%) rotate(45deg);
+                  z-index: 2;
+                }
+                
+                /* Removed grey box styling to untrap the bubbles */
+                .to-flow {
+                  position: relative;
+                  min-height: 240px;
+                  background: radial-gradient(circle at 50% 40%, rgba(0,199,60,0.08), transparent 45%);
+                }
+                
+                .intent-panel {
+                  position: relative;
+                  width: calc(100% - 26px);
+                  margin: 0 auto 12px;
+                  z-index: 4;
+                  border: 1px solid rgba(0,199,60,0.22);
+                  border-radius: 14px;
+                  background: rgba(255,255,255,0.94);
+                  box-shadow: 0 16px 36px rgba(15,23,42,0.07);
+                  padding: 11px;
+                  text-align: center;
+                }
+                .intent-panel small {
+                  display: block;
+                  color: #047857;
+                  font-size: 9px;
+                  font-weight: 900;
+                  letter-spacing: 0.12em;
+                  text-transform: uppercase;
+                  margin-bottom: 5px;
+                }
+                .intent-panel strong { display: block; color: #111; font-size: 15px; letter-spacing: -0.03em; }
+                .intent-orb {
+                  position: absolute;
+                  left: 50%;
+                  top: 60px;
+                  transform: translate(-50%, -50%);
+                  width: 86px;
+                  height: 86px;
+                  border-radius: 999px;
+                  background:
+                    radial-gradient(circle at 34% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0.15) 25%, transparent 35%),
+                    linear-gradient(135deg, #00c73c, #14b8a6 48%, #3157ff);
+                  box-shadow:
+                    0 0 0 9px rgba(0,199,60,0.08),
+                    0 0 0 20px rgba(49,87,255,0.035),
+                    0 22px 48px rgba(0,199,60,0.22);
+                  z-index: 2;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: #fff;
+                  font-size: 11px;
+                  font-weight: 900;
+                  letter-spacing: -0.02em;
+                }
+                .routing-line {
+                  position: absolute;
+                  z-index: 1;
+                  pointer-events: none;
+                }
+                .routing-line svg { width: 100%; height: 100%; overflow: visible; }
+                .routing-line path { fill: none; stroke: rgba(0,199,60,0.62); stroke-width: 1.35; stroke-dasharray: 5 6; }
+                
+                /* Adjusted vertical coordinates for the new to-flow layout */
+                .line-intent { left: 50%; top: -14px; width: 1px; height: 74px; transform: translateX(-50%); }
+                .line-left { left: 82px; top: 82px; width: 148px; height: 64px; }
+                .line-right { right: 82px; top: 82px; width: 148px; height: 64px; transform: scaleX(-1); }
+                .line-down { left: 50%; top: 114px; width: 1px; height: 54px; transform: translateX(-50%); }
+                
+                .scenario-card {
+                  position: absolute;
+                  z-index: 3;
+                  width: 108px;
+                  padding: 11px 9px;
+                  border: 1px solid #dfe3ea;
+                  border-radius: 12px;
+                  background: rgba(255,255,255,0.95);
+                  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+                  color: #18181b;
+                  font-size: 11px;
+                  font-weight: 900;
+                  text-align: center;
+                }
+                .scenario-card.active { border-color: rgba(0,199,60,0.55); box-shadow: 0 0 0 4px rgba(0,199,60,0.08), 0 14px 34px rgba(0,199,60,0.14); color: #047857; }
+                .scenario-card small { display: block; margin-top: 4px; color: #8b8f99; font-size: 9px; font-weight: 800; }
+                .scenario-card.delivery { left: 18px; top: 72px; }
+                .scenario-card.returns { right: 18px; top: 72px; }
+                .scenario-card.faq { left: 50%; bottom: 18px; transform: translateX(-50%); }
+                
+                .middle-arrow {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  align-self: center;
+                  gap: 14px;
+                  color: var(--amber);
+                  font-weight: 900;
+                  font-size: 22px;
+                  min-height: 620px;
+                }
+                .middle-arrow small { color: #a1a1aa; font-size: 10px; line-height: 1.2; text-align: center; font-weight: 900; letter-spacing: -0.02em; }
+                .middle-arrow .sync { color: var(--amber); font-size: 10px; text-align: center; font-weight: 900; }
+                .civr-bottom-kpi {
+                  position: relative;
+                  z-index: 2;
+                  display: grid;
+                  grid-template-columns: repeat(4, 1fr);
+                  gap: 12px;
+                  margin-top: 24px;
+                }
+                .kpi-item {
+                  border: 1px solid #ececf1;
+                  border-radius: 14px;
+                  background: rgba(255,255,255,0.84);
+                  padding: 14px;
+                  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.035);
+                  color: #52525b;
+                  font-size: 12px;
+                  line-height: 1.35;
+                  font-weight: 800;
+                  letter-spacing: -0.02em;
+                }
+                .kpi-item strong { display: block; color: #111; font-size: 13px; margin-bottom: 5px; }
+                @media (max-width: 860px) {
+                  .civr-comparison { grid-template-columns: 1fr; }
+                  .middle-arrow { transform: rotate(90deg); min-height: 60px; }
+                  .civr-bottom-kpi { grid-template-columns: 1fr 1fr; }
+                  .mock-card { min-height: auto; }
+                }
+                @media (max-width: 560px) {
+                  .civr-bottom-kpi { grid-template-columns: 1fr; }
+                }
+            </style>
+
+            <div class="civr-comparison">
+                <article class="mock-card as-is">
+                    <div class="mock-label-row">
+                        <div class="mock-label">AS-IS</div>
+                    </div>
+                    <h3>Menu-based Call Routing</h3>
+
+                    <div class="phone-shell">
+                        <div class="phone-top">
+                            <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v1</span></div>
+                            <div class="mini-player light">
+                                <button class="aicall-play-button" aria-label="Play AiCall v1 demo">&#9654;</button>
+                            </div>
+                        </div>
+
+                        <div class="call-area">
+                            <div class="live-transcript">
+                                <div class="turn">
+                                    <div class="avatar">&#128100;</div>
+                                    <div class="bubble">&ldquo;Where is my delivery?&rdquo;</div>
+                                </div>
+                                <div class="turn">
+                                    <div class="avatar ai">AI</div>
+                                    <div class="bubble">&ldquo;For delivery inquiries, press 1.&rdquo;</div>
+                                </div>
+                            </div>
+
+                            <div class="as-is-menu">
+                                <div class="menu-step"><span class="num">1</span> Delivery inquiries</div>
+                                <div class="menu-step"><span class="num">2</span> Reservation changes</div>
+                                <div class="menu-step"><span class="num">3</span> Returns / refunds</div>
+                                <div class="menu-step"><span class="num">4</span> Agent connection</div>
+                                <div class="menu-step"><span class="num">5</span> Other inquiries</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="middle-arrow">
+                    <small>Menu-driven</small>
+                    &#8594;
+                    <div class="sync">LLM<br>routing</div>
+                </div>
+
+                <article class="mock-card to-be">
+                    <div class="mock-label-row">
+                        <div class="mock-label">TO-BE</div>
+                    </div>
+                    <h3>LLM Voice Routing</h3>
+
+                    <div class="phone-shell">
+                        <div class="phone-top">
+                            <div class="phone-brand"><span class="icon">AI</span> LINE WORKS AiCall <span class="version-text">v2</span></div>
+                            <div class="mini-player">
+                                <button class="aicall-play-button" aria-label="Play AiCall v2 demo">&#9654;</button>
+                            </div>
+                        </div>
+
+                        <div class="call-area">
+                            <!-- Bubbles un-trapped! Moved out of .to-flow -->
+                            <div class="conversation-flow">
+                                <div class="turn user-turn">
+                                    <div class="avatar">&#128100;</div>
+                                    <div class="bubble">&ldquo;Where is my delivery?&rdquo;</div>
+                                </div>
+                                <div class="turn ai-turn">
+                                    <div class="avatar ai">AI</div>
+                                    <div class="bubble ai" style="max-width: 90%;">&ldquo;I can help with that. I&rsquo;ll connect you to the delivery flow.&rdquo;</div>
+                                </div>
+                            </div>
+
+                            <div class="to-flow">
+                                <div class="intent-panel">
+                                    <small>LLM classification</small>
+                                    <strong>Delivery Inquiry</strong>
+                                </div>
+
+                                <div class="routing-line line-intent"><svg><path d="M0 0 L0 74" /></svg></div>
+                                <div class="routing-line line-left"><svg><path d="M148 0 C104 8 64 24 0 64" /></svg></div>
+                                <div class="routing-line line-right"><svg><path d="M148 0 C104 8 64 24 0 64" /></svg></div>
+                                <div class="routing-line line-down"><svg><path d="M0 0 C0 22 0 40 0 54" /></svg></div>
+
+                                <div class="intent-orb">LLM</div>
+
+                                <div class="scenario-card delivery active">Delivery<small>selected flow</small></div>
+                                <div class="scenario-card returns">Returns<small>not selected</small></div>
+                                <div class="scenario-card faq">FAQ / SMS<small>self-service</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="civr-bottom-kpi">
+                <div class="kpi-item"><strong>&darr; IVR depth</strong>Natural speech replaces menu traversal.</div>
+                <div class="kpi-item"><strong>&darr; unnecessary handling</strong>LLM interprets caller intent before transfer.</div>
+                <div class="kpi-item"><strong>&uarr; routing efficiency</strong>Connects to the right scenario or team.</div>
+                <div class="kpi-item"><strong>&uarr; scalable operations</strong>New scenarios can be added as modules.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

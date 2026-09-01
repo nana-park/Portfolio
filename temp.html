@@ -1,0 +1,2278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>window.isStandalonePage = false;</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nahyun Park</title>
+    <meta name="description"
+        content="Nahyun Park - AI Chatbot Product Manager at NAVER CLOUD, specializing in conversational AI, senior care solutions, and human-AI interaction design.">
+    <meta property="og:title" content="Nahyun Park">
+    <meta property="og:description" content="Nahyun Park - AI Chatbot Product Manager">
+    <meta property="og:image" content="https://nana-park.github.io/Portfolio/og-thumbnail.jpg">
+    <meta property="og:url" content="https://nana-park.github.io/Portfolio/">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_testimonials.css">
+    <link rel="stylesheet" href="style_contact.css">
+    <link rel="stylesheet" href="footer_override.css">
+    <link rel="stylesheet" href="style_research.css">
+    <link rel="stylesheet" href="style_brand_story.css">
+    <link rel="stylesheet" href="style_expertise.css">
+    <link rel="stylesheet" href="style_expertise_override.css">
+    <link rel="stylesheet" href="history_override.css">
+    <link rel="stylesheet" href="how-i-work.css">
+    <link rel="stylesheet" href="style_awards.css">
+    <link rel="stylesheet" href="style_banner.css">
+    <link rel="stylesheet" href="style_gradient_override.css">
+    <link rel="stylesheet" href="style_media.css">
+    <script>
+            // [FOUC Prevention] Synchronously hide sections that don't belong to the active URL hash before DOM parses
+
+    </script>
+    <style>
+        /* Mobile Menu Override */
+        @media (max-width: 1024px) {
+            .nav-menu.active {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                height: 100dvh;
+                background: #111111;
+                z-index: 9999;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                gap: 1rem;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active>div {
+                height: auto !important;
+                /* Override desktop h-full */
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-menu.active .nav-link {
+                display: flex !important;
+                height: auto !important;
+                width: 100% !important;
+                padding: 15px 0;
+                font-size: 16px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                color: #ffffff !important;
+            }
+
+            .nav-menu.active .has-dropdown .invisible {
+                /* Expose submenus clearly on mobile */
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column;
+                top: 0 !important;
+                left: 0 !important;
+                /* Kill desktop left-1/2 */
+                transform: none !important;
+                /* Kill desktop translate-x */
+                opacity: 1 !important;
+                visibility: visible !important;
+                height: auto !important;
+                width: 100% !important;
+                /* Kill desktop w-[200px] */
+                margin-top: 0;
+                gap: 0;
+                background: #1a1a1a !important;
+                padding: 5px 0;
+                border-top: 1px solid #333333;
+                border-bottom: 1px solid #333333;
+            }
+
+            .nav-menu.active .has-dropdown .lnb-link {
+                display: flex !important;
+                color: #aaaaaa !important;
+                /* Override desktop text-white */
+                font-size: 14px;
+                padding: 12px 0;
+                font-weight: 400;
+                width: 100% !important;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        /* Navbar Scrolled explicitly dark texts on Light Pages */
+        .navbar.force-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar.force-scrolled .mobile-toggle span {
+            background: #111111 !important;
+        }
+
+        .navbar.force-scrolled .logo,
+        .navbar.force-scrolled .nav-link {
+            color: #111111 !important;
+        }
+
+        /* [Critical Fix] Mega Menu (.gnb-expanded) must strictly override scrolled black texts */
+        .navbar.gnb-expanded .logo {
+            color: #ffffff !important;
+        }
+
+        .navbar.gnb-expanded .nav-link {
+            color: #888888 !important;
+        }
+
+        .navbar.gnb-expanded .nav-link:hover,
+        .navbar.gnb-expanded .nav-link.active,
+        .navbar.gnb-expanded .has-dropdown:hover>.nav-link {
+            color: #d97706 !important;
+        }
+
+        .navbar.gnb-expanded .mobile-toggle span {
+            background: #ffffff !important;
+        }
+
+        /* [Critical Fix] Mobile Menu should always be perfectly dark and not inherit desktop orange active states */
+        .nav-menu.active .nav-link,
+        .nav-menu.active .nav-link.active,
+        .nav-menu.active .nav-link:hover,
+        .nav-menu.active .has-dropdown:hover>.nav-link,
+        .navbar.force-scrolled .nav-menu.active .nav-link {
+            color: #ffffff !important;
+        }
+
+        /* Force Navbar strictly dark if the mobile menu is active */
+        .navbar:has(.nav-menu.active) {
+            background: #111111 !important;
+            border-bottom: 1px solid #333333 !important;
+        }
+
+        .navbar:has(.nav-menu.active) .logo {
+            color: #ffffff !important;
+        }
+
+        .navbar:has(.nav-menu.active) .mobile-toggle span {
+            background: #ffffff !important;
+        }
+
+        /* [Critical Fix] Ensure active/hover links stay orange when scrolled (Desktop Only) */
+        @media (min-width: 1025px) {
+
+            .navbar.force-scrolled .nav-link:hover,
+            .navbar.force-scrolled .nav-link.active,
+            .navbar.force-scrolled .has-dropdown:hover>.nav-link {
+                color: #d97706 !important;
+            }
+        }
+
+        /* Article Detail Content Styling */
+        #article-detail-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+        }
+
+        #article-detail-content b,
+        #article-detail-content strong {
+            font-weight: 600;
+            color: #111111;
+        }
+
+        /* Figure and Captions Redesign */
+        #article-detail-content .cheditor-caption-wrapper {
+            text-align: center !important;
+            margin: 2rem 0 !important;
+            display: block !important;
+        }
+
+        #article-detail-content .cheditor-caption {
+            border: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        #article-detail-content .cheditor-caption img {
+            margin: 0 !important;
+            /* overrides the general img margin */
+            border-radius: 8px !important;
+        }
+
+        #article-detail-content .cheditor-caption-text {
+            margin: 12px 0 0 0 !important;
+            text-align: center !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 13px !important;
+            color: #888888 !important;
+            /* Subtle gray for captions */
+            font-style: italic !important;
+            line-height: 1.5 !important;
+            letter-spacing: 0 !important;
+        }
+
+        /* References and Notes */
+        #article-detail-content .article-reference {
+            font-size: 13px !important;
+            color: #888888 !important;
+            text-align: right !important;
+            margin-top: 4px !important;
+            margin-bottom: 4px !important;
+        }
+
+        /* Blockquotes */
+        #article-detail-content blockquote {
+            background: transparent !important;
+            border: none !important;
+            padding: 1.5rem 2.5rem !important;
+            margin: 2rem auto !important;
+            max-width: 90% !important;
+            color: #52525b !important;
+            font-style: italic !important;
+            font-size: 1.05rem !important;
+            line-height: 1.75 !important;
+            text-align: center !important;
+            border-radius: 0 !important;
+        }
+
+        #article-detail-content blockquote p {
+            margin: 0 !important;
+            text-align: center !important;
+        }
+
+        #article-detail-content blockquote p[style*="text-align: right"],
+        #article-detail-content blockquote p[style*="text-align:right"] {
+            text-align: right !important;
+            font-size: 0.85rem !important;
+            color: #888888 !important;
+            margin-top: 0.75rem !important;
+            font-style: normal !important;
+        }
+
+        /* Subheadings */
+        #article-detail-content .article-subheading {
+            margin-top: 5rem !important;
+            /* ~4 lines of spacing above */
+            margin-bottom: 0.25rem !important;
+            /* minimal below */
+            padding-bottom: 0.5rem !important;
+            border-bottom: 1px solid #e5e7eb !important;
+        }
+
+        #article-detail-content .article-subheading span,
+        #article-detail-content .article-subheading b,
+        #article-detail-content .article-subheading strong {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+            color: #111111 !important;
+        }
+    </style>
+<script>window.defaultRoute = 'projects';</script>
+<script>
+    (function () {
+        var hash = window.location.hash.replace('#', '') || window.defaultRoute;
+        hash = hash.split('?')[0];
+
+        var routes = {
+            'projects': ['projects', 'e2e-ai-voice-products', 'featured-ai-products'],
+            'hopzie-oneclickbuilder': ['hopzie-oneclickbuilder'],
+            'ai-mentoring-agent-detail': ['ai-mentoring-agent-detail'],
+            'llm-based-voice-ivr': ['llm-based-voice-ivr']
+        };
+
+        var style = document.createElement('style');
+        style.id = 'spa-fouc-preventer';
+
+        var css = '';
+        var allSections = ['projects', 'hopzie-oneclickbuilder', 'ai-mentoring-agent-detail', 'llm-based-voice-ivr'];
+        var activeIds = routes[hash] || routes['projects'];
+
+        for (var i = 0; i < allSections.length; i++) {
+            if (activeIds.indexOf(allSections[i]) === -1) {
+                css += 'section#' + allSections[i] + ' { display: none !important; }\n';
+            }
+        }
+
+        style.innerHTML = css;
+        document.head.appendChild(style);
+    })();
+</script>
+</head>
+
+<body>
+<svg width="0" height="0" style="position:absolute; width:0; height:0;">
+    <defs>
+        <linearGradient id="arrow-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+        <linearGradient id="arrow-grad-down" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0" />
+            <stop offset="100%" stop-color="#d97706" stop-opacity="1" />
+        </linearGradient>
+    </defs>
+</svg>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+
+        <!-- Full-Width Mega Menu Backdrop (Controlled by JS) -->
+        <div
+            class="fixed top-[70px] left-0 w-full bg-[#111111] border-t border-[#333] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] z-[-1] mega-backdrop">
+        </div>
+
+        <div class="container mx-auto flex justify-between items-center h-full relative">
+            <div class="flex-1 flex justify-start items-center">
+                <a href="https://nana-park.github.io/Portfolio/index.html" class="logo text-lg font-bold text-black"><span
+                        style="color: #D97706;">bread</span>me</a>
+            </div>
+            <div class="nav-menu hidden lg:flex justify-center gap-12 flex-shrink-0 shrink-0 h-full" id="navMenu">
+                <div class="flex items-center h-full"><a href="index.html" class="nav-link">HOME</a></div>
+
+                <!-- ABOUT Dropdown -->
+                <div class="group has-dropdown about-dropdown h-full flex items-center relative">
+                    <a href="about.html" class="nav-link flex items-center h-full">ABOUT</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[120px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="about.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            breadme
+                        </a>
+                        <a href="career.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Career
+                        </a>
+                        <a href="qualified.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Qualified
+                        </a>
+                        <a href="enjoy.html" style="display: none !important;"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Enjoy
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PROJECTS Dropdown -->
+                <div class="group has-dropdown h-full flex items-center relative">
+                    <a href="projects.html" class="nav-link flex items-center h-full">PROJECTS</a>
+
+                    <!-- Seamless Submenu Aligned to Parent -->
+                    <div
+                        class="absolute top-[70px] left-1/2 -translate-x-1/2 w-[200px] h-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col justify-center items-center gap-1.5 z-[999]">
+                        <a href="projects.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Products
+                        </a>
+                        <a href="research.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Research
+                        </a>
+                        <a href="articles.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Articles
+                        </a>
+                        <a href="lectures.html"
+                            class="text-[13px] font-sans font-medium text-white/90 hover:text-[#d97706] transition-colors flex items-center justify-center w-full lnb-link">
+                            Lectures
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex items-center h-full"><a href="awards.html" class="nav-link">AWARDS</a></div>
+                <div class="flex items-center h-full"><a href="contact.html" class="nav-link">CONTACT</a></div>
+            </div>
+            <div class="flex-1 flex justify-end items-center gap-3">
+                <div class="hidden lg:flex gap-3">
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#f2f2f2] hover:bg-[#e5e5e5] text-black rounded transition-colors uppercase tracking-wider">Resume</a>
+                    <a href="#" onclick="event.preventDefault(); alert('Coming soon!');"
+                        class="px-3 py-1.5 text-[0.7rem] font-bold bg-[#222222] hover:bg-black text-white rounded transition-colors uppercase tracking-wider">Portfolio
+                        PDF</a>
+                </div>
+                <!-- ル∥ル∥吏????flex-1 justify-end 袁⑸즲???-->
+                <button class="mobile-toggle lg:hidden ml-4" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Products Section -->
+    <section class="pb-16 md:pb-24 bg-white" id="projects" style="display: none; padding-top: 12rem;">
+        <div class="container mx-auto px-4 lg:px-12 max-w-[1400px]">
+            <!-- Projects Hero Intro -->
+            <div class="flex flex-col items-center text-center mb-4 lg:mb-8">
+                <h1 class="font-sans text-zinc-900 text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] tracking-tight font-medium max-w-[1000px] mx-auto mb-6"
+                    style="word-break: keep-all;">
+                    Designing AI that feels human through merging psychology and engineering.
+                </h1>
+                <p class="font-sans text-zinc-600 text-[16px] md:text-[18px] font-normal leading-[1.6]">
+                    Building AI-powered systems that shape motivation, trust, and human behavior.
+                </p>
+
+                <div class="w-full mt-12 md:mt-16 bg-gray-50 aspect-[16/9] md:aspect-[2.35/1] overflow-hidden">
+                    <img src="nahyun_imported/image_source/Projects_Products/bg.png" alt="Team Collaboration"
+                        class="w-full h-full object-cover object-top">
+                </div>
+
+                <p class="font-sans text-zinc-500 text-[15px] md:text-[16px] font-normal leading-[1.6] max-w-[800px] mx-auto mt-12 md:mt-16 px-4 text-center"
+                    style="word-break: keep-all;">
+                    Collaborating with industry leaders in Korea, China, Japan, and Vietnam<br class="hidden md:block">
+                    and reaching users effectively across Korea, Japan, and the US.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center pt-2 md:pt-3 w-full text-left">
+
+                <div id="archived-detailed-project-cards" style="display: none;">
+<!-- Group 1: Naver -->
+                <div id="e2e-ai-voice-products" class="w-full mb-20 lg:mb-28">
+                    <div class="max-w-[1200px] mx-auto w-full px-4 lg:px-0 mb-12 md:mb-16 text-left">
+                        <div class="text-[11px] text-zinc-400 uppercase tracking-[0.2em] mb-3 font-medium font-sans">E2E
+                            AI Voice Products</div>
+                        <h2 class="font-sans text-zinc-900 text-[26px] md:text-[30px] lg:text-[34px] leading-[1.15] tracking-tight font-medium mb-4 max-w-[800px]"
+                            style="word-break: keep-all;">Building the AICC ecosystem<br class="hidden md:block">through
+                            AI conversation products</h2>
+                        <p class="font-sans text-zinc-500 text-[15px] md:text-[16px] leading-[1.65] max-w-[720px]"
+                            style="word-break: keep-all;">I planned and improved voice AI products across contact
+                            center, senior care call-bot,<br> and operation console layers - from real-time interaction to
+                            routing, QA, and admin workflows.</p>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1200px] mx-auto w-full px-4 lg:px-0 items-start">
+                        <!-- LINE WORKS AiCall -->
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <div class="block">
+                                <div
+                                    class="relative w-full h-[220px] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                                                          <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
+                                          <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">No.1 Market Share</div>
+                                      </div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_aicall.png"
+                                        alt="LINE WORKS AiCall" class="w-full h-full object-cover">
+                                    <div class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 z-10">
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            JP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                LINE WORKS AiCall</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                Enterprise AI Contact Center</h3>
+                            <p
+                                class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6 min-h-[48px]">
+                                AI contact center platform for enterprise voice operations.
+                            </p>
+
+                            <!-- Metrics -->
+                            <div class="grid grid-cols-2 gap-2 mb-6 min-h-[84px]">
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">80%</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">incoming
+                                        calls automated</span>
+                                </div>
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">45%</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">customer
+                                        wait time reduced</span>
+                                </div>
+                            </div>
+
+                            <!-- Keywords -->
+                            <div class="flex flex-wrap content-start gap-1.5 mb-2">
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Voice IVR</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Call Automation</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Enterprise AICC</span>
+                            </div>
+
+                            <!-- Initiative List -->
+                            <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <a href="projects/llm-based-voice-ivr.html"
+                                    class="flex flex-row items-center justify-between min-h-[56px] py-2 transition-all duration-200 ease-out hover:pl-2 group/item cursor-pointer">
+                                    <div class="font-sans text-[12.5px] tracking-tight whitespace-nowrap leading-[1.45] font-semibold text-zinc-900 transition-colors group-hover/item:text-[#d97706]">
+                                        From Voice Menu Trees to Natural Conversations</div>
+                                    <div class="flex items-center font-sans text-[11px] font-semibold text-[#d97706] transition-colors group-hover/item:text-[#b46305] whitespace-nowrap ml-4">
+                                        <span>Deep dive</span>
+                                        <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/item:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        AI Call Integration with Work messenger</div>
+                                    
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        From Custom Chatbots to Reusable Module Chatbots</div>
+
+                                    
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Build API Without External Coding & Link</div>
+                                    
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Unified KR-JP Specs</div>
+                                    
+                                </div>
+                            </div>
+                            <button
+                                onclick="expandProjects(this)"
+                                aria-expanded="false"
+                                class="flex items-center text-left font-sans text-[13px] font-medium text-zinc-800 hover:text-[#d97706] transition-colors cursor-pointer w-fit mt-4 group/btn">
+                                <span class="transition-colors">View more projects</span>
+                                <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-[#d97706]"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- NAVER CareCall -->
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <div class="block">
+                                <div
+                                    class="relative w-full h-[220px] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                    <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">No.1 Market Share</div>
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">Award-winning</div>
+                                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">APEC 2025</div>
+                                        <div
+                                            class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            Product Launch</div>
+                                    </div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_carecall.png"
+                                        alt="NAVER CareCall" class="w-full h-full object-cover">
+                                    <div class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 z-10">
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            EN</div>
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            KR</div>
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            JP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                NAVER CareCall</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                Senior Care AI Call-bot</h3>
+                            <p
+                                class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6 min-h-[48px]">
+                                AI voice call service for senior care and municipality operations.
+                            </p>
+
+                            <!-- Metrics -->
+                            <div class="grid grid-cols-2 gap-2 mb-6 min-h-[84px]">
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">50K+</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">users
+                                        across 160+ municipalities</span>
+                                </div>
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">$25M</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">USD social
+                                        value generated</span>
+                                </div>
+                            </div>
+
+                            <!-- Keywords -->
+                            <div class="flex flex-wrap content-start gap-1.5 mb-2">
+                                
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Senior UX</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Multimodal VUI</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">B2G</span>
+                            </div>
+
+                                                                                    <!-- Initiative Lists (Independent) -->
+                            <div class="flex flex-col mt-2 divide-y divide-zinc-100" id="carecallCapabilityList">
+                                
+                                <!-- Group 1: Interaction Experience -->
+                                <div class="flex flex-col group/list">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            Interaction Experience <span class="text-zinc-400 font-normal ml-0.5">(4)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Multimodal Avatar-based CareCall</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Phone Calls to Real-time Voice Conversations in Apps</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Japan Localization</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From AI Calling You to Calling AI</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 2: AI Dialogue -->
+                                <div class="flex flex-col group/list">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            AI Dialogue <span class="text-zinc-400 font-normal ml-0.5">(5)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Real-time Context-aware Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Persona-driven Customization Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Medication Adherence Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Cognitive Risk Monitoring Call</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Safe Return Home Check-in Call</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 3: Conversation Infrastructure -->
+                                <div class="flex flex-col group/list border-b border-zinc-200">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            Conversation Infrastructure <span class="text-zinc-400 font-normal ml-0.5">(3)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Wrong Responses to Accurate Understanding</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Optimizing AI Pace for Elderly Users</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Complex Flows to Simple Conversations</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NAVER CareCall Console -->
+                        <div class="flex flex-col h-full group focus:outline-none w-full relative">
+                            <div class="block">
+                                <div
+                                    class="relative w-full h-[220px] overflow-hidden bg-gray-50 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)] mb-5">
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_console.png"
+                                        alt="NAVER CareCall Console" class="w-full h-full object-cover">
+                                    <div class="absolute bottom-3.5 right-3.5 flex items-center gap-1.5 z-10">
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            KR</div>
+                                        <div
+                                            class="inline-flex items-center px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                            JP</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                NAVER CareCall Console</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                AI Call Operation System</h3>
+                            <p
+                                class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6 min-h-[48px]">
+                                Operation console for scalable AI call management.
+                            </p>
+
+                            <!-- Metrics -->
+                            <div class="grid grid-cols-2 gap-2 mb-6 min-h-[84px]">
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">75%</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">municipal
+                                        staff workload reduced</span>
+                                </div>
+                                <div
+                                    class="h-full p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center">
+                                    <span
+                                        class="block font-sans text-[17px] md:text-[18px] leading-[1.15] font-semibold text-zinc-900 mb-1">90m
+                                        &rarr; 1.5m</span>
+                                    <span class="block font-sans text-[10.5px] leading-[1.35] text-zinc-500">manual
+                                        calls replaced by AI</span>
+                                </div>
+                            </div>
+
+                            <!-- Keywords -->
+                            <div class="flex flex-wrap content-start gap-1.5 mb-2">
+                                
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">HITL</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">RBAC</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">B2G SaaS</span>
+                            </div>
+
+                            <!-- Initiative List -->
+                            <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        B2G SaaS Monetization</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Human-in-the-Loop Interface for CareCall</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Operation Workflow Management</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Multi-tier RBAC System</div>
+                                </div>
+                                <div class="hidden-project hidden flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Service Request DX Interface</div>
+                                </div>
+                            </div>
+                            <button
+                                onclick="expandProjects(this)"
+                                aria-expanded="false"
+                                class="flex items-center text-left font-sans text-[13px] font-medium text-zinc-800 hover:text-[#d97706] transition-colors cursor-pointer w-fit mt-4 group/btn">
+                                <span class="transition-colors">View more projects</span>
+                                <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-[#d97706]"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: SKT -->
+                <div class="w-full mb-20 lg:mb-28 pt-20 lg:pt-28">
+                    <div class="max-w-[800px] mx-auto w-full px-4 lg:px-0 mb-12 md:mb-16 text-center">
+                        <div class="text-[11px] text-zinc-400 uppercase tracking-[0.2em] mb-3 font-medium font-sans">AI
+                            Assistant</div>
+                        <h2 class="font-sans text-zinc-900 text-[26px] md:text-[30px] lg:text-[34px] leading-[1.15] tracking-tight font-medium mb-4"
+                            style="word-break: keep-all;">Exploring personalization strategies<br>for mobile AI assistants
+                        </h2>
+                        <p class="font-sans text-zinc-500 text-[15px] md:text-[16px] leading-[1.65] mx-auto"
+                            style="word-break: keep-all;">Explored personalization and recommendation experiences for SK
+                            Telecom's mobile AI assistant, A.,<br> through UX research, conversational planning, and LLM
+                            agent QA.</p>
+                    </div>
+
+                    <div class="max-w-[760px] mx-auto w-full px-4 lg:px-0">
+                        <div class="flex flex-col w-full relative group focus:outline-none">
+                            <div
+                                class="relative w-full h-[220px] overflow-hidden bg-gradient-to-br from-[#d9d4ee] via-[#f3f0fa] to-[#e5edf8] mb-6 shadow-sm transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        Award-winning</div>
+                                </div>
+                                <img src="nahyun_imported/image_source/Projects_Products/thumnail_adot.png"
+                                    alt="SK Telecom A." class="w-full h-full object-cover object-center">
+                            </div>
+
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                SK Telecom A.</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                Conversational AI Assistant</h3>
+                            <p class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6">
+                                Mobile AI assistant focused on conversational recommendation, personalization, and
+                                context-aware user experiences.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4">
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">5M+</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">users after
+                                        major renewal</span>
+                                </div>
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+56%</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">user growth
+                                        achieved</span>
+                                </div>
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+3%p</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">PoC CTR
+                                        improvement</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">LLM Agent</span>
+                                
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Personalization</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Mobile AI</span>
+                                
+                            </div>
+
+                            <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                                                                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Context-aware Schedule Recommendation</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Conversational Music Recommendation</div>
+                                    
+                                </div>
+                                                                                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        LLM Agent QA & Service operation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Venture -->
+                <div class="w-full mb-32 md:mb-40 pt-20 lg:pt-28">
+                    <div class="max-w-[1200px] mx-auto w-full px-4 lg:px-0 mb-12 md:mb-16 text-left">
+                        <div class="text-[11px] text-zinc-400 uppercase tracking-[0.2em] mb-3 font-medium font-sans">
+                            Featured AI Product Experiments</div>
+                        <h2 class="font-sans text-zinc-900 text-[26px] md:text-[30px] lg:text-[34px] leading-[1.15] tracking-tight font-medium mb-4 w-full"
+                            style="word-break: keep-all;">Exploring AI-native product concepts through rapid experiments
+                        </h2>
+                        <p class="font-sans text-zinc-500 text-[15px] md:text-[16px] leading-[1.65] w-full"
+                            style="word-break: keep-all;">Before working on production-scale AI systems, I explored
+                            AI-native product concepts across creator commerce, participatory virtual communities,<br> and
+                            behavior-support systems through rapid prototyping, MVP experiments, and early-stage
+                            validation.</p>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-[1200px] mx-auto w-full px-4 lg:px-0">
+                        <!-- Hopzie -->
+                        <div class="flex flex-col h-full w-full relative group focus:outline-none">
+                            <div
+                                class="relative w-full h-[220px] overflow-hidden bg-gradient-to-br from-[#f2dfc4] via-[#f8f2ea] to-[#e9eef7] mb-6 shadow-sm transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        Award-winning</div>
+                                    <div
+                                        class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[11px] leading-none font-semibold text-white shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                        Product Launch</div>
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] leading-none font-medium text-white shadow-sm">
+                                        Google</div>
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] leading-none font-medium text-white shadow-sm">
+                                        SK Telecom</div>
+                                </div>
+                                <img src="nahyun_imported/image_source/Projects_Products/thumnail_hopzie.png"
+                                    alt="Hopzie" class="w-full h-full object-cover object-center">
+                            </div>
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                Hopzie</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                AI Commerce Builder</h3>
+                            <p
+                                class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6 min-h-[48px]">
+                                Creator commerce automation platform for YouTube-based shopping journeys.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">895K</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">combined
+                                        consumer reach</span>
+                                </div>
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">80.18%</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">in-page
+                                        CTR</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Creator Commerce</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">AI Automation</span>
+                                
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Link Optimization</span>
+                            </div>
+
+                                                          <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                  <div class="flex flex-col py-4 relative">
+                                      <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                          One-click Creator Commerce Builder</div>
+                                      
+                                  </div>
+                                  <div class="flex flex-col py-4 relative">
+                                      <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                          Commission Logic Engine</div>
+                                      
+                                  </div>
+                                  <div class="flex flex-col py-4 relative">
+                                      <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                          Link Resilience Automation</div>
+                                        
+                                    </div>
+                                </div>
+                                <a href="projects/hopzie-oneclickbuilder.html" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                    Deep dive
+                                    <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                </a>
+                          </div>
+
+                          <!-- DIVE -->
+                          <div class="flex flex-col h-full w-full relative group focus:outline-none">
+                              <div
+                                  class="relative w-full h-[220px] overflow-hidden bg-gradient-to-br from-[#dce9ff] via-[#f0f6ff] to-[#e7ecfb] mb-6 shadow-sm transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                <div class="absolute top-3.5 left-3.5 flex flex-col space-y-1.5 items-start z-10">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[11px] leading-none font-semibold text-zinc-900 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        Award-winning</div>
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] leading-none font-medium text-white shadow-sm">
+                                        SK Telecom</div>
+                                    <div
+                                        class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-[11px] leading-none font-medium text-white shadow-sm">
+                                        UX Korea</div>
+                                </div>
+                                <img src="nahyun_imported/image_source/Projects_Products/thumnail_DIVE.png" alt="DIVE"
+                                    class="w-full h-full object-cover" style="object-position: center 100%;">
+                            </div>
+                            <p
+                                class="font-sans text-[12.5px] md:text-[13px] text-zinc-500 mb-1.5 uppercase tracking-wider font-medium">
+                                DIVE</p>
+                            <h3 style="font-family: 'Inter', sans-serif;"
+                                class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2.5 group-hover:text-[#d97706] transition-colors">
+                                Metaverse Reading Culture Platform</h3>
+                            <p
+                                class="font-sans text-[13.5px] md:text-[14px] leading-[1.6] text-zinc-500 mb-6 min-h-[48px]">
+                                AI-supported metaverse reading community combining participatory interaction,
+                                AI-generated UGC, and virtual economy systems.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">Excellence</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Korea UX
+                                        Association award</span>
+                                </div>
+                                <div
+                                    class="p-3.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-center">
+                                    <span
+                                        class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">MVP</span>
+                                    <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Unity /
+                                        Zepeto prototype</span>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Social Navigation</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Intrinsic Motivation</span>
+                                <span
+                                    class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Virtual Economy</span>
+                            </div>
+
+                            <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Socially Motivated Reading Flow</div>
+                                    
+                                </div>
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        AI-Powered UGC Ecosystem</div>
+                                    
+                                </div>
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Behavioral Economy & Identity Expression</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 4: Behavioral Studies -->
+                <div class="w-full mb-32 md:mb-48 pt-10">
+                    <div class="max-w-[1200px] mx-auto w-full px-4 lg:px-0 mb-10 text-left">
+                        <div class="text-[11px] text-zinc-400 uppercase tracking-[0.2em] mb-3 font-medium font-sans">
+                            Behavioral Product & Interaction Research</div>
+                        <h2 class="font-sans text-zinc-900 text-[26px] md:text-[30px] lg:text-[34px] leading-[1.15] tracking-tight font-medium mb-4"
+                            style="word-break: keep-all;">Designing systems that shape motivation, trust, and
+                            exploration</h2>
+                        <p class="font-sans text-zinc-500 text-[15px] md:text-[16px] leading-[1.65] max-w-[800px]"
+                            style="word-break: keep-all;">I connect product experiments with behavioral research to
+                            understand how social structures, interface signals, and interaction patterns influence
+                            human decisions.</p>
+                    </div>
+
+                    <!-- Layout Grid -->
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 max-w-[1200px] mx-auto w-full px-4 lg:px-0 items-start">
+
+                        <!-- Left Column -->
+                        <div class="flex flex-col gap-10">
+                            <!-- Kyonggi University -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start group">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#e7f1e8] via-[#f7f4ea] to-white transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[9px] leading-none font-semibold text-white z-10 shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                        Launch</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_mentoring.png"
+                                        alt="Mentor AI Operation System"
+                                        class="w-full h-full object-cover object-center p-0 transform scale-110">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Kyonggi University</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2 group-hover:text-[#d97706] transition-colors">
+                                        Mentor AI Operation System</h3>
+
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center min-h-[85px]">
+                                            <span class="block font-sans text-[17px] leading-[1.2] font-semibold text-zinc-900 mb-1">100%</span>
+                                            <span
+                                                class="block font-sans text-[11px] leading-[1.45] text-zinc-500">Program
+                                                Completion Rate</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center min-h-[85px]">
+                                            <span class="block font-sans text-[17px] leading-[1.2] font-semibold text-zinc-900 mb-1">↓80%</span>
+                                            <span
+                                                class="block font-sans text-[11px] leading-[1.45] text-zinc-500">Mentoring
+                                                Documentation Effort</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-2">
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Learning Accountability</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Process Automation</span>
+                                    </div>
+
+                                    <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Learner Context Memory</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Mentor Insight Extraction</div>
+                                        </div>
+                                    </div>
+                                    <a href="projects/ai-mentoring-agent-detail.html" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                        Deep dive
+                                        <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Paper 1 -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start group">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#f3f4f6] via-[#f9fafb] to-white transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[9px] leading-none font-semibold text-zinc-900 z-10 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        SSCI</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_news.png"
+                                        alt="AI Trust Signaling Research"
+                                        class="w-full h-full object-cover object-center p-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Technology in Society</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2 group-hover:text-[#d97706] transition-colors">
+                                        Trust Signals for Digital News</h3>
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">4.5x</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher willingness to pay<br>for human vs. AI verification</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">17.7%</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Verification impact<br>on credibility decisions</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-2">
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Human-AI Trust</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Credibility Signals</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Conjoint Analysis</span>
+                                    </div>
+
+                                    <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">AI or Human Review UI</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Source Transparency UI</div>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160791X26000412?via%3Dihub" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                        View paper
+                                        <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- New Project: PFP NFT Consumer Journey -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start group">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#f3f4f6] via-[#f9fafb] to-white transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[9px] leading-none font-semibold text-zinc-900 z-10 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        Conference</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_nft.png"
+                                        alt="PFP NFT Consumer Journey"
+                                        class="w-full h-full object-cover object-center p-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Korea Society of IT Services</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2 group-hover:text-[#d97706] transition-colors">
+                                        PFP NFT Consumer Journey</h3>
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">3 User Types</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Segmented by purchasing patterns</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">5 Decision Stages</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">CDM-based behavioral journey</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-2">
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Web3</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Cryptocurrency</span>
+                                        <span class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Trust Signals</span>
+                                    </div>
+
+                                    <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Community-based Discovery Flow</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Multi-channel Trust Formation</div>
+                                        </div>
+                                    </div>
+                                    <a href="nahyun_imported/document_source/Projects_Research/(EN)Korea%20Society%20of%20IT%20Services.pdf" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                        View paper
+                                        <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="flex flex-col gap-10">
+                            <!-- Just Do It -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start group">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#e7f1e8] via-[#f7f4ea] to-white transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-zinc-900/80 backdrop-blur-md border border-white/10 text-[9px] leading-none font-semibold text-white z-10 shadow-[0_4px_14px_rgba(0,0,0,0.12)]">
+                                        Launch</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_just%20do%20it.png"
+                                        alt="AI Social Fitness App"
+                                        class="w-full h-full object-cover object-center p-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Just Do It</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2 group-hover:text-[#d97706] transition-colors">
+                                        Fitness Accountability SNS</h3>
+
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center min-h-[85px]">
+                                            <span class="block font-sans text-[17px] leading-[1.2] font-semibold text-zinc-900 mb-1">+53%</span>
+                                            <span
+                                                class="block font-sans text-[11px] leading-[1.45] text-zinc-500">Challenge
+                                                Re-registration</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center min-h-[85px]">
+                                            <span class="block font-sans text-[17px] leading-[1.2] font-semibold text-zinc-900 mb-1">100%</span>
+                                            <span
+                                                class="block font-sans text-[11px] leading-[1.45] text-zinc-500">Operating
+                                                Loss Recovery</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-2">
+                                        
+                                        
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Social Accountability</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Community UX</span>
+                                    </div>
+
+                                    <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Prove worked out in the form of SNS</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Offline community event</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Paper 2 (Moved from Right Column) -->
+                            <div
+                                class="grid grid-cols-[84px_1fr] sm:grid-cols-[96px_1fr] md:grid-cols-[120px_1fr] gap-5 items-start lg:mt-[44px] group">
+                                <div
+                                    class="relative w-full aspect-square shrink-0 border border-zinc-200 shadow-sm overflow-hidden bg-gradient-to-br from-[#f3f4f6] via-[#f9fafb] to-white transform transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.15)]">
+                                    <div
+                                        class="absolute top-2 left-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md border border-white/70 text-[9px] leading-none font-semibold text-zinc-900 z-10 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+                                        SSCI</div>
+                                    <img src="nahyun_imported/image_source/Projects_Products/thumnail_digital%20transformation.png"
+                                        alt="Exploratory Reading Interaction System"
+                                        class="w-full h-full object-cover object-center p-0">
+                                </div>
+                                <div class="flex flex-col">
+                                    <p
+                                        class="font-sans text-[12px] md:text-[13px] text-zinc-500 mb-1 uppercase tracking-wider font-medium">
+                                        Information Development</p>
+                                    <h3 style="font-family: 'Inter', sans-serif;"
+                                        class="text-[20px] md:text-[22px] font-normal text-zinc-900 tracking-tight leading-[1.3] mb-2 group-hover:text-[#d97706] transition-colors">
+                                        Digital Book Discovery Experience</h3>
+
+                                    <div class="grid grid-cols-2 gap-2 mb-4">
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+27%</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher satisfaction<br>in random vs. front previews</span>
+                                        </div>
+                                        <div class="p-2.5 border border-zinc-200 bg-zinc-50 flex flex-col justify-center text-left min-h-[85px]">
+                                            <span class="block font-sans text-[19px] leading-[1.15] font-semibold text-zinc-900 mb-1">+26%</span>
+                                            <span class="block font-sans text-[11px] leading-[1.35] text-zinc-500">Higher purchase intention<br>in exploratory previews</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-1.5 mb-2">
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Exploratory UX</span>
+                                        <span
+                                            class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Information Behavior</span>
+                                        <span class="inline-flex items-center justify-center px-2.5 py-1 border border-zinc-200 rounded-full font-sans text-[10.5px] leading-normal text-zinc-500 bg-zinc-50">Digital Transformation</span>
+                                    </div>
+
+                                    <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Offline-to-Online Browsing UX</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Serendipitous Discovery Flow</div>
+                                        </div>
+                                    </div>
+                                    <a href="https://doi.org/10.1177/02666669251399814" target="_blank" class="inline-flex items-center mt-4 mb-2 text-[13px] font-semibold text-[#d97706] hover:text-[#b45309] transition-colors group w-fit">
+                                        View paper
+                                        <span class="ml-1.5 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+<!-- All Projects Summary List -->
+<div class="max-w-[1200px] mx-auto w-full px-4 lg:px-0 mt-5 mb-2">
+    <div class="flex flex-col">
+
+        <div class="mb-20">
+            <h4 class="font-sans text-[12px] tracking-[0.1em] uppercase text-zinc-400 font-semibold mb-2 px-2">AI Chatbot Service</h4>
+            <div class="flex flex-col border-t border-zinc-200">
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>LINE WORKS AiCall <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Enterprise AI Contact Center</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <a href="projects/llm-based-voice-ivr.html"
+                                    class="flex flex-row items-center justify-between min-h-[56px] py-2 transition-all duration-200 ease-out hover:pl-2 group/item cursor-pointer">
+                                    <div class="font-sans text-[12.5px] tracking-tight whitespace-nowrap leading-[1.45] font-semibold text-zinc-900 transition-colors group-hover/item:text-[#d97706]">
+                                        From Voice Menu Trees to Natural Conversations</div>
+                                    <div class="flex items-center font-sans text-[11px] font-semibold text-[#d97706] transition-colors group-hover/item:text-[#b46305] whitespace-nowrap ml-4">
+                                        <span>Deep dive</span>
+                                        <svg class="w-3.5 h-3.5 ml-1 transition-transform duration-300 group-hover/item:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                        </svg>
+                                    </div>
+                                </a>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        AI Call Integration with Work messenger</div>
+                                    
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        From Custom Chatbots to Reusable Module Chatbots</div>
+
+                                    
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Build API Without External Coding & Link</div>
+                                    
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Unified KR-JP Specs</div>
+                                    
+                                </div>
+                            </div>
+            </div>
+        </details>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>NAVER CareCall <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Senior Care AI Call-bot</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100" id="carecallCapabilityList">
+                                
+                                <!-- Group 1: Interaction Experience -->
+                                <div class="flex flex-col group/list">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            Interaction Experience <span class="text-zinc-400 font-normal ml-0.5">(4)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Multimodal Avatar-based CareCall</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Phone Calls to Real-time Voice Conversations in Apps</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Japan Localization</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From AI Calling You to Calling AI</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 2: AI Dialogue -->
+                                <div class="flex flex-col group/list">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            AI Dialogue <span class="text-zinc-400 font-normal ml-0.5">(5)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Real-time Context-aware Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Persona-driven Customization Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Medication Adherence Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Cognitive Risk Monitoring Call</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Safe Return Home Check-in Call</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Group 3: Conversation Infrastructure -->
+                                <div class="flex flex-col group/list border-b border-zinc-200">
+                                    <div class="flex flex-row items-center justify-between min-h-[56px] py-2 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 transition-colors cursor-default hover:text-[#d97706]">
+                                            Conversation Infrastructure <span class="text-zinc-400 font-normal ml-0.5">(3)</span></div>
+                                        <button
+                                            onclick="
+                                                const list = this.parentElement.parentElement;
+                                                const isExpanded = list.classList.toggle('is-expanded');
+                                                this.setAttribute('aria-expanded', isExpanded);
+                                                this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                                this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                                this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                                if (!isExpanded) {
+                                                    list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                                }
+                                            "
+                                            aria-expanded="false"
+                                            class="flex items-center text-right font-sans text-[11px] font-semibold text-zinc-400 hover:text-zinc-600 transition-colors cursor-pointer w-fit group/btn">
+                                            <span class="transition-colors more-text">View projects</span>
+                                            <span class="transition-colors less-text hidden">Hide projects</span>
+                                            <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-zinc-600"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Wrong Responses to Accurate Understanding</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Optimizing AI Pace for Elderly Users</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                From Complex Flows to Simple Conversations</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+        </details>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>NAVER CareCall Console <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">AI Call Operation System</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        B2G SaaS Monetization</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Human-in-the-Loop Interface for CareCall</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Operation Workflow Management</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Multi-tier RBAC System</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Service Request DX Interface</div>
+                                </div>
+                            </div>
+            </div>
+        </details>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>SK Telecom A. <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Conversational AI Assistant</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                                                                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Context-aware Schedule Recommendation</div>
+                                </div>
+                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Conversational Music Recommendation</div>
+                                    
+                                </div>
+                                                                                                <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        LLM Agent QA & Service operation</div>
+                                </div>
+                            </div>
+            </div>
+        </details>
+            </div>
+        </div>
+        <div class="mb-20">
+            <h4 class="font-sans text-[12px] tracking-[0.1em] uppercase text-zinc-400 font-semibold mb-2 px-2">E-commerce</h4>
+            <div class="flex flex-col border-t border-zinc-200">
+                        <a href="projects/hopzie-oneclickbuilder.html" class="group border-b border-zinc-200 flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer py-5 px-2 hover:bg-zinc-50 transition-colors">
+            <span>Hopzie <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">AI Commerce Builder</span></span>
+            <span class="transition-transform duration-300 group-hover:translate-x-1">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7 -7 7"></path></svg>
+            </span>
+        </a>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>Korea Society of IT Services <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">PFP NFT Consumer Journey</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Community-based Discovery Flow</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Multi-channel Trust Formation</div>
+                                        </div>
+                                    </div>
+            </div>
+        </details>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>Information Development <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Digital Book Discovery Experience</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Offline-to-Online Browsing UX</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Serendipitous Discovery Flow</div>
+                                        </div>
+                                    </div>
+            </div>
+        </details>
+            </div>
+        </div>
+        <div class="mb-20">
+            <h4 class="font-sans text-[12px] tracking-[0.1em] uppercase text-zinc-400 font-semibold mb-2 px-2">Social Network Service</h4>
+            <div class="flex flex-col border-t border-zinc-200">
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>DIVE <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Metaverse Reading Culture Platform</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Socially Motivated Reading Flow</div>
+                                    
+                                </div>
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        AI-Powered UGC Ecosystem</div>
+                                    
+                                </div>
+                                <div class="flex flex-col py-4 relative">
+                                    <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">
+                                        Behavioral Economy & Identity Expression</div>
+                                    
+                                </div>
+                            </div>
+            </div>
+        </details>
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>Just Do It <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Fitness Accountability SNS</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Prove worked out in the form of SNS</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Offline community event</div>
+                                        </div>
+                                    </div>
+            </div>
+        </details>
+            </div>
+        </div>
+        <div class="mb-20">
+            <h4 class="font-sans text-[12px] tracking-[0.1em] uppercase text-zinc-400 font-semibold mb-2 px-2">News</h4>
+            <div class="flex flex-col border-t border-zinc-200">
+                <details class="group border-b border-zinc-200">
+            <summary class="flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer list-none py-5 px-2 hover:bg-zinc-50 transition-colors">
+                <span>Technology in Society <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Trust Signals for Digital News</span></span>
+                <span class="transition-transform duration-300 group-open:rotate-180 pointer-events-none">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path d="M19 9l-7 7-7-7"></path></svg>
+                </span>
+            </summary>
+            <div class="pb-5 px-2 pl-4 ml-2 mb-2">
+                <div class="flex flex-col mt-2 divide-y divide-zinc-100">
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">AI or Human Review UI</div>
+                                        </div>
+                                        <div class="block py-4 relative">
+                                            <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706] group-hover/item:text-[#d97706]">Source Transparency UI</div>
+                                        </div>
+                                    </div>
+            </div>
+        </details>
+            </div>
+        </div>
+        <div class="mb-10">
+            <h4 class="font-sans text-[12px] tracking-[0.1em] uppercase text-zinc-400 font-semibold mb-2 px-2">Business Automation</h4>
+            <div class="flex flex-col border-t border-zinc-200">
+                        <a href="projects/ai-mentoring-agent-detail.html" class="group border-b border-zinc-200 flex justify-between items-center relative z-10 font-sans text-[16px] md:text-[18px] text-zinc-900 font-medium cursor-pointer py-5 px-2 hover:bg-zinc-50 transition-colors">
+            <span>Kyonggi University <span class="text-zinc-500 text-[14px] font-normal ml-2 hidden md:inline-block">Mentor AI Operation System</span></span>
+            <span class="transition-transform duration-300 group-hover:translate-x-1">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="pointer-events: none;"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7 -7 7"></path></svg>
+            </span>
+        </a>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+    <!-- Toolkit Grid (Runway Style) -->
+    <!-- Hopzie Oneclickbuilder Section -->
+    
+
+    <!-- AI Mentoring Agent Detail Section -->
+    
+
+    <!-- Lectures Section -->
+
+        </div>
+    </section>
+
+    <!-- LLM Voice IVR Section -->
+    
+
+    <!-- Lectures Section -->
+
+        </div>
+    </section>
+
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Create</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.artinsight.co.kr/news/search.php?search_type=&search_date=&section=&q=&q=%EB%B0%95%EB%82%98%ED%98%84&start_day=&end_day="
+                                target="_blank">Critic &amp; Essay</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Interviews</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); alert('Coming soon!');">Seminars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://instagram.com/__breadme" target="_blank" aria-label="Instagram"
+                            class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Vision</h4>
+                    <div class="footer-socials-col">
+                        <a href="https://www.linkedin.com/in/%EB%82%98%ED%98%84-%EB%B0%95-08314925b/" target="_blank"
+                            aria-label="LinkedIn" class="social-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg></a>
+                        <a href="mailto:breadme00@gmail.com" aria-label="Email" class="social-icon"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <div class="footer-lang"><button class="lang-btn active"><span class="lang-dot"></span>
+                        English</button><button class="lang-btn" onclick="event.preventDefault(); alert('Coming soon!');">Korean</button></div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Nahyun Park</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Email Popup -->
+    <div id="email-popup" class="email-popup minimized"
+        style="position: fixed; top: auto; bottom: 2rem; right: 2rem; transform: none;">
+        <button class="popup-toggle" id="popupToggle" aria-label="Open Email Popup"><svg
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg></button>
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 style="font-size: 16px; font-weight: 700; color: #111;">Application Materials</h3>
+                <button class="popup-minimize" id="popupMinimize" aria-label="Minimize Popup"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg></button>
+            </div>
+            <p class="popup-description">Leave your email below to instantly receive the complete portfolio and resume
+                package.</p>
+            <div class="relative mt-2">
+                <form id="emailPopupForm" class="popup-form relative z-0">
+                    <input type="email" id="popupEmailInput" placeholder="Enter your email address"
+                        class="w-full bg-white border border-gray-200 text-[#111] text-[13.5px] font-sans px-5 py-2.5 focus:outline-none focus:border-gray-400 focus:shadow-sm transition-all"
+                        style="border-radius: 50px;" required>
+                    <button type="submit" class="popup-submit-btn group hover:bg-gray-50 transition-colors duration-300"
+                        style="background: #ffffff; color: #52525b; border: 1px solid #d4d4d8; border-radius: 50px;">
+                        <span style="color: #52525b; font-weight: 700;">Receive <span
+                                style="color: #D97706; font-weight: 700;" class="ml-1">bread</span><span
+                                style="color: #111111; font-weight: 700;">me</span> package</span>
+                        <svg class="send-icon transition-transform duration-500 group-hover:translate-x-1.5 group-hover:-translate-y-1.5"
+                            style="color: #111111;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+                <!-- Coming Soon Overlay -->
+                <div class="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-xl pointer-events-auto"
+                    style="background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.8) 100%); backdrop-filter: blur(1px); margin: -4px;">
+                    <span class="inline-flex items-center justify-center px-4 pt-[7px] pb-[5px] rounded-full text-[11px] font-bold tracking-widest uppercase shadow-sm leading-none"
+                        style="background: #111111; color: #ffffff; border: 1px solid #333;">
+                        Coming Soon
+                    </span>
+                </div>
+            </div>
+            <div id="popupFeedback" class="popup-feedback"></div>
+        </div>
+    </div>
+
+    <script src="articles_data.js"></script>
+    <script src="article_renderer.js"></script>
+    <script src="script.js?v=4"></script>
+    <script src="how-i-work.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,147 @@
+﻿                            <!-- Initiative Lists (Independent) -->
+                            <div class="flex flex-col border-t border-b border-zinc-200 mt-2 divide-y divide-zinc-100" id="carecallCapabilityList">
+                                
+                                <!-- Group 1: Voice Experience -->
+                                <div class="flex flex-col group/list py-2">
+                                    <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706]">
+                                            Voice Experience</div>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Multimodal Avatar-based CareCall</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                WebRTC Barge-in Voice Interaction</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Japan B2G Localization</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Inbound CareCall Experience</div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onclick="
+                                            const list = this.parentElement;
+                                            const isExpanded = list.classList.toggle('is-expanded');
+                                            this.setAttribute('aria-expanded', isExpanded);
+                                            this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                            this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                            this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                            if (!isExpanded) {
+                                                list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                            }
+                                        "
+                                        aria-expanded="false"
+                                        class="flex items-center text-left font-sans text-[11px] font-semibold text-[#d97706] hover:text-[#b46305] transition-colors cursor-pointer w-fit mb-2 group/btn">
+                                        <span class="transition-colors more-text">View projects &rarr;</span>
+                                        <span class="transition-colors less-text hidden">Hide projects &rarr;</span>
+                                        <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-[#d97706]"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Group 2: AI Dialogue -->
+                                <div class="flex flex-col group/list py-2">
+                                    <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706]">
+                                            AI Dialogue</div>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Real-time Context-aware Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Persona-driven Customization Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Medication Adherence Dialogue</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Cognitive Risk Monitoring Call</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Safe Return Home Check-in Call</div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onclick="
+                                            const list = this.parentElement;
+                                            const isExpanded = list.classList.toggle('is-expanded');
+                                            this.setAttribute('aria-expanded', isExpanded);
+                                            this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                            this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                            this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                            if (!isExpanded) {
+                                                list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                            }
+                                        "
+                                        aria-expanded="false"
+                                        class="flex items-center text-left font-sans text-[11px] font-semibold text-[#d97706] hover:text-[#b46305] transition-colors cursor-pointer w-fit mb-2 group/btn">
+                                        <span class="transition-colors more-text">View projects &rarr;</span>
+                                        <span class="transition-colors less-text hidden">Hide projects &rarr;</span>
+                                        <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-[#d97706]"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <!-- Group 3: Conversation Infrastructure -->
+                                <div class="flex flex-col group/list py-2 border-b border-zinc-200">
+                                    <div class="flex flex-col justify-center min-h-[76px] py-4 relative">
+                                        <div class="font-sans text-[13px] leading-[1.45] font-semibold text-zinc-900 mb-1 transition-colors cursor-default hover:text-[#d97706]">
+                                            Conversation Infrastructure</div>
+                                    </div>
+                                    <div class="hidden group-[.is-expanded]/list:flex flex-col pl-4 border-l-2 border-zinc-100 ml-2 mb-4">
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Reliable User Routing System</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Elderly-focused EPD Optimization</div>
+                                        </div>
+                                        <div class="flex flex-col justify-center min-h-[56px] py-2 relative border-t border-zinc-50">
+                                            <div class="font-sans text-[12px] leading-[1.45] font-medium text-zinc-600 transition-colors cursor-default hover:text-[#d97706]">
+                                                Lightweight Conversation Architecture</div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onclick="
+                                            const list = this.parentElement;
+                                            const isExpanded = list.classList.toggle('is-expanded');
+                                            this.setAttribute('aria-expanded', isExpanded);
+                                            this.querySelector('.more-text').classList.toggle('hidden', isExpanded);
+                                            this.querySelector('.less-text').classList.toggle('hidden', !isExpanded);
+                                            this.querySelector('svg').classList.toggle('rotate-180', isExpanded);
+                                            if (!isExpanded) {
+                                                list.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                            }
+                                        "
+                                        aria-expanded="false"
+                                        class="flex items-center text-left font-sans text-[11px] font-semibold text-[#d97706] hover:text-[#b46305] transition-colors cursor-pointer w-fit mb-2 group/btn">
+                                        <span class="transition-colors more-text">View projects &rarr;</span>
+                                        <span class="transition-colors less-text hidden">Hide projects &rarr;</span>
+                                        <svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 text-zinc-400 group-hover/btn:text-[#d97706]"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
